@@ -3,10 +3,29 @@
 // Cada elemento va en una capa con nombre ("lt", "proyecciones:P", "referencia:P",
 // "medidas:P"...) que las lecciones muestran, ocultan o destacan. Las capas son grupos
 // SVG persistentes: al mostrarlas u ocultarlas, el CSS hace un fundido.
-import { createPoint, FOLDED_ANGLE_DEG, sheetCoords, type Point } from '../geometry/index.ts';
+import {
+  clipToBox,
+  createPoint,
+  FOLDED_ANGLE_DEG,
+  labelAnchor,
+  lineSegments,
+  lineTraces,
+  planeTraces,
+  pointAt,
+  PROFILE_X,
+  profileSheetCoords,
+  profileTrace,
+  sheetCoords,
+  type Line,
+  type Point,
+} from '../geometry/index.ts';
 import {
   getPoint,
   isLayerVisible,
+  isProfileVisible,
+  lineOf,
+  objectsNeedingProfile,
+  planeOf,
   setPoint,
   type AppState,
   type AppStore,
@@ -14,12 +33,32 @@ import {
 import { formatNumber } from '../ui/format.ts';
 import { verticalDimension, type DimensionDrawing } from './dimension.ts';
 import { setAttributes, svgElement } from './svg.ts';
-import { FIT_VIEWBOX, mmPerPixel, viewBoxCenter, zoomViewBox, type ViewBox } from './viewport.ts';
+import {
+  FIT_VIEWBOX,
+  FIT_WITH_PROFILE_VIEWBOX,
+  mmPerPixel,
+  viewBoxCenter,
+  zoomViewBox,
+  type ViewBox,
+} from './viewport.ts';
 
 /** Extremos de la LT y sus dos trazos cortos (en mm). */
 const LT_HALF_LENGTH = 86;
 const LT_MARK_LENGTH = 8;
 const LT_MARK_OFFSET = 2.5;
+/** Lo que se dibuja en la lámina se recorta a este tamaño para que quepa en el encuadre. */
+const SHEET_EXTENT_MM = 68;
+
+/** Punto para rotular una traza: cerca de su extremo derecho, algo hacia dentro. */
+function labelPoint(p: Point, q: Point, leftEnd = false): Point {
+  const [near, far] = p.x > q.x !== leftEnd ? [p, q] : [q, p];
+  return createPoint(
+    near.x + (far.x - near.x) * 0.1,
+    near.a + (far.a - near.a) * 0.1,
+    near.c + (far.c - near.c) * 0.1,
+  );
+}
+
 /** Cuadrícula de los ejercicios, para medir en la lámina. */
 const GRID_STEP_MM = 10;
 const GRID_EXTENT_MM = 80;
@@ -43,6 +82,8 @@ export class SheetView {
   private readonly layers = new Map<string, SVGGElement>();
   private usedLayers = new Set<string>();
   private viewBox: ViewBox = FIT_VIEWBOX;
+  /** Mientras no se haga zoom, el encuadre se ajusta solo (por ejemplo, al aparecer el perfil). */
+  private autoFit = true;
   private mmPerPx = 1;
   private frameRequested = false;
 
@@ -66,17 +107,24 @@ export class SheetView {
 
   zoomIn(): void {
     const c = viewBoxCenter(this.viewBox);
+    this.autoFit = false;
     this.setViewBox(zoomViewBox(this.viewBox, 1.25, c.x, c.y));
   }
 
   zoomOut(): void {
     const c = viewBoxCenter(this.viewBox);
+    this.autoFit = false;
     this.setViewBox(zoomViewBox(this.viewBox, 1 / 1.25, c.x, c.y));
   }
 
-  /** Encuadre automático: vuelve a ver toda la lámina. */
+  /** Encuadre automático: vuelve a ver toda la lámina, con el perfil si se muestra. */
   fit(): void {
-    this.setViewBox(FIT_VIEWBOX);
+    this.autoFit = true;
+    this.setViewBox(this.fitFor(this.store.get()));
+  }
+
+  private fitFor(state: AppState): ViewBox {
+    return isProfileVisible(state, state.layersSheet) ? FIT_WITH_PROFILE_VIEWBOX : FIT_VIEWBOX;
   }
 
   // ---------- Dibujo ----------
@@ -97,6 +145,7 @@ export class SheetView {
 
   private render(): void {
     const state = this.store.get();
+    if (this.autoFit) this.viewBox = this.fitFor(state);
     const vb = this.viewBox;
     setAttributes(this.svg, { viewBox: `${vb.x} ${vb.y} ${vb.width} ${vb.height}` });
     this.mmPerPx = mmPerPixel(vb, this.container.clientWidth, this.container.clientHeight);
@@ -116,7 +165,14 @@ export class SheetView {
       // En un ejercicio la lámina muestra el punto buscado, no el del alumno.
       this.drawPoint('objetivo', 'P', exercise.target, false, false);
     } else {
+      for (const o of state.objects) {
+        if (o.kind === 'plane') this.drawPlane(o.id, state, o.through, pending);
+      }
+      for (const o of state.objects) {
+        if (o.kind === 'line') this.drawLine(o.id, lineOf(state, o.through), pending);
+      }
       for (const id of pointIds) this.drawPoint(id, id, getPoint(state, id), pending, true);
+      if (isProfileVisible(state, state.layersSheet)) this.drawProfile(state);
     }
 
     this.finishLayers(state);
@@ -149,7 +205,7 @@ export class SheetView {
         this.layers.delete(tag);
         continue;
       }
-      const always = tag === 'cuadricula' || tag.startsWith('objetivo');
+      const always = tag === 'cuadricula' || tag.startsWith('objetivo') || tag === 'perfil';
       const visible = always || isLayerVisible(state.layersSheet, tag);
       group.classList.toggle('is-hidden', !visible);
       group.classList.toggle('is-highlighted', state.highlight.includes(tag));
@@ -270,6 +326,187 @@ export class SheetView {
         svgElement('circle', { cx: p.x, cy: vy, r }, 'sheet-target-dot'),
         svgElement('circle', { cx: p.x, cy: hy, r }, 'sheet-target-dot'),
       );
+    }
+  }
+
+  /**
+   * Recta: r′ y r″ con sus partes vistas (continuas, gruesas) y ocultas (discontinuas, finas),
+   * y las trazas H (H′ en r′, H″ en la LT) y V (V″ en r″, V′ en la LT).
+   */
+  private drawLine(id: string, r: Line | null, pending: boolean): void {
+    const group = this.layer(`recta:${id}`);
+    if (!r) return;
+    const k = this.mmPerPx;
+    for (const s of lineSegments(r, SHEET_EXTENT_MM)) {
+      const style = s.visible ? 'sheet-line-visible' : 'sheet-line-hidden';
+      group.append(
+        // r″: (x, cota). En SVG la y va hacia abajo.
+        svgElement('line', { x1: s.from.x, y1: -s.from.c, x2: s.to.x, y2: -s.to.c }, style),
+        // r′: (x, −alejamiento) en la lámina → y = alejamiento en SVG.
+        svgElement(
+          'line',
+          { x1: s.from.x, y1: s.from.a, x2: s.to.x, y2: s.to.a },
+          pending ? `${style} is-pending` : style,
+        ),
+      );
+    }
+    const anchor = labelAnchor(r, SHEET_EXTENT_MM);
+    if (anchor) {
+      group.append(
+        this.label(`${id}″`, anchor.x + 5 * k, -anchor.c - 5 * k, 'start'),
+        this.label(`${id}′`, anchor.x + 5 * k, anchor.a + 16 * k, 'start', pending),
+      );
+    }
+
+    const traces = this.layer(`trazas:${id}`);
+    const { h, v } = lineTraces(r);
+    const inside = (p: Point | null): p is Point =>
+      p !== null && Math.max(Math.abs(p.x), Math.abs(p.a), Math.abs(p.c)) <= 80;
+    const dot = (x: number, y: number, extra = ''): SVGCircleElement =>
+      svgElement('circle', { cx: x, cy: y, r: 3 * k }, `sheet-trace-dot ${extra}`.trim());
+    if (inside(h)) {
+      // H está en el PH: H′ = H en (x, a); H″ en la LT.
+      traces.append(
+        svgElement(
+          'line',
+          { x1: h.x, y1: 0, x2: h.x, y2: h.a },
+          `sheet-thin sheet-reference${pending ? ' is-pending' : ''}`,
+        ),
+        dot(h.x, h.a, pending ? 'is-pending' : ''),
+        dot(h.x, 0),
+        this.label('H′', h.x - 5 * k, h.a + 16 * k, 'end', pending),
+        this.label('H″', h.x - 5 * k, -5 * k, 'end'),
+      );
+    }
+    if (inside(v)) {
+      // V está en el PV: V″ = V en (x, c); V′ en la LT.
+      traces.append(
+        svgElement('line', { x1: v.x, y1: 0, x2: v.x, y2: -v.c }, 'sheet-thin sheet-reference'),
+        dot(v.x, -v.c),
+        dot(v.x, 0),
+        this.label('V″', v.x + 5 * k, -v.c - 5 * k, 'start'),
+        this.label('V′', v.x + 5 * k, 16 * k, 'start'),
+      );
+    }
+  }
+
+  /** Plano: trazas α₁ (bajo la LT si está delante) y α₂, recortadas a la lámina. */
+  private drawPlane(
+    id: string,
+    state: AppState,
+    through: readonly [string, string, string],
+    pending: boolean,
+  ): void {
+    const group = this.layer(`trazas:${id}`);
+    this.layer(`plano:${id}`); // la superficie solo existe en 3D; la capa queda vacía
+    const alpha = planeOf(state, through);
+    if (!alpha) return;
+    const k = this.mmPerPx;
+    const { alpha1, alpha2, containsLT } = planeTraces(alpha);
+    const clipped = (t: Line | null): [Point, Point] | null => {
+      if (!t) return null;
+      const range = clipToBox(t, SHEET_EXTENT_MM);
+      return range ? [pointAt(t, range[0]), pointAt(t, range[1])] : null;
+    };
+    const t1 = clipped(alpha1);
+    const t2 = clipped(alpha2);
+    if (t1) {
+      const [p, q] = t1;
+      group.append(
+        svgElement(
+          'line',
+          { x1: p.x, y1: p.a, x2: q.x, y2: q.a },
+          pending ? 'sheet-plane-trace is-pending' : 'sheet-plane-trace',
+        ),
+      );
+      // Si contiene la LT, el rótulo va al extremo izquierdo, lejos del plano de perfil.
+      const end = containsLT
+        ? labelPoint(p.x < q.x ? q : p, p.x < q.x ? p : q, true)
+        : labelPoint(p, q);
+      const text = containsLT ? `${id}₁ ≡ ${id}₂` : `${id}₁`;
+      group.append(this.label(text, end.x + 6 * k, end.a + 4 * k, 'start', pending));
+    }
+    if (t2 && !containsLT) {
+      const [p, q] = t2;
+      group.append(
+        svgElement('line', { x1: p.x, y1: -p.c, x2: q.x, y2: -q.c }, 'sheet-plane-trace'),
+      );
+      const end = labelPoint(p, q);
+      group.append(this.label(`${id}₂`, end.x + 6 * k, -end.c - 6 * k, 'start'));
+    }
+  }
+
+  /**
+   * Tercera proyección. El PP se ve como una recta perpendicular a la LT en x = PROFILE_X.
+   * P‴ se construye con una horizontal desde P″ y, desde P′, una horizontal hasta el PP,
+   * un arco con centro en la LT y una vertical (el alejamiento se lleva a la derecha).
+   */
+  private drawProfile(state: AppState): void {
+    const group = this.layer('perfil');
+    const k = this.mmPerPx;
+    const X = PROFILE_X;
+    group.append(
+      svgElement('line', { x1: X, y1: -80, x2: X, y2: 80 }, 'sheet-thin sheet-profile-plane'),
+      svgElement('line', { x1: X, y1: 0, x2: X + 75, y2: 0 }, 'sheet-thin'),
+      this.label('PP', X + 4 * k, -74, 'start'),
+    );
+
+    for (const id of objectsNeedingProfile(state)) {
+      const object = state.objects.find((o) => o.id === id);
+      if (object?.kind === 'line') {
+        const ends: Point[] = [];
+        for (const name of object.through) {
+          const p = getPoint(state, name);
+          const q = profileSheetCoords(p);
+          ends.push(p);
+          // Construcción: horizontal desde P″; desde P′, horizontal hasta el PP, arco y vertical.
+          const radius = Math.abs(p.a);
+          const sweep = 0; // el arco gira siempre hacia la LT, en sentido antihorario
+          group.append(
+            svgElement('line', { x1: p.x, y1: -p.c, x2: q.x, y2: -q.y }, 'sheet-construction'),
+            svgElement('line', { x1: p.x, y1: p.a, x2: X, y2: p.a }, 'sheet-construction'),
+            svgElement(
+              'path',
+              { d: `M ${X} ${p.a} A ${radius} ${radius} 0 0 ${sweep} ${X + p.a} 0` },
+              'sheet-construction',
+            ),
+            svgElement('line', { x1: q.x, y1: 0, x2: q.x, y2: -q.y }, 'sheet-construction'),
+            svgElement('circle', { cx: q.x, cy: -q.y, r: 3 * k }, 'sheet-trace-dot'),
+            this.label(`${name}‴`, q.x + 5 * k, -q.y - 5 * k, 'start'),
+          );
+        }
+        const [A, B] = ends;
+        if (A && B) {
+          const a = profileSheetCoords(A);
+          const b = profileSheetCoords(B);
+          group.append(
+            svgElement('line', { x1: a.x, y1: -a.y, x2: b.x, y2: -b.y }, 'sheet-line-visible'),
+          );
+          // r‴ en el punto medio, a la derecha, para no chocar con A‴ y B‴.
+          const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+          group.append(this.label(`${id}‴`, mid.x + 8 * k, -mid.y + 5 * k, 'start'));
+        }
+      } else if (object?.kind === 'plane') {
+        const alpha = planeOf(state, object.through);
+        const trace = alpha ? profileTrace(alpha) : null;
+        // Se recorta en el propio PP (alejamiento y cota), sin mirar la x del plano de perfil.
+        const range = trace
+          ? clipToBox({ p1: { ...trace.p1, x: 0 }, p2: { ...trace.p2, x: 0 } }, SHEET_EXTENT_MM)
+          : null;
+        if (trace && range) {
+          const p = profileSheetCoords(pointAt(trace, range[0]));
+          const q = profileSheetCoords(pointAt(trace, range[1]));
+          group.append(
+            svgElement('line', { x1: p.x, y1: -p.y, x2: q.x, y2: -q.y }, 'sheet-plane-trace'),
+          );
+          const top = p.y > q.y ? p : q;
+          const at = {
+            x: top.x + (q.x + p.x - 2 * top.x) * 0.1,
+            y: top.y + (q.y + p.y - 2 * top.y) * 0.1,
+          };
+          group.append(this.label(`${id}₃`, at.x + 6 * k, -at.y, 'start'));
+        }
+      }
     }
   }
 

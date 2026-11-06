@@ -13,6 +13,9 @@ export interface ViewBox {
  */
 export const FIT_VIEWBOX: ViewBox = { x: -95, y: -75, width: 190, height: 150 };
 
+/** Encuadre con la tercera proyección: se amplía a la derecha hasta el perfil. */
+export const FIT_WITH_PROFILE_VIEWBOX: ViewBox = { x: -95, y: -85, width: 250, height: 170 };
+
 const MIN_WIDTH_MM = 30; // zoom máximo
 const MAX_WIDTH_MM = 380; // zoom mínimo
 
