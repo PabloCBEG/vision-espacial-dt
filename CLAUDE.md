@@ -24,6 +24,9 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
   - Trazas de recta: `H` (horizontal) y `V` (vertical).
   - Trazas de plano: `α1` (horizontal) y `α2` (vertical).
   - LT dibujada con los dos trazos cortos bajo sus extremos.
+  - En pantalla, las primas se escriben con los signos tipográficos: P′, P″, P‴.
+  - Cuadrantes numerados en romanos: I, II, III y IV.
+  - Cota y alejamiento se rotulan «c = 30 mm» y «a = 20 mm».
 - En la lámina la LT es horizontal; tras abatir, el alejamiento positivo queda bajo la LT y la cota positiva sobre ella.
 - Vistas, líneas y acotación según ISO 128-2:2020, ISO 128-3:2022 y UNE-EN ISO 129-1:2019.
 
@@ -37,7 +40,15 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
   - `src/state`: estado único compartido.
   - `src/player`: reproductor de pasos.
   - `src/content`: lecciones como datos, validadas con zod.
+  - `src/ui`: controles de la interfaz (deslizadores, botones de vista, tema), enlazados al estado.
 - Una lección nueva es un fichero de datos, nunca código nuevo.
+
+## Vista 3D
+
+- PH en azul claro y PV en ámbar; los nombres van siempre rotulados, el color no es la única pista.
+- Vistas rápidas: perspectiva, frontal (alzado), superior (planta, alejamiento positivo hacia abajo) y perfil, mirando desde la izquierda como la vista lateral izquierda del sistema europeo.
+- Se arrastran P′ (sobre el PH: cambia x y a), P″ (sobre el PV: cambia x y c) y P (en el plano paralelo al PV: cambia x y c).
+- Solo se dibuja cuando algo cambia; nada de bucles de animación continuos.
 
 ## Calidad
 
