@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { createPoint, sheetCoords } from './point.ts';
-import { rotateAboutLT } from './rotation.ts';
+import { foldHorizontalProjection, rotateAboutLT } from './rotation.ts';
 import { expectPointClose } from './test-helpers.ts';
 
 describe('rotateAboutLT (abatimiento del PH)', () => {
@@ -19,6 +19,13 @@ describe('rotateAboutLT (abatimiento del PH)', () => {
     const r = rotateAboutLT(p, 90);
     expectPointClose(r, createPoint(30, 0, -40));
     expect(r.c).toBeCloseTo(sheetCoords(p).h.y, 9);
+  });
+
+  it("foldHorizontalProjection lleva P' desde el PH (0°) hasta la lámina (90°)", () => {
+    const q = createPoint(-12, 25, 33);
+    expectPointClose(foldHorizontalProjection(q, 0), createPoint(-12, 25, 0));
+    const folded = foldHorizontalProjection(q, 90);
+    expectPointClose(folded, createPoint(-12, 0, sheetCoords(q).h.y));
   });
 
   it('conserva la distancia a la LT de cualquier punto', () => {

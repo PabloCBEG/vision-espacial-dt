@@ -24,6 +24,10 @@ export interface AppState {
   readonly activePoint: PointId;
   /** Modo proyector: trazos más gruesos, más contraste y letra más grande. */
   readonly projector: boolean;
+  /** Ángulo de abatimiento del PH sobre el PV, de 0° (PH en su sitio) a 90° (lámina). */
+  readonly foldAngle: number;
+  /** Modo "explicar": frases cortas según el ángulo de abatimiento. */
+  readonly explain: boolean;
 }
 
 /** Límite de cada coordenada de un punto, en mm (de −60 a 60). */
@@ -37,7 +41,14 @@ export const INITIAL_STATE: AppState = {
   objects: [{ kind: 'point', id: 'P' }],
   activePoint: 'P',
   projector: false,
+  foldAngle: 0,
+  explain: false,
 };
+
+/** Limita el ángulo de abatimiento a [0°, 90°]. */
+export function setFoldAngle(store: AppStore, angleDeg: number): void {
+  patchState(store, { foldAngle: Math.min(90, Math.max(0, angleDeg)) });
+}
 
 export type AppStore = Store<AppState>;
 

@@ -1,6 +1,18 @@
 // Giro alrededor de la LT: sirve para animar el abatimiento del PH sobre el PV.
+import { projectH } from './point.ts';
 import type { Point } from './types.ts';
 import { createPoint } from './vector.ts';
+
+/** Ángulo del abatimiento completo: el PH queda sobre el PV y se obtiene la lámina. */
+export const FOLDED_ANGLE_DEG = 90;
+
+/**
+ * Posición de P′ cuando el PH se ha abatido un ángulo (0° = PH en su sitio, 90° = lámina).
+ * P′ viaja con el PH; P″ no se mueve.
+ */
+export function foldHorizontalProjection(p: Point, angleDeg: number): Point {
+  return rotateAboutLT(projectH(p), angleDeg);
+}
 
 /**
  * Gira un punto un ángulo en grados alrededor de la LT.
