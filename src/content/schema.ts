@@ -100,6 +100,9 @@ const ConditionExercise = z.object({
   points: z.record(PointName, Coords).optional(),
   /** Punto que manejan los deslizadores al empezar. */
   activePoint: PointName.optional(),
+  /** Capas visibles en el ejercicio (si no, las del último paso, sin el perfil). */
+  show3d: z.array(Layer).optional(),
+  sheet: z.array(Layer).optional(),
 });
 
 const ExerciseSchema = z.discriminatedUnion('kind', [PlacePointExercise, ConditionExercise]);

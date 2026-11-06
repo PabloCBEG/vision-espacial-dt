@@ -32,8 +32,8 @@ function clippedTrace(trace: Line | null): [Point, Point] | null {
 }
 
 /** Punto para rotular una traza: cerca de su extremo derecho, algo hacia dentro. */
-function inward([p, q]: [Point, Point]): Point {
-  const [near, far] = p.x > q.x ? [p, q] : [q, p];
+function inward([p, q]: [Point, Point], leftEnd = false): Point {
+  const [near, far] = p.x > q.x !== leftEnd ? [p, q] : [q, p];
   return createPoint(
     near.x + (far.x - near.x) * 0.12,
     near.a + (far.a - near.a) * 0.12,
@@ -109,7 +109,8 @@ export class PlaneModel {
     this.trace2.visible = this.label2.visible = t2 !== null;
     if (t1) {
       setThickLinePoints(this.trace1, [fold(t1[0]), fold(t1[1])]);
-      placeLabel(this.label1, fold(inward(t1)));
+      // Si coincide con la LT, el rótulo va al extremo izquierdo, lejos del rótulo «LT».
+      placeLabel(this.label1, fold(inward(containsLT ? [t1[1], t1[0]] : t1, containsLT)));
     }
     if (t2) {
       setThickLinePoints(this.trace2, [t2[0], t2[1]]);

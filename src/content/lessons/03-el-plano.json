@@ -13,12 +13,32 @@
       "Q": [10, 15, 7]
     },
     "objects": [
-      { "kind": "point", "id": "A" },
-      { "kind": "point", "id": "B" },
-      { "kind": "point", "id": "C" },
-      { "kind": "point", "id": "Q" },
-      { "kind": "line", "id": "r", "through": ["A", "B"] },
-      { "kind": "plane", "id": "α", "through": ["A", "B", "C"] }
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      },
+      {
+        "kind": "point",
+        "id": "C"
+      },
+      {
+        "kind": "point",
+        "id": "Q"
+      },
+      {
+        "kind": "line",
+        "id": "r",
+        "through": ["A", "B"]
+      },
+      {
+        "kind": "plane",
+        "id": "α",
+        "through": ["A", "B", "C"]
+      }
     ],
     "activePoint": "Q"
   },
@@ -70,7 +90,12 @@
       "highlight": ["trazas:α"],
       "camera": "front",
       "foldAngle": 90,
-      "points": { "A": [-40, 0, 35], "B": [40, 40, 0], "C": [40, 0, 35], "Q": [10, 16, 21] }
+      "points": {
+        "A": [-40, 0, 35],
+        "B": [40, 40, 0],
+        "C": [40, 0, 35],
+        "Q": [10, 16, 21]
+      }
     },
     {
       "narration": "Si el plano contiene la LT, sus dos trazas coinciden con ella y no bastan para definirlo. La tercera proyección, α₃, sí lo define.",
@@ -79,7 +104,12 @@
       "highlight": ["trazas:α"],
       "camera": "perspective",
       "foldAngle": 90,
-      "points": { "A": [-40, 10, 10], "B": [40, 30, 30], "C": [0, 50, 50], "Q": [10, 20, 20] }
+      "points": {
+        "A": [-40, 10, 10],
+        "B": [40, 30, 30],
+        "C": [0, 50, 50],
+        "Q": [10, 20, 20]
+      }
     }
   ],
   "exercises": [
@@ -88,22 +118,68 @@
       "prompt": "Q está fuera del plano α. Muévelo hasta que esté en α: el aviso te dice a qué distancia está.",
       "condition": "pointOnPlane",
       "objects": ["Q", "α"],
-      "points": { "Q": [10, 30, 30] },
-      "activePoint": "Q"
+      "points": {
+        "Q": [10, 30, 30]
+      },
+      "activePoint": "Q",
+      "show3d": ["planos", "plano:α", "trazas:α", "punto:Q", "proyecciones:Q", "medidas:Q"],
+      "sheet": ["lt", "trazas:α", "proyecciones:Q", "referencia:Q"]
     },
     {
       "kind": "condition",
       "prompt": "Mueve A, B o C hasta que el plano α sea paralelo a la LT.",
       "condition": "planeParallelToLT",
       "objects": ["α"],
-      "activePoint": "A"
+      "activePoint": "A",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "plano:α",
+        "trazas:α"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C",
+        "trazas:α"
+      ]
     },
     {
       "kind": "condition",
       "prompt": "Mueve A, B o C hasta que el plano α contenga a la LT.",
       "condition": "planeContainsLT",
       "objects": ["α"],
-      "activePoint": "A"
+      "activePoint": "A",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "plano:α",
+        "trazas:α"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C",
+        "trazas:α"
+      ]
     }
   ]
 }

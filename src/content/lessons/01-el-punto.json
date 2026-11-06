@@ -6,8 +6,15 @@
   "saberBasico": "Sistemas de representación: fundamentos del sistema diédrico. Representación del punto.",
   "level": "Inicial",
   "initialScene": {
-    "points": { "P": [20, 30, 40] },
-    "objects": [{ "kind": "point", "id": "P" }],
+    "points": {
+      "P": [20, 30, 40]
+    },
+    "objects": [
+      {
+        "kind": "point",
+        "id": "P"
+      }
+    ],
     "activePoint": "P"
   },
   "steps": [
@@ -73,7 +80,9 @@
       "highlight": ["punto:P", "medidas:P"],
       "camera": "perspective",
       "foldAngle": 0,
-      "points": { "P": [20, -25, 35] }
+      "points": {
+        "P": [20, -25, 35]
+      }
     },
     {
       "narration": "Al abatir, P′ queda por encima de la LT: en el segundo cuadrante las dos proyecciones están sobre la LT.",
@@ -101,7 +110,7 @@
       "kind": "placePoint",
       "prompt": "Ahora P está en otro cuadrante. Colócalo en el espacio a partir de su lámina.",
       "point": "P",
-      "target": [10, -25, 30]
+      "target": [10, -15, 35]
     }
   ]
 }

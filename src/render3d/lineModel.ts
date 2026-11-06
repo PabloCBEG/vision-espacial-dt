@@ -117,7 +117,7 @@ export class LineModel {
     this.vVisible.set(pairs(true, projectV));
     this.vHidden.set(pairs(false, projectV));
 
-    const anchor = labelAnchor(r);
+    const anchor = labelAnchor(r, undefined, 0.3);
     this.label.visible = this.labelH.visible = this.labelV.visible = anchor !== null;
     if (anchor) {
       placeLabel(this.label, anchor);

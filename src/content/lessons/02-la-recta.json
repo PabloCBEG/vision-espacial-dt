@@ -6,11 +6,24 @@
   "saberBasico": "Sistema diédrico: representación de la recta, trazas, partes vistas y ocultas y posiciones particulares.",
   "level": "Inicial",
   "initialScene": {
-    "points": { "A": [-30, 15, 40], "B": [30, 45, 10] },
+    "points": {
+      "A": [-30, 15, 40],
+      "B": [30, 45, 10]
+    },
     "objects": [
-      { "kind": "point", "id": "A" },
-      { "kind": "point", "id": "B" },
-      { "kind": "line", "id": "r", "through": ["A", "B"] }
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      },
+      {
+        "kind": "line",
+        "id": "r",
+        "through": ["A", "B"]
+      }
     ],
     "activePoint": "A"
   },
@@ -102,7 +115,10 @@
       "highlight": ["recta:r"],
       "camera": "perspective",
       "foldAngle": 90,
-      "points": { "A": [-30, 20, 30], "B": [30, 20, 30] }
+      "points": {
+        "A": [-30, 20, 30],
+        "B": [30, 20, 30]
+      }
     },
     {
       "narration": "Si A y B están en la misma línea de referencia, r es de perfil y sus dos proyecciones no bastan. Hace falta la tercera proyección, sobre el plano de perfil.",
@@ -119,7 +135,10 @@
       "highlight": ["recta:r"],
       "camera": "perspective",
       "foldAngle": 90,
-      "points": { "A": [10, 10, 45], "B": [10, 45, 10] }
+      "points": {
+        "A": [10, 10, 45],
+        "B": [10, 45, 10]
+      }
     }
   ],
   "exercises": [
@@ -127,19 +146,76 @@
       "kind": "condition",
       "prompt": "Mueve A o B hasta que r sea paralela al PH. Fíjate en cómo queda r″.",
       "condition": "lineParallelToPH",
-      "objects": ["r"]
+      "objects": ["r"],
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ]
     },
     {
       "kind": "condition",
       "prompt": "Mueve A o B hasta que r sea paralela a la LT.",
       "condition": "lineParallelToLT",
-      "objects": ["r"]
+      "objects": ["r"],
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ]
     },
     {
       "kind": "condition",
       "prompt": "Mueve A o B hasta que r corte a la LT. Sus trazas H y V tienen que coincidir.",
       "condition": "lineCrossesLT",
-      "objects": ["r"]
+      "objects": ["r"],
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ]
     }
   ]
 }

@@ -175,6 +175,13 @@ export class SheetView {
       if (isProfileVisible(state, state.layersSheet)) this.drawProfile(state);
     }
 
+    // Paso sin nada en la lámina: se explica por qué está vacía.
+    if (!exercise && state.layersSheet !== null && state.layersSheet.length === 0) {
+      const note = svgElement('text', { x: 0, y: 0, 'text-anchor': 'middle' }, 'sheet-empty-note');
+      note.textContent = 'La lámina aparecerá al abatir el PH.';
+      this.layer('aviso').append(note);
+    }
+
     this.finishLayers(state);
     this.syncHandles(state, exercise ? [] : pointIds);
   }
@@ -205,7 +212,8 @@ export class SheetView {
         this.layers.delete(tag);
         continue;
       }
-      const always = tag === 'cuadricula' || tag.startsWith('objetivo') || tag === 'perfil';
+      const always =
+        tag === 'cuadricula' || tag.startsWith('objetivo') || tag === 'perfil' || tag === 'aviso';
       const visible = always || isLayerVisible(state.layersSheet, tag);
       group.classList.toggle('is-hidden', !visible);
       group.classList.toggle('is-highlighted', state.highlight.includes(tag));
@@ -424,7 +432,7 @@ export class SheetView {
         ? labelPoint(p.x < q.x ? q : p, p.x < q.x ? p : q, true)
         : labelPoint(p, q);
       const text = containsLT ? `${id}₁ ≡ ${id}₂` : `${id}₁`;
-      group.append(this.label(text, end.x + 6 * k, end.a + 4 * k, 'start', pending));
+      group.append(this.label(text, end.x + 6 * k, end.a + 18 * k, 'start', pending));
     }
     if (t2 && !containsLT) {
       const [p, q] = t2;

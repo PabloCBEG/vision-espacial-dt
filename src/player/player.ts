@@ -181,13 +181,16 @@ export class Player {
       });
       if (!exercise.points?.[exercise.point]) points[exercise.point] = EXERCISE_START;
     } else {
-      // Se ven las mismas capas que en el último paso de la lección.
+      // Capas del ejercicio o, si no las indica, las del último paso sin el perfil
+      // (el perfil aparece solo si el caso lo necesita).
       const last = this.lesson.steps[this.lesson.steps.length - 1];
+      const withoutProfile = (layers: readonly string[] | undefined) =>
+        layers ? layers.filter((l) => l !== 'perfil') : null;
       this.store.set({
         ...base,
         activePoint: exercise.activePoint ?? base.activePoint,
-        layers3d: last?.show3d ?? null,
-        layersSheet: last?.sheet ?? null,
+        layers3d: exercise.show3d ?? withoutProfile(last?.show3d),
+        layersSheet: exercise.sheet ?? withoutProfile(last?.sheet),
       });
     }
     this.camera?.setView('perspective');

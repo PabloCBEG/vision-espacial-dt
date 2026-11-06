@@ -1005,6 +1005,11 @@ body:not([data-screen='free']) .free-scenes {
   stroke-dasharray: 10 3 2 3;
 }
 
+.sheet-empty-note {
+  fill: var(--color-text-muted);
+  font-size: calc(var(--u) * var(--sheet-font));
+}
+
 .sheet-grid {
   stroke: var(--color-text-muted);
   stroke-width: 0.75px;
@@ -1059,7 +1064,7 @@ body:not([data-screen='free']) .free-scenes {
   }
 
   .controls-bar {
-    order: 2;
+    order: 3;
     grid-template-columns: 1fr;
   }
 
@@ -1081,7 +1086,7 @@ body:not([data-screen='free']) .free-scenes {
   }
 
   .panel-2d {
-    order: 3;
+    order: 2;
   }
 
   .view-2d {
