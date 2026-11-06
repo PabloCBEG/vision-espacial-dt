@@ -1,5 +1,5 @@
 // Lámina 2D en SVG: LT, proyecciones, líneas de referencia y cotas. 1 unidad = 1 mm.
-import { createPoint, sheetCoords, type Point } from '../geometry/index.ts';
+import { createPoint, FOLDED_ANGLE_DEG, sheetCoords, type Point } from '../geometry/index.ts';
 import { getPoint, setPoint, type AppState, type AppStore } from '../state/index.ts';
 import { formatNumber } from '../ui/format.ts';
 import { verticalDimension, type DimensionDrawing } from './dimension.ts';
@@ -91,7 +91,11 @@ export class SheetView {
     this.drawing.replaceChildren();
     this.drawLT();
     const pointIds = state.objects.filter((o) => o.kind === 'point').map((o) => o.id);
-    for (const id of pointIds) this.drawPoint(id, getPoint(state, id));
+    // Mientras el PH no esté abatido del todo, P′ aún no ha llegado a la lámina:
+    // se dibuja en gris translúcido en su posición final, para que se vea hacia dónde va.
+    const pending = state.foldAngle < FOLDED_ANGLE_DEG;
+    this.svg.classList.toggle('is-folding', pending);
+    for (const id of pointIds) this.drawPoint(id, getPoint(state, id), pending);
     this.syncHandles(state, pointIds);
   }
 
@@ -107,17 +111,33 @@ export class SheetView {
   }
 
   /** Línea de referencia, cota y alejamiento acotados y rótulos de un punto. */
-  private drawPoint(id: string, p: Point): void {
+  private drawPoint(id: string, p: Point, pending: boolean): void {
     const { h, v } = sheetCoords(p);
     const k = this.mmPerPx;
     // En SVG la y crece hacia abajo: se cambia el signo.
     const hy = -h.y;
     const vy = -v.y;
 
-    if (hy !== vy) {
+    if (!pending && hy !== vy) {
       this.drawing.append(
         svgElement('line', { x1: p.x, y1: vy, x2: p.x, y2: hy }, 'sheet-thin sheet-reference'),
       );
+    } else if (pending) {
+      // De P″ a la LT, normal; de la LT a P′, pendiente.
+      if (vy !== 0) {
+        this.drawing.append(
+          svgElement('line', { x1: p.x, y1: vy, x2: p.x, y2: 0 }, 'sheet-thin sheet-reference'),
+        );
+      }
+      if (hy !== 0) {
+        this.drawing.append(
+          svgElement(
+            'line',
+            { x1: p.x, y1: 0, x2: p.x, y2: hy },
+            'sheet-thin sheet-reference is-pending',
+          ),
+        );
+      }
     }
 
     // Cota a la izquierda (de la LT a P″) y alejamiento a la derecha (de la LT a P′).
@@ -147,25 +167,33 @@ export class SheetView {
           value: formatNumber(Math.abs(p.a)),
         }),
         `alejamiento-${id}`,
+        pending,
       );
     }
 
     // Rótulos: P″ arriba a la derecha y P′ abajo a la izquierda, lejos de las cotas.
     this.drawing.append(
       this.label(`${id}″`, p.x + 6 * k, vy - 6 * k, 'start'),
-      this.label(`${id}′`, p.x - 6 * k, hy + 18 * k, 'end'),
+      this.label(`${id}′`, p.x - 6 * k, hy + 18 * k, 'end', pending),
     );
   }
 
-  private label(text: string, x: number, y: number, anchor: 'start' | 'end'): SVGTextElement {
-    const element = svgElement('text', { x, y, 'text-anchor': anchor }, 'sheet-label');
+  private label(
+    text: string,
+    x: number,
+    y: number,
+    anchor: 'start' | 'end',
+    pending = false,
+  ): SVGTextElement {
+    const className = pending ? 'sheet-label is-pending' : 'sheet-label';
+    const element = svgElement('text', { x, y, 'text-anchor': anchor }, className);
     element.textContent = text;
     element.dataset.label = text;
     return element;
   }
 
-  private drawDimension(d: DimensionDrawing, name: string): void {
-    const group = svgElement('g', {}, 'sheet-dimension');
+  private drawDimension(d: DimensionDrawing, name: string, pending = false): void {
+    const group = svgElement('g', {}, pending ? 'sheet-dimension is-pending' : 'sheet-dimension');
     group.dataset.dimension = name;
     for (const s of d.extensionLines) group.append(svgElement('line', { ...s }, 'sheet-thin'));
     group.append(svgElement('line', { ...d.dimensionLine }, 'sheet-thin'));
@@ -202,6 +230,8 @@ export class SheetView {
         wanted.add(key);
         const handle = this.handles.get(key) ?? this.createHandle(id, projection, key);
         this.placeHandle(handle, x, y, key, p, projection);
+        const pending = projection === 'horizontal' && state.foldAngle < FOLDED_ANGLE_DEG;
+        handle.group.classList.toggle('is-pending', pending);
       }
     }
     for (const [key, handle] of this.handles) {

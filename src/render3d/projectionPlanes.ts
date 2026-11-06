@@ -35,6 +35,8 @@ export class ProjectionPlanes {
   private readonly quadrantLabels: CSS2DObject[] = [];
   private readonly phLabel: CSS2DObject;
   private readonly pvLabel: CSS2DObject;
+  private readonly phGroup = new Group();
+  private folded = false;
 
   constructor() {
     const size = 2 * E;
@@ -63,10 +65,13 @@ export class ProjectionPlanes {
     );
     lt.renderOrder = 2;
 
-    this.group.add(ph, pv, phGrid, pvGrid, lt);
+    // El PH va en su propio grupo para poder abatirlo girando alrededor de la LT (eje X).
+    this.phGroup.add(ph, phGrid);
+    this.group.add(this.phGroup, pv, pvGrid, lt);
 
     // Rótulos de los planos y de la LT.
     this.phLabel = this.addLabel('PH', 'center', 'label-plane', createPoint(E - 8, E - 8, 0));
+    this.phGroup.add(this.phLabel);
     this.pvLabel = this.addLabel('PV', 'center', 'label-plane', createPoint(E - 8, 0, E - 8));
     this.addLabel('LT', 'e', 'label-plane', createPoint(E + 6, 0, 0));
 
@@ -81,6 +86,15 @@ export class ProjectionPlanes {
     for (const [text, p] of quadrants) {
       this.quadrantLabels.push(this.addLabel(text, 'center', 'label-quadrant', p));
     }
+  }
+
+  /**
+   * Abate el PH un ángulo en grados alrededor de la LT. Girar el eje X un ángulo θ lleva
+   * (Y, Z) = (0, a) a (−a·sin θ, a·cos θ): es exactamente rotateAboutLT de src/geometry.
+   */
+  setFoldAngle(angleDeg: number): void {
+    this.phGroup.rotation.x = (angleDeg * Math.PI) / 180;
+    this.folded = angleDeg !== 0;
   }
 
   /** Multiplica el grosor de la LT (modo proyector). */
@@ -104,10 +118,11 @@ export class ProjectionPlanes {
     const direction = camera.position.clone().normalize();
     const alongLT = Math.abs(direction.x) > 0.9;
     // Los cuadrantes solo se distinguen si se ve el corte de los dos planos.
-    const showQuadrants = Math.abs(direction.x) > 0.2;
+    // Con el PH abatido ya no hay cuatro cuadrantes que señalar.
+    const showQuadrants = Math.abs(direction.x) > 0.2 && !this.folded;
     for (const label of this.quadrantLabels) label.visible = showQuadrants;
     // Un plano visto de canto se confunde con la LT (salvo en perfil, donde la LT es un punto).
-    this.phLabel.visible = alongLT || Math.abs(direction.y) > 0.15;
+    this.phLabel.visible = this.folded || alongLT || Math.abs(direction.y) > 0.15;
     this.pvLabel.visible = alongLT || Math.abs(direction.z) > 0.15;
   }
 

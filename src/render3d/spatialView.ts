@@ -10,6 +10,7 @@ import {
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
+import { FOLDED_ANGLE_DEG } from '../geometry/index.ts';
 import { getPoint, setPoint, type AppState, type AppStore } from '../state/index.ts';
 import { CameraAnimator, MAX_DISTANCE_MM, MIN_DISTANCE_MM, type ViewName } from './cameraViews.ts';
 import { attachPointDrag } from './pointDrag.ts';
@@ -73,8 +74,12 @@ export class SpatialView {
     this.colors = readSceneColors(container);
     this.syncState(store.get());
     this.cleanups.push(
-      store.subscribe((state) => {
+      store.subscribe((state, previous) => {
         this.syncState(state);
+        // Al completar el abatimiento, la cámara pasa a vista frontal: el 3D coincide con la lámina.
+        if (state.foldAngle === FOLDED_ANGLE_DEG && previous.foldAngle < FOLDED_ANGLE_DEG) {
+          this.setView('front');
+        }
         this.requestRender();
       }),
       attachPointDrag({
@@ -85,6 +90,8 @@ export class SpatialView {
         getTargets: () => [...this.pointModels.values()].flatMap((m) => m.hitTargets),
         getPoint: (id) => getPoint(store.get(), id),
         setPoint: (id, p) => setPoint(store, id, p),
+        // Con el PH abatido, P′ ya no está en el PH: no se arrastra desde el 3D.
+        canDrag: (target) => target.handle !== 'horizontal' || store.get().foldAngle === 0,
       }),
     );
 
@@ -128,8 +135,9 @@ export class SpatialView {
         this.applyResolution(model.group);
         this.pointModels.set(id, model);
       }
-      model.update(getPoint(state, id));
+      model.update(getPoint(state, id), state.foldAngle);
     }
+    this.planes.setFoldAngle(state.foldAngle);
 
     const scale = state.projector ? PROJECTOR_LINE_SCALE : 1;
     if (scale !== this.lineScale) {
