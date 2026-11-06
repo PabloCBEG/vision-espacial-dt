@@ -130,11 +130,30 @@
         </section>
 
         <section class="controls-bar" aria-label="Controles del punto">
+          <div class="controls-top">
+            <div
+              id="free-scenes"
+              class="view-buttons free-scenes"
+              role="group"
+              aria-label="Qué explorar"
+            >
+              <button type="button" data-scene="punto" aria-pressed="true">Punto</button>
+              <button type="button" data-scene="recta" aria-pressed="false">Recta</button>
+              <button type="button" data-scene="plano" aria-pressed="false">Plano</button>
+            </div>
+            <div id="scene-notices" class="scene-notices" aria-live="polite" hidden></div>
+          </div>
           <p id="point-description" class="visually-hidden" aria-live="polite"></p>
           <form id="point-controls" class="point-controls" aria-label="Coordenadas del punto P">
-            <p class="point-hint">
-              Mueve P con los deslizadores o arrastra P, P′ o P″ en el modelo o en la lámina.
-            </p>
+            <div class="point-hint-row">
+              <label id="active-point-wrapper" class="active-point" hidden>
+                Punto
+                <select id="active-point"></select>
+              </label>
+              <p id="point-hint" class="point-hint">
+                Mueve P con los deslizadores o arrastra P, P′ o P″ en el modelo o en la lámina.
+              </p>
+            </div>
             <div class="slider">
               <label for="slider-x">x</label>
               <output data-axis="x" for="slider-x"></output>

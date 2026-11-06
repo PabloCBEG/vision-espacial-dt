@@ -4,8 +4,11 @@ import { FOLDED_ANGLE_DEG } from './geometry/index.ts';
 import { bindPlayer, Player } from './player/index.ts';
 import { SheetView } from './render2d/index.ts';
 import { SpatialView } from './render3d/index.ts';
-import { createAppStore, INITIAL_STATE } from './state/index.ts';
+import { createAppStore } from './state/index.ts';
 import {
+  bindActivePoint,
+  bindFreeScenes,
+  bindSceneNotices,
   bindFoldControls,
   bindPointControls,
   bindPointDescription,
@@ -28,6 +31,17 @@ bindThemeToggle(required<HTMLButtonElement>('#theme-toggle'));
 bindProjectorToggle(required<HTMLButtonElement>('#projector-toggle'), store);
 bindPointControls(required<HTMLFormElement>('#point-controls'), store);
 bindPointDescription(required<HTMLElement>('#point-description'), store);
+bindActivePoint(
+  {
+    wrapper: required('#active-point-wrapper'),
+    select: required('#active-point'),
+    form: required('#point-controls'),
+    hint: required('#point-hint'),
+  },
+  store,
+);
+bindSceneNotices(required('#scene-notices'), store);
+const loadFreeScene = bindFreeScenes(required('#free-scenes'), store);
 bindFoldControls(
   {
     slider: required<HTMLInputElement>('#slider-fold'),
@@ -111,7 +125,7 @@ function route(): void {
     document.title = `${lesson.title} · Visión espacial`;
   } else if (hash === '#/libre') {
     show('free');
-    store.set({ ...INITIAL_STATE, projector: store.get().projector });
+    loadFreeScene('punto');
     spatialView?.setView('perspective');
     document.title = 'Explorar · Visión espacial';
   } else {

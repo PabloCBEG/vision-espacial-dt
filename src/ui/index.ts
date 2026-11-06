@@ -5,3 +5,6 @@ export * from './projectorToggle.ts';
 export * from './sheetZoom.ts';
 export * from './themeToggle.ts';
 export * from './viewButtons.ts';
+export * from './activePoint.ts';
+export * from './freeSceneButtons.ts';
+export * from './sceneNotices.ts';

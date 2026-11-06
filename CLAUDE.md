@@ -27,6 +27,10 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
   - En pantalla, las primas se escriben con los signos tipográficos: P′, P″, P‴.
   - Cuadrantes numerados en romanos: I, II, III y IV.
   - Cota y alejamiento se rotulan «c = 30 mm» y «a = 20 mm».
+  - Trazas de plano con subíndice tipográfico: α₁, α₂ y, en perfil, α₃. Si coinciden: «α₁ ≡ α₂».
+  - Tercera proyección: plano de perfil en x = 70 mm; se abate sobre el PV hacia la derecha
+    (vista lateral izquierda), así que P‴ queda en (70 + a, c).
+- Partes vistas (primer cuadrante) con línea continua gruesa; ocultas, discontinua fina.
 - En la lámina la LT es horizontal; tras abatir, el alejamiento positivo queda bajo la LT y la cota positiva sobre ella.
 - Vistas, líneas y acotación según ISO 128-2:2020, ISO 128-3:2022 y UNE-EN ISO 129-1:2019.
 
