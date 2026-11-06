@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Visión espacial · Dibujo Técnico</title>
+    <script>
+      // Aplica el tema guardado antes de pintar, para evitar un parpadeo.
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {
+        // Sin acceso a localStorage: se usa el tema del sistema.
+      }
+    </script>
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 class="app-title">Visión espacial · Dibujo Técnico</h1>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+        Tema oscuro
+      </button>
+    </header>
+
+    <main class="workspace">
+      <section class="panel panel-3d" aria-labelledby="panel-3d-title">
+        <h2 id="panel-3d-title" class="panel-title">Modelo 3D</h2>
+        <div id="view-3d" class="panel-body" role="img" aria-label="Modelo en el espacio">
+          <p class="placeholder">Aquí aparecerá el modelo en el espacio.</p>
+        </div>
+      </section>
+
+      <section class="panel panel-2d" aria-labelledby="panel-2d-title">
+        <h2 id="panel-2d-title" class="panel-title">Lámina</h2>
+        <div id="view-2d" class="panel-body" role="img" aria-label="Lámina en sistema diédrico">
+          <p class="placeholder">Aquí aparecerá la lámina en sistema diédrico.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+/* ---------- Variables: tema claro (por defecto) ---------- */
+:root {
+  /* Colores */
+  --color-bg: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-text: #1b1f24;
+  --color-text-muted: #5a636e;
+  --color-border: #c9ced6;
+  --color-accent: #1f5fbf;
+  --color-focus: #e07a00;
+
+  /* Tipografía */
+  --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-title: 1.25rem;
+  --font-size-panel-title: 1rem;
+
+  /* Espacios y tamaños */
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --header-height: 3.5rem;
+  --panel-radius: 0.5rem;
+  --border-width: 1px;
+  --focus-width: 3px;
+  --breakpoint-stack: 768px; /* referencia; las media queries no admiten variables */
+
+  color-scheme: light;
+}
+
+/* ---------- Tema oscuro: según el sistema, salvo que se elija claro ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #12151a;
+    --color-surface: #1c2027;
+    --color-text: #e8eaed;
+    --color-text-muted: #a3abb6;
+    --color-border: #3a414c;
+    --color-accent: #7fb0ff;
+    --color-focus: #ffb347;
+    color-scheme: dark;
+  }
+}
+
+/* ---------- Tema oscuro elegido con el botón ---------- */
+:root[data-theme='dark'] {
+  --color-bg: #12151a;
+  --color-surface: #1c2027;
+  --color-text: #e8eaed;
+  --color-text-muted: #a3abb6;
+  --color-border: #3a414c;
+  --color-accent: #7fb0ff;
+  --color-focus: #ffb347;
+  color-scheme: dark;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Cabecera ---------- */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  min-height: var(--header-height);
+  padding: var(--space-s) var(--space-m);
+  background: var(--color-surface);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.app-title {
+  margin: 0;
+  font-size: var(--font-size-title);
+  font-weight: 600;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  padding: var(--space-xs) var(--space-m);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+}
+
+/* ---------- Área de trabajo: 3D a la izquierda, lámina a la derecha ---------- */
+.workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-m);
+  padding: var(--space-m);
+  min-height: 0;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+  overflow: hidden;
+}
+
+.panel-title {
+  margin: 0;
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--font-size-panel-title);
+  font-weight: 600;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.panel-body {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--space-m);
+}
+
+.placeholder {
+  margin: 0;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ---------- Pantallas estrechas: se apilan, 3D arriba ---------- */
+@media (max-width: 767px) {
+  .workspace {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-s);
+    padding: var(--space-s);
+  }
+
+  .panel {
+    min-height: 45vh;
+    min-height: 45dvh;
+  }
+
+  .app-title {
+    font-size: var(--font-size-panel-title);
+  }
+}
