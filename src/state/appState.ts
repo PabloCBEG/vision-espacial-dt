@@ -28,6 +28,32 @@ export interface AppState {
   readonly foldAngle: number;
   /** Modo "explicar": frases cortas según el ángulo de abatimiento. */
   readonly explain: boolean;
+  /**
+   * Capas visibles en el 3D y en la lámina (por ejemplo "planos", "proyecciones:P").
+   * null = todo visible (modo libre).
+   */
+  readonly layers3d: readonly string[] | null;
+  readonly layersSheet: readonly string[] | null;
+  /** Capas destacadas en el paso actual. */
+  readonly highlight: readonly string[];
+  /** Nivel de ayuda, como en la PAU: con 3D, con pista (3D oculto) o solo 2D. */
+  readonly helpLevel: HelpLevel;
+  /** Ejercicio en curso: la lámina muestra las proyecciones del punto buscado. */
+  readonly exercise: ExerciseTarget | null;
+}
+
+export type HelpLevel = 'with3d' | 'hint' | 'only2d';
+
+export interface ExerciseTarget {
+  /** Punto que mueve el alumno. */
+  readonly pointId: PointId;
+  /** Punto que hay que encontrar; la lámina muestra sus proyecciones. */
+  readonly target: Point;
+}
+
+/** ¿Está visible una capa? Con null (modo libre) todo lo está. */
+export function isLayerVisible(layers: readonly string[] | null, tag: string): boolean {
+  return layers === null || layers.includes(tag);
 }
 
 /** Límite de cada coordenada de un punto, en mm (de −60 a 60). */
@@ -43,6 +69,11 @@ export const INITIAL_STATE: AppState = {
   projector: false,
   foldAngle: 0,
   explain: false,
+  layers3d: null,
+  layersSheet: null,
+  highlight: [],
+  helpLevel: 'with3d',
+  exercise: null,
 };
 
 /** Limita el ángulo de abatimiento a [0°, 90°]. */

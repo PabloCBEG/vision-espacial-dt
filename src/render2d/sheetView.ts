@@ -1,6 +1,16 @@
 // Lámina 2D en SVG: LT, proyecciones, líneas de referencia y cotas. 1 unidad = 1 mm.
+//
+// Cada elemento va en una capa con nombre ("lt", "proyecciones:P", "referencia:P",
+// "medidas:P"...) que las lecciones muestran, ocultan o destacan. Las capas son grupos
+// SVG persistentes: al mostrarlas u ocultarlas, el CSS hace un fundido.
 import { createPoint, FOLDED_ANGLE_DEG, sheetCoords, type Point } from '../geometry/index.ts';
-import { getPoint, setPoint, type AppState, type AppStore } from '../state/index.ts';
+import {
+  getPoint,
+  isLayerVisible,
+  setPoint,
+  type AppState,
+  type AppStore,
+} from '../state/index.ts';
 import { formatNumber } from '../ui/format.ts';
 import { verticalDimension, type DimensionDrawing } from './dimension.ts';
 import { setAttributes, svgElement } from './svg.ts';
@@ -10,6 +20,9 @@ import { FIT_VIEWBOX, mmPerPixel, viewBoxCenter, zoomViewBox, type ViewBox } fro
 const LT_HALF_LENGTH = 86;
 const LT_MARK_LENGTH = 8;
 const LT_MARK_OFFSET = 2.5;
+/** Cuadrícula de los ejercicios, para medir en la lámina. */
+const GRID_STEP_MM = 10;
+const GRID_EXTENT_MM = 80;
 
 type Projection = 'horizontal' | 'vertical';
 
@@ -27,6 +40,8 @@ export class SheetView {
   private readonly drawing: SVGGElement;
   private readonly handlesLayer: SVGGElement;
   private readonly handles = new Map<string, Handle>();
+  private readonly layers = new Map<string, SVGGElement>();
+  private usedLayers = new Set<string>();
   private viewBox: ViewBox = FIT_VIEWBOX;
   private mmPerPx = 1;
   private frameRequested = false;
@@ -88,49 +103,115 @@ export class SheetView {
     // Los textos y las flechas se dimensionan en píxeles de pantalla a partir de --u.
     this.svg.style.setProperty('--u', String(this.mmPerPx));
 
-    this.drawing.replaceChildren();
+    this.usedLayers = new Set();
+    const exercise = state.exercise;
+    if (exercise) this.drawGrid();
     this.drawLT();
-    const pointIds = state.objects.filter((o) => o.kind === 'point').map((o) => o.id);
+
     // Mientras el PH no esté abatido del todo, P′ aún no ha llegado a la lámina:
     // se dibuja en gris translúcido en su posición final, para que se vea hacia dónde va.
     const pending = state.foldAngle < FOLDED_ANGLE_DEG;
-    this.svg.classList.toggle('is-folding', pending);
-    for (const id of pointIds) this.drawPoint(id, getPoint(state, id), pending);
-    this.syncHandles(state, pointIds);
+    const pointIds = state.objects.filter((o) => o.kind === 'point').map((o) => o.id);
+    if (exercise) {
+      // En un ejercicio la lámina muestra el punto buscado, no el del alumno.
+      this.drawPoint('objetivo', 'P', exercise.target, false, false);
+    } else {
+      for (const id of pointIds) this.drawPoint(id, id, getPoint(state, id), pending, true);
+    }
+
+    this.finishLayers(state);
+    this.syncHandles(state, exercise ? [] : pointIds);
+  }
+
+  /**
+   * Grupo de una capa. La primera vez en cada dibujo se vacía; los grupos que no se usan
+   * se quitan al final.
+   */
+  private layer(tag: string): SVGGElement {
+    let group = this.layers.get(tag);
+    if (!group) {
+      group = svgElement('g', {}, 'sheet-layer');
+      group.dataset.layer = tag;
+      this.layers.set(tag, group);
+    }
+    if (!this.usedLayers.has(tag)) {
+      this.usedLayers.add(tag);
+      group.replaceChildren();
+      this.drawing.append(group); // en el orden en que se dibujan
+    }
+    return group;
+  }
+
+  private finishLayers(state: AppState): void {
+    for (const [tag, group] of this.layers) {
+      if (!this.usedLayers.has(tag)) {
+        group.remove();
+        this.layers.delete(tag);
+        continue;
+      }
+      const always = tag === 'cuadricula' || tag.startsWith('objetivo');
+      const visible = always || isLayerVisible(state.layersSheet, tag);
+      group.classList.toggle('is-hidden', !visible);
+      group.classList.toggle('is-highlighted', state.highlight.includes(tag));
+    }
   }
 
   /** LT horizontal con los dos trazos cortos bajo sus extremos. */
   private drawLT(): void {
     const L = LT_HALF_LENGTH;
     const y = LT_MARK_OFFSET;
-    this.drawing.append(
+    this.layer('lt').append(
       svgElement('line', { x1: -L, y1: 0, x2: L, y2: 0 }, 'sheet-thick'),
       svgElement('line', { x1: -L, y1: y, x2: -L + LT_MARK_LENGTH, y2: y }, 'sheet-thick'),
       svgElement('line', { x1: L - LT_MARK_LENGTH, y1: y, x2: L, y2: y }, 'sheet-thick'),
     );
   }
 
-  /** Línea de referencia, cota y alejamiento acotados y rótulos de un punto. */
-  private drawPoint(id: string, p: Point, pending: boolean): void {
+  /** Cuadrícula de 10 mm para medir en los ejercicios. */
+  private drawGrid(): void {
+    const group = this.layer('cuadricula');
+    const E = GRID_EXTENT_MM;
+    for (let k = -E; k <= E; k += GRID_STEP_MM) {
+      group.append(
+        svgElement('line', { x1: k, y1: -E, x2: k, y2: E }, 'sheet-grid'),
+        svgElement('line', { x1: -E, y1: k, x2: E, y2: k }, 'sheet-grid'),
+      );
+    }
+  }
+
+  /**
+   * Línea de referencia, cotas y rótulos de un punto.
+   * - layerId: nombre de las capas ("P" → "proyecciones:P"; "objetivo" para un ejercicio).
+   * - name: nombre que se rotula (P, A...).
+   * - withMeasures: si se acotan cota y alejamiento.
+   */
+  private drawPoint(
+    layerId: string,
+    name: string,
+    p: Point,
+    pending: boolean,
+    withMeasures: boolean,
+  ): void {
     const { h, v } = sheetCoords(p);
     const k = this.mmPerPx;
     // En SVG la y crece hacia abajo: se cambia el signo.
     const hy = -h.y;
     const vy = -v.y;
 
+    const reference = this.layer(`referencia:${layerId}`);
     if (!pending && hy !== vy) {
-      this.drawing.append(
+      reference.append(
         svgElement('line', { x1: p.x, y1: vy, x2: p.x, y2: hy }, 'sheet-thin sheet-reference'),
       );
     } else if (pending) {
       // De P″ a la LT, normal; de la LT a P′, pendiente.
       if (vy !== 0) {
-        this.drawing.append(
+        reference.append(
           svgElement('line', { x1: p.x, y1: vy, x2: p.x, y2: 0 }, 'sheet-thin sheet-reference'),
         );
       }
       if (hy !== 0) {
-        this.drawing.append(
+        reference.append(
           svgElement(
             'line',
             { x1: p.x, y1: 0, x2: p.x, y2: hy },
@@ -141,41 +222,55 @@ export class SheetView {
     }
 
     // Cota a la izquierda (de la LT a P″) y alejamiento a la derecha (de la LT a P′).
-    if (p.c !== 0) {
-      this.drawDimension(
-        verticalDimension({
-          featureX: p.x,
-          fromY: 0,
-          toY: vy,
-          side: 'left',
-          mmPerPx: k,
-          fromHasLine: true,
-          value: formatNumber(Math.abs(p.c)),
-        }),
-        `cota-${id}`,
-      );
-    }
-    if (p.a !== 0) {
-      this.drawDimension(
-        verticalDimension({
-          featureX: p.x,
-          fromY: 0,
-          toY: hy,
-          side: 'right',
-          mmPerPx: k,
-          fromHasLine: true,
-          value: formatNumber(Math.abs(p.a)),
-        }),
-        `alejamiento-${id}`,
-        pending,
-      );
+    if (withMeasures) {
+      const measures = this.layer(`medidas:${layerId}`);
+      if (p.c !== 0) {
+        this.drawDimension(
+          measures,
+          verticalDimension({
+            featureX: p.x,
+            fromY: 0,
+            toY: vy,
+            side: 'left',
+            mmPerPx: k,
+            fromHasLine: true,
+            value: formatNumber(Math.abs(p.c)),
+          }),
+          `cota-${name}`,
+        );
+      }
+      if (p.a !== 0) {
+        this.drawDimension(
+          measures,
+          verticalDimension({
+            featureX: p.x,
+            fromY: 0,
+            toY: hy,
+            side: 'right',
+            mmPerPx: k,
+            fromHasLine: true,
+            value: formatNumber(Math.abs(p.a)),
+          }),
+          `alejamiento-${name}`,
+          pending,
+        );
+      }
     }
 
     // Rótulos: P″ arriba a la derecha y P′ abajo a la izquierda, lejos de las cotas.
-    this.drawing.append(
-      this.label(`${id}″`, p.x + 6 * k, vy - 6 * k, 'start'),
-      this.label(`${id}′`, p.x - 6 * k, hy + 18 * k, 'end', pending),
+    const projections = this.layer(`proyecciones:${layerId}`);
+    projections.append(
+      this.label(`${name}″`, p.x + 6 * k, vy - 6 * k, 'start'),
+      this.label(`${name}′`, p.x - 6 * k, hy + 18 * k, 'end', pending),
     );
+    // Sin asa que arrastrar (ejercicio), el punto se dibuja aquí mismo.
+    if (layerId === 'objetivo') {
+      const r = (this.store.get().projector ? 5 : 3.2) * k;
+      projections.append(
+        svgElement('circle', { cx: p.x, cy: vy, r }, 'sheet-target-dot'),
+        svgElement('circle', { cx: p.x, cy: hy, r }, 'sheet-target-dot'),
+      );
+    }
   }
 
   private label(
@@ -192,7 +287,12 @@ export class SheetView {
     return element;
   }
 
-  private drawDimension(d: DimensionDrawing, name: string, pending = false): void {
+  private drawDimension(
+    parent: SVGGElement,
+    d: DimensionDrawing,
+    name: string,
+    pending = false,
+  ): void {
     const group = svgElement('g', {}, pending ? 'sheet-dimension is-pending' : 'sheet-dimension');
     group.dataset.dimension = name;
     for (const s of d.extensionLines) group.append(svgElement('line', { ...s }, 'sheet-thin'));
@@ -212,7 +312,7 @@ export class SheetView {
     );
     text.textContent = d.text.value;
     group.append(text);
-    this.drawing.append(group);
+    parent.append(group);
   }
 
   // ---------- Puntos arrastrables ----------
@@ -222,6 +322,7 @@ export class SheetView {
     for (const id of pointIds) {
       const p = getPoint(state, id);
       const { h, v } = sheetCoords(p);
+      const visible = isLayerVisible(state.layersSheet, `proyecciones:${id}`);
       for (const [projection, x, y] of [
         ['horizontal', h.x, -h.y],
         ['vertical', v.x, -v.y],
@@ -232,6 +333,9 @@ export class SheetView {
         this.placeHandle(handle, x, y, key, p, projection);
         const pending = projection === 'horizontal' && state.foldAngle < FOLDED_ANGLE_DEG;
         handle.group.classList.toggle('is-pending', pending);
+        handle.group.classList.toggle('is-hidden', !visible);
+        handle.group.setAttribute('tabindex', visible ? '0' : '-1');
+        handle.group.setAttribute('aria-hidden', String(!visible));
       }
     }
     for (const [key, handle] of this.handles) {
@@ -311,6 +415,7 @@ export class SheetView {
       const d = delta[event.key];
       if (!d) return;
       event.preventDefault();
+      event.stopPropagation(); // las flechas no cambian de paso en la lección
       const p = getPoint(this.store.get(), id);
       const { h, v } = sheetCoords(p);
       const current = projection === 'horizontal' ? h : v;

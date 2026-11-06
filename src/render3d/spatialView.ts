@@ -10,8 +10,14 @@ import {
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
-import { FOLDED_ANGLE_DEG } from '../geometry/index.ts';
-import { getPoint, setPoint, type AppState, type AppStore } from '../state/index.ts';
+import {
+  getPoint,
+  isLayerVisible,
+  setPoint,
+  type AppState,
+  type AppStore,
+} from '../state/index.ts';
+import type { FadeLayer } from './fadeLayer.ts';
 import { CameraAnimator, MAX_DISTANCE_MM, MIN_DISTANCE_MM, type ViewName } from './cameraViews.ts';
 import { attachPointDrag } from './pointDrag.ts';
 import { PointModel } from './pointModel.ts';
@@ -38,6 +44,7 @@ export class SpatialView {
   private colors: SceneColors;
   private lineScale = 1;
   private frameRequested = false;
+  private lastFrame = 0;
   private width = 1;
   private height = 1;
 
@@ -74,12 +81,8 @@ export class SpatialView {
     this.colors = readSceneColors(container);
     this.syncState(store.get());
     this.cleanups.push(
-      store.subscribe((state, previous) => {
+      store.subscribe((state) => {
         this.syncState(state);
-        // Al completar el abatimiento, la cámara pasa a vista frontal: el 3D coincide con la lámina.
-        if (state.foldAngle === FOLDED_ANGLE_DEG && previous.foldAngle < FOLDED_ANGLE_DEG) {
-          this.setView('front');
-        }
         this.requestRender();
       }),
       attachPointDrag({
@@ -127,6 +130,7 @@ export class SpatialView {
     }
     for (const id of pointIds) {
       let model = this.pointModels.get(id);
+      const isNew = !model;
       if (!model) {
         model = new PointModel(id);
         model.setColors(this.colors);
@@ -136,8 +140,14 @@ export class SpatialView {
         this.pointModels.set(id, model);
       }
       model.update(getPoint(state, id), state.foldAngle);
+      for (const [name, layer] of Object.entries(model.layers)) {
+        this.syncLayer(layer, `${name}:${id}`, state, isNew);
+      }
     }
     this.planes.setFoldAngle(state.foldAngle);
+    for (const [name, layer] of Object.entries(this.planes.layers)) {
+      this.syncLayer(layer, name, state, false);
+    }
 
     const scale = state.projector ? PROJECTOR_LINE_SCALE : 1;
     if (scale !== this.lineScale) {
@@ -145,6 +155,12 @@ export class SpatialView {
       this.planes.setLineScale(scale);
       for (const model of this.pointModels.values()) model.setLineScale(scale);
     }
+  }
+
+  /** Capa visible o no, y destacada o no, según el paso de la lección. */
+  private syncLayer(layer: FadeLayer, tag: string, state: AppState, instant: boolean): void {
+    layer.setVisible(isLayerVisible(state.layers3d, tag), instant);
+    layer.setHighlighted(state.highlight.includes(tag));
   }
 
   // ---------- Dibujo bajo demanda ----------
@@ -157,6 +173,10 @@ export class SpatialView {
 
   private readonly renderFrame = (now: number): void => {
     this.frameRequested = false;
+    const dt = this.lastFrame === 0 ? 16 : Math.min(100, now - this.lastFrame);
+    this.lastFrame = now;
+    let fading = this.planes.stepFades(dt);
+    for (const model of this.pointModels.values()) fading = model.stepFades(dt) || fading;
     const animating = this.animator.step(now);
     // Durante una transición manda la animación; si no, los controles (con inercia).
     const moving = animating ? false : this.controls.update();
@@ -165,7 +185,8 @@ export class SpatialView {
     for (const model of this.pointModels.values()) model.updateForCamera(this.camera);
     this.renderer.render(this.scene, this.camera);
     this.labelRenderer.render(this.scene, this.camera);
-    if (animating || moving) this.requestRender();
+    if (animating || moving || fading) this.requestRender();
+    else this.lastFrame = 0;
   };
 
   // ---------- Tamaño y tema ----------

@@ -1,10 +1,12 @@
 // Un punto con nombre (P, A, B...) con sus proyecciones, proyectantes, cota y alejamiento.
+// Se divide en capas que las lecciones muestran u ocultan: punto, proyecciones, proyectantes
+// y medidas (cota y alejamiento).
 import {
-  Group,
   Mesh,
   MeshBasicMaterial,
   MeshLambertMaterial,
   SphereGeometry,
+  Group,
   type Camera,
 } from 'three';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
@@ -18,6 +20,7 @@ import {
 } from '../geometry/index.ts';
 import { formatMm } from '../ui/format.ts';
 import { toThree } from './coords.ts';
+import { FadeLayer } from './fadeLayer.ts';
 import { createLabel, placeLabel, setLabelPlacement, setLabelText } from './labels.ts';
 import { createThickLine, setThickLinePoints } from './lines.ts';
 import type { SceneColors } from './sceneColors.ts';
@@ -31,12 +34,16 @@ export interface DragTarget {
   handle: DragHandle;
 }
 
+/** Capas de un punto, tal como se nombran en las lecciones ("proyecciones:P"...). */
+export const POINT_LAYERS = ['punto', 'proyecciones', 'proyectantes', 'medidas'] as const;
+export type PointLayer = (typeof POINT_LAYERS)[number];
+
 const POINT_RADIUS_MM = 2.4;
 const PROJECTION_RADIUS_MM = 1.5;
 /** Zona de toque, mayor que las esferas, para poder arrastrar con el dedo. */
 const HIT_RADIUS_MM = 6;
 
-/** Grosores en píxeles con escala 1 (el modo proyector los multiplica). */
+/** Grosores en píxeles con escala 1. */
 const WIDTH_PROJECTOR = 2;
 const WIDTH_MEASURE = 3;
 const WIDTH_TRAIL = 1.5;
@@ -54,17 +61,20 @@ export class PointModel {
   readonly id: string;
   readonly group = new Group();
   readonly hitTargets: Mesh[] = [];
+  readonly layers: Record<PointLayer, FadeLayer> = {
+    punto: new FadeLayer(),
+    proyecciones: new FadeLayer(),
+    proyectantes: new FadeLayer(),
+    medidas: new FadeLayer(),
+  };
 
   private readonly pointMaterial = new MeshLambertMaterial();
   private readonly projectionMaterial = new MeshLambertMaterial();
-  private readonly projectorMaterial = new LineMaterial({
-    linewidth: WIDTH_PROJECTOR,
-    dashed: true,
-    dashSize: 3,
-    gapSize: 2,
-  });
-  private readonly cotaMaterial = new LineMaterial({ linewidth: WIDTH_MEASURE });
-  private readonly alejamientoMaterial = new LineMaterial({ linewidth: WIDTH_MEASURE });
+  private readonly projectorMaterial = new LineMaterial({ dashed: true, dashSize: 3, gapSize: 2 });
+  private readonly cotaMaterial = new LineMaterial();
+  private readonly alejamientoMaterial = new LineMaterial();
+  private readonly trailMaterial = new LineMaterial({ dashed: true, dashSize: 2, gapSize: 2 });
+  private readonly referenceMaterial = new LineMaterial();
 
   private readonly sphereP: Mesh;
   private readonly sphereH: Mesh;
@@ -73,21 +83,14 @@ export class PointModel {
   private readonly projectorV: Line2;
   private readonly cotaSegment: Line2;
   private readonly alejamientoSegment: Line2;
+  private readonly trail: Line2;
+  private readonly referenceLine: Line2;
 
   private readonly labelP;
   private readonly labelH;
   private readonly labelV;
   private readonly labelCota;
   private readonly labelAlejamiento;
-  private readonly trailMaterial = new LineMaterial({
-    linewidth: WIDTH_TRAIL,
-    dashed: true,
-    dashSize: 2,
-    gapSize: 2,
-  });
-  private readonly referenceMaterial = new LineMaterial({ linewidth: WIDTH_REFERENCE });
-  private readonly trail: Line2;
-  private readonly referenceLine: Line2;
   private current: Point = createPoint(0, 0, 0);
   private foldAngle = 0;
 
@@ -99,38 +102,58 @@ export class PointModel {
     this.labelCota = createLabel('', 'w', 'label-cota', `cota-${id}`);
     this.labelAlejamiento = createLabel('', 'se', 'label-alejamiento', `alejamiento-${id}`);
 
-    const pointGeometry = new SphereGeometry(POINT_RADIUS_MM, 24, 16);
+    this.sphereP = new Mesh(new SphereGeometry(POINT_RADIUS_MM, 24, 16), this.pointMaterial);
     const projectionGeometry = new SphereGeometry(PROJECTION_RADIUS_MM, 16, 12);
-    this.sphereP = new Mesh(pointGeometry, this.pointMaterial);
     this.sphereH = new Mesh(projectionGeometry, this.projectionMaterial);
     this.sphereV = new Mesh(projectionGeometry, this.projectionMaterial);
 
     const origin = createPoint(0, 0, 0);
-    this.projectorH = createThickLine([origin, origin], this.projectorMaterial);
-    this.projectorV = createThickLine([origin, origin], this.projectorMaterial);
-    this.cotaSegment = createThickLine([origin, origin], this.cotaMaterial);
-    this.alejamientoSegment = createThickLine([origin, origin], this.alejamientoMaterial);
-    this.trail = createThickLine([origin, origin], this.trailMaterial);
-    this.referenceLine = createThickLine([origin, origin], this.referenceMaterial);
-    this.trail.visible = false;
-    this.referenceLine.visible = false;
+    const line = (material: LineMaterial): Line2 => createThickLine([origin, origin], material);
+    this.projectorH = line(this.projectorMaterial);
+    this.projectorV = line(this.projectorMaterial);
+    this.cotaSegment = line(this.cotaMaterial);
+    this.alejamientoSegment = line(this.alejamientoMaterial);
+    this.trail = line(this.trailMaterial);
+    this.referenceLine = line(this.referenceMaterial);
 
-    this.group.add(
-      this.trail,
-      this.referenceLine,
-      this.projectorH,
-      this.projectorV,
-      this.cotaSegment,
-      this.alejamientoSegment,
-      this.sphereP,
+    // Capa "punto": la esfera P y su rótulo.
+    const { punto, proyecciones, proyectantes, medidas } = this.layers;
+    punto.group.add(this.sphereP, this.labelP);
+    punto.addMaterial(this.pointMaterial, 1);
+    punto.addLabel(this.labelP);
+
+    // Capa "proyecciones": P′ y P″, el arco de rastro y la línea de referencia al abatir.
+    proyecciones.group.add(
       this.sphereH,
       this.sphereV,
-      this.labelP,
       this.labelH,
       this.labelV,
+      this.trail,
+      this.referenceLine,
+    );
+    proyecciones.addMaterial(this.projectionMaterial, 1);
+    proyecciones.addLine(this.trailMaterial, WIDTH_TRAIL);
+    proyecciones.addLine(this.referenceMaterial, WIDTH_REFERENCE);
+    proyecciones.addLabel(this.labelH);
+    proyecciones.addLabel(this.labelV);
+
+    // Capa "proyectantes": de P a P′ y de P a P″, discontinuas.
+    proyectantes.group.add(this.projectorH, this.projectorV);
+    proyectantes.addLine(this.projectorMaterial, WIDTH_PROJECTOR);
+
+    // Capa "medidas": cota y alejamiento con su valor.
+    medidas.group.add(
+      this.cotaSegment,
+      this.alejamientoSegment,
       this.labelCota,
       this.labelAlejamiento,
     );
+    medidas.addLine(this.cotaMaterial, WIDTH_MEASURE);
+    medidas.addLine(this.alejamientoMaterial, WIDTH_MEASURE);
+    medidas.addLabel(this.labelCota);
+    medidas.addLabel(this.labelAlejamiento);
+
+    for (const layer of Object.values(this.layers)) this.group.add(layer.group);
 
     // Zonas de arrastre invisibles (transparentes, pero el rayo sí las detecta).
     const handles: [DragHandle, Mesh][] = [
@@ -187,12 +210,8 @@ export class PointModel {
       trail.push(foldHorizontalProjection(p, angle));
     }
     trail.push(h);
-    if (trail.length >= 2 && p.a !== 0) {
-      setThickLinePoints(this.trail, trail);
-      this.trail.visible = true;
-    } else {
-      this.trail.visible = false;
-    }
+    this.trail.visible = trail.length >= 2 && p.a !== 0;
+    if (this.trail.visible) setThickLinePoints(this.trail, trail);
 
     // Abatido del todo: P′ y P″ quedan en la misma línea de referencia, como en la lámina.
     this.referenceLine.visible = foldAngle === FOLDED_ANGLE_DEG && h.c !== v.c;
@@ -235,11 +254,14 @@ export class PointModel {
 
   /** Multiplica los grosores (modo proyector). */
   setLineScale(scale: number): void {
-    this.trailMaterial.linewidth = WIDTH_TRAIL * scale;
-    this.referenceMaterial.linewidth = WIDTH_REFERENCE * scale;
-    this.projectorMaterial.linewidth = WIDTH_PROJECTOR * scale;
-    this.cotaMaterial.linewidth = WIDTH_MEASURE * scale;
-    this.alejamientoMaterial.linewidth = WIDTH_MEASURE * scale;
+    for (const layer of Object.values(this.layers)) layer.setLineScale(scale);
+  }
+
+  /** Avanza los fundidos de las capas. Devuelve true si alguno sigue en marcha. */
+  stepFades(dtMs: number): boolean {
+    let animating = false;
+    for (const layer of Object.values(this.layers)) animating = layer.step(dtMs) || animating;
+    return animating;
   }
 
   dispose(): void {

@@ -16,6 +16,7 @@ import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
 import { createPoint, type Point } from '../geometry/index.ts';
 import { toThreeArray } from './coords.ts';
 import { createLabel, placeLabel } from './labels.ts';
+import { FadeLayer } from './fadeLayer.ts';
 import { createThickLine } from './lines.ts';
 import type { SceneColors } from './sceneColors.ts';
 
@@ -24,8 +25,16 @@ export const PLANE_EXTENT_MM = 80;
 const GRID_STEP_MM = 10;
 const E = PLANE_EXTENT_MM;
 
+/** Capas de los planos, tal como se nombran en las lecciones. */
+export const PLANE_LAYERS = ['planos', 'cuadrantes'] as const;
+export type PlaneLayer = (typeof PLANE_LAYERS)[number];
+
 export class ProjectionPlanes {
   readonly group = new Group();
+  readonly layers: Record<PlaneLayer, FadeLayer> = {
+    planos: new FadeLayer(),
+    cuadrantes: new FadeLayer(),
+  };
 
   private readonly phMaterial = planeMaterial();
   private readonly pvMaterial = planeMaterial();
@@ -66,8 +75,15 @@ export class ProjectionPlanes {
     lt.renderOrder = 2;
 
     // El PH va en su propio grupo para poder abatirlo girando alrededor de la LT (eje X).
+    const { planos, cuadrantes } = this.layers;
     this.phGroup.add(ph, phGrid);
-    this.group.add(this.phGroup, pv, pvGrid, lt);
+    planos.group.add(this.phGroup, pv, pvGrid, lt);
+    this.group.add(planos.group, cuadrantes.group);
+    planos.addMaterial(this.phMaterial);
+    planos.addMaterial(this.pvMaterial);
+    planos.addMaterial(this.phGridMaterial);
+    planos.addMaterial(this.pvGridMaterial);
+    planos.addLine(this.ltMaterial, 4);
 
     // Rótulos de los planos y de la LT.
     this.phLabel = this.addLabel('PH', 'center', 'label-plane', createPoint(E - 8, E - 8, 0));
@@ -84,8 +100,16 @@ export class ProjectionPlanes {
       ['IV', createPoint(qx, 50, -50)],
     ];
     for (const [text, p] of quadrants) {
-      this.quadrantLabels.push(this.addLabel(text, 'center', 'label-quadrant', p));
+      const label = this.addLabel(text, 'center', 'label-quadrant', p, cuadrantes);
+      this.quadrantLabels.push(label);
     }
+  }
+
+  /** Avanza los fundidos de las capas. Devuelve true si alguno sigue en marcha. */
+  stepFades(dtMs: number): boolean {
+    const a = this.layers.planos.step(dtMs);
+    const b = this.layers.cuadrantes.step(dtMs);
+    return a || b;
   }
 
   /**
@@ -99,7 +123,7 @@ export class ProjectionPlanes {
 
   /** Multiplica el grosor de la LT (modo proyector). */
   setLineScale(scale: number): void {
-    this.ltMaterial.linewidth = 4 * scale;
+    this.layers.planos.setLineScale(scale);
   }
 
   setColors(colors: SceneColors): void {
@@ -131,10 +155,12 @@ export class ProjectionPlanes {
     placement: 'center' | 'e',
     className: string,
     p: Point,
+    layer: FadeLayer = this.layers.planos,
   ): CSS2DObject {
     const label = createLabel(text, placement, className);
     placeLabel(label, p);
-    this.group.add(label);
+    layer.group.add(label);
+    layer.addLabel(label);
     return label;
   }
 }
