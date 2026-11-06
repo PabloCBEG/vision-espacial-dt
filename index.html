@@ -20,10 +20,10 @@
   </head>
   <body>
     <header class="app-header">
-      <div class="app-brand">
+      <a class="app-brand" href="#/" aria-label="Visión espacial · Dibujo Técnico: inicio">
         <img class="app-logo" src="/favicon.svg" alt="" width="36" height="36" />
-        <h1 class="app-title">Visión espacial · Dibujo Técnico</h1>
-      </div>
+        <span class="app-title">Visión espacial · Dibujo Técnico</span>
+      </a>
       <div class="header-actions">
         <button id="projector-toggle" class="header-button" type="button" aria-pressed="false">
           Modo proyector
@@ -34,82 +34,146 @@
       </div>
     </header>
 
-    <main class="workspace">
-      <section class="panel panel-3d" aria-labelledby="panel-3d-title">
-        <div class="panel-header">
-          <h2 id="panel-3d-title" class="panel-title">Modelo 3D</h2>
-          <div id="view-buttons" class="view-buttons" role="group" aria-label="Vistas rápidas">
-            <button type="button" data-view="perspective" aria-pressed="true">Perspectiva</button>
-            <button type="button" data-view="front" aria-pressed="false">Frontal</button>
-            <button type="button" data-view="top" aria-pressed="false">Superior</button>
-            <button type="button" data-view="profile" aria-pressed="false">Perfil</button>
-          </div>
-        </div>
-
-        <div
-          id="view-3d"
-          class="view-3d"
-          role="img"
-          aria-label="Modelo en el espacio: planos de proyección PH y PV, línea de tierra y punto P con sus proyecciones"
-        >
-          <p class="placeholder">Cargando el modelo 3D…</p>
-        </div>
-        <p id="explain-caption" class="explain-caption" aria-live="polite" hidden></p>
+    <main id="main" class="main">
+      <section id="home" class="home" aria-labelledby="home-title" hidden>
+        <h1 id="home-title" class="home-title">Lecciones</h1>
+        <p class="home-intro">
+          Aprende a pasar del espacio a la lámina en el sistema diédrico. Cada lección muestra el
+          modelo 3D y la lámina a la vez, paso a paso, y termina con ejercicios.
+        </p>
+        <ul id="lesson-list" class="lesson-list"></ul>
+        <div id="lesson-errors" class="lesson-errors" hidden></div>
       </section>
 
-      <section class="panel panel-2d" aria-labelledby="panel-2d-title">
-        <div class="panel-header">
-          <h2 id="panel-2d-title" class="panel-title">Lámina</h2>
-          <div id="sheet-zoom" class="view-buttons" role="group" aria-label="Zoom de la lámina">
-            <button type="button" data-zoom="in" aria-label="Acercar">+</button>
-            <button type="button" data-zoom="out" aria-label="Alejar">−</button>
-            <button type="button" data-zoom="fit">Encuadrar</button>
-          </div>
-        </div>
-        <div id="view-2d" class="view-2d">
-          <p class="placeholder">Cargando la lámina…</p>
-        </div>
-      </section>
-
-      <section class="controls-bar" aria-label="Controles del punto">
-        <p id="point-description" class="visually-hidden" aria-live="polite"></p>
-        <form id="point-controls" class="point-controls" aria-label="Coordenadas del punto P">
-          <p class="point-hint">
-            Mueve P con los deslizadores o arrastra P, P′ o P″ en el modelo o en la lámina.
-          </p>
-          <div class="slider">
-            <label for="slider-x">x</label>
-            <output data-axis="x" for="slider-x"></output>
-            <input id="slider-x" name="x" type="range" min="-60" max="60" step="1" />
-          </div>
-          <div class="slider">
-            <label for="slider-a">Alejamiento (a)</label>
-            <output data-axis="a" for="slider-a"></output>
-            <input id="slider-a" name="a" type="range" min="-60" max="60" step="1" />
-          </div>
-          <div class="slider">
-            <label for="slider-c">Cota (c)</label>
-            <output data-axis="c" for="slider-c"></output>
-            <input id="slider-c" name="c" type="range" min="-60" max="60" step="1" />
-          </div>
-        </form>
-
-        <div id="fold-controls" class="fold-controls" role="group" aria-label="Abatimiento del PH">
-          <div class="slider">
-            <label for="slider-fold">Abatir PH</label>
-            <output id="output-fold" for="slider-fold">0°</output>
-            <input id="slider-fold" type="range" min="0" max="90" step="1" value="0" />
-          </div>
-          <div class="fold-buttons">
-            <button id="fold-play" type="button" class="action-button">
-              Reproducir abatimiento
+      <div id="workspace" class="workspace" hidden>
+        <h1 id="free-title" class="visually-hidden">Explorar libremente</h1>
+        <section id="lesson-bar" class="lesson-bar" aria-labelledby="lesson-title" hidden>
+          <div class="lesson-head">
+            <a class="back-link" href="#/">← Lecciones</a>
+            <h1 id="lesson-title" class="lesson-title"></h1>
+            <fieldset id="help-level" class="help-level">
+              <legend>Ayuda</legend>
+              <label><input type="radio" name="help-level" value="with3d" checked /> Con 3D</label>
+              <label><input type="radio" name="help-level" value="hint" /> Con pista</label>
+              <label><input type="radio" name="help-level" value="only2d" /> Solo 2D</label>
+            </fieldset>
+            <button id="hint-button" type="button" class="action-button" hidden>
+              Ver el 3D 5 s
             </button>
-            <button id="explain-toggle" type="button" class="action-button" aria-pressed="false">
-              Explicar
-            </button>
+            <span id="lesson-progress-text" class="lesson-progress-text"></span>
           </div>
-        </div>
-      </section>
+          <div
+            id="lesson-progress"
+            class="lesson-progress"
+            role="progressbar"
+            aria-label="Progreso de la lección"
+            aria-valuemin="1"
+          >
+            <span id="lesson-progress-fill" class="lesson-progress-fill"></span>
+          </div>
+          <div class="lesson-body">
+            <div class="lesson-text">
+              <p id="lesson-narration" class="lesson-narration" aria-live="polite"></p>
+              <div id="exercise-panel" class="exercise-panel" hidden>
+                <button id="exercise-check" type="button" class="action-button is-primary">
+                  Comprobar
+                </button>
+                <p id="exercise-feedback" class="exercise-feedback" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="lesson-controls">
+              <button id="lesson-prev" type="button" class="action-button">← Anterior</button>
+              <button id="lesson-play" type="button" class="action-button" aria-pressed="false">
+                Reproducir
+              </button>
+              <button id="lesson-next" type="button" class="action-button is-primary">
+                Siguiente →
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel-3d" aria-labelledby="panel-3d-title">
+          <div class="panel-header">
+            <h2 id="panel-3d-title" class="panel-title">Modelo 3D</h2>
+            <div id="view-buttons" class="view-buttons" role="group" aria-label="Vistas rápidas">
+              <button type="button" data-view="perspective" aria-pressed="true">Perspectiva</button>
+              <button type="button" data-view="front" aria-pressed="false">Frontal</button>
+              <button type="button" data-view="top" aria-pressed="false">Superior</button>
+              <button type="button" data-view="profile" aria-pressed="false">Perfil</button>
+            </div>
+          </div>
+
+          <div
+            id="view-3d"
+            class="view-3d"
+            role="img"
+            aria-label="Modelo en el espacio: planos de proyección PH y PV, línea de tierra y punto P con sus proyecciones"
+          >
+            <p class="placeholder">Cargando el modelo 3D…</p>
+          </div>
+          <p id="explain-caption" class="explain-caption" aria-live="polite" hidden></p>
+        </section>
+
+        <section class="panel panel-2d" aria-labelledby="panel-2d-title">
+          <div class="panel-header">
+            <h2 id="panel-2d-title" class="panel-title">Lámina</h2>
+            <div id="sheet-zoom" class="view-buttons" role="group" aria-label="Zoom de la lámina">
+              <button type="button" data-zoom="in" aria-label="Acercar">+</button>
+              <button type="button" data-zoom="out" aria-label="Alejar">−</button>
+              <button type="button" data-zoom="fit">Encuadrar</button>
+            </div>
+          </div>
+          <div id="view-2d" class="view-2d">
+            <p class="placeholder">Cargando la lámina…</p>
+          </div>
+        </section>
+
+        <section class="controls-bar" aria-label="Controles del punto">
+          <p id="point-description" class="visually-hidden" aria-live="polite"></p>
+          <form id="point-controls" class="point-controls" aria-label="Coordenadas del punto P">
+            <p class="point-hint">
+              Mueve P con los deslizadores o arrastra P, P′ o P″ en el modelo o en la lámina.
+            </p>
+            <div class="slider">
+              <label for="slider-x">x</label>
+              <output data-axis="x" for="slider-x"></output>
+              <input id="slider-x" name="x" type="range" min="-60" max="60" step="1" />
+            </div>
+            <div class="slider">
+              <label for="slider-a">Alejamiento (a)</label>
+              <output data-axis="a" for="slider-a"></output>
+              <input id="slider-a" name="a" type="range" min="-60" max="60" step="1" />
+            </div>
+            <div class="slider">
+              <label for="slider-c">Cota (c)</label>
+              <output data-axis="c" for="slider-c"></output>
+              <input id="slider-c" name="c" type="range" min="-60" max="60" step="1" />
+            </div>
+          </form>
+
+          <div
+            id="fold-controls"
+            class="fold-controls"
+            role="group"
+            aria-label="Abatimiento del PH"
+          >
+            <div class="slider">
+              <label for="slider-fold">Abatir PH</label>
+              <output id="output-fold" for="slider-fold">0°</output>
+              <input id="slider-fold" type="range" min="0" max="90" step="1" value="0" />
+            </div>
+            <div class="fold-buttons">
+              <button id="fold-play" type="button" class="action-button">
+                Reproducir abatimiento
+              </button>
+              <button id="explain-toggle" type="button" class="action-button" aria-pressed="false">
+                Explicar
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script type="module" src="/src/main.ts"></script>

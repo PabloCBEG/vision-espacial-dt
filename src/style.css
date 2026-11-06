@@ -80,6 +80,12 @@
 }
 
 /* ---------- Base ---------- */
+
+/* Lo oculto con el atributo hidden queda oculto aunque su clase diga otra cosa. */
+[hidden] {
+  display: none !important;
+}
+
 *,
 *::before,
 *::after {
@@ -126,6 +132,8 @@ body {
   align-items: center;
   gap: var(--space-s);
   min-width: 0;
+  color: inherit;
+  text-decoration: none;
 }
 
 .app-logo {
@@ -169,6 +177,247 @@ body {
   font-weight: 700;
 }
 
+/* ---------- Contenido principal ---------- */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ---------- Pantalla de inicio ---------- */
+.home {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: var(--space-l) var(--space-m);
+}
+
+.home-title {
+  margin: 0 0 var(--space-s);
+  font-size: 1.5rem;
+}
+
+.home-intro {
+  margin: 0 0 var(--space-l);
+  max-width: 44rem;
+  color: var(--color-text-muted);
+}
+
+.lesson-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--space-m);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-card-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  height: 100%;
+  padding: var(--space-m);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+  background: var(--color-surface);
+  color: inherit;
+  text-decoration: none;
+}
+
+.lesson-card-link:hover {
+  border-color: var(--color-accent);
+}
+
+.lesson-card-meta {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.badge {
+  padding: 0 var(--space-s);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.badge-muted {
+  background: transparent;
+  border: var(--border-width) solid var(--color-border);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.lesson-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.lesson-card-text {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.lesson-card-footer {
+  margin-top: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.lesson-card-free .lesson-card-link {
+  border-style: dashed;
+}
+
+.lesson-errors {
+  margin-top: var(--space-l);
+  padding: var(--space-m);
+  border-left: 4px solid var(--color-focus);
+  background: var(--color-surface);
+}
+
+/* ---------- Barra de la lección ---------- */
+.lesson-bar {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--space-s);
+  padding: var(--space-s) var(--space-m);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+}
+
+.lesson-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-s) var(--space-m);
+}
+
+.back-link {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.lesson-title {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.lesson-progress-text {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.lesson-progress {
+  height: 0.375rem;
+  border-radius: 999px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.lesson-progress-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--color-accent);
+  transition: width 0.4s ease;
+}
+
+.lesson-body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-m);
+}
+
+.lesson-text {
+  flex: 1;
+  display: grid;
+  gap: var(--space-s);
+  min-width: 0;
+}
+
+.lesson-narration {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+
+.lesson-controls {
+  flex-shrink: 0;
+}
+
+.lesson-controls,
+.exercise-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+.action-button.is-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+  font-weight: 700;
+}
+
+.action-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.exercise-feedback {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Acierto y error se distinguen por el símbolo y el texto, no solo por el color. */
+.exercise-feedback.is-correct::before {
+  content: '✓ ';
+}
+
+.exercise-feedback.is-wrong::before {
+  content: '✗ ';
+}
+
+.help-level {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin: 0 0 0 auto;
+  font-size: 0.9375rem;
+  padding: 0;
+  border: 0;
+}
+
+.help-level legend {
+  float: left;
+  margin-right: var(--space-xs);
+  font-weight: 600;
+}
+
+.help-level label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+}
+
+/* Niveles de ayuda: con pista (3D oculto salvo 5 s) y solo 2D. */
+body[data-help='hint']:not([data-peek3d]) .panel-3d,
+body[data-help='only2d'] .panel-3d {
+  display: none;
+}
+
+body[data-help='hint']:not([data-peek3d]) .panel-2d,
+body[data-help='only2d'] .panel-2d {
+  grid-column: 1 / -1;
+}
+
 /* ---------- Área de trabajo: 3D a la izquierda, lámina a la derecha, controles debajo ---------- */
 .workspace {
   flex: 1;
@@ -178,6 +427,10 @@ body {
   gap: var(--space-m);
   padding: var(--space-m);
   min-height: 0;
+}
+
+body[data-screen='lesson'] .workspace {
+  grid-template-rows: auto minmax(0, 1fr) auto;
 }
 
 .controls-bar {
@@ -245,10 +498,6 @@ body {
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.15);
   font-weight: 600;
   pointer-events: none;
-}
-
-.explain-caption[hidden] {
-  display: none;
 }
 
 /* P′ todavía no ha llegado a la lámina: gris translúcido en su posición final. */
@@ -617,8 +866,74 @@ body {
   font-size: 1.35rem;
 }
 
+/* ---------- Capas de la lámina: aparecen y desaparecen con un fundido ---------- */
+.sheet-layer,
+.sheet-handle {
+  transition: opacity 0.45s ease;
+}
+
+.sheet-layer.is-hidden,
+.sheet-handle.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Destacado: color de acento y trazo más grueso (no solo color). */
+.sheet-layer.is-highlighted .sheet-thin,
+.sheet-layer.is-highlighted .sheet-thick {
+  stroke: var(--color-accent);
+  stroke-width: calc(var(--sheet-thin) * 2);
+}
+
+.sheet-layer.is-highlighted .sheet-label,
+.sheet-layer.is-highlighted .sheet-dimension-text,
+.sheet-layer.is-highlighted .sheet-arrow {
+  fill: var(--color-accent);
+  font-weight: 700;
+}
+
+.sheet-grid {
+  stroke: var(--color-text-muted);
+  stroke-width: 0.75px;
+  opacity: 0.3;
+}
+
+.sheet-target-dot {
+  fill: var(--scene-point);
+}
+
+/* Rótulos destacados en el 3D. */
+.scene-label.is-highlighted > span {
+  outline: 2px solid var(--color-accent);
+  font-weight: 800;
+}
+
 /* ---------- Pantallas estrechas: se apilan, 3D arriba ---------- */
 @media (max-width: 767px) {
+  .lesson-bar {
+    padding: var(--space-s);
+  }
+
+  .lesson-body {
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+
+  .lesson-controls {
+    width: 100%;
+  }
+
+  .lesson-controls .action-button {
+    flex: 1;
+  }
+
+  .help-level {
+    margin: 0;
+  }
+
+  .home {
+    padding: var(--space-m) var(--space-s);
+  }
   /* En el móvil la página crece hacia abajo y se desplaza: los paneles no se aplastan. */
   html,
   body {
