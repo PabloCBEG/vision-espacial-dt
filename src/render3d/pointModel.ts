@@ -21,7 +21,13 @@ import {
 import { formatMm } from '../ui/format.ts';
 import { toThree } from './coords.ts';
 import { FadeLayer } from './fadeLayer.ts';
-import { createLabel, placeLabel, setLabelPlacement, setLabelText } from './labels.ts';
+import {
+  createLabel,
+  placeLabel,
+  removeLabels,
+  setLabelPlacement,
+  setLabelText,
+} from './labels.ts';
 import { createThickLine, setThickLinePoints } from './lines.ts';
 import type { SceneColors } from './sceneColors.ts';
 
@@ -265,6 +271,7 @@ export class PointModel {
   }
 
   dispose(): void {
+    removeLabels(this.group);
     this.group.removeFromParent();
   }
 }

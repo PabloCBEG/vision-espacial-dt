@@ -1,4 +1,5 @@
 // Etiquetas HTML ancladas a puntos de la escena (nítidas en móvil y proyector).
+import type { Object3D } from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import type { Point } from '../geometry/index.ts';
 import { toThree } from './coords.ts';
@@ -30,6 +31,16 @@ export function createLabel(
 export function setLabelText(label: CSS2DObject, text: string): void {
   const span = label.element.firstElementChild;
   if (span && span.textContent !== text) span.textContent = text;
+}
+
+/**
+ * Quita del documento los rótulos de un grupo. CSS2DRenderer no lo hace solo cuando se
+ * retira un grupo entero de la escena, y quedarían rótulos sueltos.
+ */
+export function removeLabels(root: Object3D): void {
+  root.traverse((object) => {
+    if (object instanceof CSS2DObject) object.element.remove();
+  });
 }
 
 /** Cambia hacia dónde se desplaza el texto de una etiqueta. */

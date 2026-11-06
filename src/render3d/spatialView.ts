@@ -13,11 +13,19 @@ import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import {
   getPoint,
   isLayerVisible,
+  isProfileVisible,
+  lineOf,
+  objectsNeedingProfile,
+  planeOf,
   setPoint,
   type AppState,
   type AppStore,
 } from '../state/index.ts';
 import type { FadeLayer } from './fadeLayer.ts';
+import { removeLabels } from './labels.ts';
+import { LineModel } from './lineModel.ts';
+import { PlaneModel } from './planeModel.ts';
+import { ProfileModel, type ProfileContent } from './profileModel.ts';
 import { CameraAnimator, MAX_DISTANCE_MM, MIN_DISTANCE_MM, type ViewName } from './cameraViews.ts';
 import { attachPointDrag } from './pointDrag.ts';
 import { PointModel } from './pointModel.ts';
@@ -40,6 +48,9 @@ export class SpatialView {
   private readonly animator: CameraAnimator;
   private readonly planes = new ProjectionPlanes();
   private readonly pointModels = new Map<string, PointModel>();
+  private readonly lineModels = new Map<string, LineModel>();
+  private readonly planeModels = new Map<string, PlaneModel>();
+  private readonly profile = new ProfileModel();
   private readonly cleanups: (() => void)[] = [];
   private colors: SceneColors;
   private lineScale = 1;
@@ -58,7 +69,8 @@ export class SpatialView {
     this.labelRenderer.domElement.className = 'label-layer';
     container.replaceChildren(this.renderer.domElement, this.labelRenderer.domElement);
 
-    this.scene.add(new AmbientLight(0xffffff, 1.6), this.planes.group);
+    this.scene.add(new AmbientLight(0xffffff, 1.6), this.planes.group, this.profile.layer.group);
+    this.profile.layer.setVisible(false, true);
     const light = new DirectionalLight(0xffffff, 1.6);
     light.position.set(60, 120, 90);
     this.scene.add(light);
@@ -149,12 +161,94 @@ export class SpatialView {
       this.syncLayer(layer, name, state, false);
     }
 
+    // Rectas y planos.
+    const lines = state.objects.filter((o) => o.kind === 'line');
+    const planes = state.objects.filter((o) => o.kind === 'plane');
+    this.prune(this.lineModels, new Set(lines.map((o) => o.id)));
+    this.prune(this.planeModels, new Set(planes.map((o) => o.id)));
+    for (const o of lines) {
+      let model = this.lineModels.get(o.id);
+      const isNew = !model;
+      if (!model) {
+        model = new LineModel(o.id);
+        model.onLineCreated = (line) => {
+          line.material.resolution.set(this.width, this.height);
+        };
+        model.setColors(this.colors);
+        model.setLineScale(this.lineScale);
+        this.scene.add(...model.groups);
+        this.lineModels.set(o.id, model);
+      }
+      model.update(lineOf(state, o.through), state.foldAngle);
+      this.applyResolution(model.layers.recta.group);
+      this.syncLayer(model.layers.recta, `recta:${o.id}`, state, isNew);
+      this.syncLayer(model.layers.trazas, `trazas:${o.id}`, state, isNew);
+    }
+    for (const o of planes) {
+      let model = this.planeModels.get(o.id);
+      const isNew = !model;
+      if (!model) {
+        model = new PlaneModel(o.id);
+        model.setColors(this.colors);
+        model.setLineScale(this.lineScale);
+        this.scene.add(...model.groups);
+        this.applyResolution(model.layers.trazas.group);
+        this.planeModels.set(o.id, model);
+      }
+      model.update(planeOf(state, o.through), state.foldAngle);
+      this.syncLayer(model.layers.plano, `plano:${o.id}`, state, isNew);
+      this.syncLayer(model.layers.trazas, `trazas:${o.id}`, state, isNew);
+    }
+
+    // Tercera proyección: solo cuando una recta o un plano visible la necesita.
+    this.profile.update(this.profileContent(state));
+    this.profile.layer.setVisible(isProfileVisible(state, state.layers3d));
+
     const scale = state.projector ? PROJECTOR_LINE_SCALE : 1;
     if (scale !== this.lineScale) {
       this.lineScale = scale;
       this.planes.setLineScale(scale);
-      for (const model of this.pointModels.values()) model.setLineScale(scale);
+      this.profile.setLineScale(scale);
+      for (const model of this.allModels()) model.setLineScale(scale);
     }
+  }
+
+  private profileContent(state: AppState): ProfileContent {
+    const content: ProfileContent = { points: [], lines: [], planes: [] };
+    for (const id of objectsNeedingProfile(state)) {
+      const object = state.objects.find((o) => o.id === id);
+      if (object?.kind === 'line') {
+        const r = lineOf(state, object.through);
+        if (r) content.lines.push({ name: id, r });
+        for (const p of object.through) content.points.push({ name: p, p: getPoint(state, p) });
+      } else if (object?.kind === 'plane') {
+        const alpha = planeOf(state, object.through);
+        if (alpha) content.planes.push({ name: id, alpha });
+      }
+    }
+    return content;
+  }
+
+  private prune<T extends { groups: unknown[] }>(
+    models: Map<string, T>,
+    wanted: Set<string>,
+  ): void {
+    for (const [id, model] of models) {
+      if (wanted.has(id)) continue;
+      for (const group of model.groups as Object3D[]) {
+        removeLabels(group);
+        group.removeFromParent();
+      }
+      models.delete(id);
+    }
+  }
+
+  private allModels(): (PointModel | LineModel | PlaneModel)[] {
+    return [
+      ...this.pointModels.values(),
+      ...this.lineModels.values(),
+      ...this.planeModels.values(),
+    ];
   }
 
   /** Capa visible o no, y destacada o no, según el paso de la lección. */
@@ -176,7 +270,8 @@ export class SpatialView {
     const dt = this.lastFrame === 0 ? 16 : Math.min(100, now - this.lastFrame);
     this.lastFrame = now;
     let fading = this.planes.stepFades(dt);
-    for (const model of this.pointModels.values()) fading = model.stepFades(dt) || fading;
+    fading = this.profile.layer.step(dt) || fading;
+    for (const model of this.allModels()) fading = model.stepFades(dt) || fading;
     const animating = this.animator.step(now);
     // Durante una transición manda la animación; si no, los controles (con inercia).
     const moving = animating ? false : this.controls.update();
@@ -222,7 +317,8 @@ export class SpatialView {
     const apply = (): void => {
       this.colors = readSceneColors(this.container);
       this.planes.setColors(this.colors);
-      for (const model of this.pointModels.values()) model.setColors(this.colors);
+      this.profile.setColors(this.colors);
+      for (const model of this.allModels()) model.setColors(this.colors);
       this.requestRender();
     };
     apply();

@@ -8,6 +8,10 @@ export interface SceneColors {
   point: Color;
   cota: Color;
   alejamiento: Color;
+  line: Color;
+  trace: Color;
+  plane: Color;
+  profile: Color;
 }
 
 const VARIABLES: Record<keyof SceneColors, string> = {
@@ -17,6 +21,10 @@ const VARIABLES: Record<keyof SceneColors, string> = {
   point: '--scene-point',
   cota: '--scene-cota',
   alejamiento: '--scene-alejamiento',
+  line: '--scene-line',
+  trace: '--scene-trace',
+  plane: '--scene-plane',
+  profile: '--scene-profile',
 };
 
 export function readSceneColors(element: Element): SceneColors {
@@ -29,5 +37,9 @@ export function readSceneColors(element: Element): SceneColors {
     point: read(VARIABLES.point),
     cota: read(VARIABLES.cota),
     alejamiento: read(VARIABLES.alejamiento),
+    line: read(VARIABLES.line),
+    trace: read(VARIABLES.trace),
+    plane: read(VARIABLES.plane),
+    profile: read(VARIABLES.profile),
   };
 }
