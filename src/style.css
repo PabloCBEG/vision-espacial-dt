@@ -140,7 +140,13 @@ body {
   font-weight: 600;
 }
 
-.theme-toggle {
+.header-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--space-s);
+}
+
+.header-button {
   flex-shrink: 0;
   padding: var(--space-xs) var(--space-m);
   border: var(--border-width) solid var(--color-border);
@@ -151,18 +157,34 @@ body {
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.header-button:hover {
   border-color: var(--color-accent);
 }
 
-/* ---------- Área de trabajo: 3D a la izquierda, lámina a la derecha ---------- */
+/* Botón activado: relleno y negrita, no solo color. */
+#projector-toggle[aria-pressed='true'] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+  font-weight: 700;
+}
+
+/* ---------- Área de trabajo: 3D a la izquierda, lámina a la derecha, controles debajo ---------- */
 .workspace {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(0, 1fr) auto;
   gap: var(--space-m);
   padding: var(--space-m);
   min-height: 0;
+}
+
+.controls-bar {
+  grid-column: 1 / -1;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
 }
 
 .panel {
@@ -364,7 +386,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-s) var(--space-m);
   padding: var(--space-s) var(--space-m) var(--space-m);
-  border-top: var(--border-width) solid var(--color-border);
 }
 
 .point-hint {
@@ -403,12 +424,142 @@ body {
   accent-color: var(--color-accent);
 }
 
+/* ---------- Lámina 2D (SVG, 1 unidad = 1 mm) ---------- */
+.view-2d {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sheet {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* --u = mm de lámina por píxel: textos y flechas mantienen su tamaño en pantalla. */
+  --u: 1;
+}
+
+.sheet line,
+.sheet polyline,
+.sheet path {
+  vector-effect: non-scaling-stroke;
+  fill: none;
+}
+
+.sheet-thin {
+  stroke: var(--color-text);
+  stroke-width: var(--sheet-thin);
+}
+
+.sheet-thick {
+  stroke: var(--color-text);
+  stroke-width: var(--sheet-thick);
+  stroke-linecap: butt;
+}
+
+.sheet-arrow {
+  fill: var(--color-text);
+  stroke: none;
+}
+
+.sheet-label {
+  fill: var(--color-text);
+  font-size: calc(var(--u) * var(--sheet-font));
+  font-weight: 600;
+}
+
+.sheet-dimension-text {
+  fill: var(--color-text);
+  font-size: calc(var(--u) * var(--sheet-dimension-font));
+  font-variant-numeric: tabular-nums;
+}
+
+.sheet-handle {
+  cursor: grab;
+  outline: none;
+  touch-action: none;
+}
+
+.sheet-handle.is-dragging {
+  cursor: grabbing;
+}
+
+.sheet-handle-hit {
+  fill: transparent;
+}
+
+.sheet-handle-ring {
+  fill: none;
+  stroke: transparent;
+  stroke-width: var(--focus-width);
+  vector-effect: non-scaling-stroke;
+}
+
+/* Foco visible con teclado: un anillo alrededor del punto. */
+.sheet-handle:focus-visible .sheet-handle-ring {
+  stroke: var(--color-focus);
+}
+
+.sheet-handle-dot {
+  fill: var(--scene-point);
+}
+
+/* ---------- Modo proyector: trazos más gruesos, más contraste y letra más grande ---------- */
+:root {
+  --sheet-thin: 1.25px;
+  --sheet-thick: 2.5px;
+  --sheet-font: 15px;
+  --sheet-dimension-font: 13px;
+}
+
+:root[data-projector='on'] {
+  font-size: 125%; /* todo lo medido en rem crece */
+  --sheet-thin: 2.5px;
+  --sheet-thick: 5px;
+  --sheet-font: 24px;
+  --sheet-dimension-font: 20px;
+  --color-text-muted: var(--color-text);
+  --color-border: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+
+:root[data-projector='on'] .scene-label > span {
+  font-size: 1.15rem;
+}
+
+:root[data-projector='on'] .label-point > span {
+  font-size: 1.35rem;
+}
+
 /* ---------- Pantallas estrechas: se apilan, 3D arriba ---------- */
 @media (max-width: 767px) {
   /* En el móvil la página crece hacia abajo y se desplaza: los paneles no se aplastan. */
   html,
   body {
     height: auto;
+  }
+
+  .app-header {
+    flex-wrap: wrap;
+    row-gap: var(--space-xs);
+  }
+
+  .controls-bar {
+    order: 2;
+  }
+
+  .panel-2d {
+    order: 3;
+  }
+
+  .view-2d {
+    flex: none;
+    height: 75vw;
+    min-height: 240px;
   }
 
   .workspace {
@@ -456,7 +607,7 @@ body {
     font-size: 0.9375rem;
   }
 
-  .theme-toggle {
+  .header-button {
     padding: var(--space-xs) var(--space-s);
   }
 }

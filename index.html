@@ -24,9 +24,14 @@
         <img class="app-logo" src="/favicon.svg" alt="" width="36" height="36" />
         <h1 class="app-title">Visión espacial · Dibujo Técnico</h1>
       </div>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
-        Tema oscuro
-      </button>
+      <div class="header-actions">
+        <button id="projector-toggle" class="header-button" type="button" aria-pressed="false">
+          Modo proyector
+        </button>
+        <button id="theme-toggle" class="header-button" type="button" aria-pressed="false">
+          Tema oscuro
+        </button>
+      </div>
     </header>
 
     <main class="workspace">
@@ -49,10 +54,28 @@
         >
           <p class="placeholder">Cargando el modelo 3D…</p>
         </div>
-        <p id="point-description" class="visually-hidden" aria-live="polite"></p>
+      </section>
 
+      <section class="panel panel-2d" aria-labelledby="panel-2d-title">
+        <div class="panel-header">
+          <h2 id="panel-2d-title" class="panel-title">Lámina</h2>
+          <div id="sheet-zoom" class="view-buttons" role="group" aria-label="Zoom de la lámina">
+            <button type="button" data-zoom="in" aria-label="Acercar">+</button>
+            <button type="button" data-zoom="out" aria-label="Alejar">−</button>
+            <button type="button" data-zoom="fit">Encuadrar</button>
+          </div>
+        </div>
+        <div id="view-2d" class="view-2d">
+          <p class="placeholder">Cargando la lámina…</p>
+        </div>
+      </section>
+
+      <section class="controls-bar" aria-label="Controles del punto">
+        <p id="point-description" class="visually-hidden" aria-live="polite"></p>
         <form id="point-controls" class="point-controls" aria-label="Coordenadas del punto P">
-          <p class="point-hint">Mueve P con los deslizadores o arrastra P, P′ o P″ en el modelo.</p>
+          <p class="point-hint">
+            Mueve P con los deslizadores o arrastra P, P′ o P″ en el modelo o en la lámina.
+          </p>
           <div class="slider">
             <label for="slider-x">x</label>
             <output data-axis="x" for="slider-x"></output>
@@ -69,13 +92,6 @@
             <input id="slider-c" name="c" type="range" min="-60" max="60" step="1" />
           </div>
         </form>
-      </section>
-
-      <section class="panel panel-2d" aria-labelledby="panel-2d-title">
-        <h2 id="panel-2d-title" class="panel-title">Lámina</h2>
-        <div id="view-2d" class="panel-body" role="img" aria-label="Lámina en sistema diédrico">
-          <p class="placeholder">Aquí aparecerá la lámina en sistema diédrico.</p>
-        </div>
       </section>
     </main>
 
