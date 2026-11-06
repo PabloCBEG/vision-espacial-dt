@@ -1,0 +1,107 @@
+{
+  "id": "el-punto",
+  "order": 1,
+  "title": "El punto en el sistema diédrico",
+  "course": "DT I",
+  "saberBasico": "Sistemas de representación: fundamentos del sistema diédrico. Representación del punto.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": { "P": [20, 30, 40] },
+    "objects": [{ "kind": "point", "id": "P" }],
+    "activePoint": "P"
+  },
+  "steps": [
+    {
+      "narration": "El sistema diédrico usa dos planos perpendiculares: el horizontal (PH) y el vertical (PV). Se cortan en la línea de tierra (LT) y dividen el espacio en cuatro cuadrantes.",
+      "show3d": ["planos", "cuadrantes"],
+      "sheet": [],
+      "highlight": ["planos"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Este es el punto P. Está en el primer cuadrante: delante del PV y por encima del PH.",
+      "show3d": ["planos", "cuadrantes", "punto:P"],
+      "sheet": [],
+      "highlight": ["punto:P"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Desde P trazamos perpendiculares a los dos planos. Donde cortan al PH está P′ y donde cortan al PV, P″.",
+      "show3d": ["planos", "punto:P", "proyectantes:P", "proyecciones:P"],
+      "sheet": [],
+      "highlight": ["proyecciones:P", "proyectantes:P"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "La cota es la distancia de P al PH y el alejamiento, la distancia de P al PV. Las dos se miden también desde la LT, en P″ y en P′.",
+      "show3d": ["planos", "punto:P", "proyectantes:P", "proyecciones:P", "medidas:P"],
+      "sheet": [],
+      "highlight": ["medidas:P"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Giramos el PH alrededor de la LT hasta que coincide con el PV. P′ viaja con el PH y P″ no se mueve.",
+      "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+      "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+      "highlight": ["proyecciones:P"],
+      "camera": "perspective",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Esto es la lámina: P″ y P′ quedan en una misma línea de referencia, perpendicular a la LT. La cota se mide sobre la LT y el alejamiento, por debajo.",
+      "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+      "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+      "highlight": ["referencia:P", "medidas:P"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Si P está detrás del PV, está en el segundo cuadrante y su alejamiento es negativo.",
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:P",
+        "proyectantes:P",
+        "proyecciones:P",
+        "medidas:P"
+      ],
+      "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+      "highlight": ["punto:P", "medidas:P"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "points": { "P": [20, -25, 35] }
+    },
+    {
+      "narration": "Al abatir, P′ queda por encima de la LT: en el segundo cuadrante las dos proyecciones están sobre la LT.",
+      "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+      "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+      "highlight": ["proyecciones:P"],
+      "camera": "front",
+      "foldAngle": 90
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "placePoint",
+      "prompt": "Coloca P en el espacio para que sus proyecciones sean las de la lámina. Cada cuadro de la lámina mide 10 mm.",
+      "point": "P",
+      "target": [30, 20, 35]
+    },
+    {
+      "kind": "placePoint",
+      "prompt": "Coloca P a partir de la lámina. Fíjate bien en qué proyección está sobre la LT y cuál debajo.",
+      "point": "P",
+      "target": [-20, 40, 15]
+    },
+    {
+      "kind": "placePoint",
+      "prompt": "Ahora P está en otro cuadrante. Colócalo en el espacio a partir de su lámina.",
+      "point": "P",
+      "target": [10, -25, 30]
+    }
+  ]
+}
