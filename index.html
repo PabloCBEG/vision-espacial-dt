@@ -31,10 +31,44 @@
 
     <main class="workspace">
       <section class="panel panel-3d" aria-labelledby="panel-3d-title">
-        <h2 id="panel-3d-title" class="panel-title">Modelo 3D</h2>
-        <div id="view-3d" class="panel-body" role="img" aria-label="Modelo en el espacio">
-          <p class="placeholder">Aquí aparecerá el modelo en el espacio.</p>
+        <div class="panel-header">
+          <h2 id="panel-3d-title" class="panel-title">Modelo 3D</h2>
+          <div id="view-buttons" class="view-buttons" role="group" aria-label="Vistas rápidas">
+            <button type="button" data-view="perspective" aria-pressed="true">Perspectiva</button>
+            <button type="button" data-view="front" aria-pressed="false">Frontal</button>
+            <button type="button" data-view="top" aria-pressed="false">Superior</button>
+            <button type="button" data-view="profile" aria-pressed="false">Perfil</button>
+          </div>
         </div>
+
+        <div
+          id="view-3d"
+          class="view-3d"
+          role="img"
+          aria-label="Modelo en el espacio: planos de proyección PH y PV, línea de tierra y punto P con sus proyecciones"
+        >
+          <p class="placeholder">Cargando el modelo 3D…</p>
+        </div>
+        <p id="point-description" class="visually-hidden" aria-live="polite"></p>
+
+        <form id="point-controls" class="point-controls" aria-label="Coordenadas del punto P">
+          <p class="point-hint">Mueve P con los deslizadores o arrastra P, P′ o P″ en el modelo.</p>
+          <div class="slider">
+            <label for="slider-x">x</label>
+            <output data-axis="x" for="slider-x"></output>
+            <input id="slider-x" name="x" type="range" min="-60" max="60" step="1" />
+          </div>
+          <div class="slider">
+            <label for="slider-a">Alejamiento (a)</label>
+            <output data-axis="a" for="slider-a"></output>
+            <input id="slider-a" name="a" type="range" min="-60" max="60" step="1" />
+          </div>
+          <div class="slider">
+            <label for="slider-c">Cota (c)</label>
+            <output data-axis="c" for="slider-c"></output>
+            <input id="slider-c" name="c" type="range" min="-60" max="60" step="1" />
+          </div>
+        </form>
       </section>
 
       <section class="panel panel-2d" aria-labelledby="panel-2d-title">

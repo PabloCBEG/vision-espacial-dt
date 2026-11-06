@@ -9,6 +9,15 @@
   --color-accent: #1f5fbf;
   --color-focus: #e07a00;
 
+  /* Escena 3D (Three.js lee estos colores; solo valores hexadecimales) */
+  --scene-ph: #3d8bd9;
+  --scene-pv: #d9962b;
+  --scene-lt: #1b1f24;
+  --scene-point: #c2185b;
+  --scene-cota: #9a5a00;
+  --scene-alejamiento: #1d5fa8;
+  --label-bg: rgb(255 255 255 / 0.85);
+
   /* Tipografía */
   --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-size-base: 1rem;
@@ -40,6 +49,13 @@
     --color-border: #3a414c;
     --color-accent: #7fb0ff;
     --color-focus: #ffb347;
+    --scene-ph: #5aa2f0;
+    --scene-pv: #f0b54a;
+    --scene-lt: #e8eaed;
+    --scene-point: #ff5c9a;
+    --scene-cota: #ffc56b;
+    --scene-alejamiento: #8cc2ff;
+    --label-bg: rgb(28 32 39 / 0.85);
     color-scheme: dark;
   }
 }
@@ -53,6 +69,13 @@
   --color-border: #3a414c;
   --color-accent: #7fb0ff;
   --color-focus: #ffb347;
+  --scene-ph: #5aa2f0;
+  --scene-pv: #f0b54a;
+  --scene-lt: #e8eaed;
+  --scene-point: #ff5c9a;
+  --scene-cota: #ffc56b;
+  --scene-alejamiento: #8cc2ff;
+  --label-bg: rgb(28 32 39 / 0.85);
   color-scheme: dark;
 }
 
@@ -174,9 +197,222 @@ body {
   text-align: center;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Panel 3D: cabecera con vistas rápidas ---------- */
+.panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding: var(--space-s) var(--space-m);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.panel-header .panel-title {
+  padding: 0;
+  border: 0;
+}
+
+.view-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.view-buttons button {
+  min-height: 2.25rem;
+  padding: var(--space-xs) var(--space-s);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.view-buttons button:hover {
+  border-color: var(--color-accent);
+}
+
+/* La vista activa se distingue por el relleno y por la negrita, no solo por el color. */
+.view-buttons button[aria-pressed='true'] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+  font-weight: 700;
+}
+
+/* ---------- Lienzo 3D y etiquetas ---------- */
+.view-3d {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.view-3d canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  touch-action: none;
+}
+
+.label-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* El elemento mide 0×0 justo sobre el punto; el texto se desplaza para no taparlo. */
+.scene-label {
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.scene-label > span {
+  position: absolute;
+  padding: 0 0.3em;
+  border-radius: 0.25rem;
+  background: var(--label-bg);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.label-ne > span {
+  left: 6px;
+  bottom: 6px;
+}
+
+.label-nw > span {
+  right: 6px;
+  bottom: 6px;
+}
+
+.label-se > span {
+  left: 6px;
+  top: 6px;
+}
+
+.label-sw > span {
+  right: 6px;
+  top: 6px;
+}
+
+.label-e > span {
+  left: 8px;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.label-w > span {
+  right: 8px;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.label-center > span {
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.label-point > span {
+  font-size: 1rem;
+}
+
+.label-plane > span {
+  font-weight: 700;
+}
+
+.label-quadrant > span {
+  background: none;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+.label-cota > span {
+  border-left: 3px solid var(--scene-cota);
+}
+
+.label-alejamiento > span {
+  border-left: 3px solid var(--scene-alejamiento);
+}
+
+/* ---------- Deslizadores del punto ---------- */
+.point-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-s) var(--space-m);
+  padding: var(--space-s) var(--space-m) var(--space-m);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.point-hint {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.slider {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'label output'
+    'range range';
+  align-items: baseline;
+  column-gap: var(--space-s);
+  min-width: 0;
+}
+
+.slider label {
+  grid-area: label;
+  font-weight: 600;
+}
+
+.slider output {
+  grid-area: output;
+  font-variant-numeric: tabular-nums;
+}
+
+.slider input {
+  grid-area: range;
+  width: 100%;
+  min-height: 1.75rem;
+  margin: 0;
+  accent-color: var(--color-accent);
+}
+
 /* ---------- Pantallas estrechas: se apilan, 3D arriba ---------- */
 @media (max-width: 767px) {
+  /* En el móvil la página crece hacia abajo y se desplaza: los paneles no se aplastan. */
+  html,
+  body {
+    height: auto;
+  }
+
   .workspace {
+    flex: none;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: var(--space-s);
@@ -186,6 +422,26 @@ body {
   .panel {
     min-height: 45vh;
     min-height: 45dvh;
+  }
+
+  .view-3d {
+    flex: none;
+    height: 55vh;
+    height: 55dvh;
+    min-height: 260px;
+  }
+
+  .panel-header {
+    padding: var(--space-s);
+  }
+
+  .view-buttons button {
+    min-height: 2.5rem; /* zona de toque cómoda */
+  }
+
+  .point-controls {
+    grid-template-columns: 1fr;
+    padding: var(--space-s);
   }
 
   :root {
