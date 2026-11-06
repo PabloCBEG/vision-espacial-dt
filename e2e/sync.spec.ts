@@ -12,6 +12,10 @@ interface Snapshot {
 }
 
 async function snapshot(page: Page): Promise<Snapshot> {
+  // La lámina se redibuja en el siguiente fotograma: se espera a que lo haga.
+  await page.evaluate(
+    () => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))),
+  );
   return page.evaluate(() => {
     const value = (name: string): number =>
       Number(document.querySelector<HTMLInputElement>(`#slider-${name}`)?.value);
