@@ -1,4 +1,4 @@
-// El punto P con sus proyecciones P′ y P″, proyectantes, cota y alejamiento.
+// Un punto con nombre (P, A, B...) con sus proyecciones, proyectantes, cota y alejamiento.
 import {
   Group,
   Mesh,
@@ -16,28 +16,47 @@ import { createLabel, placeLabel, setLabelPlacement, setLabelText } from './labe
 import { createThickLine, setThickLinePoints } from './lines.ts';
 import type { SceneColors } from './sceneColors.ts';
 
-/** Qué se arrastra: P, su proyección horizontal P′ o la vertical P″. */
+/** Qué se arrastra: el punto, su proyección horizontal o la vertical. */
 export type DragHandle = 'point' | 'horizontal' | 'vertical';
+
+/** Datos que llevan las zonas de arrastre para saber qué se ha tocado. */
+export interface DragTarget {
+  pointId: string;
+  handle: DragHandle;
+}
 
 const POINT_RADIUS_MM = 2.4;
 const PROJECTION_RADIUS_MM = 1.5;
 /** Zona de toque, mayor que las esferas, para poder arrastrar con el dedo. */
 const HIT_RADIUS_MM = 6;
 
+/** Grosores en píxeles con escala 1 (el modo proyector los multiplica). */
+const WIDTH_PROJECTOR = 2;
+const WIDTH_MEASURE = 3;
+
+const hitGeometry = new SphereGeometry(HIT_RADIUS_MM, 12, 8);
+const hitMaterial = new MeshBasicMaterial({
+  transparent: true,
+  opacity: 0,
+  depthWrite: false,
+  colorWrite: false,
+});
+
 export class PointModel {
+  readonly id: string;
   readonly group = new Group();
   readonly hitTargets: Mesh[] = [];
 
   private readonly pointMaterial = new MeshLambertMaterial();
   private readonly projectionMaterial = new MeshLambertMaterial();
   private readonly projectorMaterial = new LineMaterial({
-    linewidth: 2,
+    linewidth: WIDTH_PROJECTOR,
     dashed: true,
     dashSize: 3,
     gapSize: 2,
   });
-  private readonly cotaMaterial = new LineMaterial({ linewidth: 3 });
-  private readonly alejamientoMaterial = new LineMaterial({ linewidth: 3 });
+  private readonly cotaMaterial = new LineMaterial({ linewidth: WIDTH_MEASURE });
+  private readonly alejamientoMaterial = new LineMaterial({ linewidth: WIDTH_MEASURE });
 
   private readonly sphereP: Mesh;
   private readonly sphereH: Mesh;
@@ -47,14 +66,21 @@ export class PointModel {
   private readonly cotaSegment: Line2;
   private readonly alejamientoSegment: Line2;
 
-  private readonly labelP = createLabel('P', 'ne', 'label-point', 'P');
-  private readonly labelH = createLabel('P′', 'ne', 'label-point', 'P′');
-  private readonly labelV = createLabel('P″', 'nw', 'label-point', 'P″');
-  private readonly labelCota = createLabel('', 'w', 'label-cota', 'cota');
-  private readonly labelAlejamiento = createLabel('', 'se', 'label-alejamiento', 'alejamiento');
+  private readonly labelP;
+  private readonly labelH;
+  private readonly labelV;
+  private readonly labelCota;
+  private readonly labelAlejamiento;
   private current: Point = createPoint(0, 0, 0);
 
-  constructor() {
+  constructor(id: string) {
+    this.id = id;
+    this.labelP = createLabel(id, 'ne', 'label-point', id);
+    this.labelH = createLabel(`${id}′`, 'ne', 'label-point', `${id}′`);
+    this.labelV = createLabel(`${id}″`, 'nw', 'label-point', `${id}″`);
+    this.labelCota = createLabel('', 'w', 'label-cota', `cota-${id}`);
+    this.labelAlejamiento = createLabel('', 'se', 'label-alejamiento', `alejamiento-${id}`);
+
     const pointGeometry = new SphereGeometry(POINT_RADIUS_MM, 24, 16);
     const projectionGeometry = new SphereGeometry(PROJECTION_RADIUS_MM, 16, 12);
     this.sphereP = new Mesh(pointGeometry, this.pointMaterial);
@@ -83,13 +109,6 @@ export class PointModel {
     );
 
     // Zonas de arrastre invisibles (transparentes, pero el rayo sí las detecta).
-    const hitGeometry = new SphereGeometry(HIT_RADIUS_MM, 12, 8);
-    const hitMaterial = new MeshBasicMaterial({
-      transparent: true,
-      opacity: 0,
-      depthWrite: false,
-      colorWrite: false,
-    });
     const handles: [DragHandle, Mesh][] = [
       ['point', this.sphereP],
       ['horizontal', this.sphereH],
@@ -97,7 +116,8 @@ export class PointModel {
     ];
     for (const [handle, sphere] of handles) {
       const hit = new Mesh(hitGeometry, hitMaterial);
-      hit.userData.handle = handle;
+      const target: DragTarget = { pointId: id, handle };
+      hit.userData.dragTarget = target;
       sphere.add(hit);
       this.hitTargets.push(hit);
     }
@@ -151,5 +171,16 @@ export class PointModel {
     this.projectorMaterial.color.copy(colors.point);
     this.cotaMaterial.color.copy(colors.cota);
     this.alejamientoMaterial.color.copy(colors.alejamiento);
+  }
+
+  /** Multiplica los grosores (modo proyector). */
+  setLineScale(scale: number): void {
+    this.projectorMaterial.linewidth = WIDTH_PROJECTOR * scale;
+    this.cotaMaterial.linewidth = WIDTH_MEASURE * scale;
+    this.alejamientoMaterial.linewidth = WIDTH_MEASURE * scale;
+  }
+
+  dispose(): void {
+    this.group.removeFromParent();
   }
 }

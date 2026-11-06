@@ -10,13 +10,15 @@ import {
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
-import type { Point } from '../geometry/index.ts';
-import { setPoint, type AppStore } from '../state/index.ts';
+import { getPoint, setPoint, type AppState, type AppStore } from '../state/index.ts';
 import { CameraAnimator, MAX_DISTANCE_MM, MIN_DISTANCE_MM, type ViewName } from './cameraViews.ts';
 import { attachPointDrag } from './pointDrag.ts';
 import { PointModel } from './pointModel.ts';
 import { ProjectionPlanes } from './projectionPlanes.ts';
-import { readSceneColors } from './sceneColors.ts';
+import { readSceneColors, type SceneColors } from './sceneColors.ts';
+
+/** Grosor de las líneas en modo proyector, respecto al normal. */
+const PROJECTOR_LINE_SCALE = 2;
 
 export class SpatialView {
   /** Se llama al elegir una vista rápida, o con null cuando el usuario gira la cámara. */
@@ -30,9 +32,13 @@ export class SpatialView {
   private readonly controls: OrbitControls;
   private readonly animator: CameraAnimator;
   private readonly planes = new ProjectionPlanes();
-  private readonly pointModel = new PointModel();
+  private readonly pointModels = new Map<string, PointModel>();
   private readonly cleanups: (() => void)[] = [];
+  private colors: SceneColors;
+  private lineScale = 1;
   private frameRequested = false;
+  private width = 1;
+  private height = 1;
 
   constructor(container: HTMLElement, store: AppStore) {
     this.container = container;
@@ -44,7 +50,7 @@ export class SpatialView {
     this.labelRenderer.domElement.className = 'label-layer';
     container.replaceChildren(this.renderer.domElement, this.labelRenderer.domElement);
 
-    this.scene.add(new AmbientLight(0xffffff, 1.6), this.planes.group, this.pointModel.group);
+    this.scene.add(new AmbientLight(0xffffff, 1.6), this.planes.group);
     const light = new DirectionalLight(0xffffff, 1.6);
     light.position.set(60, 120, 90);
     this.scene.add(light);
@@ -64,10 +70,11 @@ export class SpatialView {
     this.animator.goTo('perspective', true);
     this.controls.update();
 
-    this.pointModel.update(store.get().point);
+    this.colors = readSceneColors(container);
+    this.syncState(store.get());
     this.cleanups.push(
       store.subscribe((state) => {
-        this.pointModel.update(state.point);
+        this.syncState(state);
         this.requestRender();
       }),
       attachPointDrag({
@@ -75,9 +82,9 @@ export class SpatialView {
         canvas: this.renderer.domElement,
         camera: this.camera,
         controls: this.controls,
-        targets: this.pointModel.hitTargets,
-        getPoint: () => store.get().point,
-        setPoint: (p: Point) => setPoint(store, p),
+        getTargets: () => [...this.pointModels.values()].flatMap((m) => m.hitTargets),
+        getPoint: (id) => getPoint(store.get(), id),
+        setPoint: (id, p) => setPoint(store, id, p),
       }),
     );
 
@@ -100,6 +107,38 @@ export class SpatialView {
     this.renderer.dispose();
   }
 
+  // ---------- Estado → escena ----------
+
+  private syncState(state: AppState): void {
+    // Puntos: se crean o se quitan modelos según los objetos de la escena.
+    const pointIds = new Set(state.objects.filter((o) => o.kind === 'point').map((o) => o.id));
+    for (const [id, model] of this.pointModels) {
+      if (!pointIds.has(id)) {
+        model.dispose();
+        this.pointModels.delete(id);
+      }
+    }
+    for (const id of pointIds) {
+      let model = this.pointModels.get(id);
+      if (!model) {
+        model = new PointModel(id);
+        model.setColors(this.colors);
+        model.setLineScale(this.lineScale);
+        this.scene.add(model.group);
+        this.applyResolution(model.group);
+        this.pointModels.set(id, model);
+      }
+      model.update(getPoint(state, id));
+    }
+
+    const scale = state.projector ? PROJECTOR_LINE_SCALE : 1;
+    if (scale !== this.lineScale) {
+      this.lineScale = scale;
+      this.planes.setLineScale(scale);
+      for (const model of this.pointModels.values()) model.setLineScale(scale);
+    }
+  }
+
   // ---------- Dibujo bajo demanda ----------
 
   private readonly requestRender = (): void => {
@@ -115,7 +154,7 @@ export class SpatialView {
     const moving = animating ? false : this.controls.update();
     if (animating) this.controls.update();
     this.planes.updateForCamera(this.camera);
-    this.pointModel.updateForCamera(this.camera);
+    for (const model of this.pointModels.values()) model.updateForCamera(this.camera);
     this.renderer.render(this.scene, this.camera);
     this.labelRenderer.render(this.scene, this.camera);
     if (animating || moving) this.requestRender();
@@ -123,19 +162,25 @@ export class SpatialView {
 
   // ---------- Tamaño y tema ----------
 
+  /** Las líneas gruesas necesitan saber el tamaño del lienzo en píxeles. */
+  private applyResolution(root: Object3D): void {
+    root.traverse((object: Object3D) => {
+      if (object instanceof Line2) object.material.resolution.set(this.width, this.height);
+    });
+  }
+
   private watchSize(): void {
     const resize = (): void => {
       const width = this.container.clientWidth;
       const height = this.container.clientHeight;
       if (width === 0 || height === 0) return;
+      this.width = width;
+      this.height = height;
       this.renderer.setSize(width, height);
       this.labelRenderer.setSize(width, height);
       this.camera.aspect = width / height;
       this.camera.updateProjectionMatrix();
-      // Las líneas gruesas necesitan saber el tamaño en píxeles.
-      this.scene.traverse((object: Object3D) => {
-        if (object instanceof Line2) object.material.resolution.set(width, height);
-      });
+      this.applyResolution(this.scene);
       this.requestRender();
     };
     const observer = new ResizeObserver(resize);
@@ -146,16 +191,17 @@ export class SpatialView {
 
   private watchTheme(): void {
     const apply = (): void => {
-      const colors = readSceneColors(this.container);
-      this.planes.setColors(colors);
-      this.pointModel.setColors(colors);
+      this.colors = readSceneColors(this.container);
+      this.planes.setColors(this.colors);
+      for (const model of this.pointModels.values()) model.setColors(this.colors);
       this.requestRender();
     };
     apply();
+    // El modo proyector también cambia colores (más contraste).
     const observer = new MutationObserver(apply);
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['data-theme'],
+      attributeFilter: ['data-theme', 'data-projector'],
     });
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     media.addEventListener('change', apply);

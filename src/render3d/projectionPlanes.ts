@@ -83,6 +83,11 @@ export class ProjectionPlanes {
     }
   }
 
+  /** Multiplica el grosor de la LT (modo proyector). */
+  setLineScale(scale: number): void {
+    this.ltMaterial.linewidth = 4 * scale;
+  }
+
   setColors(colors: SceneColors): void {
     this.phMaterial.color.copy(colors.ph);
     this.pvMaterial.color.copy(colors.pv);

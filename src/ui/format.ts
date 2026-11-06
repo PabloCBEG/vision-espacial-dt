@@ -27,7 +27,7 @@ export function describeQuadrant(q: Quadrant): string {
 }
 
 /** Descripción para lectores de pantalla, por ejemplo «P(20, 30, 40) mm, en el primer cuadrante». */
-export function describePoint(p: Point, q: Quadrant): string {
+export function describePoint(p: Point, q: Quadrant, name = 'P'): string {
   const coords = [p.x, p.a, p.c].map(formatNumber).join(', ');
-  return `P(${coords}) mm, ${describeQuadrant(q)}`;
+  return `${name}(${coords}) mm, ${describeQuadrant(q)}`;
 }

@@ -1,6 +1,13 @@
 import { describe, expect, it, vi } from 'vitest';
 import { createPoint } from '../geometry/index.ts';
-import { clampCoordinate, createAppStore, setPoint, setPointCoordinate } from './appState.ts';
+import {
+  clampCoordinate,
+  createAppStore,
+  getPoint,
+  patchState,
+  setActiveCoordinate,
+  setPoint,
+} from './appState.ts';
 
 describe('clampCoordinate', () => {
   it('redondea a 1 mm y limita a ±60 mm', () => {
@@ -15,21 +22,31 @@ describe('clampCoordinate', () => {
   });
 });
 
-describe('estado del punto', () => {
-  it('setPointCoordinate cambia solo esa coordenada y avisa', () => {
-    const store = createAppStore({ point: createPoint(10, 20, 30) });
+describe('estado de los puntos', () => {
+  it('setActiveCoordinate cambia solo esa coordenada del punto activo y avisa', () => {
+    const store = createAppStore({ points: { P: createPoint(10, 20, 30) } });
     const listener = vi.fn();
     store.subscribe(listener);
-    setPointCoordinate(store, 'c', -15);
-    expect(store.get().point).toEqual(createPoint(10, 20, -15));
+    setActiveCoordinate(store, 'c', -15);
+    expect(getPoint(store.get(), 'P')).toEqual(createPoint(10, 20, -15));
     expect(listener).toHaveBeenCalledTimes(1);
   });
 
+  it('setPoint no toca los demás puntos', () => {
+    const store = createAppStore({
+      points: { A: createPoint(1, 2, 3), B: createPoint(4, 5, 6) },
+      activePoint: 'A',
+    });
+    setPoint(store, 'B', createPoint(-4, -5, -6));
+    expect(getPoint(store.get(), 'A')).toEqual(createPoint(1, 2, 3));
+    expect(getPoint(store.get(), 'B')).toEqual(createPoint(-4, -5, -6));
+  });
+
   it('no avisa si el punto no cambia tras redondear', () => {
-    const store = createAppStore({ point: createPoint(10, 20, 30) });
+    const store = createAppStore({ points: { P: createPoint(10, 20, 30) } });
     const listener = vi.fn();
     store.subscribe(listener);
-    setPoint(store, createPoint(10.2, 19.8, 30.4));
+    setPoint(store, 'P', createPoint(10.2, 19.8, 30.4));
     expect(listener).not.toHaveBeenCalled();
   });
 
@@ -38,7 +55,17 @@ describe('estado del punto', () => {
     const listener = vi.fn();
     const unsubscribe = store.subscribe(listener);
     unsubscribe();
-    setPointCoordinate(store, 'x', -40);
+    setActiveCoordinate(store, 'x', -40);
     expect(listener).not.toHaveBeenCalled();
+  });
+
+  it('patchState solo avisa si algo cambia', () => {
+    const store = createAppStore();
+    const listener = vi.fn();
+    store.subscribe(listener);
+    patchState(store, { projector: false });
+    expect(listener).not.toHaveBeenCalled();
+    patchState(store, { projector: true });
+    expect(listener).toHaveBeenCalledTimes(1);
   });
 });
