@@ -54,6 +54,7 @@
         >
           <p class="placeholder">Cargando el modelo 3D…</p>
         </div>
+        <p id="explain-caption" class="explain-caption" aria-live="polite" hidden></p>
       </section>
 
       <section class="panel panel-2d" aria-labelledby="panel-2d-title">
@@ -92,6 +93,22 @@
             <input id="slider-c" name="c" type="range" min="-60" max="60" step="1" />
           </div>
         </form>
+
+        <div id="fold-controls" class="fold-controls" role="group" aria-label="Abatimiento del PH">
+          <div class="slider">
+            <label for="slider-fold">Abatir PH</label>
+            <output id="output-fold" for="slider-fold">0°</output>
+            <input id="slider-fold" type="range" min="0" max="90" step="1" value="0" />
+          </div>
+          <div class="fold-buttons">
+            <button id="fold-play" type="button" class="action-button">
+              Reproducir abatimiento
+            </button>
+            <button id="explain-toggle" type="button" class="action-button" aria-pressed="false">
+              Explicar
+            </button>
+          </div>
+        </div>
       </section>
     </main>
 

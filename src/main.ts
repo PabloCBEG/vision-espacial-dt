@@ -3,6 +3,7 @@ import { SheetView } from './render2d/index.ts';
 import { SpatialView } from './render3d/index.ts';
 import { createAppStore } from './state/index.ts';
 import {
+  bindFoldControls,
   bindPointControls,
   bindPointDescription,
   bindProjectorToggle,
@@ -23,6 +24,16 @@ bindThemeToggle(required<HTMLButtonElement>('#theme-toggle'));
 bindProjectorToggle(required<HTMLButtonElement>('#projector-toggle'), store);
 bindPointControls(required<HTMLFormElement>('#point-controls'), store);
 bindPointDescription(required<HTMLElement>('#point-description'), store);
+bindFoldControls(
+  {
+    slider: required<HTMLInputElement>('#slider-fold'),
+    output: required<HTMLOutputElement>('#output-fold'),
+    playButton: required<HTMLButtonElement>('#fold-play'),
+    explainButton: required<HTMLButtonElement>('#explain-toggle'),
+    caption: required<HTMLElement>('#explain-caption'),
+  },
+  store,
+);
 
 const sheet = new SheetView(required<HTMLElement>('#view-2d'), store);
 bindSheetZoom(required<HTMLElement>('#sheet-zoom'), sheet);
