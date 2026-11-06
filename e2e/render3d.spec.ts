@@ -3,7 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 /** Posición en pantalla de una etiqueta de la escena (su ancla está justo sobre el punto). */
 async function labelAnchor(page: Page, name: string): Promise<{ x: number; y: number }> {
   return page.evaluate((labelName) => {
-    const element = document.querySelector(`[data-label="${labelName}"]`);
+    const element = document.querySelector(`#view-3d [data-label="${labelName}"]`);
     if (!element) throw new Error(`No existe la etiqueta ${labelName}`);
     const rect = element.getBoundingClientRect();
     return { x: rect.left, y: rect.top };
@@ -12,7 +12,7 @@ async function labelAnchor(page: Page, name: string): Promise<{ x: number; y: nu
 
 async function waitForScene(page: Page): Promise<void> {
   await expect(page.locator('#view-3d canvas')).toBeVisible();
-  await expect(page.locator('[data-label="P″"]')).toBeAttached();
+  await expect(page.locator('#view-3d [data-label="P″"]')).toBeAttached();
 }
 
 const sliderX = (page: Page) => page.getByRole('slider', { name: 'x', exact: true });
@@ -29,11 +29,11 @@ test.describe('modelo 3D', () => {
     await page.goto('/');
     await waitForScene(page);
 
-    await expect(page.locator('[data-label="cota"]')).toHaveText('c = 40 mm');
+    await expect(page.locator('#view-3d [data-label="cota-P"]')).toHaveText('c = 40 mm');
     await sliderC(page).fill('-25');
-    await expect(page.locator('[data-label="cota"]')).toHaveText('c = −25 mm');
+    await expect(page.locator('#view-3d [data-label="cota-P"]')).toHaveText('c = −25 mm');
     await sliderA(page).fill('15');
-    await expect(page.locator('[data-label="alejamiento"]')).toHaveText('a = 15 mm');
+    await expect(page.locator('#view-3d [data-label="alejamiento-P"]')).toHaveText('a = 15 mm');
     await expect(page.locator('output[data-axis="c"]')).toHaveText('−25 mm');
     await expect(page.locator('#point-description')).toHaveText(
       'P(20, 15, −25) mm, en el cuarto cuadrante',
