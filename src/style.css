@@ -21,6 +21,7 @@
   --space-m: 1rem;
   --space-l: 1.5rem;
   --header-height: 3.5rem;
+  --logo-size: 2.25rem;
   --panel-radius: 0.5rem;
   --border-width: 1px;
   --focus-width: 3px;
@@ -95,6 +96,19 @@ body {
   padding: var(--space-s) var(--space-m);
   background: var(--color-surface);
   border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  min-width: 0;
+}
+
+.app-logo {
+  flex-shrink: 0;
+  width: var(--logo-size);
+  height: var(--logo-size);
 }
 
 .app-title {
@@ -174,7 +188,19 @@ body {
     min-height: 45dvh;
   }
 
+  :root {
+    --logo-size: 1.75rem;
+  }
+
+  .app-header {
+    padding: var(--space-s);
+  }
+
   .app-title {
-    font-size: var(--font-size-panel-title);
+    font-size: 0.9375rem;
+  }
+
+  .theme-toggle {
+    padding: var(--space-xs) var(--space-s);
   }
 }
