@@ -26,7 +26,7 @@ test.describe('modelo 3D', () => {
 
   test('los deslizadores mueven el punto y actualizan cota y alejamiento', async ({ page }) => {
     await page.setViewportSize({ width: 1366, height: 768 });
-    await page.goto('/');
+    await page.goto('/#/libre');
     await waitForScene(page);
 
     await expect(page.locator('#view-3d [data-label="cota-P"]')).toHaveText('c = 40 mm');
@@ -41,7 +41,7 @@ test.describe('modelo 3D', () => {
   });
 
   test('los deslizadores se manejan con el teclado', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/libre');
     await waitForScene(page);
     await sliderX(page).focus();
     await page.keyboard.press('ArrowRight');
@@ -50,7 +50,7 @@ test.describe('modelo 3D', () => {
   });
 
   test('los botones de vista se activan con el teclado', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/#/libre');
     await waitForScene(page);
     const top = page.getByRole('button', { name: 'Superior' });
     await top.focus();
@@ -66,7 +66,7 @@ test.describe('modelo 3D', () => {
   // P queda delante de P″ o de P′ y se arrastraría P.
   test('arrastrar P″ cambia x y cota, pero no el alejamiento', async ({ page }) => {
     await page.setViewportSize({ width: 1366, height: 768 });
-    await page.goto('/');
+    await page.goto('/#/libre');
     await waitForScene(page);
 
     const anchor = await labelAnchor(page, 'P″');
@@ -82,7 +82,7 @@ test.describe('modelo 3D', () => {
 
   test('arrastrar P′ cambia x y alejamiento, pero no la cota', async ({ page }) => {
     await page.setViewportSize({ width: 1366, height: 768 });
-    await page.goto('/');
+    await page.goto('/#/libre');
     await waitForScene(page);
 
     const anchor = await labelAnchor(page, 'P′');
@@ -102,7 +102,7 @@ test.describe('modelo 3D', () => {
     for (const view of ['Perspectiva', 'Frontal', 'Superior', 'Perfil']) {
       test(`captura ${viewport.name} vista ${view}`, async ({ page }) => {
         await page.setViewportSize({ width: viewport.width, height: viewport.height });
-        await page.goto('/');
+        await page.goto('/#/libre');
         await waitForScene(page);
         await page.getByRole('button', { name: view }).click();
         await page.waitForTimeout(150);

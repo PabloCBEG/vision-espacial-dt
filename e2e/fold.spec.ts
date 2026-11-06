@@ -3,7 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 const foldSlider = (page: Page) => page.getByRole('slider', { name: 'Abatir PH' });
 
 async function ready(page: Page): Promise<void> {
-  await page.goto('/');
+  await page.goto('/#/libre');
   await expect(page.locator('#view-3d [data-label="P″"]')).toBeAttached();
   await expect(page.locator('[data-handle="P′"]')).toBeAttached();
 }

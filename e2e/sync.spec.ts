@@ -62,7 +62,7 @@ test.describe('sincronización de las tres vías', () => {
   test.beforeEach(async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
     await page.setViewportSize({ width: 1366, height: 768 });
-    await page.goto('/');
+    await page.goto('/#/libre');
     await expect(page.locator('#view-3d [data-label="P″"]')).toBeAttached();
     await expect(page.locator('[data-handle="P′"]')).toBeAttached();
   });
@@ -151,7 +151,7 @@ for (const viewport of [
     test(`captura lámina ${viewport.name}${projector ? ' proyector' : ''}`, async ({ page }) => {
       await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
-      await page.goto('/');
+      await page.goto('/#/libre');
       await expect(page.locator('[data-handle="P′"]')).toBeAttached();
       if (projector) await page.getByRole('button', { name: 'Modo proyector' }).click();
       await page.waitForTimeout(150);

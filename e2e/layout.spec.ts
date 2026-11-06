@@ -12,11 +12,14 @@ for (const viewport of viewports) {
     test(`página inicial ${viewport.name} ${theme}`, async ({ page }) => {
       await page.emulateMedia({ colorScheme: theme });
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
-      await page.goto('/');
+      await page.goto('/#/libre');
 
       await expect(
-        page.getByRole('heading', { level: 1, name: 'Visión espacial · Dibujo Técnico' }),
+        page.getByRole('link', { name: /Visión espacial · Dibujo Técnico/ }),
       ).toBeVisible();
+      await expect(
+        page.getByRole('heading', { level: 1, name: 'Explorar libremente' }),
+      ).toBeAttached();
 
       const panel3d = page.getByRole('region', { name: 'Modelo 3D' });
       const panel2d = page.getByRole('region', { name: 'Lámina' });
@@ -48,7 +51,7 @@ for (const viewport of viewports) {
 
 test('el botón de tema cambia entre claro y oscuro con el teclado', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
-  await page.goto('/');
+  await page.goto('/#/libre');
 
   const toggle = page.getByRole('button', { name: 'Tema oscuro' });
   await toggle.focus();
