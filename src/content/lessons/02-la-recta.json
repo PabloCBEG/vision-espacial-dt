@@ -1,0 +1,145 @@
+{
+  "id": "la-recta",
+  "order": 2,
+  "title": "La recta",
+  "course": "DT I",
+  "saberBasico": "Sistema diédrico: representación de la recta, trazas, partes vistas y ocultas y posiciones particulares.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": { "A": [-30, 15, 40], "B": [30, 45, 10] },
+    "objects": [
+      { "kind": "point", "id": "A" },
+      { "kind": "point", "id": "B" },
+      { "kind": "line", "id": "r", "through": ["A", "B"] }
+    ],
+    "activePoint": "A"
+  },
+  "steps": [
+    {
+      "narration": "Una recta queda definida por dos de sus puntos. Aquí, la recta r pasa por A y por B.",
+      "show3d": ["planos", "punto:A", "punto:B", "recta:r"],
+      "sheet": [],
+      "highlight": ["recta:r"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Las proyecciones de r pasan por las de sus puntos: r′ por A′ y B′, y r″ por A″ y B″.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "proyectantes:A",
+        "proyectantes:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r"
+      ],
+      "sheet": [],
+      "highlight": ["proyecciones:A", "proyecciones:B"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "La traza horizontal H es el punto donde r corta al PH; la vertical V, donde corta al PV.",
+      "show3d": ["planos", "proyecciones:A", "proyecciones:B", "recta:r", "trazas:r"],
+      "sheet": [],
+      "highlight": ["trazas:r"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Solo se ve la parte de r que está en el primer cuadrante y se dibuja continua. El resto queda oculto y se dibuja discontinuo.",
+      "show3d": ["planos", "cuadrantes", "recta:r", "trazas:r"],
+      "sheet": [],
+      "highlight": ["recta:r"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Al abatir el PH, r′ y r″ pasan a la lámina con sus trazas. H″ y V′ caen siempre sobre la LT.",
+      "show3d": ["planos", "proyecciones:A", "proyecciones:B", "recta:r", "trazas:r"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "highlight": ["trazas:r"],
+      "camera": "perspective",
+      "foldAngle": 90
+    },
+    {
+      "narration": "En la lámina, las partes vistas de r′ y r″ son continuas y las ocultas, discontinuas. Cambian de una a otra en las trazas.",
+      "show3d": ["planos", "proyecciones:A", "proyecciones:B", "recta:r", "trazas:r"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "highlight": ["recta:r"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Si A y B tienen la misma cota y el mismo alejamiento, r es paralela a la LT y no tiene trazas.",
+      "show3d": ["planos", "punto:A", "punto:B", "proyecciones:A", "proyecciones:B", "recta:r"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r"
+      ],
+      "highlight": ["recta:r"],
+      "camera": "perspective",
+      "foldAngle": 90,
+      "points": { "A": [-30, 20, 30], "B": [30, 20, 30] }
+    },
+    {
+      "narration": "Si A y B están en la misma línea de referencia, r es de perfil y sus dos proyecciones no bastan. Hace falta la tercera proyección, sobre el plano de perfil.",
+      "show3d": ["planos", "punto:A", "punto:B", "proyecciones:A", "proyecciones:B", "recta:r"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "perfil"
+      ],
+      "highlight": ["recta:r"],
+      "camera": "perspective",
+      "foldAngle": 90,
+      "points": { "A": [10, 10, 45], "B": [10, 45, 10] }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "condition",
+      "prompt": "Mueve A o B hasta que r sea paralela al PH. Fíjate en cómo queda r″.",
+      "condition": "lineParallelToPH",
+      "objects": ["r"]
+    },
+    {
+      "kind": "condition",
+      "prompt": "Mueve A o B hasta que r sea paralela a la LT.",
+      "condition": "lineParallelToLT",
+      "objects": ["r"]
+    },
+    {
+      "kind": "condition",
+      "prompt": "Mueve A o B hasta que r corte a la LT. Sus trazas H y V tienen que coincidir.",
+      "condition": "lineCrossesLT",
+      "objects": ["r"]
+    }
+  ]
+}

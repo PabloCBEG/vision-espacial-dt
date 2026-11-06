@@ -76,6 +76,8 @@ const PlacePointExercise = z.object({
   prompt: Narration,
   point: PointName,
   target: Coords,
+  /** Dónde empiezan los puntos en este ejercicio (si no, donde están en la escena inicial). */
+  points: z.record(PointName, Coords).optional(),
 });
 
 /** Ejercicio: mover los puntos de una recta o de un plano hasta cumplir una condición. */
@@ -94,6 +96,10 @@ const ConditionExercise = z.object({
   ]),
   /** Objetos que intervienen: la recta, o el punto y el plano. */
   objects: z.array(z.string()).min(1),
+  /** Dónde empiezan los puntos en este ejercicio (si no, donde están en la escena inicial). */
+  points: z.record(PointName, Coords).optional(),
+  /** Punto que manejan los deslizadores al empezar. */
+  activePoint: PointName.optional(),
 });
 
 const ExerciseSchema = z.discriminatedUnion('kind', [PlacePointExercise, ConditionExercise]);

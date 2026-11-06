@@ -169,19 +169,29 @@ export class Player {
       highlight: [],
       exercise: null,
     };
+    // Puntos de partida: los de la escena inicial con los cambios del propio ejercicio.
+    const points = this.pointsAtStep(-1);
+    for (const [id, coords] of Object.entries(exercise.points ?? {})) points[id] = toPoint(coords);
+
     if (exercise.kind === 'placePoint') {
       this.store.set({
         ...base,
         activePoint: exercise.point,
         exercise: { pointId: exercise.point, target: toPoint(exercise.target) },
       });
-      this.camera?.setView('perspective');
-      this.animateTo({ ...this.pointsAtStep(-1), [exercise.point]: EXERCISE_START }, 0);
+      if (!exercise.points?.[exercise.point]) points[exercise.point] = EXERCISE_START;
     } else {
-      this.store.set(base);
-      this.camera?.setView('perspective');
-      this.animateTo(this.pointsAtStep(-1), 0);
+      // Se ven las mismas capas que en el último paso de la lección.
+      const last = this.lesson.steps[this.lesson.steps.length - 1];
+      this.store.set({
+        ...base,
+        activePoint: exercise.activePoint ?? base.activePoint,
+        layers3d: last?.show3d ?? null,
+        layersSheet: last?.sheet ?? null,
+      });
     }
+    this.camera?.setView('perspective');
+    this.animateTo(points, 0);
   }
 
   /** Lleva puntos y abatimiento hasta su destino con una transición suave. */

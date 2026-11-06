@@ -1,0 +1,109 @@
+{
+  "id": "el-plano",
+  "order": 3,
+  "title": "El plano",
+  "course": "DT I",
+  "saberBasico": "Sistema diédrico: representación del plano por sus trazas, pertenencia de punto y recta, y posiciones particulares.",
+  "level": "Intermedio",
+  "initialScene": {
+    "points": {
+      "A": [-40, 0, 35],
+      "B": [40, 45, 0],
+      "C": [10, 0, 0],
+      "Q": [10, 15, 7]
+    },
+    "objects": [
+      { "kind": "point", "id": "A" },
+      { "kind": "point", "id": "B" },
+      { "kind": "point", "id": "C" },
+      { "kind": "point", "id": "Q" },
+      { "kind": "line", "id": "r", "through": ["A", "B"] },
+      { "kind": "plane", "id": "α", "through": ["A", "B", "C"] }
+    ],
+    "activePoint": "Q"
+  },
+  "steps": [
+    {
+      "narration": "Un plano queda definido por tres puntos no alineados. Aquí, el plano α pasa por A, B y C.",
+      "show3d": ["planos", "punto:A", "punto:B", "punto:C", "plano:α"],
+      "sheet": [],
+      "highlight": ["plano:α"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Las trazas de α son sus rectas de corte con el PH (α₁) y con el PV (α₂). Se cortan en un punto de la LT.",
+      "show3d": ["planos", "punto:A", "punto:B", "punto:C", "plano:α", "trazas:α"],
+      "sheet": [],
+      "highlight": ["trazas:α"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "La recta r pasa por A y B, así que está en α. Sus trazas H y V caen sobre α₁ y α₂.",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "trazas:r"],
+      "sheet": [],
+      "highlight": ["trazas:r"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Un punto está en un plano si está en una recta del plano. Mueve Q: la aplicación te avisa si sale de α.",
+      "show3d": ["planos", "plano:α", "trazas:α", "punto:Q", "proyecciones:Q", "medidas:Q"],
+      "sheet": [],
+      "highlight": ["punto:Q"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Al abatir el PH, α₁ pasa a la lámina con él y α₂ no se mueve. Así se representa un plano en diédrico.",
+      "show3d": ["planos", "plano:α", "trazas:α", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "proyecciones:Q", "referencia:Q"],
+      "highlight": ["trazas:α"],
+      "camera": "perspective",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Si α₁ y α₂ son paralelas a la LT, el plano es paralelo a la LT.",
+      "show3d": ["planos", "plano:α", "trazas:α", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "proyecciones:Q", "referencia:Q"],
+      "highlight": ["trazas:α"],
+      "camera": "front",
+      "foldAngle": 90,
+      "points": { "A": [-40, 0, 35], "B": [40, 40, 0], "C": [40, 0, 35], "Q": [10, 16, 21] }
+    },
+    {
+      "narration": "Si el plano contiene la LT, sus dos trazas coinciden con ella y no bastan para definirlo. La tercera proyección, α₃, sí lo define.",
+      "show3d": ["planos", "plano:α", "trazas:α", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "proyecciones:Q", "referencia:Q", "perfil"],
+      "highlight": ["trazas:α"],
+      "camera": "perspective",
+      "foldAngle": 90,
+      "points": { "A": [-40, 10, 10], "B": [40, 30, 30], "C": [0, 50, 50], "Q": [10, 20, 20] }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "condition",
+      "prompt": "Q está fuera del plano α. Muévelo hasta que esté en α: el aviso te dice a qué distancia está.",
+      "condition": "pointOnPlane",
+      "objects": ["Q", "α"],
+      "points": { "Q": [10, 30, 30] },
+      "activePoint": "Q"
+    },
+    {
+      "kind": "condition",
+      "prompt": "Mueve A, B o C hasta que el plano α sea paralelo a la LT.",
+      "condition": "planeParallelToLT",
+      "objects": ["α"],
+      "activePoint": "A"
+    },
+    {
+      "kind": "condition",
+      "prompt": "Mueve A, B o C hasta que el plano α contenga a la LT.",
+      "condition": "planeContainsLT",
+      "objects": ["α"],
+      "activePoint": "A"
+    }
+  ]
+}
