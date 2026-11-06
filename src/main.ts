@@ -137,3 +137,12 @@ function route(): void {
 
 window.addEventListener('hashchange', route);
 route();
+
+// Funcionamiento sin conexión (solo en la versión publicada, no al desarrollar).
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch((error: unknown) => {
+      console.warn('No se ha podido activar el modo sin conexión.', error);
+    });
+  });
+}
