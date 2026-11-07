@@ -1,0 +1,1021 @@
+{
+  "ficheros": {
+    "madrid/uc3m/modelo-2026-2027.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2026-2027, modelo",
+      "origen": "https://drive.google.com/file/d/1mcOOddNl_QCYhm-wr5SgiVslL3qG2HXU/view?usp=drive_link",
+      "sha256": "87eae5ebd60e6fe8",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2025-2026.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2025-2026, modelo",
+      "origen": "https://drive.google.com/file/d/1EOwkvTg5fCcoV92_kjloV5itIvdoljNl/view?usp=drive_link",
+      "sha256": "35986fc62e33bfd0",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2024-2025.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2024-2025, modelo",
+      "origen": "https://drive.google.com/file/d/1M4yXYqSS2IbF5D5nlpjttB-MAFrhQGes/view?usp=drive_link",
+      "sha256": "9487558c3093b54d",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2023-2024.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2023-2024, modelo",
+      "origen": "https://drive.google.com/file/d/1VMILtyASwp2UqqF3olRAgQdeNBYrAqHe/view?usp=sharing",
+      "sha256": "9fa97260dd78a125",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2022-2023.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2022-2023, modelo",
+      "origen": "https://drive.google.com/file/d/1smtUUlWgG6IA9TKcRqEnCde6c1puYoCv/view?usp=sharing",
+      "sha256": "79d95840b2796268",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2021-2022.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2021-2022, modelo",
+      "origen": "https://drive.google.com/file/d/1_f_1VEnbXunhYlxsQPRXolGtqUZGGWA4/view?usp=sharing",
+      "sha256": "dff3070b0002c1a7",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2020-2021.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2020-2021, modelo",
+      "origen": "https://drive.google.com/file/d/1vkNVT0GsHQsSY0ULZcJjEN7B1-68TeHf/view?usp=sharing",
+      "sha256": "5ae7d5b976e17e2a",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2019-2020.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2019-2020, modelo",
+      "origen": "https://drive.google.com/file/d/10apbNCMifWQjaAoUfvPaOTgn-5vh5rDX/view?usp=sharing",
+      "sha256": "b05c81b09f440f5a",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2018-2019.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2018-2019, modelo",
+      "origen": "https://drive.google.com/file/d/1RaPuHeoEBHHVAb_kSmMEZOv2c4by_zaD/view?usp=sharing",
+      "sha256": "2fd1b46f33334b2a",
+      "transcrito": false
+    },
+    "madrid/uc3m/modelo-2017-2018.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2017-2018, modelo",
+      "origen": "https://drive.google.com/file/d/1RKaVFRku-4slyLWLzvvHjNoyYc92eXSs/view?usp=sharing",
+      "sha256": "c38d416f42b2cbdc",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2025-2026.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2025-2026, ordinaria",
+      "origen": "https://drive.google.com/file/d/1lZ5zDb54WhvVEBOa_TgBwmrEHfcWnzLl/view?usp=sharing",
+      "sha256": "b2b18709f053bb32",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2024-2025-coincidencias.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2024-2025, ordinaria (coincidencias)",
+      "origen": "https://drive.google.com/file/d/1SZFesoBdQ_W2Z1Rh3xE4dhGrRGamu29L/view?usp=drive_link",
+      "sha256": "c8d10ff7c20e9ba3",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2024-2025.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2024-2025, ordinaria",
+      "origen": "https://drive.google.com/file/d/1zU8kw6xGQxTVIgPOLMvV30d459njWJ2j/view?usp=drive_link",
+      "sha256": "0199644a682bcf5d",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2023-2024.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2023-2024, ordinaria",
+      "origen": "https://drive.google.com/file/d/1D_m1b-EqghPZUI66g8YzqKXXs-1Dg7FS/view?usp=drive_link",
+      "sha256": "d8ad16cbf632d6b6",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2022-2023.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2022-2023, ordinaria",
+      "origen": "https://drive.google.com/file/d/1uQcGSMA-hY8Pv9ub4CTZ0Za4_QDRpfu7/view?usp=drive_link",
+      "sha256": "19369a03f8cfebf0",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2021-2022-coincidencias.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2021-2022, ordinaria (coincidencias)",
+      "origen": "https://drive.google.com/file/d/1EykzGJa5dXsHKiF9hlLg-YEBdjMWjfYQ/view?usp=sharing",
+      "sha256": "672b03743fac774a",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2021-2022.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2021-2022, ordinaria",
+      "origen": "https://drive.google.com/file/d/1P1PPeRlAa4eMtupx0j8-8EyzQk2RqzYT/view?usp=sharing",
+      "sha256": "bf38d3589b54bdc2",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2020-2021.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2020-2021, ordinaria",
+      "origen": "https://drive.google.com/file/d/1PF6s_6xBzfvTEKbodi-I1gLL_8mesZ0K/view?usp=sharing",
+      "sha256": "bfba641109f43fcd",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2019-2020.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2019-2020, ordinaria",
+      "origen": "https://drive.google.com/file/d/1y440Uv6IfxyiwBcf2mdTvUqnoDHaOp0Z/view?usp=sharing",
+      "sha256": "7a425b2bd4c5e6ed",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2018-2019.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2018-2019, ordinaria",
+      "origen": "https://drive.google.com/file/d/1MBjhXES3UucbtCpnmaJUeuzHCsyXEZPf/view?usp=sharing",
+      "sha256": "bacdb8e4bd687f0f",
+      "transcrito": false
+    },
+    "madrid/uc3m/ordinaria-2017-2018.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2017-2018, ordinaria",
+      "origen": "https://drive.google.com/file/d/1AivKul94f0zY0CsCbulYf3LUZQIFlrpr/view?usp=sharing",
+      "sha256": "245c0236b3a526cc",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2025-2026.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2025-2026, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1pFUu_jEn_QRNIM0dk5B8Q9Jk7DOnN3Ah/view?usp=drive_link",
+      "sha256": "77fc1d9d4ca95380",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2024-2025-coincidencias.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2024-2025, extraordinaria (coincidencias)",
+      "origen": "https://drive.google.com/file/d/1HPqlLPEuU7BMADdONUD5QpBVEhTIJgtz/view?usp=drive_link",
+      "sha256": "214c53fa07d9ddc3",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2024-2025.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2024-2025, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1hBVfXE90kexfMWLh_ld8Hywf1ks_jpjs/view?usp=drive_link",
+      "sha256": "b1f7d35f5985c1b2",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2023-2024-coincidencias.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2023-2024, extraordinaria (coincidencias)",
+      "origen": "https://drive.google.com/file/d/1Ue7U9s-VBiHVwaRmtXidB3ajBTGmwLWM/view?usp=drive_link",
+      "sha256": "ddd619f383f99818",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2023-2024.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2023-2024, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1NjIwJ18u5kowXC5e7LQmU4jeF6QlR_Ss/view?usp=drive_link",
+      "sha256": "8fe2912b6ce7b319",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2022-2023.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2022-2023, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1t5VpC9QEie-o0937POigg0KZja3Y9AXZ/view?usp=drive_link",
+      "sha256": "19800fd52d6e7bef",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2020-2021.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2020-2021, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1vc_VMKP-rLXtyULmAqVt9X1Vxb0cyfAD/view?usp=sharing",
+      "sha256": "67b5933847b5c684",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2019-2020.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2019-2020, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1szZE45rMBr55WEBufPjKcwOd26ciVpH-/view?usp=sharing",
+      "sha256": "69bfa8c4f6cf1f32",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2018-2019.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2018-2019, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1qiplsHnXjSGa3hv3UU7fLW9fC2EUzeOe/view?usp=sharing",
+      "sha256": "3dcdd9523af5f6d7",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2017-2018.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2017-2018, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1czfkgEeGFsIqNeA47JMkOFBoEfyO3MUg/view?usp=sharing",
+      "sha256": "d669e747fcbcef10",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/017b-dibujo-tecnico-junio-2026.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 017B - Dibujo Técnico - Junio 2026",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/017B%20-%20Dibujo%20T%C3%A9cnico%20-%20Junio%202026.pdf",
+      "sha256": "77bf215bb64fc28d",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/017a-cc-dibujo-tecnico-junio-2026.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 017A - CC - Dibujo Técnico - junio 2026",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/017A%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202026.pdf",
+      "sha256": "1a5a6ef2dfd24cf9",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/017c-dibujo-tecnico-julio-2026.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 017C - Dibujo Técnico - Julio 2026",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/017C%20-%20Dibujo%20T%C3%A9cnico%20-%20Julio%202026.pdf",
+      "sha256": "42fed4d756e4efbf",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/017b-cc-dibujo-tecnico-julio-2026.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 017B - CC - Dibujo Técnico - julio 2026",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/017B%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202026.pdf",
+      "sha256": "6fa6441b751b77f3",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/017a-dibujo-tecnico-modelo-2026.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 017A - Dibujo Técnico - Modelo 2026",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/017A%20-%20Dibujo%20T%C3%A9cnico%20-%20Modelo%202026.pdf",
+      "sha256": "f2872fbd27edf056",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/016b-dibujo-tecnico-junio-2025.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 016B - Dibujo Técnico - junio 2025",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/016B%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202025.pdf",
+      "sha256": "26802d81abfd6021",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/016a-sol-dibujo-tecnico-junio-2025.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 016A - SOL - Dibujo Técnico - junio 2025",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/016A%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202025.pdf",
+      "sha256": "55cbf49e0e8f8772",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/016c-dibujo-tecnico-julio-2025.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 016C - Dibujo Técnico - julio 2025",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/016C%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202025.pdf",
+      "sha256": "2b790def77e4fcab",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/016b-sol-dibujo-tecnico-julio-2025.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 016B - SOL - Dibujo Técnico - julio 2025",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/016B%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202025.pdf",
+      "sha256": "d838e0c4a90f46ba",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/016d-dibujo-tecnico-julio-2025-extradana.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 016D - Dibujo Técnico - Julio 2025_extraDANA",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/016D%20-%20Dibujo%20T%C3%A9cnico%20-%20Julio%202025_extraDANA.pdf",
+      "sha256": "c40ba1f86c706a24",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/015a-dibujo-tecnico-junio-2024.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 015A - Dibujo Técnico - junio 2024",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/015A%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202024.pdf",
+      "sha256": "eb6d4c3a2faa14c9",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/015a-sol-dibujo-tecnico-junio-2024.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 015A - SOL - Dibujo Técnico - junio 2024",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/015A%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202024.pdf",
+      "sha256": "8b8d3d7e7391be25",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/015b-dibujo-tecnico-julio-2024.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 015B - Dibujo Técnico - julio 2024",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/015B%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202024.pdf",
+      "sha256": "d9503a01f8572030",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/015b-sol-dibujo-tecnico-julio-2024.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 015B - SOL - Dibujo Técnico - julio 2024",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/015B%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202024.pdf",
+      "sha256": "2a1efb4150bd72fc",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/014a-dibujo-tecnico-junio-2023.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 014A - Dibujo Técnico - junio 2023",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/014A%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202023.pdf",
+      "sha256": "6b0ae0edeebcf85c",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/014-cc-dibujo-tecnico-junio-2023.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 014 - CC - Dibujo Técnico - junio 2023",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/014%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202023.pdf",
+      "sha256": "507399d1634f8f00",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/014a-sol-dibujo-tecnico-junio-2023.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 014A - SOL - Dibujo Técnico - junio 2023",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/014A%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202023.pdf",
+      "sha256": "ace187b90a26e35d",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/014b-dibujo-tecnico-julio-2023.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 014B - Dibujo Técnico - julio 2023",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/014B%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202023.pdf",
+      "sha256": "c2cca7b30a4468cd",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/014b-sol-dibujo-tecnico-julio-2023.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 014B - SOL - Dibujo Técnico - julio 2023",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/014B%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202023.pdf",
+      "sha256": "37a3a1651cc55c62",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/013a-dibujo-tecnico-junio-2022.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 013A - Dibujo Técnico - junio 2022",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/013A%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202022.pdf",
+      "sha256": "4a46bce6444f27cb",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/013-cc-dibujo-tecnico-junio-2022.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 013 - CC - Dibujo Técnico - junio 2022",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/013%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202022.pdf",
+      "sha256": "71d8ced54308344c",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/013a-sol-dibujo-tecnico-junio-2022.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 013A - SOL - Dibujo Técnico - junio 2022",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/013A%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202022.pdf",
+      "sha256": "8f491923a8072f5d",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/013b-dibujo-tecnico-julio-2022.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 013B - Dibujo Técnico - julio 2022",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/013B%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202022.pdf",
+      "sha256": "9efb1ba19bd467ea",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/013-cc-dibujo-tecnico-julio-2022.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 013 - CC - Dibujo Técnico - julio 2022",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/013%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202022.pdf",
+      "sha256": "ec2554e72ac27b1a",
+      "transcrito": false
+    },
+    "valencia/lallibreta/soluciones/013b-sol-dibujo-tecnico-julio-2022.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 013B - SOL - Dibujo Técnico - julio 2022",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/013B%20-%20SOL%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202022.pdf",
+      "sha256": "2abd893fbd447589",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/012a-dibujo-tecnico-junio-2021.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 012A - Dibujo Técnico - junio 2021",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/012A%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202021.pdf",
+      "sha256": "9994b2f062394650",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/012a-cc-dibujo-tecnico-junio-2021.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 012A - CC - Dibujo Técnico - junio 2021",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/012A%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202021.pdf",
+      "sha256": "dee866e6a82c1865",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/012b-cc-dibujo-tecnico-julio-2021.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 012B - CC - Dibujo Técnico - julio 2021",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/012B%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202021.pdf",
+      "sha256": "40284e687c8ce1d0",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/011ab-dibujo-tecnico-a-b-julio2020.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 011AB - Dibujo Técnico A - B - julio2020",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/011AB%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio2020.pdf",
+      "sha256": "cf1f8c0cd4a3a31b",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/011a-cc-dibujo-tecnico-julio-2020.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 011A - CC - Dibujo Técnico - julio 2020",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/011A%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202020.pdf",
+      "sha256": "58391e216ac52a9f",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/011cd-dibujo-tecnico-a-b-septiembre-2020.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 011CD - Dibujo Técnico A - B - Septiembre-2020",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/011CD%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20Septiembre-2020.pdf",
+      "sha256": "4bdbedd92eb5f142",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/011b-cc-dibujo-tecnico-septiembre2020.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 011B - CC - Dibujo Técnico - Septiembre2020",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/011B%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20Septiembre2020.pdf",
+      "sha256": "781d8a1dcb87215d",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/010ab-dibujo-tecnico-a-b-junio-2019.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 010AB - Dibujo Técnico A - B - junio 2019",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/010AB%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20junio%202019.pdf",
+      "sha256": "3fddf9554fbe3fbb",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/010ab-cc-dibujo-tecnico-a-b-junio-2019.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 010AB - CC - Dibujo Técnico A - B - junio 2019",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/010AB%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20junio%202019.pdf",
+      "sha256": "68af33c1acb7d320",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/010cd-dibujo-tecnico-a-b-julio-2019.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 010CD - Dibujo Técnico A - B - julio 2019",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/010CD%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio%202019.pdf",
+      "sha256": "47bc5b46c0d07f59",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/010cd-cc-dibujo-tecnico-a-b-julio-2019.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 010CD - CC - Dibujo Técnico A - B - julio 2019",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/010CD%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio%202019.pdf",
+      "sha256": "c0528f17c6c60187",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/009ab-dibujo-tecnico-a-b-junio-2018.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 009AB - Dibujo Técnico A - B - junio 2018",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/009AB%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20junio%202018.pdf",
+      "sha256": "c900ce718706224c",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/009ab-cc-dibujo-tecnico-a-b-junio-2018.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 009AB - CC - Dibujo Técnico A - B - junio 2018",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/009AB%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20junio%202018.pdf",
+      "sha256": "ede6514124cc5928",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/009cd-dibujo-tecnico-a-b-julio-2018.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 009CD - Dibujo Técnico A - B - julio 2018",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/009CD%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio%202018.pdf",
+      "sha256": "53abdef56dcd4add",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/009cd-cc-dibujo-tecnico-a-b-julio-2018.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 009CD - CC - Dibujo Técnico A - B - julio 2018",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/009CD%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio%202018.pdf",
+      "sha256": "8ca0f0e3ce0dc517",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/008ab-dibujo-tecnico-a-b-junio-2017.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 008AB - Dibujo Técnico A - B - junio 2017",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/008AB%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20junio%202017.pdf",
+      "sha256": "97ca98cba84776e6",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/008ab-cc-dibujo-tecnico-junio-2017.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 008AB - CC - Dibujo Técnico - junio 2017",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/008AB%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202017.pdf",
+      "sha256": "1cdff065732d9de2",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/008cd-dibujo-tecnico-a-b-julio-2017.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 008CD - Dibujo Técnico A - B - julio 2017",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/008CD%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio%202017.pdf",
+      "sha256": "07d85f7f274421ae",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/008cd-cc-dibujo-tecnico-julio-2017.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 008CD - CC - Dibujo Técnico - julio 2017",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/008CD%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202017.pdf",
+      "sha256": "f8e643f7ec1339e9",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/007ab-dibujo-tecnico-a-b-junio-2016.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 007AB - Dibujo Técnico A - B - junio 2016",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/007AB%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20junio%202016.pdf",
+      "sha256": "a846b52de81ce796",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/007ab-cc-dibujo-tecnico-junio-2016.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 007AB - CC - Dibujo Técnico - junio 2016",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/007AB%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202016.pdf",
+      "sha256": "d9daebc430f72cc7",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/007cd-dibujo-tecnico-a-b-julio-2016.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 007CD - Dibujo Técnico A - B - julio 2016",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/007CD%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio%202016.pdf",
+      "sha256": "cc5d7586846ab3db",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/007cd-cc-dibujo-tecnico-a-b-julio-2016.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 007CD - CC - Dibujo Técnico A - B - julio 2016",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/007CD%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20B%20-%20julio%202016.pdf",
+      "sha256": "045599888672928f",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/006a-dibujo-tecnico-a-junio-2015.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 006A - Dibujo Técnico A - junio 2015",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/006A%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20junio%202015.pdf",
+      "sha256": "49d1b224b0ff11f1",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/006b-dibujo-tecnico-b-junio-2015.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 006B - Dibujo Técnico B - junio 2015",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/006B%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20junio%202015.pdf",
+      "sha256": "f2a3a01dbe8073ef",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/006a-cc-dibujo-tecnico-junio-2015.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 006A - CC - Dibujo Técnico - junio 2015",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/006A%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202015.pdf",
+      "sha256": "92d3ac214bad0971",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/006d-dibujo-tecnico-b-julio-2015.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 006D - Dibujo Técnico B - julio 2015",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/006D%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20julio%202015.pdf",
+      "sha256": "c3cfb136fd03564d",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/006c-cc-dibujo-tecnico-julio-2015.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 006C - CC - Dibujo Técnico - julio 2015",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/006C%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202015.pdf",
+      "sha256": "9952160364ca940c",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/005a-dibujo-tecnico-a-junio-2014.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 005A - Dibujo Técnico A - junio 2014",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/005A%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20junio%202014.pdf",
+      "sha256": "a1dd793a2c8e5ccf",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/005b-dibujo-tecnico-b-junio-2014.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 005B - Dibujo Técnico B - junio 2014",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/005B%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20junio%202014.pdf",
+      "sha256": "f1e43d196f021b47",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/005a-cc-dibujo-tecnico-junio-2014.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 005A - CC - Dibujo Técnico - junio 2014",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/005A%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202014.pdf",
+      "sha256": "d568c7bb803412db",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/005c-dibujo-tecnico-a-julio-2014.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 005C - Dibujo Técnico A - julio 2014",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/005C%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20julio%202014.pdf",
+      "sha256": "64c1f04b881ee757",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/005d-dibujo-tecnico-b-julio-2014.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 005D - Dibujo Técnico B - julio 2014",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/005D%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20julio%202014.pdf",
+      "sha256": "f2b857fce7e74799",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/005c-cc-dibujo-tecnico-julio-2014.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 005C - CC - Dibujo Técnico - julio 2014",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/005C%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202014.pdf",
+      "sha256": "7ed9ae4b0da1c9bf",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/004a-dibujo-tecnico-a-junio-2013.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 004A - Dibujo Técnico A - junio 2013",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/004A%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20junio%202013.pdf",
+      "sha256": "b695a5523e86efec",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/004b-dibujo-tecnico-b-junio-2013.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 004B - Dibujo Técnico B - junio 2013",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/004B%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20junio%202013.pdf",
+      "sha256": "5a478bbbad0e73f9",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/004a-cc-dibujo-tecnico-junio-2013.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 004A - CC - Dibujo Técnico - junio 2013",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/004A%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202013.pdf",
+      "sha256": "64d4d1e8608ad9ab",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/004c-dibujo-tecnico-julio-2013.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 004C - Dibujo Técnico - julio 2013",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/004C%20-%20Dibujo%20T%C3%A9cnico%20-%20julio%202013.pdf",
+      "sha256": "19fbd1844059bcf5",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/004c-cc-dibujo-tecnico-julio-2013.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 004C - CC -Dibujo Técnico - julio 2013",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/004C%20-%20CC%20-Dibujo%20T%C3%A9cnico%20-%20julio%202013.pdf",
+      "sha256": "7248cfab45e806da",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/003a-dibujo-tecnico-a-junio-2012.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 003A - Dibujo Técnico A - junio 2012",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/003A%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20junio%202012.pdf",
+      "sha256": "1bb35d5dd32786fd",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/003b-dibujo-tecnico-b-junio-2012.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 003B - Dibujo Técnico B - junio 2012",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/003B%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20junio%202012.pdf",
+      "sha256": "1d8cc58e45322a5d",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/003a-cc-dibujo-tecnico-junio-2012.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 003A - CC - Dibujo Técnico - junio 2012",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/003A%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202012.pdf",
+      "sha256": "d27270ca2fc3d266",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/003c-dibujo-tecnico-a-sept-2012.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 003C - Dibujo Técnico A - sept 2012",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/003C%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20sept%202012.pdf",
+      "sha256": "9cf361d6391569b3",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/003d-dibujo-tecnico-b-sept-2012.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 003D - Dibujo Técnico B - sept 2012",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/003D%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20sept%202012.pdf",
+      "sha256": "007ed9cc3a2bd2e1",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/003c-cc-dibujo-tecnico-sept-2012.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 003C - CC - Dibujo Técnico - sept 2012",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/003C%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20sept%202012.pdf",
+      "sha256": "77fc48ba2d4bba78",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/002a-dibujo-tecnico-a-junio-2011.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 002A - Dibujo Técnico A - junio 2011",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/002A%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20junio%202011.pdf",
+      "sha256": "6ef4fe74ce71df69",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/002b-dibujo-tecnico-b-junio-2011.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 002B - Dibujo Técnico B - junio 2011",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/002B%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20junio%202011.pdf",
+      "sha256": "454cc184c588645d",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/002-cc-dibujo-tecnico-junio-2011.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 002 - CC - Dibujo Técnico - junio 2011",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/002%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20junio%202011.pdf",
+      "sha256": "84be50da03be6e24",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/002c-dibujo-tecnico-a-sept-2011.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 002C - Dibujo Técnico A - sept 2011",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/002C%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20sept%202011.pdf",
+      "sha256": "ab2fb6b37f523789",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/002d-dibujo-tecnico-b-sept-2011.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 002D - Dibujo Técnico B - sept 2011",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/002D%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20sept%202011.pdf",
+      "sha256": "6b809f1cda504f8c",
+      "transcrito": false
+    },
+    "valencia/lallibreta/criterios/002-cc-dibujo-tecnico-sept-2011.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 002 - CC - Dibujo Técnico - sept 2011",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25682/mod_folder/content/0/002%20-%20CC%20-%20Dibujo%20T%C3%A9cnico%20-%20sept%202011.pdf",
+      "sha256": "747aa7a96f683205",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/001a-dibujo-tecnico-a-junio-2010.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 001A - Dibujo Técnico A - junio 2010",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/001A%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20junio%202010.pdf",
+      "sha256": "c63cd49b85c32dd8",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/001b-dibujo-tecnico-b-junio-2010.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 001B - Dibujo Técnico B - junio 2010",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/001B%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20junio%202010.pdf",
+      "sha256": "92c9639e2c7df1dd",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/001c-dibujo-tecnico-a-sept-2010.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 001C - Dibujo Técnico A - sept 2010",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/001C%20-%20Dibujo%20T%C3%A9cnico%20A%20-%20sept%202010.pdf",
+      "sha256": "554ef6f874e82e7e",
+      "transcrito": false
+    },
+    "valencia/lallibreta/enunciados/001d-dibujo-tecnico-b-sept-2010.pdf": {
+      "region": "valencia",
+      "fuente": "lallibreta",
+      "descripcion": "Valencia: 001D - Dibujo Técnico B - sept 2010",
+      "origen": "https://aula.academialallibreta.es/pluginfile.php/25637/mod_folder/content/0/001D%20-%20Dibujo%20T%C3%A9cnico%20B%20-%20sept%202010.pdf",
+      "sha256": "989b9a1bb4e0e073",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2024.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2024 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2025/02/DIBUJO-2024.pdf",
+      "sha256": "10e498b995da2ab5",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2023.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2023 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2023.pdf",
+      "sha256": "942473aa110ba942",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2022.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2022 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2022.pdf",
+      "sha256": "cfec754e66563c4f",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2021.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2021 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2023/02/Dibujo-Tecnico-2021.pdf",
+      "sha256": "ed60502f511fd7b5",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2020.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2020 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2023/02/Dibujo-Tecnico-2020.pdf",
+      "sha256": "e0563fba9c121cf9",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2019.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2019 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2023/02/Dibujo-Tecnico-2019.pdf",
+      "sha256": "4e8cddcca28e3172",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2018.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2018 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2023/02/Dibujo-Tecnico-2018.pdf",
+      "sha256": "744f093b21772530",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2017.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2017 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2023/02/Dibujo-Tecnico-2017.pdf",
+      "sha256": "ee711996ffc951ca",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2016.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2016 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2016.pdf",
+      "sha256": "557484337159e835",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2015.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2015 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2015.pdf",
+      "sha256": "ad54cb0aa86f3693",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2014.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2014 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2014.pdf",
+      "sha256": "e209c435202d303b",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2013.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2013 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2013.pdf",
+      "sha256": "1fde2e6b91ad71f1",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2012.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2012 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2012.pdf",
+      "sha256": "1d99803bbfa545b2",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2011.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2011 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2011.pdf",
+      "sha256": "6dd4c8af94cc036f",
+      "transcrito": false
+    },
+    "andalucia/academia-granada/dibujo-tecnico-2010.pdf": {
+      "region": "andalucia",
+      "fuente": "academia-granada",
+      "descripcion": "Andalucía 2010 (recopilación de Academia Granada)",
+      "origen": "https://academia-granada.es/wp-content/uploads/2024/01/Dibujo-Tecnico-2010.pdf",
+      "sha256": "b1762317388367cb",
+      "transcrito": false
+    },
+    "madrid/uc3m/extraordinaria-2021-2022.pdf": {
+      "region": "madrid",
+      "fuente": "uc3m",
+      "descripcion": "Madrid 2021-2022, extraordinaria",
+      "origen": "https://drive.google.com/file/d/1kDzVZmGQ8C_DoRnuCWiWVWxaMKJ7eO3v/view?usp=sharing",
+      "sha256": "fc81e640bcfbd35b",
+      "transcrito": false
+    }
+  },
+  "actualizado": "2026-11-07"
+}

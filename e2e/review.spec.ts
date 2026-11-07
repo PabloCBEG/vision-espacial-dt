@@ -2,15 +2,29 @@
 // Es lenta, así que solo se ejecuta a propósito:  REVIEW=1 npx playwright test e2e/review.spec.ts
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 test.skip(!process.env.REVIEW, 'Revisión completa: ejecutar con REVIEW=1');
 
-const LESSONS = [
-  { id: 'el-punto', pages: 11 },
-  { id: 'la-recta', pages: 11 },
-  { id: 'el-plano', pages: 10 },
-];
+/** Todas las lecciones: sus pasos y sus ejercicios, cada uno una página del reproductor. */
+const LESSONS = readdirSync('src/content/lessons')
+  .filter((f) => f.endsWith('.json'))
+  .sort()
+  .map((f) => {
+    const l = JSON.parse(readFileSync(`src/content/lessons/${f}`, 'utf8')) as {
+      id: string;
+      steps: unknown[];
+      exercises?: unknown[];
+    };
+    return { id: l.id, steps: l.steps.length, pages: l.steps.length + (l.exercises?.length ?? 0) };
+  });
+
+/** Lecciones del diédrico: sus rótulos se comprueban contra la notación de CLAUDE.md. */
+const NOTATION_LESSONS = new Set(['el-punto', 'la-recta', 'el-plano']);
+
+const PAU = readdirSync('src/content/pau')
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => (JSON.parse(readFileSync(`src/content/pau/${f}`, 'utf8')) as { id: string }).id);
 
 const VIEWPORTS = [
   { name: '1920x1080', width: 1920, height: 1080 },
@@ -47,7 +61,7 @@ async function labels(page: Page): Promise<string[]> {
 }
 
 test('capturas de todos los pasos y notación', async ({ page }) => {
-  test.setTimeout(600_000);
+  test.setTimeout(1_800_000);
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
   const unknown = new Set<string>();
   for (const viewport of VIEWPORTS) {
@@ -61,8 +75,10 @@ test('capturas de todos los pasos y notación', async ({ page }) => {
           path: `review/${lesson.id}-${String(i).padStart(2, '0')}-${viewport.name}.png`,
           fullPage: true,
         });
-        for (const text of await labels(page)) {
-          if (!NOTATION.some((re) => re.test(text))) unknown.add(text);
+        if (NOTATION_LESSONS.has(lesson.id)) {
+          for (const text of await labels(page)) {
+            if (!NOTATION.some((re) => re.test(text))) unknown.add(text);
+          }
         }
         if (i < lesson.pages) await page.getByRole('button', { name: 'Siguiente →' }).click();
       }
@@ -73,7 +89,7 @@ test('capturas de todos los pasos y notación', async ({ page }) => {
 });
 
 test('accesibilidad (axe) en inicio, modo libre, lecciones y ejercicios', async ({ page }) => {
-  test.setTimeout(180_000);
+  test.setTimeout(900_000);
   const report: Record<string, unknown[]> = {};
   const check = async (name: string) => {
     const results = await new AxeBuilder({ page })
@@ -95,13 +111,35 @@ test('accesibilidad (axe) en inicio, modo libre, lecciones y ejercicios', async 
     await check(`libre-${scheme}`);
     for (const lesson of LESSONS) {
       await page.goto(`/#/leccion/${lesson.id}`);
-      await page.waitForTimeout(300);
+      await page.waitForTimeout(600);
       await check(`${lesson.id}-paso1-${scheme}`);
+      if (lesson.pages > lesson.steps) {
+        for (let i = 0; i < lesson.steps; i++) await page.keyboard.press('ArrowRight');
+        await page.waitForTimeout(600);
+        await check(`${lesson.id}-ejercicio-${scheme}`);
+      }
     }
-    await page.goto('/#/leccion/el-punto');
-    for (let i = 0; i < 8; i++) await page.keyboard.press('ArrowRight');
+    await page.goto('/#/pau');
     await page.waitForTimeout(300);
-    await check(`el-punto-ejercicio-${scheme}`);
+    await check(`banco-pau-${scheme}`);
+    for (const id of PAU) {
+      await page.goto(`/#/pau/${id}`);
+      await page.waitForTimeout(600);
+      await check(`examen-${id}-${scheme}`);
+    }
+    await page.goto('/#/entrenador');
+    await page.waitForTimeout(600);
+    await check(`entrenador-${scheme}`);
+    await page.goto('/#/conicas');
+    await page.waitForTimeout(800);
+    await page.locator('#analytic-panel').evaluate((d) => ((d as HTMLDetailsElement).open = true));
+    await page.waitForTimeout(400);
+    await check(`laboratorio-conicas-${scheme}`);
+    await page.goto('/');
+    await page.locator('#projector-toggle').click();
+    await page.waitForTimeout(200);
+    await check(`inicio-proyector-${scheme}`);
+    await page.locator('#projector-toggle').click();
   }
   writeFileSync('review/accesibilidad.json', JSON.stringify(report, null, 2));
   const total = Object.values(report).reduce((n, v) => n + v.length, 0);
@@ -204,4 +242,71 @@ test('rendimiento con la CPU ralentizada 4 veces', async ({ page }) => {
   console.log('rendimiento', JSON.stringify(result));
   expect(result.fps).toBeGreaterThan(20);
   expect(idleRenders).toBe(0);
+});
+
+test('rendimiento de los motores pesados con la CPU ralentizada 4 veces', async ({ page }) => {
+  test.setTimeout(300_000);
+  await page.setViewportSize({ width: 390, height: 844 });
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+  const result: Record<string, number> = {};
+
+  // Cuánto tarda en verse la lámina de cada pantalla (el primer dibujo de su motor).
+  // Cada pantalla está lista cuando su motor ha terminado el primer dibujo (la pieza de
+  // normalización necesita cargar antes el núcleo WebAssembly).
+  const screens: [string, string, () => boolean][] = [
+    [
+      'seccion-piramide',
+      '/#/leccion/seccion-piramide',
+      () => !!document.querySelector('#view-3d canvas'),
+    ],
+    [
+      'vistas-isometrica',
+      '/#/leccion/vistas-isometrica',
+      () =>
+        !!document.querySelector('#view-3d canvas') &&
+        !document.body.textContent?.includes('Preparando la pieza'),
+    ],
+    [
+      'lugares-geometricos',
+      '/#/leccion/lugares-geometricos',
+      () => !!document.querySelector('#view-2d svg'),
+    ],
+    ['laboratorio-conicas', '/#/conicas', () => !!document.querySelector('#view-2d svg path')],
+    ['entrenador', '/#/entrenador', () => !!document.querySelector('.trainer-option')],
+  ];
+  for (const [name, url, ready] of screens) {
+    await page.goto('about:blank');
+    const start = Date.now();
+    await page.goto(url);
+    await page.waitForFunction(ready, undefined, { timeout: 60_000 });
+    result[`${name}ReadyMs`] = Date.now() - start;
+  }
+
+  // El laboratorio, en reposo, no vuelve a dibujar la escena.
+  await page.goto('/#/conicas');
+  await page.waitForTimeout(2500);
+  result.laboratorioIdleDrawCalls = await page.evaluate(async () => {
+    const canvas = document.querySelector('#view-3d canvas') as HTMLCanvasElement;
+    const gl = canvas.getContext('webgl2') ?? canvas.getContext('webgl');
+    if (!gl) return -1;
+    let draws = 0;
+    const original = gl.drawElements.bind(gl);
+    (gl as WebGL2RenderingContext).drawElements = (...args: Parameters<typeof original>) => {
+      draws++;
+      return original(...args);
+    };
+    const originalArrays = gl.drawArrays.bind(gl);
+    (gl as WebGL2RenderingContext).drawArrays = (...args: Parameters<typeof originalArrays>) => {
+      draws++;
+      return originalArrays(...args);
+    };
+    await new Promise((r) => setTimeout(r, 1500));
+    return draws;
+  });
+
+  writeFileSync('review/rendimiento-motores.json', JSON.stringify(result, null, 2));
+  console.log('rendimiento motores', JSON.stringify(result));
+  expect(result.laboratorioIdleDrawCalls).toBe(0);
+  for (const [name] of screens) expect(result[`${name}ReadyMs`]).toBeLessThan(15_000);
 });

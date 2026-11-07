@@ -29,3 +29,6 @@ playwright-report
 blob-report
 screenshots
 review
+
+# Exámenes PAU descargados (son de sus autores; solo uso docente local)
+examenes/**/*.pdf
