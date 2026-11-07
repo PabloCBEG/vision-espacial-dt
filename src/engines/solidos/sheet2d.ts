@@ -169,7 +169,11 @@ export class SolidsSheet implements SheetModule {
     const onPV = cut.onto === 'PV';
     const view = onPV ? elevation : plan;
     const moved = cut.folded.map(view);
+    // En una sección curva (cono, cilindro) se construyen solo algunos puntos, como a mano:
+    // con todos, las líneas de abatimiento taparían la curva.
+    const every = scene.smooth ? Math.max(1, Math.round(s.polygon.length / 8)) : 1;
     s.polygon.forEach((p, i) => {
+      if (i % every !== 0) return;
       const start = view(p);
       const now = moved[i];
       if (!now || !cut.hinge) return;

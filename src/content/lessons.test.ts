@@ -149,7 +149,7 @@ describe('ejercicios de medida con el motor de métodos', () => {
 });
 
 describe('ejercicios de medida con el motor de sólidos', () => {
-  it('la respuesta es uno de los lados de la sección en verdadera magnitud', async () => {
+  it('la respuesta es un lado de la sección en verdadera magnitud (o su eje mayor, si es curva)', async () => {
     const { buildScene } = await import('../engines/solidos/construction.ts');
     const { SolidsStepSchema } = await import('../engines/solidos/definition.ts');
     const { lessons } = parseLessons(readAll());
@@ -164,7 +164,15 @@ describe('ejercicios de medida con el motor de sólidos', () => {
           const q = poly[(i + 1) % poly.length] ?? p;
           return Math.hypot(p.x - q.x, p.a - q.a, p.c - q.c);
         });
-        const best = Math.min(...sides.map((s) => Math.abs(s - exercise.answer)));
+        // En el cono y el cilindro la sección es una curva: se mide su eje mayor.
+        const curved = data.solido.tipo === 'cono' || data.solido.tipo === 'cilindro';
+        let diameter = 0;
+        for (const p of poly) {
+          for (const q of poly)
+            diameter = Math.max(diameter, Math.hypot(p.x - q.x, p.a - q.a, p.c - q.c));
+        }
+        const candidates = curved ? [diameter] : sides;
+        const best = Math.min(...candidates.map((s) => Math.abs(s - exercise.answer)));
         expect(best, lesson.id).toBeLessThan(0.1);
         checked++;
       }

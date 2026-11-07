@@ -1,0 +1,272 @@
+{
+  "id": "cono-cilindro",
+  "order": 12,
+  "title": "Cono y cilindro: puntos, secciones y recta que los atraviesa",
+  "topic": "II-09",
+  "stage": "DT II",
+  "saberBasico": "Sistema diédrico: superficies de revolución (cono y cilindro rectos). Puntos de la superficie, secciones planas y puntos de intersección con una recta.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P"
+  },
+  "steps": [
+    {
+      "narration": "Un cono de revolución es la superficie que barre una recta, la generatriz, al girar alrededor del eje pasando siempre por el vértice. Todos sus puntos están en alguna generatriz.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          }
+        }
+      }
+    },
+    {
+      "narration": "En la lámina, la planta es la circunferencia de la base y el alzado, un triángulo. Sus lados son las generatrices de contorno, las que separan la parte vista de la oculta.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Nos dan M″ y buscamos M′. Trazamos la generatriz que pasa por M: su alzado va de V″ a la base y su planta, de V′ al punto de la circunferencia.",
+      "show3d": ["planos", "solido", "superficie"],
+      "sheet": ["lt", "solido", "vertices", "superficie"],
+      "highlight": ["superficie"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "punto": {
+            "dado": "vertical",
+            "en": [6, 22],
+            "metodo": "generatriz",
+            "progreso": 0.5
+          }
+        }
+      }
+    },
+    {
+      "narration": "M′ está en la planta de esa generatriz, sobre la línea de referencia de M″. Como M está en la mitad de delante, se ve en el alzado.",
+      "show3d": ["planos", "solido", "superficie"],
+      "sheet": ["lt", "solido", "vertices", "superficie"],
+      "highlight": ["superficie"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "punto": {
+            "dado": "vertical",
+            "en": [6, 22],
+            "metodo": "generatriz"
+          }
+        }
+      }
+    },
+    {
+      "narration": "El otro camino es el paralelo: la circunferencia horizontal que pasa por M. En la planta es una circunferencia y M′ está en ella.",
+      "show3d": ["planos", "solido", "superficie"],
+      "sheet": ["lt", "solido", "vertices", "superficie"],
+      "highlight": ["superficie"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "punto": {
+            "dado": "vertical",
+            "en": [6, 22],
+            "metodo": "paralelo"
+          }
+        }
+      }
+    },
+    {
+      "narration": "Un plano que corta al cono deja una cónica. Si corta a todas las generatrices sin ser perpendicular al eje, es una elipse.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 0],
+              [35, 50]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Al abatir el plano α, la elipse aparece en verdadera magnitud. El laboratorio de cónicas muestra cómo cambia la curva al inclinar el plano.",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "solido", "corte", "seccion", "seccion-vm"],
+      "highlight": ["seccion-vm"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 0],
+              [35, 50]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "El cilindro es la superficie que barre una generatriz paralela al eje. Su planta es una circunferencia: todos sus puntos se proyectan sobre ella.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["solido"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cilindro",
+            "radio": 20,
+            "altura": 45,
+            "centro": [0, 32]
+          }
+        }
+      }
+    },
+    {
+      "narration": "La recta r entra en el cilindro por E y sale por S. Como las generatrices son verticales, todos los puntos de la superficie se proyectan en planta sobre la circunferencia.",
+      "show3d": ["planos", "solido", "recta-solido"],
+      "sheet": ["lt", "solido", "recta-solido"],
+      "highlight": ["recta-solido"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cilindro",
+            "radio": 20,
+            "altura": 45,
+            "centro": [0, 32]
+          },
+          "recta": {
+            "puntos": [
+              [-45, 50, 10],
+              [45, 15, 38]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Por eso E′ y S′ están donde r′ corta a la circunferencia, y E″ y S″ se llevan al alzado por sus líneas de referencia. El tramo de r dentro del cilindro no se dibuja.",
+      "show3d": ["planos", "solido", "recta-solido"],
+      "sheet": ["lt", "solido", "recta-solido"],
+      "highlight": ["recta-solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cilindro",
+            "radio": 20,
+            "altura": 45,
+            "centro": [0, 32]
+          },
+          "recta": {
+            "puntos": [
+              [-45, 50, 10],
+              [45, 15, 38]
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Mide en la lámina el eje mayor de la elipse de la sección en verdadera magnitud. Usa la cuadrícula de 10 mm.",
+      "answer": 35.2,
+      "unit": "mm",
+      "tolerance": 2,
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cono",
+            "radio": 25,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 0],
+              [35, 50]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    }
+  ]
+}
