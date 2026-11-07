@@ -1,4 +1,5 @@
 // Lista de motores: añadir uno nuevo es añadir su definición aquí y su ejecución en runtimes.ts.
+import { AXON_DEFINITION } from './axonometria/definition.ts';
 import { METHODS_DEFINITION } from './metodos/definition.ts';
 import { NORM_DEFINITION } from './normalizacion/definition.ts';
 import { PLANE_DEFINITION } from './plana/definition.ts';
@@ -28,4 +29,5 @@ export const ENGINE_DEFINITIONS: readonly EngineDefinition[] = [
   SOLIDS_DEFINITION,
   PLANE_DEFINITION,
   NORM_DEFINITION,
+  AXON_DEFINITION,
 ];

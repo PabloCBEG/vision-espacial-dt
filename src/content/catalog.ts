@@ -358,7 +358,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 3,
     pauNote: 'Ejercicio 3',
     scene: 'Paso de las vistas a la perspectiva',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'II-11',

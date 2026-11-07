@@ -23,7 +23,7 @@ export const SOLID_TYPES = [
 ] as const;
 export type SolidType = (typeof SOLID_TYPES)[number];
 
-const SolidSchema = z.object({
+export const SolidSchema = z.object({
   tipo: z.enum(SOLID_TYPES),
   /** Lados de la base (prisma, pirámide y tronco). */
   lados: z.number().int().min(3).max(8).default(4),

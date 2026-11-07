@@ -326,7 +326,11 @@ export interface ViewEdge {
  * aparecen si son contorno aparente. Las caras de canto (normal ⟂ visual) cuentan como vistas.
  */
 export function viewEdges(poly: Polyhedron, view: ViewDirection): ViewEdge[] {
-  const o = towardObserver(view);
+  return edgesToward(poly, towardObserver(view));
+}
+
+/** Como viewEdges, para un observador en cualquier dirección (axonometrías). */
+export function edgesToward(poly: Polyhedron, o: Point): ViewEdge[] {
   const facing = poly.faces.map((f) => dot(faceNormal(f), o) > -1e-9);
   const strict = poly.faces.map((f) => dot(faceNormal(f), o) > 1e-9);
   const out: ViewEdge[] = [];

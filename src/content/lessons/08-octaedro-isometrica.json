@@ -1,0 +1,175 @@
+{
+  "id": "octaedro-isometrica",
+  "order": 1,
+  "title": "Octaedro en isométrica con diagonal paralela a OZ",
+  "topic": "II-10",
+  "stage": "DT II",
+  "saberBasico": "Sistema axonométrico: perspectiva isométrica y caballera de sólidos. Coeficientes de reducción.",
+  "level": "Intermedio",
+  "initialScene": { "points": { "P": [0, 0, 0] }, "objects": [], "activePoint": "P" },
+  "steps": [
+    {
+      "narration": "Este octaedro regular tiene 30 mm de arista y una diagonal perpendicular al PH. En diédrico, su planta es un cuadrado y su alzado, un rombo.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "camera": "perspective",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": { "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 } }
+      }
+    },
+    {
+      "narration": "La axonometría es una proyección del mismo sólido desde otra dirección. Empezamos mirando de frente, como en el alzado, con el triedro de ejes X, Y y Z.",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 }
+        }
+      }
+    },
+    {
+      "narration": "Giramos hasta la dirección isométrica, que forma el mismo ángulo con los tres ejes. En el dibujo, los ejes quedan a 120° y Z vertical.",
+      "show3d": ["triedro", "axonometria", "cuadro"],
+      "sheet": ["triedro", "axonometria"],
+      "highlight": ["cuadro"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 }
+        }
+      }
+    },
+    {
+      "narration": "Cada medida paralela a un eje se reduce con el coeficiente 0,816. La escala gráfica lo construye: medidas reales a 45° y su proyección vertical sobre una recta a 30°.",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria", "escala"],
+      "highlight": ["escala"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "escala": 1
+        }
+      }
+    },
+    {
+      "narration": "Del diédrico a la perspectiva: la planta y el alzado se llevan a las caras del triedro y, desde ellos, se levanta la caja que envuelve al octaedro.",
+      "show3d": ["triedro", "vistas-triedro"],
+      "sheet": ["triedro", "vistas-triedro"],
+      "highlight": ["vistas-triedro"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "desdeVistas": 0.6
+        }
+      }
+    },
+    {
+      "narration": "La diagonal vertical va paralela a OZ por el centro de la caja, y el cuadrado central, a media altura. Uniendo cada vértice del cuadrado con los dos de la diagonal salen las ocho caras.",
+      "show3d": ["triedro", "vistas-triedro", "axonometria"],
+      "sheet": ["triedro", "vistas-triedro", "axonometria"],
+      "highlight": ["axonometria"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "desdeVistas": 1,
+          "rotulos": true
+        }
+      }
+    },
+    {
+      "narration": "Las aristas ocultas solo se dibujan si el enunciado lo pide. Aquí aparecen, con discontinua fina, las de detrás.",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "ocultas": true
+        }
+      }
+    },
+    {
+      "narration": "El dibujo isométrico es la misma figura sin reducir: sale más grande, con las mismas proporciones. En la PAU se usa el coeficiente 0,816 (se aceptan 0,82 o 0,8).",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "sistema": "dibujo-isometrico"
+        }
+      }
+    },
+    {
+      "narration": "En caballera, el plano frontal XZ queda en verdadera magnitud y el eje Y se dibuja a 45° y reducido a la mitad. Los rayos de proyección son oblicuos al cuadro.",
+      "show3d": ["triedro", "axonometria", "cuadro"],
+      "sheet": ["triedro", "axonometria"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "sistema": "caballera"
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "En perspectiva isométrica, ¿cuánto mide una arista de 30 mm paralela a uno de los ejes?",
+      "answer": 24.5,
+      "unit": "mm",
+      "tolerance": 0.6,
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria", "cuadricula"],
+      "engines": {
+        "axonometria": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, 30] } }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "En caballera con coeficiente 0,5, ¿cuánto mide en el dibujo una arista de 30 mm paralela al eje Y?",
+      "answer": 15,
+      "unit": "mm",
+      "tolerance": 0.6,
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, 30] },
+          "sistema": "caballera"
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: octaedro de 30 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?",
+      "answer": 34.6,
+      "unit": "mm",
+      "tolerance": 1,
+      "show3d": ["triedro"],
+      "sheet": ["triedro", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 }
+        }
+      }
+    }
+  ]
+}
