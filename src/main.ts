@@ -21,6 +21,7 @@ import {
 import { renderHome } from './ui/home.ts';
 import { loadPau } from './content/pauSchema.ts';
 import { renderPauBank, startExam } from './ui/pau.ts';
+import { startTrainer } from './ui/trainer.ts';
 
 function required<T extends Element>(selector: string): T {
   const element = document.querySelector<T>(selector);
@@ -83,6 +84,7 @@ mountEngines({
 const { lessons, errors } = loadLessons();
 const home = required<HTMLElement>('#home');
 const pauBank = required<HTMLElement>('#pau-bank');
+const trainerPanel = required<HTMLElement>('#trainer-panel');
 const { exercises: pauExercises } = loadPau();
 const workspace = required<HTMLElement>('#workspace');
 const lessonBar = required<HTMLElement>('#lesson-bar');
@@ -101,7 +103,8 @@ store.subscribe((state, previous) => {
   }
 });
 
-function show(screen: 'home' | 'free' | 'lesson' | 'pau'): void {
+function show(screen: 'home' | 'free' | 'lesson' | 'pau' | 'trainer'): void {
+  trainerPanel.hidden = screen !== 'trainer';
   home.hidden = screen !== 'home';
   pauBank.hidden = screen !== 'pau';
   workspace.hidden = screen === 'home' || screen === 'pau';
@@ -167,6 +170,10 @@ function route(): void {
       checkEngines,
     );
     document.title = `PAU: ${pau.titulo} · Visión espacial`;
+  } else if (hash === '#/entrenador') {
+    show('trainer');
+    stopLesson = startTrainer(trainerPanel, spatialView, store);
+    document.title = 'Entrenador espacial · Visión espacial';
   } else if (hash === '#/pau') {
     show('pau');
     renderPauBank(required('#pau-content'), pauExercises);

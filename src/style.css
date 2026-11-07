@@ -846,6 +846,145 @@ body[data-screen='lesson'] .workspace {
   font: inherit;
 }
 
+/* ---------- Entrenador espacial ---------- */
+body[data-layout='trainer'] .panel-2d,
+body[data-layout='trainer'] .controls-bar {
+  display: none;
+}
+
+body[data-layout='trainer'] .workspace {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+body[data-layout='trainer'] .trainer-panel {
+  grid-column: 1;
+  grid-row: 1;
+  align-content: start;
+  overflow: auto;
+}
+
+body[data-layout='trainer'] .panel-3d {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+@media (max-width: 767px) {
+  body[data-layout='trainer'] .trainer-panel,
+  body[data-layout='trainer'] .panel-3d {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.trainer-panel {
+  gap: var(--space-s);
+}
+
+.trainer-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-s) var(--space-m);
+}
+
+.trainer-status {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.trainer-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.trainer-option {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-s);
+}
+
+.trainer-option.is-chosen {
+  outline: 3px solid var(--color-accent);
+}
+
+.trainer-option.is-right {
+  border-color: var(--scene-line);
+  border-width: 3px;
+}
+
+.trainer-thumb {
+  display: block;
+  overflow: visible;
+}
+
+.trainer-face {
+  stroke: var(--color-text);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+
+.face-top {
+  fill: color-mix(in srgb, var(--scene-solid) 45%, var(--color-surface));
+}
+
+.face-front {
+  fill: var(--scene-solid);
+}
+
+.face-side {
+  fill: color-mix(in srgb, var(--scene-solid) 70%, var(--color-text));
+}
+
+.trainer-cell {
+  fill: color-mix(in srgb, var(--scene-solid) 50%, var(--color-surface));
+  stroke: var(--color-text);
+  stroke-width: 0.6;
+}
+
+.trainer-section {
+  fill: color-mix(in srgb, var(--scene-result) 35%, var(--color-surface));
+  stroke: var(--scene-result);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.trainer-actions {
+  display: flex;
+  gap: var(--space-s);
+}
+
+.trainer-results summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.trainer-code {
+  display: inline-flex;
+  gap: var(--space-s);
+  align-items: center;
+  margin-right: var(--space-s);
+  font-weight: 600;
+}
+
+.trainer-code input {
+  width: 9rem;
+  padding: var(--space-xs) var(--space-s);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 0.25rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.trainer-export-note {
+  margin: var(--space-xs) 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
 /* ---------- Banco PAU y modo examen ---------- */
 .pau-filters {
   display: flex;

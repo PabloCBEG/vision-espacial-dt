@@ -117,13 +117,18 @@ function topicCard(
   seen: ReadonlySet<string>,
 ): HTMLLIElement {
   const item = document.createElement('li');
-  const available = topic.status === 'disponible' && lessons.length > 0;
+  const available = topic.status === 'disponible' && (lessons.length > 0 || Boolean(topic.route));
   item.className = `topic-card${available ? '' : ' is-soon'}`;
   item.dataset.topic = topic.code;
   const pau = topic.pauExercise ? `PAU ej. ${topic.pauExercise}` : topic.pauNote;
   const titleId = `topic-${topic.code}`;
   let body: string;
-  if (available) {
+  if (available && topic.route) {
+    body = `<a class="lesson-card-link" href="${topic.route}">
+      <span class="lesson-card-title">Empezar</span>
+      <span class="lesson-card-footer">Entrenamiento adaptativo y test diagnóstico</span>
+    </a>`;
+  } else if (available) {
     const p = topicProgress(lessons, seen, solvedIn);
     body = `
       <p class="topic-progress">

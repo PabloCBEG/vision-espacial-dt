@@ -56,6 +56,8 @@ export interface Topic {
   /** Escena 3D que hace «ver» el problema. */
   readonly scene: string;
   readonly status: TopicStatus;
+  /** Pantalla propia (en vez de lecciones), por ejemplo el entrenador. */
+  readonly route?: string;
 }
 
 const topic = (t: Topic): Topic => t;
@@ -70,7 +72,8 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: null,
     pauNote: 'Transversal',
     scene: 'Rotaciones, secciones y desarrollos',
-    status: 'proximamente',
+    status: 'disponible',
+    route: '#/entrenador',
   }),
   // ---------- Dibujo Técnico I ----------
   topic({

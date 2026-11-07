@@ -31,7 +31,7 @@ describe('catálogo del temario', () => {
 
   it('un tema disponible tiene al menos una lección, y uno con lecciones está disponible', () => {
     for (const t of CATALOG) {
-      const count = lessons.filter((l) => l.topic === t.code).length;
+      const count = lessons.filter((l) => l.topic === t.code).length + (t.route ? 1 : 0);
       expect(count > 0, `${t.code}: ${count} lecciones, estado ${t.status}`).toBe(
         t.status === 'disponible',
       );
