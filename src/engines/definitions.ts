@@ -1,5 +1,6 @@
 // Lista de motores: añadir uno nuevo es añadir su definición aquí y su ejecución en runtimes.ts.
 import { METHODS_DEFINITION } from './metodos/definition.ts';
+import { SOLIDS_DEFINITION } from './solidos/definition.ts';
 import type { EngineDefinition } from './types.ts';
 
 /** El diédrico básico (punto, recta, plano y perfil) va integrado en las vistas. */
@@ -22,4 +23,5 @@ export const DIHEDRAL_DEFINITION: EngineDefinition = {
 export const ENGINE_DEFINITIONS: readonly EngineDefinition[] = [
   DIHEDRAL_DEFINITION,
   METHODS_DEFINITION,
+  SOLIDS_DEFINITION,
 ];

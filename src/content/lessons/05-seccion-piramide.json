@@ -1,0 +1,322 @@
+{
+  "id": "seccion-piramide",
+  "order": 1,
+  "title": "Sección de una pirámide por un plano proyectante",
+  "topic": "II-08",
+  "stage": "DT II",
+  "saberBasico": "Sistema diédrico: pirámides. Sección por un plano proyectante, verdadera magnitud y desarrollo del tronco.",
+  "level": "Intermedio",
+  "initialScene": {
+    "points": { "P": [0, 0, 0] },
+    "objects": [],
+    "activePoint": "P"
+  },
+  "steps": [
+    {
+      "narration": "Esta es una pirámide pentagonal regular apoyada en el PH. Su base está en un plano horizontal, así que en la planta se ve en verdadera magnitud.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": { "tipo": "piramide", "lados": 5, "radio": 22, "altura": 50, "centro": [0, 32] }
+        }
+      }
+    },
+    {
+      "narration": "En la lámina, las aristas vistas van con línea continua gruesa y las ocultas, discontinua fina. Una arista es oculta cuando las dos caras que la forman miran hacia el otro lado.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": { "tipo": "piramide", "lados": 5, "radio": 22, "altura": 50, "centro": [0, 32] }
+        }
+      }
+    },
+    {
+      "narration": "El plano α es proyectante vertical: es perpendicular al PV. Por eso en el alzado se ve de canto, como una recta: su traza α₂.",
+      "show3d": ["planos", "solido", "corte"],
+      "sheet": ["lt", "solido", "corte"],
+      "highlight": ["corte"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Al cortar, el plano deja en la pirámide un polígono: la sección. Sus vértices son los puntos donde el plano corta a las aristas laterales.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte"],
+      "highlight": ["seccion"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "narration": "En el alzado, los puntos 1″ a 5″ están donde α₂ corta a las aristas. Con líneas de referencia se llevan a la planta, cada uno sobre su misma arista.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Retiramos la parte de arriba: queda un tronco de pirámide con la sección como cara nueva. En la planta la sección no está en verdadera magnitud, porque α no es horizontal.",
+      "show3d": ["planos", "solido", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["solido"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ],
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "Para ver la sección en verdadera magnitud, abatimos α sobre el PV. Gira como una bisagra alrededor de su traza α₂, que es la charnela.",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion-vm"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "Como α es perpendicular al PV, cada punto abatido está en la perpendicular a α₂ por su proyección vertical, a una distancia igual a su alejamiento. El polígono (1)…(5) es la sección en verdadera magnitud.",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "solido", "corte", "seccion", "seccion-vm"],
+      "highlight": ["seccion-vm"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "Por último, el desarrollo del tronco: sus caras se despliegan sobre el PH y la sección queda como una línea quebrada. Es la plantilla para construir la pieza en papel.",
+      "show3d": ["planos", "desarrollo"],
+      "sheet": ["lt", "solido", "seccion", "desarrollo"],
+      "highlight": ["desarrollo"],
+      "camera": "top",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ],
+            "quitar": 1
+          },
+          "desarrollo": 1
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "Mide en la lámina la verdadera magnitud del lado (1)(2) de la sección. Usa la cuadrícula de 10 mm.",
+      "answer": 15.8,
+      "unit": "mm",
+      "tolerance": 2,
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 8],
+              [35, 42]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Otra pirámide, otro corte. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?",
+      "answer": 18.2,
+      "unit": "mm",
+      "tolerance": 2,
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 4,
+            "radio": 24,
+            "altura": 48,
+            "centro": [0, 30],
+            "giro": 15
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 40],
+              [35, 12]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: pirámide hexagonal regular cortada por un plano proyectante vertical. Halla la verdadera magnitud de la sección y mide su lado más largo.",
+      "answer": 15.7,
+      "unit": "mm",
+      "tolerance": 2,
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 6,
+            "radio": 22,
+            "altura": 52,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 6],
+              [35, 36]
+            ],
+            "abatir": 1
+          }
+        }
+      }
+    }
+  ]
+}

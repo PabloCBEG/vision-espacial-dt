@@ -133,3 +133,28 @@ describe('ejercicios de medida con el motor de métodos', () => {
     expect(checked).toBeGreaterThan(0);
   });
 });
+
+describe('ejercicios de medida con el motor de sólidos', () => {
+  it('la respuesta es uno de los lados de la sección en verdadera magnitud', async () => {
+    const { buildScene } = await import('../engines/solidos/construction.ts');
+    const { SolidsStepSchema } = await import('../engines/solidos/definition.ts');
+    const { lessons } = parseLessons(readAll());
+    let checked = 0;
+    for (const lesson of lessons) {
+      for (const exercise of lesson.exercises) {
+        if (exercise.kind !== 'value' || !exercise.engines?.solidos) continue;
+        const data = SolidsStepSchema.parse(exercise.engines.solidos);
+        const scene = buildScene(data, { quitar: 1, abatir: 1, desarrollo: 0, punto: 1 });
+        const poly = scene.cut?.folded ?? [];
+        const sides = poly.map((p, i) => {
+          const q = poly[(i + 1) % poly.length] ?? p;
+          return Math.hypot(p.x - q.x, p.a - q.a, p.c - q.c);
+        });
+        const best = Math.min(...sides.map((s) => Math.abs(s - exercise.answer)));
+        expect(best, lesson.id).toBeLessThan(0.1);
+        checked++;
+      }
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
+});

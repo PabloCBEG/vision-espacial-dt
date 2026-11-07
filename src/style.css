@@ -25,6 +25,7 @@
   --scene-data: #1b1f24;
   --scene-result: #c2185b;
   --scene-new-plane: #0f8a8a;
+  --scene-solid: #8fb3d9;
   --label-bg: rgb(255 255 255 / 0.85);
 
   /* Tipografía */
@@ -73,6 +74,8 @@
     --scene-data: #e8eaed;
     --scene-result: #ff5c9a;
     --scene-new-plane: #4fd1d1;
+    --scene-solid: #5f86b0;
+    --scene-solid: #5f86b0;
     --label-bg: rgb(28 32 39 / 0.85);
     color-scheme: dark;
   }
@@ -102,6 +105,7 @@
   --scene-data: #e8eaed;
   --scene-result: #ff5c9a;
   --scene-new-plane: #4fd1d1;
+  --scene-solid: #5f86b0;
   --label-bg: rgb(28 32 39 / 0.85);
   color-scheme: dark;
 }

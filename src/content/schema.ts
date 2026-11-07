@@ -168,7 +168,7 @@ export const LessonSchema = z.object({
   level: z.enum(['Inicial', 'Intermedio', 'Avanzado']),
   initialScene: z.object({
     points: z.record(PointName, Coords),
-    objects: z.array(SceneObjectSchema).min(1),
+    objects: z.array(SceneObjectSchema),
     activePoint: PointName,
   }),
   steps: z.array(StepSchema).min(1),

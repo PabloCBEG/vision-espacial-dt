@@ -19,6 +19,8 @@ export interface SceneColors {
   result: Color;
   /** Plano de proyección nuevo (cambio de plano). */
   newPlane: Color;
+  /** Caras de los sólidos. */
+  solid: Color;
 }
 
 const VARIABLES: Record<keyof SceneColors, string> = {
@@ -37,6 +39,7 @@ const VARIABLES: Record<keyof SceneColors, string> = {
   data: '--scene-data',
   result: '--scene-result',
   newPlane: '--scene-new-plane',
+  solid: '--scene-solid',
 };
 
 export function readSceneColors(element: Element): SceneColors {
@@ -58,5 +61,6 @@ export function readSceneColors(element: Element): SceneColors {
     data: read(VARIABLES.data),
     result: read(VARIABLES.result),
     newPlane: read(VARIABLES.newPlane),
+    solid: read(VARIABLES.solid),
   };
 }

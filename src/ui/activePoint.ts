@@ -29,6 +29,8 @@ export function bindActivePoint(el: ActivePointElements, store: AppStore): void 
       );
     }
     el.wrapper.hidden = ids.length <= 1;
+    // Sin puntos en la escena (por ejemplo, una lección de sólidos), no hay deslizadores.
+    el.form.hidden = ids.length === 0;
     el.select.value = state.activePoint;
     const p = state.activePoint;
     el.form.setAttribute('aria-label', `Coordenadas del punto ${p}`);
