@@ -158,3 +158,38 @@ describe('ejercicios de medida con el motor de sólidos', () => {
     expect(checked).toBeGreaterThan(0);
   });
 });
+
+describe('lecciones de geometría plana', () => {
+  it('la construcción no tiene problemas y los objetivos de los ejercicios existen', async () => {
+    const { evaluate, firstProblem } = await import('../engines/plana/graph.ts');
+    const { PlaneStepSchema } = await import('../engines/plana/definition.ts');
+    const { lessons } = parseLessons(readAll());
+    let checked = 0;
+    for (const lesson of lessons) {
+      const base = lesson.initialScene.engines?.plana;
+      if (!base) continue;
+      const data = PlaneStepSchema.parse(base);
+      const defs = data.objetos ?? [];
+      const all = evaluate(defs);
+      expect(firstProblem(all), lesson.id).toBeNull();
+      for (const exercise of lesson.exercises) {
+        if (exercise.kind !== 'engine') continue;
+        const step = PlaneStepSchema.parse(exercise.engines?.plana ?? {});
+        const targets = step.respuesta?.objetivo ?? [];
+        for (const id of Array.isArray(targets) ? targets : [targets]) {
+          expect(all.get(id)?.value?.kind, `${lesson.id}: ${id}`).toBe('point');
+        }
+        checked++;
+      }
+      // Los ids citados en visibles, trazar y destacar existen.
+      const ids = new Set(defs.map((d) => d.id));
+      for (const step of lesson.steps) {
+        const s = PlaneStepSchema.parse(step.engines?.plana ?? {});
+        for (const id of [...(s.visibles ?? []), ...(s.trazar ?? []), ...(s.destacar ?? [])]) {
+          expect(ids.has(id), `${lesson.id}: ${id}`).toBe(true);
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
+});

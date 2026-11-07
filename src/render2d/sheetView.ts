@@ -75,7 +75,7 @@ interface Handle {
 }
 
 export class SheetView {
-  private readonly container: HTMLElement;
+  readonly container: HTMLElement;
   private readonly store: AppStore;
   private readonly svg: SVGSVGElement;
   private readonly drawing: SVGGElement;
@@ -124,6 +124,27 @@ export class SheetView {
     this.requestRender();
   }
 
+  /**
+   * Grupo SVG persistente encima del dibujo, para los elementos interactivos de un motor
+   * (puntos que se arrastran). No se vacía al redibujar.
+   */
+  createOverlay(className: string): SVGGElement {
+    const group = svgElement('g', {}, className);
+    this.svg.append(group);
+    return group;
+  }
+
+  /** Punto de la lámina (mm, y hacia arriba) bajo un punto de la pantalla. */
+  clientToSheet(clientX: number, clientY: number): { x: number; y: number } | null {
+    const q = this.toSheet(clientX, clientY);
+    return q ? { x: q.x, y: -q.y } : null;
+  }
+
+  /** Milímetros de lámina por píxel de pantalla. */
+  get mmPerPixel(): number {
+    return this.mmPerPx;
+  }
+
   zoomIn(): void {
     const c = viewBoxCenter(this.viewBox);
     this.autoFit = false;
@@ -143,6 +164,10 @@ export class SheetView {
   }
 
   private fitFor(state: AppState): ViewBox {
+    // Un motor que dibuja la lámina por su cuenta (geometría plana) encuadra solo lo suyo.
+    const own = this.modules.filter((m) => m.hasContent?.()).map((m) => m.fitBox?.(state) ?? null);
+    const first = own.find((b): b is ViewBox => b !== null);
+    if (first) return own.reduce<ViewBox>((acc, b) => (b ? unionViewBox(acc, b) : acc), first);
     let box = isProfileVisible(state, state.layersSheet) ? FIT_WITH_PROFILE_VIEWBOX : FIT_VIEWBOX;
     for (const module of this.modules) {
       const extra = module.fitBox?.(state);
@@ -209,7 +234,12 @@ export class SheetView {
     for (const module of this.modules) module.draw(context);
 
     // Paso sin nada en la lámina: se explica por qué está vacía.
-    if (!exercise && state.layersSheet !== null && state.layersSheet.length === 0) {
+    if (
+      !exercise &&
+      state.layersSheet !== null &&
+      state.layersSheet.length === 0 &&
+      !this.modules.some((m) => m.hasContent?.())
+    ) {
       const note = svgElement('text', { x: 0, y: 0, 'text-anchor': 'middle' }, 'sheet-empty-note');
       note.textContent = 'La lámina aparecerá al abatir el PH.';
       this.layer('aviso').append(note);
@@ -251,9 +281,11 @@ export class SheetView {
         tag === 'perfil' ||
         tag === 'aviso' ||
         this.modules.some((m) => m.isAlwaysVisible?.(tag));
+      const highlighted =
+        state.highlight.includes(tag) || this.modules.some((m) => m.isHighlighted?.(tag));
       const visible = always || isLayerVisible(state.layersSheet, tag);
       group.classList.toggle('is-hidden', !visible);
-      group.classList.toggle('is-highlighted', state.highlight.includes(tag));
+      group.classList.toggle('is-highlighted', highlighted);
     }
   }
 

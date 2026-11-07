@@ -149,10 +149,23 @@ const ValueExercise = z.object({
   sheet: z.array(Layer).optional(),
 });
 
+/** Ejercicio que corrige el propio motor (por ejemplo, colocar un centro en la lámina). */
+const EngineExercise = z.object({
+  kind: z.literal('engine'),
+  difficulty: Difficulty,
+  engines: EngineData,
+  prompt: Narration,
+  points: z.record(PointName, Coords).optional(),
+  activePoint: PointName.optional(),
+  show3d: z.array(Layer).optional(),
+  sheet: z.array(Layer).optional(),
+});
+
 const ExerciseSchema = z.discriminatedUnion('kind', [
   PlacePointExercise,
   ConditionExercise,
   ValueExercise,
+  EngineExercise,
 ]);
 
 export const LessonSchema = z.object({
@@ -170,6 +183,8 @@ export const LessonSchema = z.object({
     points: z.record(PointName, Coords),
     objects: z.array(SceneObjectSchema),
     activePoint: PointName,
+    /** Datos de los motores comunes a todos los pasos (por ejemplo, la construcción plana). */
+    engines: EngineData,
   }),
   steps: z.array(StepSchema).min(1),
   exercises: z.array(ExerciseSchema).default([]),

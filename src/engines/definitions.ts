@@ -1,5 +1,6 @@
 // Lista de motores: añadir uno nuevo es añadir su definición aquí y su ejecución en runtimes.ts.
 import { METHODS_DEFINITION } from './metodos/definition.ts';
+import { PLANE_DEFINITION } from './plana/definition.ts';
 import { SOLIDS_DEFINITION } from './solidos/definition.ts';
 import type { EngineDefinition } from './types.ts';
 
@@ -24,4 +25,5 @@ export const ENGINE_DEFINITIONS: readonly EngineDefinition[] = [
   DIHEDRAL_DEFINITION,
   METHODS_DEFINITION,
   SOLIDS_DEFINITION,
+  PLANE_DEFINITION,
 ];

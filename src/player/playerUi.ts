@@ -1,6 +1,12 @@
 // Interfaz del reproductor: anterior, siguiente, reproducir, barra de progreso, flechas del
 // teclado, narración, niveles de ayuda y ejercicios.
-import { getPoint, patchState, type AppStore, type HelpLevel } from '../state/index.ts';
+import {
+  getPoint,
+  patchState,
+  type AppState,
+  type AppStore,
+  type HelpLevel,
+} from '../state/index.ts';
 import { checkPlacement } from './checkPlacement.ts';
 import { checkCondition } from './checkCondition.ts';
 import { checkValue } from './checkValue.ts';
@@ -34,7 +40,15 @@ export interface PlayerElements {
 const HINT_SECONDS = 5;
 
 /** Conecta el reproductor con la página. Devuelve una función para desconectarlo. */
-export function bindPlayer(player: Player, store: AppStore, el: PlayerElements): () => void {
+/** Corrección de los ejercicios de un motor (kind "engine"). */
+export type EngineChecker = (state: AppState) => { correct: boolean; message: string } | null;
+
+export function bindPlayer(
+  player: Player,
+  store: AppStore,
+  el: PlayerElements,
+  checkEngine: EngineChecker = () => null,
+): () => void {
   const lessonId = player.lesson.id;
   let hintTimer: number | null = null;
 
@@ -112,7 +126,12 @@ export function bindPlayer(player: Player, store: AppStore, el: PlayerElements):
               exercise.unit,
               exercise.tolerance,
             )
-          : checkCondition(exercise.condition, exercise.objects, state);
+          : exercise.kind === 'engine'
+            ? (checkEngine(state) ?? {
+                correct: false,
+                message: 'Este ejercicio no se puede corregir.',
+              })
+            : checkCondition(exercise.condition, exercise.objects, state);
     saveAttempt(lessonId, page.index, result.correct);
     if (result.correct) render(player.page()); // marca el ejercicio como resuelto
     el.feedback.textContent = result.message;

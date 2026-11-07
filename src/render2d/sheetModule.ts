@@ -23,4 +23,8 @@ export interface SheetModule {
   fitBox?(state: AppState): ViewBox | null;
   /** Capas que se ven aunque el paso no las nombre (avisos, cuadrículas…). */
   isAlwaysVisible?(tag: string): boolean;
+  /** Capas que el motor destaca por su cuenta. */
+  isHighlighted?(tag: string): boolean;
+  /** El motor dibuja la lámina por su cuenta (no hace falta el aviso de lámina vacía). */
+  hasContent?(): boolean;
 }

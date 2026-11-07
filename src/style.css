@@ -517,6 +517,20 @@ body[data-help='only2d'] .panel-2d {
   grid-column: 1 / -1;
 }
 
+/* Lecciones solo de lámina (geometría plana sin puente 3D). */
+body[data-layout='sheet'] .panel-3d {
+  display: none;
+}
+
+body[data-layout='sheet'] .panel-2d {
+  grid-column: 1 / -1;
+}
+
+/* Sin sistema diédrico no hay PH que abatir. */
+body[data-layout] .fold-controls {
+  display: none;
+}
+
 /* ---------- Área de trabajo: 3D a la izquierda, lámina a la derecha, controles debajo ---------- */
 .workspace {
   flex: 1;
@@ -1063,6 +1077,46 @@ body:not([data-screen='free']) .free-scenes {
 .sheet-measure {
   fill: var(--scene-result);
   font-weight: 700;
+}
+
+/* Geometría plana: puntos, rastro del lugar y herramientas de dibujo. */
+.plane-point {
+  fill: var(--scene-data);
+}
+
+.plane-point-result {
+  fill: var(--scene-result);
+}
+
+.plane-point-process {
+  fill: var(--scene-process);
+}
+
+.locus-trail {
+  stroke-dasharray: 2 3;
+  stroke-linecap: round;
+}
+
+.tool-compass {
+  stroke: var(--color-text-muted);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  opacity: 0.75;
+}
+
+.tool-knob {
+  fill: var(--color-text-muted);
+}
+
+.tool-pencil {
+  fill: var(--color-focus);
+}
+
+.tool-ruler {
+  fill: color-mix(in srgb, var(--scene-pv) 30%, transparent);
+  stroke: var(--scene-pv);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
 }
 
 /* Botón «Ocultar auxiliares». */

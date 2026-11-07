@@ -1,6 +1,6 @@
 import './style.css';
 import { loadLessons } from './content/lessons.ts';
-import { mountEngines } from './engines/runtimes.ts';
+import { checkEngines, mountEngines } from './engines/runtimes.ts';
 import { FOLDED_ANGLE_DEG } from './geometry/index.ts';
 import { bindPlayer, Player } from './player/index.ts';
 import { SheetView } from './render2d/index.ts';
@@ -115,24 +115,29 @@ function route(): void {
   if (lesson) {
     show('lesson');
     const player = new Player(lesson, store, spatialView);
-    stopLesson = bindPlayer(player, store, {
-      title: required('#lesson-title'),
-      progress: required('#lesson-progress'),
-      progressFill: required('#lesson-progress-fill'),
-      progressText: required('#lesson-progress-text'),
-      narration: required('#lesson-narration'),
-      previous: required('#lesson-prev'),
-      play: required('#lesson-play'),
-      next: required('#lesson-next'),
-      exercisePanel: required('#exercise-panel'),
-      check: required('#exercise-check'),
-      feedback: required('#exercise-feedback'),
-      helpLevel: required('#help-level'),
-      hintButton: required('#hint-button'),
-      answerWrapper: required('#exercise-answer-wrapper'),
-      answer: required('#exercise-answer'),
-      unit: required('#exercise-unit'),
-    });
+    stopLesson = bindPlayer(
+      player,
+      store,
+      {
+        title: required('#lesson-title'),
+        progress: required('#lesson-progress'),
+        progressFill: required('#lesson-progress-fill'),
+        progressText: required('#lesson-progress-text'),
+        narration: required('#lesson-narration'),
+        previous: required('#lesson-prev'),
+        play: required('#lesson-play'),
+        next: required('#lesson-next'),
+        exercisePanel: required('#exercise-panel'),
+        check: required('#exercise-check'),
+        feedback: required('#exercise-feedback'),
+        helpLevel: required('#help-level'),
+        hintButton: required('#hint-button'),
+        answerWrapper: required('#exercise-answer-wrapper'),
+        answer: required('#exercise-answer'),
+        unit: required('#exercise-unit'),
+      },
+      checkEngines,
+    );
     player.start();
     document.title = `${lesson.title} · Visión espacial`;
   } else if (hash === '#/libre') {

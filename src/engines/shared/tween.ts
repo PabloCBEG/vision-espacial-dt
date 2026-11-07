@@ -29,7 +29,11 @@ export class Tweens<K extends string> {
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (instant || reduced) {
       this.stop();
+      const moved = (Object.keys(this.targets) as K[]).some(
+        (k) => this.values[k] !== this.targets[k],
+      );
       Object.assign(this.values, this.targets);
+      if (moved) this.onFrame();
       return;
     }
     if (changed) this.start();

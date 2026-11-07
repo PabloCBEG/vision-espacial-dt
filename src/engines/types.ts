@@ -7,7 +7,7 @@
 import type { ZodType } from 'zod';
 import type { SheetView } from '../render2d/index.ts';
 import type { SpatialView } from '../render3d/index.ts';
-import type { AppStore } from '../state/index.ts';
+import type { AppState, AppStore } from '../state/index.ts';
 
 export interface EngineDefinition {
   /** Nombre del motor; es también la clave de sus datos en cada paso: "metodos": {…}. */
@@ -34,4 +34,6 @@ export interface EngineRuntime {
   readonly definition: EngineDefinition;
   /** Registra sus módulos en las vistas. Devuelve la función que los quita. */
   mount(host: EngineHost): () => void;
+  /** Corrige un ejercicio de tipo "engine" de este motor (null si no le toca). */
+  check?(state: AppState): { correct: boolean; message: string } | null;
 }

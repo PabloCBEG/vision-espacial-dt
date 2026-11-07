@@ -1,0 +1,284 @@
+{
+  "id": "lugares-geometricos",
+  "order": 1,
+  "title": "Mediatriz, bisectriz y arco capaz",
+  "topic": "I-01",
+  "stage": "DT I",
+  "saberBasico": "Trazados fundamentales en el plano. Lugares geométricos: mediatriz, bisectriz y arco capaz.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": { "P": [0, 0, 0] },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          { "id": "A", "tipo": "punto", "en": [-30, 0] },
+          { "id": "B", "tipo": "punto", "en": [30, 0] },
+          { "id": "AB", "tipo": "segmento", "por": ["A", "B"] },
+          { "id": "cA", "tipo": "circunferencia", "centro": "A", "radio": 42 },
+          { "id": "cB", "tipo": "circunferencia", "centro": "B", "radio": 42 },
+          { "id": "M1", "tipo": "interseccion", "de": ["cA", "cB"], "indice": 0, "etiqueta": "M₁" },
+          { "id": "M2", "tipo": "interseccion", "de": ["cA", "cB"], "indice": 1, "etiqueta": "M₂" },
+          { "id": "m", "tipo": "recta", "por": ["M1", "M2"], "rol": "resultado", "etiqueta": "m" },
+          { "id": "P", "tipo": "puntoSobre", "sobre": "m", "t": 0.62 },
+          { "id": "PA", "tipo": "segmento", "por": ["P", "A"], "rol": "proceso" },
+          { "id": "PB", "tipo": "segmento", "por": ["P", "B"], "rol": "proceso" },
+          { "id": "dPA", "tipo": "medidaDistancia", "de": ["A", "P"] },
+          { "id": "dPB", "tipo": "medidaDistancia", "de": ["P", "B"] },
+
+          { "id": "V", "tipo": "punto", "en": [-30, -20] },
+          { "id": "L1", "tipo": "punto", "en": [40, -20], "oculto": true },
+          { "id": "L2", "tipo": "punto", "en": [20, 30], "oculto": true },
+          { "id": "r", "tipo": "semirrecta", "por": ["V", "L1"], "etiqueta": "r" },
+          { "id": "s", "tipo": "semirrecta", "por": ["V", "L2"], "etiqueta": "s" },
+          { "id": "c0", "tipo": "circunferencia", "centro": "V", "radio": 28 },
+          { "id": "X1", "tipo": "interseccion", "de": ["c0", "r"], "etiqueta": "X₁" },
+          { "id": "X2", "tipo": "interseccion", "de": ["c0", "s"], "etiqueta": "X₂" },
+          { "id": "c1", "tipo": "circunferencia", "centro": "X1", "radio": 26 },
+          { "id": "c2", "tipo": "circunferencia", "centro": "X2", "radio": 26 },
+          { "id": "Z", "tipo": "interseccion", "de": ["c1", "c2"], "indice": 1 },
+          {
+            "id": "b",
+            "tipo": "semirrecta",
+            "por": ["V", "Z"],
+            "rol": "resultado",
+            "etiqueta": "b"
+          },
+          { "id": "Q", "tipo": "puntoSobre", "sobre": "b", "t": 0.5 },
+          { "id": "nr", "tipo": "perpendicular", "a": "r", "por": "Q", "oculto": true },
+          { "id": "ns", "tipo": "perpendicular", "a": "s", "por": "Q", "oculto": true },
+          { "id": "F1", "tipo": "interseccion", "de": ["nr", "r"], "etiqueta": "" },
+          { "id": "F2", "tipo": "interseccion", "de": ["ns", "s"], "etiqueta": "" },
+          { "id": "QF1", "tipo": "segmento", "por": ["Q", "F1"], "rol": "proceso" },
+          { "id": "QF2", "tipo": "segmento", "por": ["Q", "F2"], "rol": "proceso" },
+          { "id": "dQ1", "tipo": "medidaDistancia", "de": ["F1", "Q"] },
+          { "id": "dQ2", "tipo": "medidaDistancia", "de": ["Q", "F2"] },
+
+          { "id": "C", "tipo": "punto", "en": [-25, -15], "etiqueta": "A" },
+          { "id": "D", "tipo": "punto", "en": [25, -15], "etiqueta": "B" },
+          { "id": "CD", "tipo": "segmento", "por": ["C", "D"] },
+          {
+            "id": "capaz",
+            "tipo": "arcoCapaz",
+            "de": ["C", "D"],
+            "angulo": 60,
+            "etiqueta": "arco capaz de 60°"
+          },
+          { "id": "T", "tipo": "puntoSobre", "sobre": "capaz", "t": 0.3, "etiqueta": "P" },
+          { "id": "TC", "tipo": "segmento", "por": ["T", "C"], "rol": "proceso" },
+          { "id": "TD", "tipo": "segmento", "por": ["T", "D"], "rol": "proceso" },
+          { "id": "ang", "tipo": "medidaAngulo", "de": ["C", "T", "D"] },
+
+          { "id": "E1", "tipo": "punto", "en": [-20, -10], "fijo": true, "etiqueta": "A" },
+          { "id": "E2", "tipo": "punto", "en": [30, 10], "fijo": true, "etiqueta": "B" },
+          { "id": "R1", "tipo": "punto", "en": [-45, 30], "oculto": true },
+          { "id": "R2", "tipo": "punto", "en": [45, -20], "oculto": true },
+          { "id": "e1r", "tipo": "recta", "por": ["R1", "R2"], "etiqueta": "r" },
+          { "id": "e1m", "tipo": "mediatriz", "de": ["E1", "E2"], "oculto": true },
+          { "id": "e1T", "tipo": "interseccion", "de": ["e1m", "e1r"], "oculto": true },
+
+          { "id": "K1", "tipo": "punto", "en": [-30, -20], "fijo": true, "etiqueta": "A" },
+          { "id": "K2", "tipo": "punto", "en": [30, -15], "fijo": true, "etiqueta": "B" },
+          { "id": "K3", "tipo": "punto", "en": [5, 30], "fijo": true, "etiqueta": "C" },
+          { "id": "K12", "tipo": "segmento", "por": ["K1", "K2"] },
+          { "id": "K23", "tipo": "segmento", "por": ["K2", "K3"] },
+          { "id": "K31", "tipo": "segmento", "por": ["K3", "K1"] },
+          { "id": "km1", "tipo": "mediatriz", "de": ["K1", "K2"], "oculto": true },
+          { "id": "km2", "tipo": "mediatriz", "de": ["K2", "K3"], "oculto": true },
+          { "id": "kO", "tipo": "interseccion", "de": ["km1", "km2"], "oculto": true },
+
+          { "id": "G1", "tipo": "punto", "en": [-20, 0], "fijo": true, "etiqueta": "A" },
+          { "id": "G2", "tipo": "punto", "en": [20, 0], "fijo": true, "etiqueta": "B" },
+          { "id": "G12", "tipo": "segmento", "por": ["G1", "G2"] },
+          { "id": "H1", "tipo": "punto", "en": [-60, 30], "oculto": true },
+          { "id": "H2", "tipo": "punto", "en": [60, 30], "oculto": true },
+          { "id": "gr", "tipo": "recta", "por": ["H1", "H2"], "etiqueta": "r" },
+          { "id": "garc", "tipo": "arcoCapaz", "de": ["G1", "G2"], "angulo": 45, "oculto": true },
+          {
+            "id": "gT1",
+            "tipo": "interseccion",
+            "de": ["garc", "gr"],
+            "indice": 0,
+            "oculto": true
+          },
+          {
+            "id": "gT2",
+            "tipo": "interseccion",
+            "de": ["garc", "gr"],
+            "indice": 1,
+            "oculto": true
+          },
+
+          { "id": "X", "tipo": "punto", "en": [-50, -40], "rol": "resultado" }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Un lugar geométrico es el conjunto de puntos que cumplen una condición. Vamos a ver tres: la mediatriz, la bisectriz y el arco capaz.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "plana": { "visibles": ["A", "B", "AB"] } }
+    },
+    {
+      "narration": "Mediatriz de AB: con centro en A y luego en B, y la misma abertura del compás, trazamos dos arcos. Se cortan en M₁ y M₂.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "AB", "cA", "cB", "M1", "M2"],
+          "trazar": ["cA", "cB", "M1", "M2"]
+        }
+      }
+    },
+    {
+      "narration": "La recta que pasa por M₁ y M₂ es la mediatriz. Es perpendicular a AB por su punto medio.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "AB", "cA", "cB", "M1", "M2", "m"],
+          "trazar": ["m"],
+          "destacar": ["m"]
+        }
+      }
+    },
+    {
+      "narration": "Arrastra P por la mediatriz: siempre está a la misma distancia de A que de B. La mediatriz es el lugar de los puntos que equidistan de A y de B.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "AB", "m", "P", "PA", "PB", "dPA", "dPB"],
+          "destacar": ["dPA", "dPB"],
+          "lugar": { "punto": "P", "mueve": "P" }
+        }
+      }
+    },
+    {
+      "narration": "Bisectriz del ángulo de vértice V: un arco con centro en V corta los lados en X₁ y X₂. Desde ellos, dos arcos iguales se cortan en Z.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["V", "r", "s", "c0", "X1", "X2", "c1", "c2", "Z"],
+          "trazar": ["c0", "X1", "X2", "c1", "c2", "Z"]
+        }
+      }
+    },
+    {
+      "narration": "La semirrecta VZ es la bisectriz. Arrastra Q por ella: está a la misma distancia de los dos lados del ángulo.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["V", "r", "s", "b", "Q", "F1", "F2", "QF1", "QF2", "dQ1", "dQ2"],
+          "trazar": ["b"],
+          "destacar": ["dQ1", "dQ2"],
+          "lugar": { "punto": "Q", "mueve": "Q" }
+        }
+      }
+    },
+    {
+      "narration": "Arco capaz: el lugar de los puntos desde los que el segmento AB se ve con el mismo ángulo. Aquí, con 60°.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["C", "D", "CD", "capaz"],
+          "trazar": ["capaz"],
+          "destacar": ["capaz"]
+        }
+      }
+    },
+    {
+      "narration": "Arrastra P por el arco: el ángulo APB sigue midiendo 60°. Si P sale del arco, el ángulo ya no es 60°.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["C", "D", "CD", "capaz", "T", "TC", "TD", "ang"],
+          "destacar": ["ang"],
+          "lugar": { "punto": "T", "mueve": "T" }
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Arrastra X hasta el punto de la recta r que está a la misma distancia de A que de B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["E1", "E2", "e1r", "X"],
+          "posiciones": { "X": [-50, -40] },
+          "respuesta": {
+            "mover": "X",
+            "objetivo": "e1T",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! X está en la mediatriz de AB y en la recta r.",
+            "pista": "Los puntos a igual distancia de A y de B están en la mediatriz de AB."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Coloca X en el centro de la circunferencia que pasa por los tres vértices del triángulo ABC.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["K1", "K2", "K3", "K12", "K23", "K31", "X"],
+          "posiciones": { "X": [-50, 30] },
+          "respuesta": {
+            "mover": "X",
+            "objetivo": "kO",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El circuncentro está donde se cortan las mediatrices de los lados.",
+            "pista": "El centro equidista de A, B y C: está en la mediatriz de cada lado."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: busca un punto de la recta r desde el que el segmento AB se vea con un ángulo de 45° y arrastra X hasta él.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["G1", "G2", "G12", "gr", "X"],
+          "posiciones": { "X": [-55, -30] },
+          "respuesta": {
+            "mover": "X",
+            "objetivo": ["gT1", "gT2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! X está en r y en el arco capaz de 45° de AB. Hay otra solución simétrica.",
+            "pista": "Traza el arco capaz de 45° del segmento AB: la solución es su corte con r."
+          }
+        }
+      }
+    }
+  ]
+}

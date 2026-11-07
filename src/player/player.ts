@@ -22,6 +22,19 @@ const EXERCISE_START = createPoint(-30, 15, 20);
 
 const toPoint = ([x, a, c]: readonly [number, number, number]): Point => createPoint(x, a, c);
 
+type EngineData = Readonly<Record<string, unknown>> | undefined;
+
+/** Datos de cada motor: los comunes de la lección con los del paso encima (campo a campo). */
+export function mergeEngines(common: EngineData, step: EngineData): Record<string, unknown> {
+  const out: Record<string, unknown> = {};
+  for (const key of new Set([...Object.keys(common ?? {}), ...Object.keys(step ?? {})])) {
+    const a = common?.[key];
+    const b = step?.[key];
+    out[key] = a && b && typeof a === 'object' && typeof b === 'object' ? { ...a, ...b } : (b ?? a);
+  }
+  return out;
+}
+
 export class Player {
   readonly lesson: Lesson;
   /** Se llama cada vez que cambia la página o el estado de reproducción. */
@@ -155,7 +168,7 @@ export class Player {
       layersSheet: step.sheet,
       highlight: step.highlight,
       exercise: null,
-      engines: step.engines ?? {},
+      engines: mergeEngines(this.lesson.initialScene.engines, step.engines),
       locked: false,
     });
     this.camera?.setView(step.camera);
@@ -172,7 +185,7 @@ export class Player {
       layersSheet: null,
       highlight: [],
       exercise: null,
-      engines: exercise.engines ?? {},
+      engines: mergeEngines(this.lesson.initialScene.engines, exercise.engines),
       // En los ejercicios de medida, los puntos no se mueven: la respuesta depende de ellos.
       locked: exercise.kind === 'value',
     };

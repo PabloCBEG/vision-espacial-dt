@@ -82,7 +82,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 1,
     pauNote: 'Base del ejercicio 1',
     scene: 'El lugar geométrico como rastro de un punto que cumple la condición',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'I-02',
