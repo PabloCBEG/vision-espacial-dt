@@ -126,6 +126,19 @@ Los pasos y ejercicios que usan un motor (métodos, sólidos…) llevan sus dato
 
 ---
 
+## Otras herramientas
+
+- **Banco PAU** (`#/pau`): ejercicios tipo PAU en modo examen (22 minutos, solo la lámina y sin
+  pistas), con la solución animada y la autoevaluación con la rúbrica oficial. Cada ejercicio es
+  un fichero JSON en [`src/content/pau/`](src/content/pau/); copia uno de ejemplo para añadir más.
+- **Entrenador espacial** (`#/entrenador`): rotaciones, secciones, desarrollos y vistas con
+  dificultad adaptativa, y un test diagnóstico inicial y final. Los resultados son anónimos y el
+  alumno los descarga con el código que le dé el profesor.
+- **Laboratorio de cónicas** (`#/conicas`): un cono doble cortado por un plano que se inclina y se
+  sube; la cónica se ve en 3D y en verdadera magnitud, y el desplegable analítico muestra su tipo,
+  su excentricidad y su ecuación.
+- **Piezas de normalización**: un fichero JSON por pieza en [`src/content/piezas/`](src/content/piezas/).
+
 ## Para quien mantenga el código
 
 Las decisiones didácticas, de notación y de arquitectura están en [CLAUDE.md](CLAUDE.md).

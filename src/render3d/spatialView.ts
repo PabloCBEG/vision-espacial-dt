@@ -8,6 +8,7 @@ import {
   type Object3D,
 } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import { Line2 } from 'three/addons/lines/Line2.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import {
@@ -158,6 +159,38 @@ export class SpatialView {
       module.dispose?.();
       this.requestRender();
     };
+  }
+
+  /**
+   * Controles para mover y girar un objeto con el ratón o el dedo (TransformControls), ya
+   * conectados a la cámara. Mientras se arrastra, la cámara no gira. Devuelve los controles y
+   * la función que los quita.
+   */
+  createTransformControls(): { controls: TransformControls; dispose: () => void } {
+    const controls = new TransformControls(this.camera, this.renderer.domElement);
+    const helper = controls.getHelper();
+    this.scene.add(helper);
+    const onDragging = (event: { value: unknown }): void => {
+      this.controls.enabled = !event.value;
+    };
+    controls.addEventListener('dragging-changed', onDragging);
+    controls.addEventListener('change', this.requestRender);
+    return {
+      controls,
+      dispose: () => {
+        controls.removeEventListener('dragging-changed', onDragging);
+        controls.detach();
+        controls.dispose();
+        helper.removeFromParent();
+        this.controls.enabled = true;
+        this.requestRender();
+      },
+    };
+  }
+
+  /** Permite que los materiales usen planos de recorte propios (clippingPlanes). */
+  enableLocalClipping(): void {
+    this.renderer.localClippingEnabled = true;
   }
 
   /** Pide un fotograma (para los módulos que animan algo por su cuenta). */

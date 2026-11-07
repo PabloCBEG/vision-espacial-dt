@@ -181,8 +181,11 @@ body {
 
 .header-actions {
   display: flex;
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  justify-content: flex-end;
   gap: var(--space-s);
+  min-width: 0;
 }
 
 .header-button {
@@ -844,6 +847,79 @@ body[data-screen='lesson'] .workspace {
   background: var(--color-surface);
   color: var(--color-text);
   font: inherit;
+}
+
+/* ---------- Desplegable analítico (en la cabecera, se abre hacia abajo) ---------- */
+.analytic-panel {
+  position: relative;
+}
+
+.analytic-summary {
+  list-style: none;
+  padding: var(--space-xs) var(--space-m);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.analytic-summary::-webkit-details-marker {
+  display: none;
+}
+
+.analytic-panel[open] > .analytic-summary {
+  border-color: var(--color-accent);
+}
+
+.analytic-body {
+  position: absolute;
+  top: calc(100% + var(--space-s));
+  right: 0;
+  z-index: 30;
+  display: grid;
+  gap: var(--space-s);
+  width: min(26rem, calc(100vw - 2 * var(--space-m)));
+  max-height: min(75vh, 36rem);
+  overflow: auto;
+  padding: var(--space-m);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+  background: var(--color-surface);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.18);
+}
+
+.analytic-block > summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.analytic-block dl {
+  display: grid;
+  gap: var(--space-xs);
+  margin: var(--space-s) 0 0;
+}
+
+.analytic-block dt {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.analytic-block dd {
+  margin: 0 0 var(--space-xs);
+  overflow-x: auto;
+}
+
+.analytic-text {
+  display: block;
+  font-size: 0.9375rem;
+}
+
+/* En el laboratorio de cónicas no hay diédrico. */
+body[data-layout='conicas'] .fold-controls,
+body[data-layout='conicas'] .free-scenes {
+  display: none;
 }
 
 /* ---------- Entrenador espacial ---------- */

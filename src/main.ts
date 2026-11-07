@@ -22,6 +22,8 @@ import { renderHome } from './ui/home.ts';
 import { loadPau } from './content/pauSchema.ts';
 import { renderPauBank, startExam } from './ui/pau.ts';
 import { startTrainer } from './ui/trainer.ts';
+import { analytic } from './ui/analytic.ts';
+import { bindFreeAnalytic } from './ui/freeAnalytic.ts';
 
 function required<T extends Element>(selector: string): T {
   const element = document.querySelector<T>(selector);
@@ -85,6 +87,9 @@ const { lessons, errors } = loadLessons();
 const home = required<HTMLElement>('#home');
 const pauBank = required<HTMLElement>('#pau-bank');
 const trainerPanel = required<HTMLElement>('#trainer-panel');
+analytic.mount(required<HTMLElement>('.header-actions'));
+const stopFreeAnalytic = bindFreeAnalytic(store, () => document.body.dataset.screen === 'free');
+void stopFreeAnalytic;
 const { exercises: pauExercises } = loadPau();
 const workspace = required<HTMLElement>('#workspace');
 const lessonBar = required<HTMLElement>('#lesson-bar');
@@ -170,6 +175,26 @@ function route(): void {
       checkEngines,
     );
     document.title = `PAU: ${pau.titulo} · Visión espacial`;
+  } else if (hash === '#/conicas') {
+    show('free');
+    freeTitle.textContent = 'Laboratorio de cónicas';
+    store.set({
+      ...store.get(),
+      objects: [],
+      layers3d: ['cono', 'plano-secante', 'conica'],
+      layersSheet: [],
+      highlight: [],
+      exercise: null,
+      foldAngle: 0,
+      engines: { conicas: { alfa: 30, theta: 30, h: 20 } },
+    });
+    document.body.dataset.screen = 'lab';
+    spatialView?.setView('perspective');
+    stopLesson = () => {
+      store.set({ ...store.get(), engines: {} });
+      freeTitle.textContent = 'Explorar libremente';
+    };
+    document.title = 'Laboratorio de cónicas · Visión espacial';
   } else if (hash === '#/entrenador') {
     show('trainer');
     stopLesson = startTrainer(trainerPanel, spatialView, store);

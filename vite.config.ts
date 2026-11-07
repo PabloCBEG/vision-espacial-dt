@@ -11,7 +11,10 @@ function serviceWorker(): Plugin {
     name: 'vision-espacial-service-worker',
     apply: 'build',
     generateBundle(_options, bundle) {
-      const built = Object.keys(bundle).filter((name) => !name.endsWith('.map'));
+      // Las fuentes de KaTeX se guardan solo en woff2 (todos los navegadores actuales lo usan).
+      const built = Object.keys(bundle).filter(
+        (name) => !name.endsWith('.map') && !/KaTeX_.*\.(woff|ttf)$/.test(name),
+      );
       const publicFiles = readdirSync('public');
       const all = [...new Set(['./', 'index.html', ...built, ...publicFiles])];
       const version = createHash('sha256').update(all.join('|')).digest('hex').slice(0, 12);

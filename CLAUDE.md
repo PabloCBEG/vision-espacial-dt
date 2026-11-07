@@ -46,6 +46,7 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
   - `src/content`: lecciones como datos, validadas con zod.
   - `src/ui`: controles de la interfaz (deslizadores, botones de vista, tema), enlazados al estado.
   - `src/engines`: motores enchufables (métodos, sólidos, plana…). Cada motor añade sus capas 3D y de lámina, su estado y sus datos de paso sin tocar los demás.
+  - `src/ui/analytic.ts`: desplegable analítico global. Cada parte publica sus ecuaciones (LaTeX, con KaTeX empaquetado para que funcione sin conexión) con `analytic.set(fuente, bloques)` y las retira con `analytic.clear(fuente)`.
 - Una lección nueva es un fichero de datos, nunca código nuevo.
 
 ## Vista 3D
