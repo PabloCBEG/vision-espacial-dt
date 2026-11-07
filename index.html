@@ -52,6 +52,17 @@
         <div id="lesson-errors" class="lesson-errors" hidden></div>
       </section>
 
+      <section id="pau-bank" class="home" aria-labelledby="pau-title" hidden>
+        <a class="back-link" href="#/">← Temario</a>
+        <h1 id="pau-title" class="home-title">Banco PAU</h1>
+        <p class="home-intro">
+          Ejercicios como los de la PAU de Dibujo Técnico II en Andalucía. En modo examen tienes 22
+          minutos, solo la lámina y ninguna pista. Al terminar verás la solución paso a paso y
+          podrás autoevaluarte con la rúbrica oficial.
+        </p>
+        <div id="pau-content"></div>
+      </section>
+
       <div id="workspace" class="workspace" hidden>
         <h1 id="free-title" class="visually-hidden">Explorar libremente</h1>
         <section id="lesson-bar" class="lesson-bar" aria-labelledby="lesson-title" hidden>
@@ -80,6 +91,24 @@
           </div>
           <div class="lesson-body">
             <div class="lesson-text">
+              <div id="exam-panel" class="exam-panel" hidden>
+                <div class="exam-head">
+                  <span
+                    id="exam-timer"
+                    class="exam-timer"
+                    role="timer"
+                    aria-label="Tiempo restante"
+                  >
+                    22:00
+                  </span>
+                  <button id="exam-pause" type="button" class="action-button">Pausa</button>
+                  <button id="exam-finish" type="button" class="action-button is-primary">
+                    Terminar y ver la solución
+                  </button>
+                </div>
+                <p id="exam-statement" class="lesson-narration"></p>
+                <ul id="exam-data" class="exam-data"></ul>
+              </div>
               <p id="lesson-narration" class="lesson-narration" aria-live="polite"></p>
               <div id="exercise-panel" class="exercise-panel" hidden>
                 <label id="exercise-answer-wrapper" class="exercise-answer" hidden>
@@ -92,6 +121,11 @@
                 </button>
                 <p id="exercise-feedback" class="exercise-feedback" aria-live="polite"></p>
               </div>
+              <details id="rubric-panel" class="rubric-panel" hidden>
+                <summary id="rubric-title" class="rubric-title">Autoevaluación</summary>
+                <div id="rubric-items" class="rubric-items"></div>
+                <p id="rubric-total" class="rubric-total" aria-live="polite"></p>
+              </details>
             </div>
             <div class="lesson-controls">
               <button id="lesson-prev" type="button" class="action-button">← Anterior</button>

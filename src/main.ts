@@ -2,7 +2,7 @@ import './style.css';
 import { loadLessons } from './content/lessons.ts';
 import { checkEngines, mountEngines } from './engines/runtimes.ts';
 import { FOLDED_ANGLE_DEG } from './geometry/index.ts';
-import { bindPlayer, Player } from './player/index.ts';
+import { bindPlayer, Player, type PlayerElements } from './player/index.ts';
 import { SheetView } from './render2d/index.ts';
 import { SpatialView } from './render3d/index.ts';
 import { createAppStore } from './state/index.ts';
@@ -19,6 +19,8 @@ import {
   bindViewButtons,
 } from './ui/index.ts';
 import { renderHome } from './ui/home.ts';
+import { loadPau } from './content/pauSchema.ts';
+import { renderPauBank, startExam } from './ui/pau.ts';
 
 function required<T extends Element>(selector: string): T {
   const element = document.querySelector<T>(selector);
@@ -80,6 +82,8 @@ mountEngines({
 
 const { lessons, errors } = loadLessons();
 const home = required<HTMLElement>('#home');
+const pauBank = required<HTMLElement>('#pau-bank');
+const { exercises: pauExercises } = loadPau();
 const workspace = required<HTMLElement>('#workspace');
 const lessonBar = required<HTMLElement>('#lesson-bar');
 const freeTitle = required<HTMLElement>('#free-title');
@@ -97,12 +101,34 @@ store.subscribe((state, previous) => {
   }
 });
 
-function show(screen: 'home' | 'free' | 'lesson'): void {
+function show(screen: 'home' | 'free' | 'lesson' | 'pau'): void {
   home.hidden = screen !== 'home';
-  workspace.hidden = screen === 'home';
+  pauBank.hidden = screen !== 'pau';
+  workspace.hidden = screen === 'home' || screen === 'pau';
   lessonBar.hidden = screen !== 'lesson';
   freeTitle.hidden = screen !== 'free';
   document.body.dataset.screen = screen;
+}
+
+function playerElements(): PlayerElements {
+  return {
+    title: required('#lesson-title'),
+    progress: required('#lesson-progress'),
+    progressFill: required('#lesson-progress-fill'),
+    progressText: required('#lesson-progress-text'),
+    narration: required('#lesson-narration'),
+    previous: required('#lesson-prev'),
+    play: required('#lesson-play'),
+    next: required('#lesson-next'),
+    exercisePanel: required('#exercise-panel'),
+    check: required('#exercise-check'),
+    feedback: required('#exercise-feedback'),
+    helpLevel: required('#help-level'),
+    hintButton: required('#hint-button'),
+    answerWrapper: required('#exercise-answer-wrapper'),
+    answer: required('#exercise-answer'),
+    unit: required('#exercise-unit'),
+  };
 }
 
 function route(): void {
@@ -111,35 +137,40 @@ function route(): void {
   const hash = window.location.hash;
   const lessonMatch = /^#\/leccion\/([a-z0-9-]+)$/.exec(hash);
   const lesson = lessonMatch ? lessons.find((l) => l.id === lessonMatch[1]) : undefined;
+  const pauMatch = /^#\/pau\/([a-z0-9-]+)$/.exec(hash);
+  const pau = pauMatch ? pauExercises.find((e) => e.id === pauMatch[1]) : undefined;
 
   if (lesson) {
     show('lesson');
     const player = new Player(lesson, store, spatialView);
-    stopLesson = bindPlayer(
-      player,
-      store,
-      {
-        title: required('#lesson-title'),
-        progress: required('#lesson-progress'),
-        progressFill: required('#lesson-progress-fill'),
-        progressText: required('#lesson-progress-text'),
-        narration: required('#lesson-narration'),
-        previous: required('#lesson-prev'),
-        play: required('#lesson-play'),
-        next: required('#lesson-next'),
-        exercisePanel: required('#exercise-panel'),
-        check: required('#exercise-check'),
-        feedback: required('#exercise-feedback'),
-        helpLevel: required('#help-level'),
-        hintButton: required('#hint-button'),
-        answerWrapper: required('#exercise-answer-wrapper'),
-        answer: required('#exercise-answer'),
-        unit: required('#exercise-unit'),
-      },
-      checkEngines,
-    );
+    stopLesson = bindPlayer(player, store, playerElements(), checkEngines);
     player.start();
     document.title = `${lesson.title} · Visión espacial`;
+  } else if (pauMatch && pau) {
+    show('lesson');
+    stopLesson = startExam(
+      pau,
+      store,
+      spatialView,
+      {
+        panel: required('#exam-panel'),
+        statement: required('#exam-statement'),
+        data: required('#exam-data'),
+        timer: required('#exam-timer'),
+        pause: required('#exam-pause'),
+        finish: required('#exam-finish'),
+        rubric: required('#rubric-panel'),
+        rubricItems: required('#rubric-items'),
+        rubricTotal: required('#rubric-total'),
+      },
+      playerElements(),
+      checkEngines,
+    );
+    document.title = `PAU: ${pau.titulo} · Visión espacial`;
+  } else if (hash === '#/pau') {
+    show('pau');
+    renderPauBank(required('#pau-content'), pauExercises);
+    document.title = 'Banco PAU · Visión espacial';
   } else if (hash === '#/libre') {
     show('free');
     loadFreeScene('punto');

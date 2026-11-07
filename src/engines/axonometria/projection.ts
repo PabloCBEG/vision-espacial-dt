@@ -24,8 +24,8 @@ export const ISO_COEF = Math.sqrt(2 / 3);
 const R2 = Math.SQRT2;
 const R6 = Math.sqrt(6);
 /** Vectores de la pantalla en la isométrica, en coordenadas del dominio (x, a, c). */
-const ISO_RIGHT = createPoint(1 / R2, 1 / R2, 0);
-const ISO_UP = createPoint(1 / R6, -1 / R6, 2 / R6);
+export const ISO_RIGHT = createPoint(1 / R2, 1 / R2, 0);
+export const ISO_UP = createPoint(1 / R6, -1 / R6, 2 / R6);
 /** Dirección hacia el observador en la isométrica (la misma que la cámara «isometric»). */
 export const ISO_TOWARD = createPoint(-1 / Math.sqrt(3), 1 / Math.sqrt(3), 1 / Math.sqrt(3));
 

@@ -1,0 +1,121 @@
+{
+  "id": "ejemplo-2-seccion-piramide",
+  "convocatoria": "Ejemplo de formato",
+  "ejercicio": 2,
+  "opcion": null,
+  "temas": ["II-08", "II-05"],
+  "titulo": "Sección de una pirámide hexagonal y su verdadera magnitud",
+  "enunciado": "Una pirámide hexagonal regular apoyada en el PH se corta por el plano proyectante vertical α. Dibuja las proyecciones de la sección, su verdadera magnitud y las partes vistas y ocultas.",
+  "datos": [
+    "Base inscrita en una circunferencia de 22 mm de radio, centro (0, 32); altura 52 mm.",
+    "La traza α₂ pasa por (−35, 6) y (35, 36)."
+  ],
+  "initialScene": { "points": { "P": [0, 0, 0] }, "objects": [], "activePoint": "P" },
+  "examen": {
+    "sheet": ["lt", "solido", "corte", "cuadricula"],
+    "engines": {
+      "solidos": {
+        "solido": { "tipo": "piramide", "lados": 6, "radio": 22, "altura": 52, "centro": [0, 32] },
+        "seccion": {
+          "tipo": "proyectante-vertical",
+          "puntos": [
+            [-35, 6],
+            [35, 36]
+          ]
+        },
+        "rotulos": false
+      }
+    }
+  },
+  "solucion": [
+    {
+      "narration": "El plano α es perpendicular al PV: en el alzado se ve de canto. Los puntos de la sección están donde α₂ corta a las aristas laterales.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "perspective",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 6,
+            "radio": 22,
+            "altura": 52,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 6],
+              [35, 36]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Cada punto se lleva a la planta con su línea de referencia, sobre su misma arista. Los lados de la sección en caras ocultas van discontinuos.",
+      "show3d": ["planos", "solido", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "top",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 6,
+            "radio": 22,
+            "altura": 52,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 6],
+              [35, 36]
+            ],
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "Para la verdadera magnitud se abate α sobre el PV alrededor de α₂. Cada punto queda en la perpendicular a α₂, a una distancia igual a su alejamiento.",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "solido", "corte", "seccion", "seccion-vm"],
+      "highlight": ["seccion-vm"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "piramide",
+            "lados": 6,
+            "radio": 22,
+            "altura": 52,
+            "centro": [0, 32]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 6],
+              [35, 36]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "criterios": [
+      { "texto": "Proyecciones correctas de la pirámide, con vistas y ocultas", "puntos": 0.4 },
+      { "texto": "Puntos de la sección en el alzado sobre α₂", "puntos": 0.4 },
+      { "texto": "Proyección horizontal de la sección", "puntos": 0.5 },
+      { "texto": "Verdadera magnitud por abatimiento", "puntos": 0.7 }
+    ]
+  }
+}

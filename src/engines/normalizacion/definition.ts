@@ -6,7 +6,7 @@
 import { z } from 'zod';
 import type { EngineDefinition } from '../types.ts';
 
-const View = z.enum(['alzado', 'planta', 'perfil']);
+const View = z.enum(['alzado', 'planta', 'perfil', 'isometrica']);
 const Vec3 = z.tuple([z.number(), z.number(), z.number()]);
 
 /**

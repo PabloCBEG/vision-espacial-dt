@@ -1,0 +1,198 @@
+{
+  "id": "ejemplo-1a-tangencias",
+  "convocatoria": "Ejemplo de formato",
+  "ejercicio": 1,
+  "opcion": "A",
+  "temas": ["II-01", "I-06"],
+  "titulo": "Circunferencias por dos puntos tangentes a otra",
+  "enunciado": "Dibuja las circunferencias que pasan por los puntos A y B y son tangentes a la circunferencia c. Resuélvelo por el eje y el centro radical y deja visibles las construcciones auxiliares.",
+  "datos": ["A(−30, 20) y B(−10, 30), en mm.", "c: centro C(15, −10) y radio 12 mm."],
+  "initialScene": {
+    "points": { "P": [0, 0, 0] },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          { "id": "A", "tipo": "punto", "en": [-30, 20], "fijo": true },
+          { "id": "B", "tipo": "punto", "en": [-10, 30], "fijo": true },
+          { "id": "C", "tipo": "punto", "en": [15, -10], "fijo": true },
+          {
+            "id": "c",
+            "tipo": "circunferencia",
+            "centro": "C",
+            "radio": 12,
+            "rol": "dato",
+            "etiqueta": "c"
+          },
+          { "id": "m", "tipo": "mediatriz", "de": ["A", "B"], "rol": "auxiliar", "etiqueta": "m" },
+          {
+            "id": "K",
+            "tipo": "puntoSobre",
+            "sobre": "m",
+            "t": 0.3125,
+            "rol": "auxiliar",
+            "etiqueta": ""
+          },
+          { "id": "k", "tipo": "circunferencia", "centro": "K", "pasaPor": "A", "rol": "auxiliar" },
+          { "id": "e", "tipo": "ejeRadical", "de": ["k", "c"], "rol": "proceso", "etiqueta": "e" },
+          { "id": "r", "tipo": "recta", "por": ["A", "B"], "rol": "auxiliar" },
+          {
+            "id": "O",
+            "tipo": "interseccion",
+            "de": ["e", "r"],
+            "rol": "proceso",
+            "etiqueta": "CR"
+          },
+          {
+            "id": "T1",
+            "tipo": "puntoTangencia",
+            "desde": "O",
+            "a": "c",
+            "indice": 0,
+            "etiqueta": "T₁"
+          },
+          {
+            "id": "T2",
+            "tipo": "puntoTangencia",
+            "desde": "O",
+            "a": "c",
+            "indice": 1,
+            "etiqueta": "T₂"
+          },
+          { "id": "OT1", "tipo": "segmento", "por": ["O", "T1"], "rol": "auxiliar" },
+          { "id": "OT2", "tipo": "segmento", "por": ["O", "T2"], "rol": "auxiliar" },
+          { "id": "CT1", "tipo": "recta", "por": ["C", "T1"], "rol": "auxiliar" },
+          { "id": "CT2", "tipo": "recta", "por": ["C", "T2"], "rol": "auxiliar" },
+          {
+            "id": "O1",
+            "tipo": "interseccion",
+            "de": ["CT1", "m"],
+            "rol": "resultado",
+            "etiqueta": "O₁"
+          },
+          {
+            "id": "O2",
+            "tipo": "interseccion",
+            "de": ["CT2", "m"],
+            "rol": "resultado",
+            "etiqueta": "O₂"
+          },
+          {
+            "id": "s1",
+            "tipo": "circunferencia",
+            "centro": "O1",
+            "pasaPor": "A",
+            "rol": "resultado"
+          },
+          {
+            "id": "s2",
+            "tipo": "circunferencia",
+            "centro": "O2",
+            "pasaPor": "A",
+            "rol": "resultado"
+          }
+        ]
+      }
+    }
+  },
+  "examen": {
+    "sheet": ["cuadricula"],
+    "engines": { "plana": { "visibles": ["A", "B", "C", "c"] } }
+  },
+  "solucion": [
+    {
+      "narration": "Los centros buscados equidistan de A y B: están en la mediatriz m. Trazamos una circunferencia auxiliar k cualquiera que pase por A y B y corte a c.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": { "visibles": ["A", "B", "C", "c", "m", "K", "k"], "trazar": ["m", "k"] }
+      }
+    },
+    {
+      "narration": "El eje radical de k y c corta a la recta AB en el centro radical CR. Desde él, las tangentes a c tienen la misma longitud que las potencias.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "c", "m", "k", "e", "r", "O"],
+          "trazar": ["e", "r", "O"]
+        }
+      }
+    },
+    {
+      "narration": "Las tangentes desde CR a c dan los puntos de tangencia T₁ y T₂. Cada centro está en la recta que une C con un punto de tangencia y en la mediatriz.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "C",
+            "c",
+            "m",
+            "e",
+            "r",
+            "O",
+            "T1",
+            "T2",
+            "OT1",
+            "OT2",
+            "CT1",
+            "CT2",
+            "O1",
+            "O2"
+          ],
+          "trazar": ["OT1", "OT2", "T1", "T2", "CT1", "CT2", "O1", "O2"]
+        }
+      }
+    },
+    {
+      "narration": "Las dos soluciones son las circunferencias de centros O₁ y O₂ que pasan por A. Las dos tocan a c en T₁ y T₂.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "C",
+            "c",
+            "m",
+            "e",
+            "r",
+            "O",
+            "T1",
+            "T2",
+            "CT1",
+            "CT2",
+            "O1",
+            "O2",
+            "s1",
+            "s2"
+          ],
+          "trazar": ["s1", "s2"],
+          "destacar": ["s1", "s2"]
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "criterios": [
+      { "texto": "Mediatriz de AB como lugar de los centros", "puntos": 0.4 },
+      { "texto": "Circunferencia auxiliar y eje radical", "puntos": 0.4 },
+      { "texto": "Centro radical sobre la recta AB", "puntos": 0.4 },
+      { "texto": "Tangentes desde el centro radical y puntos de tangencia", "puntos": 0.4 },
+      { "texto": "Centros y las dos circunferencias solución", "puntos": 0.4 }
+    ]
+  }
+}

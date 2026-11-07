@@ -1,0 +1,71 @@
+{
+  "id": "ejemplo-3a-isometrica",
+  "convocatoria": "Ejemplo de formato",
+  "ejercicio": 3,
+  "opcion": "A",
+  "temas": ["II-10", "II-07"],
+  "titulo": "Tetraedro apoyado en una cara en perspectiva isométrica",
+  "enunciado": "Dibuja la perspectiva isométrica del tetraedro regular dado por sus vistas, apoyado en una cara sobre el plano XY. Aplica el coeficiente de reducción. No hace falta dibujar las aristas ocultas.",
+  "datos": [
+    "Tetraedro regular de 40 mm de arista, con la base en el PH.",
+    "Coeficiente isométrico 0,816."
+  ],
+  "initialScene": { "points": { "P": [0, 0, 0] }, "objects": [], "activePoint": "P" },
+  "examen": {
+    "sheet": ["lt", "solido", "vertices", "cuadricula"],
+    "engines": {
+      "solidos": { "solido": { "tipo": "tetraedro", "arista": 40, "centro": [0, 30], "giro": 15 } }
+    }
+  },
+  "solucion": [
+    {
+      "narration": "Primero, la escala gráfica de reducción: cada medida paralela a los ejes se multiplica por 0,816.",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "escala"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "tetraedro", "arista": 40, "centro": [0, 30], "giro": 15 },
+          "escala": 1
+        }
+      }
+    },
+    {
+      "narration": "La planta se lleva al plano XY y el alzado al XZ. Desde ellos se levanta la caja que envuelve al tetraedro.",
+      "show3d": ["triedro", "vistas-triedro"],
+      "sheet": ["triedro", "vistas-triedro"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "tetraedro", "arista": 40, "centro": [0, 30], "giro": 15 },
+          "desdeVistas": 0.6
+        }
+      }
+    },
+    {
+      "narration": "El vértice de arriba está sobre el centro de la base, a la altura de la caja. Uniendo sus vértices sale el tetraedro, sin aristas ocultas.",
+      "show3d": ["triedro", "vistas-triedro", "axonometria"],
+      "sheet": ["triedro", "vistas-triedro", "axonometria"],
+      "highlight": ["axonometria"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "axonometria": {
+          "solido": { "tipo": "tetraedro", "arista": 40, "centro": [0, 30], "giro": 15 },
+          "desdeVistas": 1,
+          "rotulos": true
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "criterios": [
+      { "texto": "Ejes isométricos y coeficiente de reducción", "puntos": 0.5 },
+      { "texto": "Base en el plano XY con sus medidas reducidas", "puntos": 0.6 },
+      { "texto": "Vértice superior a su altura y sobre el centro de la base", "puntos": 0.5 },
+      { "texto": "Aristas vistas correctas", "puntos": 0.4 }
+    ]
+  }
+}

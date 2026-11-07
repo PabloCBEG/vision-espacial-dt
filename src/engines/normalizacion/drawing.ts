@@ -215,7 +215,7 @@ export function buildDrawing(wasm: ManifoldToplevel, piece: Piece, step: NormSte
     }
     removed = rest ? toMesh(rest) : null;
   }
-  for (const view of ['alzado', 'planta', 'perfil'] as const) {
+  for (const view of ['alzado', 'planta', 'perfil', 'isometrica'] as const) {
     const axes = step.ejes ? axesIn(view, piece, bounds) : [];
     if (cut && cutInfo && kept && cut.vista === view) {
       const isCut = onPlanes(kept, cutInfo.planes);
@@ -284,5 +284,7 @@ export function placeInSheet(
       return { x: u, y: v + amin - half };
     case 'perfil':
       return { x: u - amin + xmax + VIEW_GAP, y: v - cmin + half };
+    case 'isometrica':
+      return { x: u, y: v };
   }
 }

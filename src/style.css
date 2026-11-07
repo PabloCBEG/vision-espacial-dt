@@ -846,6 +846,107 @@ body[data-screen='lesson'] .workspace {
   font: inherit;
 }
 
+/* ---------- Banco PAU y modo examen ---------- */
+.pau-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.pau-filter {
+  display: grid;
+  gap: var(--space-xs);
+  font-weight: 600;
+}
+
+.pau-filter select {
+  min-height: 2.25rem;
+  padding: var(--space-xs) var(--space-s);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 0.25rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.exam-panel {
+  display: grid;
+  gap: var(--space-s);
+}
+
+.exam-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+.exam-timer {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.exam-timer.is-over {
+  color: var(--scene-trace);
+}
+
+.exam-data {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+/* Durante el examen: sin pasos, sin ayudas y sin 3D. */
+body[data-exam='examen'] .lesson-controls,
+body[data-exam='examen'] .lesson-progress,
+body[data-exam='examen'] .lesson-progress-text,
+body[data-exam='examen'] .help-level,
+body[data-exam='examen'] #hint-button,
+body[data-exam='examen'] #lesson-narration,
+body[data-exam='examen'] .fold-controls {
+  display: none;
+}
+
+.rubric-panel {
+  margin-top: var(--space-s);
+  padding: var(--space-s) var(--space-m);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+}
+
+.rubric-title {
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rubric-panel[open] .rubric-title {
+  margin-bottom: var(--space-s);
+}
+
+.rubric-items {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.rubric-item {
+  display: flex;
+  gap: var(--space-s);
+  align-items: flex-start;
+}
+
+.rubric-extra-title {
+  margin: var(--space-s) 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.rubric-total {
+  margin: var(--space-s) 0 0;
+  font-weight: 700;
+}
+
 /* ---------- Controles de los motores ---------- */
 .engine-controls {
   grid-column: 1 / -1;

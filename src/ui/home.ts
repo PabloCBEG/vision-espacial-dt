@@ -76,6 +76,7 @@ export function renderHome(
     const trainer = findTopic('E-00');
     if (trainer) featured.append(topicCard(trainer, lessonsOf(trainer.code), seen));
     featured.append(freeCard());
+    if (course === 'DT II') featured.append(pauCard());
     list.append(featured);
 
     // Bloques del curso con sus temas.
@@ -154,6 +155,19 @@ function topicCard(
       <h3 id="${titleId}" class="topic-title">${escapeHtml(topic.title)}</h3>
       ${body}
     </article>`;
+  return item;
+}
+
+function pauCard(): HTMLLIElement {
+  const item = document.createElement('li');
+  item.className = 'topic-card lesson-card-free';
+  item.innerHTML = `
+    <a class="lesson-card-link" href="#/pau">
+      <span class="lesson-card-title">Banco PAU</span>
+      <span class="lesson-card-text">
+        Ejercicios tipo PAU en modo examen: 22 minutos, solo la lámina y autoevaluación.
+      </span>
+    </a>`;
   return item;
 }
 

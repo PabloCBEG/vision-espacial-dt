@@ -1,0 +1,122 @@
+{
+  "id": "ejemplo-4-vistas",
+  "convocatoria": "Ejemplo de formato",
+  "ejercicio": 4,
+  "opcion": null,
+  "temas": ["II-12", "I-15"],
+  "titulo": "Vistas de un soporte en U desde su isométrica",
+  "enunciado": "A partir de la perspectiva isométrica del soporte, dibuja su alzado, su planta y su perfil izquierdo en el sistema europeo, con las aristas ocultas y los ejes. Acota la pieza según la norma.",
+  "datos": [
+    "Medidas generales: 50 × 30 × 30 mm.",
+    "Ranura de 24 mm de ancho y 20 mm de profundidad; taladro pasante de ⌀8."
+  ],
+  "initialScene": {
+    "points": { "P": [0, 0, 0] },
+    "objects": [],
+    "activePoint": "P",
+    "engines": { "normalizacion": { "pieza": "soporte-u" } }
+  },
+  "examen": {
+    "sheet": [],
+    "engines": { "normalizacion": { "vistas": ["isometrica"], "ejes": false, "ocultas": false } }
+  },
+  "solucion": [
+    {
+      "narration": "La pieza dentro de la caja de proyección: cada vista se proyecta en la cara opuesta al observador. Al desplegarla, la planta queda debajo del alzado y el perfil a su derecha.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": { "normalizacion": { "caja": { "desplegar": 1 } } }
+    },
+    {
+      "narration": "Las aristas que no se ven van con discontinua fina: el taladro en el alzado y la planta. Los ejes del taladro, con trazo y punto.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["ocultas", "ejes"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": { "normalizacion": {} }
+    },
+    {
+      "narration": "Acotación: cada medida una sola vez y en la vista que mejor muestra la forma. El taladro se acota con su diámetro.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["cotas"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-25, 40, 30],
+                [25, 40, 30]
+              ],
+              "direccion": "h",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-12, 40, 30],
+                [12, 40, 30]
+              ],
+              "direccion": "h",
+              "desplazamiento": 4
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-25, 40, 0],
+                [-25, 40, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [25, 40, 10],
+                [25, 40, 0]
+              ],
+              "direccion": "v",
+              "desplazamiento": 8
+            },
+            {
+              "tipo": "lineal",
+              "vista": "perfil",
+              "de": [
+                [-25, 10, 0],
+                [-25, 40, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "diametro",
+              "vista": "perfil",
+              "centro": [-25, 25, 20],
+              "radio": 4,
+              "angulo": 35
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "criterios": [
+      { "texto": "Disposición de las vistas en el sistema europeo", "puntos": 0.4 },
+      { "texto": "Alzado correcto", "puntos": 0.4 },
+      { "texto": "Planta y perfil izquierdo correctos", "puntos": 0.5 },
+      { "texto": "Aristas ocultas y ejes", "puntos": 0.3 },
+      { "texto": "Acotación según la norma, sin repetir cotas", "puntos": 0.4 }
+    ]
+  }
+}

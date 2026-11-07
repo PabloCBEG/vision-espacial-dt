@@ -11,9 +11,10 @@
 //    la casilla del punto.
 // 3. Los tramos se unen en segmentos vistos (continua gruesa) y ocultos (discontinua fina).
 // Sin Three.js ni DOM.
+import { ISO_RIGHT, ISO_TOWARD, ISO_UP } from '../axonometria/projection.ts';
 import type { TriMesh } from './kernel.ts';
 
-export type ViewName = 'alzado' | 'planta' | 'perfil';
+export type ViewName = 'alzado' | 'planta' | 'perfil' | 'isometrica';
 
 export interface Seg2 {
   readonly x1: number;
@@ -48,11 +49,19 @@ export function project(view: ViewName, p: readonly number[]): V3 {
       return [x, -a, c];
     case 'perfil':
       return [a, c, -x];
+    case 'isometrica':
+      // Perspectiva isométrica (coeficiente 0,816), la misma que la cámara «isometric».
+      return [
+        x * ISO_RIGHT.x + a * ISO_RIGHT.a + c * ISO_RIGHT.c,
+        x * ISO_UP.x + a * ISO_UP.a + c * ISO_UP.c,
+        x * ISO_TOWARD.x + a * ISO_TOWARD.a + c * ISO_TOWARD.c,
+      ];
   }
 }
 
 /** Dirección hacia el observador de cada vista (x, a, c). */
 export function toward(view: ViewName): V3 {
+  if (view === 'isometrica') return [ISO_TOWARD.x, ISO_TOWARD.a, ISO_TOWARD.c];
   return view === 'alzado' ? [0, 1, 0] : view === 'planta' ? [0, 0, 1] : [-1, 0, 0];
 }
 

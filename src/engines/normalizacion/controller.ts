@@ -15,6 +15,7 @@ export const VIEW_LABELS: Record<ViewName, string> = {
   alzado: 'Alzado',
   planta: 'Planta',
   perfil: 'Perfil izquierdo',
+  isometrica: 'Perspectiva isométrica',
 };
 
 export class NormController {
@@ -159,11 +160,13 @@ export class NormController {
       case 'vistasNecesarias': {
         const piece = findPiece(data.pieza ?? '');
         if (!piece) return null;
-        const names: ViewName[] = ['alzado', 'planta', 'perfil'];
+        const names = ['alzado', 'planta', 'perfil'] as const;
         const picked = new Set(chosen.map((i) => names[i]));
         const need = new Set(piece.vistasNecesarias);
         const missing = [...need].filter((v) => !picked.has(v));
-        const extra = [...picked].filter((v): v is ViewName => v !== undefined && !need.has(v));
+        const extra = [...picked].filter(
+          (v): v is (typeof names)[number] => v !== undefined && !need.has(v),
+        );
         if (missing.length === 0 && extra.length === 0) {
           return {
             correct: true,

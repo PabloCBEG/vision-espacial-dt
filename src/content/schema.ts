@@ -42,13 +42,13 @@ const layerPrefixes = ENGINE_DEFINITIONS.flatMap((e) => e.layerPrefixes);
 export const LAYER_PATTERN = new RegExp(
   `^(${layerNames.join('|')}|(${layerPrefixes.join('|')}):[A-Za-zα-ω0-9]+)$`,
 );
-const Layer = z.string().regex(LAYER_PATTERN, 'Capa desconocida');
+export const Layer = z.string().regex(LAYER_PATTERN, 'Capa desconocida');
 
 /**
  * Datos propios de cada motor en un paso o ejercicio:
  * "engines": { "metodos": {…}, "solidos": {…} }. Cada motor valida los suyos.
  */
-const EngineData = z
+export const EngineData = z
   .object(
     Object.fromEntries(
       ENGINE_DEFINITIONS.flatMap((e) => (e.stepSchema ? [[e.id, e.stepSchema.optional()]] : [])),
@@ -57,7 +57,7 @@ const EngineData = z
   .strict()
   .optional();
 
-const ViewSchema = z.enum(['perspective', 'front', 'top', 'profile', 'isometric']);
+export const ViewSchema = z.enum(['perspective', 'front', 'top', 'profile', 'isometric']);
 
 /** Una narración tiene como máximo dos frases. */
 const Narration = z
@@ -70,7 +70,7 @@ export function countSentences(text: string): number {
   return text.split(/[.!?…]+(?:\s|$)/).filter((s) => s.trim().length > 0).length;
 }
 
-const StepSchema = z.object({
+export const StepSchema = z.object({
   /** Datos de los motores (métodos, sólidos…) en este paso. */
   engines: EngineData,
   /** Lo que se lee en el paso (máximo 2 frases). */
@@ -168,6 +168,15 @@ const ExerciseSchema = z.discriminatedUnion('kind', [
   EngineExercise,
 ]);
 
+/** Escena inicial: puntos, objetos y datos comunes de los motores. */
+export const InitialSceneSchema = z.object({
+  points: z.record(PointName, Coords),
+  objects: z.array(SceneObjectSchema),
+  activePoint: PointName,
+  /** Datos de los motores comunes a todos los pasos (por ejemplo, la construcción plana). */
+  engines: EngineData,
+});
+
 export const LessonSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/, 'El id va en minúsculas, sin espacios: "el-punto"'),
   /** Orden en la pantalla de inicio. */
@@ -179,13 +188,7 @@ export const LessonSchema = z.object({
   /** Saber básico del currículo LOMLOE al que corresponde. */
   saberBasico: z.string().min(1),
   level: z.enum(['Inicial', 'Intermedio', 'Avanzado']),
-  initialScene: z.object({
-    points: z.record(PointName, Coords),
-    objects: z.array(SceneObjectSchema),
-    activePoint: PointName,
-    /** Datos de los motores comunes a todos los pasos (por ejemplo, la construcción plana). */
-    engines: EngineData,
-  }),
+  initialScene: InitialSceneSchema,
   steps: z.array(StepSchema).min(1),
   exercises: z.array(ExerciseSchema).default([]),
 });
