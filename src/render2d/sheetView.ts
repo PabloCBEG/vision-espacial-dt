@@ -119,6 +119,11 @@ export class SheetView {
     };
   }
 
+  /** Vuelve a dibujar (para los módulos que animan algo por su cuenta). */
+  redraw(): void {
+    this.requestRender();
+  }
+
   zoomIn(): void {
     const c = viewBoxCenter(this.viewBox);
     this.autoFit = false;
@@ -173,7 +178,7 @@ export class SheetView {
 
     this.usedLayers = new Set();
     const exercise = state.exercise;
-    if (exercise) this.drawGrid();
+    if (exercise || state.layersSheet?.includes('cuadricula')) this.drawGrid();
     this.drawLT();
 
     // Mientras el PH no esté abatido del todo, P′ aún no ha llegado a la lámina:
@@ -611,7 +616,8 @@ export class SheetView {
         const pending = projection === 'horizontal' && state.foldAngle < FOLDED_ANGLE_DEG;
         handle.group.classList.toggle('is-pending', pending);
         handle.group.classList.toggle('is-hidden', !visible);
-        handle.group.setAttribute('tabindex', visible ? '0' : '-1');
+        handle.group.classList.toggle('is-locked', state.locked);
+        handle.group.setAttribute('tabindex', visible && !state.locked ? '0' : '-1');
         handle.group.setAttribute('aria-hidden', String(!visible));
       }
     }

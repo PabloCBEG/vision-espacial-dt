@@ -12,6 +12,13 @@ export interface SceneColors {
   trace: Color;
   plane: Color;
   profile: Color;
+  /** Cuatro papeles de línea de los motores: auxiliar, proceso, datos y resultado. */
+  aux: Color;
+  process: Color;
+  data: Color;
+  result: Color;
+  /** Plano de proyección nuevo (cambio de plano). */
+  newPlane: Color;
 }
 
 const VARIABLES: Record<keyof SceneColors, string> = {
@@ -25,6 +32,11 @@ const VARIABLES: Record<keyof SceneColors, string> = {
   trace: '--scene-trace',
   plane: '--scene-plane',
   profile: '--scene-profile',
+  aux: '--scene-aux',
+  process: '--scene-process',
+  data: '--scene-data',
+  result: '--scene-result',
+  newPlane: '--scene-new-plane',
 };
 
 export function readSceneColors(element: Element): SceneColors {
@@ -41,5 +53,10 @@ export function readSceneColors(element: Element): SceneColors {
     trace: read(VARIABLES.trace),
     plane: read(VARIABLES.plane),
     profile: read(VARIABLES.profile),
+    aux: read(VARIABLES.aux),
+    process: read(VARIABLES.process),
+    data: read(VARIABLES.data),
+    result: read(VARIABLES.result),
+    newPlane: read(VARIABLES.newPlane),
   };
 }

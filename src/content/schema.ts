@@ -130,7 +130,30 @@ const ConditionExercise = z.object({
   sheet: z.array(Layer).optional(),
 });
 
-const ExerciseSchema = z.discriminatedUnion('kind', [PlacePointExercise, ConditionExercise]);
+/**
+ * Ejercicio: escribir una medida (verdadera magnitud, distancia o ángulo) leída en la lámina.
+ * La cuadrícula de la lámina ayuda a medir.
+ */
+const ValueExercise = z.object({
+  kind: z.literal('value'),
+  difficulty: Difficulty,
+  engines: EngineData,
+  prompt: Narration,
+  /** Respuesta correcta y su unidad; se acepta con la tolerancia indicada. */
+  answer: z.number(),
+  unit: z.enum(['mm', '°']),
+  tolerance: z.number().positive().default(2),
+  points: z.record(PointName, Coords).optional(),
+  activePoint: PointName.optional(),
+  show3d: z.array(Layer).optional(),
+  sheet: z.array(Layer).optional(),
+});
+
+const ExerciseSchema = z.discriminatedUnion('kind', [
+  PlacePointExercise,
+  ConditionExercise,
+  ValueExercise,
+]);
 
 export const LessonSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/, 'El id va en minúsculas, sin espacios: "el-punto"'),

@@ -303,7 +303,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 2,
     pauNote: 'Ejercicio 2',
     scene: 'Cada método como movimiento físico',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'II-06',

@@ -3,6 +3,7 @@
 import { getPoint, patchState, type AppStore, type HelpLevel } from '../state/index.ts';
 import { checkPlacement } from './checkPlacement.ts';
 import { checkCondition } from './checkCondition.ts';
+import { checkValue } from './checkValue.ts';
 import type { Player, PlayerPage } from './player.ts';
 import { markLessonSeen } from './progress.ts';
 import { loadResults, saveAttempt } from './results.ts';
@@ -23,6 +24,10 @@ export interface PlayerElements {
   feedback: HTMLElement;
   helpLevel: HTMLElement;
   hintButton: HTMLButtonElement;
+  /** Respuesta numérica de los ejercicios de medida. */
+  answerWrapper: HTMLElement;
+  answer: HTMLInputElement;
+  unit: HTMLElement;
 }
 
 /** Segundos que se ve el 3D al pulsar el botón de pista. */
@@ -61,6 +66,10 @@ export function bindPlayer(player: Player, store: AppStore, el: PlayerElements):
       el.exercisePanel.hidden = false;
       el.feedback.textContent = '';
       el.feedback.className = 'exercise-feedback';
+      const isValue = page.exercise.kind === 'value';
+      el.answerWrapper.hidden = !isValue;
+      el.answer.value = '';
+      el.unit.textContent = page.exercise.kind === 'value' ? page.exercise.unit : '';
     }
     el.previous.disabled = player.index === 0;
     el.next.disabled = player.index === total - 1;
@@ -88,20 +97,32 @@ export function bindPlayer(player: Player, store: AppStore, el: PlayerElements):
     const page = player.page();
     if (page.kind !== 'exercise') return;
     const state = store.get();
+    const exercise = page.exercise;
     const result =
-      page.exercise.kind === 'placePoint'
-        ? checkPlacement(getPoint(state, page.exercise.point), {
-            x: page.exercise.target[0],
-            a: page.exercise.target[1],
-            c: page.exercise.target[2],
+      exercise.kind === 'placePoint'
+        ? checkPlacement(getPoint(state, exercise.point), {
+            x: exercise.target[0],
+            a: exercise.target[1],
+            c: exercise.target[2],
           })
-        : checkCondition(page.exercise.condition, page.exercise.objects, state);
+        : exercise.kind === 'value'
+          ? checkValue(
+              Number(el.answer.value.replace(',', '.')),
+              exercise.answer,
+              exercise.unit,
+              exercise.tolerance,
+            )
+          : checkCondition(exercise.condition, exercise.objects, state);
     saveAttempt(lessonId, page.index, result.correct);
     if (result.correct) render(player.page()); // marca el ejercicio como resuelto
     el.feedback.textContent = result.message;
     el.feedback.className = `exercise-feedback ${result.correct ? 'is-correct' : 'is-wrong'}`;
   };
   el.check.addEventListener('click', onCheck);
+  const onAnswerKey = (event: KeyboardEvent): void => {
+    if (event.key === 'Enter') onCheck();
+  };
+  el.answer.addEventListener('keydown', onAnswerKey);
 
   // Flechas del teclado: paso anterior y siguiente (salvo dentro de un deslizador o campo).
   const onKey = (event: KeyboardEvent): void => {
@@ -150,6 +171,7 @@ export function bindPlayer(player: Player, store: AppStore, el: PlayerElements):
     el.next.removeEventListener('click', onNext);
     el.play.removeEventListener('click', onPlay);
     el.check.removeEventListener('click', onCheck);
+    el.answer.removeEventListener('keydown', onAnswerKey);
     el.hintButton.removeEventListener('click', onHint);
     for (const radio of radios) radio.removeEventListener('change', onHelp);
     document.removeEventListener('keydown', onKey);

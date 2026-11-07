@@ -1,0 +1,256 @@
+{
+  "id": "tres-metodos",
+  "order": 1,
+  "title": "Tres métodos, un mismo problema",
+  "topic": "II-05",
+  "stage": "DT II",
+  "saberBasico": "Sistema diédrico: métodos. Giro, cambio de plano y abatimiento para hallar verdaderas magnitudes.",
+  "level": "Intermedio",
+  "initialScene": {
+    "points": {
+      "A": [-25, 15, 10],
+      "B": [20, 35, 40]
+    },
+    "objects": [
+      { "kind": "point", "id": "A" },
+      { "kind": "point", "id": "B" }
+    ],
+    "activePoint": "A"
+  },
+  "steps": [
+    {
+      "narration": "Queremos la verdadera magnitud del segmento AB. Está inclinado respecto a los dos planos de proyección.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyectantes:A",
+        "proyectantes:B",
+        "figura"
+      ],
+      "sheet": [],
+      "highlight": ["figura"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"], "progreso": 0 } }
+    },
+    {
+      "narration": "En la lámina, A′B′ y A″B″ son más cortas que AB. Ninguna proyección sirve para medirlo.",
+      "show3d": ["planos", "punto:A", "punto:B", "proyecciones:A", "proyecciones:B", "figura"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": ["figura"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"], "progreso": 0 } }
+    },
+    {
+      "narration": "Primer método, el giro: AB gira alrededor de un eje vertical que pasa por A. B describe un arco horizontal y su cota no cambia.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "highlight": ["movimiento"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"] } }
+    },
+    {
+      "narration": "En la lámina, B′ recorre un arco con centro en e′ hasta que el segmento queda paralelo a la LT. Entonces A″B″₁ es la verdadera magnitud.",
+      "show3d": ["planos", "figura", "eje", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"] } }
+    },
+    {
+      "narration": "Segundo método, el cambio de plano: AB no se mueve y ponemos un plano vertical nuevo paralelo a él. Las proyectantes llegan al plano nuevo y cada punto conserva su cota.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "nueva-lt", "movimiento", "resultado"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": ["nueva-lt"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": { "metodo": "cambio", "figura": ["A", "B"], "mirarPlanoNuevo": true }
+      }
+    },
+    {
+      "narration": "En la lámina, la LT₁ es paralela a A′B′ y desde ella se lleva la cota de cada punto. A″₁B″₁ es la verdadera magnitud.",
+      "show3d": ["planos", "figura", "nueva-lt", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": { "metodos": { "metodo": "cambio", "figura": ["A", "B"] } }
+    },
+    {
+      "narration": "Tercer método, el abatimiento: el plano vertical que contiene AB gira como una bisagra alrededor de A′B′. Cae sobre el PH llevándose el segmento.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": ["charnela"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "metodos": { "metodo": "abatimiento", "figura": ["A", "B"] } }
+    },
+    {
+      "narration": "En la lámina, cada punto abatido está en la perpendicular a la charnela por su proyección, a la distancia que da un triángulo con su cota. (A)(B) es la verdadera magnitud.",
+      "show3d": ["planos", "figura", "charnela", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["movimiento"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": { "metodos": { "metodo": "abatimiento", "figura": ["A", "B"] } }
+    },
+    {
+      "narration": "Los tres métodos dan la misma medida. Elige un método con los botones y compara su movimiento con su trazado.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "figura",
+        "charnela",
+        "eje",
+        "nueva-lt",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "eje",
+        "nueva-lt",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"], "selector": true } }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "Con el giro ya hecho, mide en la lámina la verdadera magnitud de AB. Ayúdate de la cuadrícula de 10 mm.",
+      "answer": 61.8,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": { "A": [-30, 10, 15], "B": [25, 30, 35] },
+      "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"] } }
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Elige el método que prefieras y mide la verdadera magnitud de AB en milímetros.",
+      "answer": 55.2,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": { "A": [-20, 30, 5], "B": [25, 10, 30] },
+      "show3d": ["planos", "figura", "charnela", "eje", "nueva-lt", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "eje",
+        "nueva-lt",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": { "metodos": { "metodo": "abatimiento", "figura": ["A", "B"], "selector": true } }
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: halla el ángulo que forma la recta AB con el PH. Usa el cambio de plano y escribe el ángulo en grados.",
+      "answer": 33,
+      "unit": "°",
+      "tolerance": 2,
+      "points": { "A": [-30, 20, 5], "B": [20, 40, 40] },
+      "show3d": ["planos", "figura", "nueva-lt", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": { "metodo": "cambio", "figura": ["A", "B"], "objetivo": "angulo-PH" }
+      }
+    }
+  ]
+}

@@ -104,3 +104,32 @@ describe('lecciones', () => {
     expect(countSentences('P′ está a 45° de la LT, ¿no?')).toBe(1);
   });
 });
+
+describe('ejercicios de medida con el motor de métodos', () => {
+  it('la respuesta escrita coincide con la geometría', async () => {
+    const { buildConstruction, exactValue } = await import('../engines/metodos/construction.ts');
+    const { MethodsStepSchema } = await import('../engines/metodos/definition.ts');
+    const { lessons } = parseLessons(readAll());
+    let checked = 0;
+    for (const lesson of lessons) {
+      for (const exercise of lesson.exercises) {
+        if (exercise.kind !== 'value' || !exercise.engines?.metodos) continue;
+        const coords = { ...lesson.initialScene.points, ...exercise.points };
+        const data = MethodsStepSchema.parse(exercise.engines.metodos);
+        const k = buildConstruction(data, {
+          point: (n) => {
+            const c = coords[n];
+            return c ? { x: c[0], a: c[1], c: c[2] } : null;
+          },
+          line: () => null,
+          plane: () => null,
+        });
+        const value = k ? exactValue(k) : null;
+        expect(value?.unit, lesson.id).toBe(exercise.unit);
+        expect(Math.abs((value?.value ?? NaN) - exercise.answer), lesson.id).toBeLessThan(0.1);
+        checked++;
+      }
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
+});

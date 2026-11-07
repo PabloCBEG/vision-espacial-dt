@@ -82,6 +82,11 @@
             <div class="lesson-text">
               <p id="lesson-narration" class="lesson-narration" aria-live="polite"></p>
               <div id="exercise-panel" class="exercise-panel" hidden>
+                <label id="exercise-answer-wrapper" class="exercise-answer" hidden>
+                  Tu respuesta
+                  <input id="exercise-answer" type="number" step="0.1" inputmode="decimal" />
+                  <span id="exercise-unit"></span>
+                </label>
                 <button id="exercise-check" type="button" class="action-button is-primary">
                   Comprobar
                 </button>
@@ -150,6 +155,7 @@
             </div>
             <div id="scene-notices" class="scene-notices" aria-live="polite" hidden></div>
           </div>
+          <div id="engine-controls" class="engine-controls"></div>
           <p id="point-description" class="visually-hidden" aria-live="polite"></p>
           <form id="point-controls" class="point-controls" aria-label="Coordenadas del punto P">
             <div class="point-hint-row">

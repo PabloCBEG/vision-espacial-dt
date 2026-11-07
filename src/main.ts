@@ -69,7 +69,12 @@ try {
 }
 
 // Motores enchufables (métodos, sólidos…): añaden sus capas a las dos vistas.
-mountEngines({ store, spatial: spatialView, sheet });
+mountEngines({
+  store,
+  spatial: spatialView,
+  sheet,
+  controls: required<HTMLElement>('#engine-controls'),
+});
 
 // ---------- Lecciones y navegación ----------
 
@@ -124,6 +129,9 @@ function route(): void {
       feedback: required('#exercise-feedback'),
       helpLevel: required('#help-level'),
       hintButton: required('#hint-button'),
+      answerWrapper: required('#exercise-answer-wrapper'),
+      answer: required('#exercise-answer'),
+      unit: required('#exercise-unit'),
     });
     player.start();
     document.title = `${lesson.title} · Visión espacial`;

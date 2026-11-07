@@ -26,6 +26,8 @@ export interface EngineHost {
   /** null si el navegador no tiene WebGL. */
   readonly spatial: SpatialView | null;
   readonly sheet: SheetView;
+  /** Hueco en la barra de controles para los controles propios del motor. */
+  readonly controls: HTMLElement;
 }
 
 export interface EngineRuntime {

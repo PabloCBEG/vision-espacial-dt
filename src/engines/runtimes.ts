@@ -1,7 +1,8 @@
 // Motores que se montan en las vistas al arrancar la aplicación.
+import { METHODS_RUNTIME } from './metodos/runtime.ts';
 import type { EngineHost, EngineRuntime } from './types.ts';
 
-export const ENGINE_RUNTIMES: readonly EngineRuntime[] = [];
+export const ENGINE_RUNTIMES: readonly EngineRuntime[] = [METHODS_RUNTIME];
 
 /** Monta todos los motores. Devuelve la función que los desmonta. */
 export function mountEngines(host: EngineHost): () => void {

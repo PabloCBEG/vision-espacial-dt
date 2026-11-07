@@ -20,6 +20,11 @@
   --scene-trace: #b3261e;
   --scene-plane: #7b3fa0;
   --scene-profile: #6b7280;
+  --scene-aux: #7d8792;
+  --scene-process: #1b6e3c;
+  --scene-data: #1b1f24;
+  --scene-result: #c2185b;
+  --scene-new-plane: #0f8a8a;
   --label-bg: rgb(255 255 255 / 0.85);
 
   /* Tipografía */
@@ -63,6 +68,11 @@
     --scene-trace: #ff8a80;
     --scene-plane: #c9a2ff;
     --scene-profile: #a3abb6;
+    --scene-aux: #8d96a2;
+    --scene-process: #6fd39a;
+    --scene-data: #e8eaed;
+    --scene-result: #ff5c9a;
+    --scene-new-plane: #4fd1d1;
     --label-bg: rgb(28 32 39 / 0.85);
     color-scheme: dark;
   }
@@ -87,6 +97,11 @@
   --scene-trace: #ff8a80;
   --scene-plane: #c9a2ff;
   --scene-profile: #a3abb6;
+  --scene-aux: #8d96a2;
+  --scene-process: #6fd39a;
+  --scene-data: #e8eaed;
+  --scene-result: #ff5c9a;
+  --scene-new-plane: #4fd1d1;
   --label-bg: rgb(28 32 39 / 0.85);
   color-scheme: dark;
 }
@@ -783,12 +798,65 @@ body[data-screen='lesson'] .workspace {
   font-size: 0.8125rem;
 }
 
+.label-measure > span {
+  font-style: italic;
+  font-weight: 600;
+}
+
 .label-cota > span {
   border-left: 3px solid var(--scene-cota);
 }
 
 .label-alejamiento > span {
   border-left: 3px solid var(--scene-alejamiento);
+}
+
+.exercise-answer {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-s);
+  font-weight: 600;
+}
+
+.exercise-answer input {
+  width: 6rem;
+  padding: var(--space-xs) var(--space-s);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 0.25rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+/* ---------- Controles de los motores ---------- */
+.engine-controls {
+  grid-column: 1 / -1;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.engine-controls:empty,
+.engine-controls:not(:has(> :not([hidden]))) {
+  display: none;
+}
+
+.methods-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-s) var(--space-m);
+  padding: var(--space-s) var(--space-m);
+}
+
+.methods-slider {
+  flex: 1 1 14rem;
+}
+
+.methods-notice {
+  flex-basis: 100%;
+  margin: 0;
+  padding: var(--space-xs) var(--space-s);
+  border-left: 4px solid var(--color-focus);
+  font-size: 0.9375rem;
 }
 
 /* ---------- Deslizadores del punto ---------- */
@@ -948,23 +1016,23 @@ body:not([data-screen='free']) .free-scenes {
 
 /* Grosores con significado: construcción auxiliar, proceso, datos y resultado. */
 .stroke-aux {
-  stroke: var(--color-text-muted);
+  stroke: var(--scene-aux);
   stroke-width: var(--stroke-aux);
   stroke-dasharray: none;
 }
 
 .stroke-process {
-  stroke: var(--color-text);
+  stroke: var(--scene-process);
   stroke-width: var(--stroke-process);
 }
 
 .stroke-data {
-  stroke: var(--color-text);
+  stroke: var(--scene-data);
   stroke-width: var(--stroke-data);
 }
 
 .stroke-result {
-  stroke: var(--color-accent);
+  stroke: var(--scene-result);
   stroke-width: var(--stroke-result);
   stroke-linecap: round;
 }
@@ -973,6 +1041,24 @@ body:not([data-screen='free']) .free-scenes {
 .is-hidden-edge {
   stroke-width: var(--stroke-aux);
   stroke-dasharray: 6 4;
+}
+
+.sheet circle[class*='stroke-'] {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.sheet-dot {
+  fill: var(--scene-result);
+}
+
+.sheet-dot-data {
+  fill: var(--scene-data);
+}
+
+.sheet-measure {
+  fill: var(--scene-result);
+  font-weight: 700;
 }
 
 /* Botón «Ocultar auxiliares». */
@@ -996,6 +1082,11 @@ body:not([data-screen='free']) .free-scenes {
   cursor: grab;
   outline: none;
   touch-action: none;
+}
+
+.sheet-handle.is-locked {
+  cursor: default;
+  pointer-events: none;
 }
 
 .sheet-handle.is-dragging {

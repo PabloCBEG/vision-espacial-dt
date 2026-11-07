@@ -22,6 +22,8 @@ import {
   type AppStore,
 } from '../state/index.ts';
 import type { FadeLayer } from './fadeLayer.ts';
+import type { Point } from '../geometry/index.ts';
+import { toThree } from './coords.ts';
 import { removeLabels } from './labels.ts';
 import { LineModel } from './lineModel.ts';
 import { PlaneModel } from './planeModel.ts';
@@ -129,6 +131,17 @@ export class SpatialView {
     this.requestRender();
   }
 
+  /**
+   * Coloca la cámara mirando desde una dirección del dominio (x, a, c) hacia el origen,
+   * por ejemplo de frente a un plano de proyección nuevo.
+   */
+  lookFrom(direction: Point): void {
+    const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.animator.goToDirection(toThree(direction), instant);
+    this.onViewChange(null);
+    this.requestRender();
+  }
+
   /** Añade un módulo de un motor. Devuelve la función que lo quita. */
   use(module: SceneModule): () => void {
     this.modules.push(module);
@@ -149,6 +162,8 @@ export class SpatialView {
 
   /** Pide un fotograma (para los módulos que animan algo por su cuenta). */
   redraw(): void {
+    // Un módulo puede haber creado líneas nuevas: necesitan el tamaño del lienzo.
+    for (const module of this.modules) this.applyResolution(module.root);
     this.requestRender();
   }
 

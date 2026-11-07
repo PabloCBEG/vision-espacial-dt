@@ -50,7 +50,12 @@ export class CameraAnimator {
   }
 
   goTo(view: ViewName, instant: boolean): void {
-    const toDirection = DIRECTIONS[view].clone();
+    this.goToDirection(DIRECTIONS[view].clone(), instant);
+  }
+
+  /** Lleva la cámara a mirar desde una dirección cualquiera (Three.js) hacia el origen. */
+  goToDirection(direction: Vector3, instant: boolean): void {
+    const toDirection = direction.clone().normalize();
     if (instant) {
       this.transition = null;
       this.place(toDirection, VIEW_DISTANCE_MM);

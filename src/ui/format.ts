@@ -31,3 +31,10 @@ export function describePoint(p: Point, q: Quadrant, name = 'P'): string {
   const coords = [p.x, p.a, p.c].map(formatNumber).join(', ');
   return `${name}(${coords}) mm, ${describeQuadrant(q)}`;
 }
+
+/** Número con un decimal y coma decimal, por ejemplo «57,7» o «−3,5» (sin «,0»). */
+export function formatDecimal(value: number): string {
+  const rounded = Math.round(value * 10) / 10 + 0;
+  const text = String(Math.abs(rounded)).replace('.', ',');
+  return rounded < 0 ? `−${text}` : text;
+}

@@ -32,8 +32,8 @@ test.describe('lecciones 2 y 3', () => {
       page.getByRole('heading', { name: /Bloque B\. Geometría proyectiva/ }),
     ).toBeVisible();
     await page.getByRole('button', { name: 'Dibujo Técnico II' }).click();
-    const topic = page.locator('[data-topic="II-05"]');
-    await expect(topic).toContainText('Métodos: abatimiento, giro y cambio de plano');
+    const topic = page.locator('[data-topic="II-13"]');
+    await expect(topic).toContainText('Planos de conjunto sencillos y CAD');
     await expect(topic).toContainText('Próximamente');
     await expect(page.locator('[data-topic="I-08"]')).toHaveCount(0);
     // El curso elegido se recuerda al volver.

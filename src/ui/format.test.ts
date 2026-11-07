@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { createPoint } from '../geometry/index.ts';
-import { describePoint, formatMm, formatNumber } from './format.ts';
+import { describePoint, formatMm, formatNumber, formatDecimal } from './format.ts';
 
 describe('formato de valores', () => {
   it('usa el signo menos tipográfico', () => {
@@ -20,5 +20,13 @@ describe('formato de valores', () => {
     expect(describePoint(createPoint(5, 0, 0), 'en LT')).toBe(
       'P(5, 0, 0) mm, en la línea de tierra',
     );
+  });
+});
+
+describe('formatDecimal', () => {
+  it('un decimal con coma y signo menos tipográfico', () => {
+    expect(formatDecimal(57.66)).toBe('57,7');
+    expect(formatDecimal(-3.54)).toBe('−3,5');
+    expect(formatDecimal(40)).toBe('40');
   });
 });

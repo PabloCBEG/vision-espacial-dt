@@ -4,6 +4,7 @@ import {
   clampCoordinate,
   createAppStore,
   getPoint,
+  INITIAL_POINT,
   patchState,
   setActiveCoordinate,
   setPoint,
@@ -67,5 +68,13 @@ describe('estado de los puntos', () => {
     expect(listener).not.toHaveBeenCalled();
     patchState(store, { projector: true });
     expect(listener).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('puntos fijos', () => {
+  it('con locked, setPoint no mueve nada', () => {
+    const store = createAppStore({ locked: true });
+    setPoint(store, 'P', createPoint(0, 0, 0));
+    expect(store.get().points.P).toEqual(INITIAL_POINT);
   });
 });

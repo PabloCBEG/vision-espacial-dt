@@ -81,6 +81,7 @@ export class Player {
       highlight: [],
       exercise: null,
       engines: {},
+      locked: false,
     });
     this.goTo(0);
   }
@@ -155,6 +156,7 @@ export class Player {
       highlight: step.highlight,
       exercise: null,
       engines: step.engines ?? {},
+      locked: false,
     });
     this.camera?.setView(step.camera);
     this.animateTo(this.pointsAtStep(index), step.foldAngle);
@@ -171,6 +173,8 @@ export class Player {
       highlight: [],
       exercise: null,
       engines: exercise.engines ?? {},
+      // En los ejercicios de medida, los puntos no se mueven: la respuesta depende de ellos.
+      locked: exercise.kind === 'value',
     };
     // Puntos de partida: los de la escena inicial con los cambios del propio ejercicio.
     const points = this.pointsAtStep(-1);

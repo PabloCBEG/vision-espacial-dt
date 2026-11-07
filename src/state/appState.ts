@@ -45,6 +45,8 @@ export interface AppState {
    * lección o de sus propios controles. Cada motor valida y lee solo los suyos.
    */
   readonly engines: Readonly<Record<string, unknown>>;
+  /** Puntos fijos: en los ejercicios de medida no se pueden mover (cambiaría la respuesta). */
+  readonly locked: boolean;
 }
 
 export type HelpLevel = 'with3d' | 'hint' | 'only2d';
@@ -80,6 +82,7 @@ export const INITIAL_STATE: AppState = {
   helpLevel: 'with3d',
   exercise: null,
   engines: {},
+  locked: false,
 };
 
 /** Limita el ángulo de abatimiento a [0°, 90°]. */
@@ -114,6 +117,7 @@ export function getPoint(state: AppState, id: PointId): Point {
 /** Cambia un punto (redondeado a 1 mm y limitado a ±60 mm). No avisa si no cambia nada. */
 export function setPoint(store: AppStore, id: PointId, p: Point): void {
   const state = store.get();
+  if (state.locked) return;
   const next = clampPoint(p);
   const current = state.points[id];
   if (current && next.x === current.x && next.a === current.a && next.c === current.c) return;

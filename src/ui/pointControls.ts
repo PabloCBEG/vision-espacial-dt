@@ -22,6 +22,7 @@ export function bindPointControls(form: HTMLElement, store: AppStore): void {
       const state = store.get();
       const value = getPoint(state, state.activePoint)[axis];
       if (input.value !== String(value)) input.value = String(value);
+      input.disabled = state.locked;
       output.textContent = formatMm(value);
       input.setAttribute('aria-valuetext', formatMm(value));
     };
