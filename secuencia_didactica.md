@@ -29,7 +29,7 @@ cada tema en *Visión espacial DT*. Pendiente de revisión por el profesor.
 | Nov.–dic. (3) | II-03 Homología y afinidad | 1 | **Nuevo** |
 | Dic. (1) | Repaso: primer simulacro del banco PAU (ejercicios 1 y 2) | 1 y 2 | Banco PAU |
 | Ene. (3) | II-08 Prismas y pirámides: secciones, VM, desarrollos y troncos | 2 | Disponible |
-| Ene.–feb. (3) | II-04 Cónicas: elementos, trazado y tangentes | 1 | Falta el motor (ver abajo) |
+| Ene.–feb. (3) | II-04 Cónicas: elementos, trazado y tangentes | 1 | **Nuevo** |
 | Feb. (2) | II-09 Cono y cilindro: puntos, secciones e intersección con recta | 2 | **Nuevo** |
 | Feb.–mar. (4) | II-12 Normalización: vistas, cortes, secciones y acotación | 4 | Disponible |
 | Mar. (3) | II-10 Axonometría de sólidos, con curvas y octaedro | 3 | Disponible |
@@ -56,7 +56,7 @@ entrenador (E-00) se usa como calentamiento semanal mientras se dan los trazados
 
 | Hueco | Para | Tamaño |
 |---|---|---|
-| Cónicas por puntos (elipse, hipérbola y parábola desde focos y ejes), tangentes y esferas de Dandelin en el laboratorio | II-04 | Grande |
+| ~~Cónicas como lugar geométrico, trazado por puntos y tangente en un punto~~ (hecho). Faltan: tangentes desde un punto exterior o paralelas a una dirección, y las esferas de Dandelin en el laboratorio | II-04 | Medio |
 | Polígono regular inscrito (n lados) y construcciones con datos (triángulos, cuadriláteros) | I-02, I-03 | Medio |
 | Intersección de dos planos y de recta con plano en el diédrico básico | I-09, I-10 | Medio |
 | Giro, simetría y homotecia como objetos de la geometría plana | I-05 | Medio |
@@ -76,6 +76,7 @@ lección.
 | Cono y cilindro: puntos, secciones y recta que los atraviesa | II-09 | 10 | 1 de medida |
 | Potencia, eje radical y tangencias | II-01 | 9 | 3 de colocar en la lámina |
 | Homología y afinidad: la sombra de una figura | II-03 | 8 | 3 de colocar en la lámina |
+| Cónicas: definición, trazado por puntos y tangentes | II-04 | 10 | 3 de colocar en la lámina |
 
 Las respuestas de los ejercicios de medida las comprueba el propio motor en los tests. Las
 capturas de cada paso, en los tres tamaños de pantalla, se generan con

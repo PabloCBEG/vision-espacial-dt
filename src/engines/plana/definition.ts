@@ -78,6 +78,20 @@ const ObjectSchema = z.discriminatedUnion('tipo', [
   }),
   z.object({ ...common, tipo: z.literal('medidaAngulo'), de: z.tuple([Id, Id, Id]) }),
   z.object({ ...common, tipo: z.literal('medidaDistancia'), de: z.tuple([Id, Id]) }),
+  // Cónica como lugar geométrico: elipse e hipérbola por sus focos y su eje (2a) o un punto;
+  // parábola por su foco y su directriz.
+  z.object({
+    ...common,
+    tipo: z.literal('conica'),
+    clase: z.enum(['elipse', 'hiperbola', 'parabola']),
+    focos: z.tuple([Id, Id]).optional(),
+    foco: Id.optional(),
+    directriz: Id.optional(),
+    eje: z.number().positive().optional(),
+    pasaPor: Id.optional(),
+  }),
+  /** Tangente a una cónica en uno de sus puntos (bisectriz de los radios vectores). */
+  z.object({ ...common, tipo: z.literal('tangenteConica'), a: Id, en: Id }),
 ]);
 
 /** Puente 3D: la figura plana y su transformada como sombra en una escena 3D enlazada. */

@@ -1,0 +1,628 @@
+{
+  "id": "conicas-trazado",
+  "order": 15,
+  "title": "Cónicas: definición, trazado por puntos y tangentes",
+  "topic": "II-04",
+  "stage": "DT II",
+  "saberBasico": "Curvas cónicas: elipse, hipérbola y parábola como lugares geométricos. Elementos, trazado por puntos y rectas tangentes.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "F1",
+            "tipo": "punto",
+            "en": [-25, 0],
+            "fijo": true,
+            "etiqueta": "F₁"
+          },
+          {
+            "id": "F2",
+            "tipo": "punto",
+            "en": [25, 0],
+            "fijo": true,
+            "etiqueta": "F₂"
+          },
+          {
+            "id": "A1",
+            "tipo": "punto",
+            "en": [-35, 0],
+            "fijo": true,
+            "etiqueta": "A₁"
+          },
+          {
+            "id": "A2",
+            "tipo": "punto",
+            "en": [35, 0],
+            "fijo": true,
+            "etiqueta": "A₂"
+          },
+          {
+            "id": "B1",
+            "tipo": "punto",
+            "en": [0, 24.4949],
+            "fijo": true,
+            "etiqueta": "B₁"
+          },
+          {
+            "id": "B2",
+            "tipo": "punto",
+            "en": [0, -24.4949],
+            "fijo": true,
+            "etiqueta": "B₂"
+          },
+          {
+            "id": "O",
+            "tipo": "puntoMedio",
+            "de": ["A1", "A2"],
+            "etiqueta": "O"
+          },
+          {
+            "id": "ejeA",
+            "tipo": "segmento",
+            "por": ["A1", "A2"],
+            "rol": "dato"
+          },
+          {
+            "id": "ejeB",
+            "tipo": "segmento",
+            "por": ["B1", "B2"],
+            "rol": "dato"
+          },
+          {
+            "id": "lF",
+            "tipo": "recta",
+            "por": ["F1", "F2"],
+            "rol": "auxiliar",
+            "oculto": true
+          },
+          {
+            "id": "k",
+            "tipo": "conica",
+            "clase": "elipse",
+            "focos": ["F1", "F2"],
+            "eje": 70,
+            "etiqueta": "elipse"
+          },
+          {
+            "id": "P",
+            "tipo": "puntoSobre",
+            "sobre": "k",
+            "t": 0.18
+          },
+          {
+            "id": "PF1",
+            "tipo": "segmento",
+            "por": ["P", "F1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "PF2",
+            "tipo": "segmento",
+            "por": ["P", "F2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dP1",
+            "tipo": "medidaDistancia",
+            "de": ["P", "F1"]
+          },
+          {
+            "id": "dP2",
+            "tipo": "medidaDistancia",
+            "de": ["F2", "P"]
+          },
+          {
+            "id": "cB",
+            "tipo": "circunferencia",
+            "centro": "B1",
+            "radioDe": ["O", "A1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "Fa",
+            "tipo": "interseccion",
+            "de": ["cB", "ejeA"],
+            "indice": 0,
+            "etiqueta": "F₁"
+          },
+          {
+            "id": "Fb",
+            "tipo": "interseccion",
+            "de": ["cB", "ejeA"],
+            "indice": 1,
+            "etiqueta": "F₂"
+          },
+          {
+            "id": "sF",
+            "tipo": "segmento",
+            "por": ["F1", "F2"],
+            "rol": "auxiliar",
+            "oculto": true
+          },
+          {
+            "id": "X",
+            "tipo": "puntoSobre",
+            "sobre": "sF",
+            "t": 0.3
+          },
+          {
+            "id": "c1",
+            "tipo": "circunferencia",
+            "centro": "F1",
+            "radioDe": ["A1", "X"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "c2",
+            "tipo": "circunferencia",
+            "centro": "F2",
+            "radioDe": ["X", "A2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "c3",
+            "tipo": "circunferencia",
+            "centro": "F2",
+            "radioDe": ["A1", "X"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "c4",
+            "tipo": "circunferencia",
+            "centro": "F1",
+            "radioDe": ["X", "A2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "P1",
+            "tipo": "interseccion",
+            "de": ["c1", "c2"],
+            "indice": 0,
+            "etiqueta": "1"
+          },
+          {
+            "id": "P2",
+            "tipo": "interseccion",
+            "de": ["c1", "c2"],
+            "indice": 1,
+            "etiqueta": "2"
+          },
+          {
+            "id": "P3",
+            "tipo": "interseccion",
+            "de": ["c3", "c4"],
+            "indice": 0,
+            "etiqueta": "3"
+          },
+          {
+            "id": "P4",
+            "tipo": "interseccion",
+            "de": ["c3", "c4"],
+            "indice": 1,
+            "etiqueta": "4"
+          },
+          {
+            "id": "T",
+            "tipo": "puntoSobre",
+            "sobre": "k",
+            "t": 0.12
+          },
+          {
+            "id": "TF1",
+            "tipo": "recta",
+            "por": ["T", "F1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "TF2",
+            "tipo": "recta",
+            "por": ["T", "F2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "tk",
+            "tipo": "tangenteConica",
+            "a": "k",
+            "en": "T",
+            "etiqueta": "t"
+          },
+          {
+            "id": "h",
+            "tipo": "conica",
+            "clase": "hiperbola",
+            "focos": ["F1", "F2"],
+            "eje": 30,
+            "etiqueta": "hipérbola"
+          },
+          {
+            "id": "Q",
+            "tipo": "puntoSobre",
+            "sobre": "h",
+            "t": 0.6
+          },
+          {
+            "id": "QF1",
+            "tipo": "segmento",
+            "por": ["Q", "F1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "QF2",
+            "tipo": "segmento",
+            "por": ["Q", "F2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dQ1",
+            "tipo": "medidaDistancia",
+            "de": ["Q", "F1"]
+          },
+          {
+            "id": "dQ2",
+            "tipo": "medidaDistancia",
+            "de": ["F2", "Q"]
+          },
+          {
+            "id": "th",
+            "tipo": "tangenteConica",
+            "a": "h",
+            "en": "Q",
+            "etiqueta": "t"
+          },
+          {
+            "id": "I",
+            "tipo": "interseccion",
+            "de": ["th", "lF"],
+            "etiqueta": "I"
+          },
+          {
+            "id": "D1",
+            "tipo": "punto",
+            "en": [-55, -20],
+            "oculto": true
+          },
+          {
+            "id": "D2",
+            "tipo": "punto",
+            "en": [55, -20],
+            "oculto": true
+          },
+          {
+            "id": "d",
+            "tipo": "recta",
+            "por": ["D1", "D2"],
+            "rol": "dato",
+            "etiqueta": "d"
+          },
+          {
+            "id": "F",
+            "tipo": "punto",
+            "en": [0, 0],
+            "fijo": true
+          },
+          {
+            "id": "pb",
+            "tipo": "conica",
+            "clase": "parabola",
+            "foco": "F",
+            "directriz": "d",
+            "etiqueta": "parábola"
+          },
+          {
+            "id": "R",
+            "tipo": "puntoSobre",
+            "sobre": "pb",
+            "t": 0.78
+          },
+          {
+            "id": "nR",
+            "tipo": "perpendicular",
+            "a": "d",
+            "por": "R",
+            "rol": "auxiliar",
+            "oculto": true
+          },
+          {
+            "id": "H",
+            "tipo": "interseccion",
+            "de": ["nR", "d"]
+          },
+          {
+            "id": "RF",
+            "tipo": "segmento",
+            "por": ["R", "F"],
+            "rol": "proceso"
+          },
+          {
+            "id": "RH",
+            "tipo": "segmento",
+            "por": ["R", "H"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dRF",
+            "tipo": "medidaDistancia",
+            "de": ["R", "F"]
+          },
+          {
+            "id": "dRH",
+            "tipo": "medidaDistancia",
+            "de": ["H", "R"]
+          },
+          {
+            "id": "tp",
+            "tipo": "tangenteConica",
+            "a": "pb",
+            "en": "R",
+            "etiqueta": "t"
+          },
+          {
+            "id": "nF",
+            "tipo": "perpendicular",
+            "a": "d",
+            "por": "F",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "H0",
+            "tipo": "interseccion",
+            "de": ["nF", "d"],
+            "etiqueta": ""
+          },
+          {
+            "id": "V",
+            "tipo": "puntoMedio",
+            "de": ["F", "H0"]
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [45, 35]
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Mueve P por la curva: sus distancias a los focos F₁ y F₂ cambian, pero su suma es siempre 70 mm. La elipse es el lugar de los puntos cuya suma de distancias a dos focos es constante.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "k", "P", "PF1", "PF2", "dP1", "dP2"],
+          "destacar": ["dP1", "dP2"],
+          "lugar": {
+            "punto": "P",
+            "mueve": "P"
+          }
+        }
+      }
+    },
+    {
+      "narration": "Esa suma es el eje mayor A₁A₂, que mide 2a. El eje menor B₁B₂ es perpendicular en el centro O y mide 2b.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "k", "A1", "A2", "B1", "B2", "O", "ejeA", "ejeB"],
+          "destacar": ["ejeA", "ejeB"]
+        }
+      }
+    },
+    {
+      "narration": "Si te dan los ejes, los focos salen con el compás: centro en B₁ y radio a. Corta al eje mayor en F₁ y F₂.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A1", "A2", "B1", "B2", "O", "ejeA", "ejeB", "cB", "Fa", "Fb"],
+          "trazar": ["cB", "Fa", "Fb"],
+          "destacar": ["Fa", "Fb"]
+        }
+      }
+    },
+    {
+      "narration": "Trazado por puntos: toma X entre los focos. Con radios A₁X y XA₂ desde cada foco, los arcos se cortan en cuatro puntos de la elipse.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "F1",
+            "F2",
+            "A1",
+            "A2",
+            "ejeA",
+            "X",
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "trazar": ["c1", "c2", "P1", "P2", "c3", "c4", "P3", "P4"]
+        }
+      }
+    },
+    {
+      "narration": "Mueve X entre los focos: el punto 1 va dibujando la elipse. Con suficientes puntos, se unen a mano alzada o con plantilla.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "A1", "A2", "ejeA", "X", "c1", "c2", "P1"],
+          "destacar": ["P1"],
+          "lugar": {
+            "punto": "P1",
+            "mueve": "X"
+          }
+        }
+      }
+    },
+    {
+      "narration": "La tangente en un punto T es la bisectriz exterior del ángulo que forman los radios vectores TF₁ y TF₂. Mueve T y mira cómo la acompaña.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "k", "T", "TF1", "TF2", "tk"],
+          "trazar": ["TF1", "TF2", "tk"],
+          "destacar": ["tk"],
+          "lugar": {
+            "punto": "T",
+            "mueve": "T"
+          }
+        }
+      }
+    },
+    {
+      "narration": "En la hipérbola es la diferencia de distancias a los focos la que es constante: el eje real, 2a. Tiene dos ramas, una alrededor de cada foco.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "dQ1", "dQ2"],
+          "destacar": ["dQ1", "dQ2"],
+          "lugar": {
+            "punto": "Q",
+            "mueve": "Q"
+          }
+        }
+      }
+    },
+    {
+      "narration": "Su tangente en Q es la bisectriz interior del ángulo de los radios vectores. Es el mismo trazado que en la elipse, con la otra bisectriz.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "th"],
+          "trazar": ["th"],
+          "destacar": ["th"],
+          "lugar": {
+            "punto": "Q",
+            "mueve": "Q"
+          }
+        }
+      }
+    },
+    {
+      "narration": "La parábola es el lugar de los puntos que están a la misma distancia del foco F que de la directriz d. Su vértice V está en el punto medio entre los dos.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F", "d", "pb", "R", "H", "RF", "RH", "dRF", "dRH", "nF", "V"],
+          "destacar": ["dRF", "dRH"],
+          "lugar": {
+            "punto": "R",
+            "mueve": "R"
+          }
+        }
+      }
+    },
+    {
+      "narration": "La tangente en R es la bisectriz del ángulo entre RF y la perpendicular a la directriz. Las tres cónicas salen de cortar un cono: compruébalo en el laboratorio de cónicas.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["F", "d", "pb", "R", "H", "RF", "RH", "tp"],
+          "trazar": ["tp"],
+          "destacar": ["tp"],
+          "lugar": {
+            "punto": "R",
+            "mueve": "R"
+          }
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Te dan los ejes de una elipse. Arrastra Z hasta uno de sus focos.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["F1", "F2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Desde B₁, cada foco está a la distancia a, la mitad del eje mayor.",
+            "pista": "Pincha el compás en B₁ con radio la mitad del eje mayor y corta el eje mayor."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Arrastra Z hasta el vértice de la parábola de foco F y directriz d.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["F", "d", "Z"],
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "V",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El vértice está a la misma distancia del foco que de la directriz.",
+            "pista": "El vértice está en el eje (la perpendicular a d por F), a la misma distancia de F que de d."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: traza la tangente a la hipérbola en Q y arrastra Z hasta el punto donde corta al eje real.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "h", "Q", "Z"],
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "I",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! La tangente es la bisectriz interior de los radios vectores QF₁ y QF₂.",
+            "pista": "Une Q con los dos focos y traza la bisectriz del ángulo que forman: esa es la tangente."
+          }
+        }
+      }
+    }
+  ]
+}

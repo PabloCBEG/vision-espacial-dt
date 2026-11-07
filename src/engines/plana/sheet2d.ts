@@ -57,6 +57,8 @@ export function defaultRole(def: ObjectDef): Role {
     case 'ejeRadical':
     case 'centroRadical':
     case 'arcoCapaz':
+    case 'conica':
+    case 'tangenteConica':
       return 'resultado';
   }
 }
@@ -141,6 +143,7 @@ export class PlaneSheet implements SheetModule {
       }
       if (v.kind === 'arc')
         pts.push(add(v.arc.c, pt(v.arc.r, v.arc.r)), sub(v.arc.c, pt(v.arc.r, v.arc.r)));
+      if (v.kind === 'conic') for (const b of v.conic.branches) pts.push(...b);
     }
     // La figura homóloga, cuando ya está en la lámina.
     const input = bridgeInput(this.controller);
@@ -235,6 +238,19 @@ export class PlaneSheet implements SheetModule {
         text.textContent = `${formatDecimal(v.degrees)}°`;
         text.dataset.label = text.textContent;
         g.append(text);
+        return;
+      }
+      case 'conic': {
+        // Se traza «por puntos»: la curva crece de un extremo al otro.
+        for (const branch of v.conic.branches) {
+          const all = v.conic.closed ? [...branch, branch[0] ?? pt(0, 0)] : [...branch];
+          const n = Math.max(2, Math.round(all.length * f));
+          polyline(g, all.slice(0, n), role, { className: 'plane-conic' });
+        }
+        if (def.etiqueta && f >= 1) {
+          const q = v.conic.branches[0]?.[Math.floor((v.conic.branches[0]?.length ?? 0) * 0.15)];
+          if (q) g.append(ctx.label(def.etiqueta, q.x + 4 * u, -q.y - 4 * u, 'start'));
+        }
         return;
       }
       case 'distance': {

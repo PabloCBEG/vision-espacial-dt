@@ -27,6 +27,16 @@ import {
   type Line2,
   type Pt,
 } from './geometry.ts';
+import {
+  conicPoint,
+  conicResidual,
+  conicTangent,
+  ellipse,
+  hyperbola,
+  nearestConicParam,
+  parabola,
+  type Conic,
+} from './conics.ts';
 
 export type Role = 'dato' | 'auxiliar' | 'proceso' | 'resultado';
 
@@ -60,6 +70,20 @@ export type ObjectDef = { id: string; rol?: Role; etiqueta?: string; oculto?: bo
   | { tipo: 'arcoCapaz'; de: [string, string]; angulo: number; lado?: 1 | -1 }
   | { tipo: 'medidaAngulo'; de: [string, string, string] }
   | { tipo: 'medidaDistancia'; de: [string, string] }
+  | {
+      tipo: 'conica';
+      clase: 'elipse' | 'hiperbola' | 'parabola';
+      /** Elipse e hipérbola: sus dos focos. */
+      focos?: [string, string];
+      /** Parábola: foco y directriz. */
+      foco?: string;
+      directriz?: string;
+      /** Eje mayor (elipse) o eje real (hipérbola), 2a, en mm. */
+      eje?: number;
+      /** Un punto de la curva (en vez del eje). */
+      pasaPor?: string;
+    }
+  | { tipo: 'tangenteConica'; a: string; en: string }
 );
 
 export type ObjectType = ObjectDef['tipo'];
@@ -71,7 +95,8 @@ export type Value =
   | { kind: 'circle'; circle: Circle }
   | { kind: 'arc'; arc: Arc }
   | { kind: 'angle'; a: Pt; v: Pt; b: Pt; degrees: number }
-  | { kind: 'distance'; a: Pt; b: Pt; mm: number };
+  | { kind: 'distance'; a: Pt; b: Pt; mm: number }
+  | { kind: 'conic'; conic: Conic };
 
 export interface Evaluated {
   readonly def: ObjectDef;
@@ -258,6 +283,46 @@ function evaluateOne(
         const b = point(def.de[1]);
         return ok({ kind: 'distance', a, b, mm: dist(a, b) });
       }
+      case 'conica': {
+        let k: Conic | null = null;
+        if (def.clase === 'parabola') {
+          if (!def.foco || !def.directriz) return fail('La parábola necesita foco y directriz.');
+          k = parabola(point(def.foco), line(def.directriz));
+          if (!k) return fail('El foco está en la directriz: no hay parábola.');
+        } else {
+          if (!def.focos) return fail(`La ${def.clase} necesita sus dos focos.`);
+          const f1 = point(def.focos[0]);
+          const f2 = point(def.focos[1]);
+          let a = (def.eje ?? 0) / 2;
+          if (def.pasaPor) {
+            const q = point(def.pasaPor);
+            const d1 = dist(q, f1);
+            const d2 = dist(q, f2);
+            a = def.clase === 'elipse' ? (d1 + d2) / 2 : Math.abs(d1 - d2) / 2;
+          }
+          k = def.clase === 'elipse' ? ellipse(f1, f2, a) : hyperbola(f1, f2, a);
+          if (!k) {
+            return fail(
+              def.clase === 'elipse'
+                ? 'El eje mayor tiene que ser más largo que la distancia entre los focos.'
+                : 'El eje real tiene que ser más corto que la distancia entre los focos.',
+            );
+          }
+        }
+        return ok({ kind: 'conic', conic: k });
+      }
+      case 'tangenteConica': {
+        const v = get(def.a);
+        if (v.kind !== 'conic') throw new Missing(`«${def.a}» no es una cónica.`);
+        const p = point(def.en);
+        if (conicResidual(v.conic, p) > 0.5) {
+          return fail(`El punto ${def.en} no está en la cónica: no se puede trazar su tangente.`);
+        }
+        const l = conicTangent(v.conic, p);
+        return l
+          ? ok({ kind: 'line', line: l, extent: 'recta', a: p })
+          : fail('En el vértice de la parábola o en un foco no se define así la tangente.');
+      }
     }
   } catch (error) {
     if (error instanceof Missing) return { def, value: null, problem: error.message || null };
@@ -299,6 +364,8 @@ export function pointOn(v: Value, t: number): Pt {
       return v.v;
     case 'distance':
       return v.a;
+    case 'conic':
+      return conicPoint(v.conic, t);
   }
 }
 
@@ -332,6 +399,8 @@ export function nearestParam(v: Value, q: Pt): number {
       const back = (v.arc.a0 + 2 * Math.PI - a) / (v.arc.a1 - v.arc.a0);
       return back < t - 1 ? 0 : 1;
     }
+    case 'conic':
+      return nearestConicParam(v.conic, q);
     default:
       return 0;
   }

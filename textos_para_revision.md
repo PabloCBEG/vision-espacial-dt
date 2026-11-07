@@ -346,6 +346,31 @@ Fichero: `src/content/lessons/14-homologia-afinidad.json` · DT II · nivel Avan
 2. [ ] *construcción en la lámina, dificultad 2*: Ahora es una afinidad de eje e que transforma A en A′. Arrastra Z hasta B′, el afín de B.
 3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: con la homología de centro O, eje e y par A, A′, halla el homólogo de D y arrastra Z hasta él.
 
+### II-04 · Cónicas: definición, trazado por puntos y tangentes
+
+Fichero: `src/content/lessons/15-conicas-trazado.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Curvas cónicas: elipse, hipérbola y parábola como lugares geométricos. Elementos, trazado por puntos y rectas tangentes.
+
+**Pasos**
+
+1. [ ] Mueve P por la curva: sus distancias a los focos F₁ y F₂ cambian, pero su suma es siempre 70 mm. La elipse es el lugar de los puntos cuya suma de distancias a dos focos es constante.
+2. [ ] Esa suma es el eje mayor A₁A₂, que mide 2a. El eje menor B₁B₂ es perpendicular en el centro O y mide 2b.
+3. [ ] Si te dan los ejes, los focos salen con el compás: centro en B₁ y radio a. Corta al eje mayor en F₁ y F₂.
+4. [ ] Trazado por puntos: toma X entre los focos. Con radios A₁X y XA₂ desde cada foco, los arcos se cortan en cuatro puntos de la elipse.
+5. [ ] Mueve X entre los focos: el punto 1 va dibujando la elipse. Con suficientes puntos, se unen a mano alzada o con plantilla.
+6. [ ] La tangente en un punto T es la bisectriz exterior del ángulo que forman los radios vectores TF₁ y TF₂. Mueve T y mira cómo la acompaña.
+7. [ ] En la hipérbola es la diferencia de distancias a los focos la que es constante: el eje real, 2a. Tiene dos ramas, una alrededor de cada foco.
+8. [ ] Su tangente en Q es la bisectriz interior del ángulo de los radios vectores. Es el mismo trazado que en la elipse, con la otra bisectriz.
+9. [ ] La parábola es el lugar de los puntos que están a la misma distancia del foco F que de la directriz d. Su vértice V está en el punto medio entre los dos.
+10. [ ] La tangente en R es la bisectriz del ángulo entre RF y la perpendicular a la directriz. Las tres cónicas salen de cortar un cono: compruébalo en el laboratorio de cónicas.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: Te dan los ejes de una elipse. Arrastra Z hasta uno de sus focos.
+2. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el vértice de la parábola de foco F y directriz d.
+3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: traza la tangente a la hipérbola en Q y arrastra Z hasta el punto donde corta al eje real.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 (opción A) · Circunferencias por dos puntos tangentes a otra
