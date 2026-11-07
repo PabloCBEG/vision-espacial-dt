@@ -220,9 +220,19 @@ route();
 
 // Funcionamiento sin conexión (solo en la versión publicada, no al desarrollar).
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  // Si ya había una versión guardada y entra una nueva, se recarga una vez para mostrarla.
+  const hadController = navigator.serviceWorker.controller !== null;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!hadController || reloaded) return;
+    reloaded = true;
+    window.location.reload();
+  });
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch((error: unknown) => {
-      console.warn('No se ha podido activar el modo sin conexión.', error);
-    });
+    navigator.serviceWorker
+      .register('./sw.js', { updateViaCache: 'none' })
+      .catch((error: unknown) => {
+        console.warn('No se ha podido activar el modo sin conexión.', error);
+      });
   });
 }

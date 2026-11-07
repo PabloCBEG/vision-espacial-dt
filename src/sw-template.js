@@ -25,10 +25,29 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Primero la copia guardada; si no está, la red (y se guarda para la próxima vez).
+// La página (HTML): primero la red, para ver siempre la última versión publicada; sin conexión,
+// la copia guardada. El resto (ficheros con huella en el nombre): primero la copia guardada.
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(request, copy));
+          }
+          return response;
+        })
+        .catch(() =>
+          caches
+            .match(request, { ignoreSearch: true })
+            .then((cached) => cached ?? caches.match('./')),
+        ),
+    );
+    return;
+  }
   event.respondWith(
     caches.match(request, { ignoreSearch: true }).then(
       (cached) =>
