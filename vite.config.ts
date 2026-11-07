@@ -37,8 +37,22 @@ export default defineConfig({
   // Rutas relativas: la web funciona en cualquier carpeta, por ejemplo usuario.github.io/repositorio/.
   base: './',
   build: {
-    // Three.js ocupa unos 600 kB (150 kB comprimido): es esperable.
+    // Three.js ocupa unos 700 kB (180 kB comprimido): es esperable.
     chunkSizeWarningLimit: 800,
+    rolldownOptions: {
+      output: {
+        // Las bibliotecas van en ficheros propios: cambian poco, así que al publicar una
+        // versión nueva el navegador conserva su copia y solo descarga el código de la web.
+        codeSplitting: {
+          groups: [
+            { name: 'three', test: /node_modules\/three\// },
+            { name: 'zod', test: /node_modules\/zod\// },
+            // KaTeX solo se descarga al abrir el desplegable analítico por primera vez.
+            { name: 'katex', test: /node_modules\/katex\// },
+          ],
+        },
+      },
+    },
   },
   plugins: [serviceWorker()],
 });

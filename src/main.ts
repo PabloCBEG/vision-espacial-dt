@@ -108,6 +108,12 @@ store.subscribe((state, previous) => {
   }
 });
 
+/** Descripción del modelo 3D para lectores de pantalla, según lo que se esté viendo. */
+const FREE_3D_LABEL = view3dElement.getAttribute('aria-label') ?? '';
+function describe3d(text: string): void {
+  view3dElement.setAttribute('aria-label', text);
+}
+
 function show(screen: 'home' | 'free' | 'lesson' | 'pau' | 'trainer'): void {
   trainerPanel.hidden = screen !== 'trainer';
   home.hidden = screen !== 'home';
@@ -153,6 +159,9 @@ function route(): void {
     const player = new Player(lesson, store, spatialView);
     stopLesson = bindPlayer(player, store, playerElements(), checkEngines);
     player.start();
+    describe3d(
+      `Modelo en el espacio de la lección «${lesson.title}». La narración describe cada paso.`,
+    );
     document.title = `${lesson.title} · Visión espacial`;
   } else if (pauMatch && pau) {
     show('lesson');
@@ -174,6 +183,7 @@ function route(): void {
       playerElements(),
       checkEngines,
     );
+    describe3d(`Modelo en el espacio del ejercicio «${pau.titulo}».`);
     document.title = `PAU: ${pau.titulo} · Visión espacial`;
   } else if (hash === '#/conicas') {
     show('free');
@@ -194,10 +204,14 @@ function route(): void {
       store.set({ ...store.get(), engines: {} });
       freeTitle.textContent = 'Explorar libremente';
     };
+    describe3d(
+      'Doble cono de revolución cortado por un plano secante; la curva de corte se destaca. Los valores de la cónica están en el desplegable analítico.',
+    );
     document.title = 'Laboratorio de cónicas · Visión espacial';
   } else if (hash === '#/entrenador') {
     show('trainer');
     stopLesson = startTrainer(trainerPanel, spatialView, store);
+    describe3d('Figura del ejercicio del entrenador espacial.');
     document.title = 'Entrenador espacial · Visión espacial';
   } else if (hash === '#/pau') {
     show('pau');
@@ -207,6 +221,7 @@ function route(): void {
     show('free');
     loadFreeScene('punto');
     spatialView?.setView('perspective');
+    describe3d(FREE_3D_LABEL);
     document.title = 'Explorar · Visión espacial';
   } else {
     show('home');

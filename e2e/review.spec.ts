@@ -272,7 +272,11 @@ test('rendimiento de los motores pesados con la CPU ralentizada 4 veces', async 
       '/#/leccion/lugares-geometricos',
       () => !!document.querySelector('#view-2d svg'),
     ],
-    ['laboratorio-conicas', '/#/conicas', () => !!document.querySelector('#view-2d svg path')],
+    [
+      'laboratorio-conicas',
+      '/#/conicas',
+      () => !!document.querySelector('#view-2d svg polyline, #view-2d svg path'),
+    ],
     ['entrenador', '/#/entrenador', () => !!document.querySelector('.trainer-option')],
   ];
   for (const [name, url, ready] of screens) {
