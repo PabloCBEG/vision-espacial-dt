@@ -226,6 +226,126 @@ Fichero: `src/content/lessons/09-paralelas-se-juntan.json` · DT I · nivel Inic
 2. [ ] *escribir una medida, dificultad 2* (respuesta: 70 mm): Perspectiva frontal con el observador a 70 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?
 3. [ ] *escribir una medida, dificultad 3* (respuesta: 40.4 mm): Como en la PAU: cubo girado 30° respecto al cuadro y observador a 70 mm. ¿A qué distancia de P está el punto de fuga más cercano?
 
+### II-06 · Ángulos, distancias y rectas con ángulo dado
+
+Fichero: `src/content/lessons/10-angulos-distancias.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Sistema diédrico: verdaderas magnitudes, ángulos de recta con los planos de proyección y con un plano, distancias, y recta o plano con un ángulo dado.
+
+**Pasos**
+
+1. [ ] El ángulo de una recta con el PH es el que forma con su proyección horizontal. En el espacio se ve: es el ángulo entre r y r′.
+2. [ ] En la lámina no aparece en verdadera magnitud, porque r no es paralela al PV. Hay que mover la recta o el plano de proyección.
+3. [ ] Colocamos un plano vertical nuevo, paralelo a r′: desde él la recta se ve de frente. Las cotas no cambian, porque el PH sigue siendo el mismo.
+4. [ ] En la lámina, la LT nueva es paralela a r′ y cada punto lleva su cota sobre ella. El ángulo de la proyección nueva con esa LT es el ángulo de r con el PH.
+5. [ ] Para el ángulo con el PV giramos r alrededor de un eje de punta hasta que sea horizontal. El giro no cambia su ángulo con el PV.
+6. [ ] Ya horizontal, su proyección horizontal forma con la LT el ángulo con el PV. Es el mismo razonamiento de antes, cambiando el papel de los dos planos.
+7. [ ] La distancia de P al plano α se mide sobre la perpendicular desde P a α. Su pie F es el punto del plano más cercano a P.
+8. [ ] En la lámina, la perpendicular tiene sus proyecciones perpendiculares a las trazas α₁ y α₂. Un giro del segmento PF da la distancia en verdadera magnitud.
+9. [ ] Todas las rectas que pasan por V y forman 40° con el PH son las generatrices de un cono de eje vertical. Elegir una de esas rectas es elegir una generatriz.
+10. [ ] En el alzado, el contorno del cono forma 40° con la LT. El plano tangente al cono por esa generatriz forma también 40° con el PH.
+
+**Ejercicios**
+
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 29.5 °): Con el cambio de plano ya hecho, mide en la lámina el ángulo de la recta AB con el PH, en grados.
+2. [ ] *escribir una medida, dificultad 2* (respuesta: 42.7 mm): Halla la distancia del punto P al plano α en milímetros. Elige el método con el que mover el segmento PF.
+3. [ ] *escribir una medida, dificultad 3* (respuesta: 32.9 °): Como en la PAU: halla el ángulo que forma la recta AB con el plano α. Abate el triángulo A, I, F y escribe el ángulo en grados.
+
+### II-07 · Poliedros regulares en su posición PAU
+
+Fichero: `src/content/lessons/11-poliedros-regulares.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Sistema diédrico: poliedros regulares (tetraedro, cubo y octaedro) apoyados en una cara o con una diagonal perpendicular a un plano de proyección; secciones y desarrollos.
+
+**Pasos**
+
+1. [ ] El tetraedro regular tiene cuatro caras que son triángulos equiláteros iguales. En la PAU se apoya siempre en una cara, aquí sobre el PH.
+2. [ ] En la planta, la base es un triángulo equilátero en verdadera magnitud y el vértice cae en su centro. La altura es unos 0,816 de la arista.
+3. [ ] En el alzado, V″ está a la altura del tetraedro, que no es ninguna arista. Sale de un triángulo rectángulo: la hipotenusa es una arista y un cateto, el radio de la base.
+4. [ ] El cubo apoyado en una cara se ve en planta como un cuadrado en verdadera magnitud. Si está girado, el alzado muestra dos caras y la arista de detrás va oculta.
+5. [ ] En la lámina, la altura del alzado es la arista. Las aristas verticales se proyectan en verdadera magnitud porque son perpendiculares al PH.
+6. [ ] El octaedro se coloca con una diagonal perpendicular a un plano de proyección. Los otros cuatro vértices forman un cuadrado paralelo a ese plano, a media altura.
+7. [ ] En la planta se ve un cuadrado con sus diagonales, en verdadera magnitud. En el alzado, la altura total es la diagonal del cuadrado: la arista por √2.
+8. [ ] Cortamos el cubo con un plano proyectante vertical. En el alzado la sección es un segmento sobre α₂ y en la planta sus puntos están en las aristas que corta.
+9. [ ] Al abatir α sobre el PV alrededor de α₂, la sección aparece en verdadera magnitud. Cada punto cae a una distancia de α₂ igual a su alejamiento.
+10. [ ] El desarrollo del tetraedro son cuatro triángulos equiláteros unidos. Al plegarse, las caras laterales giran alrededor de las aristas de la base hasta juntarse en el vértice.
+
+**Ejercicios**
+
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 36 mm): Mide en la lámina el lado más largo de la sección del cubo en verdadera magnitud. Usa la cuadrícula de 10 mm.
+2. [ ] *escribir una medida, dificultad 2* (respuesta: 28.1 mm): Ahora el tetraedro. Halla la sección por el plano α en verdadera magnitud y mide su lado más largo.
+3. [ ] *escribir una medida, dificultad 3* (respuesta: 29.6 mm): Como en la PAU: el octaedro se corta por un plano proyectante vertical. Halla la sección en verdadera magnitud y mide su lado más largo.
+
+### II-09 · Cono y cilindro: puntos, secciones y recta que los atraviesa
+
+Fichero: `src/content/lessons/12-cono-cilindro.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Sistema diédrico: superficies de revolución (cono y cilindro rectos). Puntos de la superficie, secciones planas y puntos de intersección con una recta.
+
+**Pasos**
+
+1. [ ] Un cono de revolución es la superficie que barre una recta, la generatriz, al girar alrededor del eje pasando siempre por el vértice. Todos sus puntos están en alguna generatriz.
+2. [ ] En la lámina, la planta es la circunferencia de la base y el alzado, un triángulo. Sus lados son las generatrices de contorno, las que separan la parte vista de la oculta.
+3. [ ] Nos dan M″ y buscamos M′. Trazamos la generatriz que pasa por M: su alzado va de V″ a la base y su planta, de V′ al punto de la circunferencia.
+4. [ ] M′ está en la planta de esa generatriz, sobre la línea de referencia de M″. Como M está en la mitad de delante, se ve en el alzado.
+5. [ ] El otro camino es el paralelo: la circunferencia horizontal que pasa por M. En la planta es una circunferencia y M′ está en ella.
+6. [ ] Un plano que corta al cono deja una cónica. Si corta a todas las generatrices sin ser perpendicular al eje, es una elipse.
+7. [ ] Al abatir el plano α, la elipse aparece en verdadera magnitud. El laboratorio de cónicas muestra cómo cambia la curva al inclinar el plano.
+8. [ ] El cilindro es la superficie que barre una generatriz paralela al eje. Su planta es una circunferencia: todos sus puntos se proyectan sobre ella.
+9. [ ] La recta r entra en el cilindro por E y sale por S. Como las generatrices son verticales, todos los puntos de la superficie se proyectan en planta sobre la circunferencia.
+10. [ ] Por eso E′ y S′ están donde r′ corta a la circunferencia, y E″ y S″ se llevan al alzado por sus líneas de referencia. El tramo de r dentro del cilindro no se dibuja.
+
+**Ejercicios**
+
+1. [ ] *escribir una medida, dificultad 2* (respuesta: 35.2 mm): Mide en la lámina el eje mayor de la elipse de la sección en verdadera magnitud. Usa la cuadrícula de 10 mm.
+
+### II-01 · Potencia, eje radical y tangencias
+
+Fichero: `src/content/lessons/13-potencia-tangencias.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Geometría plana: potencia de un punto respecto a una circunferencia, eje radical y centro radical. Aplicación a las tangencias.
+
+**Pasos**
+
+1. [ ] La potencia de un punto P respecto a una circunferencia es el cuadrado del segmento de tangente PT. Cuanto más lejos está P, mayor es su potencia.
+2. [ ] Mueve X por la recta e: las tangentes a las dos circunferencias miden siempre lo mismo. La recta de los puntos con igual potencia respecto a dos circunferencias es su eje radical.
+3. [ ] Para trazarlo, una circunferencia auxiliar corta a las dos. Sus cuerdas comunes son ejes radicales y se cortan en Q, que tiene la misma potencia respecto a las tres.
+4. [ ] El eje radical es la perpendicular por Q a la recta de los centros. Si las circunferencias se cortan, es la recta de sus dos puntos comunes.
+5. [ ] Con una tercera circunferencia, los tres ejes radicales se cortan en un punto: el centro radical. Desde él, las tangentes a las tres circunferencias miden lo mismo.
+6. [ ] Ahora una tangencia de la PAU: circunferencias que pasan por A y B y son tangentes a r. Todas las que pasan por A y B tienen la recta AB como eje radical común.
+7. [ ] El punto CR, donde AB corta a r, tiene la misma potencia respecto a todas ellas. La tangente CR-T a la circunferencia auxiliar da esa potencia.
+8. [ ] La solución toca a r en un punto a la misma distancia de CR que T. La circunferencia de centro CR y radio CR-T corta a r en los dos puntos de tangencia T₁ y T₂.
+9. [ ] Cada centro está en la mediatriz de AB y en la perpendicular a r por su punto de tangencia. Hay dos soluciones.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: Arrastra Z hasta el centro radical de las tres circunferencias.
+2. [ ] *construcción en la lámina, dificultad 2*: Las circunferencias buscadas pasan por A y B y son tangentes a r. Arrastra Z hasta uno de sus puntos de tangencia con r.
+3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU, con otros datos: arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a r.
+
+### II-03 · Homología y afinidad: la sombra de una figura
+
+Fichero: `src/content/lessons/14-homologia-afinidad.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Transformaciones geométricas: homología y afinidad. Elementos (centro, eje, dirección y pares de puntos homólogos) y figura homóloga.
+
+**Pasos**
+
+1. [ ] Un foco de luz proyecta la sombra del triángulo ABC sobre otro plano. Los dos planos se cortan en el eje e, y cada punto del eje es su propia sombra.
+2. [ ] Abatimos el plano de la sombra sobre el del triángulo, girándolo alrededor del eje. La sombra queda en la lámina: es la figura homóloga A′B′C′.
+3. [ ] En la lámina, las rectas que unen cada punto con su homólogo pasan todas por el centro de homología O. Mueve el deslizador para ver de dónde sale cada punto.
+4. [ ] Sin el 3D, una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. A′ está siempre en la recta OA.
+5. [ ] La recta AB corta al eje en M, que es su propio homólogo. La homóloga de AB pasa por M y por A′, y B′ está donde corta a la recta OB.
+6. [ ] Con C se hace lo mismo, usando la recta AC y su punto doble N. Al unir A′, B′ y C′ queda la figura homóloga.
+7. [ ] Si la luz es el sol, sus rayos son paralelos y la sombra es una afinidad. No hay centro: los puntos homólogos se unen con rectas paralelas a una dirección.
+8. [ ] El trazado es el de la homología, cambiando la recta OB por la paralela a AA′ por B. La homóloga de AB sigue pasando por su punto doble M.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: La homología tiene centro O, eje e y transforma A en A′. Arrastra Z hasta B′, el homólogo de B.
+2. [ ] *construcción en la lámina, dificultad 2*: Ahora es una afinidad de eje e que transforma A en A′. Arrastra Z hasta B′, el afín de B.
+3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: con la homología de centro O, eje e y par A, A′, halla el homólogo de D y arrastra Z hasta él.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 (opción A) · Circunferencias por dos puntos tangentes a otra
