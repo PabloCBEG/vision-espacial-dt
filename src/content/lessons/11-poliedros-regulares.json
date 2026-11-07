@@ -1,0 +1,299 @@
+{
+  "id": "poliedros-regulares",
+  "order": 11,
+  "title": "Poliedros regulares en su posición PAU",
+  "topic": "II-07",
+  "stage": "DT II",
+  "saberBasico": "Sistema diédrico: poliedros regulares (tetraedro, cubo y octaedro) apoyados en una cara o con una diagonal perpendicular a un plano de proyección; secciones y desarrollos.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P"
+  },
+  "steps": [
+    {
+      "narration": "El tetraedro regular tiene cuatro caras que son triángulos equiláteros iguales. En la PAU se apoya siempre en una cara, aquí sobre el PH.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "tetraedro",
+            "arista": 50,
+            "centro": [0, 30]
+          }
+        }
+      }
+    },
+    {
+      "narration": "En la planta, la base es un triángulo equilátero en verdadera magnitud y el vértice cae en su centro. La altura es unos 0,816 de la arista.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "tetraedro",
+            "arista": 50,
+            "centro": [0, 30]
+          }
+        }
+      }
+    },
+    {
+      "narration": "En el alzado, V″ está a la altura del tetraedro, que no es ninguna arista. Sale de un triángulo rectángulo: la hipotenusa es una arista y un cateto, el radio de la base.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["vertices"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "tetraedro",
+            "arista": 50,
+            "centro": [0, 30],
+            "giro": 20
+          }
+        }
+      }
+    },
+    {
+      "narration": "El cubo apoyado en una cara se ve en planta como un cuadrado en verdadera magnitud. Si está girado, el alzado muestra dos caras y la arista de detrás va oculta.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["solido"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 35,
+            "centro": [0, 32],
+            "giro": 30
+          }
+        }
+      }
+    },
+    {
+      "narration": "En la lámina, la altura del alzado es la arista. Las aristas verticales se proyectan en verdadera magnitud porque son perpendiculares al PH.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 35,
+            "centro": [0, 32],
+            "giro": 30
+          }
+        }
+      }
+    },
+    {
+      "narration": "El octaedro se coloca con una diagonal perpendicular a un plano de proyección. Los otros cuatro vértices forman un cuadrado paralelo a ese plano, a media altura.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": [],
+      "highlight": ["solido"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 35,
+            "centro": [0, 35],
+            "giro": 15
+          }
+        }
+      }
+    },
+    {
+      "narration": "En la planta se ve un cuadrado con sus diagonales, en verdadera magnitud. En el alzado, la altura total es la diagonal del cuadrado: la arista por √2.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido", "vertices"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 35,
+            "centro": [0, 35],
+            "giro": 15
+          }
+        }
+      }
+    },
+    {
+      "narration": "Cortamos el cubo con un plano proyectante vertical. En el alzado la sección es un segmento sobre α₂ y en la planta sus puntos están en las aristas que corta.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 35,
+            "centro": [0, 32],
+            "giro": 30
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-40, 8],
+              [40, 30]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Al abatir α sobre el PV alrededor de α₂, la sección aparece en verdadera magnitud. Cada punto cae a una distancia de α₂ igual a su alejamiento.",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "solido", "corte", "seccion", "seccion-vm"],
+      "highlight": ["seccion-vm"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 35,
+            "centro": [0, 32],
+            "giro": 30
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-40, 8],
+              [40, 30]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "El desarrollo del tetraedro son cuatro triángulos equiláteros unidos. Al plegarse, las caras laterales giran alrededor de las aristas de la base hasta juntarse en el vértice.",
+      "show3d": ["planos", "desarrollo"],
+      "sheet": ["lt", "solido", "desarrollo"],
+      "highlight": ["desarrollo"],
+      "camera": "top",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "tetraedro",
+            "arista": 40,
+            "centro": [0, 30]
+          },
+          "desarrollo": 1
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "Mide en la lámina el lado más largo de la sección del cubo en verdadera magnitud. Usa la cuadrícula de 10 mm.",
+      "answer": 36.0,
+      "unit": "mm",
+      "tolerance": 2,
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 35,
+            "centro": [0, 32],
+            "giro": 30
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-40, 8],
+              [40, 30]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Ahora el tetraedro. Halla la sección por el plano α en verdadera magnitud y mide su lado más largo.",
+      "answer": 28.1,
+      "unit": "mm",
+      "tolerance": 2,
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "tetraedro",
+            "arista": 50,
+            "centro": [0, 30],
+            "giro": 10
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-40, 30],
+              [40, 10]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: el octaedro se corta por un plano proyectante vertical. Halla la sección en verdadera magnitud y mide su lado más largo.",
+      "answer": 29.6,
+      "unit": "mm",
+      "tolerance": 2,
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 35,
+            "centro": [0, 35],
+            "giro": 15
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-40, 10],
+              [40, 40]
+            ],
+            "abatir": 1
+          }
+        }
+      }
+    }
+  ]
+}
