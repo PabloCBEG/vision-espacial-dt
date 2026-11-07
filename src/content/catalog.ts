@@ -262,7 +262,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 1,
     pauNote: 'Ejercicio 1',
     scene: 'Circunferencias que crecen hasta tocarse',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'II-02',

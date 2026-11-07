@@ -1,0 +1,594 @@
+{
+  "id": "potencia-tangencias",
+  "order": 13,
+  "title": "Potencia, eje radical y tangencias",
+  "topic": "II-01",
+  "stage": "DT II",
+  "saberBasico": "Geometría plana: potencia de un punto respecto a una circunferencia, eje radical y centro radical. Aplicación a las tangencias.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "C1",
+            "tipo": "punto",
+            "en": [-35, 10],
+            "etiqueta": "O₁"
+          },
+          {
+            "id": "C2",
+            "tipo": "punto",
+            "en": [30, 0],
+            "etiqueta": "O₂"
+          },
+          {
+            "id": "k1",
+            "tipo": "circunferencia",
+            "centro": "C1",
+            "radio": 24,
+            "rol": "dato"
+          },
+          {
+            "id": "k2",
+            "tipo": "circunferencia",
+            "centro": "C2",
+            "radio": 16,
+            "rol": "dato"
+          },
+          {
+            "id": "P",
+            "tipo": "punto",
+            "en": [-80, 45]
+          },
+          {
+            "id": "tP",
+            "tipo": "tangente",
+            "desde": "P",
+            "a": "k1",
+            "indice": 0,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "T",
+            "tipo": "puntoTangencia",
+            "desde": "P",
+            "a": "k1",
+            "indice": 0
+          },
+          {
+            "id": "PT",
+            "tipo": "segmento",
+            "por": ["P", "T"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dPT",
+            "tipo": "medidaDistancia",
+            "de": ["P", "T"]
+          },
+          {
+            "id": "l12",
+            "tipo": "recta",
+            "por": ["C1", "C2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C3",
+            "tipo": "punto",
+            "en": [-5, 38],
+            "etiqueta": "O₃"
+          },
+          {
+            "id": "k3",
+            "tipo": "circunferencia",
+            "centro": "C3",
+            "radio": 40,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "I1",
+            "tipo": "interseccion",
+            "de": ["k1", "k3"],
+            "indice": 0,
+            "etiqueta": "1"
+          },
+          {
+            "id": "I2",
+            "tipo": "interseccion",
+            "de": ["k1", "k3"],
+            "indice": 1,
+            "etiqueta": "2"
+          },
+          {
+            "id": "J1",
+            "tipo": "interseccion",
+            "de": ["k2", "k3"],
+            "indice": 0,
+            "etiqueta": "3"
+          },
+          {
+            "id": "J2",
+            "tipo": "interseccion",
+            "de": ["k2", "k3"],
+            "indice": 1,
+            "etiqueta": "4"
+          },
+          {
+            "id": "c13",
+            "tipo": "recta",
+            "por": ["I1", "I2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "c23",
+            "tipo": "recta",
+            "por": ["J1", "J2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "Q",
+            "tipo": "interseccion",
+            "de": ["c13", "c23"]
+          },
+          {
+            "id": "e",
+            "tipo": "perpendicular",
+            "a": "l12",
+            "por": "Q",
+            "rol": "resultado",
+            "etiqueta": "e"
+          },
+          {
+            "id": "X",
+            "tipo": "puntoSobre",
+            "sobre": "e",
+            "t": 0.3
+          },
+          {
+            "id": "X1",
+            "tipo": "puntoTangencia",
+            "desde": "X",
+            "a": "k1",
+            "indice": 0,
+            "etiqueta": "T₁"
+          },
+          {
+            "id": "X2",
+            "tipo": "puntoTangencia",
+            "desde": "X",
+            "a": "k2",
+            "indice": 0,
+            "etiqueta": "T₂"
+          },
+          {
+            "id": "XT1",
+            "tipo": "segmento",
+            "por": ["X", "X1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "XT2",
+            "tipo": "segmento",
+            "por": ["X", "X2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dX1",
+            "tipo": "medidaDistancia",
+            "de": ["X", "X1"]
+          },
+          {
+            "id": "dX2",
+            "tipo": "medidaDistancia",
+            "de": ["X", "X2"]
+          },
+          {
+            "id": "C4",
+            "tipo": "punto",
+            "en": [0, -45],
+            "etiqueta": "O₄"
+          },
+          {
+            "id": "k4",
+            "tipo": "circunferencia",
+            "centro": "C4",
+            "radio": 14,
+            "rol": "dato"
+          },
+          {
+            "id": "e14",
+            "tipo": "ejeRadical",
+            "de": ["k1", "k4"],
+            "rol": "proceso",
+            "etiqueta": "e′"
+          },
+          {
+            "id": "e24",
+            "tipo": "ejeRadical",
+            "de": ["k2", "k4"],
+            "rol": "proceso",
+            "etiqueta": "e″"
+          },
+          {
+            "id": "CR",
+            "tipo": "centroRadical",
+            "de": ["k1", "k2", "k4"],
+            "rol": "resultado",
+            "etiqueta": "CR"
+          },
+          {
+            "id": "A",
+            "tipo": "punto",
+            "en": [-5, 45]
+          },
+          {
+            "id": "B",
+            "tipo": "punto",
+            "en": [5, 15]
+          },
+          {
+            "id": "R1",
+            "tipo": "punto",
+            "en": [-70, -15],
+            "oculto": true
+          },
+          {
+            "id": "R2",
+            "tipo": "punto",
+            "en": [75, -15],
+            "oculto": true
+          },
+          {
+            "id": "r",
+            "tipo": "recta",
+            "por": ["R1", "R2"],
+            "rol": "dato",
+            "etiqueta": "r"
+          },
+          {
+            "id": "s",
+            "tipo": "recta",
+            "por": ["A", "B"],
+            "rol": "auxiliar",
+            "etiqueta": "s"
+          },
+          {
+            "id": "O",
+            "tipo": "interseccion",
+            "de": ["s", "r"],
+            "etiqueta": "CR"
+          },
+          {
+            "id": "m",
+            "tipo": "mediatriz",
+            "de": ["A", "B"],
+            "rol": "auxiliar",
+            "etiqueta": "m"
+          },
+          {
+            "id": "Ca",
+            "tipo": "puntoSobre",
+            "sobre": "m",
+            "t": 0.42,
+            "etiqueta": "O₅"
+          },
+          {
+            "id": "ca",
+            "tipo": "circunferencia",
+            "centro": "Ca",
+            "pasaPor": "A",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "Ta",
+            "tipo": "puntoTangencia",
+            "desde": "O",
+            "a": "ca",
+            "indice": 0,
+            "etiqueta": "T"
+          },
+          {
+            "id": "OTa",
+            "tipo": "segmento",
+            "por": ["O", "Ta"],
+            "rol": "proceso"
+          },
+          {
+            "id": "kp",
+            "tipo": "circunferencia",
+            "centro": "O",
+            "pasaPor": "Ta",
+            "rol": "proceso"
+          },
+          {
+            "id": "T1",
+            "tipo": "interseccion",
+            "de": ["kp", "r"],
+            "indice": 0,
+            "etiqueta": "T₁"
+          },
+          {
+            "id": "T2",
+            "tipo": "interseccion",
+            "de": ["kp", "r"],
+            "indice": 1,
+            "etiqueta": "T₂"
+          },
+          {
+            "id": "n1",
+            "tipo": "perpendicular",
+            "a": "r",
+            "por": "T1",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "n2",
+            "tipo": "perpendicular",
+            "a": "r",
+            "por": "T2",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "S1",
+            "tipo": "interseccion",
+            "de": ["n1", "m"],
+            "etiqueta": "S₁"
+          },
+          {
+            "id": "S2",
+            "tipo": "interseccion",
+            "de": ["n2", "m"],
+            "etiqueta": "S₂"
+          },
+          {
+            "id": "sol1",
+            "tipo": "circunferencia",
+            "centro": "S1",
+            "pasaPor": "T1",
+            "rol": "resultado"
+          },
+          {
+            "id": "sol2",
+            "tipo": "circunferencia",
+            "centro": "S2",
+            "pasaPor": "T2",
+            "rol": "resultado"
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [-70, -50]
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "La potencia de un punto P respecto a una circunferencia es el cuadrado del segmento de tangente PT. Cuanto más lejos está P, mayor es su potencia.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["C1", "k1", "P", "tP", "T", "PT", "dPT"],
+          "trazar": ["tP", "T", "PT"],
+          "destacar": ["dPT"]
+        }
+      }
+    },
+    {
+      "narration": "Mueve X por la recta e: las tangentes a las dos circunferencias miden siempre lo mismo. La recta de los puntos con igual potencia respecto a dos circunferencias es su eje radical.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["C1", "C2", "k1", "k2", "e", "X", "X1", "X2", "XT1", "XT2", "dX1", "dX2"],
+          "destacar": ["dX1", "dX2"],
+          "lugar": {
+            "punto": "X",
+            "mueve": "X"
+          }
+        }
+      }
+    },
+    {
+      "narration": "Para trazarlo, una circunferencia auxiliar corta a las dos. Sus cuerdas comunes son ejes radicales y se cortan en Q, que tiene la misma potencia respecto a las tres.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "C1",
+            "C2",
+            "k1",
+            "k2",
+            "C3",
+            "k3",
+            "I1",
+            "I2",
+            "J1",
+            "J2",
+            "c13",
+            "c23",
+            "Q"
+          ],
+          "trazar": ["k3", "I1", "I2", "J1", "J2", "c13", "c23", "Q"]
+        }
+      }
+    },
+    {
+      "narration": "El eje radical es la perpendicular por Q a la recta de los centros. Si las circunferencias se cortan, es la recta de sus dos puntos comunes.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["C1", "C2", "k1", "k2", "k3", "c13", "c23", "Q", "l12", "e"],
+          "trazar": ["l12", "e"],
+          "destacar": ["e"]
+        }
+      }
+    },
+    {
+      "narration": "Con una tercera circunferencia, los tres ejes radicales se cortan en un punto: el centro radical. Desde él, las tangentes a las tres circunferencias miden lo mismo.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e", "e14", "e24", "CR"],
+          "trazar": ["e14", "e24", "CR"],
+          "destacar": ["CR"]
+        }
+      }
+    },
+    {
+      "narration": "Ahora una tangencia de la PAU: circunferencias que pasan por A y B y son tangentes a r. Todas las que pasan por A y B tienen la recta AB como eje radical común.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "s", "m", "Ca", "ca"],
+          "trazar": ["s", "m", "Ca", "ca"]
+        }
+      }
+    },
+    {
+      "narration": "El punto CR, donde AB corta a r, tiene la misma potencia respecto a todas ellas. La tangente CR-T a la circunferencia auxiliar da esa potencia.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "s", "m", "Ca", "ca", "O", "Ta", "OTa"],
+          "trazar": ["O", "Ta", "OTa"],
+          "destacar": ["OTa"]
+        }
+      }
+    },
+    {
+      "narration": "La solución toca a r en un punto a la misma distancia de CR que T. La circunferencia de centro CR y radio CR-T corta a r en los dos puntos de tangencia T₁ y T₂.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "s", "m", "ca", "O", "Ta", "OTa", "kp", "T1", "T2"],
+          "trazar": ["kp", "T1", "T2"],
+          "destacar": ["T1", "T2"]
+        }
+      }
+    },
+    {
+      "narration": "Cada centro está en la mediatriz de AB y en la perpendicular a r por su punto de tangencia. Hay dos soluciones.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "r",
+            "m",
+            "O",
+            "kp",
+            "T1",
+            "T2",
+            "n1",
+            "n2",
+            "S1",
+            "S2",
+            "sol1",
+            "sol2"
+          ],
+          "trazar": ["n1", "n2", "S1", "S2", "sol1", "sol2"],
+          "destacar": ["sol1", "sol2"]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Arrastra Z hasta el centro radical de las tres circunferencias.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "CR",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! Las tangentes desde Z a las tres circunferencias miden lo mismo.",
+            "pista": "Traza dos ejes radicales: cada uno es perpendicular a la recta de sus centros. El centro radical es su corte."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Las circunferencias buscadas pasan por A y B y son tangentes a r. Arrastra Z hasta uno de sus puntos de tangencia con r.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "Z"],
+          "posiciones": {
+            "Z": [-60, -45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["T1", "T2"],
+            "tolerancia": 3,
+            "acierto": "¡Correcto! Z está en r a la distancia del centro radical que da su potencia.",
+            "pista": "La recta AB corta a r en el centro radical. Su potencia te da la distancia a los puntos de tangencia."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU, con otros datos: arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a r.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "Z"],
+          "posiciones": {
+            "A": [-30, 35],
+            "B": [5, 10],
+            "Z": [60, 45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["S1", "S2"],
+            "tolerancia": 3,
+            "acierto": "¡Correcto! El centro está en la mediatriz de AB y en la perpendicular a r por el punto de tangencia.",
+            "pista": "Primero los puntos de tangencia, con el centro radical. Después, el centro en la mediatriz de AB."
+          }
+        }
+      }
+    }
+  ]
+}
