@@ -10,7 +10,8 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
       .open(CACHE)
-      .then((cache) => cache.addAll(FILES))
+      // Uno a uno: si falta algún fichero, la versión nueva se instala igualmente.
+      .then((cache) => Promise.allSettled(FILES.map((file) => cache.add(file))))
       .then(() => self.skipWaiting()),
   );
 });

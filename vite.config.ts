@@ -12,9 +12,11 @@ function serviceWorker(): Plugin {
     apply: 'build',
     generateBundle(_options, bundle) {
       // Las fuentes de KaTeX se guardan solo en woff2 (todos los navegadores actuales lo usan).
-      const built = Object.keys(bundle).filter(
-        (name) => !name.endsWith('.map') && !/KaTeX_.*\.(woff|ttf)$/.test(name),
-      );
+      // Los trozos vacíos (los que solo importan una hoja de estilos) no llegan a publicarse.
+      const built = Object.entries(bundle)
+        .filter(([, file]) => file.type === 'asset' || file.code.trim().length > 0)
+        .map(([name]) => name)
+        .filter((name) => !name.endsWith('.map') && !/KaTeX_.*\.(woff|ttf)$/.test(name));
       const publicFiles = readdirSync('public');
       const all = [...new Set(['./', 'index.html', ...built, ...publicFiles])];
       const version = createHash('sha256').update(all.join('|')).digest('hex').slice(0, 12);
