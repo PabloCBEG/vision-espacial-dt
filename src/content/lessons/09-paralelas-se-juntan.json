@@ -1,0 +1,171 @@
+{
+  "id": "paralelas-se-juntan",
+  "order": 1,
+  "title": "¿Por qué las paralelas se juntan?",
+  "topic": "I-14",
+  "stage": "DT I",
+  "saberBasico": "Sistema cónico: fundamentos, elementos y perspectiva frontal y oblicua de sólidos sencillos.",
+  "level": "Inicial",
+  "initialScene": { "points": { "P": [0, 0, 0] }, "objects": [], "activePoint": "P" },
+  "steps": [
+    {
+      "narration": "Unas vías de tren son paralelas, pero en una foto se juntan a lo lejos. La perspectiva cónica explica por qué.",
+      "show3d": ["geometral", "cuadro", "observador", "paralelas"],
+      "sheet": ["cuadro", "paralelas"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "conica": { "paralelas": { "angulo": 90, "cuantas": 3 } } }
+    },
+    {
+      "narration": "El observador V mira a través de un plano vertical, el cuadro. Cada punto se dibuja donde el rayo visual que va del ojo al punto atraviesa el cuadro.",
+      "show3d": ["geometral", "cuadro", "observador", "rayos", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva"],
+      "highlight": ["rayos"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "conica": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] } } }
+    },
+    {
+      "narration": "Cuanto más lejos está un punto, más cerca del horizonte cae su imagen. Por eso lo lejano se ve más pequeño y las vías se acercan entre sí.",
+      "show3d": ["geometral", "cuadro", "observador", "paralelas"],
+      "sheet": ["cuadro", "paralelas"],
+      "highlight": ["paralelas"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "conica": { "paralelas": { "angulo": 90, "cuantas": 4, "largo": 2000 } } }
+    },
+    {
+      "narration": "Perspectiva frontal: las caras del cubo paralelas al cuadro se ven sin deformar. Sus aristas perpendiculares al cuadro fugan al punto principal P, en la línea del horizonte.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas"],
+      "highlight": ["fugas"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] }, "fugas": true }
+      }
+    },
+    {
+      "narration": "Los puntos de distancia D₁ y D₂ son la fuga de las horizontales a 45°. Están en el horizonte, a la misma distancia de P que el ojo del cuadro.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas", "metricos"],
+      "highlight": ["metricos"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] },
+          "fugas": true,
+          "metricos": true,
+          "observador": { "x": 0, "d": 70, "h": 45 }
+        }
+      }
+    },
+    {
+      "narration": "Perspectiva oblicua: si giramos el cubo, ninguna cara es paralela al cuadro. Sus aristas horizontales fugan a dos puntos del horizonte, F₁ y F₂.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas"],
+      "highlight": ["fugas"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "fugas": true,
+          "observador": { "x": 0, "d": 70, "h": 45 }
+        }
+      }
+    },
+    {
+      "narration": "Los puntos métricos M₁ y M₂ sirven para llevar medidas reales desde la LT. Cada uno está en el horizonte, a la distancia del ojo a su punto de fuga.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas", "metricos"],
+      "highlight": ["metricos"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "fugas": true,
+          "metricos": true,
+          "observador": { "x": 0, "d": 70, "h": 45 }
+        }
+      }
+    },
+    {
+      "narration": "Para construirla se abate el geometral. La visual en planta da la posición a lo ancho, y la directriz, que fuga a P, da la profundidad.",
+      "show3d": ["geometral", "cuadro", "observador", "rayos", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "construccion"],
+      "highlight": ["construccion"],
+      "camera": "top",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "construccion": 1,
+          "observador": { "x": 0, "d": 70, "h": 45 }
+        }
+      }
+    },
+    {
+      "narration": "Mueve al observador y gira el cubo: la imagen del cuadro cambia al momento. Las aristas ocultas se dibujan siempre, con discontinua fina.",
+      "show3d": ["geometral", "cuadro", "observador", "rayos", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "fugas": true,
+          "controles": true,
+          "observador": { "x": 0, "d": 70, "h": 45 }
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "El ojo del observador está a 45 mm del geometral. ¿A qué altura sobre la LT se dibuja la línea del horizonte?",
+      "answer": 45,
+      "unit": "mm",
+      "tolerance": 1,
+      "show3d": ["geometral", "cuadro", "observador"],
+      "sheet": ["cuadricula"],
+      "engines": { "conica": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] } } }
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Perspectiva frontal con el observador a 70 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?",
+      "answer": 70,
+      "unit": "mm",
+      "tolerance": 1,
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] },
+          "observador": { "x": 0, "d": 70, "h": 45 }
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: cubo girado 30° respecto al cuadro y observador a 70 mm. ¿A qué distancia de P está el punto de fuga más cercano?",
+      "answer": 40.4,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "observador": { "x": 0, "d": 70, "h": 45 }
+        }
+      }
+    }
+  ]
+}
