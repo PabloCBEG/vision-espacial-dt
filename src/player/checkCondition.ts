@@ -48,10 +48,10 @@ const MESSAGES: Record<Condition, { ok: string; hint: string }> = {
   },
   planeContainsLT: {
     ok: '¡Correcto! El plano contiene a la LT: sus dos trazas coinciden con ella.',
-    hint: 'El plano todavía no pasa por la LT: sus trazas α1 y α2 deben coincidir con la LT.',
+    hint: 'El plano todavía no pasa por la LT: sus trazas α₁ y α₂ deben coincidir con la LT.',
   },
   planeParallelToLT: {
-    ok: '¡Correcto! El plano es paralelo a la LT: sus trazas α1 y α2 son paralelas a la LT.',
+    ok: '¡Correcto! El plano es paralelo a la LT: sus trazas α₁ y α₂ son paralelas a la LT.',
     hint: 'Las trazas del plano todavía no son paralelas a la LT.',
   },
 };
