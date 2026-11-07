@@ -1,0 +1,551 @@
+{
+  "id": "homologia-afinidad",
+  "order": 14,
+  "title": "Homología y afinidad: la sombra de una figura",
+  "topic": "II-03",
+  "stage": "DT II",
+  "saberBasico": "Transformaciones geométricas: homología y afinidad. Elementos (centro, eje, dirección y pares de puntos homólogos) y figura homóloga.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "E1",
+            "tipo": "punto",
+            "en": [-70, -30],
+            "oculto": true
+          },
+          {
+            "id": "E2",
+            "tipo": "punto",
+            "en": [70, -30],
+            "oculto": true
+          },
+          {
+            "id": "e",
+            "tipo": "recta",
+            "por": ["E1", "E2"],
+            "rol": "dato",
+            "etiqueta": "e"
+          },
+          {
+            "id": "A",
+            "tipo": "punto",
+            "en": [-10, 10]
+          },
+          {
+            "id": "B",
+            "tipo": "punto",
+            "en": [5, 45]
+          },
+          {
+            "id": "C",
+            "tipo": "punto",
+            "en": [15, -5]
+          },
+          {
+            "id": "AB",
+            "tipo": "segmento",
+            "por": ["A", "B"],
+            "rol": "dato"
+          },
+          {
+            "id": "BC",
+            "tipo": "segmento",
+            "por": ["B", "C"],
+            "rol": "dato"
+          },
+          {
+            "id": "CA",
+            "tipo": "segmento",
+            "por": ["C", "A"],
+            "rol": "dato"
+          },
+          {
+            "id": "O",
+            "tipo": "punto",
+            "en": [0, 56.91],
+            "fijo": true
+          },
+          {
+            "id": "A2",
+            "tipo": "punto",
+            "en": [-14.31, -10.2],
+            "fijo": true,
+            "etiqueta": "A′"
+          },
+          {
+            "id": "lOA",
+            "tipo": "recta",
+            "por": ["O", "A"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "lAB",
+            "tipo": "recta",
+            "por": ["A", "B"],
+            "rol": "proceso"
+          },
+          {
+            "id": "M",
+            "tipo": "interseccion",
+            "de": ["lAB", "e"],
+            "etiqueta": "M"
+          },
+          {
+            "id": "lMA2",
+            "tipo": "recta",
+            "por": ["M", "A2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "lOB",
+            "tipo": "recta",
+            "por": ["O", "B"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "B2",
+            "tipo": "interseccion",
+            "de": ["lMA2", "lOB"],
+            "etiqueta": "B′"
+          },
+          {
+            "id": "lAC",
+            "tipo": "recta",
+            "por": ["A", "C"],
+            "rol": "proceso"
+          },
+          {
+            "id": "N",
+            "tipo": "interseccion",
+            "de": ["lAC", "e"],
+            "etiqueta": "N"
+          },
+          {
+            "id": "lNA2",
+            "tipo": "recta",
+            "por": ["N", "A2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "lOC",
+            "tipo": "recta",
+            "por": ["O", "C"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C2",
+            "tipo": "interseccion",
+            "de": ["lNA2", "lOC"],
+            "etiqueta": "C′"
+          },
+          {
+            "id": "A2B2",
+            "tipo": "segmento",
+            "por": ["A2", "B2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "B2C2",
+            "tipo": "segmento",
+            "por": ["B2", "C2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "C2A2",
+            "tipo": "segmento",
+            "por": ["C2", "A2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A3",
+            "tipo": "punto",
+            "en": [-31.44, 7.13],
+            "fijo": true,
+            "etiqueta": "A′"
+          },
+          {
+            "id": "lAA3",
+            "tipo": "recta",
+            "por": ["A", "A3"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "lMA3",
+            "tipo": "recta",
+            "por": ["M", "A3"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dB",
+            "tipo": "paralela",
+            "a": "lAA3",
+            "por": "B",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "B3",
+            "tipo": "interseccion",
+            "de": ["lMA3", "dB"],
+            "etiqueta": "B′"
+          },
+          {
+            "id": "lNA3",
+            "tipo": "recta",
+            "por": ["N", "A3"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dC",
+            "tipo": "paralela",
+            "a": "lAA3",
+            "por": "C",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C3",
+            "tipo": "interseccion",
+            "de": ["lNA3", "dC"],
+            "etiqueta": "C′"
+          },
+          {
+            "id": "A3B3",
+            "tipo": "segmento",
+            "por": ["A3", "B3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "B3C3",
+            "tipo": "segmento",
+            "por": ["B3", "C3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "C3A3",
+            "tipo": "segmento",
+            "por": ["C3", "A3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "D",
+            "tipo": "punto",
+            "en": [-35, 30]
+          },
+          {
+            "id": "lAD",
+            "tipo": "recta",
+            "por": ["A", "D"],
+            "rol": "proceso"
+          },
+          {
+            "id": "K",
+            "tipo": "interseccion",
+            "de": ["lAD", "e"]
+          },
+          {
+            "id": "lKA2",
+            "tipo": "recta",
+            "por": ["K", "A2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "lOD",
+            "tipo": "recta",
+            "por": ["O", "D"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "D2",
+            "tipo": "interseccion",
+            "de": ["lKA2", "lOD"],
+            "etiqueta": "D′"
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [55, 50]
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Un foco de luz proyecta la sombra del triángulo ABC sobre otro plano. Los dos planos se cortan en el eje e, y cada punto del eje es su propia sombra.",
+      "show3d": ["puente"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "B", "C", "AB", "BC", "CA"],
+          "puente3d": {
+            "tipo": "homologia",
+            "figura": ["A", "B", "C"],
+            "eje": ["E1", "E2"],
+            "angulo": 60,
+            "luz": [0, 80, 40],
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "narration": "Abatimos el plano de la sombra sobre el del triángulo, girándolo alrededor del eje. La sombra queda en la lámina: es la figura homóloga A′B′C′.",
+      "show3d": ["puente"],
+      "sheet": ["puente"],
+      "highlight": ["puente"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "B", "C", "AB", "BC", "CA"],
+          "puente3d": {
+            "tipo": "homologia",
+            "figura": ["A", "B", "C"],
+            "eje": ["E1", "E2"],
+            "angulo": 60,
+            "luz": [0, 80, 40],
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "En la lámina, las rectas que unen cada punto con su homólogo pasan todas por el centro de homología O. Mueve el deslizador para ver de dónde sale cada punto.",
+      "show3d": ["puente"],
+      "sheet": ["puente"],
+      "highlight": ["puente"],
+      "camera": "top",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "B", "C", "AB", "BC", "CA"],
+          "puente3d": {
+            "tipo": "homologia",
+            "figura": ["A", "B", "C"],
+            "eje": ["E1", "E2"],
+            "angulo": 60,
+            "luz": [0, 80, 40],
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "Sin el 3D, una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. A′ está siempre en la recta OA.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["e", "O", "A", "B", "C", "AB", "BC", "CA", "lOA", "A2"],
+          "destacar": ["O", "A2"]
+        }
+      }
+    },
+    {
+      "narration": "La recta AB corta al eje en M, que es su propio homólogo. La homóloga de AB pasa por M y por A′, y B′ está donde corta a la recta OB.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "e",
+            "O",
+            "A",
+            "B",
+            "C",
+            "AB",
+            "BC",
+            "CA",
+            "lOA",
+            "A2",
+            "lAB",
+            "M",
+            "lMA2",
+            "lOB",
+            "B2"
+          ],
+          "trazar": ["lAB", "M", "lMA2", "lOB", "B2"],
+          "destacar": ["B2"]
+        }
+      }
+    },
+    {
+      "narration": "Con C se hace lo mismo, usando la recta AC y su punto doble N. Al unir A′, B′ y C′ queda la figura homóloga.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "e",
+            "O",
+            "A",
+            "B",
+            "C",
+            "AB",
+            "BC",
+            "CA",
+            "lOA",
+            "A2",
+            "M",
+            "lOB",
+            "B2",
+            "lAC",
+            "N",
+            "lNA2",
+            "lOC",
+            "C2",
+            "A2B2",
+            "B2C2",
+            "C2A2"
+          ],
+          "trazar": ["lAC", "N", "lNA2", "lOC", "C2", "A2B2", "B2C2", "C2A2"],
+          "destacar": ["A2B2", "B2C2", "C2A2"]
+        }
+      }
+    },
+    {
+      "narration": "Si la luz es el sol, sus rayos son paralelos y la sombra es una afinidad. No hay centro: los puntos homólogos se unen con rectas paralelas a una dirección.",
+      "show3d": ["puente"],
+      "sheet": ["puente"],
+      "highlight": ["puente"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "B", "C", "AB", "BC", "CA"],
+          "puente3d": {
+            "tipo": "afinidad",
+            "figura": ["A", "B", "C"],
+            "eje": ["E1", "E2"],
+            "angulo": 60,
+            "luz": [20, 20, 30],
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "El trazado es el de la homología, cambiando la recta OB por la paralela a AA′ por B. La homóloga de AB sigue pasando por su punto doble M.",
+      "show3d": [],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "e",
+            "A",
+            "B",
+            "C",
+            "AB",
+            "BC",
+            "CA",
+            "lAA3",
+            "A3",
+            "lAB",
+            "M",
+            "lMA3",
+            "dB",
+            "B3",
+            "lAC",
+            "N",
+            "lNA3",
+            "dC",
+            "C3",
+            "A3B3",
+            "B3C3",
+            "C3A3"
+          ],
+          "trazar": [
+            "lAA3",
+            "lAB",
+            "M",
+            "lMA3",
+            "dB",
+            "B3",
+            "lAC",
+            "N",
+            "lNA3",
+            "dC",
+            "C3",
+            "A3B3",
+            "B3C3",
+            "C3A3"
+          ],
+          "destacar": ["A3B3", "B3C3", "C3A3"]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "La homología tiene centro O, eje e y transforma A en A′. Arrastra Z hasta B′, el homólogo de B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "O", "A", "B", "lOA", "A2", "Z"],
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "B2",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! B′ está en la recta OB y en la recta que une A′ con el punto doble de AB.",
+            "pista": "Prolonga AB hasta el eje: ese punto es doble. Únelo con A′ y corta con la recta OB."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Ahora es una afinidad de eje e que transforma A en A′. Arrastra Z hasta B′, el afín de B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "B", "lAA3", "A3", "Z"],
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "B3",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! B′ está en la paralela a AA′ por B y en la recta que une A′ con el punto doble de AB.",
+            "pista": "En la afinidad no hay centro: B′ está en la paralela a AA′ que pasa por B."
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: con la homología de centro O, eje e y par A, A′, halla el homólogo de D y arrastra Z hasta él.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "O", "A", "D", "A2", "Z"],
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "D2",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! D′ está alineado con O y D, y la recta A′D′ corta a AD en el eje.",
+            "pista": "Una recta y su homóloga se cortan en el eje. Usa la recta AD y su punto doble."
+          }
+        }
+      }
+    }
+  ]
+}

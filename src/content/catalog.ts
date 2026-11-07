@@ -284,7 +284,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 1,
     pauNote: 'Ejercicio 1',
     scene: 'Sombra de una figura plana sobre otro plano',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'II-04',
