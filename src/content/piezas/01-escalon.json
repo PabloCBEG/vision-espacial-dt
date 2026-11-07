@@ -1,0 +1,10 @@
+{
+  "id": "escalon",
+  "nombre": "Escalón",
+  "dificultad": 1,
+  "vistasNecesarias": ["alzado", "perfil"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 12] },
+    { "tipo": "bloque", "desde": [-25, 10, 12], "hasta": [25, 22, 32] }
+  ]
+}

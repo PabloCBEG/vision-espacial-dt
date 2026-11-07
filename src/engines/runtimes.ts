@@ -1,5 +1,6 @@
 // Motores que se montan en las vistas al arrancar la aplicación.
 import { METHODS_RUNTIME } from './metodos/runtime.ts';
+import { NORM_RUNTIME } from './normalizacion/runtime.ts';
 import { PLANE_RUNTIME } from './plana/runtime.ts';
 import { SOLIDS_RUNTIME } from './solidos/runtime.ts';
 import type { AppState } from '../state/index.ts';
@@ -9,6 +10,7 @@ export const ENGINE_RUNTIMES: readonly EngineRuntime[] = [
   METHODS_RUNTIME,
   SOLIDS_RUNTIME,
   PLANE_RUNTIME,
+  NORM_RUNTIME,
 ];
 
 /** Monta todos los motores. Devuelve la función que los desmonta. */

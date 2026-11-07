@@ -1,0 +1,11 @@
+{
+  "id": "escuadra-taladrada",
+  "nombre": "Escuadra taladrada",
+  "dificultad": 1,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 10] },
+    { "tipo": "bloque", "desde": [-25, 10, 10], "hasta": [-13, 40, 34] },
+    { "tipo": "taladro", "centro": [8, 25, 10], "eje": "c", "sentido": -1, "diametro": 12 }
+  ]
+}

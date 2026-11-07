@@ -57,7 +57,7 @@ const EngineData = z
   .strict()
   .optional();
 
-const ViewSchema = z.enum(['perspective', 'front', 'top', 'profile']);
+const ViewSchema = z.enum(['perspective', 'front', 'top', 'profile', 'isometric']);
 
 /** Una narración tiene como máximo dos frases. */
 const Narration = z

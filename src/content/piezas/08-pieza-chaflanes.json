@@ -1,0 +1,36 @@
+{
+  "id": "pieza-chaflanes",
+  "nombre": "Pieza en T con chaflanes",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 10] },
+    { "tipo": "bloque", "desde": [-8, 10, 10], "hasta": [8, 40, 30] },
+    {
+      "tipo": "chaflan",
+      "eje": "a",
+      "en": [-25, 10],
+      "desde": 10,
+      "hasta": 40,
+      "hacia": [1, -1],
+      "tamano": 5
+    },
+    {
+      "tipo": "chaflan",
+      "eje": "a",
+      "en": [25, 10],
+      "desde": 10,
+      "hasta": 40,
+      "hacia": [-1, -1],
+      "tamano": 5
+    },
+    {
+      "tipo": "taladro",
+      "centro": [0, 25, 30],
+      "eje": "c",
+      "sentido": -1,
+      "diametro": 8,
+      "profundidad": 14
+    }
+  ]
+}

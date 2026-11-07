@@ -1,0 +1,22 @@
+{
+  "id": "cuna",
+  "nombre": "Cuña con rebaje",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "planta", "perfil"],
+  "operaciones": [
+    {
+      "tipo": "perfil",
+      "eje": "x",
+      "puntos": [
+        [10, 0],
+        [40, 0],
+        [40, 10],
+        [22, 30],
+        [10, 30]
+      ],
+      "desde": -25,
+      "hasta": 25
+    },
+    { "tipo": "ranura", "desde": [-25, 5, 20], "hasta": [-10, 45, 35] }
+  ]
+}

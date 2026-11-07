@@ -1,0 +1,240 @@
+{
+  "id": "vistas-isometrica",
+  "order": 1,
+  "title": "Vistas desde una isométrica",
+  "topic": "II-12",
+  "stage": "DT II",
+  "saberBasico": "Normalización: representación de piezas por sus vistas en el sistema europeo (UNE-EN ISO 5456-2), aristas ocultas, ejes y acotación.",
+  "level": "Intermedio",
+  "initialScene": {
+    "points": { "P": [0, 0, 0] },
+    "objects": [],
+    "activePoint": "P",
+    "engines": { "normalizacion": { "pieza": "escuadra-taladrada" } }
+  },
+  "steps": [
+    {
+      "narration": "Esta pieza está dibujada en perspectiva isométrica. Vamos a obtener sus vistas: lo que se ve desde delante, desde arriba y desde la izquierda.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": { "normalizacion": { "vistas": [] } }
+    },
+    {
+      "narration": "Metemos la pieza en una caja. En el sistema europeo, la pieza queda entre el observador y la cara en la que se dibuja cada vista.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": { "normalizacion": { "vistas": [], "caja": { "proyectar": [] } } }
+    },
+    {
+      "narration": "Mirando desde delante, el alzado se proyecta en la cara de detrás. Cada arista de la pieza deja su línea en esa cara.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "ocultas": false,
+          "ejes": false,
+          "caja": { "proyectar": ["alzado"] }
+        }
+      }
+    },
+    {
+      "narration": "Desde arriba, la planta se proyecta en la cara de abajo. Desde la izquierda, el perfil izquierdo se proyecta en la cara de la derecha.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "ocultas": false,
+          "ejes": false,
+          "caja": { "proyectar": ["alzado", "planta", "perfil"] }
+        }
+      }
+    },
+    {
+      "narration": "Al desplegar la caja, las tres vistas quedan en un mismo plano. La planta va debajo del alzado y el perfil izquierdo, a su derecha.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "ocultas": false,
+          "ejes": false,
+          "caja": { "proyectar": ["alzado", "planta", "perfil"], "desplegar": 1 }
+        }
+      }
+    },
+    {
+      "narration": "Las aristas que no se ven se dibujan con línea discontinua fina. El taladro, que en el alzado y en el perfil queda tapado, aparece así.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["ocultas"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": { "normalizacion": { "ejes": false } }
+    },
+    {
+      "narration": "Los ejes de simetría del taladro van con trazo y punto fino y sobresalen un poco de la pieza. En la planta, el taladro se ve de punta: dos ejes cruzados.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["ejes"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": { "normalizacion": {} }
+    },
+    {
+      "narration": "Para fabricar la pieza hacen falta sus medidas. Cada cota se pone una sola vez, en la vista que mejor muestra esa forma.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["cotas"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-25, 40, 34],
+                [25, 40, 10]
+              ],
+              "direccion": "h",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-25, 40, 34],
+                [-13, 40, 34]
+              ],
+              "direccion": "h",
+              "desplazamiento": 4
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-25, 40, 0],
+                [-25, 40, 34]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [25, 40, 0],
+                [25, 40, 10]
+              ],
+              "direccion": "v",
+              "desplazamiento": 8
+            },
+            {
+              "tipo": "lineal",
+              "vista": "perfil",
+              "de": [
+                [-25, 10, 0],
+                [-25, 40, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [-25, 40, 10],
+                [8, 40, 10]
+              ],
+              "direccion": "h",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [25, 10, 10],
+                [25, 25, 10]
+              ],
+              "direccion": "v",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "diametro",
+              "vista": "planta",
+              "centro": [8, 25, 10],
+              "radio": 6,
+              "angulo": 40
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Se ven el alzado y la planta de una pieza. ¿Cuál es su perfil izquierdo?",
+      "show3d": [],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "escalon",
+          "vistas": ["alzado", "planta"],
+          "ejercicio": {
+            "tipo": "vistaQueFalta",
+            "falta": "perfil",
+            "opciones": ["cuna", "escalon", "bloque-ranurado"]
+          }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Marca solo las vistas imprescindibles para definir esta brida: ni una más ni una menos.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "brida",
+          "ejercicio": { "tipo": "vistasNecesarias" }
+        }
+      }
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: dibuja el alzado de la brida en corte total por su plano de simetría frontal, A-A. ¿Cuál de estos dibujos es el correcto?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "brida",
+          "vistas": ["planta"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              { "tipo": "total", "vista": "alzado", "en": 18 },
+              { "tipo": "total", "vista": "alzado", "en": 25 },
+              { "tipo": "medio", "vista": "alzado", "en": 25 }
+            ],
+            "correcta": 1
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,9 +1,15 @@
 // Vistas rápidas de la cámara y transición suave entre ellas.
 import { Vector3, type PerspectiveCamera } from 'three';
 
-export type ViewName = 'perspective' | 'front' | 'top' | 'profile';
+export type ViewName = 'perspective' | 'front' | 'top' | 'profile' | 'isometric';
 
-export const VIEW_NAMES: readonly ViewName[] = ['perspective', 'front', 'top', 'profile'];
+export const VIEW_NAMES: readonly ViewName[] = [
+  'perspective',
+  'front',
+  'top',
+  'profile',
+  'isometric',
+];
 
 export function isViewName(value: unknown): value is ViewName {
   return typeof value === 'string' && (VIEW_NAMES as readonly string[]).includes(value);
@@ -25,6 +31,9 @@ const DIRECTIONS: Record<ViewName, Vector3> = {
   top: new Vector3(0, 1, 0.001).normalize(),
   // Desde la izquierda (x negativa): vista lateral izquierda del sistema europeo.
   profile: new Vector3(-1, 0, 0),
+  // Isométrica: las tres direcciones con el mismo ángulo. Desde delante, arriba y la izquierda,
+  // para ver las caras del alzado, la planta y el perfil izquierdo.
+  isometric: new Vector3(-1, 1, 1).normalize(),
 };
 
 const TRANSITION_MS = 600;

@@ -1,0 +1,11 @@
+{
+  "id": "soporte-u",
+  "nombre": "Soporte en U",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 30] },
+    { "tipo": "ranura", "desde": [-12, 5, 10], "hasta": [12, 45, 35] },
+    { "tipo": "taladro", "centro": [-25, 25, 20], "eje": "x", "sentido": 1, "diametro": 8 }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "soporte-inclinado",
+  "nombre": "Soporte con nervio inclinado",
+  "dificultad": 3,
+  "vistasNecesarias": ["alzado", "planta", "perfil"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 8] },
+    { "tipo": "bloque", "desde": [-25, 10, 8], "hasta": [25, 18, 36] },
+    {
+      "tipo": "perfil",
+      "eje": "x",
+      "puntos": [
+        [18, 8],
+        [36, 8],
+        [18, 30]
+      ],
+      "desde": -4,
+      "hasta": 4
+    },
+    { "tipo": "taladro", "centro": [-15, 10, 26], "eje": "a", "sentido": 1, "diametro": 8 },
+    { "tipo": "taladro", "centro": [15, 10, 26], "eje": "a", "sentido": 1, "diametro": 8 },
+    {
+      "tipo": "taladro",
+      "centro": [-16, 30, 8],
+      "eje": "c",
+      "sentido": -1,
+      "diametro": 6,
+      "profundidad": 5
+    }
+  ]
+}

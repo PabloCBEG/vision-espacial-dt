@@ -380,7 +380,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 4,
     pauNote: 'Ejercicio 4',
     scene: 'Plano de corte que atraviesa la pieza',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'II-13',

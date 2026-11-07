@@ -1,0 +1,30 @@
+{
+  "id": "horquilla",
+  "nombre": "Horquilla",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "perfil", "planta"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 10] },
+    { "tipo": "bloque", "desde": [-25, 18, 10], "hasta": [-15, 32, 32] },
+    { "tipo": "bloque", "desde": [15, 18, 10], "hasta": [25, 32, 32] },
+    {
+      "tipo": "redondeo",
+      "eje": "x",
+      "en": [18, 32],
+      "desde": -25,
+      "hasta": 25,
+      "hacia": [1, -1],
+      "tamano": 7
+    },
+    {
+      "tipo": "redondeo",
+      "eje": "x",
+      "en": [32, 32],
+      "desde": -25,
+      "hasta": 25,
+      "hacia": [-1, -1],
+      "tamano": 7
+    },
+    { "tipo": "taladro", "centro": [-25, 25, 24], "eje": "x", "sentido": 1, "diametro": 7 }
+  ]
+}

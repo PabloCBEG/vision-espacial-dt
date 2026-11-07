@@ -1119,6 +1119,99 @@ body:not([data-screen='free']) .free-scenes {
   vector-effect: non-scaling-stroke;
 }
 
+/* Normalización: tipos de línea de UNE-EN ISO 128-2. */
+.sheet line.norm-visible {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-data);
+  stroke-linecap: round;
+}
+
+.sheet line.norm-hidden,
+.norm-thumb .norm-hidden {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-aux);
+  stroke-dasharray: 5 3;
+}
+
+.sheet line.norm-axis {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-aux);
+  stroke-dasharray: 14 3 2 3;
+}
+
+.sheet line.norm-cut-end {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-result);
+}
+
+.sheet line.norm-hatch,
+.norm-thumb .norm-hatch {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-aux);
+}
+
+.sheet line.norm-revolved {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-aux);
+}
+
+.sheet line.norm-dim-line {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-aux);
+}
+
+.norm-dimension.is-candidate {
+  opacity: 0.35;
+}
+
+.norm-dimension.is-chosen line,
+.norm-dimension.is-chosen .sheet-arrow,
+.norm-dimension.is-chosen text {
+  stroke: var(--scene-result);
+  fill: var(--scene-result);
+}
+
+.norm-dimension.is-chosen line {
+  fill: none;
+}
+
+.norm-view-name {
+  fill: var(--color-text-muted);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.norm-thumb {
+  display: block;
+  background: var(--color-surface);
+}
+
+.norm-thumb line {
+  vector-effect: non-scaling-stroke;
+}
+
+.norm-thumb .norm-visible {
+  stroke: var(--color-text);
+  stroke-width: 2px;
+}
+
+.norm-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  flex-basis: 100%;
+}
+
+.norm-choice {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-xs);
+}
+
+.norm-choice[aria-pressed='true'] {
+  outline: 3px solid var(--color-accent);
+}
+
 /* Botón «Ocultar auxiliares». */
 .hide-aux .stroke-aux {
   display: none;

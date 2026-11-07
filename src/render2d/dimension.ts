@@ -96,3 +96,101 @@ export function verticalDimension(input: VerticalDimensionInput): DimensionDrawi
     },
   };
 }
+
+export interface LinearDimensionInput {
+  /** Puntos medidos, en coordenadas SVG (y hacia abajo), en mm. */
+  from: { x: number; y: number };
+  to: { x: number; y: number };
+  /** Horizontal, vertical o alineada con los dos puntos. */
+  direction: 'h' | 'v' | 'aligned';
+  /** Separación de la línea de cota, en mm, desde el punto más exterior (con signo). */
+  offset: number;
+  mmPerPx: number;
+  value: string;
+}
+
+/**
+ * Cota lineal cualquiera según UNE-EN ISO 129-1: líneas auxiliares perpendiculares que
+ * sobrepasan un poco la línea de cota, flechas cerradas de unos 15° y cifra encima de la línea,
+ * legible desde abajo o desde la derecha.
+ */
+export function linearDimension(input: LinearDimensionInput): DimensionDrawing {
+  const k = input.mmPerPx;
+  const { from, to } = input;
+  let ux = 1;
+  let uy = 0;
+  if (input.direction === 'v') {
+    ux = 0;
+    uy = 1;
+  } else if (input.direction === 'aligned') {
+    const len = Math.hypot(to.x - from.x, to.y - from.y) || 1;
+    ux = (to.x - from.x) / len;
+    uy = (to.y - from.y) / len;
+  }
+  // Normal (en SVG): para una cota horizontal, hacia arriba es −y.
+  const nx = uy;
+  const ny = -ux;
+  const sign = input.offset >= 0 ? 1 : -1;
+  const n1 = from.x * nx + from.y * ny;
+  const n2 = to.x * nx + to.y * ny;
+  const level = (sign > 0 ? Math.max(n1, n2) : Math.min(n1, n2)) + input.offset;
+  const onLine = (p: { x: number; y: number }, np: number) => ({
+    x: p.x + nx * (level - np),
+    y: p.y + ny * (level - np),
+  });
+  const d1 = onLine(from, n1);
+  const d2 = onLine(to, n2);
+  const extensionLines: Segment[] = [
+    [from, n1, d1],
+    [to, n2, d2],
+  ].map(([p, np, d]) => {
+    const q = p as { x: number; y: number };
+    const e = d as { x: number; y: number };
+    const gap =
+      Math.abs(level - (np as number)) > DIMENSION_PX.gap * k ? DIMENSION_PX.gap * k * sign : 0;
+    return {
+      x1: q.x + nx * gap,
+      y1: q.y + ny * gap,
+      x2: e.x + nx * DIMENSION_PX.overshoot * k * sign,
+      y2: e.y + ny * DIMENSION_PX.overshoot * k * sign,
+    };
+  });
+  const length = Math.hypot(d2.x - d1.x, d2.y - d1.y);
+  const ax = length > 0 ? (d2.x - d1.x) / length : ux;
+  const ay = length > 0 ? (d2.y - d1.y) / length : uy;
+  const arrowLength = DIMENSION_PX.arrowLength * k;
+  const half = DIMENSION_PX.arrowHalfWidth * k;
+  const inside = length >= 2 * arrowLength + 2 * k;
+  const arrow = (tip: { x: number; y: number }, dir: 1 | -1): Arrowhead => {
+    const bx = tip.x + ax * arrowLength * dir;
+    const by = tip.y + ay * arrowLength * dir;
+    return [tip.x, tip.y, bx - ay * half, by + ax * half, bx + ay * half, by - ax * half];
+  };
+  const arrowheads: [Arrowhead, Arrowhead] = inside
+    ? [arrow(d1, 1), arrow(d2, -1)]
+    : [arrow(d1, -1), arrow(d2, 1)];
+  const tail = inside ? 0 : (DIMENSION_PX.outsideTail + DIMENSION_PX.arrowLength) * k;
+  const dimensionLine: Segment = {
+    x1: d1.x - ax * tail,
+    y1: d1.y - ay * tail,
+    x2: d2.x + ax * tail,
+    y2: d2.y + ay * tail,
+  };
+  // Cifra: legible desde abajo o desde la derecha (giro entre −90° y 90°), encima de la línea.
+  let rotation = (Math.atan2(ay, ax) * 180) / Math.PI;
+  if (rotation > 90) rotation -= 180;
+  if (rotation <= -90) rotation += 180;
+  const r = (rotation * Math.PI) / 180;
+  const up = { x: Math.sin(r), y: -Math.cos(r) };
+  return {
+    extensionLines,
+    dimensionLine,
+    arrowheads,
+    text: {
+      x: (d1.x + d2.x) / 2 + up.x * DIMENSION_PX.textGap * k,
+      y: (d1.y + d2.y) / 2 + up.y * DIMENSION_PX.textGap * k,
+      rotation,
+      value: input.value,
+    },
+  };
+}

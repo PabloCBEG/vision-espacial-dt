@@ -1,0 +1,10 @@
+{
+  "id": "bloque-ranurado",
+  "nombre": "Bloque ranurado",
+  "dificultad": 1,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 24] },
+    { "tipo": "ranura", "desde": [-8, 5, 12], "hasta": [8, 45, 30] }
+  ]
+}

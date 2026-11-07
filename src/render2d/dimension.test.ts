@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DIMENSION_PX, verticalDimension } from './dimension.ts';
+import { DIMENSION_PX, linearDimension, verticalDimension } from './dimension.ts';
 
 const base = { featureX: 20, mmPerPx: 0.5, fromHasLine: true, value: '40' } as const;
 
@@ -48,5 +48,48 @@ describe('verticalDimension (UNE-EN ISO 129-1)', () => {
   it('dibuja auxiliar en los dos extremos si ninguno tiene línea propia', () => {
     const d = verticalDimension({ ...base, fromHasLine: false, fromY: 10, toY: 50, side: 'left' });
     expect(d.extensionLines).toHaveLength(2);
+  });
+});
+
+describe('cota lineal genérica (ISO 129-1)', () => {
+  it('horizontal: línea de cota paralela, cifra encima y sin girar', () => {
+    const d = linearDimension({
+      from: { x: 0, y: 0 },
+      to: { x: 40, y: 0 },
+      direction: 'h',
+      offset: 10,
+      mmPerPx: 0.1,
+      value: '40',
+    });
+    expect(d.dimensionLine.y1).toBeCloseTo(-10, 9);
+    expect(d.dimensionLine.y2).toBeCloseTo(-10, 9);
+    expect(d.text.rotation).toBeCloseTo(0, 9);
+    expect(d.text.y).toBeLessThan(-10);
+    // Las auxiliares sobrepasan la línea de cota.
+    expect(Math.min(d.extensionLines[0]?.y2 ?? 0, d.extensionLines[1]?.y2 ?? 0)).toBeLessThan(-10);
+  });
+
+  it('vertical: la cifra se lee desde la derecha (girada −90°)', () => {
+    const d = linearDimension({
+      from: { x: 0, y: 0 },
+      to: { x: 0, y: -30 },
+      direction: 'v',
+      offset: 8,
+      mmPerPx: 0.1,
+      value: '30',
+    });
+    expect(Math.abs(d.text.rotation)).toBeCloseTo(90, 9);
+  });
+
+  it('mide la proyección en la dirección pedida, no la distancia oblicua', () => {
+    const d = linearDimension({
+      from: { x: 0, y: 0 },
+      to: { x: 30, y: -10 },
+      direction: 'h',
+      offset: 5,
+      mmPerPx: 0.1,
+      value: '30',
+    });
+    expect(Math.abs(d.dimensionLine.x2 - d.dimensionLine.x1)).toBeCloseTo(30, 9);
   });
 });

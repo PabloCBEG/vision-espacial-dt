@@ -1,0 +1,22 @@
+{
+  "id": "bloque-escalonado",
+  "nombre": "Bloque escalonado con ranura",
+  "dificultad": 3,
+  "vistasNecesarias": ["alzado", "planta", "perfil"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-25, 10, 0], "hasta": [25, 40, 12] },
+    { "tipo": "bloque", "desde": [-25, 10, 12], "hasta": [5, 30, 24] },
+    { "tipo": "bloque", "desde": [-25, 10, 24], "hasta": [-10, 20, 34] },
+    { "tipo": "ranura", "desde": [12, 18, -5], "hasta": [30, 32, 6] },
+    { "tipo": "taladro", "centro": [-5, 20, 24], "eje": "c", "sentido": -1, "diametro": 8 },
+    {
+      "tipo": "chaflan",
+      "eje": "x",
+      "en": [40, 12],
+      "desde": -25,
+      "hasta": 25,
+      "hacia": [-1, -1],
+      "tamano": 4
+    }
+  ]
+}

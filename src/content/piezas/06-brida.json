@@ -1,0 +1,13 @@
+{
+  "id": "brida",
+  "nombre": "Brida con buje",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-28, 10, 0], "hasta": [28, 40, 8] },
+    { "tipo": "cilindro", "centro": [0, 25, 8], "eje": "c", "radio": 11, "largo": 18 },
+    { "tipo": "taladro", "centro": [0, 25, 26], "eje": "c", "sentido": -1, "diametro": 12 },
+    { "tipo": "taladro", "centro": [-20, 25, 8], "eje": "c", "sentido": -1, "diametro": 6 },
+    { "tipo": "taladro", "centro": [20, 25, 8], "eje": "c", "sentido": -1, "diametro": 6 }
+  ]
+}

@@ -12,6 +12,8 @@ import {
 } from 'three';
 import type { Line2 } from 'three/addons/lines/Line2.js';
 import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
 import type { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { createPoint, type Point } from '../geometry/index.ts';
 import { toThree, toThreeArray } from './coords.ts';
@@ -61,9 +63,14 @@ export class Sketch3D {
   private readonly labels: Pool<CSS2DObject> = { items: [], used: 0 };
   private readonly fillMaterials = new Map<string, MeshBasicMaterial>();
   private readonly fills: Pool<Mesh> = { items: [], used: 0 };
+  private readonly solids: Pool<Mesh> = { items: [], used: 0 };
+  private readonly solidMaterials = new Map<string, MeshLambertMaterial>();
+  private readonly batches = new Map<string, Pool<LineSegments2>>();
 
   begin(): void {
     for (const pool of this.linePools.values()) pool.used = 0;
+    for (const pool of this.batches.values()) pool.used = 0;
+    this.solids.used = 0;
     this.spheres.used = 0;
     this.labels.used = 0;
     this.fills.used = 0;
@@ -174,8 +181,97 @@ export class Sketch3D {
     mesh.geometry = geometry;
   }
 
+  /**
+   * Sólido opaco a partir de una malla en coordenadas del dominio (x, a, c), con sombreado
+   * plano. `opacity` < 1 lo hace translúcido (por ejemplo, la parte que se retira de un corte).
+   */
+  solid(
+    positions: ArrayLike<number>,
+    triangles: ArrayLike<number>,
+    color: SketchColor,
+    opacity = 1,
+  ): void {
+    const key = `${color}|${opacity}`;
+    let material = this.solidMaterials.get(key);
+    if (!material) {
+      material = new MeshLambertMaterial({ transparent: opacity < 1, depthWrite: opacity >= 1 });
+      if (this.colors) material.color.copy(this.colors[color]);
+      this.layer.addMaterial(material, opacity);
+      this.solidMaterials.set(key, material);
+    }
+    let mesh = this.solids.items[this.solids.used];
+    if (!mesh) {
+      mesh = new Mesh(new BufferGeometry(), material);
+      this.layer.group.add(mesh);
+      this.solids.items.push(mesh);
+    }
+    this.solids.used++;
+    mesh.material = material;
+    mesh.visible = true;
+    // Triángulos sueltos (sombreado plano). Al pasar a Three.js se cambia el orden de los ejes,
+    // así que se invierte el sentido de cada triángulo para que su cara exterior siga fuera.
+    const out = new Float32Array(triangles.length * 3);
+    for (let t = 0; t < triangles.length; t += 3) {
+      const order = [triangles[t], triangles[t + 2], triangles[t + 1]] as number[];
+      order.forEach((v, k) => {
+        out[(t + k) * 3] = positions[v * 3] as number; // X = x
+        out[(t + k) * 3 + 1] = positions[v * 3 + 2] as number; // Y = c
+        out[(t + k) * 3 + 2] = positions[v * 3 + 1] as number; // Z = a
+      });
+    }
+    mesh.geometry.dispose();
+    const geometry = new BufferGeometry();
+    geometry.setAttribute('position', new Float32BufferAttribute(out, 3));
+    geometry.computeVertexNormals();
+    mesh.geometry = geometry;
+  }
+
+  /** Muchos segmentos sueltos en un solo objeto (aristas de una pieza). */
+  segments(
+    pairs: readonly (readonly [Point, Point])[],
+    role: StrokeRole,
+    options: LineOptions = {},
+  ): void {
+    if (pairs.length === 0) return;
+    const color = options.color ?? ROLE_COLOR[role];
+    const key = `${role}|${color}|${options.dashed ? 'd' : 's'}`;
+    let pool = this.batches.get(key);
+    if (!pool) {
+      pool = { items: [], used: 0 };
+      this.batches.set(key, pool);
+    }
+    let batch = pool.items[pool.used];
+    if (!batch) {
+      batch = new LineSegments2(
+        new LineSegmentsGeometry(),
+        this.lineMaterial(key, role, color, options.dashed),
+      );
+      this.layer.group.add(batch);
+      pool.items.push(batch);
+    }
+    pool.used++;
+    batch.visible = true;
+    batch.geometry.dispose();
+    const geometry = new LineSegmentsGeometry();
+    geometry.setPositions(
+      pairs.flatMap(([p, q]) => [...toThree(p).toArray(), ...toThree(q).toArray()]),
+    );
+    batch.geometry = geometry;
+    if (options.dashed) batch.computeLineDistances();
+  }
+
   /** Oculta lo que no se ha dibujado en esta pasada. */
   end(): void {
+    for (const pool of this.batches.values()) {
+      for (let i = pool.used; i < pool.items.length; i++) {
+        const item = pool.items[i];
+        if (item) item.visible = false;
+      }
+    }
+    for (let i = this.solids.used; i < this.solids.items.length; i++) {
+      const item = this.solids.items[i];
+      if (item) item.visible = false;
+    }
     for (const pool of this.linePools.values()) {
       for (let i = pool.used; i < pool.items.length; i++) {
         const item = pool.items[i];
@@ -202,6 +298,9 @@ export class Sketch3D {
     }
     for (const [color, material] of this.sphereMaterials) material.color.copy(colors[color]);
     for (const [key, material] of this.fillMaterials) {
+      material.color.copy(colors[key.split('|')[0] as SketchColor]);
+    }
+    for (const [key, material] of this.solidMaterials) {
       material.color.copy(colors[key.split('|')[0] as SketchColor]);
     }
   }
