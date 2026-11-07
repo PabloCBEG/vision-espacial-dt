@@ -108,6 +108,7 @@ describe('lecciones', () => {
 describe('ejercicios de medida con el motor de métodos', () => {
   it('la respuesta escrita coincide con la geometría', async () => {
     const { buildConstruction, exactValue } = await import('../engines/metodos/construction.ts');
+    const { createLine, createPlane, createPoint } = await import('../geometry/index.ts');
     const { MethodsStepSchema } = await import('../engines/metodos/definition.ts');
     const { lessons } = parseLessons(readAll());
     let checked = 0;
@@ -116,13 +117,26 @@ describe('ejercicios de medida con el motor de métodos', () => {
         if (exercise.kind !== 'value' || !exercise.engines?.metodos) continue;
         const coords = { ...lesson.initialScene.points, ...exercise.points };
         const data = MethodsStepSchema.parse(exercise.engines.metodos);
+        const point = (n: string) => {
+          const c = coords[n];
+          return c ? createPoint(c[0], c[1], c[2]) : null;
+        };
+        const objects = lesson.initialScene.objects;
         const k = buildConstruction(data, {
-          point: (n) => {
-            const c = coords[n];
-            return c ? { x: c[0], a: c[1], c: c[2] } : null;
+          point,
+          // Rectas y planos de la escena, por sus puntos (para distancias y ángulos).
+          line: (id) => {
+            const o = objects.find((x) => x.kind === 'line' && x.id === id);
+            if (o?.kind !== 'line') return null;
+            const [p, q] = o.through.map(point);
+            return p && q ? createLine(p, q) : null;
           },
-          line: () => null,
-          plane: () => null,
+          plane: (id) => {
+            const o = objects.find((x) => x.kind === 'plane' && x.id === id);
+            if (o?.kind !== 'plane') return null;
+            const [p, q, r] = o.through.map(point);
+            return p && q && r ? createPlane(p, q, r) : null;
+          },
         });
         const value = k ? exactValue(k) : null;
         expect(value?.unit, lesson.id).toBe(exercise.unit);

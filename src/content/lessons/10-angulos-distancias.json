@@ -1,0 +1,406 @@
+{
+  "id": "angulos-distancias",
+  "order": 10,
+  "title": "Ángulos, distancias y rectas con ángulo dado",
+  "topic": "II-06",
+  "stage": "DT II",
+  "saberBasico": "Sistema diédrico: verdaderas magnitudes, ángulos de recta con los planos de proyección y con un plano, distancias, y recta o plano con un ángulo dado.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "A": [-30, 10, 5],
+      "B": [20, 35, 40],
+      "D": [-45, 0, 0],
+      "E": [40, 50, 0],
+      "G": [40, 0, 45],
+      "P": [5, 40, 40],
+      "V": [0, 25, 40]
+    },
+    "objects": [
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      },
+      {
+        "kind": "point",
+        "id": "P"
+      },
+      {
+        "kind": "point",
+        "id": "V"
+      },
+      {
+        "kind": "line",
+        "id": "r",
+        "through": ["A", "B"]
+      },
+      {
+        "kind": "plane",
+        "id": "α",
+        "through": ["D", "E", "G"]
+      }
+    ],
+    "activePoint": "A"
+  },
+  "steps": [
+    {
+      "narration": "El ángulo de una recta con el PH es el que forma con su proyección horizontal. En el espacio se ve: es el ángulo entre r y r′.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyectantes:A",
+        "proyectantes:B",
+        "figura"
+      ],
+      "sheet": [],
+      "highlight": ["figura"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PH",
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "narration": "En la lámina no aparece en verdadera magnitud, porque r no es paralela al PV. Hay que mover la recta o el plano de proyección.",
+      "show3d": ["planos", "punto:A", "punto:B", "proyecciones:A", "proyecciones:B", "figura"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": ["figura"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PH",
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "narration": "Colocamos un plano vertical nuevo, paralelo a r′: desde él la recta se ve de frente. Las cotas no cambian, porque el PH sigue siendo el mismo.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "nueva-lt", "movimiento", "resultado"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": ["nueva-lt"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PH",
+          "mirarPlanoNuevo": true
+        }
+      }
+    },
+    {
+      "narration": "En la lámina, la LT nueva es paralela a r′ y cada punto lleva su cota sobre ella. El ángulo de la proyección nueva con esa LT es el ángulo de r con el PH.",
+      "show3d": ["planos", "figura", "nueva-lt", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PH"
+        }
+      }
+    },
+    {
+      "narration": "Para el ángulo con el PV giramos r alrededor de un eje de punta hasta que sea horizontal. El giro no cambia su ángulo con el PV.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "highlight": ["movimiento"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PV",
+          "eje": "punta"
+        }
+      }
+    },
+    {
+      "narration": "Ya horizontal, su proyección horizontal forma con la LT el ángulo con el PV. Es el mismo razonamiento de antes, cambiando el papel de los dos planos.",
+      "show3d": ["planos", "figura", "eje", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PV",
+          "eje": "punta"
+        }
+      }
+    },
+    {
+      "narration": "La distancia de P al plano α se mide sobre la perpendicular desde P a α. Su pie F es el punto del plano más cercano a P.",
+      "show3d": [
+        "planos",
+        "punto:P",
+        "proyecciones:P",
+        "plano:α",
+        "trazas:α",
+        "perpendicular",
+        "figura"
+      ],
+      "sheet": [],
+      "highlight": ["perpendicular"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "distancia": {
+            "desde": "P",
+            "hasta": "α"
+          },
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "narration": "En la lámina, la perpendicular tiene sus proyecciones perpendiculares a las trazas α₁ y α₂. Un giro del segmento PF da la distancia en verdadera magnitud.",
+      "show3d": ["planos", "plano:α", "trazas:α", "perpendicular", "figura", "eje", "resultado"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:P",
+        "referencia:P",
+        "perpendicular",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["perpendicular", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "distancia": {
+            "desde": "P",
+            "hasta": "α"
+          }
+        }
+      }
+    },
+    {
+      "narration": "Todas las rectas que pasan por V y forman 40° con el PH son las generatrices de un cono de eje vertical. Elegir una de esas rectas es elegir una generatriz.",
+      "show3d": ["planos", "punto:V", "cono"],
+      "sheet": [],
+      "highlight": ["cono"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "cono": {
+            "vertice": "V",
+            "angulo": 40,
+            "generatriz": -60
+          }
+        }
+      }
+    },
+    {
+      "narration": "En el alzado, el contorno del cono forma 40° con la LT. El plano tangente al cono por esa generatriz forma también 40° con el PH.",
+      "show3d": ["planos", "punto:V", "cono"],
+      "sheet": ["lt", "cono", "medida"],
+      "highlight": ["cono", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "cono": {
+            "vertice": "V",
+            "angulo": 40,
+            "generatriz": -60,
+            "plano": true
+          }
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "Con el cambio de plano ya hecho, mide en la lámina el ángulo de la recta AB con el PH, en grados.",
+      "answer": 29.5,
+      "unit": "°",
+      "tolerance": 2,
+      "points": {
+        "A": [-35, 15, 10],
+        "B": [25, 30, 45]
+      },
+      "show3d": ["planos", "figura", "nueva-lt", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PH"
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Halla la distancia del punto P al plano α en milímetros. Elige el método con el que mover el segmento PF.",
+      "answer": 42.7,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "P": [0, 45, 45]
+      },
+      "show3d": [
+        "planos",
+        "punto:P",
+        "plano:α",
+        "trazas:α",
+        "perpendicular",
+        "figura",
+        "eje",
+        "nueva-lt",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "trazas:α",
+        "proyecciones:P",
+        "referencia:P",
+        "perpendicular",
+        "figura",
+        "eje",
+        "nueva-lt",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "distancia": {
+            "desde": "P",
+            "hasta": "α"
+          },
+          "selector": true
+        }
+      }
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: halla el ángulo que forma la recta AB con el plano α. Abate el triángulo A, I, F y escribe el ángulo en grados.",
+      "answer": 32.9,
+      "unit": "°",
+      "tolerance": 2,
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "figura",
+        "perpendicular",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "perpendicular",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "objetivo": "angulo",
+          "anguloRectaPlano": {
+            "recta": ["A", "B"],
+            "plano": "α"
+          }
+        }
+      },
+      "points": {
+        "A": [30, 5, 5],
+        "B": [-40, 15, 15]
+      }
+    }
+  ]
+}

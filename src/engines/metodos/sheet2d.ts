@@ -368,8 +368,13 @@ export class MethodsSheet implements SheetModule {
           LINE_EXTENT,
         );
         polyline(g, [a, b], 'result', { className: 'sheet-tangent-plane' });
-        const end = a.x > b.x ? a : b;
-        g.append(ctx.label(name, end.x - 4 * u, -end.y - 6 * u, 'end'));
+        // Rótulo en el extremo de su lado de la LT (β₂ arriba, β₁ abajo): así no se pisan
+        // cuando las dos trazas se cortan en la LT con direcciones parecidas.
+        const above = name === 'β₂';
+        const end = above === a.y > b.y ? a : b;
+        const anchor = end.x > (a.x + b.x) / 2 ? 'end' : 'start';
+        const dx = anchor === 'end' ? -4 * u : 4 * u;
+        g.append(ctx.label(name, end.x + dx, -end.y + (above ? 14 : -6) * u, anchor));
       }
     }
   }
@@ -389,8 +394,11 @@ export class MethodsSheet implements SheetModule {
       const b = Math.atan2(m.angle.to.y - m.angle.vertex.y, m.angle.to.x - m.angle.vertex.x);
       let mid = (a + b) / 2;
       if (Math.abs(a - b) > Math.PI) mid += Math.PI;
-      x = m.angle.vertex.x + Math.cos(mid) * (9 + 14 * u);
-      y = -(m.angle.vertex.y + Math.sin(mid) * (9 + 14 * u)) + 5 * u;
+      // Lo bastante lejos para no pisar el rótulo del punto del vértice (el texto mide unos
+      // 40 px de ancho), también en el móvil, donde 9 mm son pocos píxeles.
+      const r = 9 + 28 * u;
+      x = m.angle.vertex.x + Math.cos(mid) * r;
+      y = -(m.angle.vertex.y + Math.sin(mid) * r) + 5 * u;
     } else {
       // Verdadera magnitud: junto al centro del segmento, desplazada en perpendicular hacia
       // fuera (lejos de la LT, o de la LT₁ en el cambio de plano).

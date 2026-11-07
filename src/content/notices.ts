@@ -38,6 +38,22 @@ function isVisible(state: AppState, tags: string[]): boolean {
   );
 }
 
+/** Puntos con los que el motor de métodos mide una distancia o el ángulo de una recta y un plano. */
+function measuredPoints(state: AppState): Set<string> {
+  const data = state.engines.metodos;
+  const names = new Set<string>();
+  if (typeof data !== 'object' || data === null) return names;
+  const { distancia, anguloRectaPlano } = data as {
+    distancia?: { desde?: unknown };
+    anguloRectaPlano?: { recta?: unknown };
+  };
+  if (typeof distancia?.desde === 'string') names.add(distancia.desde);
+  if (Array.isArray(anguloRectaPlano?.recta)) {
+    for (const n of anguloRectaPlano.recta as unknown[]) if (typeof n === 'string') names.add(n);
+  }
+  return names;
+}
+
 export function sceneNotices(state: AppState): Notice[] {
   const notices: Notice[] = [];
   const planes: { id: string; alpha: Plane; through: readonly string[] }[] = [];
@@ -111,10 +127,13 @@ export function sceneNotices(state: AppState): Notice[] {
     }
   }
 
-  // Pertenencia: puntos y rectas que no definen el plano.
+  // Pertenencia: puntos y rectas que no definen el plano. Se omite para los puntos con los que
+  // el motor de métodos mide una distancia o un ángulo: el aviso daría la respuesta.
+  const measured = measuredPoints(state);
   for (const { id, alpha, through } of planes) {
     for (const o of state.objects) {
       if (o.kind === 'point' && !through.includes(o.id)) {
+        if (measured.has(o.id)) continue;
         if (!isVisible(state, [`punto:${o.id}`, `proyecciones:${o.id}`])) continue;
         const distance = distancePointToPlane(getPoint(state, o.id), alpha);
         notices.push(

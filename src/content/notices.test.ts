@@ -78,4 +78,11 @@ describe('avisos pedagógicos', () => {
     const outside = sceneNotices(planeState({ ...base, Q: P(10, 30, 30) }));
     expect(outside.find((n) => n.kind === 'error')?.text).toMatch(/^Q no está en el plano α/);
   });
+
+  it('no da la distancia de un punto cuya distancia al plano es el ejercicio', () => {
+    const base = { A: P(-40, 0, 35), B: P(40, 45, 0), C: P(10, 0, 0), Q: P(10, 30, 30) };
+    const state = planeState(base);
+    const measuring = { ...state, engines: { metodos: { distancia: { desde: 'Q', hasta: 'α' } } } };
+    expect(sceneNotices(measuring).some((n) => n.text.startsWith('Q no está'))).toBe(false);
+  });
 });
