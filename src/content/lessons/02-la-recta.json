@@ -2,7 +2,8 @@
   "id": "la-recta",
   "order": 2,
   "title": "La recta",
-  "course": "DT I",
+  "topic": "I-08",
+  "stage": "DT I",
   "saberBasico": "Sistema diédrico: representación de la recta, trazas, partes vistas y ocultas y posiciones particulares.",
   "level": "Inicial",
   "initialScene": {

@@ -32,11 +32,13 @@ import {
 } from '../state/index.ts';
 import { formatNumber } from '../ui/format.ts';
 import { verticalDimension, type DimensionDrawing } from './dimension.ts';
+import type { LabelAnchor, SheetDrawContext, SheetModule } from './sheetModule.ts';
 import { setAttributes, svgElement } from './svg.ts';
 import {
   FIT_VIEWBOX,
   FIT_WITH_PROFILE_VIEWBOX,
   mmPerPixel,
+  unionViewBox,
   viewBoxCenter,
   zoomViewBox,
   type ViewBox,
@@ -80,6 +82,7 @@ export class SheetView {
   private readonly handlesLayer: SVGGElement;
   private readonly handles = new Map<string, Handle>();
   private readonly layers = new Map<string, SVGGElement>();
+  private readonly modules: SheetModule[] = [];
   private usedLayers = new Set<string>();
   private viewBox: ViewBox = FIT_VIEWBOX;
   /** Mientras no se haga zoom, el encuadre se ajusta solo (por ejemplo, al aparecer el perfil). */
@@ -105,6 +108,17 @@ export class SheetView {
     this.render();
   }
 
+  /** Añade un módulo de un motor. Devuelve la función que lo quita. */
+  use(module: SheetModule): () => void {
+    this.modules.push(module);
+    this.requestRender();
+    return () => {
+      const index = this.modules.indexOf(module);
+      if (index >= 0) this.modules.splice(index, 1);
+      this.requestRender();
+    };
+  }
+
   zoomIn(): void {
     const c = viewBoxCenter(this.viewBox);
     this.autoFit = false;
@@ -124,7 +138,12 @@ export class SheetView {
   }
 
   private fitFor(state: AppState): ViewBox {
-    return isProfileVisible(state, state.layersSheet) ? FIT_WITH_PROFILE_VIEWBOX : FIT_VIEWBOX;
+    let box = isProfileVisible(state, state.layersSheet) ? FIT_WITH_PROFILE_VIEWBOX : FIT_VIEWBOX;
+    for (const module of this.modules) {
+      const extra = module.fitBox?.(state);
+      if (extra) box = unionViewBox(box, extra);
+    }
+    return box;
   }
 
   // ---------- Dibujo ----------
@@ -175,6 +194,15 @@ export class SheetView {
       if (isProfileVisible(state, state.layersSheet)) this.drawProfile(state);
     }
 
+    // Capas de los motores enchufados (métodos, sólidos…).
+    const context: SheetDrawContext = {
+      state,
+      mmPerPx: this.mmPerPx,
+      layer: (tag) => this.layer(tag),
+      label: (text, x, y, anchor, pending) => this.label(text, x, y, anchor, pending),
+    };
+    for (const module of this.modules) module.draw(context);
+
     // Paso sin nada en la lámina: se explica por qué está vacía.
     if (!exercise && state.layersSheet !== null && state.layersSheet.length === 0) {
       const note = svgElement('text', { x: 0, y: 0, 'text-anchor': 'middle' }, 'sheet-empty-note');
@@ -213,7 +241,11 @@ export class SheetView {
         continue;
       }
       const always =
-        tag === 'cuadricula' || tag.startsWith('objetivo') || tag === 'perfil' || tag === 'aviso';
+        tag === 'cuadricula' ||
+        tag.startsWith('objetivo') ||
+        tag === 'perfil' ||
+        tag === 'aviso' ||
+        this.modules.some((m) => m.isAlwaysVisible?.(tag));
       const visible = always || isLayerVisible(state.layersSheet, tag);
       group.classList.toggle('is-hidden', !visible);
       group.classList.toggle('is-highlighted', state.highlight.includes(tag));
@@ -522,7 +554,7 @@ export class SheetView {
     text: string,
     x: number,
     y: number,
-    anchor: 'start' | 'end',
+    anchor: LabelAnchor,
     pending = false,
   ): SVGTextElement {
     const className = pending ? 'sheet-label is-pending' : 'sheet-label';

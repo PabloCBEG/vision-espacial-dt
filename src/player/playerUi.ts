@@ -4,7 +4,10 @@ import { getPoint, patchState, type AppStore, type HelpLevel } from '../state/in
 import { checkPlacement } from './checkPlacement.ts';
 import { checkCondition } from './checkCondition.ts';
 import type { Player, PlayerPage } from './player.ts';
+import { markLessonSeen } from './progress.ts';
 import { loadResults, saveAttempt } from './results.ts';
+
+const DIFFICULTY_NAMES = ['', 'fácil', 'media', 'tipo PAU'];
 
 export interface PlayerElements {
   title: HTMLElement;
@@ -46,10 +49,12 @@ export function bindPlayer(player: Player, store: AppStore, el: PlayerElements):
       el.progress.setAttribute('aria-valuetext', text);
       el.narration.textContent = page.step.narration;
       el.exercisePanel.hidden = true;
+      if (page.index === steps - 1) markLessonSeen(lessonId);
     } else {
       const results = loadResults(lessonId);
       const solved = results[page.index]?.solved ? ' · resuelto ✓' : '';
-      const text = `Ejercicio ${page.index + 1} de ${player.lesson.exercises.length}${solved}`;
+      const difficulty = DIFFICULTY_NAMES[page.exercise.difficulty] ?? '';
+      const text = `Ejercicio ${page.index + 1} de ${player.lesson.exercises.length} · dificultad ${difficulty}${solved}`;
       el.progressText.textContent = text;
       el.progress.setAttribute('aria-valuetext', text);
       el.narration.textContent = page.exercise.prompt;

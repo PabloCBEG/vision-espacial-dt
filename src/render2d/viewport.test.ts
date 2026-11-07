@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { FIT_VIEWBOX, mmPerPixel, viewBoxCenter, zoomViewBox } from './viewport.ts';
+import { FIT_VIEWBOX, mmPerPixel, unionViewBox, viewBoxCenter, zoomViewBox } from './viewport.ts';
 
 describe('zoom de la lámina', () => {
   it('acercar al doble reduce el encuadre a la mitad y mantiene el centro', () => {
@@ -28,5 +28,13 @@ describe('mmPerPixel', () => {
   it('con meet manda el lado más ajustado', () => {
     expect(mmPerPixel({ x: 0, y: 0, width: 200, height: 100 }, 400, 400)).toBe(0.5);
     expect(mmPerPixel({ x: 0, y: 0, width: 200, height: 100 }, 1000, 100)).toBe(1);
+  });
+});
+
+describe('unionViewBox', () => {
+  it('contiene a los dos encuadres', () => {
+    expect(
+      unionViewBox({ x: 0, y: 0, width: 10, height: 10 }, { x: -5, y: 5, width: 10, height: 20 }),
+    ).toEqual({ x: -5, y: 0, width: 15, height: 25 });
   });
 });

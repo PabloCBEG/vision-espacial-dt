@@ -46,3 +46,15 @@ export function mmPerPixel(vb: ViewBox, clientWidth: number, clientHeight: numbe
   if (clientWidth <= 0 || clientHeight <= 0) return 1;
   return Math.max(vb.width / clientWidth, vb.height / clientHeight);
 }
+
+/** Encuadre que contiene a los dos. */
+export function unionViewBox(a: ViewBox, b: ViewBox): ViewBox {
+  const x = Math.min(a.x, b.x);
+  const y = Math.min(a.y, b.y);
+  return {
+    x,
+    y,
+    width: Math.max(a.x + a.width, b.x + b.width) - x,
+    height: Math.max(a.y + a.height, b.y + b.height) - y,
+  };
+}

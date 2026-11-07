@@ -16,15 +16,43 @@ test.describe('lecciones 2 y 3', () => {
     await page.setViewportSize({ width: 1366, height: 768 });
   });
 
-  test('la pantalla de inicio lista las tres lecciones en orden', async ({ page }) => {
+  test('la pantalla de inicio lista las tres lecciones del tema I-08 en orden', async ({
+    page,
+  }) => {
     await page.goto('/');
-    const titles = page.locator('.lesson-card-title');
-    await expect(titles).toHaveText([
-      '1. El punto en el sistema diédrico',
-      '2. La recta',
-      '3. El plano',
-      'Explorar libremente',
-    ]);
+    const titles = page.locator('[data-topic="I-08"] .lesson-card-title');
+    await expect(titles).toHaveText(['El punto en el sistema diédrico', 'La recta', 'El plano']);
+  });
+
+  test('inicio: curso, bloque y tema; los temas sin construir salen como próximamente', async ({
+    page,
+  }) => {
+    await page.goto('/');
+    await expect(
+      page.getByRole('heading', { name: /Bloque B\. Geometría proyectiva/ }),
+    ).toBeVisible();
+    await page.getByRole('button', { name: 'Dibujo Técnico II' }).click();
+    const topic = page.locator('[data-topic="II-05"]');
+    await expect(topic).toContainText('Métodos: abatimiento, giro y cambio de plano');
+    await expect(topic).toContainText('Próximamente');
+    await expect(page.locator('[data-topic="I-08"]')).toHaveCount(0);
+    // El curso elegido se recuerda al volver.
+    await page.reload();
+    await expect(page.getByRole('button', { name: 'Dibujo Técnico II' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+  });
+
+  test('progreso: una lección vista hasta el final queda marcada', async ({ page }) => {
+    await openLesson(page, /El plano/);
+    const steps = await page.evaluate(
+      () => document.querySelector('#lesson-progress-text')?.textContent,
+    );
+    const total = Number(/de (\d+)/.exec(steps ?? '')?.[1] ?? 0);
+    await goToPage(page, total - 1);
+    await page.goto('/');
+    await expect(page.locator('[data-topic="I-08"]')).toContainText('Lecciones vistas: 1 de 3');
   });
 
   test('recta: tramos vistos y ocultos, trazas y aviso de cuadrantes', async ({ page }) => {

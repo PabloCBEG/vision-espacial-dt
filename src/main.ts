@@ -1,5 +1,6 @@
 import './style.css';
 import { loadLessons } from './content/lessons.ts';
+import { mountEngines } from './engines/runtimes.ts';
 import { FOLDED_ANGLE_DEG } from './geometry/index.ts';
 import { bindPlayer, Player } from './player/index.ts';
 import { SheetView } from './render2d/index.ts';
@@ -66,6 +67,9 @@ try {
   view3dElement.innerHTML =
     '<p class="placeholder">Este navegador no puede mostrar el modelo 3D (necesita WebGL).</p>';
 }
+
+// Motores enchufables (métodos, sólidos…): añaden sus capas a las dos vistas.
+mountEngines({ store, spatial: spatialView, sheet });
 
 // ---------- Lecciones y navegación ----------
 

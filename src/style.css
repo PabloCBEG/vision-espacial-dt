@@ -283,6 +283,74 @@ body {
   border-style: dashed;
 }
 
+/* Catálogo: curso → bloque → tema. */
+.home-catalog {
+  display: grid;
+  gap: var(--space-l);
+}
+
+.course-tabs {
+  justify-self: start;
+}
+
+.topic-list {
+  align-items: start;
+}
+
+.block-title {
+  margin: 0 0 var(--space-s);
+  font-size: 1.125rem;
+}
+
+.topic-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  height: 100%;
+  padding: var(--space-m);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--panel-radius);
+  background: var(--color-surface);
+}
+
+.topic-title {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.topic-progress,
+.topic-soon {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.topic-card.is-soon .topic-card-inner {
+  border-style: dashed;
+  background: transparent;
+}
+
+.topic-card.is-soon .topic-title {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.topic-lessons {
+  display: grid;
+  gap: var(--space-s);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-lessons .lesson-card-link {
+  padding: var(--space-s) var(--space-m);
+}
+
+.topic-lessons .lesson-card-title {
+  font-size: 1rem;
+}
+
 .lesson-errors {
   margin-top: var(--space-l);
   padding: var(--space-m);
@@ -878,6 +946,40 @@ body:not([data-screen='free']) .free-scenes {
   stroke: none;
 }
 
+/* Grosores con significado: construcción auxiliar, proceso, datos y resultado. */
+.stroke-aux {
+  stroke: var(--color-text-muted);
+  stroke-width: var(--stroke-aux);
+  stroke-dasharray: none;
+}
+
+.stroke-process {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-process);
+}
+
+.stroke-data {
+  stroke: var(--color-text);
+  stroke-width: var(--stroke-data);
+}
+
+.stroke-result {
+  stroke: var(--color-accent);
+  stroke-width: var(--stroke-result);
+  stroke-linecap: round;
+}
+
+/* Partes ocultas: discontinua fina (ISO 128-2), sea cual sea el papel de la línea. */
+.is-hidden-edge {
+  stroke-width: var(--stroke-aux);
+  stroke-dasharray: 6 4;
+}
+
+/* Botón «Ocultar auxiliares». */
+.hide-aux .stroke-aux {
+  display: none;
+}
+
 .sheet-label {
   fill: var(--color-text);
   font-size: calc(var(--u) * var(--sheet-font));
@@ -926,12 +1028,21 @@ body:not([data-screen='free']) .free-scenes {
   --sheet-thick: 2.5px;
   --sheet-font: 15px;
   --sheet-dimension-font: 13px;
+  /* Cuatro grosores con significado (CLAUDE.md), de más fino a más grueso. */
+  --stroke-aux: 1px;
+  --stroke-process: 1.75px;
+  --stroke-data: 2.5px;
+  --stroke-result: 3.5px;
 }
 
 :root[data-projector='on'] {
   font-size: 125%; /* todo lo medido en rem crece */
   --sheet-thin: 2.5px;
   --sheet-thick: 5px;
+  --stroke-aux: 2px;
+  --stroke-process: 3.5px;
+  --stroke-data: 5px;
+  --stroke-result: 7px;
   --sheet-font: 24px;
   --sheet-dimension-font: 20px;
   --color-text-muted: var(--color-text);

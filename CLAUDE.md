@@ -45,6 +45,7 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
   - `src/player`: reproductor de pasos.
   - `src/content`: lecciones como datos, validadas con zod.
   - `src/ui`: controles de la interfaz (deslizadores, botones de vista, tema), enlazados al estado.
+  - `src/engines`: motores enchufables (métodos, sólidos, plana…). Cada motor añade sus capas 3D y de lámina, su estado y sus datos de paso sin tocar los demás.
 - Una lección nueva es un fichero de datos, nunca código nuevo.
 
 ## Vista 3D
@@ -53,6 +54,24 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
 - Vistas rápidas: perspectiva, frontal (alzado), superior (planta, alejamiento positivo hacia abajo) y perfil, mirando desde la izquierda como la vista lateral izquierda del sistema europeo.
 - Se arrastran P′ (sobre el PH: cambia x y a), P″ (sobre el PV: cambia x y c) y P (en el plano paralelo al PV: cambia x y c).
 - Solo se dibuja cuando algo cambia; nada de bucles de animación continuos.
+
+## Andalucía y PAU
+
+- Currículo: Orden de 30 de mayo de 2023 (BOJA 104), que desarrolla el RD 243/2022. PAU: directrices 2025-26 de Dibujo Técnico II.
+- Bloques: A (fundamentos geométricos), B (geometría proyectiva), C (normalización y documentación gráfica) y D (CAD).
+- PAU: 4 ejercicios de 2,5 puntos en 90 minutos.
+  - Ej. 1, geometría: tangencias por eje y centro radical, cónicas, homología y afinidad (opción A o B).
+  - Ej. 2, diédrico (obligatorio).
+  - Ej. 3, isométrica, caballera o cónica (opción A o B).
+  - Ej. 4, normalización (obligatorio).
+  - Corrección: 2 puntos solución y método, 0,25 precisión y 0,25 presentación (esta última solo si la solución está al menos al 70 %).
+- Tetraedro y cubo siempre apoyados en una cara; octaedro con una diagonal perpendicular a un plano de proyección (en axonometría, paralela a OZ). Prismas y pirámides regulares; conos y cilindros de revolución.
+- Isométrica con coeficiente 0,816 (se aceptan 0,82 o 0,8); caballera con 1, 0,5 y 1, y circunferencias solo en planos frontales. Circunferencias isométricas como elipses (mejor por puntos), nunca óvalos.
+- Aristas ocultas en diédrico, vistas y cónica; nunca en secciones.
+- Construcciones auxiliares siempre visibles. Cuatro grosores de línea con significado, de más fino a más grueso: construcción auxiliar, proceso, datos y resultado (tokens `--stroke-aux`, `--stroke-process`, `--stroke-data` y `--stroke-result`).
+- Normas: UNE-EN ISO 5456-2 y 5456-3, UNE-EN ISO 128-2 y 128-3, UNE-EN ISO 129-1.
+- Fuera de la PAU (se pueden enseñar, pero no se exigen en ejercicios tipo PAU): rectas límite en homología, mínima distancia entre rectas que se cruzan, recta o plano definidos por sus ángulos con ambos planos de proyección, esferas y homología de circunferencias.
+- El catálogo de temas está en `src/content/catalog.ts`: cada lección indica su código de tema.
 
 ## Calidad
 

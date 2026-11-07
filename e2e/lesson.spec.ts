@@ -16,7 +16,7 @@ test.describe('lección 1: el punto', () => {
 
   test('la pantalla de inicio lista las lecciones y el modo libre', async ({ page }) => {
     await page.goto('/');
-    await expect(page.getByRole('heading', { level: 1, name: 'Lecciones' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: 'Temario' })).toBeVisible();
     await expect(page.getByRole('link', { name: /El punto en el sistema diédrico/ })).toBeVisible();
     await expect(page.getByRole('link', { name: /Explorar libremente/ })).toBeVisible();
   });
@@ -64,7 +64,7 @@ test.describe('lección 1: el punto', () => {
   test('ejercicio: detecta cota y alejamiento intercambiados y el acierto', async ({ page }) => {
     await openLesson(page);
     for (let i = 0; i < 8; i++) await page.keyboard.press('ArrowRight');
-    await expect(progress(page)).toHaveText('Ejercicio 1 de 3');
+    await expect(progress(page)).toContainText('Ejercicio 1 de 3');
     // Objetivo: x 30, alejamiento 20, cota 35. Primero se intercambian.
     await page.getByRole('slider', { name: 'x', exact: true }).fill('30');
     await page.getByRole('slider', { name: 'Alejamiento (a)' }).fill('35');

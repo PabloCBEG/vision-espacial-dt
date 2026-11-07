@@ -40,6 +40,11 @@ export interface AppState {
   readonly helpLevel: HelpLevel;
   /** Ejercicio en curso: la lámina muestra las proyecciones del punto buscado. */
   readonly exercise: ExerciseTarget | null;
+  /**
+   * Datos de cada motor enchufable ("metodos", "solidos"…), tal como vienen del paso de la
+   * lección o de sus propios controles. Cada motor valida y lee solo los suyos.
+   */
+  readonly engines: Readonly<Record<string, unknown>>;
 }
 
 export type HelpLevel = 'with3d' | 'hint' | 'only2d';
@@ -74,6 +79,7 @@ export const INITIAL_STATE: AppState = {
   highlight: [],
   helpLevel: 'with3d',
   exercise: null,
+  engines: {},
 };
 
 /** Limita el ángulo de abatimiento a [0°, 90°]. */
@@ -126,4 +132,16 @@ export function patchState(store: AppStore, patch: Partial<AppState>): void {
   const state = store.get();
   const changed = (Object.keys(patch) as (keyof AppState)[]).some((k) => patch[k] !== state[k]);
   if (changed) store.set({ ...state, ...patch });
+}
+
+/** Datos de un motor. */
+export function getEngineData(state: AppState, engineId: string): unknown {
+  return state.engines[engineId];
+}
+
+/** Cambia los datos de un motor (sin tocar los de los demás). */
+export function setEngineData(store: AppStore, engineId: string, data: unknown): void {
+  const state = store.get();
+  if (state.engines[engineId] === data) return;
+  store.set({ ...state, engines: { ...state.engines, [engineId]: data } });
 }

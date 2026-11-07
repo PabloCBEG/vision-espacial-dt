@@ -2,7 +2,8 @@
   "id": "el-punto",
   "order": 1,
   "title": "El punto en el sistema diédrico",
-  "course": "DT I",
+  "topic": "I-08",
+  "stage": "DT I",
   "saberBasico": "Sistemas de representación: fundamentos del sistema diédrico. Representación del punto.",
   "level": "Inicial",
   "initialScene": {

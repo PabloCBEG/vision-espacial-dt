@@ -51,7 +51,8 @@ describe('lecciones', () => {
         id: 'mala',
         order: 9,
         title: 'Mala',
-        course: 'DT I',
+        topic: 'I-08',
+        stage: 'DT I',
         saberBasico: 'x',
         level: 'Inicial',
         initialScene: {
@@ -80,7 +81,8 @@ describe('lecciones', () => {
         id: 'mala',
         order: 9,
         title: 'Mala',
-        course: 'DT I',
+        topic: 'I-08',
+        stage: 'DT I',
         saberBasico: 'x',
         level: 'Inicial',
         initialScene: {

@@ -80,6 +80,7 @@ export class Player {
       layersSheet: [],
       highlight: [],
       exercise: null,
+      engines: {},
     });
     this.goTo(0);
   }
@@ -153,6 +154,7 @@ export class Player {
       layersSheet: step.sheet,
       highlight: step.highlight,
       exercise: null,
+      engines: step.engines ?? {},
     });
     this.camera?.setView(step.camera);
     this.animateTo(this.pointsAtStep(index), step.foldAngle);
@@ -168,6 +170,7 @@ export class Player {
       layersSheet: null,
       highlight: [],
       exercise: null,
+      engines: exercise.engines ?? {},
     };
     // Puntos de partida: los de la escena inicial con los cambios del propio ejercicio.
     const points = this.pointsAtStep(-1);

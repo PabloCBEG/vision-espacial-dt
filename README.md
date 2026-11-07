@@ -52,8 +52,10 @@ Cada lección es un fichero de texto en la carpeta
 2. **Cambia la cabecera**:
    - `"id"`: nombre corto, en minúsculas y sin espacios, distinto de los demás
      (`"mi-leccion"`). Es lo que aparece en la dirección de la web.
-   - `"order"`: posición en la pantalla de inicio (`4`).
-   - `"title"`, `"course"` (`"DT I"` o `"DT II"`), `"saberBasico"` y `"level"`
+   - `"order"`: posición dentro de su tema (`4`).
+   - `"topic"`: código del tema en el catálogo ([`src/content/catalog.ts`](src/content/catalog.ts)),
+     por ejemplo `"I-08"`. Si el tema estaba como `'proximamente'`, cámbialo a `'disponible'`.
+   - `"title"`, `"stage"` (`"ESO"`, `"DT I"` o `"DT II"`), `"saberBasico"` y `"level"`
      (`"Inicial"`, `"Intermedio"` o `"Avanzado"`).
 3. **Edita los textos** de cada paso en `"narration"`. Como máximo **dos frases** por paso.
 4. **Ajusta los puntos** si quieres: las coordenadas van como `[x, alejamiento, cota]`, en mm,
@@ -116,7 +118,11 @@ Al final de la lección, en `"exercises"`, hay dos tipos:
   cumple, por ejemplo, `"lineParallelToPH"`, `"lineParallelToLT"`, `"lineCrossesLT"`,
   `"lineProfile"`, `"pointOnPlane"`, `"planeParallelToLT"` o `"planeContainsLT"`.
 
+Cada ejercicio puede llevar `"difficulty"`: `1` (fácil), `2` (media) o `3` (tipo PAU).
 Copia un ejercicio de una lección existente y cambia sus valores.
+
+Los pasos y ejercicios que usan un motor (métodos, sólidos…) llevan sus datos en
+`"engines"`, por ejemplo `"engines": { "metodos": { … } }`.
 
 ---
 

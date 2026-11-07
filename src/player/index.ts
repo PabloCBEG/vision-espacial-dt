@@ -3,3 +3,4 @@ export { bindPlayer, type PlayerElements } from './playerUi.ts';
 export { checkPlacement } from './checkPlacement.ts';
 export { checkCondition } from './checkCondition.ts';
 export { loadResults } from './results.ts';
+export { loadSeenLessons, markLessonSeen, topicProgress, type TopicProgress } from './progress.ts';

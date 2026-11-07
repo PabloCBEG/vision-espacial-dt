@@ -2,7 +2,8 @@
   "id": "el-plano",
   "order": 3,
   "title": "El plano",
-  "course": "DT I",
+  "topic": "I-08",
+  "stage": "DT I",
   "saberBasico": "Sistema diédrico: representación del plano por sus trazas, pertenencia de punto y recta, y posiciones particulares.",
   "level": "Intermedio",
   "initialScene": {

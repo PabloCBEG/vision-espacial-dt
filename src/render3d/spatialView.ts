@@ -31,6 +31,7 @@ import { attachPointDrag } from './pointDrag.ts';
 import { PointModel } from './pointModel.ts';
 import { ProjectionPlanes } from './projectionPlanes.ts';
 import { readSceneColors, type SceneColors } from './sceneColors.ts';
+import type { SceneModule } from './sceneModule.ts';
 
 /** Grosor de las líneas en modo proyector, respecto al normal. */
 const PROJECTOR_LINE_SCALE = 2;
@@ -51,6 +52,10 @@ export class SpatialView {
   private readonly lineModels = new Map<string, LineModel>();
   private readonly planeModels = new Map<string, PlaneModel>();
   private readonly profile = new ProfileModel();
+  private readonly modules: SceneModule[] = [];
+  /** Capas de los módulos ya vistas (las nuevas aparecen sin fundido). */
+  private readonly knownModuleLayers = new WeakSet<FadeLayer>();
+  private readonly store: AppStore;
   private readonly cleanups: (() => void)[] = [];
   private colors: SceneColors;
   private lineScale = 1;
@@ -61,6 +66,7 @@ export class SpatialView {
 
   constructor(container: HTMLElement, store: AppStore) {
     this.container = container;
+    this.store = store;
 
     // Puede lanzar un error si el navegador no tiene WebGL: lo recoge quien crea la vista.
     this.renderer = new WebGLRenderer({ antialias: true, alpha: true });
@@ -120,6 +126,29 @@ export class SpatialView {
     const instant = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.animator.goTo(view, instant);
     this.onViewChange(view);
+    this.requestRender();
+  }
+
+  /** Añade un módulo de un motor. Devuelve la función que lo quita. */
+  use(module: SceneModule): () => void {
+    this.modules.push(module);
+    module.setColors(this.colors);
+    module.setLineScale(this.lineScale);
+    this.scene.add(module.root);
+    this.syncModule(module, this.store.get());
+    this.requestRender();
+    return () => {
+      const index = this.modules.indexOf(module);
+      if (index >= 0) this.modules.splice(index, 1);
+      removeLabels(module.root);
+      module.root.removeFromParent();
+      module.dispose?.();
+      this.requestRender();
+    };
+  }
+
+  /** Pide un fotograma (para los módulos que animan algo por su cuenta). */
+  redraw(): void {
     this.requestRender();
   }
 
@@ -204,13 +233,26 @@ export class SpatialView {
     this.profile.update(this.profileContent(state));
     this.profile.layer.setVisible(isProfileVisible(state, state.layers3d));
 
+    for (const module of this.modules) this.syncModule(module, state);
+
     const scale = state.projector ? PROJECTOR_LINE_SCALE : 1;
     if (scale !== this.lineScale) {
       this.lineScale = scale;
       this.planes.setLineScale(scale);
       this.profile.setLineScale(scale);
       for (const model of this.allModels()) model.setLineScale(scale);
+      for (const module of this.modules) module.setLineScale(scale);
     }
+  }
+
+  private syncModule(module: SceneModule, state: AppState): void {
+    module.sync(state);
+    for (const [tag, layer] of module.layers()) {
+      const isNew = !this.knownModuleLayers.has(layer);
+      this.knownModuleLayers.add(layer);
+      this.syncLayer(layer, tag, state, isNew);
+    }
+    this.applyResolution(module.root);
   }
 
   private profileContent(state: AppState): ProfileContent {
@@ -272,12 +314,17 @@ export class SpatialView {
     let fading = this.planes.stepFades(dt);
     fading = this.profile.layer.step(dt) || fading;
     for (const model of this.allModels()) fading = model.stepFades(dt) || fading;
+    for (const module of this.modules) {
+      for (const [, layer] of module.layers()) fading = layer.step(dt) || fading;
+      fading = (module.step?.(dt) ?? false) || fading;
+    }
     const animating = this.animator.step(now);
     // Durante una transición manda la animación; si no, los controles (con inercia).
     const moving = animating ? false : this.controls.update();
     if (animating) this.controls.update();
     this.planes.updateForCamera(this.camera);
     for (const model of this.pointModels.values()) model.updateForCamera(this.camera);
+    for (const module of this.modules) module.updateForCamera?.(this.camera);
     this.renderer.render(this.scene, this.camera);
     this.labelRenderer.render(this.scene, this.camera);
     if (animating || moving || fading) this.requestRender();
@@ -319,6 +366,7 @@ export class SpatialView {
       this.planes.setColors(this.colors);
       this.profile.setColors(this.colors);
       for (const model of this.allModels()) model.setColors(this.colors);
+      for (const module of this.modules) module.setColors(this.colors);
       this.requestRender();
     };
     apply();

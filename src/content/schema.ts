@@ -1,6 +1,8 @@
 // Formato de las lecciones. Una lección nueva es un fichero JSON en src/content/lessons/
 // que cumple este esquema; no hace falta programar.
 import { z } from 'zod';
+import { ENGINE_DEFINITIONS } from '../engines/definitions.ts';
+import { TOPIC_CODES } from './catalog.ts';
 
 /** Coordenadas de un punto: [x, alejamiento, cota], en mm, entre −60 y 60. */
 const Coords = z.tuple([
@@ -28,18 +30,32 @@ const SceneObjectSchema = z.discriminatedUnion('kind', [
 ]);
 
 /**
- * Capas que se pueden mostrar o destacar:
+ * Capas que se pueden mostrar o destacar. Las del diédrico básico:
  * - 3D: "planos", "cuadrantes", "punto:P", "proyecciones:P", "proyectantes:P", "medidas:P",
  *   "recta:r", "trazas:r", "plano:α", "perfil".
  * - Lámina: "lt", "proyecciones:P", "referencia:P", "medidas:P", "recta:r", "trazas:r",
  *   "plano:α", "perfil".
+ * Cada motor añade las suyas (ver src/engines/definitions.ts).
  */
-const Layer = z
-  .string()
-  .regex(
-    /^(planos|cuadrantes|lt|perfil|(punto|proyecciones|proyectantes|medidas|referencia|recta|trazas|plano):[A-Za-zα-ω0-9]+)$/,
-    'Capa desconocida',
-  );
+const layerNames = ENGINE_DEFINITIONS.flatMap((e) => e.layerNames);
+const layerPrefixes = ENGINE_DEFINITIONS.flatMap((e) => e.layerPrefixes);
+export const LAYER_PATTERN = new RegExp(
+  `^(${layerNames.join('|')}|(${layerPrefixes.join('|')}):[A-Za-zα-ω0-9]+)$`,
+);
+const Layer = z.string().regex(LAYER_PATTERN, 'Capa desconocida');
+
+/**
+ * Datos propios de cada motor en un paso o ejercicio:
+ * "engines": { "metodos": {…}, "solidos": {…} }. Cada motor valida los suyos.
+ */
+const EngineData = z
+  .object(
+    Object.fromEntries(
+      ENGINE_DEFINITIONS.flatMap((e) => (e.stepSchema ? [[e.id, e.stepSchema.optional()]] : [])),
+    ) as Record<string, z.ZodOptional<z.ZodType>>,
+  )
+  .strict()
+  .optional();
 
 const ViewSchema = z.enum(['perspective', 'front', 'top', 'profile']);
 
@@ -55,6 +71,8 @@ export function countSentences(text: string): number {
 }
 
 const StepSchema = z.object({
+  /** Datos de los motores (métodos, sólidos…) en este paso. */
+  engines: EngineData,
   /** Lo que se lee en el paso (máximo 2 frases). */
   narration: Narration,
   /** Capas visibles en el 3D. */
@@ -70,9 +88,14 @@ const StepSchema = z.object({
   points: z.record(PointName, Coords).optional(),
 });
 
+/** Dificultad de un ejercicio, de 1 (fácil) a 3 (tipo PAU). */
+const Difficulty = z.number().int().min(1).max(3).default(1);
+
 /** Ejercicio: la lámina muestra las proyecciones; el alumno coloca el punto en el espacio. */
 const PlacePointExercise = z.object({
   kind: z.literal('placePoint'),
+  difficulty: Difficulty,
+  engines: EngineData,
   prompt: Narration,
   point: PointName,
   target: Coords,
@@ -83,6 +106,8 @@ const PlacePointExercise = z.object({
 /** Ejercicio: mover los puntos de una recta o de un plano hasta cumplir una condición. */
 const ConditionExercise = z.object({
   kind: z.literal('condition'),
+  difficulty: Difficulty,
+  engines: EngineData,
   prompt: Narration,
   condition: z.enum([
     'lineParallelToPH',
@@ -112,7 +137,9 @@ export const LessonSchema = z.object({
   /** Orden en la pantalla de inicio. */
   order: z.number().int().min(1),
   title: z.string().min(1),
-  course: z.enum(['DT I', 'DT II']),
+  /** Código del tema del catálogo (src/content/catalog.ts): "I-08", "II-05"… */
+  topic: z.enum(TOPIC_CODES as [string, ...string[]], 'Código de tema desconocido'),
+  stage: z.enum(['ESO', 'DT I', 'DT II']),
   /** Saber básico del currículo LOMLOE al que corresponde. */
   saberBasico: z.string().min(1),
   level: z.enum(['Inicial', 'Intermedio', 'Avanzado']),
