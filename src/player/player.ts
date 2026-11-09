@@ -1,6 +1,7 @@
 // Reproductor de una lección: pasos con narración y ejercicios al final.
 // Cada cambio se anima (puntos, abatimiento, cámara y fundido de capas): nunca hay saltos.
 import type { Exercise, Lesson, Step, ViewName } from '../content/schema.ts';
+import { generateVariant } from '../content/variants.ts';
 import { createPoint, type Point } from '../geometry/index.ts';
 import type { AppState, AppStore, SceneObject } from '../state/index.ts';
 
@@ -46,6 +47,9 @@ export class Player {
   private animation: number | null = null;
   private autoplay: number | null = null;
   private playing = false;
+  /** Variantes generadas (semilla) que sustituyen al ejercicio escrito, por índice. */
+  private readonly variants = new Map<number, Exercise>();
+  private solutionIndex: number | null = null;
 
   constructor(lesson: Lesson, store: AppStore, camera: PlayerCamera | null) {
     this.lesson = lesson;
@@ -72,7 +76,8 @@ export class Player {
       if (!step) throw new Error(`No existe el paso ${index}`);
       return { kind: 'step', index, step };
     }
-    const exercise = this.lesson.exercises[index - steps.length];
+    const exercise =
+      this.variants.get(index - steps.length) ?? this.lesson.exercises[index - steps.length];
     if (!exercise) throw new Error(`No existe el ejercicio ${index - steps.length}`);
     return { kind: 'exercise', index: index - steps.length, exercise };
   }
@@ -131,6 +136,7 @@ export class Player {
   }
 
   goTo(index: number): void {
+    this.solutionIndex = null;
     this.position = Math.max(0, Math.min(this.pageCount - 1, index));
     const page = this.page();
     if (page.kind === 'step') this.applyStep(page.index);
@@ -140,6 +146,62 @@ export class Player {
       else this.pause();
     }
     this.onChange(page);
+  }
+
+  // ---------- Variantes y solución desarrollada ----------
+
+  /** Cambia el ejercicio actual por una variante con la semilla dada. */
+  setVariant(seed: number): boolean {
+    const page = this.page();
+    if (page.kind !== 'exercise') return false;
+    const original = this.lesson.exercises[page.index];
+    const variant = original ? generateVariant(this.lesson, original, seed) : null;
+    if (!variant) return false;
+    this.variants.set(page.index, variant);
+    this.goTo(this.position);
+    return true;
+  }
+
+  /** Paso de la solución que se está viendo (null: se ve el ejercicio). */
+  get solutionStepIndex(): number | null {
+    return this.solutionIndex;
+  }
+
+  /** Número de pasos de la solución del ejercicio actual (0 si no tiene). */
+  get solutionLength(): number {
+    const page = this.page();
+    return page.kind === 'exercise' ? (page.exercise.solution?.length ?? 0) : 0;
+  }
+
+  /** Muestra el paso `index` de la solución del ejercicio actual. */
+  showSolutionStep(index: number): void {
+    const page = this.page();
+    if (page.kind !== 'exercise') return;
+    const steps = page.exercise.solution;
+    if (!steps?.length) return;
+    this.solutionIndex = Math.max(0, Math.min(steps.length - 1, index));
+    const step = steps[this.solutionIndex];
+    if (!step) return;
+    const exercise = page.exercise;
+    // Puntos: los del ejercicio y los cambios de los pasos de la solución hasta este.
+    const points = this.pointsAtStep(-1);
+    for (const [id, c] of Object.entries(exercise.points ?? {})) points[id] = toPoint(c);
+    for (const s of steps.slice(0, this.solutionIndex + 1)) {
+      for (const [id, c] of Object.entries(s.points ?? {})) points[id] = toPoint(c);
+    }
+    this.applyStepData(
+      step,
+      points,
+      mergeEngines(mergeEngines(this.lesson.initialScene.engines, exercise.engines), step.engines),
+    );
+    this.onChange(page);
+  }
+
+  /** Vuelve del paso de la solución al ejercicio. */
+  hideSolution(): void {
+    if (this.solutionIndex === null) return;
+    this.solutionIndex = null;
+    this.goTo(this.position);
   }
 
   // ---------- Aplicar páginas ----------
@@ -159,6 +221,19 @@ export class Player {
   private applyStep(index: number): void {
     const step = this.lesson.steps[index];
     if (!step) return;
+    this.applyStepData(
+      step,
+      this.pointsAtStep(index),
+      mergeEngines(this.lesson.initialScene.engines, step.engines),
+    );
+  }
+
+  /** Muestra un paso (de la teoría o de una solución) con sus puntos y datos de motores. */
+  private applyStepData(
+    step: Step,
+    points: Record<string, Point>,
+    engines: Record<string, unknown>,
+  ): void {
     const state = this.store.get();
     this.store.set({
       ...state,
@@ -168,11 +243,11 @@ export class Player {
       layersSheet: step.sheet,
       highlight: step.highlight,
       exercise: null,
-      engines: mergeEngines(this.lesson.initialScene.engines, step.engines),
+      engines,
       locked: false,
     });
     this.camera?.setView(step.camera);
-    this.animateTo(this.pointsAtStep(index), step.foldAngle);
+    this.animateTo(points, step.foldAngle);
   }
 
   private applyExercise(exercise: Exercise): void {

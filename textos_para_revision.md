@@ -105,6 +105,14 @@ Fichero: `src/content/lessons/04-tres-metodos.json` · DT II · nivel Intermedio
 **Ejercicios**
 
 1. [ ] *escribir una medida, dificultad 1* (respuesta: 61.8 mm): Con el giro ya hecho, mide en la lámina la verdadera magnitud de AB. Ayúdate de la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* Un segmento se ve en verdadera magnitud cuando es paralelo a un plano de proyección.
+   - [ ] *Pista 2:* Gira AB alrededor de un eje vertical que pasa por A hasta que sea paralelo al PV.
+   - [ ] *Pista 3:* En la planta, gira B′ con centro en A′ hasta que A′B₁′ quede paralela a la LT.
+   - [ ] *Solución, paso 1:* A y B están a distinta cota y distinto alejamiento: AB no es paralelo a ningún plano de proyección. Por eso ninguna proyección mide lo que mide AB.
+   - [ ] *Solución, paso 2:* Giramos AB alrededor de un eje vertical que pasa por A. B describe una circunferencia horizontal y su cota no cambia.
+   - [ ] *Solución, paso 3:* En la planta, B′ gira con centro en A′ hasta que A′B₁′ es paralela a la LT.
+   - [ ] *Solución, paso 4:* B₁″ sube por su línea de referencia hasta la cota de B″. A″B₁″ es la verdadera magnitud.
+   - [ ] *Solución, paso 5:* Comprobación: B₁″ está a la misma altura que B″, porque el giro alrededor de un eje vertical no cambia las cotas.
 2. [ ] *escribir una medida, dificultad 2* (respuesta: 55.2 mm): Elige el método que prefieras y mide la verdadera magnitud de AB en milímetros.
 3. [ ] *escribir una medida, dificultad 3* (respuesta: 33 °): Como en la PAU: halla el ángulo que forma la recta AB con el PH. Usa el cambio de plano y escribe el ángulo en grados.
 
@@ -130,6 +138,9 @@ Fichero: `src/content/lessons/05-seccion-piramide.json` · DT II · nivel Interm
 
 1. [ ] *escribir una medida, dificultad 1* (respuesta: 15.8 mm): Mide en la lámina la verdadera magnitud del lado (1)(2) de la sección. Usa la cuadrícula de 10 mm.
 2. [ ] *escribir una medida, dificultad 2* (respuesta: 18.2 mm): Otra pirámide, otro corte. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?
+   - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
+   - [ ] *Pista 2:* El plano de corte es proyectante: su traza α₂ pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide el lado más largo.
 3. [ ] *escribir una medida, dificultad 3* (respuesta: 15.7 mm): Como en la PAU: pirámide hexagonal regular cortada por un plano proyectante vertical. Halla la verdadera magnitud de la sección y mide su lado más largo.
 
 ### I-01 · Mediatriz, bisectriz y arco capaz

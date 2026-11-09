@@ -300,8 +300,10 @@ Cópialos de uno en uno; cada uno es una tanda de trabajo con su criterio de ter
 
 ## 7. Decisiones que necesitan al profesor
 
-1. **Volumen**: ¿9 ejercicios por lección es razonable, o mejor menos y más variantes generadas?
-2. **Solución**: ¿se muestra tras 2 fallos, o solo si el alumno se rinde?
-3. **Errores típicos**: lista de los 3 o 4 que más ves por tema; son la parte 6 de cada desarrollo.
-4. **PAU 2025 y 2026**: descargar a mano los PDF de `examenes/LEEME.md`; son los del formato actual.
-5. **Prioridad entre B2 y B3**: ¿qué tipo nuevo aporta más a tu grupo, la tercera vista o las aristas ocultas?
+Respuestas del profesor (9 de noviembre de 2026):
+
+1. **Volumen**: 9 ejercicios por lección, de acuerdo.
+2. **Solución**: se ofrece tras 2 fallos (y también al rendirse con «Me rindo»).
+3. **Errores típicos**: el profesor no tiene la lista. La parte 6 de cada desarrollo se redacta con criterio propio y se marca para su revisión en `textos_para_revision.md`.
+4. **PAU 2025 y 2026**: para más adelante (descarga a mano de `examenes/LEEME.md`).
+5. **Prioridad entre B2 y B3**: ambos; se empieza por B2 (tercera vista).

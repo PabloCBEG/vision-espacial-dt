@@ -7,7 +7,9 @@
   "saberBasico": "Sistema diédrico: pirámides. Sección por un plano proyectante, verdadera magnitud y desarrollo del tronco.",
   "level": "Intermedio",
   "initialScene": {
-    "points": { "P": [0, 0, 0] },
+    "points": {
+      "P": [0, 0, 0]
+    },
     "objects": [],
     "activePoint": "P"
   },
@@ -20,7 +22,13 @@
       "foldAngle": 0,
       "engines": {
         "solidos": {
-          "solido": { "tipo": "piramide", "lados": 5, "radio": 22, "altura": 50, "centro": [0, 32] }
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          }
         }
       }
     },
@@ -33,7 +41,13 @@
       "foldAngle": 90,
       "engines": {
         "solidos": {
-          "solido": { "tipo": "piramide", "lados": 5, "radio": 22, "altura": 50, "centro": [0, 32] }
+          "solido": {
+            "tipo": "piramide",
+            "lados": 5,
+            "radio": 22,
+            "altura": 50,
+            "centro": [0, 32]
+          }
         }
       }
     },
@@ -286,6 +300,29 @@
             "quitar": 1,
             "abatir": 1
           }
+        }
+      },
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es proyectante: su traza α₂ pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide el lado más largo."
+      ],
+      "variant": {
+        "step": 2,
+        "prompt": "Otra pirámide, otro corte. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?",
+        "solid": {
+          "radio": [20, 26],
+          "altura": [44, 52],
+          "corte": [
+            [
+              [-36, -30],
+              [36, 44]
+            ],
+            [
+              [30, 38],
+              [8, 46]
+            ]
+          ]
         }
       }
     },

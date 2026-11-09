@@ -142,6 +142,14 @@ function playerElements(): PlayerElements {
     answerWrapper: required('#exercise-answer-wrapper'),
     answer: required('#exercise-answer'),
     unit: required('#exercise-unit'),
+    hint: required('#exercise-hint'),
+    hints: required('#exercise-hints'),
+    solutionButton: required('#exercise-solution'),
+    solutionControls: required('#solution-controls'),
+    solutionPrev: required('#solution-prev'),
+    solutionNext: required('#solution-next'),
+    solutionClose: required('#solution-close'),
+    variantButton: required('#exercise-variant'),
   };
 }
 

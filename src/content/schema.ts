@@ -91,10 +91,22 @@ export const StepSchema = z.object({
 /** Dificultad de un ejercicio, de 1 (fácil) a 3 (tipo PAU). */
 const Difficulty = z.number().int().min(1).max(3).default(1);
 
+/**
+ * Ayuda común a todos los ejercicios.
+ * - hints: hasta tres pistas escalonadas. 1: la idea clave; 2: el método; 3: el primer trazado.
+ * - solution: pasos de la solución desarrollada (mismo formato que los de la teoría). Se ofrece
+ *   tras dos fallos o al rendirse. Puntos y motores se parten de los del propio ejercicio.
+ */
+const ExerciseHelp = {
+  hints: z.array(Narration).max(3).optional(),
+  solution: z.array(StepSchema).min(1).max(8).optional(),
+};
+
 /** Ejercicio: la lámina muestra las proyecciones; el alumno coloca el punto en el espacio. */
 const PlacePointExercise = z.object({
   kind: z.literal('placePoint'),
   difficulty: Difficulty,
+  ...ExerciseHelp,
   engines: EngineData,
   prompt: Narration,
   point: PointName,
@@ -107,6 +119,7 @@ const PlacePointExercise = z.object({
 const ConditionExercise = z.object({
   kind: z.literal('condition'),
   difficulty: Difficulty,
+  ...ExerciseHelp,
   engines: EngineData,
   prompt: Narration,
   condition: z.enum([
@@ -134,15 +147,42 @@ const ConditionExercise = z.object({
  * Ejercicio: escribir una medida (verdadera magnitud, distancia o ángulo) leída en la lámina.
  * La cuadrícula de la lámina ayuda a medir.
  */
+/** Intervalo [mínimo, máximo] en mm. */
+const Range = z.tuple([z.number(), z.number()]).refine(([a, b]) => a <= b, 'mínimo ≤ máximo');
+
+/**
+ * Cómo se generan variantes de un ejercicio de medida (ver src/content/variants.ts).
+ * - points (motor de métodos): intervalo de [x, a, c] de cada punto que cambia.
+ * - solid (motor de sólidos): intervalos del radio y la altura, y de los dos puntos
+ *   (x, a) de la traza del plano de corte. La respuesta es el lado más largo de la
+ *   sección (o su eje mayor, si es curva).
+ * - step: los valores se redondean a múltiplos de este paso (mm).
+ */
+const VariantSchema = z.object({
+  step: z.number().positive().default(5),
+  points: z.record(PointName, z.tuple([Range, Range, Range])).optional(),
+  solid: z
+    .object({
+      radio: Range.optional(),
+      altura: Range.optional(),
+      corte: z.tuple([z.tuple([Range, Range]), z.tuple([Range, Range])]).optional(),
+    })
+    .optional(),
+  /** Enunciado de la variante, si el del ejercicio no sirve con otros datos. */
+  prompt: Narration.optional(),
+});
+
 const ValueExercise = z.object({
   kind: z.literal('value'),
   difficulty: Difficulty,
+  ...ExerciseHelp,
   engines: EngineData,
   prompt: Narration,
   /** Respuesta correcta y su unidad; se acepta con la tolerancia indicada. */
   answer: z.number(),
   unit: z.enum(['mm', '°']),
   tolerance: z.number().positive().default(2),
+  variant: VariantSchema.optional(),
   points: z.record(PointName, Coords).optional(),
   activePoint: PointName.optional(),
   show3d: z.array(Layer).optional(),
@@ -153,6 +193,7 @@ const ValueExercise = z.object({
 const EngineExercise = z.object({
   kind: z.literal('engine'),
   difficulty: Difficulty,
+  ...ExerciseHelp,
   engines: EngineData,
   prompt: Narration,
   points: z.record(PointName, Coords).optional(),
@@ -196,4 +237,5 @@ export const LessonSchema = z.object({
 export type Lesson = z.infer<typeof LessonSchema>;
 export type Step = Lesson['steps'][number];
 export type Exercise = Lesson['exercises'][number];
+export type Variant = z.infer<typeof VariantSchema>;
 export type ViewName = z.infer<typeof ViewSchema>;

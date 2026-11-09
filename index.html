@@ -126,6 +126,30 @@
                   Comprobar
                 </button>
                 <p id="exercise-feedback" class="exercise-feedback" aria-live="polite"></p>
+                <div class="exercise-helpers">
+                  <button id="exercise-hint" type="button" class="action-button" hidden></button>
+                  <button
+                    id="exercise-solution"
+                    type="button"
+                    class="action-button"
+                    hidden
+                  ></button>
+                  <button id="exercise-variant" type="button" class="action-button" hidden>
+                    Prueba con otros datos
+                  </button>
+                </div>
+                <ol id="exercise-hints" class="exercise-hints" aria-label="Pistas" hidden></ol>
+                <div id="solution-controls" class="solution-controls" hidden>
+                  <button id="solution-prev" type="button" class="action-button">
+                    ← Paso anterior
+                  </button>
+                  <button id="solution-next" type="button" class="action-button is-primary">
+                    Paso siguiente →
+                  </button>
+                  <button id="solution-close" type="button" class="action-button">
+                    Volver al ejercicio
+                  </button>
+                </div>
               </div>
               <details id="rubric-panel" class="rubric-panel" hidden>
                 <summary id="rubric-title" class="rubric-title">Autoevaluación</summary>

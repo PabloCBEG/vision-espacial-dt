@@ -34,7 +34,19 @@ export interface PlayerElements {
   answerWrapper: HTMLElement;
   answer: HTMLInputElement;
   unit: HTMLElement;
+  /** Pistas escalonadas, solución paso a paso y variantes. */
+  hint: HTMLButtonElement;
+  hints: HTMLElement;
+  solutionButton: HTMLButtonElement;
+  solutionControls: HTMLElement;
+  solutionPrev: HTMLButtonElement;
+  solutionNext: HTMLButtonElement;
+  solutionClose: HTMLButtonElement;
+  variantButton: HTMLButtonElement;
 }
+
+/** Fallos que se aceptan antes de ofrecer la solución desarrollada. */
+export const FAILS_BEFORE_SOLUTION = 2;
 
 /** Segundos que se ve el 3D al pulsar el botón de pista. */
 const HINT_SECONDS = 5;
@@ -51,6 +63,9 @@ export function bindPlayer(
 ): () => void {
   const lessonId = player.lesson.id;
   let hintTimer: number | null = null;
+  // Pistas vistas y fallos, por ejercicio y solo en esta visita (no se guardan).
+  const hintsShown = new Map<number, number>();
+  const fails = new Map<number, number>();
 
   el.title.textContent = player.lesson.title;
 
@@ -61,7 +76,9 @@ export function bindPlayer(
     el.progress.setAttribute('aria-valuenow', String(current));
     el.progressFill.style.width = `${(current / total) * 100}%`;
 
-    if (page.kind === 'step') {
+    if (page.kind === 'exercise' && player.solutionStepIndex !== null) {
+      renderSolution(page);
+    } else if (page.kind === 'step') {
       const steps = player.lesson.steps.length;
       const text = `Paso ${page.index + 1} de ${steps}`;
       el.progressText.textContent = text;
@@ -84,11 +101,68 @@ export function bindPlayer(
       el.answerWrapper.hidden = !isValue;
       el.answer.value = '';
       el.unit.textContent = page.exercise.kind === 'value' ? page.exercise.unit : '';
+      renderHelpers(page);
     }
     el.previous.disabled = player.index === 0;
     el.next.disabled = player.index === total - 1;
     el.play.textContent = player.isPlaying ? 'Pausa' : 'Reproducir';
     el.play.setAttribute('aria-pressed', String(player.isPlaying));
+  };
+
+  type ExercisePage = Extract<PlayerPage, { kind: 'exercise' }>;
+
+  /** Botones y lista de ayudas del ejercicio actual. */
+  const renderHelpers = (page: ExercisePage): void => {
+    const { exercise, index } = page;
+    el.solutionControls.hidden = true;
+    el.answerWrapper.hidden = exercise.kind !== 'value';
+    el.check.hidden = false;
+    el.feedback.hidden = false;
+
+    const hints = exercise.hints ?? [];
+    const shown = hintsShown.get(index) ?? 0;
+    el.hint.hidden = hints.length === 0;
+    el.hint.disabled = shown >= hints.length;
+    el.hint.textContent =
+      shown >= hints.length
+        ? `Pistas vistas (${shown} de ${hints.length})`
+        : `Pista ${shown + 1} de ${hints.length}`;
+    el.hints.hidden = shown === 0;
+    el.hints.replaceChildren(
+      ...hints.slice(0, shown).map((text) => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        return li;
+      }),
+    );
+
+    const failed = (fails.get(index) ?? 0) >= FAILS_BEFORE_SOLUTION;
+    el.solutionButton.hidden = player.solutionLength === 0;
+    el.solutionButton.textContent = failed
+      ? 'Ver la solución paso a paso'
+      : 'Me rindo: ver la solución';
+    el.variantButton.hidden = !(exercise.kind === 'value' && exercise.variant);
+  };
+
+  /** Pantalla de la solución desarrollada: narración del paso y sus botones. */
+  const renderSolution = (page: ExercisePage): void => {
+    const i = player.solutionStepIndex ?? 0;
+    const n = player.solutionLength;
+    const text = `Solución del ejercicio ${page.index + 1} · paso ${i + 1} de ${n}`;
+    el.progressText.textContent = text;
+    el.progress.setAttribute('aria-valuetext', text);
+    el.narration.textContent = page.exercise.solution?.[i]?.narration ?? '';
+    el.exercisePanel.hidden = false;
+    el.answerWrapper.hidden = true;
+    el.check.hidden = true;
+    el.feedback.hidden = true;
+    el.hint.hidden = true;
+    el.hints.hidden = true;
+    el.solutionButton.hidden = true;
+    el.variantButton.hidden = true;
+    el.solutionControls.hidden = false;
+    el.solutionPrev.disabled = i === 0;
+    el.solutionNext.disabled = i === n - 1;
   };
 
   player.onChange = render;
@@ -133,10 +207,37 @@ export function bindPlayer(
               })
             : checkCondition(exercise.condition, exercise.objects, state);
     saveAttempt(lessonId, page.index, result.correct);
+    if (!result.correct) fails.set(page.index, (fails.get(page.index) ?? 0) + 1);
     if (result.correct) render(player.page()); // marca el ejercicio como resuelto
     el.feedback.textContent = result.message;
     el.feedback.className = `exercise-feedback ${result.correct ? 'is-correct' : 'is-wrong'}`;
+    // Tras dos fallos, «Me rindo» pasa a ser «Ver la solución paso a paso».
+    if (!result.correct) renderHelpers(page);
   };
+
+  const onHintStep = (): void => {
+    const page = player.page();
+    if (page.kind !== 'exercise') return;
+    hintsShown.set(page.index, (hintsShown.get(page.index) ?? 0) + 1);
+    renderHelpers(page);
+  };
+  const onSolution = (): void => player.showSolutionStep(0);
+  const onSolutionPrev = (): void => player.showSolutionStep((player.solutionStepIndex ?? 0) - 1);
+  const onSolutionNext = (): void => player.showSolutionStep((player.solutionStepIndex ?? 0) + 1);
+  const onSolutionClose = (): void => player.hideSolution();
+  const onVariant = (): void => {
+    const page = player.page();
+    if (page.kind !== 'exercise') return;
+    fails.delete(page.index);
+    hintsShown.delete(page.index);
+    player.setVariant(Math.floor(Math.random() * 2 ** 31));
+  };
+  el.hint.addEventListener('click', onHintStep);
+  el.solutionButton.addEventListener('click', onSolution);
+  el.solutionPrev.addEventListener('click', onSolutionPrev);
+  el.solutionNext.addEventListener('click', onSolutionNext);
+  el.solutionClose.addEventListener('click', onSolutionClose);
+  el.variantButton.addEventListener('click', onVariant);
   el.check.addEventListener('click', onCheck);
   const onAnswerKey = (event: KeyboardEvent): void => {
     if (event.key === 'Enter') onCheck();
@@ -192,6 +293,12 @@ export function bindPlayer(
     el.check.removeEventListener('click', onCheck);
     el.answer.removeEventListener('keydown', onAnswerKey);
     el.hintButton.removeEventListener('click', onHint);
+    el.hint.removeEventListener('click', onHintStep);
+    el.solutionButton.removeEventListener('click', onSolution);
+    el.solutionPrev.removeEventListener('click', onSolutionPrev);
+    el.solutionNext.removeEventListener('click', onSolutionNext);
+    el.solutionClose.removeEventListener('click', onSolutionClose);
+    el.variantButton.removeEventListener('click', onVariant);
     for (const radio of radios) radio.removeEventListener('change', onHelp);
     document.removeEventListener('keydown', onKey);
     if (hintTimer !== null) window.clearTimeout(hintTimer);

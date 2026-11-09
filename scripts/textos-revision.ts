@@ -15,6 +15,8 @@ interface Exercise {
   difficulty?: number;
   answer?: number;
   unit?: string;
+  hints?: string[];
+  solution?: Step[];
 }
 interface Lesson {
   id: string;
@@ -144,6 +146,10 @@ for (const path of files('src/content/lessons')) {
       const answer = e.answer !== undefined ? ` (respuesta: ${e.answer} ${e.unit ?? ''})` : '';
       push(
         `${i + 1}. [ ] *${KIND[e.kind] ?? e.kind}, dificultad ${e.difficulty ?? 1}*${answer}: ${e.prompt}`,
+      );
+      (e.hints ?? []).forEach((h, j) => push(`   - [ ] *Pista ${j + 1}:* ${h}`));
+      (e.solution ?? []).forEach((s, j) =>
+        push(`   - [ ] *Solución, paso ${j + 1}:* ${s.narration}`),
       );
     });
   }

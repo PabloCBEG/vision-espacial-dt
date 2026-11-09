@@ -486,6 +486,26 @@ body {
   content: '✗ ';
 }
 
+.exercise-helpers,
+.solution-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  flex-basis: 100%;
+}
+
+.exercise-helpers[hidden],
+.solution-controls[hidden],
+.exercise-hints[hidden] {
+  display: none;
+}
+
+.exercise-hints {
+  flex-basis: 100%;
+  margin: 0;
+  padding-left: 1.4em;
+}
+
 .help-level {
   display: flex;
   flex-wrap: wrap;

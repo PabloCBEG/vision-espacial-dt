@@ -12,8 +12,14 @@
       "B": [20, 35, 40]
     },
     "objects": [
-      { "kind": "point", "id": "A" },
-      { "kind": "point", "id": "B" }
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      }
     ],
     "activePoint": "A"
   },
@@ -34,7 +40,13 @@
       "highlight": ["figura"],
       "camera": "perspective",
       "foldAngle": 0,
-      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"], "progreso": 0 } }
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"],
+          "progreso": 0
+        }
+      }
     },
     {
       "narration": "En la lámina, A′B′ y A″B″ son más cortas que AB. Ninguna proyección sirve para medirlo.",
@@ -43,7 +55,13 @@
       "highlight": ["figura"],
       "camera": "front",
       "foldAngle": 90,
-      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"], "progreso": 0 } }
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"],
+          "progreso": 0
+        }
+      }
     },
     {
       "narration": "Primer método, el giro: AB gira alrededor de un eje vertical que pasa por A. B describe un arco horizontal y su cota no cambia.",
@@ -62,7 +80,12 @@
       "highlight": ["movimiento"],
       "camera": "perspective",
       "foldAngle": 0,
-      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"] } }
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"]
+        }
+      }
     },
     {
       "narration": "En la lámina, B′ recorre un arco con centro en e′ hasta que el segmento queda paralelo a la LT. Entonces A″B″₁ es la verdadera magnitud.",
@@ -82,7 +105,12 @@
       "highlight": ["resultado", "medida"],
       "camera": "front",
       "foldAngle": 90,
-      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"] } }
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"]
+        }
+      }
     },
     {
       "narration": "Segundo método, el cambio de plano: AB no se mueve y ponemos un plano vertical nuevo paralelo a él. Las proyectantes llegan al plano nuevo y cada punto conserva su cota.",
@@ -92,7 +120,11 @@
       "camera": "perspective",
       "foldAngle": 0,
       "engines": {
-        "metodos": { "metodo": "cambio", "figura": ["A", "B"], "mirarPlanoNuevo": true }
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"],
+          "mirarPlanoNuevo": true
+        }
       }
     },
     {
@@ -113,7 +145,12 @@
       "highlight": ["resultado", "medida"],
       "camera": "front",
       "foldAngle": 90,
-      "engines": { "metodos": { "metodo": "cambio", "figura": ["A", "B"] } }
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"]
+        }
+      }
     },
     {
       "narration": "Tercer método, el abatimiento: el plano vertical que contiene AB gira como una bisagra alrededor de A′B′. Cae sobre el PH llevándose el segmento.",
@@ -122,7 +159,12 @@
       "highlight": ["charnela"],
       "camera": "perspective",
       "foldAngle": 0,
-      "engines": { "metodos": { "metodo": "abatimiento", "figura": ["A", "B"] } }
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      }
     },
     {
       "narration": "En la lámina, cada punto abatido está en la perpendicular a la charnela por su proyección, a la distancia que da un triángulo con su cota. (A)(B) es la verdadera magnitud.",
@@ -142,7 +184,12 @@
       "highlight": ["movimiento"],
       "camera": "front",
       "foldAngle": 90,
-      "engines": { "metodos": { "metodo": "abatimiento", "figura": ["A", "B"] } }
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      }
     },
     {
       "narration": "Los tres métodos dan la misma medida. Elige un método con los botones y compara su movimiento con su trazado.",
@@ -175,7 +222,13 @@
       "highlight": [],
       "camera": "perspective",
       "foldAngle": 0,
-      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"], "selector": true } }
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"],
+          "selector": true
+        }
+      }
     }
   ],
   "exercises": [
@@ -186,7 +239,10 @@
       "answer": 61.8,
       "unit": "mm",
       "tolerance": 2,
-      "points": { "A": [-30, 10, 15], "B": [25, 30, 35] },
+      "points": {
+        "A": [-30, 10, 15],
+        "B": [25, 30, 35]
+      },
       "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
       "sheet": [
         "lt",
@@ -200,7 +256,164 @@
         "movimiento",
         "resultado"
       ],
-      "engines": { "metodos": { "metodo": "giro", "figura": ["A", "B"] } }
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Un segmento se ve en verdadera magnitud cuando es paralelo a un plano de proyección.",
+        "Gira AB alrededor de un eje vertical que pasa por A hasta que sea paralelo al PV.",
+        "En la planta, gira B′ con centro en A′ hasta que A′B₁′ quede paralela a la LT."
+      ],
+      "solution": [
+        {
+          "narration": "A y B están a distinta cota y distinto alejamiento: AB no es paralelo a ningún plano de proyección. Por eso ninguna proyección mide lo que mide AB.",
+          "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "narration": "Giramos AB alrededor de un eje vertical que pasa por A. B describe una circunferencia horizontal y su cota no cambia.",
+          "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "narration": "En la planta, B′ gira con centro en A′ hasta que A′B₁′ es paralela a la LT.",
+          "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "narration": "B₁″ sube por su línea de referencia hasta la cota de B″. A″B₁″ es la verdadera magnitud.",
+          "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "narration": "Comprobación: B₁″ está a la misma altura que B″, porque el giro alrededor de un eje vertical no cambia las cotas.",
+          "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "progreso": 1
+            }
+          }
+        }
+      ],
+      "variant": {
+        "step": 5,
+        "points": {
+          "A": [
+            [-35, -20],
+            [10, 25],
+            [5, 25]
+          ],
+          "B": [
+            [15, 35],
+            [30, 45],
+            [30, 50]
+          ]
+        }
+      }
     },
     {
       "kind": "value",
@@ -209,7 +422,10 @@
       "answer": 55.2,
       "unit": "mm",
       "tolerance": 2,
-      "points": { "A": [-20, 30, 5], "B": [25, 10, 30] },
+      "points": {
+        "A": [-20, 30, 5],
+        "B": [25, 10, 30]
+      },
       "show3d": ["planos", "figura", "charnela", "eje", "nueva-lt", "movimiento", "resultado"],
       "sheet": [
         "lt",
@@ -225,7 +441,13 @@
         "movimiento",
         "resultado"
       ],
-      "engines": { "metodos": { "metodo": "abatimiento", "figura": ["A", "B"], "selector": true } }
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"],
+          "selector": true
+        }
+      }
     },
     {
       "kind": "value",
@@ -234,7 +456,10 @@
       "answer": 33,
       "unit": "°",
       "tolerance": 2,
-      "points": { "A": [-30, 20, 5], "B": [20, 40, 40] },
+      "points": {
+        "A": [-30, 20, 5],
+        "B": [20, 40, 40]
+      },
       "show3d": ["planos", "figura", "nueva-lt", "movimiento", "resultado"],
       "sheet": [
         "lt",
@@ -249,7 +474,11 @@
         "resultado"
       ],
       "engines": {
-        "metodos": { "metodo": "cambio", "figura": ["A", "B"], "objetivo": "angulo-PH" }
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PH"
+        }
       }
     }
   ]
