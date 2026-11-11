@@ -24,6 +24,7 @@
   --scene-process: #1b6e3c;
   --scene-data: #1b1f24;
   --scene-result: #c2185b;
+  --scene-error: #c2410c;
   --scene-new-plane: #0f8a8a;
   --scene-solid: #8fb3d9;
   --label-bg: rgb(255 255 255 / 0.85);
@@ -73,6 +74,7 @@
     --scene-process: #6fd39a;
     --scene-data: #e8eaed;
     --scene-result: #ff5c9a;
+    --scene-error: #ff9f43;
     --scene-new-plane: #4fd1d1;
     --scene-solid: #5f86b0;
     --scene-solid: #5f86b0;
@@ -104,6 +106,7 @@
   --scene-process: #6fd39a;
   --scene-data: #e8eaed;
   --scene-result: #ff5c9a;
+  --scene-error: #ff9f43;
   --scene-new-plane: #4fd1d1;
   --scene-solid: #5f86b0;
   --label-bg: rgb(28 32 39 / 0.85);
@@ -1391,6 +1394,20 @@ body:not([data-screen='free']) .free-scenes {
   stroke-linecap: round;
 }
 
+/* Trazado erróneo de la solución: punteado (no es una línea ISO), con su rótulo «✗ Error». */
+.stroke-error {
+  stroke: var(--scene-error);
+  stroke-width: var(--stroke-error);
+  stroke-dasharray: 0.1 7;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.label-error {
+  fill: var(--scene-error);
+  font-weight: 700;
+}
+
 /* Partes ocultas: discontinua fina (ISO 128-2), sea cual sea el papel de la línea. */
 .is-hidden-edge {
   stroke-width: var(--stroke-aux);
@@ -1611,6 +1628,8 @@ body:not([data-screen='free']) .free-scenes {
   --stroke-process: 1.75px;
   --stroke-data: 2.5px;
   --stroke-result: 3.5px;
+  /* Error dibujado: grosor del resultado (se ve sobre lo que tapa), punteado y rotulado «✗ Error». */
+  --stroke-error: var(--stroke-result);
 }
 
 :root[data-projector='on'] {
