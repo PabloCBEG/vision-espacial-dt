@@ -309,7 +309,6 @@
       ],
       "variant": {
         "step": 2,
-        "prompt": "Otra pirámide, otro corte. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?",
         "solid": {
           "radio": [20, 26],
           "altura": [44, 52],
@@ -323,8 +322,222 @@
               [8, 46]
             ]
           ]
+        },
+        "ask": ["ladoMayor", "ladoMenor", "perimetro"]
+      },
+      "magnitud": "ladoMayor",
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una pirámide apoyada en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "piramide",
+                "lados": 4,
+                "radio": 24,
+                "altura": 48,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 40],
+                  [35, 12]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección es el polígono donde α corta a las caras de la pirámide. Para verla sin deformar hay que ponerla paralela a un plano de proyección.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "piramide",
+                "lados": 4,
+                "radio": 24,
+                "altura": 48,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 40],
+                  [35, 12]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "piramide",
+                "lados": 4,
+                "radio": 24,
+                "altura": 48,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 40],
+                  [35, 12]
+                ],
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "piramide",
+                "lados": 4,
+                "radio": 24,
+                "altura": 48,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 40],
+                  [35, 12]
+                ],
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "piramide",
+                "lados": 4,
+                "radio": 24,
+                "altura": 48,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 40],
+                  [35, 12]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "piramide",
+                "lados": 4,
+                "radio": 24,
+                "altura": 48,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 40],
+                  [35, 12]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "piramide",
+                "lados": 4,
+                "radio": 24,
+                "altura": 48,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 40],
+                  [35, 12]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
         }
-      }
+      ]
     },
     {
       "kind": "value",

@@ -3,6 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 import { generateVariant } from '../src/content/variants.ts';
+import { resolveExercise } from '../src/content/markers.ts';
 import { LessonSchema } from '../src/content/schema.ts';
 
 /** Dato que debe existir: si falta, el test falla con un mensaje claro. */
@@ -15,6 +16,8 @@ const lesson = LessonSchema.parse(
   JSON.parse(readFileSync('src/content/lessons/04-tres-metodos.json', 'utf-8')),
 );
 const exercise = must(lesson.exercises[0]);
+/** Con los marcadores resueltos, como los ve el alumno. */
+const shown = resolveExercise(lesson, exercise);
 const STEPS = lesson.steps.length;
 
 async function openFirstExercise(page: Page): Promise<void> {
@@ -39,7 +42,7 @@ test.describe('ayudas de los ejercicios (II-05)', () => {
   });
 
   test('las tres pistas salen en orden: idea, método y primer trazado', async ({ page }) => {
-    const hints = exercise.hints ?? [];
+    const hints = shown.hints ?? [];
     expect(hints).toHaveLength(3);
     await openFirstExercise(page);
     const hintButton = page.locator('#exercise-hint');
@@ -60,7 +63,7 @@ test.describe('ayudas de los ejercicios (II-05)', () => {
   });
 
   test('la solución se ofrece tras dos fallos y se recorre paso a paso', async ({ page }) => {
-    const solution = exercise.solution ?? [];
+    const solution = shown.solution ?? [];
     await openFirstExercise(page);
     const button = page.locator('#exercise-solution');
     await expect(button).toHaveText('Me rindo: ver la solución');
@@ -92,6 +95,29 @@ test.describe('ayudas de los ejercicios (II-05)', () => {
     await page.getByRole('button', { name: 'Volver al ejercicio' }).click();
     await expect(progress).toContainText('Ejercicio 1 de');
     await expect(narration).toHaveText(exercise.prompt);
+  });
+
+  test('el error típico se dibuja punteado y rotulado en la lámina, no solo en otro color', async ({
+    page,
+  }) => {
+    const solution = shown.solution ?? [];
+    await openFirstExercise(page);
+    await page.getByRole('button', { name: 'Me rindo: ver la solución' }).click();
+    const error = page.locator('#view-2d [data-layer="error"]');
+    await expect(error).toHaveCount(0);
+    for (let i = 1; i < solution.length; i++) {
+      await page.getByRole('button', { name: 'Paso siguiente →' }).click();
+    }
+    await expect(error.locator('polyline.stroke-error')).toHaveCount(1);
+    await expect(error.getByText('✗ Error: proyección')).toBeVisible();
+    // Punteado: la forma del trazo lo distingue aunque no se vea el color.
+    const dash = await error
+      .locator('polyline')
+      .evaluate((el) => getComputedStyle(el).strokeDasharray);
+    expect(dash).not.toBe('none');
+    // Y desaparece al volver al paso anterior.
+    await page.getByRole('button', { name: '← Paso anterior' }).click();
+    await expect(error.locator('polyline')).toHaveCount(0);
   });
 
   test('«Me rindo» da la solución sin haber fallado', async ({ page }) => {

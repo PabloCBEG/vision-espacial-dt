@@ -5,18 +5,12 @@
 // textos para el alumno (avisos, pistas, entrenador, motores), las frases entre comillas.
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { exerciseMarkers, resolveMarkers } from '../src/content/markers.ts';
+import { parseLessons } from '../src/content/lessons.ts';
+import { SOLUTION_PART_NAMES, type SolutionPart } from '../src/content/solutionParts.ts';
 
 interface Step {
   narration: string;
-}
-interface Exercise {
-  kind: string;
-  prompt: string;
-  difficulty?: number;
-  answer?: number;
-  unit?: string;
-  hints?: string[];
-  solution?: Step[];
 }
 interface Lesson {
   id: string;
@@ -26,7 +20,6 @@ interface Lesson {
   level: string;
   saberBasico: string;
   steps: Step[];
-  exercises?: Exercise[];
 }
 interface Pau {
   id: string;
@@ -127,8 +120,19 @@ const KIND: Record<string, string> = {
   engine: 'construcción en la lámina',
 };
 
+// Las lecciones se leen con el esquema para tener las pistas y soluciones tal como las ve el
+// alumno: con los marcadores ({respuesta}…) resueltos con los datos del propio ejercicio.
+const loaded = parseLessons(
+  Object.fromEntries(files('src/content/lessons').map((path) => [path, json<unknown>(path)])),
+);
+for (const error of loaded.errors) {
+  console.error(`${error.file}: ${error.problems.join('; ')}`);
+  process.exitCode = 1;
+}
+
 for (const path of files('src/content/lessons')) {
   const l = json<Lesson>(path);
+  const parsed = loaded.lessons.find((x) => x.id === (l as { id: string }).id);
   push(
     `### ${l.topic} · ${l.title}`,
     '',
@@ -140,17 +144,22 @@ for (const path of files('src/content/lessons')) {
     '',
   );
   l.steps.forEach((s, i) => push(`${i + 1}. [ ] ${s.narration}`));
-  if (l.exercises?.length) {
+  if (parsed?.exercises.length) {
     push('', '**Ejercicios**', '');
-    l.exercises.forEach((e, i) => {
-      const answer = e.answer !== undefined ? ` (respuesta: ${e.answer} ${e.unit ?? ''})` : '';
+    parsed.exercises.forEach((e, i) => {
+      const values = exerciseMarkers(parsed, e);
+      const resolve = (text: string): string => resolveMarkers(text, values);
+      const answer = e.kind === 'value' ? ` (respuesta: ${e.answer} ${e.unit})` : '';
       push(
         `${i + 1}. [ ] *${KIND[e.kind] ?? e.kind}, dificultad ${e.difficulty ?? 1}*${answer}: ${e.prompt}`,
       );
-      (e.hints ?? []).forEach((h, j) => push(`   - [ ] *Pista ${j + 1}:* ${h}`));
-      (e.solution ?? []).forEach((s, j) =>
-        push(`   - [ ] *Solución, paso ${j + 1}:* ${s.narration}`),
-      );
+      (e.hints ?? []).forEach((h, j) => push(`   - [ ] *Pista ${j + 1}:* ${resolve(h)}`));
+      (e.solution ?? []).forEach((s, j) => {
+        const part = SOLUTION_PART_NAMES[s.part as SolutionPart];
+        // El error típico lo redacta Claude: queda marcado hasta que el profesor lo valide.
+        const mark = s.part === 'error' ? ' **[REVISAR]**' : '';
+        push(`   - [ ] *Solución, paso ${j + 1} · ${part}:*${mark} ${resolve(s.narration)}`);
+      });
     });
   }
   push('');

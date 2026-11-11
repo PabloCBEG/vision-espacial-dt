@@ -108,11 +108,13 @@ Fichero: `src/content/lessons/04-tres-metodos.json` · DT II · nivel Intermedio
    - [ ] *Pista 1:* Un segmento se ve en verdadera magnitud cuando es paralelo a un plano de proyección.
    - [ ] *Pista 2:* Gira AB alrededor de un eje vertical que pasa por A hasta que sea paralelo al PV.
    - [ ] *Pista 3:* En la planta, gira B′ con centro en A′ hasta que A′B₁′ quede paralela a la LT.
-   - [ ] *Solución, paso 1:* A y B están a distinta cota y distinto alejamiento: AB no es paralelo a ningún plano de proyección. Por eso ninguna proyección mide lo que mide AB.
-   - [ ] *Solución, paso 2:* Giramos AB alrededor de un eje vertical que pasa por A. B describe una circunferencia horizontal y su cota no cambia.
-   - [ ] *Solución, paso 3:* En la planta, B′ gira con centro en A′ hasta que A′B₁′ es paralela a la LT.
-   - [ ] *Solución, paso 4:* B₁″ sube por su línea de referencia hasta la cota de B″. A″B₁″ es la verdadera magnitud.
-   - [ ] *Solución, paso 5:* Comprobación: B₁″ está a la misma altura que B″, porque el giro alrededor de un eje vertical no cambia las cotas.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinta cota y distinto alejamiento: AB no es paralelo a ningún plano de proyección. Por eso ninguna proyección mide lo que mide AB.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La verdadera magnitud de AB aparece cuando lo ponemos paralelo a un plano de proyección: entonces ese plano lo ve sin deformarlo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Giramos AB alrededor de un eje vertical que pasa por A. B describe una circunferencia horizontal y su cota no cambia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, B′ gira con centro en A′ hasta que A′B₁′ es paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* B₁″ sube por su línea de referencia hasta la cota de B″. A″B₁″ es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: B₁″ está a la misma altura que B″, porque el giro alrededor de un eje vertical no cambia las cotas. Además, A″B₁″ mide 61,8 mm, más que A′B′ (58,5 mm) y que A″B″ (58,5 mm).
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A″B″ y contestar 58,5 mm. AB no es paralelo al PV, así que A″B″ queda más corta que la verdadera magnitud, 61,8 mm.
 2. [ ] *escribir una medida, dificultad 2* (respuesta: 55.2 mm): Elige el método que prefieras y mide la verdadera magnitud de AB en milímetros.
 3. [ ] *escribir una medida, dificultad 3* (respuesta: 33 °): Como en la PAU: halla el ángulo que forma la recta AB con el PH. Usa el cambio de plano y escribe el ángulo en grados.
 
@@ -141,6 +143,13 @@ Fichero: `src/content/lessons/05-seccion-piramide.json` · DT II · nivel Interm
    - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
    - [ ] *Pista 2:* El plano de corte es proyectante: su traza α₂ pasa por los puntos de corte de las aristas.
    - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide el lado más largo.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección es el polígono donde α corta a las caras de la pirámide. Para verla sin deformar hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 4 lados, de 13,8 mm el menor y de 18,2 mm el mayor. La respuesta pedida es 18,2 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.
 3. [ ] *escribir una medida, dificultad 3* (respuesta: 15.7 mm): Como en la PAU: pirámide hexagonal regular cortada por un plano proyectante vertical. Halla la verdadera magnitud de la sección y mide su lado más largo.
 
 ### I-01 · Mediatriz, bisectriz y arco capaz

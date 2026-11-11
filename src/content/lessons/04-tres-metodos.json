@@ -269,6 +269,7 @@
       ],
       "solution": [
         {
+          "part": "mira",
           "narration": "A y B están a distinta cota y distinto alejamiento: AB no es paralelo a ningún plano de proyección. Por eso ninguna proyección mide lo que mide AB.",
           "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
           "sheet": [
@@ -295,6 +296,34 @@
           }
         },
         {
+          "part": "idea",
+          "narration": "La verdadera magnitud de AB aparece cuando lo ponemos paralelo a un plano de proyección: entonces ese plano lo ve sin deformarlo.",
+          "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
           "narration": "Giramos AB alrededor de un eje vertical que pasa por A. B describe una circunferencia horizontal y su cota no cambia.",
           "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
           "sheet": [
@@ -321,6 +350,7 @@
           }
         },
         {
+          "part": "trazado",
           "narration": "En la planta, B′ gira con centro en A′ hasta que A′B₁′ es paralela a la LT.",
           "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
           "sheet": [
@@ -347,6 +377,7 @@
           }
         },
         {
+          "part": "trazado",
           "narration": "B₁″ sube por su línea de referencia hasta la cota de B″. A″B₁″ es la verdadera magnitud.",
           "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
           "sheet": [
@@ -373,7 +404,8 @@
           }
         },
         {
-          "narration": "Comprobación: B₁″ está a la misma altura que B″, porque el giro alrededor de un eje vertical no cambia las cotas.",
+          "part": "comprobacion",
+          "narration": "Comprobación: B₁″ está a la misma altura que B″, porque el giro alrededor de un eje vertical no cambia las cotas. Además, A″B₁″ mide {respuesta}, más que A′B′ ({proyH}) y que A″B″ ({proyV}).",
           "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
           "sheet": [
             "lt",
@@ -395,6 +427,43 @@
               "metodo": "giro",
               "figura": ["A", "B"],
               "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir A″B″ y contestar {proyV}. AB no es paralelo al PV, así que A″B″ queda más corta que la verdadera magnitud, {respuesta}.",
+          "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error: proyección",
+                  "desplaza": [0, 14]
+                }
+              ]
             }
           }
         }
