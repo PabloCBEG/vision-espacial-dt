@@ -2,7 +2,7 @@
 // primera lección y se resuelve un ejercicio. El resto de tests solo corre en Chromium.
 import { expect, test } from '@playwright/test';
 
-test('humo: inicio, primer paso de una lección y un ejercicio', async ({ page }) => {
+test('humo: inicio, primer paso de una lección y un ejercicio', async ({ page }, testInfo) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
@@ -16,7 +16,14 @@ test('humo: inicio, primer paso de una lección y un ejercicio', async ({ page }
   await page.getByRole('button', { name: 'Dibujo Técnico II' }).click();
   await page.getByRole('link', { name: /Tres métodos/ }).click();
   await expect(page.locator('#lesson-progress-text')).toContainText('Paso 1');
-  await expect(page.locator('#view-3d canvas')).toBeVisible();
+  if (testInfo.project.name === 'firefox') {
+    // Firefox sin cabeza en el servidor de CI no tiene WebGL: la web debe avisar, no romperse.
+    await expect(
+      page.locator('#view-3d canvas').or(page.getByText('necesita WebGL')),
+    ).toBeVisible();
+  } else {
+    await expect(page.locator('#view-3d canvas')).toBeVisible();
+  }
   await expect(page.locator('#view-2d svg').first()).toBeVisible();
   await page.getByRole('button', { name: 'Siguiente →' }).click();
   await expect(page.locator('#lesson-progress-text')).toContainText('Paso 2');
