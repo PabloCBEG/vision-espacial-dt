@@ -1,6 +1,8 @@
 // Reproductor de una lección: pasos con narración y ejercicios al final.
 // Cada cambio se anima (puntos, abatimiento, cámara y fundido de capas): nunca hay saltos.
 import type { Exercise, Lesson, Step, ViewName } from '../content/schema.ts';
+import { resolveExercise } from '../content/markers.ts';
+import { mergeEngines, solutionEngines, solutionPoints } from '../content/solutionState.ts';
 import { generateVariant } from '../content/variants.ts';
 import { createPoint, type Point } from '../geometry/index.ts';
 import type { AppState, AppStore, SceneObject } from '../state/index.ts';
@@ -23,18 +25,7 @@ const EXERCISE_START = createPoint(-30, 15, 20);
 
 const toPoint = ([x, a, c]: readonly [number, number, number]): Point => createPoint(x, a, c);
 
-type EngineData = Readonly<Record<string, unknown>> | undefined;
-
-/** Datos de cada motor: los comunes de la lección con los del paso encima (campo a campo). */
-export function mergeEngines(common: EngineData, step: EngineData): Record<string, unknown> {
-  const out: Record<string, unknown> = {};
-  for (const key of new Set([...Object.keys(common ?? {}), ...Object.keys(step ?? {})])) {
-    const a = common?.[key];
-    const b = step?.[key];
-    out[key] = a && b && typeof a === 'object' && typeof b === 'object' ? { ...a, ...b } : (b ?? a);
-  }
-  return out;
-}
+export { mergeEngines };
 
 export class Player {
   readonly lesson: Lesson;
@@ -50,11 +41,22 @@ export class Player {
   /** Variantes generadas (semilla) que sustituyen al ejercicio escrito, por índice. */
   private readonly variants = new Map<number, Exercise>();
   private solutionIndex: number | null = null;
+  private readonly resolvedCache = new WeakMap<Exercise, Exercise>();
 
   constructor(lesson: Lesson, store: AppStore, camera: PlayerCamera | null) {
     this.lesson = lesson;
     this.store = store;
     this.camera = camera;
+  }
+
+  /** El ejercicio con los marcadores de pistas y solución resueltos (una vez por ejercicio). */
+  private resolved(exercise: Exercise): Exercise {
+    let out = this.resolvedCache.get(exercise);
+    if (!out) {
+      out = resolveExercise(this.lesson, exercise);
+      this.resolvedCache.set(exercise, out);
+    }
+    return out;
   }
 
   get pageCount(): number {
@@ -76,10 +78,10 @@ export class Player {
       if (!step) throw new Error(`No existe el paso ${index}`);
       return { kind: 'step', index, step };
     }
-    const exercise =
+    const written =
       this.variants.get(index - steps.length) ?? this.lesson.exercises[index - steps.length];
-    if (!exercise) throw new Error(`No existe el ejercicio ${index - steps.length}`);
-    return { kind: 'exercise', index: index - steps.length, exercise };
+    if (!written) throw new Error(`No existe el ejercicio ${index - steps.length}`);
+    return { kind: 'exercise', index: index - steps.length, exercise: this.resolved(written) };
   }
 
   /** Empieza la lección: escena inicial sin animar y primer paso. */
@@ -184,15 +186,10 @@ export class Player {
     if (!step) return;
     const exercise = page.exercise;
     // Puntos: los del ejercicio y los cambios de los pasos de la solución hasta este.
-    const points = this.pointsAtStep(-1);
-    for (const [id, c] of Object.entries(exercise.points ?? {})) points[id] = toPoint(c);
-    for (const s of steps.slice(0, this.solutionIndex + 1)) {
-      for (const [id, c] of Object.entries(s.points ?? {})) points[id] = toPoint(c);
-    }
     this.applyStepData(
       step,
-      points,
-      mergeEngines(mergeEngines(this.lesson.initialScene.engines, exercise.engines), step.engines),
+      solutionPoints(this.lesson, exercise, this.solutionIndex),
+      solutionEngines(this.lesson, exercise, this.solutionIndex),
     );
     this.onChange(page);
   }

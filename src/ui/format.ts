@@ -38,3 +38,8 @@ export function formatDecimal(value: number): string {
   const text = String(Math.abs(rounded)).replace('.', ',');
   return rounded < 0 ? `−${text}` : text;
 }
+
+/** Medida con su unidad, por ejemplo «61,8 mm» o «33°» (el grado va pegado, como en el papel). */
+export function formatMeasure(value: number, unit: 'mm' | '°'): string {
+  return unit === 'mm' ? `${formatDecimal(value)} mm` : `${formatDecimal(value)}°`;
+}

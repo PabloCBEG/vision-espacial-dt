@@ -6,7 +6,9 @@ import { buildConstruction, exactValue } from '../engines/metodos/construction.t
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
 import { buildScene } from '../engines/solidos/construction.ts';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
-import type { Exercise, Lesson } from './schema.ts';
+import type { Exercise, Lesson, SectionMagnitude, SolutionStep } from './schema.ts';
+
+export type { SectionMagnitude };
 
 type ValueExercise = Extract<Exercise, { kind: 'value' }>;
 
@@ -85,6 +87,64 @@ export function solidosSection(
   return { sides: curved ? [diameter] : sides, curved };
 }
 
+/** Medidas de la sección de un sólido en verdadera magnitud. */
+export interface SectionMeasures {
+  ladoMayor: number;
+  ladoMenor: number;
+  perimetro: number;
+  numLados: number;
+  /** Todos los lados, en el orden de la sección (el eje mayor, si es curva). */
+  lados: number[];
+  /** Cono y cilindro: la sección es curva y solo se mide su eje mayor (en `ladoMayor`). */
+  curved: boolean;
+}
+
+export function solidosMeasures(exercise: ValueExercise): SectionMeasures | null {
+  const section = solidosSection(exercise);
+  if (!section) return null;
+  const { sides, curved } = section;
+  return {
+    ladoMayor: Math.max(...sides),
+    ladoMenor: Math.min(...sides),
+    perimetro: sides.reduce((sum, side) => sum + side, 0),
+    numLados: curved ? 0 : sides.length,
+    lados: sides,
+    curved,
+  };
+}
+
+/** Lo que pregunta el enunciado de una variante, según la magnitud pedida. */
+const QUESTION: Record<SectionMagnitude, string> = {
+  ladoMayor: '¿Cuánto mide el lado más largo de la sección en verdadera magnitud?',
+  ladoMenor: '¿Cuánto mide el lado más corto de la sección en verdadera magnitud?',
+  perimetro: '¿Cuánto mide el perímetro de la sección en verdadera magnitud?',
+};
+const QUESTION_CURVED = '¿Cuánto mide el eje mayor de la sección en verdadera magnitud?';
+
+/**
+ * Los pasos de la solución llevan los datos del sólido del ejercicio original; en una variante
+ * se sustituyen por los suyos (el resto del paso, como lo que se retira o se abate, se queda).
+ */
+function retargetSolution(
+  solution: readonly SolutionStep[] | undefined,
+  solidos: ReturnType<typeof SolidsStepSchema.parse>,
+): SolutionStep[] | undefined {
+  return solution?.map((step) => {
+    if (!step.engines?.solidos) return step;
+    const own = SolidsStepSchema.parse(step.engines.solidos);
+    const next = { ...own, solido: solidos.solido, recta: solidos.recta, punto: solidos.punto };
+    if (own.seccion && solidos.seccion) {
+      next.seccion = {
+        ...solidos.seccion,
+        quitar: own.seccion.quitar,
+        abatir: own.seccion.abatir,
+        sobre: own.seccion.sobre ?? solidos.seccion.sobre,
+      };
+    }
+    return { ...step, engines: { ...step.engines, solidos: next } };
+  });
+}
+
 /** Un decimal, como las respuestas escritas a mano en las lecciones. */
 const round1 = (n: number): number => Math.round(n * 10) / 10;
 
@@ -95,8 +155,9 @@ const MAX_TRIES = 40;
 
 /**
  * Genera una variante del ejercicio con la semilla dada, o null si el ejercicio no
- * tiene `variant` o no se encuentran datos válidos. La variante no lleva solución
- * desarrollada (la del original es para otros datos).
+ * tiene `variant` o no se encuentran datos válidos. La variante conserva las pistas y la
+ * solución del original: como no llevan cifras escritas a mano sino marcadores (ver
+ * markers.ts), valen para los datos nuevos. En sólidos puede pedir varias magnitudes (`ask`).
  */
 export function generateVariant(
   lesson: Lesson,
@@ -110,8 +171,6 @@ export function generateVariant(
   for (let attempt = 0; attempt < MAX_TRIES; attempt++) {
     const candidate: ValueExercise = {
       ...exercise,
-      solution: undefined,
-      hints: exercise.hints,
       prompt: variant.prompt ?? exercise.prompt,
     };
 
@@ -146,13 +205,22 @@ export function generateVariant(
         ];
       }
       const solidos = { ...base, solido: solid, seccion: cut };
+      const curved = solid.tipo === 'cono' || solid.tipo === 'cilindro';
+      const ask = variant.ask ?? ['ladoMayor'];
+      // En las secciones curvas solo se pide el eje mayor.
+      const asked: SectionMagnitude = curved
+        ? 'ladoMayor'
+        : (ask[Math.floor(random() * ask.length)] ?? 'ladoMayor');
       const next: ValueExercise = {
         ...candidate,
         engines: { ...exercise.engines, solidos },
+        solution: retargetSolution(exercise.solution, solidos),
+        magnitud: variant.ask ? asked : exercise.magnitud,
+        prompt: variant.ask ? (curved ? QUESTION_CURVED : QUESTION[asked]) : candidate.prompt,
       };
-      const section = solidosSection(next);
-      if (!section) continue;
-      const answer = Math.max(...section.sides);
+      const measures = solidosMeasures(next);
+      if (!measures) continue;
+      const answer = measures[asked];
       if (answer < MIN_MEASURE_MM) continue;
       return { ...next, answer: round1(answer), unit: 'mm' };
     }
