@@ -307,3 +307,24 @@ Respuestas del profesor (9 de noviembre de 2026):
 3. **Errores típicos**: el profesor no tiene la lista. La parte 6 de cada desarrollo se redacta con criterio propio y se marca para su revisión en `textos_para_revision.md`.
 4. **PAU 2025 y 2026**: para más adelante (descarga a mano de `examenes/LEEME.md`).
 5. **Prioridad entre B2 y B3**: ambos; se empieza por B2 (tercera vista).
+
+---
+
+## 8. Orden de ejecución revisado (11 de noviembre de 2026)
+
+Cada lección se da por terminada según el apartado «Contenido de ejercicios» de `CLAUDE.md`.
+
+1. Red de seguridad de soluciones.
+2. Piloto II-05.
+3. II-06.
+4. II-08, II-07 y II-09.
+5. 6 ejercicios PAU reales (ejercicios 1 y 2).
+6. II-01, II-03, II-04 e I-01.
+7. Lección nueva I-06.
+8. II-12, II-10 e I-14.
+9. I-08.
+10. Piezas 11–18 y 6 ejercicios PAU reales (ejercicios 3 y 4).
+11. Lecciones nuevas I-15, I-11, I-13, I-07 y II-11.
+
+**Adelantos.** El motor de polígonos y las lecciones I-02 e I-03 se adelantan al inicio de la
+fase 2.
