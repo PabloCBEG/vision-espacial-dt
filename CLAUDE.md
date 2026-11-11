@@ -74,6 +74,24 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
 - Fuera de la PAU (se pueden enseñar, pero no se exigen en ejercicios tipo PAU): rectas límite en homología, mínima distancia entre rectas que se cruzan, recta o plano definidos por sus ángulos con ambos planos de proyección, esferas y homología de circunferencias.
 - El catálogo de temas está en `src/content/catalog.ts`: cada lección indica su código de tema.
 
+## Contenido de ejercicios
+
+- Cada lección tiene 9 ejercicios, 3 por nivel (`difficulty` 1, 2 y 3), con datos distintos de los de la teoría y distintos entre sí.
+- Niveles:
+  - Nivel 1: posición particular y números redondos.
+  - Nivel 2: posición general.
+  - Nivel 3: datos como en la PAU de Andalucía y varios conceptos encadenados. No usa contenidos marcados como «fuera de la PAU».
+- Cada ejercicio lleva 3 `hints` y una `solution`:
+  - `hints`: 1 es la idea clave; 2, el método; 3, el primer trazado.
+  - `solution`: las seis partes del apartado 4 de `plan_contenidos.md`, en ese orden.
+- Las narraciones tienen 2 frases como máximo, con verbos de acción visual y la notación de este fichero.
+- La parte 6 (error típico) la redacta Claude y queda marcada como «[REVISAR]» en `textos_para_revision.md` hasta que el profesor la valide.
+- Una lección está terminada cuando:
+  - pasan `npm run test`, `npm run lint`, `npm run build` y `npm run e2e`;
+  - las capturas de `node scripts/capturas-leccion.mjs <id>` están revisadas en los tres tamaños;
+  - `textos_para_revision.md` está regenerado.
+- Un commit por lección.
+
 ## Calidad
 
 - Interfaz y textos en castellano; código e identificadores en inglés.
