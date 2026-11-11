@@ -22,7 +22,12 @@ const { lessons, errors } = parseLessons(files);
  * pistas y solución, y datos distintos). Se añade el id cuando se termina la lección
  * (CLAUDE.md, «Contenido de ejercicios»). Empieza vacía para no romper la publicación.
  */
-const COMPLETE_LESSONS: string[] = ['tres-metodos', 'angulos-distancias', 'seccion-piramide'];
+const COMPLETE_LESSONS: string[] = [
+  'tres-metodos',
+  'angulos-distancias',
+  'seccion-piramide',
+  'poliedros-regulares',
+];
 
 const lessonNamed = (id: string): Lesson => {
   const lesson = lessons.find((l) => l.id === id);

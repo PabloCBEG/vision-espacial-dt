@@ -213,7 +213,7 @@
       "kind": "value",
       "difficulty": 1,
       "prompt": "Mide en la lámina el lado más largo de la sección del cubo en verdadera magnitud. Usa la cuadrícula de 10 mm.",
-      "answer": 36.0,
+      "answer": 35.4,
       "unit": "mm",
       "tolerance": 2,
       "show3d": ["planos", "solido", "seccion", "seccion-vm"],
@@ -222,21 +222,619 @@
         "solidos": {
           "solido": {
             "tipo": "cubo",
-            "arista": 35,
-            "centro": [0, 32],
-            "giro": 30
+            "arista": 30,
+            "centro": [0, 30]
           },
           "seccion": {
             "tipo": "proyectante-vertical",
             "puntos": [
-              [-40, 8],
-              [40, 30]
+              [-20, 0],
+              [20, 40]
             ],
             "quitar": 1,
             "abatir": 1
           }
         }
-      }
+      },
+      "magnitud": "ladoMayor",
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es proyectante vertical y su traza α₂ forma 45° con la LT: pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide el lado más largo."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo apoyado en una cara sobre el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-20, 0],
+                  [20, 40]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección es el polígono donde α corta a las caras del poliedro. Para verla sin deformar hay que ponerla paralela a un plano de proyección.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-20, 0],
+                  [20, 40]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-20, 0],
+                  [20, 40]
+                ],
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-20, 0],
+                  [20, 40]
+                ],
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-20, 0],
+                  [20, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección es un rectángulo de {numLados} lados, con dos lados de {ladoMenor} (la arista) y dos de {ladoMayor}. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-20, 0],
+                  [20, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-20, 0],
+                  [20, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "El plano de corte α es paralelo al PV y corta a un cubo con una cara paralela al PV. ¿Cuánto mide el lado de la sección en verdadera magnitud?",
+      "answer": 30.0,
+      "unit": "mm",
+      "tolerance": 2,
+      "magnitud": "ladoMayor",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, 30]
+          },
+          "seccion": {
+            "tipo": "frontal",
+            "valor": 30,
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      },
+      "hints": [
+        "Un plano paralelo al PV es perpendicular al PH, así que se puede abatir sobre el PH.",
+        "La traza α₁ del plano es paralela a la LT y pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide su lado."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo apoyado en una cara sobre el PH, con una cara paralela al PV, y un plano de corte α paralelo al PV. En la planta, α se ve de canto: es una recta α₁ paralela a la LT.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano paralelo a una cara del cubo lo corta en una sección igual a esa cara. Abatimos la sección para comprobarlo.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la sección tiene {numLados} lados iguales, de {respuesta}: es un cuadrado igual a una cara del cubo.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "El plano de corte α es paralelo al PV y corta a un tetraedro apoyado en una cara. ¿Cuánto mide el lado más corto de la sección en verdadera magnitud?",
+      "answer": 26.7,
+      "unit": "mm",
+      "tolerance": 2,
+      "magnitud": "ladoMenor",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "tetraedro",
+            "arista": 40,
+            "centro": [0, 30]
+          },
+          "seccion": {
+            "tipo": "frontal",
+            "valor": 30,
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      },
+      "hints": [
+        "Un plano paralelo al PV es perpendicular al PH, así que se puede abatir sobre el PH.",
+        "La traza α₁ del plano es paralela a la LT y pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide el lado más corto."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un tetraedro apoyado en una cara sobre el PH y un plano de corte α paralelo al PV. En la planta, α se ve de canto: es una recta α₁ paralela a la LT.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano paralelo al PV muestra en el alzado la sección sin deformar. Aquí lo comprobamos abatiéndola sobre el PH.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "frontal",
+                "valor": 30,
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
@@ -265,7 +863,685 @@
             "abatir": 1
           }
         }
-      }
+      },
+      "magnitud": "ladoMayor",
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un tetraedro apoyado en una cara sobre el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 50,
+                "centro": [0, 30],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 30],
+                  [40, 10]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección es el polígono donde α corta a las caras del poliedro. Para verla sin deformar hay que ponerla paralela a un plano de proyección.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 50,
+                "centro": [0, 30],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 30],
+                  [40, 10]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 50,
+                "centro": [0, 30],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 30],
+                  [40, 10]
+                ],
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 50,
+                "centro": [0, 30],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 30],
+                  [40, 10]
+                ],
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 50,
+                "centro": [0, 30],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 30],
+                  [40, 10]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 50,
+                "centro": [0, 30],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 30],
+                  [40, 10]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 50,
+                "centro": [0, 30],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 30],
+                  [40, 10]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Un octaedro con una diagonal perpendicular al PH se corta por un plano proyectante vertical. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?",
+      "answer": 31.2,
+      "unit": "mm",
+      "tolerance": 2,
+      "magnitud": "ladoMayor",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 40,
+            "centro": [0, 30]
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-30, 10],
+              [30, 40]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      },
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado."
+      ],
+      "variant": {
+        "step": 2,
+        "solid": {
+          "corte": [
+            [
+              [-34, -26],
+              [6, 14]
+            ],
+            [
+              [26, 34],
+              [34, 44]
+            ]
+          ]
+        },
+        "ask": ["ladoMayor", "ladoMenor", "perimetro"]
+      },
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un octaedro con una diagonal perpendicular al PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-30, 10],
+                  [30, 40]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección es el polígono donde α corta a las caras del poliedro. Para verla sin deformar hay que ponerla paralela a un plano de proyección.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-30, 10],
+                  [30, 40]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-30, 10],
+                  [30, 40]
+                ],
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-30, 10],
+                  [30, 40]
+                ],
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-30, 10],
+                  [30, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-30, 10],
+                  [30, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-30, 10],
+                  [30, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Un cubo apoyado en una cara y girado respecto al PV se corta por un plano proyectante vertical. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?",
+      "answer": 35.0,
+      "unit": "mm",
+      "tolerance": 2,
+      "magnitud": "ladoMayor",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 32,
+            "centro": [0, 32],
+            "giro": 25
+          },
+          "seccion": {
+            "tipo": "proyectante-vertical",
+            "puntos": [
+              [-35, 6],
+              [35, 40]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      },
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo apoyado en una cara sobre el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 32,
+                "centro": [0, 32],
+                "giro": 25
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 6],
+                  [35, 40]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección es el polígono donde α corta a las caras del poliedro. Para verla sin deformar hay que ponerla paralela a un plano de proyección.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 32,
+                "centro": [0, 32],
+                "giro": 25
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 6],
+                  [35, 40]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 32,
+                "centro": [0, 32],
+                "giro": 25
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 6],
+                  [35, 40]
+                ],
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 32,
+                "centro": [0, 32],
+                "giro": 25
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 6],
+                  [35, 40]
+                ],
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 32,
+                "centro": [0, 32],
+                "giro": 25
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 6],
+                  [35, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 32,
+                "centro": [0, 32],
+                "giro": 25
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 6],
+                  [35, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 32,
+                "centro": [0, 32],
+                "giro": 25
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-35, 6],
+                  [35, 40]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
@@ -293,7 +1569,693 @@
             "abatir": 1
           }
         }
-      }
+      },
+      "magnitud": "ladoMayor",
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un octaedro con una diagonal perpendicular al PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 35,
+                "centro": [0, 35],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 10],
+                  [40, 40]
+                ],
+                "abatir": 0,
+                "quitar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección es el polígono donde α corta a las caras del poliedro. Para verla sin deformar hay que ponerla paralela a un plano de proyección.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 35,
+                "centro": [0, 35],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 10],
+                  [40, 40]
+                ],
+                "abatir": 0,
+                "quitar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 35,
+                "centro": [0, 35],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 10],
+                  [40, 40]
+                ],
+                "abatir": 0.5,
+                "quitar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 35,
+                "centro": [0, 35],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 10],
+                  [40, 40]
+                ],
+                "abatir": 0,
+                "quitar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 35,
+                "centro": [0, 35],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 10],
+                  [40, 40]
+                ],
+                "abatir": 1,
+                "quitar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 35,
+                "centro": [0, 35],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 10],
+                  [40, 40]
+                ],
+                "abatir": 1,
+                "quitar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 35,
+                "centro": [0, 35],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-vertical",
+                "puntos": [
+                  [-40, 10],
+                  [40, 40]
+                ],
+                "abatir": 1,
+                "quitar": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: tetraedro apoyado en una cara y cortado por un plano proyectante horizontal. Halla la verdadera magnitud de la sección y calcula su perímetro.",
+      "answer": 109.8,
+      "unit": "mm",
+      "tolerance": 2,
+      "magnitud": "perimetro",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "tetraedro",
+            "arista": 45,
+            "centro": [0, 30],
+            "giro": 15
+          },
+          "seccion": {
+            "tipo": "proyectante-horizontal",
+            "puntos": [
+              [-30, 10],
+              [30, 45]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      },
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es perpendicular al PH: su traza α₁ pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide lo que pide el enunciado."
+      ],
+      "variant": {
+        "step": 2,
+        "solid": {
+          "corte": [
+            [
+              [-34, -26],
+              [6, 14]
+            ],
+            [
+              [26, 34],
+              [40, 48]
+            ]
+          ]
+        },
+        "ask": ["ladoMayor", "ladoMenor", "perimetro"]
+      },
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un tetraedro apoyado en una cara sobre el PH y un plano de corte α perpendicular al PH. En la planta, α se ve de canto: es la recta α₁.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 45,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-30, 10],
+                  [30, 45]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección se ve sin deformar cuando su plano es paralelo a uno de proyección. Como α es perpendicular al PH, basta con abatirlo sobre el PH.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 45,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-30, 10],
+                  [30, 45]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 45,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-30, 10],
+                  [30, 45]
+                ],
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 45,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-30, 10],
+                  [30, 45]
+                ],
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 45,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-30, 10],
+                  [30, 45]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 45,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-30, 10],
+                  [30, 45]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "tetraedro",
+                "arista": 45,
+                "centro": [0, 30],
+                "giro": 15
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-30, 10],
+                  [30, 45]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: octaedro cortado por un plano proyectante horizontal. Halla la verdadera magnitud de la sección y mide su lado más largo.",
+      "answer": 32.3,
+      "unit": "mm",
+      "tolerance": 2,
+      "magnitud": "ladoMayor",
+      "show3d": ["planos", "solido", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 36,
+            "centro": [0, 36],
+            "giro": 10
+          },
+          "seccion": {
+            "tipo": "proyectante-horizontal",
+            "puntos": [
+              [-40, 20],
+              [40, 50]
+            ],
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      },
+      "hints": [
+        "La sección se ve en verdadera magnitud cuando se abate el plano de corte.",
+        "El plano de corte es perpendicular al PH: su traza α₁ pasa por los puntos de corte de las aristas.",
+        "Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide lo que pide el enunciado."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un octaedro con una diagonal perpendicular al PH y un plano de corte α perpendicular al PH. En la planta, α se ve de canto: es la recta α₁.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 36],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-40, 20],
+                  [40, 50]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La sección se ve sin deformar cuando su plano es paralelo a uno de proyección. Como α es perpendicular al PH, basta con abatirlo sobre el PH.",
+          "show3d": ["planos", "solido", "corte"],
+          "sheet": ["lt", "solido", "corte"],
+          "highlight": ["corte"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 36],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-40, 20],
+                  [40, 50]
+                ],
+                "quitar": 0,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 36],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-40, 20],
+                  [40, 50]
+                ],
+                "quitar": 1,
+                "abatir": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.",
+          "show3d": ["planos", "solido", "corte", "seccion"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion"],
+          "highlight": ["seccion"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 36],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-40, 20],
+                  [40, 50]
+                ],
+                "quitar": 1,
+                "abatir": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 36],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-40, 20],
+                  [40, 50]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Mide con la cuadrícula: la sección tiene {numLados} lados, de {ladoMenor} el menor y de {ladoMayor} el mayor. La respuesta pedida es {respuesta}.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 36],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-40, 20],
+                  [40, 50]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
+          "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+          "highlight": ["seccion-vm"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "solidos": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 36],
+                "giro": 10
+              },
+              "seccion": {
+                "tipo": "proyectante-horizontal",
+                "puntos": [
+                  [-40, 20],
+                  [40, 50]
+                ],
+                "quitar": 1,
+                "abatir": 1
+              }
+            }
+          }
+        }
+      ]
     }
   ]
 }
