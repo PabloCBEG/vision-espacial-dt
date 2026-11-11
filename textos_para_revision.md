@@ -224,11 +224,43 @@ Fichero: `src/content/lessons/05-seccion-piramide.json` · DT II · nivel Interm
 
 **Ejercicios**
 
-1. [ ] *escribir una medida, dificultad 1* (respuesta: 15.8 mm): Mide en la lámina la verdadera magnitud del lado (1)(2) de la sección. Usa la cuadrícula de 10 mm.
-2. [ ] *escribir una medida, dificultad 2* (respuesta: 18.2 mm): Otra pirámide, otro corte. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 21.9 mm): Mide en la lámina la verdadera magnitud del lado (1)(2) de la sección. Usa la cuadrícula de 10 mm.
    - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
-   - [ ] *Pista 2:* El plano de corte es proyectante: su traza α₂ pasa por los puntos de corte de las aristas.
-   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide el lado más largo.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical y su traza α₂ forma 45° con la LT: pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide el lado entre los vértices (1) y (2).
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección es el polígono donde α corta a las caras de la pirámide. Para verla sin deformar hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 4 lados, de 10,4 mm el menor y de 23,6 mm el mayor. La respuesta pedida es 23,6 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 28.3 mm): El plano de corte α es paralelo al PV. Abátelo sobre el PH y mide el lado más largo de la sección; ayúdate de la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* Un plano paralelo al PV es perpendicular al PH, así que se puede abatir sobre el PH.
+   - [ ] *Pista 2:* La traza α₁ del plano es paralela a la LT y pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide el lado más largo.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α paralelo al PV. En la planta, α se ve de canto: es una recta α₁ paralela a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano paralelo al PV muestra en el alzado la sección sin deformar. Aquí lo comprobamos abatiéndolo sobre el PH.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 4 lados, de 12,4 mm el menor y de 28,3 mm el mayor. La respuesta pedida es 28,3 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 20.8 mm): El plano de corte α es paralelo al PV y corta a una pirámide triangular. ¿Cuánto mide el lado más corto de la sección en verdadera magnitud?
+   - [ ] *Pista 1:* Un plano paralelo al PV es perpendicular al PH, así que se puede abatir sobre el PH.
+   - [ ] *Pista 2:* La traza α₁ del plano es paralela a la LT y pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide el lado más corto.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide triangular apoyada en el PH y un plano de corte α paralelo al PV. En la planta, α se ve de canto: es una recta α₁ paralela a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano paralelo al PV muestra en el alzado la sección sin deformar. Aquí lo comprobamos abatiéndolo sobre el PH.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 4 lados, de 20,8 mm el menor y de 34,6 mm el mayor. La respuesta pedida es 20,8 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 18.2 mm): Otra pirámide, otro corte. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?
+   - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado.
    - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
    - [ ] *Solución, paso 2 · 2. La idea clave:* La sección es el polígono donde α corta a las caras de la pirámide. Para verla sin deformar hay que ponerla paralela a un plano de proyección.
    - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.
@@ -236,7 +268,61 @@ Fichero: `src/content/lessons/05-seccion-piramide.json` · DT II · nivel Interm
    - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.
    - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 4 lados, de 13,8 mm el menor y de 18,2 mm el mayor. La respuesta pedida es 18,2 mm.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.
-3. [ ] *escribir una medida, dificultad 3* (respuesta: 15.7 mm): Como en la PAU: pirámide hexagonal regular cortada por un plano proyectante vertical. Halla la verdadera magnitud de la sección y mide su lado más largo.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 22.1 mm): Pirámide triangular cortada por un plano proyectante vertical. ¿Cuánto mide el lado más largo de la sección en verdadera magnitud?
+   - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección es el polígono donde α corta a las caras de la pirámide. Para verla sin deformar hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 3 lados, de 17,2 mm el menor y de 22,1 mm el mayor. La respuesta pedida es 22,1 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 35.8 mm): Pirámide cuadrangular cortada por un plano perpendicular al PH. Abate la sección sobre el PH y mide su lado más corto.
+   - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
+   - [ ] *Pista 2:* El plano de corte es perpendicular al PH: su traza α₁ pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide lo que pide el enunciado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PH. En la planta, α se ve de canto: es la recta α₁.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección se ve sin deformar cuando su plano es paralelo a uno de proyección. Como α es perpendicular al PH, basta con abatirlo sobre el PH.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 3 lados, de 35,8 mm el menor y de 51,2 mm el mayor. La respuesta pedida es 35,8 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 15.7 mm): Como en la PAU: pirámide hexagonal regular cortada por un plano proyectante vertical. Halla la verdadera magnitud de la sección y mide su lado más largo.
+   - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección es el polígono donde α corta a las caras de la pirámide. Para verla sin deformar hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 6 lados, de 11,8 mm el menor y de 15,7 mm el mayor. La respuesta pedida es 15,7 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 71.1 mm): Como en la PAU: pirámide triangular cortada por un plano proyectante vertical. Halla la verdadera magnitud de la sección y calcula su perímetro.
+   - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical: su traza α₂ pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PV, alrededor de α₂, y mide lo que pide el enunciado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección es el polígono donde α corta a las caras de la pirámide. Para verla sin deformar hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 3 lados, de 22,3 mm el menor y de 25,1 mm el mayor. La respuesta pedida es 71,1 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 43.8 mm): Como en la PAU: pirámide pentagonal cortada por un plano proyectante horizontal. Halla la verdadera magnitud de la sección y mide su lado más largo.
+   - [ ] *Pista 1:* La sección se ve en verdadera magnitud cuando se abate el plano de corte.
+   - [ ] *Pista 2:* El plano de corte es perpendicular al PH: su traza α₁ pasa por los puntos de corte de las aristas.
+   - [ ] *Pista 3:* Abate los vértices de la sección sobre el PH, alrededor de α₁, y mide lo que pide el enunciado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una pirámide apoyada en el PH y un plano de corte α perpendicular al PH. En la planta, α se ve de canto: es la recta α₁.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección se ve sin deformar cuando su plano es paralelo a uno de proyección. Como α es perpendicular al PH, basta con abatirlo sobre el PH.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PH, girando alrededor de su traza α₁. Cada vértice de la sección describe un cuarto de circunferencia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, los vértices de la sección están donde α₁ corta a las aristas. Llévalos al alzado por sus líneas de referencia para conocer sus cotas.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PH, alrededor de α₁, a una distancia igual a su cota. Los vértices abatidos forman la sección en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 5 lados, de 6 mm el menor y de 43,8 mm el mayor. La respuesta pedida es 43,8 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.
 
 ### I-01 · Mediatriz, bisectriz y arco capaz
 

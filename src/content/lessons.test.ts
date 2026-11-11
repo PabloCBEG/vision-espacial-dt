@@ -157,6 +157,8 @@ describe('ejercicios de medida con el motor de sólidos', () => {
     for (const lesson of lessons) {
       for (const exercise of lesson.exercises) {
         if (exercise.kind !== 'value' || !exercise.engines?.solidos) continue;
+        // Con `magnitud`, la respuesta se comprueba en exercises.test.ts.
+        if (exercise.magnitud) continue;
         const data = SolidsStepSchema.parse(exercise.engines.solidos);
         const scene = buildScene(data, { quitar: 1, abatir: 1, desarrollo: 0, punto: 1 });
         const poly = scene.cut?.folded ?? [];

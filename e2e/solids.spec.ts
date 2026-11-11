@@ -60,7 +60,7 @@ test.describe('motor de sólidos (II-08)', () => {
     await openLesson(page);
     await goToPage(page, 9);
     const answer = page.getByRole('spinbutton', { name: 'Tu respuesta' });
-    await answer.fill('16');
+    await answer.fill('22');
     await answer.press('Enter');
     await expect(page.locator('#exercise-feedback')).toContainText('Correcto');
   });
@@ -76,7 +76,7 @@ for (const viewport of [
     await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await openLesson(page);
-    const pages = 12;
+    const pages = 18;
     for (let i = 1; i <= pages; i++) {
       await page.waitForTimeout(900);
       await page.screenshot({

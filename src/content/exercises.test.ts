@@ -22,7 +22,7 @@ const { lessons, errors } = parseLessons(files);
  * pistas y solución, y datos distintos). Se añade el id cuando se termina la lección
  * (CLAUDE.md, «Contenido de ejercicios»). Empieza vacía para no romper la publicación.
  */
-const COMPLETE_LESSONS: string[] = ['tres-metodos', 'angulos-distancias'];
+const COMPLETE_LESSONS: string[] = ['tres-metodos', 'angulos-distancias', 'seccion-piramide'];
 
 const lessonNamed = (id: string): Lesson => {
   const lesson = lessons.find((l) => l.id === id);
@@ -82,11 +82,17 @@ describe('objetivo por lección', () => {
   });
 
   it('una lección sin terminar incumple el objetivo (el test sabe detectarlo)', () => {
-    const problems = completenessProblems(lessonNamed('seccion-piramide')).join('\n');
+    // Una lección terminada a la que se le quitan ejercicios, pistas y soluciones.
+    const unfinished = structuredClone(lessonNamed('tres-metodos'));
+    unfinished.exercises = unfinished.exercises.slice(0, 3).map((e) => ({
+      ...e,
+      hints: undefined,
+      solution: undefined,
+    }));
+    const problems = completenessProblems(unfinished).join('\n');
     expect(problems).toContain('deben ser 9');
     expect(problems).toContain('faltan las 3 pistas');
     expect(problems).toContain('falta la solución');
-    expect(completenessProblems(lessonNamed('tres-metodos'))).toEqual([]);
   });
 
   /** Una lección sintética completa: 9 ejercicios de tres-metodos con datos distintos. */
