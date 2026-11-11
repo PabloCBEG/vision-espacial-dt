@@ -306,7 +306,868 @@
           "figura": ["A", "B"],
           "objetivo": "angulo-PH"
         }
-      }
+      },
+      "hints": [
+        "El ángulo de una recta con el PH se lee cuando un plano vertical nuevo es paralelo a la recta.",
+        "Con un cambio de plano vertical, la LT₁ es paralela a A′B′ y las cotas no cambian.",
+        "Traza la LT₁ paralela a A′B′ y lleva sobre las perpendiculares las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota, y AB asciende hacia atrás: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano vertical nuevo, paralelo a AB, ve la recta en verdadera magnitud y con su ángulo con el PH. Como el PH no cambia, ese ángulo es el que buscamos.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "AB no se mueve: colocamos un plano vertical nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar y con su inclinación sobre el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la LT₁ paralela a A′B′. Por A′ y B′ traza las perpendiculares a la LT₁.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre ellas la cota de cada punto, medida desde la LT. El ángulo de A″₁B″₁ con la LT₁ es el que AB forma con el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: al cambiar de plano vertical las cotas no cambian, así que A″₁ y B″₁ quedan sobre la LT₁ a la misma altura que A″ y B″ sobre la LT. El ángulo mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir con el transportador el ángulo que A″B″ forma con la LT. Es el de la proyección vertical, no el de AB con el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error",
+                  "desplaza": [0, 12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "AB tiene sus dos extremos a la misma cota. Gira AB alrededor de un eje de punta y escribe el ángulo que forma con el PV, en grados.",
+      "answer": 45.0,
+      "unit": "°",
+      "tolerance": 2,
+      "points": {
+        "A": [-15, 10, 15],
+        "B": [15, 40, 15]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PV",
+          "eje": "punta"
+        }
+      },
+      "hints": [
+        "El ángulo de una recta con el PV se ve cuando la recta está paralela al PH.",
+        "Un giro de eje de punta mantiene los alejamientos y lleva AB a una posición paralela al PH.",
+        "En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B tienen la misma cota: AB ya es paralela al PH y su planta A′B′ muestra el ángulo con el PV sin deformar. Veamos qué da el giro.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta paralela al PH muestra en planta su verdadera magnitud y su ángulo con el PV. Si ya lo está, el giro solo lo confirma.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Giramos AB alrededor de un eje de punta que pasa por A, perpendicular al PV. B describe una circunferencia frontal y su alejamiento no cambia.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Baja B₁″ por su línea de referencia hasta la paralela a la LT que pasa por B′: ese punto es B₁′. El ángulo de A′B₁′ con la LT es el que AB forma con el PV.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: B₁′ conserva el alejamiento de B′, porque el giro de eje de punta no cambia los alejamientos. El ángulo mide {respuesta}.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir con el transportador el ángulo que A″B″ forma con la LT. Es el del alzado, que aquí es nulo, y no el que AB forma con el PV.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error",
+                  "desplaza": [0, 12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "El plano α es paralelo a la LT. Halla la distancia del punto P al plano α en milímetros; ayúdate de la cuadrícula de 10 mm.",
+      "answer": 32,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "P": [0, 40, 40],
+        "D": [-45, 40, 0],
+        "E": [40, 40, 0],
+        "G": [40, 0, 30]
+      },
+      "show3d": [
+        "planos",
+        "punto:P",
+        "plano:α",
+        "trazas:α",
+        "perpendicular",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "trazas:α",
+        "proyecciones:P",
+        "referencia:P",
+        "perpendicular",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "distancia": {
+            "desde": "P",
+            "hasta": "α"
+          }
+        }
+      },
+      "hints": [
+        "La distancia de un punto a un plano se mide sobre la perpendicular al plano que pasa por el punto.",
+        "Esa perpendicular corta a α en el pie F; hay que ver el segmento PF en verdadera magnitud, con un giro de eje vertical.",
+        "Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α es paralelo a la LT: sus dos trazas lo son. El punto P está delante y arriba, y ninguna proyección muestra cuánto dista de α.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La distancia de P a α se mide sobre la perpendicular desde P. Esa perpendicular corta a α en el pie F, y PF es el segmento que hay que ver sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Giramos PF alrededor de un eje vertical que pasa por P, hasta dejarlo paralelo al PV. F describe una circunferencia horizontal y su cota no cambia.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. Gira F′ con centro en P′ hasta que P′F₁′ quede paralela a la LT.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Sube F₁″ por su línea de referencia hasta la cota de F″. P″F₁″ es la distancia de P a α en verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir P′F′ o P″F″ en la lámina y dar ese valor. PF no es paralelo al PH ni al PV, así que sus proyecciones son más cortas que la distancia, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
@@ -354,7 +1215,883 @@
           },
           "selector": true
         }
-      }
+      },
+      "hints": [
+        "La distancia de un punto a un plano se mide sobre la perpendicular al plano que pasa por el punto.",
+        "Esa perpendicular corta a α en el pie F, y hay que ver PF en verdadera magnitud con el método que elijas.",
+        "Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El punto P está delante del plano α y a cierta altura. Ninguna proyección muestra cuánto dista de α.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "selector": false,
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La distancia de P a α se mide sobre la perpendicular desde P. Esa perpendicular corta a α en el pie F, y PF es el segmento que hay que ver sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "selector": false,
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Giramos PF alrededor de un eje vertical que pasa por P, hasta dejarlo paralelo al PV. F describe una circunferencia horizontal y su cota no cambia.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "selector": false,
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. Gira F′ con centro en P′ hasta que P′F₁′ quede paralela a la LT.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "selector": false,
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Sube F₁″ por su línea de referencia hasta la cota de F″. P″F₁″ es la distancia de P a α en verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "selector": false,
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "selector": false,
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir P′F′ o P″F″ en la lámina y dar ese valor. PF no es paralelo al PH ni al PV, así que sus proyecciones son más cortas que la distancia, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "selector": false,
+              "progreso": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Halla el ángulo que forma la recta AB con el PV. Gira AB alrededor de un eje de punta y escribe el ángulo en grados.",
+      "answer": 29.2,
+      "unit": "°",
+      "tolerance": 2,
+      "points": {
+        "A": [-40, 10, 10],
+        "B": [25, 50, 40]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "B"],
+          "objetivo": "angulo-PV",
+          "eje": "punta"
+        }
+      },
+      "hints": [
+        "El ángulo de una recta con el PV se lee cuando la recta es paralela al PH.",
+        "Un giro de eje de punta mantiene los alejamientos y lleva AB a una posición paralela al PH.",
+        "En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta paralela al PH muestra en planta su ángulo con el PV sin deformar. Basta con girar AB hasta dejarla en esa posición.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Giramos AB alrededor de un eje de punta que pasa por A, perpendicular al PV. B describe una circunferencia frontal y su alejamiento no cambia.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Baja B₁″ por su línea de referencia hasta la paralela a la LT que pasa por B′: ese punto es B₁′. El ángulo de A′B₁′ con la LT es el que AB forma con el PV.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: B₁′ conserva el alejamiento de B′, porque el giro de eje de punta no cambia los alejamientos. El ángulo mide {respuesta}.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir con el transportador el ángulo que A′B′ forma con la LT. Es el de la proyección, no el de AB, que solo se lee cuando AB está paralela al PH.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PV",
+              "eje": "punta",
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Halla la distancia del punto P al plano α en milímetros. Abate el plano proyectante del segmento PF sobre el PH.",
+      "answer": 52.5,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "P": [-10, 55, 45]
+      },
+      "show3d": [
+        "planos",
+        "punto:P",
+        "plano:α",
+        "trazas:α",
+        "perpendicular",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "trazas:α",
+        "proyecciones:P",
+        "referencia:P",
+        "perpendicular",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "distancia": {
+            "desde": "P",
+            "hasta": "α"
+          }
+        }
+      },
+      "hints": [
+        "La distancia de un punto a un plano se mide sobre la perpendicular al plano desde el punto.",
+        "Hay que ver el segmento PF en verdadera magnitud: abate el plano vertical que lo contiene sobre el PH.",
+        "Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, halla F, y lleva las cotas de P y F sobre las perpendiculares a la charnela."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El punto P está lejos del plano α, delante y arriba. Ninguna de las proyecciones del segmento PF, perpendicular a α, muestra su longitud real.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La distancia de P a α es la longitud de PF, y se ve sin deformar cuando el plano vertical que contiene a PF se abate sobre el PH.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de PF gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. PF gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. La charnela es la traza horizontal del plano proyectante de PF: pasa por P′F′.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular a la charnela la cota del punto. El segmento (P)(F) es la distancia de P a α.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar sobre las perpendiculares a la charnela los alejamientos en vez de las cotas. En el abatimiento sobre el PH, la distancia de cada punto a la charnela es su cota.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
@@ -400,7 +2137,991 @@
       "points": {
         "A": [30, 5, 5],
         "B": [-40, 15, 15]
-      }
+      },
+      "hints": [
+        "El ángulo de una recta con un plano es el que forma con su proyección ortogonal sobre el plano.",
+        "Esa proyección es la recta IF, con I el corte de AB con α y F el pie de la perpendicular desde A; el triángulo A, I, F se abate.",
+        "Halla I y F, une A, I y F, y abate el triángulo alrededor de la traza horizontal de su plano."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta AB atraviesa el plano α en un punto I. Su proyección sobre α es la recta IF, con F el pie de la perpendicular desde A.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Para medir el ángulo con un plano, la recta se compara con su proyección sobre él. Ese ángulo está en el triángulo A, I, F, que hay que llevar a la lámina sin deformarlo.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano del triángulo A, I, F gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. El triángulo gira sin deformarse.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Halla I, donde AB corta a α, y F, el pie de la perpendicular desde A a α. Une A, I y F.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el triángulo sobre el PH, alrededor de la traza de su plano. El ángulo en (I) entre (A)(I) y (I)(F) es el que AB forma con α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el triángulo A, I, F es rectángulo en F, porque AF es perpendicular a α. El ángulo en (I) mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo entre AB y una traza del plano. El ángulo con un plano se mide con la proyección de la recta sobre el plano, y no con sus trazas.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: halla el ángulo que forma la recta AB con el plano α. Abate el triángulo A, I, F y escribe el ángulo en grados.",
+      "answer": 23.6,
+      "unit": "°",
+      "tolerance": 2,
+      "points": {
+        "A": [-35, 10, 50],
+        "B": [30, 40, 10]
+      },
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "figura",
+        "perpendicular",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "perpendicular",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "objetivo": "angulo",
+          "anguloRectaPlano": {
+            "recta": ["A", "B"],
+            "plano": "α"
+          }
+        }
+      },
+      "hints": [
+        "El ángulo de una recta con un plano es el que forma con su proyección ortogonal sobre el plano.",
+        "Esa proyección es la recta IF, con I el corte de AB con α y F el pie de la perpendicular desde A; el triángulo A, I, F se abate sobre el PH.",
+        "Halla I y F, une A, I y F, y abate el triángulo alrededor de la traza horizontal de su plano."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta AB atraviesa el plano α en un punto I. Su proyección sobre α es la recta IF, con F el pie de la perpendicular desde A.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El ángulo que forma una recta con un plano es el ángulo en I del triángulo A, I, F. Hay que llevar ese triángulo a la lámina sin deformarlo.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano del triángulo A, I, F gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. El triángulo gira sin deformarse.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Halla I, donde AB corta a α, y F, el pie de la perpendicular desde A a α. Une A, I y F.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el triángulo sobre el PH, alrededor de la traza de su plano. El ángulo en (I) entre (A)(I) y (I)(F) es el que AB forma con α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el triángulo A, I, F es rectángulo en F, porque AF es perpendicular a α. El ángulo en (I) mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo entre AB y una traza del plano. El ángulo con un plano se mide con la proyección de la recta sobre el plano, y no con sus trazas.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "perpendicular",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "objetivo": "angulo",
+              "anguloRectaPlano": {
+                "recta": ["A", "B"],
+                "plano": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: halla la distancia del punto P al plano α en milímetros. Usa un cambio de plano vertical para ver PF en verdadera magnitud.",
+      "answer": 38.2,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "P": [30, 50, 50]
+      },
+      "show3d": [
+        "planos",
+        "punto:P",
+        "plano:α",
+        "trazas:α",
+        "perpendicular",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "trazas:α",
+        "proyecciones:P",
+        "referencia:P",
+        "perpendicular",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "distancia": {
+            "desde": "P",
+            "hasta": "α"
+          }
+        }
+      },
+      "hints": [
+        "La distancia de un punto a un plano es la longitud del segmento PF, con F el pie de la perpendicular desde P.",
+        "Con un plano vertical nuevo, paralelo a PF, el segmento se ve sin deformar y las cotas no cambian.",
+        "Halla F con las perpendiculares a las trazas, traza la LT₁ paralela a P′F′ y lleva las cotas de P y F."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El punto P está en el fondo y arriba, y el plano α pasa por delante de él. Ninguna proyección de PF muestra su longitud real.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Medir la distancia de P a α es ver el segmento PF sin deformar. Un plano de proyección nuevo, paralelo a PF, lo consigue sin mover nada.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "PF no se mueve: colocamos un plano vertical nuevo, paralelo a PF, y proyectamos sobre él. En ese plano PF se ve sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. Traza la LT₁ paralela a P′F′.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Por P′ y F′ traza las perpendiculares a la LT₁ y lleva sobre ellas las cotas de P y F. P″₁F″₁ es la distancia de P a α.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar sobre las perpendiculares a la LT₁ los alejamientos en vez de las cotas. Con un plano vertical nuevo, lo que se conserva y se lleva a la LT₁ son las cotas.",
+          "show3d": [
+            "planos",
+            "punto:P",
+            "plano:α",
+            "trazas:α",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "trazas:α",
+            "proyecciones:P",
+            "referencia:P",
+            "perpendicular",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "distancia": {
+                "desde": "P",
+                "hasta": "α"
+              },
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        }
+      ]
     }
   ]
 }

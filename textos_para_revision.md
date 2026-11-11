@@ -354,8 +354,104 @@ Fichero: `src/content/lessons/10-angulos-distancias.json` · DT II · nivel Avan
 **Ejercicios**
 
 1. [ ] *escribir una medida, dificultad 1* (respuesta: 29.5 °): Con el cambio de plano ya hecho, mide en la lámina el ángulo de la recta AB con el PH, en grados.
-2. [ ] *escribir una medida, dificultad 2* (respuesta: 42.7 mm): Halla la distancia del punto P al plano α en milímetros. Elige el método con el que mover el segmento PF.
-3. [ ] *escribir una medida, dificultad 3* (respuesta: 32.9 °): Como en la PAU: halla el ángulo que forma la recta AB con el plano α. Abate el triángulo A, I, F y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con el PH se lee cuando un plano vertical nuevo es paralelo a la recta.
+   - [ ] *Pista 2:* Con un cambio de plano vertical, la LT₁ es paralela a A′B′ y las cotas no cambian.
+   - [ ] *Pista 3:* Traza la LT₁ paralela a A′B′ y lleva sobre las perpendiculares las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota, y AB asciende hacia atrás: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PH.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano vertical nuevo, paralelo a AB, ve la recta en verdadera magnitud y con su ángulo con el PH. Como el PH no cambia, ese ángulo es el que buscamos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* AB no se mueve: colocamos un plano vertical nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar y con su inclinación sobre el PH.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la LT₁ paralela a A′B′. Por A′ y B′ traza las perpendiculares a la LT₁.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre ellas la cota de cada punto, medida desde la LT. El ángulo de A″₁B″₁ con la LT₁ es el que AB forma con el PH.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: al cambiar de plano vertical las cotas no cambian, así que A″₁ y B″₁ quedan sobre la LT₁ a la misma altura que A″ y B″ sobre la LT. El ángulo mide 29,5°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir con el transportador el ángulo que A″B″ forma con la LT. Es el de la proyección vertical, no el de AB con el PH.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 45 °): AB tiene sus dos extremos a la misma cota. Gira AB alrededor de un eje de punta y escribe el ángulo que forma con el PV, en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con el PV se ve cuando la recta está paralela al PH.
+   - [ ] *Pista 2:* Un giro de eje de punta mantiene los alejamientos y lleva AB a una posición paralela al PH.
+   - [ ] *Pista 3:* En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B tienen la misma cota: AB ya es paralela al PH y su planta A′B′ muestra el ángulo con el PV sin deformar. Veamos qué da el giro.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta paralela al PH muestra en planta su verdadera magnitud y su ángulo con el PV. Si ya lo está, el giro solo lo confirma.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Giramos AB alrededor de un eje de punta que pasa por A, perpendicular al PV. B describe una circunferencia frontal y su alejamiento no cambia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Baja B₁″ por su línea de referencia hasta la paralela a la LT que pasa por B′: ese punto es B₁′. El ángulo de A′B₁′ con la LT es el que AB forma con el PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: B₁′ conserva el alejamiento de B′, porque el giro de eje de punta no cambia los alejamientos. El ángulo mide 45°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir con el transportador el ángulo que A″B″ forma con la LT. Es el del alzado, que aquí es nulo, y no el que AB forma con el PV.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 32 mm): El plano α es paralelo a la LT. Halla la distancia del punto P al plano α en milímetros; ayúdate de la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* La distancia de un punto a un plano se mide sobre la perpendicular al plano que pasa por el punto.
+   - [ ] *Pista 2:* Esa perpendicular corta a α en el pie F; hay que ver el segmento PF en verdadera magnitud, con un giro de eje vertical.
+   - [ ] *Pista 3:* Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es paralelo a la LT: sus dos trazas lo son. El punto P está delante y arriba, y ninguna proyección muestra cuánto dista de α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La distancia de P a α se mide sobre la perpendicular desde P. Esa perpendicular corta a α en el pie F, y PF es el segmento que hay que ver sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Giramos PF alrededor de un eje vertical que pasa por P, hasta dejarlo paralelo al PV. F describe una circunferencia horizontal y su cota no cambia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. Gira F′ con centro en P′ hasta que P′F₁′ quede paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Sube F₁″ por su línea de referencia hasta la cota de F″. P″F₁″ es la distancia de P a α en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide 32 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir P′F′ o P″F″ en la lámina y dar ese valor. PF no es paralelo al PH ni al PV, así que sus proyecciones son más cortas que la distancia, 32 mm.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 42.7 mm): Halla la distancia del punto P al plano α en milímetros. Elige el método con el que mover el segmento PF.
+   - [ ] *Pista 1:* La distancia de un punto a un plano se mide sobre la perpendicular al plano que pasa por el punto.
+   - [ ] *Pista 2:* Esa perpendicular corta a α en el pie F, y hay que ver PF en verdadera magnitud con el método que elijas.
+   - [ ] *Pista 3:* Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El punto P está delante del plano α y a cierta altura. Ninguna proyección muestra cuánto dista de α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La distancia de P a α se mide sobre la perpendicular desde P. Esa perpendicular corta a α en el pie F, y PF es el segmento que hay que ver sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Giramos PF alrededor de un eje vertical que pasa por P, hasta dejarlo paralelo al PV. F describe una circunferencia horizontal y su cota no cambia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. Gira F′ con centro en P′ hasta que P′F₁′ quede paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Sube F₁″ por su línea de referencia hasta la cota de F″. P″F₁″ es la distancia de P a α en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide 42,7 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir P′F′ o P″F″ en la lámina y dar ese valor. PF no es paralelo al PH ni al PV, así que sus proyecciones son más cortas que la distancia, 42,7 mm.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 29.2 °): Halla el ángulo que forma la recta AB con el PV. Gira AB alrededor de un eje de punta y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con el PV se lee cuando la recta es paralela al PH.
+   - [ ] *Pista 2:* Un giro de eje de punta mantiene los alejamientos y lleva AB a una posición paralela al PH.
+   - [ ] *Pista 3:* En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta paralela al PH muestra en planta su ángulo con el PV sin deformar. Basta con girar AB hasta dejarla en esa posición.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Giramos AB alrededor de un eje de punta que pasa por A, perpendicular al PV. B describe una circunferencia frontal y su alejamiento no cambia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Baja B₁″ por su línea de referencia hasta la paralela a la LT que pasa por B′: ese punto es B₁′. El ángulo de A′B₁′ con la LT es el que AB forma con el PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: B₁′ conserva el alejamiento de B′, porque el giro de eje de punta no cambia los alejamientos. El ángulo mide 29,2°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir con el transportador el ángulo que A′B′ forma con la LT. Es el de la proyección, no el de AB, que solo se lee cuando AB está paralela al PH.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 52.5 mm): Halla la distancia del punto P al plano α en milímetros. Abate el plano proyectante del segmento PF sobre el PH.
+   - [ ] *Pista 1:* La distancia de un punto a un plano se mide sobre la perpendicular al plano desde el punto.
+   - [ ] *Pista 2:* Hay que ver el segmento PF en verdadera magnitud: abate el plano vertical que lo contiene sobre el PH.
+   - [ ] *Pista 3:* Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, halla F, y lleva las cotas de P y F sobre las perpendiculares a la charnela.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El punto P está lejos del plano α, delante y arriba. Ninguna de las proyecciones del segmento PF, perpendicular a α, muestra su longitud real.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La distancia de P a α es la longitud de PF, y se ve sin deformar cuando el plano vertical que contiene a PF se abate sobre el PH.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de PF gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. PF gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. La charnela es la traza horizontal del plano proyectante de PF: pasa por P′F′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular a la charnela la cota del punto. El segmento (P)(F) es la distancia de P a α.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide 52,5 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar sobre las perpendiculares a la charnela los alejamientos en vez de las cotas. En el abatimiento sobre el PH, la distancia de cada punto a la charnela es su cota.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 32.9 °): Como en la PAU: halla el ángulo que forma la recta AB con el plano α. Abate el triángulo A, I, F y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con un plano es el que forma con su proyección ortogonal sobre el plano.
+   - [ ] *Pista 2:* Esa proyección es la recta IF, con I el corte de AB con α y F el pie de la perpendicular desde A; el triángulo A, I, F se abate.
+   - [ ] *Pista 3:* Halla I y F, une A, I y F, y abate el triángulo alrededor de la traza horizontal de su plano.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta AB atraviesa el plano α en un punto I. Su proyección sobre α es la recta IF, con F el pie de la perpendicular desde A.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Para medir el ángulo con un plano, la recta se compara con su proyección sobre él. Ese ángulo está en el triángulo A, I, F, que hay que llevar a la lámina sin deformarlo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano del triángulo A, I, F gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. El triángulo gira sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla I, donde AB corta a α, y F, el pie de la perpendicular desde A a α. Une A, I y F.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate el triángulo sobre el PH, alrededor de la traza de su plano. El ángulo en (I) entre (A)(I) y (I)(F) es el que AB forma con α.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el triángulo A, I, F es rectángulo en F, porque AF es perpendicular a α. El ángulo en (I) mide 32,9°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo entre AB y una traza del plano. El ángulo con un plano se mide con la proyección de la recta sobre el plano, y no con sus trazas.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 23.6 °): Como en la PAU: halla el ángulo que forma la recta AB con el plano α. Abate el triángulo A, I, F y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con un plano es el que forma con su proyección ortogonal sobre el plano.
+   - [ ] *Pista 2:* Esa proyección es la recta IF, con I el corte de AB con α y F el pie de la perpendicular desde A; el triángulo A, I, F se abate sobre el PH.
+   - [ ] *Pista 3:* Halla I y F, une A, I y F, y abate el triángulo alrededor de la traza horizontal de su plano.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta AB atraviesa el plano α en un punto I. Su proyección sobre α es la recta IF, con F el pie de la perpendicular desde A.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El ángulo que forma una recta con un plano es el ángulo en I del triángulo A, I, F. Hay que llevar ese triángulo a la lámina sin deformarlo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano del triángulo A, I, F gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. El triángulo gira sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla I, donde AB corta a α, y F, el pie de la perpendicular desde A a α. Une A, I y F.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate el triángulo sobre el PH, alrededor de la traza de su plano. El ángulo en (I) entre (A)(I) y (I)(F) es el que AB forma con α.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el triángulo A, I, F es rectángulo en F, porque AF es perpendicular a α. El ángulo en (I) mide 23,6°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo entre AB y una traza del plano. El ángulo con un plano se mide con la proyección de la recta sobre el plano, y no con sus trazas.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 38.2 mm): Como en la PAU: halla la distancia del punto P al plano α en milímetros. Usa un cambio de plano vertical para ver PF en verdadera magnitud.
+   - [ ] *Pista 1:* La distancia de un punto a un plano es la longitud del segmento PF, con F el pie de la perpendicular desde P.
+   - [ ] *Pista 2:* Con un plano vertical nuevo, paralelo a PF, el segmento se ve sin deformar y las cotas no cambian.
+   - [ ] *Pista 3:* Halla F con las perpendiculares a las trazas, traza la LT₁ paralela a P′F′ y lleva las cotas de P y F.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El punto P está en el fondo y arriba, y el plano α pasa por delante de él. Ninguna proyección de PF muestra su longitud real.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Medir la distancia de P a α es ver el segmento PF sin deformar. Un plano de proyección nuevo, paralelo a PF, lo consigue sin mover nada.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* PF no se mueve: colocamos un plano vertical nuevo, paralelo a PF, y proyectamos sobre él. En ese plano PF se ve sin deformar.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza por P′ la perpendicular a α₁ y por P″ la perpendicular a α₂, y halla F donde cortan a α. Traza la LT₁ paralela a P′F′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Por P′ y F′ traza las perpendiculares a la LT₁ y lleva sobre ellas las cotas de P y F. P″₁F″₁ es la distancia de P a α.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: PF es perpendicular a α, así que ningún otro punto del plano está más cerca de P que F. La distancia mide 38,2 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar sobre las perpendiculares a la LT₁ los alejamientos en vez de las cotas. Con un plano vertical nuevo, lo que se conserva y se lleva a la LT₁ son las cotas.
 
 ### II-07 · Poliedros regulares en su posición PAU
 
