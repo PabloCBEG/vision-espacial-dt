@@ -149,8 +149,10 @@ Copia un ejercicio de una lección existente y cambia sus valores.
   - en `"value"`: `{respuesta}`;
   - motor de métodos: `{proyH}` y `{proyV}` (longitud de las proyecciones del segmento),
     `{difCota}` y `{difAlej}`;
-  - motor de sólidos: `{ladoMayor}`, `{ladoMenor}`, `{perimetro}` y `{numLados}` de la sección,
-    y `{radio}`, `{altura}` y `{lados}` del sólido.
+  - motor de sólidos: `{ladoMayor}`, `{ladoMenor}`, `{perimetro}` y `{numLados}` de la sección
+    (en el cono y el cilindro solo `{ladoMayor}`, el eje mayor), `{alejPunto}` y `{cotaPunto}` del
+    punto de la superficie, `{cuerda}` (el tramo de la recta dentro del sólido), y `{radio}`,
+    `{altura}` y `{lados}` del sólido.
 
   Un test falla si queda un marcador sin resolver, o si una narración lleva una medida escrita a
   mano que no es un dato del enunciado (se aceptan los ángulos de concepto: 30°, 45°, 60°, 90°…).
@@ -173,6 +175,10 @@ Copia un ejercicio de una lección existente y cambia sus valores.
   declara cuál es la suya con `"magnitud"`. La variante conserva pistas y solución, con los
   marcadores resueltos con sus datos; por eso los pasos de una solución con variantes no pueden
   fijar `"points"`.
+- **`"magnitud"` en el motor de sólidos**: dice qué mide la respuesta, y el motor la calcula.
+  Además de las de la sección, `alejamientoPunto` y `cotaPunto` (del punto `"punto"` de la
+  superficie) y `cuerda` (el tramo de la `"recta"` dentro del sólido). Una sección curva (cono y
+  cilindro) solo admite `ladoMayor`, que es su eje mayor.
 
 Los tests recorren todos los ejercicios (`src/content/exercises.test.ts`) y comprueban que la
 respuesta coincide con la que calcula el motor, que el estado final de la solución cumple la

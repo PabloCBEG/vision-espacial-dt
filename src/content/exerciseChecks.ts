@@ -13,7 +13,7 @@ import { createAppStore } from '../state/index.ts';
 import { exerciseMarkers, hasUnresolved, markersIn, resolveMarkers } from './markers.ts';
 import { countSentences, type Exercise, type Lesson } from './schema.ts';
 import { solutionEngines, solutionPoints } from './solutionState.ts';
-import { metodosAnswer, solidosMeasures } from './variants.ts';
+import { metodosAnswer, solidosMeasures, solidosValue } from './variants.ts';
 
 type ValueExercise = Extract<Exercise, { kind: 'value' }>;
 
@@ -131,18 +131,21 @@ function valueProblems(lesson: Lesson, exercise: ValueExercise): string[] {
       : [`la respuesta es ${exercise.answer} y el motor calcula ${exact.value.toFixed(2)}`];
   }
   if (exercise.engines?.solidos) {
+    if (exercise.unit !== 'mm') return ['las medidas de los sólidos van en mm'];
     const measures = solidosMeasures(exercise);
-    if (!measures) return ['el motor de sólidos no obtiene la sección con estos datos'];
-    if (exercise.unit !== 'mm') return ['la sección se mide en mm'];
     if (exercise.magnitud) {
-      if (measures.curved && exercise.magnitud !== 'ladoMayor') {
+      if (measures?.curved && ['ladoMenor', 'perimetro'].includes(exercise.magnitud)) {
         return ['una sección curva solo tiene eje mayor (magnitud ladoMayor)'];
       }
-      const exact = measures[exercise.magnitud];
+      const exact = solidosValue(exercise);
+      if (exact === null) {
+        return [`el motor no puede calcular «${exercise.magnitud}» con estos datos`];
+      }
       return Math.abs(exact - exercise.answer) <= MARGIN.mm
         ? []
         : [`la respuesta es ${exercise.answer} y el motor calcula ${exact.toFixed(2)}`];
     }
+    if (!measures) return ['el motor de sólidos no obtiene la sección con estos datos'];
     // Sin magnitud indicada: vale que sea alguno de los lados (o el eje mayor, si es curva).
     return measures.lados.some((side) => Math.abs(side - exercise.answer) <= MARGIN.mm)
       ? []

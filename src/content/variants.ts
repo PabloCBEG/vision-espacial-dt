@@ -6,9 +6,9 @@ import { buildConstruction, exactValue } from '../engines/metodos/construction.t
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
 import { buildScene } from '../engines/solidos/construction.ts';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
-import type { Exercise, Lesson, SectionMagnitude, SolutionStep } from './schema.ts';
+import type { Exercise, Lesson, SectionMagnitude, SolidMagnitude, SolutionStep } from './schema.ts';
 
-export type { SectionMagnitude };
+export type { SectionMagnitude, SolidMagnitude };
 
 type ValueExercise = Extract<Exercise, { kind: 'value' }>;
 
@@ -111,6 +111,38 @@ export function solidosMeasures(exercise: ValueExercise): SectionMeasures | null
     lados: sides,
     curved,
   };
+}
+
+/** Escena del motor de sólidos de un ejercicio, con todo construido (sección, punto y recta). */
+export function solidosScene(exercise: ValueExercise): ReturnType<typeof buildScene> | null {
+  const data = exercise.engines?.solidos;
+  if (!data) return null;
+  return buildScene(SolidsStepSchema.parse(data), {
+    quitar: 1,
+    abatir: 1,
+    desarrollo: 0,
+    punto: 1,
+  });
+}
+
+/**
+ * Respuesta de un ejercicio de sólidos que declara su `magnitud`, calculada por el motor:
+ * medidas de la sección, alejamiento o cota del punto de la superficie, o cuerda de la recta.
+ */
+export function solidosValue(exercise: ValueExercise): number | null {
+  const magnitud: SolidMagnitude | undefined = exercise.magnitud;
+  if (!magnitud) return null;
+  if (magnitud === 'alejamientoPunto' || magnitud === 'cotaPunto') {
+    const p = solidosScene(exercise)?.point?.p;
+    return p ? (magnitud === 'cotaPunto' ? p.c : p.a) : null;
+  }
+  if (magnitud === 'cuerda') {
+    const hits = solidosScene(exercise)?.line?.hits;
+    return hits
+      ? Math.hypot(hits[0].x - hits[1].x, hits[0].a - hits[1].a, hits[0].c - hits[1].c)
+      : null;
+  }
+  return solidosMeasures(exercise)?.[magnitud] ?? null;
 }
 
 /** Lo que pregunta el enunciado de una variante, según la magnitud pedida. */

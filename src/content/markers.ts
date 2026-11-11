@@ -5,8 +5,8 @@
 import { formatMeasure, formatMm } from '../ui/format.ts';
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
-import type { Exercise, Lesson, SectionMagnitude } from './schema.ts';
-import { metodosAnswer, solidosMeasures } from './variants.ts';
+import type { Exercise, Lesson } from './schema.ts';
+import { metodosAnswer, solidosMeasures, solidosScene, solidosValue } from './variants.ts';
 
 export type MarkerValues = Readonly<Record<string, string>>;
 
@@ -72,9 +72,6 @@ export function exerciseMarkers(lesson: Lesson, exercise: Exercise): MarkerValue
   if (exercise.engines?.solidos) {
     const measures = solidosMeasures(exercise);
     if (measures) {
-      const asked: SectionMagnitude = exercise.magnitud ?? 'ladoMayor';
-      value = measures[asked];
-      unit = 'mm';
       // En el cono y el cilindro la sección es curva: solo se mide su eje mayor.
       out.ladoMayor = formatMeasure(measures.ladoMayor, 'mm');
       if (!measures.curved) {
@@ -82,6 +79,20 @@ export function exerciseMarkers(lesson: Lesson, exercise: Exercise): MarkerValue
         out.perimetro = formatMeasure(measures.perimetro, 'mm');
         out.numLados = String(measures.numLados);
       }
+    }
+    const scene = solidosScene(exercise);
+    if (scene?.point) {
+      out.alejPunto = formatMeasure(scene.point.p.a, 'mm');
+      out.cotaPunto = formatMeasure(scene.point.p.c, 'mm');
+    }
+    if (scene?.line?.hits) {
+      const [e, s] = scene.line.hits;
+      out.cuerda = formatMeasure(Math.hypot(e.x - s.x, e.a - s.a, e.c - s.c), 'mm');
+    }
+    const exact = solidosValue(exercise);
+    if (exact !== null) {
+      value = exact;
+      unit = 'mm';
     }
     const solid = SolidsStepSchema.parse(exercise.engines.solidos).solido;
     out.radio = formatMeasure(solid.radio, 'mm');

@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
 import { parseLessons } from './lessons.ts';
-import { generateVariant, metodosAnswer, seededRandom, solidosMeasures } from './variants.ts';
+import { generateVariant, metodosAnswer, seededRandom, solidosValue } from './variants.ts';
 
 const LESSONS_DIR = join(import.meta.dirname, 'lessons');
 const files: Record<string, unknown> = {};
@@ -44,9 +44,8 @@ describe('variantes de ejercicios de medida', () => {
           expect(result?.unit).toBe(variant.unit);
           expect(Math.abs((result?.value ?? NaN) - variant.answer)).toBeLessThan(0.06);
         } else {
-          const measures = solidosMeasures(variant);
-          const asked = variant.magnitud ?? 'ladoMayor';
-          expect(Math.abs((measures?.[asked] ?? NaN) - variant.answer)).toBeLessThan(0.06);
+          const value = solidosValue({ ...variant, magnitud: variant.magnitud ?? 'ladoMayor' });
+          expect(Math.abs((value ?? NaN) - variant.answer)).toBeLessThan(0.06);
         }
         expect(variant.answer).toBeGreaterThan(5);
       }

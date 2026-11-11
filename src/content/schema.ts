@@ -187,6 +187,19 @@ const ConditionExercise = z.object({
 export const SECTION_MAGNITUDES = ['ladoMayor', 'ladoMenor', 'perimetro'] as const;
 export type SectionMagnitude = (typeof SECTION_MAGNITUDES)[number];
 
+/**
+ * Magnitudes que puede pedir un ejercicio de medida con el motor de sólidos: las de la sección,
+ * el alejamiento o la cota del punto de la superficie (`punto`) y la longitud de la cuerda ES que
+ * la recta (`recta`) deja dentro del sólido.
+ */
+export const SOLID_MAGNITUDES = [
+  ...SECTION_MAGNITUDES,
+  'alejamientoPunto',
+  'cotaPunto',
+  'cuerda',
+] as const;
+export type SolidMagnitude = (typeof SOLID_MAGNITUDES)[number];
+
 /** Intervalo [mínimo, máximo] en mm. */
 const Range = z.tuple([z.number(), z.number()]).refine(([a, b]) => a <= b, 'mínimo ≤ máximo');
 
@@ -223,10 +236,10 @@ const ValueExercise = z.object({
   /** Respuesta correcta y su unidad; se acepta con la tolerancia indicada. */
   answer: z.number(),
   /**
-   * Qué magnitud de la sección de un sólido es la respuesta (ver SECTION_MAGNITUDES). Si falta,
+   * Qué magnitud de un sólido es la respuesta (ver SOLID_MAGNITUDES). Si falta,
    * vale cualquier lado de la sección (o su eje mayor, si es curva).
    */
-  magnitud: z.enum(SECTION_MAGNITUDES).optional(),
+  magnitud: z.enum(SOLID_MAGNITUDES).optional(),
   unit: z.enum(['mm', '°']),
   tolerance: z.number().positive().default(2),
   variant: VariantSchema.optional(),
