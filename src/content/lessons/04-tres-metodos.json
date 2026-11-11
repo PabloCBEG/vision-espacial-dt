@@ -486,6 +486,596 @@
     },
     {
       "kind": "value",
+      "difficulty": 1,
+      "prompt": "AB tiene sus dos extremos al mismo alejamiento. Abátela sobre el PH y mide su verdadera magnitud; ayúdate de la cuadrícula de 10 mm.",
+      "answer": 50,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-20, 10, 0],
+        "B": [20, 10, 30]
+      },
+      "show3d": ["planos", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están al mismo alejamiento: AB es paralela al PV y su alzado A″B″ parece conservar el tamaño real. Veamos qué da el abatimiento.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Al abatir el plano que contiene a AB, el segmento llega a la lámina sin deformarse: lo que importa es la bisagra y la distancia de cada punto a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano vertical que contiene a AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la diferencia de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir A′B′, que da {proyH}, y contestar eso. AB es paralela al PV y no al PH, así que su planta sale más corta que la verdadera magnitud, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -10]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "AB tiene sus dos extremos a la misma cota. Usa un cambio de plano vertical y mide su verdadera magnitud; ayúdate de la cuadrícula de 10 mm.",
+      "answer": 60,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-30, 5, 15],
+        "B": [18, 41, 15]
+      },
+      "show3d": ["planos", "figura", "nueva-lt", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Un segmento se ve sin deformar sobre un plano que sea paralelo a él, con las proyectantes perpendiculares a ese plano.",
+        "Coloca un plano vertical nuevo paralelo a AB: su traza, la LT₁, es paralela a A′B′.",
+        "Traza la LT₁ paralela a A′B′ y lleva sobre las perpendiculares las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B tienen la misma cota: AB es paralela al PH y su planta A′B′ parece conservar el tamaño real. Veamos qué da el cambio de plano.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Si proyectamos sobre un plano nuevo paralelo a AB, el segmento se ve sin deformar y las cotas se conservan.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "AB no se mueve: colocamos un plano vertical nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la LT₁ paralela a A′B′. Por A′ y B′ traza las perpendiculares a la LT₁.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre ellas la cota de cada punto, medida desde la LT. A″₁B″₁ es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: al cambiar de plano vertical las cotas no cambian, así que A″₁ y B″₁ quedan sobre la LT₁ a la misma altura que A″ y B″ sobre la LT. Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir A″B″, que da {proyV}, y contestar eso. AB es paralela al PH y no al PV, así que su alzado sale más corto que la verdadera magnitud, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error",
+                  "desplaza": [0, 12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
       "difficulty": 2,
       "prompt": "Elige el método que prefieras y mide la verdadera magnitud de AB en milímetros.",
       "answer": 55.2,
@@ -516,7 +1106,821 @@
           "figura": ["A", "B"],
           "selector": true
         }
-      }
+      },
+      "hints": [
+        "Los tres métodos llevan AB a una posición en la que se ve sin deformar: elige el que te resulte más claro.",
+        "Con el abatimiento, el plano vertical que contiene a AB gira sobre su traza horizontal hasta caer en el PH.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Por eso ninguna proyección mide AB.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "selector": false,
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Los tres métodos llevan AB a una posición en la que es paralela a un plano de proyección. Aquí elegimos el abatimiento.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "selector": false,
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano vertical que contiene a AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "selector": false,
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "selector": false,
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "selector": false,
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la diferencia de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "selector": false,
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar sobre las perpendiculares a la charnela los alejamientos en vez de las cotas. En el abatimiento sobre el PH, la distancia de cada punto a la charnela es su cota.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "figura": ["A", "B"],
+              "selector": false,
+              "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Halla el ángulo que forma la recta AB con el PV. Gira AB alrededor de un eje de punta y escribe el ángulo en grados.",
+      "answer": 28.2,
+      "unit": "°",
+      "tolerance": 2,
+      "points": {
+        "A": [-35, 15, 10],
+        "B": [15, 45, 35]
+      },
+      "show3d": ["planos", "figura", "eje", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "objetivo": "angulo-PV",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "El ángulo de una recta con el PV se ve cuando la recta se pone paralela al PH.",
+        "Un giro de eje de punta mantiene los alejamientos y lleva AB a una posición paralela al PH.",
+        "En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta paralela al PH muestra en planta su verdadera magnitud y su ángulo con el PV. Basta con girar AB hasta dejarla en esa posición.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Giramos AB alrededor de un eje de punta que pasa por A, perpendicular al PV. B describe una circunferencia frontal y su alejamiento no cambia.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Baja B₁″ por su línea de referencia hasta la paralela a la LT que pasa por B′: ese punto es B₁′. El ángulo de A′B₁′ con la LT es el que AB forma con el PV.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: B₁′ conserva el alejamiento de B′, porque el giro de eje de punta no cambia los alejamientos. El ángulo mide {respuesta}.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir con el transportador el ángulo que A′B′ forma con la LT. Es el de la proyección, no el de AB, que solo se lee cuando AB está paralela al PH.",
+          "show3d": ["planos", "punto:A", "punto:B", "figura", "eje", "movimiento", "resultado"],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "eje",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "giro",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Abate sobre el PV el plano proyectante de AB y mide la verdadera magnitud del segmento en milímetros.",
+      "answer": 57.3,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [10, 35, 8],
+        "B": [-30, 12, 42]
+      },
+      "show3d": ["planos", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "sobre": "PV",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Abatir sobre el PV es girar el plano que contiene a AB y es perpendicular al PV, hasta que quede sobre él.",
+        "La charnela es la traza vertical de ese plano, y cada punto cae a una distancia de ella igual a su alejamiento.",
+        "Traza por A″ y B″ las perpendiculares a la charnela y lleva sobre ellas los alejamientos de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Por eso ninguna proyección mide AB.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El plano que contiene a AB y es perpendicular al PV se puede abatir sobre el PV sin deformar nada de lo que hay en él, segmento incluido.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB sobre el PV gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "figura": ["A", "B"],
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular el alejamiento del punto, medido desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ ({proyV}) y la diferencia de alejamientos ({difAlej}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: abatir sobre el PV llevando las cotas en vez de los alejamientos. La distancia de cada punto a la charnela es su alejamiento, y la cota ya está en el alzado.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error",
+                  "desplaza": [0, 12]
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
@@ -548,7 +1952,892 @@
           "figura": ["A", "B"],
           "objetivo": "angulo-PH"
         }
-      }
+      },
+      "hints": [
+        "El ángulo de una recta con el PH se lee cuando un plano vertical nuevo es paralelo a la recta.",
+        "Con un cambio de plano vertical, la LT₁ es paralela a A′B′ y las cotas no cambian.",
+        "Traza la LT₁ paralela a A′B′ y lleva sobre las perpendiculares las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota, y AB asciende hacia atrás: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano vertical nuevo, paralelo a AB, ve la recta en verdadera magnitud y con su ángulo con el PH. Como el PH no cambia, ese ángulo es el que buscamos.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "AB no se mueve: colocamos un plano vertical nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar y con su inclinación sobre el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la LT₁ paralela a A′B′. Por A′ y B′ traza las perpendiculares a la LT₁.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre ellas la cota de cada punto, medida desde la LT. El ángulo de A″₁B″₁ con la LT₁ es el que AB forma con el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: al cambiar de plano vertical las cotas no cambian, así que A″₁ y B″₁ quedan sobre la LT₁ a la misma altura que A″ y B″ sobre la LT. El ángulo mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir con el transportador el ángulo que A″B″ forma con la LT. Es el de la proyección vertical, no el de AB con el PH.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "figura": ["A", "B"],
+              "objetivo": "angulo-PH",
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error",
+                  "desplaza": [0, 12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: halla el ángulo que forma la recta AB con el PV. Usa el cambio de plano y escribe el ángulo en grados.",
+      "answer": 29.5,
+      "unit": "°",
+      "tolerance": 2,
+      "points": {
+        "A": [-45, 12, 38],
+        "B": [15, 50, 8]
+      },
+      "show3d": ["planos", "figura", "nueva-lt", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "nueva-lt",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "cambio",
+          "objetivo": "angulo-PV",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "El ángulo de una recta con el PV se lee cuando un plano horizontal nuevo es paralelo a la recta.",
+        "Con un cambio de plano horizontal, la LT₁ es paralela a A″B″ y los alejamientos no cambian.",
+        "Traza la LT₁ paralela a A″B″ y lleva sobre las perpendiculares los alejamientos de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota, y AB desciende hacia delante: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano horizontal nuevo, paralelo a AB, ve la recta en verdadera magnitud y con su ángulo con el PV. Como el PV no cambia, ese ángulo es el que buscamos.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "AB no se mueve: colocamos un plano horizontal nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar y con su inclinación sobre el PV.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la LT₁ paralela a A″B″. Por A″ y B″ traza las perpendiculares a la LT₁.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre ellas el alejamiento de cada punto, medido desde la LT. El ángulo de A′₁B′₁ con la LT₁ es el que AB forma con el PV.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: al cambiar de plano horizontal los alejamientos no cambian, así que A′₁ y B′₁ quedan sobre la LT₁ a la misma distancia que A′ y B′ de la LT. El ángulo mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: cambiar de plano vertical para medir el ángulo con el PV. Con un plano vertical nuevo se lee el ángulo con el PH, y el de A′B′ con la LT es el de la proyección.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "nueva-lt",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "cambio",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: halla el ángulo que forma la recta AB con el PV. Abate sobre el PV el plano proyectante de AB y escribe el ángulo en grados.",
+      "answer": 21.0,
+      "unit": "°",
+      "tolerance": 2,
+      "points": {
+        "A": [35, 40, 10],
+        "B": [-20, 15, 45]
+      },
+      "show3d": ["planos", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "sobre": "PV",
+          "objetivo": "angulo-PV",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "El ángulo de una recta con el PV se lee en el plano que la contiene y es perpendicular al PV, una vez abatido.",
+        "Abate ese plano sobre el PV: la charnela es la traza vertical, y cada punto cae a una distancia de ella igual a su alejamiento.",
+        "Traza por A″ y B″ las perpendiculares a la charnela, lleva los alejamientos y mide el ángulo de (A)(B) con la charnela."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a distinto alejamiento y distinta cota, y AB sube hacia atrás: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "En el plano proyectante de AB sobre el PV, la recta y su proyección A″B″ forman el ángulo con el PV. Al abatir ese plano, el ángulo se ve sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB sobre el PV gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 0.5,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular el alejamiento del punto, medido desde la charnela. El ángulo de (A)(B) con la charnela es el que AB forma con el PV.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ ({proyV}) y la diferencia de alejamientos ({difAlej}). El ángulo mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo entre A″B″ y la LT. Es la inclinación del alzado, no la de AB con el PV: el ángulo se mide entre (A)(B) y la charnela.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "objetivo": "angulo-PV",
+              "figura": ["A", "B"],
+              "progreso": 1,
+              "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error",
+                  "desplaza": [0, 12]
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }

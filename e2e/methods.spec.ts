@@ -54,7 +54,7 @@ test.describe('motor de métodos (II-05)', () => {
   test('ejercicio de medida: corrige y explica el error', async ({ page }) => {
     await openLesson(page);
     await goToPage(page, 9);
-    await expect(page.locator('#lesson-progress-text')).toContainText('Ejercicio 1 de 3');
+    await expect(page.locator('#lesson-progress-text')).toContainText('Ejercicio 1 de 9');
     // Los puntos no se mueven: la respuesta depende de ellos.
     await expect(page.getByRole('slider', { name: 'Cota (c)' })).toBeDisabled();
     const answer = page.getByRole('spinbutton', { name: 'Tu respuesta' });
@@ -77,7 +77,7 @@ for (const viewport of [
     await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await openLesson(page);
-    const pages = 12;
+    const pages = 18;
     for (let i = 1; i <= pages; i++) {
       await page.waitForTimeout(900);
       await page.screenshot({

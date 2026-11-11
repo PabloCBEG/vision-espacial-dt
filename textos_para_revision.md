@@ -115,8 +115,94 @@ Fichero: `src/content/lessons/04-tres-metodos.json` · DT II · nivel Intermedio
    - [ ] *Solución, paso 5 · 4. El trazado:* B₁″ sube por su línea de referencia hasta la cota de B″. A″B₁″ es la verdadera magnitud.
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: B₁″ está a la misma altura que B″, porque el giro alrededor de un eje vertical no cambia las cotas. Además, A″B₁″ mide 61,8 mm, más que A′B′ (58,5 mm) y que A″B″ (58,5 mm).
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A″B″ y contestar 58,5 mm. AB no es paralelo al PV, así que A″B″ queda más corta que la verdadera magnitud, 61,8 mm.
-2. [ ] *escribir una medida, dificultad 2* (respuesta: 55.2 mm): Elige el método que prefieras y mide la verdadera magnitud de AB en milímetros.
-3. [ ] *escribir una medida, dificultad 3* (respuesta: 33 °): Como en la PAU: halla el ángulo que forma la recta AB con el PH. Usa el cambio de plano y escribe el ángulo en grados.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 50 mm): AB tiene sus dos extremos al mismo alejamiento. Abátela sobre el PH y mide su verdadera magnitud; ayúdate de la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están al mismo alejamiento: AB es paralela al PV y su alzado A″B″ parece conservar el tamaño real. Veamos qué da el abatimiento.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Al abatir el plano que contiene a AB, el segmento llega a la lámina sin deformarse: lo que importa es la bisagra y la distancia de cada punto a ella.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano vertical que contiene a AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (40 mm) y la diferencia de cotas (30 mm). Mide 50 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A′B′, que da 40 mm, y contestar eso. AB es paralela al PV y no al PH, así que su planta sale más corta que la verdadera magnitud, 50 mm.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 60 mm): AB tiene sus dos extremos a la misma cota. Usa un cambio de plano vertical y mide su verdadera magnitud; ayúdate de la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* Un segmento se ve sin deformar sobre un plano que sea paralelo a él, con las proyectantes perpendiculares a ese plano.
+   - [ ] *Pista 2:* Coloca un plano vertical nuevo paralelo a AB: su traza, la LT₁, es paralela a A′B′.
+   - [ ] *Pista 3:* Traza la LT₁ paralela a A′B′ y lleva sobre las perpendiculares las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B tienen la misma cota: AB es paralela al PH y su planta A′B′ parece conservar el tamaño real. Veamos qué da el cambio de plano.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Si proyectamos sobre un plano nuevo paralelo a AB, el segmento se ve sin deformar y las cotas se conservan.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* AB no se mueve: colocamos un plano vertical nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la LT₁ paralela a A′B′. Por A′ y B′ traza las perpendiculares a la LT₁.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre ellas la cota de cada punto, medida desde la LT. A″₁B″₁ es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: al cambiar de plano vertical las cotas no cambian, así que A″₁ y B″₁ quedan sobre la LT₁ a la misma altura que A″ y B″ sobre la LT. Mide 60 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A″B″, que da 48 mm, y contestar eso. AB es paralela al PH y no al PV, así que su alzado sale más corto que la verdadera magnitud, 60 mm.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 55.2 mm): Elige el método que prefieras y mide la verdadera magnitud de AB en milímetros.
+   - [ ] *Pista 1:* Los tres métodos llevan AB a una posición en la que se ve sin deformar: elige el que te resulte más claro.
+   - [ ] *Pista 2:* Con el abatimiento, el plano vertical que contiene a AB gira sobre su traza horizontal hasta caer en el PH.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Por eso ninguna proyección mide AB.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los tres métodos llevan AB a una posición en la que es paralela a un plano de proyección. Aquí elegimos el abatimiento.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano vertical que contiene a AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (49,2 mm) y la diferencia de cotas (25 mm). Mide 55,2 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar sobre las perpendiculares a la charnela los alejamientos en vez de las cotas. En el abatimiento sobre el PH, la distancia de cada punto a la charnela es su cota.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 28.2 °): Halla el ángulo que forma la recta AB con el PV. Gira AB alrededor de un eje de punta y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con el PV se ve cuando la recta se pone paralela al PH.
+   - [ ] *Pista 2:* Un giro de eje de punta mantiene los alejamientos y lleva AB a una posición paralela al PH.
+   - [ ] *Pista 3:* En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta paralela al PH muestra en planta su verdadera magnitud y su ángulo con el PV. Basta con girar AB hasta dejarla en esa posición.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Giramos AB alrededor de un eje de punta que pasa por A, perpendicular al PV. B describe una circunferencia frontal y su alejamiento no cambia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, gira B″ con centro en A″ hasta que A″B₁″ quede paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Baja B₁″ por su línea de referencia hasta la paralela a la LT que pasa por B′: ese punto es B₁′. El ángulo de A′B₁′ con la LT es el que AB forma con el PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: B₁′ conserva el alejamiento de B′, porque el giro de eje de punta no cambia los alejamientos. El ángulo mide 28,2°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir con el transportador el ángulo que A′B′ forma con la LT. Es el de la proyección, no el de AB, que solo se lee cuando AB está paralela al PH.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 57.3 mm): Abate sobre el PV el plano proyectante de AB y mide la verdadera magnitud del segmento en milímetros.
+   - [ ] *Pista 1:* Abatir sobre el PV es girar el plano que contiene a AB y es perpendicular al PV, hasta que quede sobre él.
+   - [ ] *Pista 2:* La charnela es la traza vertical de ese plano, y cada punto cae a una distancia de ella igual a su alejamiento.
+   - [ ] *Pista 3:* Traza por A″ y B″ las perpendiculares a la charnela y lleva sobre ellas los alejamientos de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota: AB no es paralela a ningún plano de proyección. Por eso ninguna proyección mide AB.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El plano que contiene a AB y es perpendicular al PV se puede abatir sobre el PV sin deformar nada de lo que hay en él, segmento incluido.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB sobre el PV gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular el alejamiento del punto, medido desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ (52,5 mm) y la diferencia de alejamientos (23 mm). Mide 57,3 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: abatir sobre el PV llevando las cotas en vez de los alejamientos. La distancia de cada punto a la charnela es su alejamiento, y la cota ya está en el alzado.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 33 °): Como en la PAU: halla el ángulo que forma la recta AB con el PH. Usa el cambio de plano y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con el PH se lee cuando un plano vertical nuevo es paralelo a la recta.
+   - [ ] *Pista 2:* Con un cambio de plano vertical, la LT₁ es paralela a A′B′ y las cotas no cambian.
+   - [ ] *Pista 3:* Traza la LT₁ paralela a A′B′ y lleva sobre las perpendiculares las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota, y AB asciende hacia atrás: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PH.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano vertical nuevo, paralelo a AB, ve la recta en verdadera magnitud y con su ángulo con el PH. Como el PH no cambia, ese ángulo es el que buscamos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* AB no se mueve: colocamos un plano vertical nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar y con su inclinación sobre el PH.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la LT₁ paralela a A′B′. Por A′ y B′ traza las perpendiculares a la LT₁.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre ellas la cota de cada punto, medida desde la LT. El ángulo de A″₁B″₁ con la LT₁ es el que AB forma con el PH.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: al cambiar de plano vertical las cotas no cambian, así que A″₁ y B″₁ quedan sobre la LT₁ a la misma altura que A″ y B″ sobre la LT. El ángulo mide 33°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir con el transportador el ángulo que A″B″ forma con la LT. Es el de la proyección vertical, no el de AB con el PH.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 29.5 °): Como en la PAU: halla el ángulo que forma la recta AB con el PV. Usa el cambio de plano y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con el PV se lee cuando un plano horizontal nuevo es paralelo a la recta.
+   - [ ] *Pista 2:* Con un cambio de plano horizontal, la LT₁ es paralela a A″B″ y los alejamientos no cambian.
+   - [ ] *Pista 3:* Traza la LT₁ paralela a A″B″ y lleva sobre las perpendiculares los alejamientos de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota, y AB desciende hacia delante: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano horizontal nuevo, paralelo a AB, ve la recta en verdadera magnitud y con su ángulo con el PV. Como el PV no cambia, ese ángulo es el que buscamos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* AB no se mueve: colocamos un plano horizontal nuevo, paralelo a AB, y proyectamos sobre él. En ese plano AB se ve sin deformar y con su inclinación sobre el PV.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la LT₁ paralela a A″B″. Por A″ y B″ traza las perpendiculares a la LT₁.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre ellas el alejamiento de cada punto, medido desde la LT. El ángulo de A′₁B′₁ con la LT₁ es el que AB forma con el PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: al cambiar de plano horizontal los alejamientos no cambian, así que A′₁ y B′₁ quedan sobre la LT₁ a la misma distancia que A′ y B′ de la LT. El ángulo mide 29,5°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: cambiar de plano vertical para medir el ángulo con el PV. Con un plano vertical nuevo se lee el ángulo con el PH, y el de A′B′ con la LT es el de la proyección.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 21 °): Como en la PAU: halla el ángulo que forma la recta AB con el PV. Abate sobre el PV el plano proyectante de AB y escribe el ángulo en grados.
+   - [ ] *Pista 1:* El ángulo de una recta con el PV se lee en el plano que la contiene y es perpendicular al PV, una vez abatido.
+   - [ ] *Pista 2:* Abate ese plano sobre el PV: la charnela es la traza vertical, y cada punto cae a una distancia de ella igual a su alejamiento.
+   - [ ] *Pista 3:* Traza por A″ y B″ las perpendiculares a la charnela, lleva los alejamientos y mide el ángulo de (A)(B) con la charnela.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a distinto alejamiento y distinta cota, y AB sube hacia atrás: no es paralela a ningún plano de proyección. Sus proyecciones no muestran su ángulo con el PV.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En el plano proyectante de AB sobre el PV, la recta y su proyección A″B″ forman el ángulo con el PV. Al abatir ese plano, el ángulo se ve sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB sobre el PV gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular el alejamiento del punto, medido desde la charnela. El ángulo de (A)(B) con la charnela es el que AB forma con el PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ (65,2 mm) y la diferencia de alejamientos (25 mm). El ángulo mide 21°.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo entre A″B″ y la LT. Es la inclinación del alzado, no la de AB con el PV: el ángulo se mide entre (A)(B) y la charnela.
 
 ### II-08 · Sección de una pirámide por un plano proyectante
 
