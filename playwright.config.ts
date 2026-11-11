@@ -9,7 +9,13 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${PORT}`,
   },
-  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
+  projects: [
+    // Chromium corre todos los tests y genera las capturas.
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    // Firefox y WebKit solo corren el test de humo.
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] }, testMatch: /smoke\.spec\.ts/ },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] }, testMatch: /smoke\.spec\.ts/ },
+  ],
   // Compila y sirve la versión de producción antes de los tests.
   webServer: {
     command: `npm run build && npm run preview -- --port ${PORT} --strictPort`,
