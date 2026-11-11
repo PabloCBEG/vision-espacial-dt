@@ -205,3 +205,34 @@ describe('marcadores', () => {
     expect(hasUnresolved('AB mide 61,8 mm')).toBe(false);
   });
 });
+
+describe('magnitudes del cono y el cilindro', () => {
+  const lesson = lessonNamed('cono-cilindro');
+  const byMagnitud = (m: string) => {
+    const found = lesson.exercises.find((e) => e.kind === 'value' && e.magnitud === m);
+    if (found?.kind !== 'value') throw new Error(`Sin ejercicio de ${m}`);
+    return found;
+  };
+
+  it('el punto de la superficie y la cuerda se comprueban con el motor', () => {
+    for (const magnitud of ['alejamientoPunto', 'cotaPunto', 'cuerda']) {
+      const exercise = byMagnitud(magnitud);
+      expect(exerciseProblems(lesson, exercise), magnitud).toEqual([]);
+      const wrong = { ...exercise, answer: exercise.answer + 5 };
+      expect(exerciseProblems(lesson, wrong).join(' | '), magnitud).toContain('el motor calcula');
+    }
+  });
+
+  it('los marcadores del punto y de la cuerda se resuelven con el formato de la aplicación', () => {
+    const point = exerciseMarkers(lesson, byMagnitud('alejamientoPunto'));
+    expect(point.respuesta).toMatch(/ mm$/);
+    expect(point.alejPunto).toBe(point.respuesta);
+    expect(exerciseMarkers(lesson, byMagnitud('cuerda')).cuerda).toBe('42,7 mm');
+  });
+
+  it('una sección curva rechaza el lado menor y el perímetro', () => {
+    const exercise = byMagnitud('ladoMayor');
+    const bad = { ...exercise, magnitud: 'perimetro' as const };
+    expect(exerciseProblems(lesson, bad).join(' | ')).toContain('solo tiene eje mayor');
+  });
+});

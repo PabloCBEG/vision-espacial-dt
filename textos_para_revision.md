@@ -233,7 +233,7 @@ Fichero: `src/content/lessons/05-seccion-piramide.json` · DT II · nivel Interm
    - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada vértice de la sección describe un arco.
    - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las aristas en los vértices de la sección. Bájalos a la planta por sus líneas de referencia.
    - [ ] *Solución, paso 5 · 4. El trazado:* Abate cada vértice sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los vértices abatidos forman la sección en verdadera magnitud.
-   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 4 lados, de 10,4 mm el menor y de 23,6 mm el mayor. La respuesta pedida es 23,6 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Mide con la cuadrícula: la sección tiene 4 lados, de 10,4 mm el menor y de 23,6 mm el mayor. La respuesta pedida es 21,9 mm.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.
 2. [ ] *escribir una medida, dificultad 1* (respuesta: 28.3 mm): El plano de corte α es paralelo al PV. Abátelo sobre el PH y mide el lado más largo de la sección; ayúdate de la cuadrícula de 10 mm.
    - [ ] *Pista 1:* Un plano paralelo al PV es perpendicular al PH, así que se puede abatir sobre el PH.
@@ -681,7 +681,105 @@ Fichero: `src/content/lessons/12-cono-cilindro.json` · DT II · nivel Avanzado
 
 **Ejercicios**
 
-1. [ ] *escribir una medida, dificultad 2* (respuesta: 35.2 mm): Mide en la lámina el eje mayor de la elipse de la sección en verdadera magnitud. Usa la cuadrícula de 10 mm.
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 40 mm): Se conoce M″, la proyección vertical de un punto M de la mitad delantera de un cono. Halla M′ y escribe el alejamiento de M en milímetros.
+   - [ ] *Pista 1:* Un punto de la superficie de un cono está siempre sobre una generatriz.
+   - [ ] *Pista 2:* Traza la generatriz que pasa por M″ y llévala a la planta.
+   - [ ] *Pista 3:* Une V″ con M″ y prolonga hasta la base; baja ese punto a la planta y únelo con V′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cono apoyado en el PH y un punto M de su superficie del que solo conocemos M″, su proyección vertical. Nos falta M′.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un punto de la superficie de un cono está siempre sobre una generatriz. Si hallamos esa generatriz, M′ cae sobre su planta.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Trazamos por M la generatriz del cono, que va del vértice V a la circunferencia de la base. Al girar alrededor del eje, esa generatriz recorre toda la superficie.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, une V″ con M″ y prolonga hasta la base. Baja ese punto a la planta, a la circunferencia de la base, por su línea de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* En la planta, une V′ con ese punto de la base. M′ está sobre esa recta, en la línea de referencia de M″.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M′ queda dentro de la circunferencia de la base y sobre la generatriz, y su alejamiento es 40 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner M′ sobre la línea de referencia pero fuera de la generatriz, por ejemplo en la circunferencia de la base. Solo la generatriz da el punto, y M no está en la base.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 46 mm): Se conoce M″, la proyección vertical de un punto M de la mitad delantera de un cilindro. Halla M′ y escribe el alejamiento de M en milímetros.
+   - [ ] *Pista 1:* Las generatrices del cilindro son verticales, así que los puntos de su superficie se proyectan sobre la circunferencia de la base.
+   - [ ] *Pista 2:* M′ está en la circunferencia de la planta, sobre la línea de referencia de M″.
+   - [ ] *Pista 3:* Baja la línea de referencia desde M″ hasta cortar la circunferencia de la planta: M′ es el punto delantero.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cilindro apoyado en el PH y un punto M de su superficie del que solo conocemos M″, su proyección vertical. Nos falta M′.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Las generatrices del cilindro son verticales: todos los puntos de su superficie se proyectan en la planta sobre la circunferencia de la base.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* La generatriz por M es una recta vertical que une la base con la tapa. M se mueve por ella sin cambiar su planta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza por M″ la línea de referencia hasta la planta. Corta a la circunferencia de la base en dos puntos.
+   - [ ] *Solución, paso 5 · 4. El trazado:* M′ es el punto de la circunferencia que está delante del eje, porque M está en la mitad delantera.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M′ está sobre la circunferencia de la base y su alejamiento es 46 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar el punto de la circunferencia que queda detrás del eje. Si M se ve en el alzado, está en la mitad delantera y su alejamiento es mayor que el del eje.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 56.6 mm): Un plano proyectante vertical corta a un cilindro formando 45° con el PH. Halla la sección en verdadera magnitud y mide su eje mayor; ayúdate de la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* La sección de un cilindro por un plano oblicuo al eje es una elipse.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical y su traza α₂ forma 45° con la LT: corta a las generatrices de contorno en los extremos del eje mayor.
+   - [ ] *Pista 3:* Lleva los extremos de α₂ sobre las generatrices de contorno y abate la elipse para medir su eje mayor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cilindro apoyado en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un cilindro cortado por un plano a 45° con el PH da una elipse. Para ver su forma hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada punto de la elipse describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las generatrices de contorno en los extremos del eje mayor. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate esos puntos y otros intermedios sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los puntos abatidos dibujan la elipse en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el eje mayor está en un plano frontal, así que mide lo mismo en el alzado, entre los extremos de α₂ sobre las generatrices de contorno, que en la elipse abatida: 56,6 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que 56,6 mm.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 31.4 mm): Mide en la lámina el eje mayor de la elipse de la sección en verdadera magnitud. Usa la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* La sección de un cono o un cilindro por un plano oblicuo al eje es una elipse.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical: su traza α₂ corta a las generatrices de contorno en los extremos del eje mayor.
+   - [ ] *Pista 3:* Lleva los extremos de α₂ sobre las generatrices de contorno y abate la elipse para medir su eje mayor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cono apoyado en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección de un cono por un plano que corta a todas sus generatrices es una elipse. Para ver su forma hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada punto de la elipse describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las generatrices de contorno en los extremos del eje mayor. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate esos puntos y otros intermedios sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los puntos abatidos dibujan la elipse en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el eje mayor está en un plano frontal, así que mide lo mismo en el alzado, entre los extremos de α₂ sobre las generatrices de contorno, que en la elipse abatida: 31,4 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que 31,4 mm.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 20 mm): Se conoce M′, la proyección horizontal de un punto M de la superficie de un cono. Halla M″ y escribe la cota de M en milímetros.
+   - [ ] *Pista 1:* Un punto de la superficie de un cono está siempre sobre una generatriz.
+   - [ ] *Pista 2:* Traza en la planta la generatriz que pasa por M′ y llévala al alzado.
+   - [ ] *Pista 3:* Une V′ con M′ y prolonga hasta la circunferencia; sube ese punto al alzado, únelo con V″ y busca M″ en la línea de referencia.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cono apoyado en el PH y un punto M de su superficie del que solo conocemos M′, su proyección horizontal. Nos falta M″.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un punto de la superficie de un cono está siempre sobre una generatriz. Si hallamos esa generatriz, M″ cae sobre su alzado.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Trazamos por M la generatriz del cono, que va del vértice V a la circunferencia de la base. Al girar alrededor del eje, esa generatriz recorre toda la superficie.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, une V′ con M′ y prolonga hasta la circunferencia de la base. Sube ese punto al alzado por su línea de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* En el alzado, une V″ con ese punto de la base. M″ está sobre esa recta, en la línea de referencia de M′.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M″ queda dentro del triángulo del alzado, sobre la generatriz que sale de V″, y su cota es 20 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como cota de M su distancia a V′ en la planta. La cota se lee en el alzado, sobre la generatriz.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 42.7 mm): La recta r es paralela al PV y atraviesa un cilindro por E y S. ¿Cuánto mide la cuerda ES, el tramo de r dentro del cilindro?
+   - [ ] *Pista 1:* La parte de la recta que queda dentro del cilindro es la cuerda ES, que entra por E y sale por S.
+   - [ ] *Pista 2:* E′ y S′ están donde r′ corta a la circunferencia de la base, y como r es paralela al PV, su alzado ya muestra ES sin deformar.
+   - [ ] *Pista 3:* Halla E′ y S′, llévalos al alzado por sus líneas de referencia y mide la distancia entre E″ y S″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una recta r cruza un cilindro apoyado en el PH, entrando por E y saliendo por S. Entre E y S la recta está dentro del cilindro.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Como las generatrices son verticales, E′ y S′ están donde r′ corta a la circunferencia de la base. La cuerda ES es el tramo de r dentro del cilindro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* La recta r es paralela al PV, así que ya está en la posición en la que se ve sin deformar. No hace falta moverla.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, r′ es paralela a la LT y corta a la circunferencia en E′ y S′. Llévalos al alzado por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* En el alzado, E″ y S″ están sobre r″. La distancia entre ellos es la longitud de la cuerda.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: ES es un tramo de una recta frontal, así que su alzado mide lo mismo que ella: 42,7 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir E′S′ en la planta. Es la proyección horizontal de ES y sale más corta que la verdadera magnitud, 42,7 mm.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 29.7 mm): Como en la PAU: cono cortado por un plano proyectante vertical. Halla la sección en verdadera magnitud y mide su eje mayor.
+   - [ ] *Pista 1:* La sección de un cono o un cilindro por un plano oblicuo al eje es una elipse.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical: su traza α₂ corta a las generatrices de contorno en los extremos del eje mayor.
+   - [ ] *Pista 3:* Lleva los extremos de α₂ sobre las generatrices de contorno y abate la elipse para medir su eje mayor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cono apoyado en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección de un cono por un plano que corta a todas sus generatrices es una elipse. Para ver su forma hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada punto de la elipse describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las generatrices de contorno en los extremos del eje mayor. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate esos puntos y otros intermedios sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los puntos abatidos dibujan la elipse en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el eje mayor está en un plano frontal, así que mide lo mismo en el alzado, entre los extremos de α₂ sobre las generatrices de contorno, que en la elipse abatida: 29,7 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que 29,7 mm.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 48.4 mm): Como en la PAU: cilindro cortado por un plano proyectante vertical. Halla la sección en verdadera magnitud y mide su eje mayor.
+   - [ ] *Pista 1:* La sección de un cono o un cilindro por un plano oblicuo al eje es una elipse.
+   - [ ] *Pista 2:* El plano de corte es proyectante vertical: su traza α₂ corta a las generatrices de contorno en los extremos del eje mayor.
+   - [ ] *Pista 3:* Lleva los extremos de α₂ sobre las generatrices de contorno y abate la elipse para medir su eje mayor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cilindro apoyado en el PH y un plano de corte α perpendicular al PV. En el alzado, α se ve de canto: es la recta α₂.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La sección de un cilindro por un plano oblicuo al eje es una elipse. Para ver su forma hay que ponerla paralela a un plano de proyección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Retiramos la parte de arriba y abatimos α sobre el PV, girando alrededor de su traza α₂. Cada punto de la elipse describe un arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, α₂ corta a las generatrices de contorno en los extremos del eje mayor. Bájalos a la planta por sus líneas de referencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Abate esos puntos y otros intermedios sobre el PV, alrededor de α₂, a una distancia igual a su alejamiento. Los puntos abatidos dibujan la elipse en verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el eje mayor está en un plano frontal, así que mide lo mismo en el alzado, entre los extremos de α₂ sobre las generatrices de contorno, que en la elipse abatida: 48,4 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que 48,4 mm.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 46.4 mm): Como en la PAU: la recta r atraviesa un cilindro por E y S. Halla la verdadera magnitud de la cuerda ES y escribe su longitud.
+   - [ ] *Pista 1:* La parte de la recta que queda dentro del cilindro es la cuerda ES; hay que verla en verdadera magnitud.
+   - [ ] *Pista 2:* E′ y S′ están donde r′ corta a la circunferencia de la base; después, un giro de eje vertical por E deja ES paralela al PV.
+   - [ ] *Pista 3:* Halla E′ y S′, llévalos al alzado, gira S′ con centro en E′ hasta que E′S₁′ sea paralela a la LT y sube S₁″ hasta su cota.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una recta r cruza un cilindro apoyado en el PH, entrando por E y saliendo por S. Ninguna de sus proyecciones muestra cuánto mide el tramo dentro del cilindro.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Como las generatrices son verticales, E′ y S′ están donde r′ corta a la circunferencia de la base. La cuerda ES es el tramo de r dentro del cilindro, y hay que verla sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Giramos la cuerda ES alrededor de un eje vertical que pasa por E, hasta dejarla paralela al PV. S describe una circunferencia horizontal y su cota no cambia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, r′ corta a la circunferencia en E′ y S′. Llévalos al alzado por sus líneas de referencia para obtener E″ y S″.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Gira S′ con centro en E′ hasta que E′S₁′ quede paralela a la LT. Sube S₁″ por su línea de referencia hasta la cota de S″: E″S₁″ es la cuerda.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la cuerda mide 46,4 mm y ninguna de sus proyecciones puede superarla, porque se acortan al inclinarse.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir E′S′ o E″S″ como longitud de la cuerda. Son proyecciones de ES y salen más cortas que la verdadera magnitud, 46,4 mm.
 
 ### II-01 · Potencia, eje radical y tangencias
 
