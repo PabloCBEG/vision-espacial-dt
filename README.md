@@ -23,14 +23,14 @@ La web se publica sola en GitHub Pages cada vez que se sube un cambio a la rama 
    - Una marca verde ✓ significa que ya está publicada.
    - Una cruz roja ✗ significa que algo falla. **No se publica nada** y la versión anterior
      sigue funcionando. Pulsa en la ejecución para ver qué paso ha fallado.
-4. La web queda en `https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/`.
+4. La web queda en `https://pablocbeg.github.io/vision-espacial-dt/`.
 
 Los alumnos que ya la tenían abierta verán la versión nueva la próxima vez que la abran
 (la copia sin conexión se renueva sola).
 
 ### Probarla en tu ordenador antes de publicar (opcional)
 
-Necesitas [Node.js](https://nodejs.org) 22 o posterior.
+Necesitas [Node.js](https://nodejs.org) 24 (la misma versión que usa la publicación automática).
 
 ```bash
 npm install
@@ -143,12 +143,12 @@ Los pasos y ejercicios que usan un motor (métodos, sólidos…) llevan sus dato
 
 Las decisiones didácticas, de notación y de arquitectura están en [CLAUDE.md](CLAUDE.md).
 
-| Orden                                             | Qué hace                                                                            |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `npm run dev`                                     | Servidor de desarrollo                                                              |
-| `npm run build`                                   | Compila la web en `dist/`                                                           |
-| `npm run preview`                                 | Sirve la versión compilada                                                          |
-| `npm run test`                                    | Tests de Vitest                                                                     |
-| `npm run e2e`                                     | Tests de Playwright con capturas (`npx playwright install chromium` la primera vez) |
-| `npm run lint`                                    | Revisión del código con ESLint                                                      |
-| `REVIEW=1 npx playwright test e2e/review.spec.ts` | Revisión completa: capturas de cada paso, notación, accesibilidad y rendimiento     |
+| Orden                                             | Qué hace                                                                        |
+| ------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `npm run dev`                                     | Servidor de desarrollo                                                          |
+| `npm run build`                                   | Compila la web en `dist/`                                                       |
+| `npm run preview`                                 | Sirve la versión compilada                                                      |
+| `npm run test`                                    | Tests de Vitest                                                                 |
+| `npm run e2e`                                     | Tests de Playwright con capturas (`npx playwright install` la primera vez)      |
+| `npm run lint`                                    | Revisión del código con ESLint                                                  |
+| `REVIEW=1 npx playwright test e2e/review.spec.ts` | Revisión completa: capturas de cada paso, notación, accesibilidad y rendimiento |
