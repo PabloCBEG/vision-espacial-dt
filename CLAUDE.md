@@ -83,7 +83,10 @@ Herramienta web para enseñar Dibujo Técnico I y II de Bachillerato (España, L
   - Nivel 3: datos como en la PAU de Andalucía y varios conceptos encadenados. No usa contenidos marcados como «fuera de la PAU».
 - Cada ejercicio lleva 3 `hints` y una `solution`:
   - `hints`: 1 es la idea clave; 2, el método; 3, el primer trazado.
-  - `solution`: las seis partes del apartado 4 de `plan_contenidos.md`, en ese orden.
+  - `solution`: las seis partes del apartado 4 de `plan_contenidos.md`, en ese orden; cada paso lleva su `part` (`mira`, `idea`, `movimiento`, `trazado`, `comprobacion` o `error`).
+- Pistas y soluciones no llevan cifras escritas a mano: usan marcadores (`{respuesta}`, `{ladoMayor}`, `{proyH}`…) que rellena el motor del ejercicio con el formato de `src/ui/format.ts`. Solo se escribe a mano un dato que esté en el enunciado; un test lo comprueba. Detalle en el README, «Ejercicios».
+- El error típico puede dibujarse en la lámina con la capa `error` (`--stroke-error`, punteado y rotulado «✗ Error»; no es un quinto grosor con significado: usa el del resultado).
+- Al terminar una lección, añade su id a `COMPLETE_LESSONS` en `src/content/exercises.test.ts`.
 - Las narraciones tienen 2 frases como máximo, con verbos de acción visual y la notación de este fichero.
 - La parte 6 (error típico) la redacta Claude y queda marcada como «[REVISAR]» en `textos_para_revision.md` hasta que el profesor la valide.
 - Una lección está terminada cuando:

@@ -109,7 +109,9 @@ nombre de tu objeto):
 
 ### Ejercicios
 
-Al final de la lección, en `"exercises"`, hay dos tipos:
+Al final de la lección, en `"exercises"`, hay cuatro tipos (`"kind"`): los dos primeros se explican aquí;
+`"value"` (escribir una medida, con su `"answer"` y `"unit"`) y `"engine"` (lo corrige el motor
+del ejercicio) se copian de una lección que los use.
 
 - **Colocar un punto** (`"kind": "placePoint"`): la lámina muestra las proyecciones de
   `"target"` y el alumno coloca el punto en el espacio. La aplicación le dice si ha
@@ -120,6 +122,63 @@ Al final de la lección, en `"exercises"`, hay dos tipos:
 
 Cada ejercicio puede llevar `"difficulty"`: `1` (fácil), `2` (media) o `3` (tipo PAU).
 Copia un ejercicio de una lección existente y cambia sus valores.
+
+#### Pistas y solución desarrollada
+
+- `"hints"`: exactamente **tres** pistas. La 1 es la idea clave; la 2, el método; la 3, el primer
+  trazado. No pueden repetirse entre sí ni repetir la narración de la idea clave de la solución.
+- `"solution"`: la solución paso a paso. Cada paso es como uno de la teoría más un campo `"part"`
+  con la parte a la que pertenece. Las seis partes van **en este orden** y con este número de pasos:
+
+  | `"part"`       | Nombre             | Pasos |
+  | -------------- | ------------------ | ----- |
+  | `mira`         | 1. Mira el espacio | 1–2   |
+  | `idea`         | 2. La idea clave   | 1     |
+  | `movimiento`   | 3. El movimiento   | 1–3   |
+  | `trazado`      | 4. El trazado      | 2–6   |
+  | `comprobacion` | 5. Comprobación    | 1     |
+  | `error`        | 6. Error típico    | 1     |
+
+  Si el orden o el número no cuadran, la lección no carga y el mensaje dice qué parte falla.
+  Un ejemplo completo está en [`04-tres-metodos.json`](src/content/lessons/04-tres-metodos.json).
+
+- **Marcadores en vez de cifras.** Las pistas y la solución no llevan medidas escritas a mano:
+  escriben `{respuesta}` y el motor del ejercicio pone el valor, con el formato de la aplicación
+  («61,8 mm», «33°»). Así sirven también para las variantes con semilla. Marcadores disponibles:
+  - todos: `{cotaA}`, `{alejA}` y `{xA}` (de cada punto, por ejemplo «15 mm»);
+  - en `"value"`: `{respuesta}`;
+  - motor de métodos: `{proyH}` y `{proyV}` (longitud de las proyecciones del segmento),
+    `{difCota}` y `{difAlej}`;
+  - motor de sólidos: `{ladoMayor}`, `{ladoMenor}`, `{perimetro}` y `{numLados}` de la sección,
+    y `{radio}`, `{altura}` y `{lados}` del sólido.
+
+  Un test falla si queda un marcador sin resolver, o si una narración lleva una medida escrita a
+  mano que no es un dato del enunciado (se aceptan los ángulos de concepto: 30°, 45°, 60°, 90°…).
+
+- **Error típico dibujado.** El paso `error` puede dibujar en la lámina el trazado equivocado,
+  punteado y rotulado «✗ Error» (con el token `--stroke-error`, para que el color no sea la única
+  pista). Se añade la capa `"error"` a `"sheet"` y los datos en `"engines"`:
+
+  ```json
+  "engines": { "error": { "trazos": [ { "puntos": ["A″", "B″"], "rotulo": "Error: proyección" } ] } }
+  ```
+
+  Cada punto es `[x, y]` en mm de la lámina (y hacia arriba) o la proyección de un punto de la
+  escena (`"A′"` horizontal, `"A″"` vertical). Con referencias, el error sigue a los puntos y vale
+  para las variantes. `"desplaza": [dx, dy]` mueve el trazo (en mm de la lámina) para que no quede
+  tapado por el dato que mide mal, como una cota paralela. Es opcional: sin dibujo, el paso solo lleva la narración.
+
+- **Variantes** (`"variant"` en un ejercicio `"value"`): en el motor de sólidos, `"ask"` lista las
+  magnitudes entre las que elige la semilla (`ladoMayor`, `ladoMenor`, `perimetro`) y el ejercicio
+  declara cuál es la suya con `"magnitud"`. La variante conserva pistas y solución, con los
+  marcadores resueltos con sus datos; por eso los pasos de una solución con variantes no pueden
+  fijar `"points"`.
+
+Los tests recorren todos los ejercicios (`src/content/exercises.test.ts`) y comprueban que la
+respuesta coincide con la que calcula el motor, que el estado final de la solución cumple la
+comprobación y que cada paso solo cita capas, objetos y cámaras que existen. La lista
+`COMPLETE_LESSONS` de ese fichero recoge las lecciones terminadas (9 ejercicios, 3 por nivel, con
+pistas, solución y datos distintos); a las que están en la lista se les exige todo eso.
 
 Los pasos y ejercicios que usan un motor (métodos, sólidos…) llevan sus datos en
 `"engines"`, por ejemplo `"engines": { "metodos": { … } }`.
