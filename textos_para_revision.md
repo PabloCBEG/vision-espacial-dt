@@ -343,9 +343,105 @@ Fichero: `src/content/lessons/06-lugares-geometricos.json` · DT I · nivel Inic
 
 **Ejercicios**
 
-1. [ ] *construcción en la lámina, dificultad 1*: Arrastra X hasta el punto de la recta r que está a la misma distancia de A que de B.
-2. [ ] *construcción en la lámina, dificultad 2*: Coloca X en el centro de la circunferencia que pasa por los tres vértices del triángulo ABC.
-3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: busca un punto de la recta r desde el que el segmento AB se vea con un ángulo de 45° y arrastra X hasta él.
+1. [ ] *construcción en la lámina, dificultad 1*: Con A y B en una horizontal, arrastra X hasta el punto de la recta r que está a la misma distancia de A que de B.
+   - [ ] *Pista 1:* El lugar geométrico de los puntos que equidistan de dos puntos es su mediatriz.
+   - [ ] *Pista 2:* El punto buscado debe estar, además, en la recta r.
+   - [ ] *Pista 3:* Traza la mediatriz de AB y busca dónde corta a r.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos, A y B, y una recta r. Buscamos el punto de r que está a la misma distancia de A que de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos que equidistan de A y de B forman la mediatriz de AB. El punto buscado está en la mediatriz y en r, así que es su corte.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por la recta r: sus distancias a A y a B van cambiando, y solo en una posición se igualan.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con el compás en A y en B, con la misma abertura, traza arcos que se corten en dos puntos: la recta que los une es la mediatriz de AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz corta a r en el punto T. Arrastra X hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: T equidista de A y de B, y está en r. Si r fuese paralela a la mediatriz, no habría solución.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar el punto medio de AB. Está en la mediatriz, pero solo sirve si también está en r.
+2. [ ] *construcción en la lámina, dificultad 1*: El triángulo ABC tiene un ángulo recto. Coloca X en el centro de la circunferencia que pasa por sus tres vértices.
+   - [ ] *Pista 1:* El centro de la circunferencia que pasa por tres puntos equidista de los tres.
+   - [ ] *Pista 2:* Los puntos que equidistan de dos vértices están en la mediatriz del lado que los une.
+   - [ ] *Pista 3:* Traza las mediatrices de dos lados: su corte es el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo ABC y buscamos el centro de la circunferencia que pasa por sus tres vértices.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro equidista de A, B y C, así que está en la mediatriz de cada lado. Dos mediatrices bastan para fijarlo: se cortan en el circuncentro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por la mediatriz de AB: siempre equidista de A y de B. Solo en una posición también equidista de C.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la mediatriz del lado AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la mediatriz del lado BC: se cortan en el circuncentro O. Arrastra X hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la mediatriz del tercer lado también pasa por O, y O equidista de los tres vértices.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar el baricentro, donde se cortan las medianas. El circuncentro está en las mediatrices, que son perpendiculares a los lados.
+3. [ ] *construcción en la lámina, dificultad 1*: Con A y B en una horizontal, busca un punto de la recta r desde el que AB se vea con un ángulo de 45° y arrastra X hasta él.
+   - [ ] *Pista 1:* El lugar geométrico de los puntos desde los que un segmento se ve con un ángulo dado es el arco capaz.
+   - [ ] *Pista 2:* El punto buscado debe estar, además, en la recta r.
+   - [ ] *Pista 3:* Traza el arco capaz de 45° de AB y busca dónde corta a r.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay un segmento AB y una recta r. Buscamos un punto de r desde el que AB se vea con un ángulo de 45°.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos desde los que un segmento se ve con un ángulo dado forman el arco capaz. El punto buscado está en el arco capaz y en r.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre el arco: el ángulo bajo el que ve AB no cambia. Al salirse del arco, ese ángulo aumenta o disminuye.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el arco capaz de 45° sobre AB: pasa por A y B, y su centro está en la mediatriz de AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El arco corta a r en dos puntos, T₁ y T₂. Arrastra X hasta uno de ellos.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: desde cada uno de los dos puntos, el segmento AB se ve con un ángulo de 45°, así que cualquiera de ellos sirve.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: usar el ángulo central en vez del inscrito. El ángulo central sobre AB sería el doble, y el arco no coincide con el arco capaz.
+4. [ ] *construcción en la lámina, dificultad 2*: Arrastra X hasta el punto de la recta r, que está inclinada, que equidista de A y de B.
+   - [ ] *Pista 1:* El lugar geométrico de los puntos que equidistan de dos puntos es su mediatriz.
+   - [ ] *Pista 2:* El punto buscado debe estar, además, en la recta r.
+   - [ ] *Pista 3:* Traza la mediatriz de AB y busca dónde corta a r.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos, A y B, y una recta r. Buscamos el punto de r que está a la misma distancia de A que de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos que equidistan de A y de B forman la mediatriz de AB. El punto buscado está en la mediatriz y en r, así que es su corte.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por la recta r: sus distancias a A y a B van cambiando, y solo en una posición se igualan.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con el compás en A y en B, con la misma abertura, traza arcos que se corten en dos puntos: la recta que los une es la mediatriz de AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz corta a r en el punto T. Arrastra X hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: T equidista de A y de B, y está en r. Si r fuese paralela a la mediatriz, no habría solución.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar el punto medio de AB. Está en la mediatriz, pero solo sirve si también está en r.
+5. [ ] *construcción en la lámina, dificultad 2*: Coloca X en el centro de la circunferencia que pasa por los tres vértices del triángulo ABC.
+   - [ ] *Pista 1:* El centro de la circunferencia que pasa por tres puntos equidista de los tres.
+   - [ ] *Pista 2:* Los puntos que equidistan de dos vértices están en la mediatriz del lado que los une.
+   - [ ] *Pista 3:* Traza las mediatrices de dos lados: su corte es el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo ABC y buscamos el centro de la circunferencia que pasa por sus tres vértices.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro equidista de A, B y C, así que está en la mediatriz de cada lado. Dos mediatrices bastan para fijarlo: se cortan en el circuncentro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por la mediatriz de AB: siempre equidista de A y de B. Solo en una posición también equidista de C.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la mediatriz del lado AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la mediatriz del lado BC: se cortan en el circuncentro O. Arrastra X hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la mediatriz del tercer lado también pasa por O, y O equidista de los tres vértices.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar el baricentro, donde se cortan las medianas. El circuncentro está en las mediatrices, que son perpendiculares a los lados.
+6. [ ] *construcción en la lámina, dificultad 2*: Busca un punto de la recta r desde el que AB se vea con un ángulo de 45° y arrastra X hasta él.
+   - [ ] *Pista 1:* El lugar geométrico de los puntos desde los que un segmento se ve con un ángulo dado es el arco capaz.
+   - [ ] *Pista 2:* El punto buscado debe estar, además, en la recta r.
+   - [ ] *Pista 3:* Traza el arco capaz de 45° de AB y busca dónde corta a r.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay un segmento AB y una recta r. Buscamos un punto de r desde el que AB se vea con un ángulo de 45°.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos desde los que un segmento se ve con un ángulo dado forman el arco capaz. El punto buscado está en el arco capaz y en r.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre el arco: el ángulo bajo el que ve AB no cambia. Al salirse del arco, ese ángulo aumenta o disminuye.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el arco capaz de 45° sobre AB: pasa por A y B, y su centro está en la mediatriz de AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El arco corta a r en dos puntos, T₁ y T₂. Arrastra X hasta uno de ellos.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: desde cada uno de los dos puntos, el segmento AB se ve con un ángulo de 45°, así que cualquiera de ellos sirve.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: usar el ángulo central en vez del inscrito. El ángulo central sobre AB sería el doble, y el arco no coincide con el arco capaz.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: halla el punto de la recta r que equidista de A y de B y arrastra X hasta él.
+   - [ ] *Pista 1:* El lugar geométrico de los puntos que equidistan de dos puntos es su mediatriz.
+   - [ ] *Pista 2:* El punto buscado debe estar, además, en la recta r.
+   - [ ] *Pista 3:* Traza la mediatriz de AB y busca dónde corta a r.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos, A y B, y una recta r. Buscamos el punto de r que está a la misma distancia de A que de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos que equidistan de A y de B forman la mediatriz de AB. El punto buscado está en la mediatriz y en r, así que es su corte.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por la recta r: sus distancias a A y a B van cambiando, y solo en una posición se igualan.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con el compás en A y en B, con la misma abertura, traza arcos que se corten en dos puntos: la recta que los une es la mediatriz de AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz corta a r en el punto T. Arrastra X hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: T equidista de A y de B, y está en r. Si r fuese paralela a la mediatriz, no habría solución.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar el punto medio de AB. Está en la mediatriz, pero solo sirve si también está en r.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: arrastra X hasta el centro de la circunferencia circunscrita al triángulo ABC.
+   - [ ] *Pista 1:* El centro de la circunferencia que pasa por tres puntos equidista de los tres.
+   - [ ] *Pista 2:* Los puntos que equidistan de dos vértices están en la mediatriz del lado que los une.
+   - [ ] *Pista 3:* Traza las mediatrices de dos lados: su corte es el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo ABC y buscamos el centro de la circunferencia que pasa por sus tres vértices.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro equidista de A, B y C, así que está en la mediatriz de cada lado. Dos mediatrices bastan para fijarlo: se cortan en el circuncentro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por la mediatriz de AB: siempre equidista de A y de B. Solo en una posición también equidista de C.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la mediatriz del lado AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la mediatriz del lado BC: se cortan en el circuncentro O. Arrastra X hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la mediatriz del tercer lado también pasa por O, y O equidista de los tres vértices.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar el baricentro, donde se cortan las medianas. El circuncentro está en las mediatrices, que son perpendiculares a los lados.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: busca un punto de la recta r desde el que AB se vea con un ángulo de 45° y arrastra X hasta él.
+   - [ ] *Pista 1:* El lugar geométrico de los puntos desde los que un segmento se ve con un ángulo dado es el arco capaz.
+   - [ ] *Pista 2:* El punto buscado debe estar, además, en la recta r.
+   - [ ] *Pista 3:* Traza el arco capaz de 45° de AB y busca dónde corta a r.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay un segmento AB y una recta r. Buscamos un punto de r desde el que AB se vea con un ángulo de 45°.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos desde los que un segmento se ve con un ángulo dado forman el arco capaz. El punto buscado está en el arco capaz y en r.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre el arco: el ángulo bajo el que ve AB no cambia. Al salirse del arco, ese ángulo aumenta o disminuye.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el arco capaz de 45° sobre AB: pasa por A y B, y su centro está en la mediatriz de AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El arco corta a r en dos puntos, T₁ y T₂. Arrastra X hasta uno de ellos.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: desde cada uno de los dos puntos, el segmento AB se ve con un ángulo de 45°, así que cualquiera de ellos sirve.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: usar el ángulo central en vez del inscrito. El ángulo central sobre AB sería el doble, y el arco no coincide con el arco capaz.
 
 ### II-12 · Vistas desde una isométrica
 

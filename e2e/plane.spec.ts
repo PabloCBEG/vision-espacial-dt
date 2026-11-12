@@ -73,7 +73,7 @@ test.describe('motor de geometría plana (I-01)', () => {
   test('ejercicio: colocar el circuncentro', async ({ page }) => {
     await openLesson(page);
     await goToPage(page, 9);
-    await expect(page.locator('#lesson-progress-text')).toContainText('Ejercicio 2 de 3');
+    await expect(page.locator('#lesson-progress-text')).toContainText('Ejercicio 2 de 9');
     await page.getByRole('button', { name: 'Comprobar' }).click();
     await expect(page.locator('#exercise-feedback')).toContainText('mediatriz');
   });
@@ -89,7 +89,7 @@ for (const viewport of [
     await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await openLesson(page);
-    const pages = 11;
+    const pages = 17;
     for (let i = 1; i <= pages; i++) {
       await page.waitForTimeout(700);
       await page.screenshot({
