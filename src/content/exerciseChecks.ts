@@ -4,6 +4,10 @@
 import { ENGINE_DEFINITIONS } from '../engines/definitions.ts';
 import { ErrorStepSchema, PROJECTION_REF } from '../engines/error/definition.ts';
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
+import { axonValue } from '../engines/axonometria/answers.ts';
+import { AxonStepSchema } from '../engines/axonometria/definition.ts';
+import { conicValue } from '../engines/conica/answers.ts';
+import { ConicStepSchema } from '../engines/conica/definition.ts';
 import { evaluateChoice } from '../engines/normalizacion/answers.ts';
 import { NormStepSchema } from '../engines/normalizacion/definition.ts';
 import { boundsOf } from '../engines/normalizacion/piece.ts';
@@ -25,7 +29,7 @@ type ValueExercise = Extract<Exercise, { kind: 'value' }>;
 const MARGIN: Record<'mm' | '°', number> = { mm: 0.1, '°': 0.5 };
 
 /** Ángulos que no son datos sino conceptos («90°» de perpendicular): se pueden escribir. */
-const CONCEPT_ANGLES = new Set([30, 45, 60, 90, 180, 360]);
+const CONCEPT_ANGLES = new Set([30, 45, 60, 90, 120, 180, 360]);
 
 // ---------- Textos: marcadores, frases y cifras escritas a mano ----------
 
@@ -155,7 +159,21 @@ function valueProblems(lesson: Lesson, exercise: ValueExercise): string[] {
       ? []
       : [`la respuesta ${exercise.answer} no coincide con ningún lado de la sección`];
   }
-  // Axonometría y cónica no tienen todavía una función que recalcule la medida.
+  if (exercise.engines?.axonometria || exercise.engines?.conica) {
+    const merged = solutionEngines(lesson, exercise, -1);
+    const exact = exercise.engines.axonometria
+      ? axonValue(AxonStepSchema.parse(merged.axonometria), exercise.magnitud)
+      : conicValue(ConicStepSchema.parse(merged.conica), exercise.magnitud);
+    if (exact === null) {
+      return [
+        `el motor no puede calcular «${exercise.magnitud ?? 'sin magnitud'}» con estos datos`,
+      ];
+    }
+    if (exercise.unit !== 'mm') return ['las medidas del dibujo van en mm'];
+    return Math.abs(exact - exercise.answer) <= MARGIN.mm
+      ? []
+      : [`la respuesta es ${exercise.answer} y el motor calcula ${exact.toFixed(2)}`];
+  }
   return [];
 }
 

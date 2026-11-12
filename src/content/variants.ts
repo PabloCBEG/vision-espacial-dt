@@ -6,7 +6,14 @@ import { buildConstruction, exactValue } from '../engines/metodos/construction.t
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
 import { buildScene } from '../engines/solidos/construction.ts';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
-import type { Exercise, Lesson, SectionMagnitude, SolidMagnitude, SolutionStep } from './schema.ts';
+import {
+  SECTION_MAGNITUDES,
+  type Exercise,
+  type Lesson,
+  type SectionMagnitude,
+  type SolidMagnitude,
+  type SolutionStep,
+} from './schema.ts';
 
 export type { SectionMagnitude, SolidMagnitude };
 
@@ -142,7 +149,8 @@ export function solidosValue(exercise: ValueExercise): number | null {
       ? Math.hypot(hits[0].x - hits[1].x, hits[0].a - hits[1].a, hits[0].c - hits[1].c)
       : null;
   }
-  return solidosMeasures(exercise)?.[magnitud] ?? null;
+  if (!(SECTION_MAGNITUDES as readonly string[]).includes(magnitud)) return null;
+  return solidosMeasures(exercise)?.[magnitud as SectionMagnitude] ?? null;
 }
 
 /** Lo que pregunta el enunciado de una variante, según la magnitud pedida. */

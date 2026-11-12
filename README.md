@@ -153,6 +153,9 @@ Copia un ejercicio de una lección existente y cambia sus valores.
     (en el cono y el cilindro solo `{ladoMayor}`, el eje mayor), `{alejPunto}` y `{cotaPunto}` del
     punto de la superficie, `{cuerda}` (el tramo de la recta dentro del sólido), y `{radio}`,
     `{altura}` y `{lados}` del sólido.
+  - axonometría: `{real}` (arista o diagonal reales) y `{coef}` (coeficiente de reducción del eje,
+    «0,816» en isométrica);
+  - cónica: `{alturaOjo}` y `{distanciaOjo}` del observador.
 
   Un test falla si queda un marcador sin resolver, o si una narración lleva una medida escrita a
   mano que no es un dato del enunciado (se aceptan los ángulos de concepto: 30°, 45°, 60°, 90°…).
@@ -179,6 +182,9 @@ Copia un ejercicio de una lección existente y cambia sus valores.
   Además de las de la sección, `alejamientoPunto` y `cotaPunto` (del punto `"punto"` de la
   superficie) y `cuerda` (el tramo de la `"recta"` dentro del sólido). Una sección curva (cono y
   cilindro) solo admite `ladoMayor`, que es su eje mayor.
+  En axonometría, `ejeX`, `ejeY`, `ejeZ` (longitud en el dibujo de una arista paralela a ese eje) y
+  `diagonalVertical` (la del octaedro); en cónica, `horizonte`, `puntoDistancia`, `fugaCercana` y
+  `fugaLejana` (distancia de P al punto de fuga de las aristas del cubo girado).
 
 Los tests recorren todos los ejercicios (`src/content/exercises.test.ts`) y comprueban que la
 respuesta coincide con la que calcula el motor, que el estado final de la solución cumple la

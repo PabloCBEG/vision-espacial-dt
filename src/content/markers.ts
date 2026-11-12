@@ -3,9 +3,14 @@
 // formato de src/ui/format.ts, de modo que valen también para las variantes con semilla.
 // Sin DOM: se prueba con Vitest.
 import { formatMeasure, formatMm } from '../ui/format.ts';
+import { axonCoefficient, axonRealLength, axonValue } from '../engines/axonometria/answers.ts';
+import { AxonStepSchema } from '../engines/axonometria/definition.ts';
+import { conicValue } from '../engines/conica/answers.ts';
+import { ConicStepSchema } from '../engines/conica/definition.ts';
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
 import type { Exercise, Lesson } from './schema.ts';
+import { solutionEngines } from './solutionState.ts';
 import { metodosAnswer, solidosMeasures, solidosScene, solidosValue } from './variants.ts';
 
 export type MarkerValues = Readonly<Record<string, string>>;
@@ -98,6 +103,33 @@ export function exerciseMarkers(lesson: Lesson, exercise: Exercise): MarkerValue
     out.radio = formatMeasure(solid.radio, 'mm');
     out.altura = formatMeasure(solid.altura, 'mm');
     out.lados = String(solid.lados);
+  }
+
+  if (exercise.engines?.axonometria) {
+    const data = AxonStepSchema.parse(solutionEngines(lesson, exercise, -1).axonometria);
+    const exact = axonValue(data, exercise.magnitud);
+    if (exact !== null) {
+      value = exact;
+      unit = 'mm';
+    }
+    const magnitude = exercise.magnitud as Parameters<typeof axonCoefficient>[1] | undefined;
+    if (magnitude) {
+      // Coeficiente con tres decimales («0,816»), como se enseña, y medida real de lo dibujado.
+      out.coef = String(Number(axonCoefficient(data, magnitude).toFixed(3))).replace('.', ',');
+      const real = axonRealLength(data, magnitude);
+      if (real !== null) out.real = formatMeasure(real, 'mm');
+    }
+  }
+
+  if (exercise.engines?.conica) {
+    const data = ConicStepSchema.parse(solutionEngines(lesson, exercise, -1).conica);
+    const exact = conicValue(data, exercise.magnitud);
+    if (exact !== null) {
+      value = exact;
+      unit = 'mm';
+    }
+    out.alturaOjo = formatMeasure(data.observador.h, 'mm');
+    out.distanciaOjo = formatMeasure(data.observador.d, 'mm');
   }
 
   out.respuesta = formatMeasure(value, unit);

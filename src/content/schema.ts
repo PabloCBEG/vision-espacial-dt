@@ -196,15 +196,25 @@ export const SECTION_MAGNITUDES = ['ladoMayor', 'ladoMenor', 'perimetro'] as con
 export type SectionMagnitude = (typeof SECTION_MAGNITUDES)[number];
 
 /**
- * Magnitudes que puede pedir un ejercicio de medida con el motor de sólidos: las de la sección,
- * el alejamiento o la cota del punto de la superficie (`punto`) y la longitud de la cuerda ES que
- * la recta (`recta`) deja dentro del sólido.
+ * Magnitudes que puede pedir un ejercicio de medida, según su motor: en sólidos, las de la
+ * sección, el alejamiento o la cota del punto de la superficie (`punto`) y la longitud de la
+ * cuerda ES de la recta (`recta`); en axonometría y en cónica, las que calculan sus proyecciones.
  */
 export const SOLID_MAGNITUDES = [
   ...SECTION_MAGNITUDES,
   'alejamientoPunto',
   'cotaPunto',
   'cuerda',
+  // Axonometría: longitud en el dibujo de una arista paralela a un eje o de la diagonal vertical.
+  'ejeX',
+  'ejeY',
+  'ejeZ',
+  'diagonalVertical',
+  // Perspectiva cónica: horizonte, punto de distancia y puntos de fuga de un cubo girado.
+  'horizonte',
+  'puntoDistancia',
+  'fugaCercana',
+  'fugaLejana',
 ] as const;
 export type SolidMagnitude = (typeof SOLID_MAGNITUDES)[number];
 
