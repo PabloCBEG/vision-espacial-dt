@@ -4,12 +4,16 @@
 import { ENGINE_DEFINITIONS } from '../engines/definitions.ts';
 import { ErrorStepSchema, PROJECTION_REF } from '../engines/error/definition.ts';
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
+import { evaluateChoice } from '../engines/normalizacion/answers.ts';
+import { NormStepSchema } from '../engines/normalizacion/definition.ts';
+import { boundsOf } from '../engines/normalizacion/piece.ts';
 import { PlaneStepSchema } from '../engines/plana/definition.ts';
 import { dist, pt } from '../engines/plana/geometry.ts';
 import { evaluate } from '../engines/plana/graph.ts';
 import { checkCondition } from '../player/checkCondition.ts';
 import { checkPlacement } from '../player/checkPlacement.ts';
 import { createAppStore } from '../state/index.ts';
+import { findPiece } from './pieces.ts';
 import { exerciseMarkers, hasUnresolved, markersIn, resolveMarkers } from './markers.ts';
 import { countSentences, type Exercise, type Lesson } from './schema.ts';
 import { solutionEngines, solutionPoints } from './solutionState.ts';
@@ -156,7 +160,7 @@ function valueProblems(lesson: Lesson, exercise: ValueExercise): string[] {
 }
 
 /** Problemas de un ejercicio de motor (plana): el punto que se mueve debe poder llegar al objetivo. */
-function engineProblems(lesson: Lesson, exercise: Extract<Exercise, { kind: 'engine' }>): string[] {
+function planaProblems(lesson: Lesson, exercise: Extract<Exercise, { kind: 'engine' }>): string[] {
   const common = solutionEngines(lesson, exercise, -1).plana;
   if (!common) return [];
   const data = PlaneStepSchema.parse(common);
@@ -193,6 +197,69 @@ function engineProblems(lesson: Lesson, exercise: Extract<Exercise, { kind: 'eng
     );
   }
   return problems;
+}
+
+/** Ejercicio de normalización: las opciones son coherentes con la pieza y la solución acierta. */
+function normProblems(lesson: Lesson, exercise: Extract<Exercise, { kind: 'engine' }>): string[] {
+  const raw = solutionEngines(lesson, exercise, -1).normalizacion;
+  if (!raw) return [];
+  const data = NormStepSchema.parse(raw);
+  const ex = data.ejercicio;
+  if (!ex) return [];
+  const problems: string[] = [];
+  const piece = data.pieza ? findPiece(data.pieza) : undefined;
+  if (!piece) return [`la pieza «${data.pieza ?? ''}» no existe en la biblioteca`];
+  switch (ex.tipo) {
+    case 'vistaQueFalta': {
+      if (!data.pieza || !ex.opciones.includes(data.pieza)) {
+        problems.push('entre las opciones no está la pieza del ejercicio');
+      }
+      if (new Set(ex.opciones).size !== ex.opciones.length) problems.push('hay opciones repetidas');
+      for (const id of ex.opciones) {
+        if (!findPiece(id)) problems.push(`la opción «${id}» no existe en la biblioteca`);
+      }
+      if (data.vistas.includes(ex.falta)) problems.push('la vista que falta ya se está dibujando');
+      break;
+    }
+    case 'cotas': {
+      if (ex.necesarias.some((i) => i >= ex.candidatas.length)) {
+        problems.push('hay una cota necesaria que no está entre las candidatas');
+      }
+      break;
+    }
+    case 'corte': {
+      const right = ex.opciones[ex.correcta];
+      if (!right) {
+        problems.push('la opción correcta del corte no existe');
+        break;
+      }
+      // Si el enunciado habla del plano de simetría, el corte correcto pasa por el centro de la pieza.
+      if (/simetr/i.test(exercise.prompt) && right.tipo !== 'quebrado') {
+        const b = boundsOf(piece);
+        const axis = right.vista === 'alzado' ? 1 : right.vista === 'planta' ? 2 : 0;
+        const center = ((b.min[axis] ?? 0) + (b.max[axis] ?? 0)) / 2;
+        if (Math.abs(right.en - center) > 0.01) {
+          problems.push(
+            `el corte correcto está en ${right.en} y el plano de simetría en ${center}`,
+          );
+        }
+      }
+      break;
+    }
+    case 'vistasNecesarias':
+      break;
+  }
+  if (exercise.solution) {
+    const last = exercise.solution.length - 1;
+    const end = NormStepSchema.parse(solutionEngines(lesson, exercise, last).normalizacion);
+    const result = evaluateChoice(end, findPiece);
+    if (!result?.correct) problems.push('al final de la solución la elección no es la correcta');
+  }
+  return problems;
+}
+
+function engineProblems(lesson: Lesson, exercise: Extract<Exercise, { kind: 'engine' }>): string[] {
+  return [...planaProblems(lesson, exercise), ...normProblems(lesson, exercise)];
 }
 
 /** El estado final de la solución de «colocar el punto» y de «condición» pasa la comprobación. */
@@ -334,8 +401,14 @@ export function namesProblems(lesson: Lesson, exercise: Exercise): string[] {
         }
       }
     }
-    if (step.camera === 'isometric' && engines.axonometria === undefined) {
-      problems.push(`${where}: la cámara isométrica solo existe con el motor de axonometría`);
+    if (
+      step.camera === 'isometric' &&
+      engines.axonometria === undefined &&
+      engines.normalizacion === undefined
+    ) {
+      problems.push(
+        `${where}: la cámara isométrica solo existe con los motores de axonometría y normalización`,
+      );
     }
     if (exercise.kind === 'value' && exercise.variant && step.points) {
       problems.push(`${where}: en un ejercicio con variantes los pasos no pueden fijar puntos`);

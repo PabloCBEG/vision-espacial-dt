@@ -7,16 +7,11 @@ import { findPiece } from '../../content/pieces.ts';
 import { getEngineData, setEngineData, type AppState, type AppStore } from '../../state/index.ts';
 import { Tweens } from '../shared/tween.ts';
 import { NormStepSchema, type Cut, type NormStep } from './definition.ts';
+import { evaluateChoice, VIEW_LABELS } from './answers.ts';
 import { buildDrawing, type PieceDrawing } from './drawing.ts';
 import { loadKernel } from './kernel.ts';
-import type { ViewName } from './views.ts';
 
-export const VIEW_LABELS: Record<ViewName, string> = {
-  alzado: 'Alzado',
-  planta: 'Planta',
-  perfil: 'Perfil izquierdo',
-  isometrica: 'Perspectiva isométrica',
-};
+export { VIEW_LABELS };
 
 export class NormController {
   readonly store: AppStore;
@@ -138,76 +133,7 @@ export class NormController {
 
   /** Corrige el ejercicio del paso. */
   check(): { correct: boolean; message: string } | null {
-    const data = this.data;
-    const ex = data?.ejercicio;
-    if (!data || !ex) return null;
-    const chosen = data.eleccion ?? [];
-    switch (ex.tipo) {
-      case 'vistaQueFalta': {
-        if (chosen.length === 0) return { correct: false, message: 'Elige una de las opciones.' };
-        const ok = ex.opciones[chosen[0] ?? -1] === data.pieza;
-        return ok
-          ? {
-              correct: true,
-              message: `¡Correcto! Esa es la ${VIEW_LABELS[ex.falta].toLowerCase()} de la pieza.`,
-            }
-          : {
-              correct: false,
-              message:
-                'No es esa. Sigue cada arista con las líneas de referencia entre las dos vistas que ves.',
-            };
-      }
-      case 'vistasNecesarias': {
-        const piece = findPiece(data.pieza ?? '');
-        if (!piece) return null;
-        const names = ['alzado', 'planta', 'perfil'] as const;
-        const picked = new Set(chosen.map((i) => names[i]));
-        const need = new Set(piece.vistasNecesarias);
-        const missing = [...need].filter((v) => !picked.has(v));
-        const extra = [...picked].filter(
-          (v): v is (typeof names)[number] => v !== undefined && !need.has(v),
-        );
-        if (missing.length === 0 && extra.length === 0) {
-          return {
-            correct: true,
-            message: '¡Correcto! Con esas vistas la pieza queda definida, sin repetir nada.',
-          };
-        }
-        const parts: string[] = [];
-        if (missing.length)
-          parts.push(`falta: ${missing.map((v) => VIEW_LABELS[v].toLowerCase()).join(', ')}`);
-        if (extra.length)
-          parts.push(`sobra: ${extra.map((v) => VIEW_LABELS[v].toLowerCase()).join(', ')}`);
-        return { correct: false, message: `Todavía no (${parts.join('; ')}).` };
-      }
-      case 'cotas': {
-        const need = new Set(ex.necesarias);
-        const missing = ex.necesarias.filter((i) => !chosen.includes(i)).length;
-        const extra = chosen.filter((i) => !need.has(i)).length;
-        if (missing === 0 && extra === 0) {
-          return { correct: true, message: '¡Correcto! Ninguna cota falta y ninguna se repite.' };
-        }
-        const parts: string[] = [];
-        if (missing) parts.push(`faltan ${missing}`);
-        if (extra) parts.push(`sobran ${extra}`);
-        return {
-          correct: false,
-          message: `Revisa las cotas: ${parts.join(' y ')}. Cada medida, una sola vez.`,
-        };
-      }
-      case 'corte': {
-        if (chosen.length === 0) return { correct: false, message: 'Elige uno de los dibujos.' };
-        return chosen[0] === ex.correcta
-          ? {
-              correct: true,
-              message: '¡Correcto! Las caras cortadas van rayadas a 45° y no hay aristas ocultas.',
-            }
-          : {
-              correct: false,
-              message: 'No es ese. Fíjate en dónde pasa el plano de corte y qué parte se quita.',
-            };
-      }
-    }
+    return this.data ? evaluateChoice(this.data, findPiece) : null;
   }
 
   notify(): void {
