@@ -6,7 +6,13 @@
   "stage": "DT II",
   "saberBasico": "Sistema axonométrico: perspectiva isométrica y caballera de sólidos. Coeficientes de reducción.",
   "level": "Intermedio",
-  "initialScene": { "points": { "P": [0, 0, 0] }, "objects": [], "activePoint": "P" },
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P"
+  },
   "steps": [
     {
       "narration": "Este octaedro regular tiene 30 mm de arista y una diagonal perpendicular al PH. En diédrico, su planta es un cuadrado y su alzado, un rombo.",
@@ -15,7 +21,14 @@
       "camera": "perspective",
       "foldAngle": 90,
       "engines": {
-        "solidos": { "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 } }
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          }
+        }
       }
     },
     {
@@ -26,7 +39,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 }
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          }
         }
       }
     },
@@ -39,7 +57,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 }
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          }
         }
       }
     },
@@ -52,7 +75,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          },
           "escala": 1
         }
       }
@@ -66,7 +94,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          },
           "desdeVistas": 0.6
         }
       }
@@ -80,7 +113,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          },
           "desdeVistas": 1,
           "rotulos": true
         }
@@ -94,7 +132,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          },
           "ocultas": true
         }
       }
@@ -107,7 +150,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          },
           "sistema": "dibujo-isometrico"
         }
       }
@@ -120,7 +168,12 @@
       "foldAngle": 0,
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 },
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 30,
+            "centro": [0, 30],
+            "giro": 45
+          },
           "sistema": "caballera"
         }
       }
@@ -130,46 +183,1616 @@
     {
       "kind": "value",
       "difficulty": 1,
-      "prompt": "En perspectiva isométrica, ¿cuánto mide una arista de 30 mm paralela a uno de los ejes?",
-      "answer": 24.5,
+      "prompt": "En perspectiva isométrica, ¿cuánto mide en el dibujo una arista de 40 mm paralela al eje OX?",
+      "answer": 32.7,
       "unit": "mm",
-      "tolerance": 0.6,
+      "tolerance": 0.8,
+      "magnitud": "ejeX",
       "show3d": ["triedro", "axonometria"],
       "sheet": ["triedro", "axonometria", "cuadricula"],
       "engines": {
-        "axonometria": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, 30] } }
-      }
+        "axonometria": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 40,
+            "centro": [0, 30]
+          },
+          "sistema": "isometrica"
+        }
+      },
+      "hints": [
+        "En perspectiva isométrica los tres ejes se acortan por igual.",
+        "El coeficiente de reducción es {coef}: la medida dibujada es la real por ese coeficiente (la arista).",
+        "Multiplica la medida real por el coeficiente, o llévala a la escala gráfica de reducción."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Dibujamos un sólido en perspectiva isométrica y queremos saber cuánto mide en el dibujo una medida real de {real}, paralela a un eje.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "En la perspectiva isométrica los tres ejes forman 120° y se reducen con el mismo coeficiente, {coef}. Toda medida paralela a un eje se dibuja con su valor real por ese coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "desdeVistas": 0.6
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["escala"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "escala": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva {real} a la escala gráfica y lee la medida reducida: {respuesta}. Dibuja esa medida sobre el eje.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {real} por {coef} da {respuesta}. En el dibujo isométrico, sin reducir, esa misma medida saldría de {real}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar la medida real, {real}, en una perspectiva isométrica. Esa es la medida del dibujo isométrico, sin reducir; en la perspectiva se reduce con el coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "En dibujo isométrico, sin reducir, ¿cuánto mide en el dibujo una arista de 25 mm paralela al eje OY?",
+      "answer": 25,
+      "unit": "mm",
+      "tolerance": 0.6,
+      "magnitud": "ejeY",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 25,
+            "centro": [0, 30]
+          },
+          "sistema": "dibujo-isometrico"
+        }
+      },
+      "hints": [
+        "El dibujo isométrico es la misma figura que la perspectiva isométrica, pero sin reducir.",
+        "Las medidas paralelas a los ejes se dibujan con su valor real.",
+        "La arista dibujada mide lo mismo que la real."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Dibujamos un cubo en dibujo isométrico y queremos saber cuánto mide en el dibujo una arista de {real} paralela a OY.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 25,
+                "centro": [0, 30]
+              },
+              "sistema": "dibujo-isometrico"
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El dibujo isométrico es la perspectiva isométrica sin reducir: sale más grande, con las medidas reales sobre los ejes y la misma forma.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 25,
+                "centro": [0, 30]
+              },
+              "sistema": "dibujo-isometrico"
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la perspectiva isométrica ampliándose hasta que las aristas de los ejes valen su medida real: es el dibujo isométrico.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 25,
+                "centro": [0, 30]
+              },
+              "sistema": "dibujo-isometrico"
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Marca sobre cada eje las medidas reales, sin aplicar ningún coeficiente de reducción.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 25,
+                "centro": [0, 30]
+              },
+              "sistema": "dibujo-isometrico"
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Dibuja la arista sobre el eje OY con su medida real: {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 25,
+                "centro": [0, 30]
+              },
+              "sistema": "dibujo-isometrico",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el coeficiente es 1, así que la medida dibujada y la real coinciden: {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 25,
+                "centro": [0, 30]
+              },
+              "sistema": "dibujo-isometrico",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: aplicar el coeficiente de reducción en un dibujo isométrico. Ese coeficiente es solo de la perspectiva isométrica; el dibujo no se reduce.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 25,
+                "centro": [0, 30]
+              },
+              "sistema": "dibujo-isometrico",
+              "rotulos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "En caballera con coeficiente 0,5, ¿cuánto mide en el dibujo una arista de 40 mm paralela al eje Y?",
+      "answer": 20,
+      "unit": "mm",
+      "tolerance": 0.6,
+      "magnitud": "ejeY",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 40,
+            "centro": [0, 30]
+          },
+          "sistema": "caballera",
+          "caballera": {
+            "angulo": 45,
+            "coeficiente": 0.5
+          }
+        }
+      },
+      "hints": [
+        "En caballera el eje Y se dibuja inclinado y reducido.",
+        "La reducción del eje Y es el coeficiente de caballera: {coef}.",
+        "Multiplica la medida real por ese coeficiente."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Dibujamos un cubo en caballera y queremos saber cuánto mide en el dibujo una arista de {real} paralela al eje Y.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "En caballera el plano frontal XZ se ve en verdadera magnitud, y las aristas del eje Y se dibujan inclinadas y reducidas con el coeficiente, {coef} en la PAU.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: las caras paralelas al cuadro no se deforman y la profundidad se acorta.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Dibuja el eje Y a 45° del eje X, hacia arriba y a la derecha, y los ejes X y Z a escala real.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre el eje Y la medida real, {real}, multiplicada por {coef}: {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {real} por {coef} da {respuesta}. Las aristas paralelas a X y a Z no se reducen.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar la arista del eje Y con su medida real, {real}. En caballera la profundidad se reduce con el coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 40,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
       "difficulty": 2,
-      "prompt": "En caballera con coeficiente 0,5, ¿cuánto mide en el dibujo una arista de 30 mm paralela al eje Y?",
-      "answer": 15,
+      "prompt": "En perspectiva isométrica, ¿cuánto mide en el dibujo una arista de 45 mm paralela al eje OZ?",
+      "answer": 36.7,
       "unit": "mm",
-      "tolerance": 0.6,
+      "tolerance": 0.8,
+      "magnitud": "ejeZ",
       "show3d": ["triedro", "axonometria"],
       "sheet": ["triedro", "axonometria", "cuadricula"],
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, 30] },
-          "sistema": "caballera"
+          "solido": {
+            "tipo": "cubo",
+            "arista": 45,
+            "centro": [0, 30]
+          },
+          "sistema": "isometrica"
         }
-      }
+      },
+      "hints": [
+        "En perspectiva isométrica los tres ejes se acortan por igual.",
+        "El coeficiente de reducción es {coef}: la medida dibujada es la real por ese coeficiente (la arista).",
+        "Multiplica la medida real por el coeficiente, o llévala a la escala gráfica de reducción."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Dibujamos un sólido en perspectiva isométrica y queremos saber cuánto mide en el dibujo una medida real de {real}, paralela a un eje.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 45,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "En la perspectiva isométrica los tres ejes forman 120° y se reducen con el mismo coeficiente, {coef}. Toda medida paralela a un eje se dibuja con su valor real por ese coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 45,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 45,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "desdeVistas": 0.6
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["escala"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 45,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "escala": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva {real} a la escala gráfica y lee la medida reducida: {respuesta}. Dibuja esa medida sobre el eje.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 45,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {real} por {coef} da {respuesta}. En el dibujo isométrico, sin reducir, esa misma medida saldría de {real}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 45,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar la medida real, {real}, en una perspectiva isométrica. Esa es la medida del dibujo isométrico, sin reducir; en la perspectiva se reduce con el coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 45,
+                "centro": [0, 30]
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "En caballera, ¿cuánto mide en el dibujo una arista de 36 mm paralela al eje X?",
+      "answer": 36,
+      "unit": "mm",
+      "tolerance": 0.6,
+      "magnitud": "ejeX",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 36,
+            "centro": [0, 30]
+          },
+          "sistema": "caballera",
+          "caballera": {
+            "angulo": 45,
+            "coeficiente": 0.5
+          }
+        }
+      },
+      "hints": [
+        "En caballera, el plano frontal XZ se ve en verdadera magnitud.",
+        "Las aristas paralelas a OX y a OZ no se reducen.",
+        "La arista dibujada mide lo mismo que la real."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Dibujamos un cubo en caballera y queremos saber cuánto mide en el dibujo una arista de {real} paralela al eje X.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 36,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "En caballera el plano frontal XZ está en verdadera magnitud: las aristas paralelas a OX y a OZ se dibujan sin reducir. Solo se reducen las del eje Y.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 36,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: la cara de delante se ve igual que es, y solo la profundidad se acorta.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 36,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Dibuja el cuadrado frontal en verdadera magnitud y, desde sus vértices, los ejes Y reducidos hacia atrás.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 36,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre el eje X la medida real sin reducirla: {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 36,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la medida dibujada coincide con la real, {real}, porque el eje X no se reduce.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 36,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: reducir la arista del eje X con el coeficiente de la profundidad. Solo se reducen las medidas del eje Y.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 36,
+                "centro": [0, 30]
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Un octaedro de 40 mm de arista tiene una diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?",
+      "answer": 46.2,
+      "unit": "mm",
+      "tolerance": 1,
+      "magnitud": "diagonalVertical",
+      "show3d": ["triedro", "axonometria"],
+      "sheet": ["triedro", "axonometria", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 40,
+            "centro": [0, 30],
+            "giro": 45
+          },
+          "sistema": "isometrica"
+        }
+      },
+      "hints": [
+        "La diagonal vertical del octaedro es paralela a OZ, así que se reduce como ese eje.",
+        "Su medida real es la arista por raíz de dos.",
+        "Calcula la diagonal real y multiplícala por el coeficiente isométrico."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un octaedro con la diagonal paralela a OZ se dibuja en perspectiva isométrica. Queremos saber cuánto mide esa diagonal en el dibujo.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La diagonal vertical del octaedro va paralela a OZ, así que se reduce con el coeficiente de ese eje, {coef}. Su medida real es la arista por raíz de dos.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "desdeVistas": 0.6
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["escala"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "escala": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La diagonal real mide {real}. Llévala a la escala gráfica y lee la reducida: {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {real} por {coef} da {respuesta}, y la diagonal queda centrada en el octaedro y paralela a OZ.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 40,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
       "difficulty": 3,
-      "prompt": "Como en la PAU: octaedro de 30 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?",
-      "answer": 34.6,
+      "prompt": "Como en la PAU: octaedro de 36 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?",
+      "answer": 41.6,
       "unit": "mm",
       "tolerance": 1,
+      "magnitud": "diagonalVertical",
       "show3d": ["triedro"],
       "sheet": ["triedro", "cuadricula"],
       "engines": {
         "axonometria": {
-          "solido": { "tipo": "octaedro", "arista": 30, "centro": [0, 30], "giro": 45 }
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 36,
+            "centro": [0, 30],
+            "giro": 45
+          },
+          "sistema": "isometrica"
         }
-      }
+      },
+      "hints": [
+        "La diagonal vertical del octaedro es paralela a OZ, así que se reduce como ese eje.",
+        "Su medida real es la arista por raíz de dos.",
+        "Calcula la diagonal real y multiplícala por el coeficiente isométrico."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un octaedro con la diagonal paralela a OZ se dibuja en perspectiva isométrica. Queremos saber cuánto mide esa diagonal en el dibujo.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La diagonal vertical del octaedro va paralela a OZ, así que se reduce con el coeficiente de ese eje, {coef}. Su medida real es la arista por raíz de dos.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "desdeVistas": 0.6
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["escala"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "escala": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La diagonal real mide {real}. Llévala a la escala gráfica y lee la reducida: {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {real} por {coef} da {respuesta}, y la diagonal queda centrada en el octaedro y paralela a OZ.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 36,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: octaedro de 28 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en caballera?",
+      "answer": 39.6,
+      "unit": "mm",
+      "tolerance": 1,
+      "magnitud": "diagonalVertical",
+      "show3d": ["triedro"],
+      "sheet": ["triedro", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 28,
+            "centro": [0, 30],
+            "giro": 45
+          },
+          "sistema": "caballera",
+          "caballera": {
+            "angulo": 45,
+            "coeficiente": 0.5
+          }
+        }
+      },
+      "hints": [
+        "En caballera, la diagonal vertical es paralela a OZ, un eje que no se reduce.",
+        "Su medida real es la arista por raíz de dos.",
+        "La diagonal dibujada mide lo mismo que la real."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un octaedro con la diagonal paralela a OZ se dibuja en caballera. Queremos saber cuánto mide esa diagonal en el dibujo.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 28,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "En caballera, la diagonal vertical va paralela a OZ, que no se reduce. Su medida real es la arista por raíz de dos.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 28,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el octaedro proyectado con rayos oblicuos sobre el plano frontal: la diagonal vertical queda en el plano frontal y se ve en verdadera magnitud.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 28,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Dibuja el cuadrado central del octaedro en el plano horizontal, con el eje Y reducido, y la diagonal vertical por su centro.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 28,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La diagonal real mide {real}: se dibuja sobre el eje Z sin reducir, {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 28,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la diagonal dibujada coincide con la real, {real}, porque el eje Z no se reduce.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 28,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: reducir la diagonal con el coeficiente de caballera. Ese coeficiente es solo del eje Y; la diagonal vertical se dibuja sin reducir.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 28,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "caballera",
+              "caballera": {
+                "angulo": 45,
+                "coeficiente": 0.5
+              },
+              "rotulos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: octaedro de 24 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?",
+      "answer": 27.7,
+      "unit": "mm",
+      "tolerance": 1,
+      "magnitud": "diagonalVertical",
+      "show3d": ["triedro"],
+      "sheet": ["triedro", "cuadricula"],
+      "engines": {
+        "axonometria": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 24,
+            "centro": [0, 30],
+            "giro": 45
+          },
+          "sistema": "isometrica"
+        }
+      },
+      "hints": [
+        "La diagonal vertical del octaedro es paralela a OZ, así que se reduce como ese eje.",
+        "Su medida real es la arista por raíz de dos.",
+        "Calcula la diagonal real y multiplícala por el coeficiente isométrico."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un octaedro con la diagonal paralela a OZ se dibuja en perspectiva isométrica. Queremos saber cuánto mide esa diagonal en el dibujo.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 24,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La diagonal vertical del octaedro va paralela a OZ, así que se reduce con el coeficiente de ese eje, {coef}. Su medida real es la arista por raíz de dos.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 24,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica"
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 24,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "desdeVistas": 0.6
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.",
+          "show3d": ["triedro", "axonometria", "escala"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "escala"],
+          "highlight": ["escala"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 24,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "escala": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La diagonal real mide {real}. Llévala a la escala gráfica y lee la reducida: {respuesta}.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 24,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {real} por {coef} da {respuesta}, y la diagonal queda centrada en el octaedro y paralela a OZ.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 24,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.",
+          "show3d": ["triedro", "axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula"],
+          "highlight": ["axonometria"],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "axonometria": {
+              "solido": {
+                "tipo": "octaedro",
+                "arista": 24,
+                "centro": [0, 30],
+                "giro": 45
+              },
+              "sistema": "isometrica",
+              "rotulos": true
+            }
+          }
+        }
+      ]
     }
   ]
 }
