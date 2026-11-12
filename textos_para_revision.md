@@ -801,9 +801,117 @@ Fichero: `src/content/lessons/13-potencia-tangencias.json` · DT II · nivel Ava
 
 **Ejercicios**
 
-1. [ ] *construcción en la lámina, dificultad 1*: Arrastra Z hasta el centro radical de las tres circunferencias.
-2. [ ] *construcción en la lámina, dificultad 2*: Las circunferencias buscadas pasan por A y B y son tangentes a r. Arrastra Z hasta uno de sus puntos de tangencia con r.
-3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU, con otros datos: arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a r.
+1. [ ] *construcción en la lámina, dificultad 1*: Las tres circunferencias tienen sus centros en los ejes. Arrastra Z hasta su centro radical.
+   - [ ] *Pista 1:* El centro radical es el único punto con la misma potencia respecto a las tres circunferencias: sus tres tangentes miden lo mismo.
+   - [ ] *Pista 2:* El eje radical de dos circunferencias es perpendicular a la recta que une sus centros.
+   - [ ] *Pista 3:* Traza el eje radical de k₁ y k₄ y el de k₂ y k₄: se cortan en el centro radical.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay tres circunferencias, k₁, k₂ y k₄, y un punto Z que se puede arrastrar. Buscamos el punto desde el que las tres tangentes miden lo mismo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada pareja de circunferencias tiene un eje radical, la recta de los puntos con la misma potencia respecto a las dos. Los tres ejes se cortan en un punto: el centro radical.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por el eje radical de k₁ y k₂: las tangentes a las dos miden siempre lo mismo. Solo en un punto de esa recta también coincide la de k₄.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el eje radical e′ de k₁ y k₄: es perpendicular a la recta de sus centros.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza de la misma manera el eje radical e″ de k₂ y k₄.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Los dos ejes se cortan en el centro radical CR. Arrastra Z hasta ese punto.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el eje radical de k₁ y k₂ también pasa por CR, y las tres tangentes desde CR miden lo mismo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar el eje radical paralelo a la recta de los centros. Siempre es perpendicular a ella.
+2. [ ] *construcción en la lámina, dificultad 1*: Los puntos A y B están en una vertical. Las circunferencias que pasan por ellos y son tangentes a r tocan a r en dos puntos: arrastra Z hasta uno.
+   - [ ] *Pista 1:* Todas las circunferencias que pasan por A y B tienen la misma potencia respecto al punto donde AB corta a r.
+   - [ ] *Pista 2:* Esa potencia es el cuadrado de la distancia de ese punto a los puntos de tangencia con r.
+   - [ ] *Pista 3:* Traza la tangente desde O a una circunferencia auxiliar por A y B y llévala sobre r con el compás.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y sus puntos de tangencia con r.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta AB y su corte O con r.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂. Arrastra Z hasta uno de ellos.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: T₁ y T₂ están en r a la misma distancia de O, la raíz de OA por OB, y quedan a los dos lados de O.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar O como punto de tangencia. O solo da la potencia: el punto de tangencia está a una distancia OT de O.
+3. [ ] *construcción en la lámina, dificultad 1*: Los puntos A y B están en una vertical y r es horizontal. Arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a r.
+   - [ ] *Pista 1:* Cada centro equidista de A y de B y está sobre la perpendicular a r por el punto de tangencia.
+   - [ ] *Pista 2:* Los puntos de tangencia se hallan con la potencia del punto O, donde AB corta a r.
+   - [ ] *Pista 3:* Halla T₁ con la tangente desde O a una circunferencia auxiliar por A y B; el centro está donde la perpendicular a r por T₁ corta a la mediatriz.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y de ellas sus centros.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta AB y su corte O con r.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂.
+   - [ ] *Solución, paso 7 · 4. El trazado:* Cada centro está en la perpendicular a r por su punto de tangencia y en la mediatriz de AB. Arrastra Z hasta uno de ellos.
+   - [ ] *Solución, paso 8 · 5. Comprobación:* Comprobación: cada centro equidista de A, de B y de su punto de tangencia, y la circunferencia toca a r solo en ese punto.
+   - [ ] *Solución, paso 9 · 6. Error típico:* **[REVISAR]** Error típico: poner el centro sobre la recta AB. El centro equidista de A y B: está en su mediatriz, no en AB.
+4. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el centro radical de las tres circunferencias, que ahora están en posición general.
+   - [ ] *Pista 1:* El centro radical es el único punto con la misma potencia respecto a las tres circunferencias: sus tres tangentes miden lo mismo.
+   - [ ] *Pista 2:* El eje radical de dos circunferencias es perpendicular a la recta que une sus centros.
+   - [ ] *Pista 3:* Traza el eje radical de k₁ y k₄ y el de k₂ y k₄: se cortan en el centro radical.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay tres circunferencias, k₁, k₂ y k₄, y un punto Z que se puede arrastrar. Buscamos el punto desde el que las tres tangentes miden lo mismo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada pareja de circunferencias tiene un eje radical, la recta de los puntos con la misma potencia respecto a las dos. Los tres ejes se cortan en un punto: el centro radical.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por el eje radical de k₁ y k₂: las tangentes a las dos miden siempre lo mismo. Solo en un punto de esa recta también coincide la de k₄.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el eje radical e′ de k₁ y k₄: es perpendicular a la recta de sus centros.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza de la misma manera el eje radical e″ de k₂ y k₄.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Los dos ejes se cortan en el centro radical CR. Arrastra Z hasta ese punto.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el eje radical de k₁ y k₂ también pasa por CR, y las tres tangentes desde CR miden lo mismo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar el eje radical paralelo a la recta de los centros. Siempre es perpendicular a ella.
+5. [ ] *construcción en la lámina, dificultad 2*: Las circunferencias buscadas pasan por A y B y son tangentes a r, que está inclinada. Arrastra Z hasta uno de sus puntos de tangencia con r.
+   - [ ] *Pista 1:* Todas las circunferencias que pasan por A y B tienen la misma potencia respecto al punto donde AB corta a r.
+   - [ ] *Pista 2:* Esa potencia es el cuadrado de la distancia de ese punto a los puntos de tangencia con r.
+   - [ ] *Pista 3:* Traza la tangente desde O a una circunferencia auxiliar por A y B y llévala sobre r con el compás.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y sus puntos de tangencia con r.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta AB y su corte O con r.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂. Arrastra Z hasta uno de ellos.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: T₁ y T₂ están en r a la misma distancia de O, la raíz de OA por OB, y quedan a los dos lados de O.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar O como punto de tangencia. O solo da la potencia: el punto de tangencia está a una distancia OT de O.
+6. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a la recta inclinada r.
+   - [ ] *Pista 1:* Cada centro equidista de A y de B y está sobre la perpendicular a r por el punto de tangencia.
+   - [ ] *Pista 2:* Los puntos de tangencia se hallan con la potencia del punto O, donde AB corta a r.
+   - [ ] *Pista 3:* Halla T₁ con la tangente desde O a una circunferencia auxiliar por A y B; el centro está donde la perpendicular a r por T₁ corta a la mediatriz.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y de ellas sus centros.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta AB y su corte O con r.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂.
+   - [ ] *Solución, paso 7 · 4. El trazado:* Cada centro está en la perpendicular a r por su punto de tangencia y en la mediatriz de AB. Arrastra Z hasta uno de ellos.
+   - [ ] *Solución, paso 8 · 5. Comprobación:* Comprobación: cada centro equidista de A, de B y de su punto de tangencia, y la circunferencia toca a r solo en ese punto.
+   - [ ] *Solución, paso 9 · 6. Error típico:* **[REVISAR]** Error típico: poner el centro sobre la recta AB. El centro equidista de A y B: está en su mediatriz, no en AB.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU, con otros datos: arrastra Z hasta el centro radical de las tres circunferencias.
+   - [ ] *Pista 1:* El centro radical es el único punto con la misma potencia respecto a las tres circunferencias: sus tres tangentes miden lo mismo.
+   - [ ] *Pista 2:* El eje radical de dos circunferencias es perpendicular a la recta que une sus centros.
+   - [ ] *Pista 3:* Traza el eje radical de k₁ y k₄ y el de k₂ y k₄: se cortan en el centro radical.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay tres circunferencias, k₁, k₂ y k₄, y un punto Z que se puede arrastrar. Buscamos el punto desde el que las tres tangentes miden lo mismo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada pareja de circunferencias tiene un eje radical, la recta de los puntos con la misma potencia respecto a las dos. Los tres ejes se cortan en un punto: el centro radical.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que se desliza por el eje radical de k₁ y k₂: las tangentes a las dos miden siempre lo mismo. Solo en un punto de esa recta también coincide la de k₄.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el eje radical e′ de k₁ y k₄: es perpendicular a la recta de sus centros.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza de la misma manera el eje radical e″ de k₂ y k₄.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Los dos ejes se cortan en el centro radical CR. Arrastra Z hasta ese punto.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el eje radical de k₁ y k₂ también pasa por CR, y las tres tangentes desde CR miden lo mismo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar el eje radical paralelo a la recta de los centros. Siempre es perpendicular a ella.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU, con otros datos: arrastra Z hasta uno de los puntos de tangencia con r de las circunferencias que pasan por A y B.
+   - [ ] *Pista 1:* Todas las circunferencias que pasan por A y B tienen la misma potencia respecto al punto donde AB corta a r.
+   - [ ] *Pista 2:* Esa potencia es el cuadrado de la distancia de ese punto a los puntos de tangencia con r.
+   - [ ] *Pista 3:* Traza la tangente desde O a una circunferencia auxiliar por A y B y llévala sobre r con el compás.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y sus puntos de tangencia con r.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta AB y su corte O con r.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂. Arrastra Z hasta uno de ellos.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: T₁ y T₂ están en r a la misma distancia de O, la raíz de OA por OB, y quedan a los dos lados de O.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar O como punto de tangencia. O solo da la potencia: el punto de tangencia está a una distancia OT de O.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU, con otros datos: arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a r.
+   - [ ] *Pista 1:* Cada centro equidista de A y de B y está sobre la perpendicular a r por el punto de tangencia.
+   - [ ] *Pista 2:* Los puntos de tangencia se hallan con la potencia del punto O, donde AB corta a r.
+   - [ ] *Pista 3:* Halla T₁ con la tangente desde O a una circunferencia auxiliar por A y B; el centro está donde la perpendicular a r por T₁ corta a la mediatriz.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y de ellas sus centros.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta AB y su corte O con r.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂.
+   - [ ] *Solución, paso 7 · 4. El trazado:* Cada centro está en la perpendicular a r por su punto de tangencia y en la mediatriz de AB. Arrastra Z hasta uno de ellos.
+   - [ ] *Solución, paso 8 · 5. Comprobación:* Comprobación: cada centro equidista de A, de B y de su punto de tangencia, y la circunferencia toca a r solo en ese punto.
+   - [ ] *Solución, paso 9 · 6. Error típico:* **[REVISAR]** Error típico: poner el centro sobre la recta AB. El centro equidista de A y B: está en su mediatriz, no en AB.
 
 ### II-03 · Homología y afinidad: la sombra de una figura
 

@@ -531,11 +531,18 @@
     {
       "kind": "engine",
       "difficulty": 1,
-      "prompt": "Arrastra Z hasta el centro radical de las tres circunferencias.",
+      "prompt": "Las tres circunferencias tienen sus centros en los ejes. Arrastra Z hasta su centro radical.",
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
           "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+          "posiciones": {
+            "C1": [-30, 0],
+            "C2": [30, 0],
+            "C4": [0, -40],
+            "C3": [0, 22],
+            "Z": [-60, -50]
+          },
           "respuesta": {
             "mover": "Z",
             "objetivo": "CR",
@@ -544,18 +551,214 @@
             "pista": "Traza dos ejes radicales: cada uno es perpendicular a la recta de sus centros. El centro radical es su corte."
           }
         }
-      }
+      },
+      "hints": [
+        "El centro radical es el único punto con la misma potencia respecto a las tres circunferencias: sus tres tangentes miden lo mismo.",
+        "El eje radical de dos circunferencias es perpendicular a la recta que une sus centros.",
+        "Traza el eje radical de k₁ y k₄ y el de k₂ y k₄: se cortan en el centro radical."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay tres circunferencias, k₁, k₂ y k₄, y un punto Z que se puede arrastrar. Buscamos el punto desde el que las tres tangentes miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada pareja de circunferencias tiene un eje radical, la recta de los puntos con la misma potencia respecto a las dos. Los tres ejes se cortan en un punto: el centro radical.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que se desliza por el eje radical de k₁ y k₂: las tangentes a las dos miden siempre lo mismo. Solo en un punto de esa recta también coincide la de k₄.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el eje radical e′ de k₁ y k₄: es perpendicular a la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [-60, -50]
+              },
+              "trazar": ["e14"],
+              "destacar": ["e14"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza de la misma manera el eje radical e″ de k₂ y k₄.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [-60, -50]
+              },
+              "trazar": ["e24"],
+              "destacar": ["e24"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Los dos ejes se cortan en el centro radical CR. Arrastra Z hasta ese punto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "CR", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [2.7, -11.5]
+              },
+              "trazar": ["CR"],
+              "destacar": ["CR"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el eje radical de k₁ y k₂ también pasa por CR, y las tres tangentes desde CR miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "e", "CR", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [2.7, -11.5]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar el eje radical paralelo a la recta de los centros. Siempre es perpendicular a ella.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "e", "CR", "Z"],
+              "posiciones": {
+                "C1": [-30, 0],
+                "C2": [30, 0],
+                "C4": [0, -40],
+                "C3": [0, 22],
+                "Z": [2.7, -11.5]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-42, 16],
+                    [12, -56]
+                  ],
+                  "rotulo": "Error: eje paralelo a O₁O₄"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "engine",
-      "difficulty": 2,
-      "prompt": "Las circunferencias buscadas pasan por A y B y son tangentes a r. Arrastra Z hasta uno de sus puntos de tangencia con r.",
+      "difficulty": 1,
+      "prompt": "Los puntos A y B están en una vertical. Las circunferencias que pasan por ellos y son tangentes a r tocan a r en dos puntos: arrastra Z hasta uno.",
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
           "visibles": ["A", "B", "r", "Z"],
           "posiciones": {
-            "Z": [-60, -45]
+            "A": [0, 40],
+            "B": [0, 20],
+            "R1": [-60, -10],
+            "R2": [60, -10],
+            "Z": [-60, -50]
           },
           "respuesta": {
             "mover": "Z",
@@ -565,7 +768,1725 @@
             "pista": "La recta AB corta a r en el centro radical. Su potencia te da la distancia a los puntos de tangencia."
           }
         }
-      }
+      },
+      "hints": [
+        "Todas las circunferencias que pasan por A y B tienen la misma potencia respecto al punto donde AB corta a r.",
+        "Esa potencia es el cuadrado de la distancia de ese punto a los puntos de tangencia con r.",
+        "Traza la tangente desde O a una circunferencia auxiliar por A y B y llévala sobre r con el compás."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y sus puntos de tangencia con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "Z"],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-60, -50]
+              },
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "m", "Ca", "ca", "Z"],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta AB y su corte O con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-60, -50]
+              },
+              "trazar": ["s", "O"],
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "m", "Ca", "ca", "O", "Ta", "OTa", "Z"],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-60, -50]
+              },
+              "trazar": ["m", "Ca", "ca", "Ta", "OTa"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂. Arrastra Z hasta uno de ellos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-38.7, -10]
+              },
+              "trazar": ["kp", "T1", "T2"],
+              "destacar": ["T1", "T2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: T₁ y T₂ están en r a la misma distancia de O, la raíz de OA por OB, y quedan a los dos lados de O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "kp", "T1", "T2", "Z"],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-38.7, -10]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar O como punto de tangencia. O solo da la potencia: el punto de tangencia está a una distancia OT de O.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "kp", "T1", "T2", "Z"],
+              "posiciones": {
+                "A": [0, 40],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-38.7, -10]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-7, -10],
+                    [7, -10]
+                  ],
+                  "rotulo": "Error: O no es T",
+                  "desplaza": [0, 5]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Los puntos A y B están en una vertical y r es horizontal. Arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a r.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "Z"],
+          "posiciones": {
+            "A": [0, 50],
+            "B": [0, 20],
+            "R1": [-60, -10],
+            "R2": [60, -10],
+            "Z": [60, 50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["S1", "S2"],
+            "tolerancia": 3,
+            "acierto": "¡Correcto! El centro está en la mediatriz de AB y en la perpendicular a r por el punto de tangencia.",
+            "pista": "Primero los puntos de tangencia, con el centro radical. Después, el centro en la mediatriz de AB."
+          }
+        }
+      },
+      "hints": [
+        "Cada centro equidista de A y de B y está sobre la perpendicular a r por el punto de tangencia.",
+        "Los puntos de tangencia se hallan con la potencia del punto O, donde AB corta a r.",
+        "Halla T₁ con la tangente desde O a una circunferencia auxiliar por A y B; el centro está donde la perpendicular a r por T₁ corta a la mediatriz."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y de ellas sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "Z"],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [60, 50]
+              },
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "m", "Ca", "ca", "Z"],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta AB y su corte O con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [60, 50]
+              },
+              "trazar": ["s", "O"],
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "m", "Ca", "ca", "O", "Ta", "OTa", "Z"],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [60, 50]
+              },
+              "trazar": ["m", "Ca", "ca", "Ta", "OTa"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [60, 50]
+              },
+              "trazar": ["kp", "T1", "T2"],
+              "destacar": ["T1", "T2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada centro está en la perpendicular a r por su punto de tangencia y en la mediatriz de AB. Arrastra Z hasta uno de ellos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "n1",
+                "n2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-42.4, 35]
+              },
+              "trazar": ["n1", "n2", "S1", "S2", "sol1", "sol2"],
+              "destacar": ["sol1", "sol2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: cada centro equidista de A, de B y de su punto de tangencia, y la circunferencia toca a r solo en ese punto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "O",
+                "T1",
+                "T2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-42.4, 35]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el centro sobre la recta AB. El centro equidista de A y B: está en su mediatriz, no en AB.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "O",
+                "T1",
+                "T2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [0, 50],
+                "B": [0, 20],
+                "R1": [-60, -10],
+                "R2": [60, -10],
+                "Z": [-42.4, 35]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 50],
+                    [0, 20]
+                  ],
+                  "rotulo": "Error: centro en AB",
+                  "desplaza": [6, 6]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Arrastra Z hasta el centro radical de las tres circunferencias, que ahora están en posición general.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+          "posiciones": {
+            "C1": [-40, 15],
+            "C2": [35, -5],
+            "C4": [5, -45],
+            "C3": [3, 26],
+            "Z": [-70, -50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "CR",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! Las tangentes desde Z a las tres circunferencias miden lo mismo.",
+            "pista": "Traza dos ejes radicales: cada uno es perpendicular a la recta de sus centros. El centro radical es su corte."
+          }
+        }
+      },
+      "hints": [
+        "El centro radical es el único punto con la misma potencia respecto a las tres circunferencias: sus tres tangentes miden lo mismo.",
+        "El eje radical de dos circunferencias es perpendicular a la recta que une sus centros.",
+        "Traza el eje radical de k₁ y k₄ y el de k₂ y k₄: se cortan en el centro radical."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay tres circunferencias, k₁, k₂ y k₄, y un punto Z que se puede arrastrar. Buscamos el punto desde el que las tres tangentes miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-70, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada pareja de circunferencias tiene un eje radical, la recta de los puntos con la misma potencia respecto a las dos. Los tres ejes se cortan en un punto: el centro radical.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-70, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que se desliza por el eje radical de k₁ y k₂: las tangentes a las dos miden siempre lo mismo. Solo en un punto de esa recta también coincide la de k₄.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-70, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el eje radical e′ de k₁ y k₄: es perpendicular a la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-70, -50]
+              },
+              "trazar": ["e14"],
+              "destacar": ["e14"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza de la misma manera el eje radical e″ de k₂ y k₄.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-70, -50]
+              },
+              "trazar": ["e24"],
+              "destacar": ["e24"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Los dos ejes se cortan en el centro radical CR. Arrastra Z hasta ese punto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "CR", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-3.8, -7.9]
+              },
+              "trazar": ["CR"],
+              "destacar": ["CR"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el eje radical de k₁ y k₂ también pasa por CR, y las tres tangentes desde CR miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "e", "CR", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-3.8, -7.9]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar el eje radical paralelo a la recta de los centros. Siempre es perpendicular a ella.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "e", "CR", "Z"],
+              "posiciones": {
+                "C1": [-40, 15],
+                "C2": [35, -5],
+                "C4": [5, -45],
+                "C3": [3, 26],
+                "Z": [-3.8, -7.9]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-44.5, 21],
+                    [9.5, -51]
+                  ],
+                  "rotulo": "Error: eje paralelo a O₁O₄"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Las circunferencias buscadas pasan por A y B y son tangentes a r, que está inclinada. Arrastra Z hasta uno de sus puntos de tangencia con r.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "Z"],
+          "posiciones": {
+            "A": [-20, 40],
+            "B": [10, 20],
+            "R1": [-70, -20],
+            "R2": [70, 0],
+            "Z": [-60, -50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["T1", "T2"],
+            "tolerancia": 3,
+            "acierto": "¡Correcto! Z está en r a la distancia del centro radical que da su potencia.",
+            "pista": "La recta AB corta a r en el centro radical. Su potencia te da la distancia a los puntos de tangencia."
+          }
+        }
+      },
+      "hints": [
+        "Todas las circunferencias que pasan por A y B tienen la misma potencia respecto al punto donde AB corta a r.",
+        "Esa potencia es el cuadrado de la distancia de ese punto a los puntos de tangencia con r.",
+        "Traza la tangente desde O a una circunferencia auxiliar por A y B y llévala sobre r con el compás."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y sus puntos de tangencia con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "Z"],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-60, -50]
+              },
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "m", "Ca", "ca", "Z"],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta AB y su corte O con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-60, -50]
+              },
+              "trazar": ["s", "O"],
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "m", "Ca", "ca", "O", "Ta", "OTa", "Z"],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-60, -50]
+              },
+              "trazar": ["m", "Ca", "ca", "Ta", "OTa"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂. Arrastra Z hasta uno de ellos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-11.8, -11.7]
+              },
+              "trazar": ["kp", "T1", "T2"],
+              "destacar": ["T1", "T2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: T₁ y T₂ están en r a la misma distancia de O, la raíz de OA por OB, y quedan a los dos lados de O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "kp", "T1", "T2", "Z"],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-11.8, -11.7]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar O como punto de tangencia. O solo da la potencia: el punto de tangencia está a una distancia OT de O.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "kp", "T1", "T2", "Z"],
+              "posiciones": {
+                "A": [-20, 40],
+                "B": [10, 20],
+                "R1": [-70, -20],
+                "R2": [70, 0],
+                "Z": [-11.8, -11.7]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [38.3, -3.5],
+                    [52.3, -3.5]
+                  ],
+                  "rotulo": "Error: O no es T",
+                  "desplaza": [0, 5]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Arrastra Z hasta el centro de una de las circunferencias que pasan por A y B y son tangentes a la recta inclinada r.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "Z"],
+          "posiciones": {
+            "A": [-35, 45],
+            "B": [15, 20],
+            "R1": [-70, -30],
+            "R2": [70, -5],
+            "Z": [60, 50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["S1", "S2"],
+            "tolerancia": 3,
+            "acierto": "¡Correcto! El centro está en la mediatriz de AB y en la perpendicular a r por el punto de tangencia.",
+            "pista": "Primero los puntos de tangencia, con el centro radical. Después, el centro en la mediatriz de AB."
+          }
+        }
+      },
+      "hints": [
+        "Cada centro equidista de A y de B y está sobre la perpendicular a r por el punto de tangencia.",
+        "Los puntos de tangencia se hallan con la potencia del punto O, donde AB corta a r.",
+        "Halla T₁ con la tangente desde O a una circunferencia auxiliar por A y B; el centro está donde la perpendicular a r por T₁ corta a la mediatriz."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y de ellas sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "Z"],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [60, 50]
+              },
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "m", "Ca", "ca", "Z"],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta AB y su corte O con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [60, 50]
+              },
+              "trazar": ["s", "O"],
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "m", "Ca", "ca", "O", "Ta", "OTa", "Z"],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [60, 50]
+              },
+              "trazar": ["m", "Ca", "ca", "Ta", "OTa"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [60, 50]
+              },
+              "trazar": ["kp", "T1", "T2"],
+              "destacar": ["T1", "T2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada centro está en la perpendicular a r por su punto de tangencia y en la mediatriz de AB. Arrastra Z hasta uno de ellos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "n1",
+                "n2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [-19.1, 14.2]
+              },
+              "trazar": ["n1", "n2", "S1", "S2", "sol1", "sol2"],
+              "destacar": ["sol1", "sol2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: cada centro equidista de A, de B y de su punto de tangencia, y la circunferencia toca a r solo en ese punto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "O",
+                "T1",
+                "T2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [-19.1, 14.2]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el centro sobre la recta AB. El centro equidista de A y B: está en su mediatriz, no en AB.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "O",
+                "T1",
+                "T2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-35, 45],
+                "B": [15, 20],
+                "R1": [-70, -30],
+                "R2": [70, -5],
+                "Z": [-19.1, 14.2]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, 45],
+                    [15, 20]
+                  ],
+                  "rotulo": "Error: centro en AB",
+                  "desplaza": [6, 6]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU, con otros datos: arrastra Z hasta el centro radical de las tres circunferencias.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+          "posiciones": {
+            "C1": [-45, 25],
+            "C2": [20, 10],
+            "C4": [30, -40],
+            "C3": [-8, 39],
+            "Z": [-70, -50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "CR",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! Las tangentes desde Z a las tres circunferencias miden lo mismo.",
+            "pista": "Traza dos ejes radicales: cada uno es perpendicular a la recta de sus centros. El centro radical es su corte."
+          }
+        }
+      },
+      "hints": [
+        "El centro radical es el único punto con la misma potencia respecto a las tres circunferencias: sus tres tangentes miden lo mismo.",
+        "El eje radical de dos circunferencias es perpendicular a la recta que une sus centros.",
+        "Traza el eje radical de k₁ y k₄ y el de k₂ y k₄: se cortan en el centro radical."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay tres circunferencias, k₁, k₂ y k₄, y un punto Z que se puede arrastrar. Buscamos el punto desde el que las tres tangentes miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-70, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada pareja de circunferencias tiene un eje radical, la recta de los puntos con la misma potencia respecto a las dos. Los tres ejes se cortan en un punto: el centro radical.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-70, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que se desliza por el eje radical de k₁ y k₂: las tangentes a las dos miden siempre lo mismo. Solo en un punto de esa recta también coincide la de k₄.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-70, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el eje radical e′ de k₁ y k₄: es perpendicular a la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-70, -50]
+              },
+              "trazar": ["e14"],
+              "destacar": ["e14"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza de la misma manera el eje radical e″ de k₂ y k₄.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-70, -50]
+              },
+              "trazar": ["e24"],
+              "destacar": ["e24"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Los dos ejes se cortan en el centro radical CR. Arrastra Z hasta ese punto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "CR", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-19.7, -24.5]
+              },
+              "trazar": ["CR"],
+              "destacar": ["CR"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el eje radical de k₁ y k₂ también pasa por CR, y las tres tangentes desde CR miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "e", "CR", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-19.7, -24.5]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar el eje radical paralelo a la recta de los centros. Siempre es perpendicular a ella.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["C1", "C2", "C4", "k1", "k2", "k4", "e14", "e24", "e", "CR", "Z"],
+              "posiciones": {
+                "C1": [-45, 25],
+                "C2": [20, 10],
+                "C4": [30, -40],
+                "C3": [-8, 39],
+                "Z": [-19.7, -24.5]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-41.5, 22],
+                    [26.5, -37]
+                  ],
+                  "rotulo": "Error: eje paralelo a O₁O₄"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU, con otros datos: arrastra Z hasta uno de los puntos de tangencia con r de las circunferencias que pasan por A y B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "r", "Z"],
+          "posiciones": {
+            "A": [-30, 35],
+            "B": [5, 10],
+            "R1": [-80, -35],
+            "R2": [80, -5],
+            "Z": [-60, -50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["T1", "T2"],
+            "tolerancia": 3,
+            "acierto": "¡Correcto! Z está en r a la distancia del centro radical que da su potencia.",
+            "pista": "La recta AB corta a r en el centro radical. Su potencia te da la distancia a los puntos de tangencia."
+          }
+        }
+      },
+      "hints": [
+        "Todas las circunferencias que pasan por A y B tienen la misma potencia respecto al punto donde AB corta a r.",
+        "Esa potencia es el cuadrado de la distancia de ese punto a los puntos de tangencia con r.",
+        "Traza la tangente desde O a una circunferencia auxiliar por A y B y llévala sobre r con el compás."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y sus puntos de tangencia con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "Z"],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-60, -50]
+              },
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "m", "Ca", "ca", "Z"],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-60, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta AB y su corte O con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-60, -50]
+              },
+              "trazar": ["s", "O"],
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "m", "Ca", "ca", "O", "Ta", "OTa", "Z"],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-60, -50]
+              },
+              "trazar": ["m", "Ca", "ca", "Ta", "OTa"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂. Arrastra Z hasta uno de ellos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-19, -23.6]
+              },
+              "trazar": ["kp", "T1", "T2"],
+              "destacar": ["T1", "T2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: T₁ y T₂ están en r a la misma distancia de O, la raíz de OA por OB, y quedan a los dos lados de O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "kp", "T1", "T2", "Z"],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-19, -23.6]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar O como punto de tangencia. O solo da la potencia: el punto de tangencia está a una distancia OT de O.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "kp", "T1", "T2", "Z"],
+              "posiciones": {
+                "A": [-30, 35],
+                "B": [5, 10],
+                "R1": [-80, -35],
+                "R2": [80, -5],
+                "Z": [-19, -23.6]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [30.2, -13],
+                    [44.2, -13]
+                  ],
+                  "rotulo": "Error: O no es T",
+                  "desplaza": [0, 5]
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "engine",
@@ -576,9 +2497,11 @@
         "plana": {
           "visibles": ["A", "B", "r", "Z"],
           "posiciones": {
-            "A": [-30, 35],
-            "B": [5, 10],
-            "Z": [60, 45]
+            "A": [-25, 50],
+            "B": [20, 5],
+            "R1": [-80, -40],
+            "R2": [80, -15],
+            "Z": [60, 50]
           },
           "respuesta": {
             "mover": "Z",
@@ -588,7 +2511,287 @@
             "pista": "Primero los puntos de tangencia, con el centro radical. Después, el centro en la mediatriz de AB."
           }
         }
-      }
+      },
+      "hints": [
+        "Cada centro equidista de A y de B y está sobre la perpendicular a r por el punto de tangencia.",
+        "Los puntos de tangencia se hallan con la potencia del punto O, donde AB corta a r.",
+        "Halla T₁ con la tangente desde O a una circunferencia auxiliar por A y B; el centro está donde la perpendicular a r por T₁ corta a la mediatriz."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Hay dos puntos A y B y una recta r. Buscamos las circunferencias que pasan por A y B y son tangentes a r, y de ellas sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "Z"],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La recta AB corta a r en O, que tiene la misma potencia respecto a todas las circunferencias por A y B. Esa potencia, OA por OB, da la distancia de O a los puntos de tangencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [60, 50]
+              },
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia por A y B cuyo centro se desliza por la mediatriz: va cambiando de tamaño hasta tocar a r. Solo en dos posiciones es tangente.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "m", "Ca", "ca", "Z"],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta AB y su corte O con r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "O", "Z"],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [60, 50]
+              },
+              "trazar": ["s", "O"],
+              "destacar": ["O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza una circunferencia auxiliar por A y B, con centro en la mediatriz, y la tangente desde O: su longitud OT es la que da la potencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "r", "s", "m", "Ca", "ca", "O", "Ta", "OTa", "Z"],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [60, 50]
+              },
+              "trazar": ["m", "Ca", "ca", "Ta", "OTa"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en O y radio OT, corta a r en los puntos de tangencia T₁ y T₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [60, 50]
+              },
+              "trazar": ["kp", "T1", "T2"],
+              "destacar": ["T1", "T2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada centro está en la perpendicular a r por su punto de tangencia y en la mediatriz de AB. Arrastra Z hasta uno de ellos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "Ca",
+                "ca",
+                "O",
+                "Ta",
+                "OTa",
+                "kp",
+                "T1",
+                "T2",
+                "n1",
+                "n2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [-19.9, 10.1]
+              },
+              "trazar": ["n1", "n2", "S1", "S2", "sol1", "sol2"],
+              "destacar": ["sol1", "sol2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: cada centro equidista de A, de B y de su punto de tangencia, y la circunferencia toca a r solo en ese punto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "O",
+                "T1",
+                "T2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [-19.9, 10.1]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el centro sobre la recta AB. El centro equidista de A y B: está en su mediatriz, no en AB.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "r",
+                "s",
+                "m",
+                "O",
+                "T1",
+                "T2",
+                "S1",
+                "S2",
+                "sol1",
+                "sol2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-25, 50],
+                "B": [20, 5],
+                "R1": [-80, -40],
+                "R2": [80, -15],
+                "Z": [-19.9, 10.1]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, 50],
+                    [20, 5]
+                  ],
+                  "rotulo": "Error: centro en AB",
+                  "desplaza": [6, 6]
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
