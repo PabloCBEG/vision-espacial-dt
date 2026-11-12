@@ -1,0 +1,35 @@
+{
+  "id": "canal-en-v",
+  "nombre": "Canal en V con ranura y taladro",
+  "dificultad": 3,
+  "vistasNecesarias": ["alzado", "planta", "perfil"],
+  "operaciones": [
+    {
+      "tipo": "perfil",
+      "eje": "x",
+      "puntos": [
+        [10, 0],
+        [40, 0],
+        [40, 30],
+        [34, 30],
+        [25, 10],
+        [16, 30],
+        [10, 30]
+      ],
+      "desde": -25,
+      "hasta": 25
+    },
+    {
+      "tipo": "ranura",
+      "desde": [-4, 5, 20],
+      "hasta": [4, 45, 35]
+    },
+    {
+      "tipo": "taladro",
+      "centro": [15, 13, 30],
+      "eje": "c",
+      "sentido": -1,
+      "diametro": 4
+    }
+  ]
+}

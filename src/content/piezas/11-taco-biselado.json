@@ -1,0 +1,22 @@
+{
+  "id": "taco-biselado",
+  "nombre": "Taco con arista biselada",
+  "dificultad": 1,
+  "vistasNecesarias": ["alzado", "perfil"],
+  "operaciones": [
+    {
+      "tipo": "bloque",
+      "desde": [-25, 10, 0],
+      "hasta": [25, 40, 16]
+    },
+    {
+      "tipo": "chaflan",
+      "eje": "x",
+      "en": [40, 16],
+      "desde": -25,
+      "hasta": 25,
+      "hacia": [-1, -1],
+      "tamano": 8
+    }
+  ]
+}

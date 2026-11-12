@@ -1,0 +1,32 @@
+{
+  "id": "escalera-taladrada",
+  "nombre": "Escalera con taladro",
+  "dificultad": 3,
+  "vistasNecesarias": ["planta", "perfil"],
+  "operaciones": [
+    {
+      "tipo": "perfil",
+      "eje": "x",
+      "puntos": [
+        [10, 0],
+        [40, 0],
+        [40, 10],
+        [30, 10],
+        [30, 20],
+        [20, 20],
+        [20, 30],
+        [10, 30]
+      ],
+      "desde": -25,
+      "hasta": 25
+    },
+    {
+      "tipo": "taladro",
+      "centro": [0, 35, 10],
+      "eje": "c",
+      "sentido": -1,
+      "diametro": 8,
+      "profundidad": 10
+    }
+  ]
+}

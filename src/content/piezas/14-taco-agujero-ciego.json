@@ -1,0 +1,28 @@
+{
+  "id": "taco-agujero-ciego",
+  "nombre": "Taco con agujero ciego",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "perfil"],
+  "operaciones": [
+    {
+      "tipo": "bloque",
+      "desde": [-25, 10, 0],
+      "hasta": [25, 40, 28]
+    },
+    {
+      "tipo": "taladro",
+      "centro": [0, 40, 14],
+      "eje": "a",
+      "sentido": -1,
+      "diametro": 12,
+      "profundidad": 20
+    },
+    {
+      "tipo": "taladro",
+      "centro": [-15, 25, 28],
+      "eje": "c",
+      "sentido": -1,
+      "diametro": 8
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "esquina-cajeada",
+  "nombre": "Bloque con esquina cajeada",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    {
+      "tipo": "bloque",
+      "desde": [-25, 10, 0],
+      "hasta": [25, 40, 30]
+    },
+    {
+      "tipo": "ranura",
+      "desde": [-5, 25, 14],
+      "hasta": [30, 45, 35]
+    }
+  ]
+}

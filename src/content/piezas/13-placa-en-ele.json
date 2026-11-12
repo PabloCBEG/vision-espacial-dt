@@ -1,0 +1,22 @@
+{
+  "id": "placa-en-ele",
+  "nombre": "Placa en L",
+  "dificultad": 2,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    {
+      "tipo": "perfil",
+      "eje": "c",
+      "puntos": [
+        [-25, 10],
+        [25, 10],
+        [25, 22],
+        [-5, 22],
+        [-5, 40],
+        [-25, 40]
+      ],
+      "desde": 0,
+      "hasta": 14
+    }
+  ]
+}
