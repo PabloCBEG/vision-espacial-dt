@@ -196,6 +196,13 @@ Los pasos y ejercicios que usan un motor (métodos, sólidos…) llevan sus dato
 - **Banco PAU** (`#/pau`): ejercicios tipo PAU en modo examen (22 minutos, solo la lámina y sin
   pistas), con la solución animada y la autoevaluación con la rúbrica oficial. Cada ejercicio es
   un fichero JSON en [`src/content/pau/`](src/content/pau/); copia uno de ejemplo para añadir más.
+  Además de los ejemplos de formato, el banco tiene ejercicios reales de Andalucía (2025 y 2026),
+  con el enunciado del examen, sus datos medidos en la lámina y la solución en las seis partes
+  (cada paso lleva `"part"`; el error típico puede dibujarse con la capa `"error"`). Como los
+  exámenes no traen criterios de corrección, su rúbrica lleva `"origen": "derivada"`: reparte los
+  2 puntos según la puntuación por apartados del enunciado, y la pantalla avisa de que no es la
+  oficial. Las escenas PAU admiten coordenadas hasta ±120 mm porque ocupan toda la hoja. Los PDF
+  de `examenes/` no se suben al repositorio; `examenes/indice.json` apunta cuáles están transcritos.
 - **Entrenador espacial** (`#/entrenador`): rotaciones, secciones, desarrollos y vistas con
   dificultad adaptativa, y un test diagnóstico inicial y final. Los resultados son anónimos y el
   alumno los descarga con el código que le dé el profesor.
