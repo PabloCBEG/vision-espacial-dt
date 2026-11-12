@@ -21,6 +21,9 @@ interface Lesson {
   saberBasico: string;
   steps: Step[];
 }
+interface PauStep extends Step {
+  part?: string;
+}
 interface Pau {
   id: string;
   convocatoria: string;
@@ -29,8 +32,8 @@ interface Pau {
   titulo: string;
   enunciado: string;
   datos?: string[];
-  solucion: Step[];
-  rubrica: { criterios: { texto: string; puntos: number }[] };
+  solucion: PauStep[];
+  rubrica: { origen?: string; criterios: { texto: string; puntos: number }[] };
 }
 interface Piece {
   id?: string;
@@ -178,8 +181,19 @@ for (const path of files('src/content/pau')) {
   );
   for (const d of p.datos ?? []) push(`- [ ] **Dato:** ${d}`);
   push('', '**Solución paso a paso**', '');
-  p.solucion.forEach((s, i) => push(`${i + 1}. [ ] ${s.narration}`));
-  push('', '**Rúbrica (2 puntos de solución y método)**', '');
+  p.solucion.forEach((s, i) => {
+    const part = s.part ? SOLUTION_PART_NAMES[s.part as SolutionPart] : undefined;
+    // El error típico lo redacta Claude: queda marcado hasta que el profesor lo valide.
+    const mark = s.part === 'error' ? ' **[REVISAR]**' : '';
+    push(
+      `${i + 1}. [ ] ${part ? `*${part}:*` : ''}${mark} ${s.narration}`.replace('[ ]  ', '[ ] '),
+    );
+  });
+  const derived =
+    p.rubrica.origen === 'derivada'
+      ? ' · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial'
+      : '';
+  push('', `**Rúbrica (2 puntos de solución y método)**${derived}`, '');
   for (const c of p.rubrica.criterios) {
     push(`- [ ] ${c.texto} — ${String(c.puntos).replace('.', ',')} p`);
   }

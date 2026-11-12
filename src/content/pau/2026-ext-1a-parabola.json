@@ -1,0 +1,318 @@
+{
+  "id": "pau-2026-ext-1a-parabola",
+  "convocatoria": "2026 extraordinaria",
+  "ejercicio": 1,
+  "opcion": "A",
+  "temas": ["II-04"],
+  "titulo": "Parábola por su directriz, un punto y la tangente en él",
+  "enunciado": "Dada la directriz D de una parábola, un punto P de la misma y la recta T tangente a la cónica en dicho punto, se pide: 1. Determinar el vértice V, el eje E y el foco F de la parábola. 2. Dibujar la cónica.",
+  "datos": [
+    "Medidos en la lámina del examen (mm, con el origen en el centro de la hoja): D horizontal a −56,2 de la referencia; P(−44,3; 8,7); T pasa por P y por (−71,7; 73,1)."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "P",
+            "tipo": "punto",
+            "en": [-44.3, 8.7],
+            "fijo": true,
+            "etiqueta": "P",
+            "rol": "dato"
+          },
+          {
+            "id": "T1",
+            "tipo": "punto",
+            "en": [-71.7, 73.1],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "T2",
+            "tipo": "punto",
+            "en": [-8.68, -75.02],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "D1",
+            "tipo": "punto",
+            "en": [-81.1, -56.2],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "D2",
+            "tipo": "punto",
+            "en": [86.3, -56.2],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "Tg",
+            "tipo": "recta",
+            "por": ["T1", "T2"],
+            "rol": "dato",
+            "etiqueta": "T"
+          },
+          {
+            "id": "D",
+            "tipo": "recta",
+            "por": ["D1", "D2"],
+            "rol": "dato",
+            "etiqueta": "D"
+          },
+          {
+            "id": "pq",
+            "tipo": "perpendicular",
+            "a": "D",
+            "por": "P",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "Q",
+            "tipo": "interseccion",
+            "de": ["D", "pq"],
+            "rol": "proceso",
+            "etiqueta": "Q"
+          },
+          {
+            "id": "qm",
+            "tipo": "perpendicular",
+            "a": "Tg",
+            "por": "Q",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "M",
+            "tipo": "interseccion",
+            "de": ["Tg", "qm"],
+            "rol": "proceso",
+            "etiqueta": "M"
+          },
+          {
+            "id": "kc",
+            "tipo": "circunferencia",
+            "centro": "M",
+            "pasaPor": "Q",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "F",
+            "tipo": "interseccion",
+            "de": ["kc", "qm"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "F"
+          },
+          {
+            "id": "E",
+            "tipo": "perpendicular",
+            "a": "D",
+            "por": "F",
+            "rol": "resultado",
+            "etiqueta": "E"
+          },
+          {
+            "id": "Z",
+            "tipo": "interseccion",
+            "de": ["D", "E"],
+            "rol": "proceso",
+            "etiqueta": ""
+          },
+          {
+            "id": "V",
+            "tipo": "puntoMedio",
+            "de": ["F", "Z"],
+            "rol": "resultado",
+            "etiqueta": "V"
+          },
+          {
+            "id": "par",
+            "tipo": "conica",
+            "clase": "parabola",
+            "foco": "F",
+            "directriz": "D",
+            "rol": "resultado"
+          }
+        ]
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "camera": "front",
+    "foldAngle": 0,
+    "engines": {
+      "plana": {
+        "visibles": ["P", "Tg", "D"]
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "Conocemos la directriz D de una parábola, un punto P de la curva y la tangente T en P. Faltan el foco F, el eje E y el vértice V.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D"]
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "La tangente en P es la mediatriz del segmento que une el foco con el pie Q de la perpendicular desde P a la directriz. Por eso el foco es el simétrico de Q respecto de T.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D", "pq", "Q"],
+          "trazar": ["pq", "Q"],
+          "destacar": ["Tg"]
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina un punto que recorre la parábola: su distancia al foco es siempre igual a su distancia a la directriz. Con P, esa igualdad es PF = PQ.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D", "pq", "Q"],
+          "destacar": ["pq"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Baja desde P la perpendicular a D: su pie es Q. Traza por Q la perpendicular a T, que la corta en M.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D", "pq", "Q", "qm", "M"],
+          "trazar": ["pq", "Q", "qm", "M"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Con centro en M y radio MQ, la circunferencia corta de nuevo a QM en el simétrico de Q respecto de T: es el foco F.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D", "pq", "Q", "qm", "M", "kc", "F"],
+          "trazar": ["kc", "F"],
+          "destacar": ["F"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "El eje E es la perpendicular a D por F. El vértice V es el punto medio entre F y el pie de E sobre D, y la parábola de foco F y directriz D pasa por V y por P.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D", "Q", "M", "F", "E", "Z", "V", "par"],
+          "trazar": ["E", "Z", "V", "par"],
+          "destacar": ["E", "V", "par"]
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: P está a la misma distancia de F que de D, y T toca a la parábola en P sin cortarla. El vértice queda a mitad de camino entre F y D.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D", "F", "E", "V", "par"],
+          "destacar": ["par"]
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: tomar como foco el punto M, que está sobre la tangente. El foco es el simétrico de Q respecto de T, es decir, el punto de la recta QM que está al otro lado de T.",
+      "show3d": [],
+      "sheet": ["error"],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["P", "Tg", "D", "Q", "M", "F", "E", "V", "par"],
+          "destacar": ["F"]
+        },
+        "error": {
+          "trazos": [
+            {
+              "puntos": [
+                [-44.3, -56.2],
+                [-20.8, -46.2]
+              ],
+              "rotulo": "Error: F no es M"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Pie Q de la perpendicular desde P a la directriz",
+        "puntos": 0.3
+      },
+      {
+        "texto": "Foco F, simétrico de Q respecto de la tangente",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Eje E y vértice V",
+        "puntos": 0.3
+      },
+      {
+        "texto": "Puntos de la parábola obtenidos con el foco y la directriz",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Trazado de la curva, tangente a T en P",
+        "puntos": 0.5
+      }
+    ]
+  }
+}

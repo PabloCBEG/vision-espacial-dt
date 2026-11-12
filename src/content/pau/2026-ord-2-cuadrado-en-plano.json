@@ -1,0 +1,407 @@
+{
+  "id": "pau-2026-ord-2-cuadrado-en-plano",
+  "convocatoria": "2026 ordinaria",
+  "ejercicio": 2,
+  "opcion": null,
+  "temas": ["II-05", "II-06"],
+  "titulo": "Cuadrado contenido en un plano dado por sus trazas",
+  "enunciado": "Dada la proyección horizontal del segmento AB, la traza horizontal del plano P y el abatimiento de su traza vertical (P′), se pide: 1. Dibujar la traza vertical del plano P. 2. Obtener las proyecciones del cuadrado ABCD que tiene por lado el segmento AB, está contenido en P y se encuentra en el primer diedro. 3. Representar la verdadera magnitud de la diagonal del cuadrado e indicar su valor en milímetros.",
+  "datos": [
+    "Medidos en la lámina del examen (mm, x desde el centro de la hoja, alejamiento desde la LT): a(−23,2; 0) sobre la LT, b(−4,2; 27,7) sobre la traza horizontal de P. Las trazas se cortan en la LT en x = 11,8; α₁ baja hacia la izquierda con 60° y (P′) baja hacia la derecha con 52,9°."
+  ],
+  "initialScene": {
+    "points": {
+      "A": [-23.2, 0.0, 46.3],
+      "B": [-4.2, 27.7, 0.0],
+      "C": [-38.7, 71.7, 12.1],
+      "D": [-57.7, 44.0, 58.4]
+    },
+    "objects": [
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      },
+      {
+        "kind": "point",
+        "id": "C"
+      },
+      {
+        "kind": "point",
+        "id": "D"
+      },
+      {
+        "kind": "plane",
+        "id": "α",
+        "through": ["A", "B", "C"]
+      }
+    ],
+    "activePoint": "A"
+  },
+  "examen": {
+    "sheet": ["lt"],
+    "camera": "front",
+    "foldAngle": 90,
+    "engines": {
+      "plana": {
+        "visibles": ["a", "b", "sab", "trh", "trv"],
+        "objetos": [
+          {
+            "id": "a",
+            "tipo": "punto",
+            "en": [-23.2, 0.0],
+            "fijo": true,
+            "etiqueta": "a",
+            "rol": "dato"
+          },
+          {
+            "id": "b",
+            "tipo": "punto",
+            "en": [-4.2, -27.7],
+            "fijo": true,
+            "etiqueta": "b",
+            "rol": "dato"
+          },
+          {
+            "id": "sab",
+            "tipo": "segmento",
+            "por": ["a", "b"],
+            "rol": "dato"
+          },
+          {
+            "id": "v0",
+            "tipo": "punto",
+            "en": [11.8, 0],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "h1",
+            "tipo": "punto",
+            "en": [-33.1, -77.8],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "v1",
+            "tipo": "punto",
+            "en": [66.0, -71.7],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "trh",
+            "tipo": "segmento",
+            "por": ["v0", "h1"],
+            "rol": "dato"
+          },
+          {
+            "id": "trv",
+            "tipo": "segmento",
+            "por": ["v0", "v1"],
+            "rol": "dato"
+          }
+        ]
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "El plano α corta al PH en la traza α₁ y al PV en la traza α₂. B está sobre α₁, así que tiene cota cero, y A está sobre la LT en planta, así que tiene alejamiento cero.",
+      "show3d": ["planos", "punto:A", "punto:B", "plano:α", "trazas:α"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B"
+      ],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B", "C", "D"],
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "La traza (P′) es la traza vertical abatida: al desabatirla, vuelve al PV pasando por el mismo punto de la LT. Con las dos trazas, el plano queda definido.",
+      "show3d": ["planos", "punto:A", "punto:B", "plano:α", "trazas:α"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B"
+      ],
+      "highlight": ["plano:α"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B", "C", "D"],
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Giramos el PV de vuelta a su sitio: (P′) sube desde la LT hasta quedar vertical, y α₂ aparece sobre la LT. A queda en α₂, a la altura que le da el plano.",
+      "show3d": ["planos", "punto:A", "punto:B", "plano:α", "trazas:α"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B"
+      ],
+      "highlight": ["plano:α"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B", "C", "D"],
+          "progreso": 0.5
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Prolonga (P′) al otro lado de la LT: ese tramo, por encima de la LT, es la traza vertical α₂. A″ es el punto de α₂ que está sobre la vertical de a′.",
+      "show3d": ["planos", "punto:A", "punto:B", "plano:α", "trazas:α", "figura"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura"
+      ],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B", "C", "D"],
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Abate el plano α sobre el PH alrededor de α₁. AB queda en verdadera magnitud, y sobre ella se levanta el cuadrado ABCD hacia el lado del primer diedro.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "plano:α",
+        "trazas:α",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "highlight": ["resultado"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B", "C", "D"],
+          "progreso": 1
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Desabate C y D: cada uno vuelve por una perpendicular a α₁, y su cota se obtiene con una horizontal del plano. Así salen C′, C″, D′ y D″, con ABCD de lados iguales.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "plano:α",
+        "trazas:α",
+        "figura",
+        "charnela",
+        "resultado"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "resultado"
+      ],
+      "highlight": ["figura"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B", "C", "D"],
+          "progreso": 1
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "En el cuadrado abatido, la diagonal AC está en verdadera magnitud. Su longitud es 80,9 mm, el lado por √2.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "plano:α",
+        "trazas:α",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "C"],
+          "progreso": 1
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: los cuatro lados de ABCD miden lo mismo en el abatimiento, y la diagonal vale el lado, 57,2 mm, por √2. Los cuatro puntos están en el plano α.",
+      "show3d": ["planos", "punto:A", "punto:B", "plano:α", "trazas:α", "figura"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura"
+      ],
+      "highlight": ["figura"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B", "C", "D"],
+          "progreso": 1
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: medir la diagonal A′C′ en la planta o A″C″ en el alzado. Son proyecciones de AC y salen más cortas que su verdadera magnitud, 80,9 mm.",
+      "show3d": [
+        "planos",
+        "punto:A",
+        "punto:B",
+        "plano:α",
+        "trazas:α",
+        "figura",
+        "eje",
+        "resultado",
+        "medida"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "eje",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "metodo": "giro",
+          "figura": ["A", "C"],
+          "progreso": 1
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Traza vertical del plano P, prolongando (P′) al otro lado de la LT",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Cota de A y proyecciones del segmento AB",
+        "puntos": 0.3
+      },
+      {
+        "texto": "Abatimiento del plano y cuadrado en verdadera magnitud",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Proyecciones de C y D, con ABCD contenido en P",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Verdadera magnitud de la diagonal",
+        "puntos": 0.3
+      },
+      {
+        "texto": "Valor de la diagonal en milímetros",
+        "puntos": 0.1
+      }
+    ]
+  }
+}

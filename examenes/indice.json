@@ -1015,6 +1015,51 @@
       "origen": "https://drive.google.com/file/d/1kDzVZmGQ8C_DoRnuCWiWVWxaMKJ7eO3v/view?usp=sharing",
       "sha256": "fc81e640bcfbd35b",
       "transcrito": false
+    },
+    "andalucia/academia-granada/dHN2Ud.pdf": {
+      "region": "andalucia",
+      "fuente": "examenesdepau (descarga manual)",
+      "descripcion": "Andalucía 2026, convocatoria ordinaria",
+      "origen": "https://www.examenesdepau.com/examen/andalucia-dibujo-tecnico-pevau-2026-ordinaria/dHN2Ud/",
+      "sha256": "a5242b32fe463681",
+      "transcrito": true,
+      "ejercicios": [
+        "1A",
+        "2"
+      ]
+    },
+    "andalucia/academia-granada/JDaZYi.pdf": {
+      "region": "andalucia",
+      "fuente": "examenesdepau (descarga manual)",
+      "descripcion": "Andalucía 2026, convocatoria extraordinaria",
+      "origen": "https://www.examenesdepau.com/examen/andalucia-dibujo-tecnico-pevau-2026-extraordinaria/JDaZYi/",
+      "sha256": "6778fbc7e51459e7",
+      "transcrito": true,
+      "ejercicios": [
+        "1A",
+        "2"
+      ]
+    },
+    "andalucia/academia-granada/DLuEVX.pdf": {
+      "region": "andalucia",
+      "fuente": "examenesdepau (descarga manual)",
+      "descripcion": "Andalucía 2025, convocatoria ordinaria",
+      "origen": "https://www.examenesdepau.com/examen/andalucia-dibujo-tecnico-pevau-2025-ordinaria/DLuEVX/",
+      "sha256": "3344ded8d968adf1",
+      "transcrito": true,
+      "ejercicios": [
+        "1",
+        "2"
+      ]
+    },
+    "andalucia/academia-granada/n6uuD7.pdf": {
+      "region": "andalucia",
+      "fuente": "examenesdepau (descarga manual)",
+      "descripcion": "Andalucía 2025, convocatoria extraordinaria",
+      "origen": "https://www.examenesdepau.com/examen/andalucia-dibujo-tecnico-pevau-2025-extraordinaria/n6uuD7/",
+      "sha256": "5a52ffbf9ab63e1d",
+      "transcrito": false,
+      "ejercicios": []
     }
   },
   "actualizado": "2026-11-07"

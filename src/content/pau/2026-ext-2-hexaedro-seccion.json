@@ -1,0 +1,419 @@
+{
+  "id": "pau-2026-ext-2-hexaedro-seccion",
+  "convocatoria": "2026 extraordinaria",
+  "ejercicio": 2,
+  "opcion": null,
+  "temas": ["II-07", "II-08"],
+  "titulo": "Hexaedro y su sección por un plano perpendicular al primer bisector",
+  "enunciado": "Dada la traza horizontal del plano P y la proyección horizontal del cuadrado ABCD contenido en el plano horizontal de proyección, se pide: 1. Determinar la traza vertical de P sabiendo que dicho plano es perpendicular al primer bisector. 2. Representar las proyecciones del hexaedro de base ABCD situado en el primer diedro diferenciando aristas vistas y ocultas. 3. Dibujar las proyecciones de la sección que origina el plano P en el poliedro diferenciando aristas vistas y ocultas.",
+  "datos": [
+    "Medidos en la lámina del examen (mm, x desde el centro de la hoja, alejamiento desde la LT): a(−20,7; 71,6), b(24,9; 55,3), c(8,5; 9,6), d(−37,1; 26,0); α₁ pasa por la LT en x = 40,8 y baja hacia la izquierda con 60°. El lado del cuadrado mide 48,4 mm."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P"
+  },
+  "examen": {
+    "sheet": ["lt"],
+    "camera": "front",
+    "foldAngle": 90,
+    "engines": {
+      "plana": {
+        "visibles": ["a", "b", "c", "d", "sab", "sbc", "scd", "sda", "trP"],
+        "objetos": [
+          {
+            "id": "a",
+            "tipo": "punto",
+            "en": [-20.7, -71.6],
+            "fijo": true,
+            "etiqueta": "a",
+            "rol": "dato"
+          },
+          {
+            "id": "b",
+            "tipo": "punto",
+            "en": [24.9, -55.3],
+            "fijo": true,
+            "etiqueta": "b",
+            "rol": "dato"
+          },
+          {
+            "id": "c",
+            "tipo": "punto",
+            "en": [8.5, -9.6],
+            "fijo": true,
+            "etiqueta": "c",
+            "rol": "dato"
+          },
+          {
+            "id": "d",
+            "tipo": "punto",
+            "en": [-37.1, -26.0],
+            "fijo": true,
+            "etiqueta": "d",
+            "rol": "dato"
+          },
+          {
+            "id": "sab",
+            "tipo": "segmento",
+            "por": ["a", "b"],
+            "rol": "dato"
+          },
+          {
+            "id": "sbc",
+            "tipo": "segmento",
+            "por": ["b", "c"],
+            "rol": "dato"
+          },
+          {
+            "id": "scd",
+            "tipo": "segmento",
+            "por": ["c", "d"],
+            "rol": "dato"
+          },
+          {
+            "id": "sda",
+            "tipo": "segmento",
+            "por": ["d", "a"],
+            "rol": "dato"
+          },
+          {
+            "id": "p0",
+            "tipo": "punto",
+            "en": [40.8, 0],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "p1",
+            "tipo": "punto",
+            "en": [-21.5, -108.0],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "trP",
+            "tipo": "segmento",
+            "por": ["p0", "p1"],
+            "rol": "dato"
+          }
+        ]
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "El cuadrado ABCD está en el PH y la traza horizontal α₁ de P pasa por la LT y corta al cuadrado. Falta la traza vertical, y el hexaedro, un cubo, se levanta sobre ABCD.",
+      "show3d": ["planos", "solido", "corte"],
+      "sheet": ["lt", "solido", "corte"],
+      "highlight": ["corte"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 0,
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "Un plano perpendicular al primer bisector tiene sus trazas simétricas respecto de la LT: α₂ es la imagen de α₁ al doblar la lámina por la LT, y ambas se cortan en la LT.",
+      "show3d": ["planos", "solido", "corte"],
+      "sheet": ["lt", "solido", "corte"],
+      "highlight": ["corte"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 0,
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina el plano P cortando el cubo: la parte de arriba se separa y la sección queda como una cara nueva sobre la parte que se queda.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 1,
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Dibuja α₂ simétrica de α₁ respecto de la LT, por el mismo punto de la LT. Ahora el plano P está definido por sus dos trazas.",
+      "show3d": ["planos", "solido", "corte"],
+      "sheet": ["lt", "solido", "corte"],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 0,
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Levanta el hexaedro: sus aristas verticales miden el lado de ABCD, 48,4 mm. Dibuja las dos proyecciones con las aristas vistas continuas y las ocultas discontinuas.",
+      "show3d": ["planos", "solido", "corte"],
+      "sheet": ["lt", "solido", "corte"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 0,
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Halla en cada arista el punto donde la corta el plano P, con un plano proyectante que la contenga. Esos puntos son los vértices de la sección.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 1,
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Une los vértices de la sección en orden, en planta y en alzado, y deja vistas u ocultas las aristas del cubo según queden delante o detrás.",
+      "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
+      "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
+      "highlight": ["seccion"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 1,
+            "abatir": 1
+          }
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: cada vértice de la sección está sobre una arista del cubo y en el plano P, y la proyección horizontal de la sección queda dentro de ABCD.",
+      "show3d": ["planos", "solido", "corte", "seccion"],
+      "sheet": ["lt", "solido", "corte", "seccion"],
+      "highlight": ["seccion"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 1,
+            "abatir": 0
+          }
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: trazar α₂ paralela a α₁. En un plano perpendicular al primer bisector las trazas son simétricas respecto de la LT, no paralelas.",
+      "show3d": ["planos", "solido", "corte"],
+      "sheet": ["lt", "solido", "corte", "error"],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 48.4,
+            "centro": [-6.1, 40.6],
+            "giro": 70.2
+          },
+          "seccion": {
+            "tipo": "tres-puntos",
+            "tresPuntos": [
+              [40.8, 0, 0],
+              [-21.5, 108, 0],
+              [-21.5, 0, 108]
+            ],
+            "nombre": "P",
+            "quitar": 0,
+            "abatir": 0
+          }
+        },
+        "error": {
+          "trazos": [
+            {
+              "puntos": [
+                [40.8, 0],
+                [103.1, 108]
+              ],
+              "rotulo": "Error: α₂ paralela a α₁"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Traza vertical de P, simétrica de la horizontal",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Proyecciones del hexaedro",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Aristas vistas y ocultas del hexaedro",
+        "puntos": 0.3
+      },
+      {
+        "texto": "Vértices de la sección sobre las aristas",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Proyecciones de la sección",
+        "puntos": 0.2
+      },
+      {
+        "texto": "Partes vistas y ocultas tras el corte",
+        "puntos": 0.2
+      }
+    ]
+  }
+}

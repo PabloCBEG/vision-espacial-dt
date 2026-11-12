@@ -1,0 +1,361 @@
+{
+  "id": "pau-2026-ord-1a-tangencias",
+  "convocatoria": "2026 ordinaria",
+  "ejercicio": 1,
+  "opcion": "A",
+  "temas": ["II-01", "I-06"],
+  "titulo": "Circunferencias tangentes a dos dadas, una de ellas en un punto",
+  "enunciado": "Dadas las circunferencias C₁ y C₂ de centros O₁ y O₂, respectivamente, así como el punto T perteneciente a C₂, se pide: 1. Determinar el eje radical de C₁ y C₂. 2. Trazar las circunferencias tangentes a C₁ y a C₂ en T, determinando geométricamente sus centros y puntos de tangencia.",
+  "datos": [
+    "Medidos en la lámina del examen (mm, con el origen en el centro de la hoja): O₁(30,1; 10,8) con radio 32,5; O₂(−31,8; −7,0) con radio 20,0; T(−27,9; 12,6) sobre C₂."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "O1",
+            "tipo": "punto",
+            "en": [30.1, 10.8],
+            "fijo": true,
+            "etiqueta": "O₁",
+            "rol": "dato"
+          },
+          {
+            "id": "O2",
+            "tipo": "punto",
+            "en": [-31.8, -7.0],
+            "fijo": true,
+            "etiqueta": "O₂",
+            "rol": "dato"
+          },
+          {
+            "id": "T",
+            "tipo": "punto",
+            "en": [-27.897, 12.615],
+            "fijo": true,
+            "etiqueta": "T",
+            "rol": "dato"
+          },
+          {
+            "id": "C1",
+            "tipo": "circunferencia",
+            "centro": "O1",
+            "radio": 32.5,
+            "rol": "dato",
+            "etiqueta": "C₁"
+          },
+          {
+            "id": "C2",
+            "tipo": "circunferencia",
+            "centro": "O2",
+            "radio": 20.0,
+            "rol": "dato",
+            "etiqueta": "C₂"
+          },
+          {
+            "id": "e",
+            "tipo": "ejeRadical",
+            "de": ["C1", "C2"],
+            "rol": "resultado",
+            "etiqueta": "e"
+          },
+          {
+            "id": "rO2T",
+            "tipo": "recta",
+            "por": ["O2", "T"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "t",
+            "tipo": "perpendicular",
+            "a": "rO2T",
+            "por": "T",
+            "rol": "auxiliar",
+            "etiqueta": "t"
+          },
+          {
+            "id": "R",
+            "tipo": "interseccion",
+            "de": ["e", "t"],
+            "rol": "proceso",
+            "etiqueta": "R"
+          },
+          {
+            "id": "k",
+            "tipo": "circunferencia",
+            "centro": "R",
+            "pasaPor": "T",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "U1",
+            "tipo": "interseccion",
+            "de": ["k", "C1"],
+            "indice": 0,
+            "rol": "proceso",
+            "etiqueta": "U₁"
+          },
+          {
+            "id": "U2",
+            "tipo": "interseccion",
+            "de": ["k", "C1"],
+            "indice": 1,
+            "rol": "proceso",
+            "etiqueta": "U₂"
+          },
+          {
+            "id": "rO1U1",
+            "tipo": "recta",
+            "por": ["O1", "U1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "rO1U2",
+            "tipo": "recta",
+            "por": ["O1", "U2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "X1",
+            "tipo": "interseccion",
+            "de": ["rO1U1", "rO2T"],
+            "rol": "proceso",
+            "etiqueta": "Ω₁"
+          },
+          {
+            "id": "X2",
+            "tipo": "interseccion",
+            "de": ["rO1U2", "rO2T"],
+            "rol": "proceso",
+            "etiqueta": "Ω₂"
+          },
+          {
+            "id": "s1",
+            "tipo": "circunferencia",
+            "centro": "X1",
+            "pasaPor": "T",
+            "rol": "resultado",
+            "etiqueta": "S₁"
+          },
+          {
+            "id": "s2",
+            "tipo": "circunferencia",
+            "centro": "X2",
+            "pasaPor": "T",
+            "rol": "resultado",
+            "etiqueta": "S₂"
+          }
+        ]
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "camera": "front",
+    "foldAngle": 0,
+    "engines": {
+      "plana": {
+        "visibles": ["O1", "O2", "T", "C1", "C2"]
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "Tenemos dos circunferencias, C₁ y C₂, y un punto T de C₂. Buscamos las circunferencias que tocan a C₂ justo en T y que también son tangentes a C₁.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "O2", "T", "C1", "C2"]
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "Si una circunferencia es tangente a C₂ en T, su centro está en la recta O₂T. Y la tangente común en T es el eje radical de esa circunferencia y C₂.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "O2", "T", "C1", "C2", "rO2T", "t"],
+          "trazar": ["rO2T", "t"],
+          "destacar": ["rO2T"]
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina que el centro se desliza por la recta O₂T: la circunferencia va cambiando de tamaño y siempre toca a C₂ en T. Solo en dos posiciones toca también a C₁.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "O2", "T", "C1", "C2", "rO2T", "t"],
+          "destacar": ["rO2T"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Traza el eje radical e de C₁ y C₂. Su corte con la tangente t en T es el centro radical R.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "O2", "T", "C1", "C2", "rO2T", "t", "e", "R"],
+          "trazar": ["e", "R"],
+          "destacar": ["e"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Desde R las tangentes a C₂ miden RT, y las tangentes a C₁ miden lo mismo. La circunferencia de centro R y radio RT corta a C₁ en los puntos de tangencia U₁ y U₂.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "O2", "T", "C1", "C2", "rO2T", "t", "e", "R", "k", "U1", "U2"],
+          "trazar": ["k", "U1", "U2"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Los centros Ω₁ y Ω₂ están donde las rectas O₁U₁ y O₁U₂ cortan a la recta O₂T. Cada circunferencia solución pasa por T y por su punto U.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O1",
+            "O2",
+            "T",
+            "C1",
+            "C2",
+            "rO2T",
+            "t",
+            "e",
+            "R",
+            "k",
+            "U1",
+            "U2",
+            "rO1U1",
+            "rO1U2",
+            "X1",
+            "X2",
+            "s1",
+            "s2"
+          ],
+          "trazar": ["rO1U1", "rO1U2", "X1", "X2", "s1", "s2"],
+          "destacar": ["s1", "s2"]
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: cada circunferencia pasa por T y por su punto U, y la distancia de su centro a O₁ es la suma o la diferencia de los radios. Las dos tocan a C₂ en T.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O1",
+            "O2",
+            "T",
+            "C1",
+            "C2",
+            "rO2T",
+            "e",
+            "U1",
+            "U2",
+            "X1",
+            "X2",
+            "s1",
+            "s2"
+          ],
+          "destacar": ["s1", "s2"]
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: buscar los centros sobre la recta O₁T. La tangencia con C₂ en T obliga a que el centro esté en O₂T, y la de C₁ se resuelve después con el centro radical.",
+      "show3d": [],
+      "sheet": ["error"],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "O2", "T", "C1", "C2", "rO2T", "e", "X1", "X2", "s1", "s2"],
+          "destacar": ["s1", "s2"]
+        },
+        "error": {
+          "trazos": [
+            {
+              "puntos": [
+                [30.1, 10.8],
+                [-27.897, 12.615]
+              ],
+              "rotulo": "Error: centro en O₁T"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Eje radical de C₁ y C₂",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Tangente común en T y centro radical",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Puntos de tangencia con C₁",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Centros de las circunferencias solución",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Trazado de las dos circunferencias, con las construcciones auxiliares",
+        "puntos": 0.4
+      }
+    ]
+  }
+}

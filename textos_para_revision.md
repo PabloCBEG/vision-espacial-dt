@@ -855,6 +855,166 @@ Fichero: `src/content/lessons/15-conicas-trazado.json` · DT II · nivel Avanzad
 
 ## 2. Ejercicios PAU (ejemplos de formato)
 
+### Ejercicio 1 · Afinidad ortogonal de dos triángulos
+
+Fichero: `src/content/pau/2025-ord-1-afinidad.json` · 2025 ordinaria
+
+- [ ] **Enunciado:** Dada la figura representada y la homología afín ortogonal definida por los pares de puntos homólogos A-A′ y C≡C′, se pide: 1. Determinar el eje de afinidad. 2. Representar la figura homóloga a la dada.
+- [ ] **Dato:** Medidos en la lámina del examen (mm, con el origen en el centro de la hoja): A(−2,2; 73,5), A′(−2,2; −76,3) y C≡C′(−52,1; 23,6). La figura son dos triángulos, uno dentro del otro.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* Tenemos dos triángulos, uno dentro del otro, y dos pares de puntos homólogos: A con A′, y C que coincide con C′. Hay que hallar el eje y dibujar la figura afín.
+2. [ ] *2. La idea clave:* En una afinidad ortogonal, las rectas que unen puntos homólogos son perpendiculares al eje. Además, C≡C′ es un punto doble: está sobre el eje.
+3. [ ] *3. El movimiento:* Imagina la figura estirándose en la dirección de AA′, perpendicular al eje: cada punto se desplaza en línea recta y los puntos del eje no se mueven. Aquí A′ queda al otro lado del eje.
+4. [ ] *4. El trazado:* Une A con A′ y traza por C la perpendicular a AA′: es el eje de afinidad e.
+5. [ ] *4. El trazado:* Para cada vértice, une A con él hasta cortar al eje. Esa recta, unida a A′, da la dirección del homólogo; este queda en la perpendicular al eje por el vértice.
+6. [ ] *4. El trazado:* Repite con los tres vértices del triángulo interior y une los homólogos en el mismo orden. Resultan el triángulo exterior y el interior transformados.
+7. [ ] *5. Comprobación:* Comprobación: todos los segmentos que unen puntos homólogos son perpendiculares al eje, y cada recta corta a su homóloga en un punto del eje.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: tomar como eje la mediatriz de AA′. Solo sería el eje si la razón de afinidad fuese 1 o −1; aquí el eje debe pasar por el punto doble C≡C′.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Eje de afinidad, perpendicular a AA′ por C — 0,2 p
+- [ ] Homólogos de los vértices del triángulo exterior — 0,6 p
+- [ ] Homólogos de los vértices del triángulo interior — 0,6 p
+- [ ] Figura homóloga completa, con sus construcciones auxiliares — 0,6 p
+
+### Ejercicio 2 · Octaedro con una diagonal vertical y recta a 30° con el PH
+
+Fichero: `src/content/pau/2025-ord-2-octaedro.json` · 2025 ordinaria
+
+- [ ] **Enunciado:** Dadas las proyecciones horizontales del cuadrado ABCD, de la recta R y de su traza horizontal H, se pide: 1. Dibujar las proyecciones del octaedro regular ABCDEF situado en el primer diedro de proyección, sabiendo que su diagonal EF es perpendicular al plano horizontal de proyección y el punto E tiene cota cero. 2. Determinar la proyección vertical de R sabiendo que forma 30º con el plano horizontal de proyección. 3. Representar la recta S paralela a R y que pasa por el punto medio de la diagonal EF.
+- [ ] **Dato:** Medidos en la lámina del examen (mm, x desde el centro de la hoja, alejamiento desde la LT): a(−7,3; 10,5), b(4,2; 64,2), c(−49,5; 75,8), d(−61,0; 22,1); H(18,8; 44,3); r′ llega a la LT en x = 67,9. El lado del cuadrado mide 54,9 mm.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* Conocemos la planta del cuadrado ABCD, que es la cara central de un octaedro con la diagonal EF vertical, y la planta de la recta R con su traza horizontal H.
+2. [ ] *2. La idea clave:* Si EF es vertical, ABCD es horizontal y está a media altura de EF. Su cota es el lado dividido por √2, y la diagonal EF mide el lado por √2.
+3. [ ] *3. El movimiento:* Apoya el octaedro por el vértice E sobre el PH: F queda justo encima de E, y los cuatro vértices del cuadrado ABCD rodean la diagonal vertical a media altura.
+4. [ ] *4. El trazado:* En la planta, E′ y F′ coinciden en el centro de ABCD. En el alzado, a″b″c″d″ están sobre una paralela a la LT a 38,8 mm de cota, y E″ está en la LT.
+5. [ ] *4. El trazado:* F″ está sobre la vertical de E″, a una cota de 77,6 mm. Une E y F con A, B, C y D en las dos proyecciones, con las aristas ocultas discontinuas.
+6. [ ] *4. El trazado:* R pasa por H y forma 30° con el PH: por cada milímetro de recorrido horizontal sobre r′, su cota crece tan 30°. Con eso se halla un segundo punto y se traza r″ desde H″.
+7. [ ] *4. El trazado:* El punto medio M de EF está a media altura, sobre el centro de ABCD. S pasa por M y es paralela a R: s′ es paralela a r′ y s″ es paralela a r″.
+8. [ ] *5. Comprobación:* Comprobación: ABCD está a la misma cota que M, las aristas desde E y F llegan a los cuatro vértices, y s es paralela a r en planta y en alzado.
+9. [ ] *6. Error típico:* **[REVISAR]** Error típico: dar a F la cota del lado, 54,9 mm. EF es la diagonal del octaedro, que mide el lado por √2, y su punto medio está a media diagonal.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Cota de ABCD y vértices E y F del octaedro — 0,4 p
+- [ ] Proyección horizontal del octaedro, con vistas y ocultas — 0,4 p
+- [ ] Proyección vertical del octaedro, con vistas y ocultas — 0,4 p
+- [ ] Proyección vertical de R, a 30° con el PH — 0,6 p
+- [ ] Recta S paralela a R por el punto medio de EF — 0,2 p
+
+### Ejercicio 1 (opción A) · Parábola por su directriz, un punto y la tangente en él
+
+Fichero: `src/content/pau/2026-ext-1a-parabola.json` · 2026 extraordinaria
+
+- [ ] **Enunciado:** Dada la directriz D de una parábola, un punto P de la misma y la recta T tangente a la cónica en dicho punto, se pide: 1. Determinar el vértice V, el eje E y el foco F de la parábola. 2. Dibujar la cónica.
+- [ ] **Dato:** Medidos en la lámina del examen (mm, con el origen en el centro de la hoja): D horizontal a −56,2 de la referencia; P(−44,3; 8,7); T pasa por P y por (−71,7; 73,1).
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* Conocemos la directriz D de una parábola, un punto P de la curva y la tangente T en P. Faltan el foco F, el eje E y el vértice V.
+2. [ ] *2. La idea clave:* La tangente en P es la mediatriz del segmento que une el foco con el pie Q de la perpendicular desde P a la directriz. Por eso el foco es el simétrico de Q respecto de T.
+3. [ ] *3. El movimiento:* Imagina un punto que recorre la parábola: su distancia al foco es siempre igual a su distancia a la directriz. Con P, esa igualdad es PF = PQ.
+4. [ ] *4. El trazado:* Baja desde P la perpendicular a D: su pie es Q. Traza por Q la perpendicular a T, que la corta en M.
+5. [ ] *4. El trazado:* Con centro en M y radio MQ, la circunferencia corta de nuevo a QM en el simétrico de Q respecto de T: es el foco F.
+6. [ ] *4. El trazado:* El eje E es la perpendicular a D por F. El vértice V es el punto medio entre F y el pie de E sobre D, y la parábola de foco F y directriz D pasa por V y por P.
+7. [ ] *5. Comprobación:* Comprobación: P está a la misma distancia de F que de D, y T toca a la parábola en P sin cortarla. El vértice queda a mitad de camino entre F y D.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: tomar como foco el punto M, que está sobre la tangente. El foco es el simétrico de Q respecto de T, es decir, el punto de la recta QM que está al otro lado de T.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Pie Q de la perpendicular desde P a la directriz — 0,3 p
+- [ ] Foco F, simétrico de Q respecto de la tangente — 0,4 p
+- [ ] Eje E y vértice V — 0,3 p
+- [ ] Puntos de la parábola obtenidos con el foco y la directriz — 0,5 p
+- [ ] Trazado de la curva, tangente a T en P — 0,5 p
+
+### Ejercicio 2 · Hexaedro y su sección por un plano perpendicular al primer bisector
+
+Fichero: `src/content/pau/2026-ext-2-hexaedro-seccion.json` · 2026 extraordinaria
+
+- [ ] **Enunciado:** Dada la traza horizontal del plano P y la proyección horizontal del cuadrado ABCD contenido en el plano horizontal de proyección, se pide: 1. Determinar la traza vertical de P sabiendo que dicho plano es perpendicular al primer bisector. 2. Representar las proyecciones del hexaedro de base ABCD situado en el primer diedro diferenciando aristas vistas y ocultas. 3. Dibujar las proyecciones de la sección que origina el plano P en el poliedro diferenciando aristas vistas y ocultas.
+- [ ] **Dato:** Medidos en la lámina del examen (mm, x desde el centro de la hoja, alejamiento desde la LT): a(−20,7; 71,6), b(24,9; 55,3), c(8,5; 9,6), d(−37,1; 26,0); α₁ pasa por la LT en x = 40,8 y baja hacia la izquierda con 60°. El lado del cuadrado mide 48,4 mm.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* El cuadrado ABCD está en el PH y la traza horizontal α₁ de P pasa por la LT y corta al cuadrado. Falta la traza vertical, y el hexaedro, un cubo, se levanta sobre ABCD.
+2. [ ] *2. La idea clave:* Un plano perpendicular al primer bisector tiene sus trazas simétricas respecto de la LT: α₂ es la imagen de α₁ al doblar la lámina por la LT, y ambas se cortan en la LT.
+3. [ ] *3. El movimiento:* Imagina el plano P cortando el cubo: la parte de arriba se separa y la sección queda como una cara nueva sobre la parte que se queda.
+4. [ ] *4. El trazado:* Dibuja α₂ simétrica de α₁ respecto de la LT, por el mismo punto de la LT. Ahora el plano P está definido por sus dos trazas.
+5. [ ] *4. El trazado:* Levanta el hexaedro: sus aristas verticales miden el lado de ABCD, 48,4 mm. Dibuja las dos proyecciones con las aristas vistas continuas y las ocultas discontinuas.
+6. [ ] *4. El trazado:* Halla en cada arista el punto donde la corta el plano P, con un plano proyectante que la contenga. Esos puntos son los vértices de la sección.
+7. [ ] *4. El trazado:* Une los vértices de la sección en orden, en planta y en alzado, y deja vistas u ocultas las aristas del cubo según queden delante o detrás.
+8. [ ] *5. Comprobación:* Comprobación: cada vértice de la sección está sobre una arista del cubo y en el plano P, y la proyección horizontal de la sección queda dentro de ABCD.
+9. [ ] *6. Error típico:* **[REVISAR]** Error típico: trazar α₂ paralela a α₁. En un plano perpendicular al primer bisector las trazas son simétricas respecto de la LT, no paralelas.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Traza vertical de P, simétrica de la horizontal — 0,4 p
+- [ ] Proyecciones del hexaedro — 0,5 p
+- [ ] Aristas vistas y ocultas del hexaedro — 0,3 p
+- [ ] Vértices de la sección sobre las aristas — 0,4 p
+- [ ] Proyecciones de la sección — 0,2 p
+- [ ] Partes vistas y ocultas tras el corte — 0,2 p
+
+### Ejercicio 1 (opción A) · Circunferencias tangentes a dos dadas, una de ellas en un punto
+
+Fichero: `src/content/pau/2026-ord-1a-tangencias.json` · 2026 ordinaria
+
+- [ ] **Enunciado:** Dadas las circunferencias C₁ y C₂ de centros O₁ y O₂, respectivamente, así como el punto T perteneciente a C₂, se pide: 1. Determinar el eje radical de C₁ y C₂. 2. Trazar las circunferencias tangentes a C₁ y a C₂ en T, determinando geométricamente sus centros y puntos de tangencia.
+- [ ] **Dato:** Medidos en la lámina del examen (mm, con el origen en el centro de la hoja): O₁(30,1; 10,8) con radio 32,5; O₂(−31,8; −7,0) con radio 20,0; T(−27,9; 12,6) sobre C₂.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* Tenemos dos circunferencias, C₁ y C₂, y un punto T de C₂. Buscamos las circunferencias que tocan a C₂ justo en T y que también son tangentes a C₁.
+2. [ ] *2. La idea clave:* Si una circunferencia es tangente a C₂ en T, su centro está en la recta O₂T. Y la tangente común en T es el eje radical de esa circunferencia y C₂.
+3. [ ] *3. El movimiento:* Imagina que el centro se desliza por la recta O₂T: la circunferencia va cambiando de tamaño y siempre toca a C₂ en T. Solo en dos posiciones toca también a C₁.
+4. [ ] *4. El trazado:* Traza el eje radical e de C₁ y C₂. Su corte con la tangente t en T es el centro radical R.
+5. [ ] *4. El trazado:* Desde R las tangentes a C₂ miden RT, y las tangentes a C₁ miden lo mismo. La circunferencia de centro R y radio RT corta a C₁ en los puntos de tangencia U₁ y U₂.
+6. [ ] *4. El trazado:* Los centros Ω₁ y Ω₂ están donde las rectas O₁U₁ y O₁U₂ cortan a la recta O₂T. Cada circunferencia solución pasa por T y por su punto U.
+7. [ ] *5. Comprobación:* Comprobación: cada circunferencia pasa por T y por su punto U, y la distancia de su centro a O₁ es la suma o la diferencia de los radios. Las dos tocan a C₂ en T.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: buscar los centros sobre la recta O₁T. La tangencia con C₂ en T obliga a que el centro esté en O₂T, y la de C₁ se resuelve después con el centro radical.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Eje radical de C₁ y C₂ — 0,4 p
+- [ ] Tangente común en T y centro radical — 0,4 p
+- [ ] Puntos de tangencia con C₁ — 0,4 p
+- [ ] Centros de las circunferencias solución — 0,4 p
+- [ ] Trazado de las dos circunferencias, con las construcciones auxiliares — 0,4 p
+
+### Ejercicio 2 · Cuadrado contenido en un plano dado por sus trazas
+
+Fichero: `src/content/pau/2026-ord-2-cuadrado-en-plano.json` · 2026 ordinaria
+
+- [ ] **Enunciado:** Dada la proyección horizontal del segmento AB, la traza horizontal del plano P y el abatimiento de su traza vertical (P′), se pide: 1. Dibujar la traza vertical del plano P. 2. Obtener las proyecciones del cuadrado ABCD que tiene por lado el segmento AB, está contenido en P y se encuentra en el primer diedro. 3. Representar la verdadera magnitud de la diagonal del cuadrado e indicar su valor en milímetros.
+- [ ] **Dato:** Medidos en la lámina del examen (mm, x desde el centro de la hoja, alejamiento desde la LT): a(−23,2; 0) sobre la LT, b(−4,2; 27,7) sobre la traza horizontal de P. Las trazas se cortan en la LT en x = 11,8; α₁ baja hacia la izquierda con 60° y (P′) baja hacia la derecha con 52,9°.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* El plano α corta al PH en la traza α₁ y al PV en la traza α₂. B está sobre α₁, así que tiene cota cero, y A está sobre la LT en planta, así que tiene alejamiento cero.
+2. [ ] *2. La idea clave:* La traza (P′) es la traza vertical abatida: al desabatirla, vuelve al PV pasando por el mismo punto de la LT. Con las dos trazas, el plano queda definido.
+3. [ ] *3. El movimiento:* Giramos el PV de vuelta a su sitio: (P′) sube desde la LT hasta quedar vertical, y α₂ aparece sobre la LT. A queda en α₂, a la altura que le da el plano.
+4. [ ] *4. El trazado:* Prolonga (P′) al otro lado de la LT: ese tramo, por encima de la LT, es la traza vertical α₂. A″ es el punto de α₂ que está sobre la vertical de a′.
+5. [ ] *4. El trazado:* Abate el plano α sobre el PH alrededor de α₁. AB queda en verdadera magnitud, y sobre ella se levanta el cuadrado ABCD hacia el lado del primer diedro.
+6. [ ] *4. El trazado:* Desabate C y D: cada uno vuelve por una perpendicular a α₁, y su cota se obtiene con una horizontal del plano. Así salen C′, C″, D′ y D″, con ABCD de lados iguales.
+7. [ ] *4. El trazado:* En el cuadrado abatido, la diagonal AC está en verdadera magnitud. Su longitud es 80,9 mm, el lado por √2.
+8. [ ] *5. Comprobación:* Comprobación: los cuatro lados de ABCD miden lo mismo en el abatimiento, y la diagonal vale el lado, 57,2 mm, por √2. Los cuatro puntos están en el plano α.
+9. [ ] *6. Error típico:* **[REVISAR]** Error típico: medir la diagonal A′C′ en la planta o A″C″ en el alzado. Son proyecciones de AC y salen más cortas que su verdadera magnitud, 80,9 mm.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Traza vertical del plano P, prolongando (P′) al otro lado de la LT — 0,4 p
+- [ ] Cota de A y proyecciones del segmento AB — 0,3 p
+- [ ] Abatimiento del plano y cuadrado en verdadera magnitud — 0,5 p
+- [ ] Proyecciones de C y D, con ABCD contenido en P — 0,4 p
+- [ ] Verdadera magnitud de la diagonal — 0,3 p
+- [ ] Valor de la diagonal en milímetros — 0,1 p
+
 ### Ejercicio 1 (opción A) · Circunferencias por dos puntos tangentes a otra
 
 Fichero: `src/content/pau/ejemplo-1a-tangencias.json` · Ejemplo de formato

@@ -1,0 +1,608 @@
+{
+  "id": "pau-2025-ord-1-afinidad",
+  "convocatoria": "2025 ordinaria",
+  "ejercicio": 1,
+  "opcion": null,
+  "temas": ["II-03"],
+  "titulo": "Afinidad ortogonal de dos triángulos",
+  "enunciado": "Dada la figura representada y la homología afín ortogonal definida por los pares de puntos homólogos A-A′ y C≡C′, se pide: 1. Determinar el eje de afinidad. 2. Representar la figura homóloga a la dada.",
+  "datos": [
+    "Medidos en la lámina del examen (mm, con el origen en el centro de la hoja): A(−2,2; 73,5), A′(−2,2; −76,3) y C≡C′(−52,1; 23,6). La figura son dos triángulos, uno dentro del otro."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "A",
+            "tipo": "punto",
+            "en": [-2.2, 73.5],
+            "fijo": true,
+            "etiqueta": "A",
+            "rol": "dato"
+          },
+          {
+            "id": "C",
+            "tipo": "punto",
+            "en": [-52.1, 23.6],
+            "fijo": true,
+            "etiqueta": "C≡C′",
+            "rol": "dato"
+          },
+          {
+            "id": "B",
+            "tipo": "punto",
+            "en": [47.8, -12.4],
+            "fijo": true,
+            "etiqueta": "B",
+            "rol": "dato"
+          },
+          {
+            "id": "D",
+            "tipo": "punto",
+            "en": [-33.9, 27.6],
+            "fijo": true,
+            "etiqueta": "D",
+            "rol": "dato"
+          },
+          {
+            "id": "E",
+            "tipo": "punto",
+            "en": [-4.3, 57.2],
+            "fijo": true,
+            "etiqueta": "E",
+            "rol": "dato"
+          },
+          {
+            "id": "F",
+            "tipo": "punto",
+            "en": [25.4, 6.3],
+            "fijo": true,
+            "etiqueta": "F",
+            "rol": "dato"
+          },
+          {
+            "id": "A1",
+            "tipo": "punto",
+            "en": [-2.2, -76.3],
+            "fijo": true,
+            "etiqueta": "A′",
+            "rol": "dato"
+          },
+          {
+            "id": "AB",
+            "tipo": "segmento",
+            "por": ["A", "B"],
+            "rol": "dato"
+          },
+          {
+            "id": "BC",
+            "tipo": "segmento",
+            "por": ["B", "C"],
+            "rol": "dato"
+          },
+          {
+            "id": "CA",
+            "tipo": "segmento",
+            "por": ["C", "A"],
+            "rol": "dato"
+          },
+          {
+            "id": "DE",
+            "tipo": "segmento",
+            "por": ["D", "E"],
+            "rol": "dato"
+          },
+          {
+            "id": "EF",
+            "tipo": "segmento",
+            "por": ["E", "F"],
+            "rol": "dato"
+          },
+          {
+            "id": "FD",
+            "tipo": "segmento",
+            "por": ["F", "D"],
+            "rol": "dato"
+          },
+          {
+            "id": "AA1",
+            "tipo": "recta",
+            "por": ["A", "A1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "eje",
+            "tipo": "perpendicular",
+            "a": "AA1",
+            "por": "C",
+            "rol": "resultado",
+            "etiqueta": "e"
+          },
+          {
+            "id": "AB",
+            "tipo": "recta",
+            "por": ["A", "B"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "MB",
+            "tipo": "interseccion",
+            "de": ["AB", "eje"],
+            "rol": "proceso",
+            "etiqueta": ""
+          },
+          {
+            "id": "A1MB",
+            "tipo": "recta",
+            "por": ["A1", "MB"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pB",
+            "tipo": "perpendicular",
+            "a": "eje",
+            "por": "B",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "B1",
+            "tipo": "interseccion",
+            "de": ["A1MB", "pB"],
+            "rol": "proceso",
+            "etiqueta": "B′"
+          },
+          {
+            "id": "AD",
+            "tipo": "recta",
+            "por": ["A", "D"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "MD",
+            "tipo": "interseccion",
+            "de": ["AD", "eje"],
+            "rol": "proceso",
+            "etiqueta": ""
+          },
+          {
+            "id": "A1MD",
+            "tipo": "recta",
+            "por": ["A1", "MD"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pD",
+            "tipo": "perpendicular",
+            "a": "eje",
+            "por": "D",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "D1",
+            "tipo": "interseccion",
+            "de": ["A1MD", "pD"],
+            "rol": "proceso",
+            "etiqueta": "D′"
+          },
+          {
+            "id": "AE",
+            "tipo": "recta",
+            "por": ["A", "E"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "ME",
+            "tipo": "interseccion",
+            "de": ["AE", "eje"],
+            "rol": "proceso",
+            "etiqueta": ""
+          },
+          {
+            "id": "A1ME",
+            "tipo": "recta",
+            "por": ["A1", "ME"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pE",
+            "tipo": "perpendicular",
+            "a": "eje",
+            "por": "E",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "E1",
+            "tipo": "interseccion",
+            "de": ["A1ME", "pE"],
+            "rol": "proceso",
+            "etiqueta": "E′"
+          },
+          {
+            "id": "AF",
+            "tipo": "recta",
+            "por": ["A", "F"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "MF",
+            "tipo": "interseccion",
+            "de": ["AF", "eje"],
+            "rol": "proceso",
+            "etiqueta": ""
+          },
+          {
+            "id": "A1MF",
+            "tipo": "recta",
+            "por": ["A1", "MF"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pF",
+            "tipo": "perpendicular",
+            "a": "eje",
+            "por": "F",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "F1",
+            "tipo": "interseccion",
+            "de": ["A1MF", "pF"],
+            "rol": "proceso",
+            "etiqueta": "F′"
+          },
+          {
+            "id": "hA1B1",
+            "tipo": "segmento",
+            "por": ["A1", "B1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "hB1C",
+            "tipo": "segmento",
+            "por": ["B1", "C"],
+            "rol": "resultado"
+          },
+          {
+            "id": "hCA1",
+            "tipo": "segmento",
+            "por": ["C", "A1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "hD1E1",
+            "tipo": "segmento",
+            "por": ["D1", "E1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "hE1F1",
+            "tipo": "segmento",
+            "por": ["E1", "F1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "hF1D1",
+            "tipo": "segmento",
+            "por": ["F1", "D1"],
+            "rol": "resultado"
+          }
+        ]
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "camera": "front",
+    "foldAngle": 0,
+    "engines": {
+      "plana": {
+        "visibles": ["A", "C", "B", "D", "E", "F", "A1", "AB", "BC", "CA", "DE", "EF", "FD"]
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "Tenemos dos triángulos, uno dentro del otro, y dos pares de puntos homólogos: A con A′, y C que coincide con C′. Hay que hallar el eje y dibujar la figura afín.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "C", "B", "D", "E", "F", "A1", "AB", "BC", "CA", "DE", "EF", "FD"]
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "En una afinidad ortogonal, las rectas que unen puntos homólogos son perpendiculares al eje. Además, C≡C′ es un punto doble: está sobre el eje.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "C",
+            "B",
+            "D",
+            "E",
+            "F",
+            "A1",
+            "AB",
+            "BC",
+            "CA",
+            "DE",
+            "EF",
+            "FD",
+            "AA1"
+          ],
+          "trazar": ["AA1"],
+          "destacar": ["AA1"]
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina la figura estirándose en la dirección de AA′, perpendicular al eje: cada punto se desplaza en línea recta y los puntos del eje no se mueven. Aquí A′ queda al otro lado del eje.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "C",
+            "B",
+            "D",
+            "E",
+            "F",
+            "A1",
+            "AB",
+            "BC",
+            "CA",
+            "DE",
+            "EF",
+            "FD",
+            "AA1"
+          ],
+          "destacar": ["AA1"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Une A con A′ y traza por C la perpendicular a AA′: es el eje de afinidad e.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "C",
+            "B",
+            "D",
+            "E",
+            "F",
+            "A1",
+            "AB",
+            "BC",
+            "CA",
+            "DE",
+            "EF",
+            "FD",
+            "AA1",
+            "eje"
+          ],
+          "trazar": ["eje"],
+          "destacar": ["eje"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Para cada vértice, une A con él hasta cortar al eje. Esa recta, unida a A′, da la dirección del homólogo; este queda en la perpendicular al eje por el vértice.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "C",
+            "B",
+            "D",
+            "E",
+            "F",
+            "A1",
+            "AB",
+            "BC",
+            "CA",
+            "DE",
+            "EF",
+            "FD",
+            "AA1",
+            "eje",
+            "AB",
+            "MB",
+            "A1MB",
+            "pB",
+            "B1"
+          ],
+          "trazar": ["AB", "MB", "A1MB", "pB", "B1"]
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Repite con los tres vértices del triángulo interior y une los homólogos en el mismo orden. Resultan el triángulo exterior y el interior transformados.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "C",
+            "B",
+            "D",
+            "E",
+            "F",
+            "A1",
+            "AB",
+            "BC",
+            "CA",
+            "DE",
+            "EF",
+            "FD",
+            "AA1",
+            "eje",
+            "B1",
+            "D1",
+            "E1",
+            "F1",
+            "hA1B1",
+            "hB1C",
+            "hCA1",
+            "hD1E1",
+            "hE1F1",
+            "hF1D1"
+          ],
+          "trazar": ["D1", "E1", "F1", "hA1B1", "hB1C", "hCA1", "hD1E1", "hE1F1", "hF1D1"],
+          "destacar": ["hA1B1", "hB1C", "hCA1", "hD1E1", "hE1F1", "hF1D1"]
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: todos los segmentos que unen puntos homólogos son perpendiculares al eje, y cada recta corta a su homóloga en un punto del eje.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "C",
+            "B",
+            "D",
+            "E",
+            "F",
+            "A1",
+            "AB",
+            "BC",
+            "CA",
+            "DE",
+            "EF",
+            "FD",
+            "eje",
+            "B1",
+            "D1",
+            "E1",
+            "F1",
+            "hA1B1",
+            "hB1C",
+            "hCA1",
+            "hD1E1",
+            "hE1F1",
+            "hF1D1"
+          ],
+          "destacar": ["eje"]
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: tomar como eje la mediatriz de AA′. Solo sería el eje si la razón de afinidad fuese 1 o −1; aquí el eje debe pasar por el punto doble C≡C′.",
+      "show3d": [],
+      "sheet": ["error"],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "C",
+            "B",
+            "D",
+            "E",
+            "F",
+            "A1",
+            "AB",
+            "BC",
+            "CA",
+            "DE",
+            "EF",
+            "FD",
+            "eje",
+            "B1",
+            "D1",
+            "E1",
+            "F1",
+            "hA1B1",
+            "hB1C",
+            "hCA1",
+            "hD1E1",
+            "hE1F1",
+            "hF1D1"
+          ],
+          "destacar": ["eje"]
+        },
+        "error": {
+          "trazos": [
+            {
+              "puntos": [
+                [-60, -1.4],
+                [60, -1.4]
+              ],
+              "rotulo": "Error: eje = mediatriz de AA′"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Eje de afinidad, perpendicular a AA′ por C",
+        "puntos": 0.2
+      },
+      {
+        "texto": "Homólogos de los vértices del triángulo exterior",
+        "puntos": 0.6
+      },
+      {
+        "texto": "Homólogos de los vértices del triángulo interior",
+        "puntos": 0.6
+      },
+      {
+        "texto": "Figura homóloga completa, con sus construcciones auxiliares",
+        "puntos": 0.6
+      }
+    ]
+  }
+}

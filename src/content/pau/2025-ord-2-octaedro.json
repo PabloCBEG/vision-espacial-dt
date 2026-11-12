@@ -1,0 +1,356 @@
+{
+  "id": "pau-2025-ord-2-octaedro",
+  "convocatoria": "2025 ordinaria",
+  "ejercicio": 2,
+  "opcion": null,
+  "temas": ["II-07", "II-06"],
+  "titulo": "Octaedro con una diagonal vertical y recta a 30° con el PH",
+  "enunciado": "Dadas las proyecciones horizontales del cuadrado ABCD, de la recta R y de su traza horizontal H, se pide: 1. Dibujar las proyecciones del octaedro regular ABCDEF situado en el primer diedro de proyección, sabiendo que su diagonal EF es perpendicular al plano horizontal de proyección y el punto E tiene cota cero. 2. Determinar la proyección vertical de R sabiendo que forma 30º con el plano horizontal de proyección. 3. Representar la recta S paralela a R y que pasa por el punto medio de la diagonal EF.",
+  "datos": [
+    "Medidos en la lámina del examen (mm, x desde el centro de la hoja, alejamiento desde la LT): a(−7,3; 10,5), b(4,2; 64,2), c(−49,5; 75,8), d(−61,0; 22,1); H(18,8; 44,3); r′ llega a la LT en x = 67,9. El lado del cuadrado mide 54,9 mm."
+  ],
+  "initialScene": {
+    "points": {
+      "H": [18.8, 44.3, 0.0],
+      "Q": [48.5, 17.5, 23.1],
+      "M": [-28.4, 43.1, 38.8],
+      "N": [-6.1, 23.0, 56.1]
+    },
+    "objects": [
+      {
+        "kind": "point",
+        "id": "H"
+      },
+      {
+        "kind": "point",
+        "id": "M"
+      },
+      {
+        "kind": "line",
+        "id": "r",
+        "through": ["H", "Q"]
+      },
+      {
+        "kind": "line",
+        "id": "s",
+        "through": ["M", "N"]
+      }
+    ],
+    "activePoint": "H",
+    "engines": {
+      "solidos": {
+        "solido": {
+          "tipo": "octaedro",
+          "arista": 54.9,
+          "centro": [-28.4, 43.1],
+          "giro": 32.9
+        }
+      }
+    }
+  },
+  "examen": {
+    "sheet": ["lt"],
+    "camera": "front",
+    "foldAngle": 90,
+    "engines": {
+      "plana": {
+        "visibles": ["a", "b", "c", "d", "sab", "sbc", "scd", "sda", "h", "rr"],
+        "objetos": [
+          {
+            "id": "a",
+            "tipo": "punto",
+            "en": [-7.3, -10.5],
+            "fijo": true,
+            "etiqueta": "a",
+            "rol": "dato"
+          },
+          {
+            "id": "b",
+            "tipo": "punto",
+            "en": [4.2, -64.2],
+            "fijo": true,
+            "etiqueta": "b",
+            "rol": "dato"
+          },
+          {
+            "id": "c",
+            "tipo": "punto",
+            "en": [-49.5, -75.8],
+            "fijo": true,
+            "etiqueta": "c",
+            "rol": "dato"
+          },
+          {
+            "id": "d",
+            "tipo": "punto",
+            "en": [-61.0, -22.1],
+            "fijo": true,
+            "etiqueta": "d",
+            "rol": "dato"
+          },
+          {
+            "id": "sab",
+            "tipo": "segmento",
+            "por": ["a", "b"],
+            "rol": "dato"
+          },
+          {
+            "id": "sbc",
+            "tipo": "segmento",
+            "por": ["b", "c"],
+            "rol": "dato"
+          },
+          {
+            "id": "scd",
+            "tipo": "segmento",
+            "por": ["c", "d"],
+            "rol": "dato"
+          },
+          {
+            "id": "sda",
+            "tipo": "segmento",
+            "por": ["d", "a"],
+            "rol": "dato"
+          },
+          {
+            "id": "h",
+            "tipo": "punto",
+            "en": [18.8, -44.3],
+            "fijo": true,
+            "etiqueta": "h",
+            "rol": "dato"
+          },
+          {
+            "id": "rl",
+            "tipo": "punto",
+            "en": [67.9, 0],
+            "fijo": true,
+            "oculto": true
+          },
+          {
+            "id": "rr",
+            "tipo": "segmento",
+            "por": ["h", "rl"],
+            "rol": "dato"
+          }
+        ]
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "Conocemos la planta del cuadrado ABCD, que es la cara central de un octaedro con la diagonal EF vertical, y la planta de la recta R con su traza horizontal H.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "Si EF es vertical, ABCD es horizontal y está a media altura de EF. Su cota es el lado dividido por √2, y la diagonal EF mide el lado por √2.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido"],
+      "highlight": ["solido"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Apoya el octaedro por el vértice E sobre el PH: F queda justo encima de E, y los cuatro vértices del cuadrado ABCD rodean la diagonal vertical a media altura.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido"],
+      "highlight": ["solido"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "En la planta, E′ y F′ coinciden en el centro de ABCD. En el alzado, a″b″c″d″ están sobre una paralela a la LT a 38,8 mm de cota, y E″ está en la LT.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "F″ está sobre la vertical de E″, a una cota de 77,6 mm. Une E y F con A, B, C y D en las dos proyecciones, con las aristas ocultas discontinuas.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "R pasa por H y forma 30° con el PH: por cada milímetro de recorrido horizontal sobre r′, su cota crece tan 30°. Con eso se halla un segundo punto y se traza r″ desde H″.",
+      "show3d": ["planos", "solido", "vertices", "recta:r", "trazas:r"],
+      "sheet": [
+        "lt",
+        "solido",
+        "recta:r",
+        "trazas:r",
+        "proyecciones:H",
+        "referencia:H",
+        "proyecciones:Q",
+        "referencia:Q"
+      ],
+      "highlight": ["recta:r"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "El punto medio M de EF está a media altura, sobre el centro de ABCD. S pasa por M y es paralela a R: s′ es paralela a r′ y s″ es paralela a r″.",
+      "show3d": ["planos", "solido", "vertices", "recta:r", "recta:s"],
+      "sheet": [
+        "lt",
+        "solido",
+        "recta:r",
+        "recta:s",
+        "proyecciones:M",
+        "referencia:M",
+        "proyecciones:N",
+        "referencia:N"
+      ],
+      "highlight": ["recta:s"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: ABCD está a la misma cota que M, las aristas desde E y F llegan a los cuatro vértices, y s es paralela a r en planta y en alzado.",
+      "show3d": ["planos", "solido", "vertices", "recta:r", "recta:s"],
+      "sheet": ["lt", "solido", "recta:r", "recta:s"],
+      "highlight": ["recta:r", "recta:s"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: dar a F la cota del lado, 54,9 mm. EF es la diagonal del octaedro, que mide el lado por √2, y su punto medio está a media diagonal.",
+      "show3d": ["planos", "solido", "vertices"],
+      "sheet": ["lt", "solido"],
+      "highlight": ["solido"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "solidos": {
+          "solido": {
+            "tipo": "octaedro",
+            "arista": 54.9,
+            "centro": [-28.4, 43.1],
+            "giro": 32.9
+          }
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Cota de ABCD y vértices E y F del octaedro",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Proyección horizontal del octaedro, con vistas y ocultas",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Proyección vertical del octaedro, con vistas y ocultas",
+        "puntos": 0.4
+      },
+      {
+        "texto": "Proyección vertical de R, a 30° con el PH",
+        "puntos": 0.6
+      },
+      {
+        "texto": "Recta S paralela a R por el punto medio de EF",
+        "puntos": 0.2
+      }
+    ]
+  }
+}

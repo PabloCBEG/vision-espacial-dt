@@ -13,13 +13,35 @@ test.describe('banco PAU (M8)', () => {
     await page.getByRole('button', { name: 'Dibujo Técnico II' }).click();
     await page.getByRole('link', { name: /Banco PAU/ }).click();
     await expect(page.getByRole('heading', { name: 'Banco PAU' })).toBeVisible();
-    await expect(page.locator('#pau-list > li')).toHaveCount(4);
+    await expect(page.locator('#pau-list > li')).toHaveCount(10);
     await page.locator('#pau-filter-ejercicio').selectOption('2');
-    await expect(page.locator('#pau-list > li')).toHaveCount(1);
+    await expect(page.locator('#pau-list > li')).toHaveCount(4);
     await expect(page.locator('#pau-list')).toContainText('pirámide hexagonal');
     await page.locator('#pau-filter-ejercicio').selectOption('');
     await page.locator('#pau-filter-tema').selectOption('II-12');
     await expect(page.locator('#pau-list > li')).toHaveCount(1);
+  });
+
+  test('un ejercicio real: enunciado del examen, solución en seis partes y error dibujado', async ({
+    page,
+  }) => {
+    await page.goto('/#/pau/pau-2026-ext-1a-parabola');
+    await expect(page.locator('#exam-statement')).toContainText(
+      'Dada la directriz D de una parábola',
+    );
+    // En el examen no se ven los deslizadores del punto (darían datos de la solución).
+    await expect(page.locator('.controls-bar')).toBeHidden();
+    await page.getByRole('button', { name: 'Terminar y ver la solución' }).click();
+    await expect(page.locator('#lesson-progress-text')).toContainText('Paso 1 de 8');
+    // La rúbrica avisa de que no es la oficial.
+    await page.locator('#rubric-panel summary').click();
+    await expect(page.locator('#rubric-panel')).toContainText('no es la oficial');
+    // El último paso es el error típico, dibujado punteado y rotulado.
+    for (let i = 1; i < 8; i++) await page.getByRole('button', { name: 'Siguiente →' }).click();
+    await expect(page.locator('#lesson-narration')).toContainText('Error típico');
+    const error = page.locator('#view-2d [data-layer="error"]');
+    await expect(error.locator('polyline.stroke-error')).toHaveCount(1);
+    await expect(error.getByText('✗ Error: F no es M')).toBeVisible();
   });
 
   test('modo examen: cronómetro, solo lámina, solución y rúbrica', async ({ page }) => {
