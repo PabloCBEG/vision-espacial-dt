@@ -1142,7 +1142,9 @@ body[data-exam='examen'] .lesson-progress-text,
 body[data-exam='examen'] .help-level,
 body[data-exam='examen'] #hint-button,
 body[data-exam='examen'] #lesson-narration,
-body[data-exam='examen'] .fold-controls {
+body[data-exam='examen'] .fold-controls,
+/* Los deslizadores del punto darían las coordenadas de la solución. */
+body[data-exam='examen'] .controls-bar {
   display: none;
 }
 

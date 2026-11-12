@@ -5,12 +5,24 @@ import { z } from 'zod';
 import { TOPIC_CODES } from './catalog.ts';
 import {
   EngineData,
-  InitialSceneSchema,
+  errorLayerIssues,
   Layer,
   StepSchema,
   ViewSchema,
   type Lesson,
+  WideInitialSceneSchema,
 } from './schema.ts';
+import { SOLUTION_PARTS, solutionPartProblems } from './solutionParts.ts';
+
+/**
+ * Paso de la solución de un ejercicio PAU. Los ejercicios reales llevan `part` en todos los pasos,
+ * con las seis partes del apartado 4 de plan_contenidos.md (los ejemplos de formato, no).
+ */
+const PauStepSchema = StepSchema.extend({ part: z.enum(SOLUTION_PARTS).optional() }).superRefine(
+  (step, ctx) => {
+    for (const message of errorLayerIssues(step)) ctx.addIssue({ code: 'custom', message });
+  },
+);
 
 const Criterion = z.object({ texto: z.string().min(1), puntos: z.number().positive() });
 
@@ -26,7 +38,7 @@ export const PauSchema = z.object({
   titulo: z.string().min(1),
   enunciado: z.string().min(1).max(800),
   datos: z.array(z.string().min(1)).default([]),
-  initialScene: InitialSceneSchema,
+  initialScene: WideInitialSceneSchema,
   /** Lo que se ve durante el examen: solo la lámina, con los datos. */
   examen: z.object({
     sheet: z.array(Layer),
@@ -35,13 +47,31 @@ export const PauSchema = z.object({
     engines: EngineData,
   }),
   /** Solución paso a paso, con la escena 3D de apoyo. */
-  solucion: z.array(StepSchema).min(2),
+  solucion: z
+    .array(PauStepSchema)
+    .min(2)
+    .superRefine((steps, ctx) => {
+      const parts = steps.map((s) => s.part);
+      if (parts.every((p) => p === undefined)) return;
+      if (parts.some((p) => p === undefined)) {
+        ctx.addIssue({ code: 'custom', message: 'Si un paso lleva `part`, todos la llevan' });
+        return;
+      }
+      for (const message of solutionPartProblems(parts as (typeof SOLUTION_PARTS)[number][])) {
+        ctx.addIssue({ code: 'custom', message });
+      }
+    }),
   rubrica: z
     .object({
       /** Desglose de los 2 puntos de solución y método. */
       criterios: z.array(Criterion).min(1),
       precision: z.number().default(0.25),
       presentacion: z.number().default(0.25),
+      /**
+       * «oficial»: criterios de corrección publicados. «derivada»: sin criterios oficiales, se
+       * reparten los 2 puntos según la puntuación por apartados del enunciado (a revisar).
+       */
+      origen: z.enum(['oficial', 'derivada']).default('oficial'),
     })
     .refine((r) => Math.abs(r.criterios.reduce((s, c) => s + c.puntos, 0) - 2) < 1e-9, {
       message: 'Los criterios de solución y método suman 2 puntos',

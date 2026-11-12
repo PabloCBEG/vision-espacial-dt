@@ -286,12 +286,19 @@ function renderRubric(pau: PauExercise, el: ExamElements): void {
   const items = pau.rubrica.criterios.map((c, i) =>
     box(c.texto, c.puntos, (v) => (v ? checked.add(i) : checked.delete(i))),
   );
+  const origin = document.createElement('p');
+  origin.className = 'rubric-origin';
+  origin.textContent =
+    pau.rubrica.origen === 'derivada'
+      ? 'Rúbrica adaptada de la puntuación por apartados del examen, no es la oficial.'
+      : '';
+  origin.hidden = pau.rubrica.origen !== 'derivada';
   const extraTitle = document.createElement('p');
   extraTitle.className = 'rubric-extra-title';
   extraTitle.textContent = 'Solo si la solución llega al 70 % (1,4 puntos):';
   const prec = box('Precisión', pau.rubrica.precision, (v) => (precision = v));
   const pres = box('Presentación', pau.rubrica.presentacion, (v) => (presentation = v));
-  el.rubricItems.replaceChildren(...items, extraTitle, prec, pres);
+  el.rubricItems.replaceChildren(origin, ...items, extraTitle, prec, pres);
   const update = (save: boolean): void => {
     const score = rubricScore(pau, checked, precision, presentation);
     for (const l of [prec, pres]) {

@@ -6,13 +6,13 @@ import { TOPIC_CODES } from './catalog.ts';
 import { SOLUTION_LENGTH_RANGE, SOLUTION_PARTS, solutionPartProblems } from './solutionParts.ts';
 
 /** Coordenadas de un punto: [x, alejamiento, cota], en mm, entre −60 y 60. */
-const Coords = z.tuple([
+export const Coords = z.tuple([
   z.number().min(-60).max(60),
   z.number().min(-60).max(60),
   z.number().min(-60).max(60),
 ]);
 
-const PointName = z
+export const PointName = z
   .string()
   .regex(/^[A-Z][0-9]?$/, 'Un punto se llama con una mayúscula: P, A, B1…');
 
@@ -97,20 +97,28 @@ const Difficulty = z.number().int().min(1).max(3).default(1);
  * pertenece (ver src/content/solutionParts.ts). Si lleva la capa «error» en la lámina, debe
  * traer los datos del trazado erróneo en `engines.error`, y al revés.
  */
-export const SolutionStepSchema = StepSchema.extend({
-  part: z.enum(SOLUTION_PARTS),
-}).superRefine((step, ctx) => {
+/** La capa «error» y sus datos van juntos y solo en el paso de error típico. */
+export function errorLayerIssues(step: {
+  sheet: readonly string[];
+  engines?: Record<string, unknown> | undefined;
+  part?: string | undefined;
+}): string[] {
+  const issues: string[] = [];
   const drawsError = step.sheet.includes('error');
   const hasError = step.engines?.error !== undefined;
   if (drawsError !== hasError) {
-    ctx.addIssue({
-      code: 'custom',
-      message: 'La capa «error» de la lámina y los datos de engines.error van juntos',
-    });
+    issues.push('La capa «error» de la lámina y los datos de engines.error van juntos');
   }
   if (hasError && step.part !== 'error') {
-    ctx.addIssue({ code: 'custom', message: 'El trazado erróneo solo va en el paso de «error»' });
+    issues.push('El trazado erróneo solo va en el paso de «error»');
   }
+  return issues;
+}
+
+export const SolutionStepSchema = StepSchema.extend({
+  part: z.enum(SOLUTION_PARTS),
+}).superRefine((step, ctx) => {
+  for (const message of errorLayerIssues(step)) ctx.addIssue({ code: 'custom', message });
 });
 
 /** Las seis partes, en orden y con el número de pasos de cada una. */
@@ -269,6 +277,13 @@ const ExerciseSchema = z.discriminatedUnion('kind', [
   EngineExercise,
 ]);
 
+/** Coordenadas más amplias (±120 mm) para los ejercicios PAU, que ocupan toda la hoja. */
+const WideCoords = z.tuple([
+  z.number().min(-120).max(120),
+  z.number().min(-120).max(120),
+  z.number().min(-120).max(120),
+]);
+
 /** Escena inicial: puntos, objetos y datos comunes de los motores. */
 export const InitialSceneSchema = z.object({
   points: z.record(PointName, Coords),
@@ -276,6 +291,11 @@ export const InitialSceneSchema = z.object({
   activePoint: PointName,
   /** Datos de los motores comunes a todos los pasos (por ejemplo, la construcción plana). */
   engines: EngineData,
+});
+
+/** Escena inicial de un ejercicio PAU: como la de las lecciones, con coordenadas más amplias. */
+export const WideInitialSceneSchema = InitialSceneSchema.extend({
+  points: z.record(PointName, WideCoords),
 });
 
 export const LessonSchema = z.object({
