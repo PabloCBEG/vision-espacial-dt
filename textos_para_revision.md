@@ -582,9 +582,105 @@ Fichero: `src/content/lessons/08-octaedro-isometrica.json` · DT II · nivel Int
 
 **Ejercicios**
 
-1. [ ] *escribir una medida, dificultad 1* (respuesta: 24.5 mm): En perspectiva isométrica, ¿cuánto mide una arista de 30 mm paralela a uno de los ejes?
-2. [ ] *escribir una medida, dificultad 2* (respuesta: 15 mm): En caballera con coeficiente 0,5, ¿cuánto mide en el dibujo una arista de 30 mm paralela al eje Y?
-3. [ ] *escribir una medida, dificultad 3* (respuesta: 34.6 mm): Como en la PAU: octaedro de 30 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 32.7 mm): En perspectiva isométrica, ¿cuánto mide en el dibujo una arista de 40 mm paralela al eje OX?
+   - [ ] *Pista 1:* En perspectiva isométrica los tres ejes se acortan por igual.
+   - [ ] *Pista 2:* El coeficiente de reducción es 0,816: la medida dibujada es la real por ese coeficiente (la arista).
+   - [ ] *Pista 3:* Multiplica la medida real por el coeficiente, o llévala a la escala gráfica de reducción.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en perspectiva isométrica y queremos saber cuánto mide en el dibujo una medida real de 40 mm, paralela a un eje.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En la perspectiva isométrica los tres ejes forman 120° y se reducen con el mismo coeficiente, 0,816. Toda medida paralela a un eje se dibuja con su valor real por ese coeficiente.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva 40 mm a la escala gráfica y lee la medida reducida: 32,7 mm. Dibuja esa medida sobre el eje.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 40 mm por 0,816 da 32,7 mm. En el dibujo isométrico, sin reducir, esa misma medida saldría de 40 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la medida real, 40 mm, en una perspectiva isométrica. Esa es la medida del dibujo isométrico, sin reducir; en la perspectiva se reduce con el coeficiente.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 25 mm): En dibujo isométrico, sin reducir, ¿cuánto mide en el dibujo una arista de 25 mm paralela al eje OY?
+   - [ ] *Pista 1:* El dibujo isométrico es la misma figura que la perspectiva isométrica, pero sin reducir.
+   - [ ] *Pista 2:* Las medidas paralelas a los ejes se dibujan con su valor real.
+   - [ ] *Pista 3:* La arista dibujada mide lo mismo que la real.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un cubo en dibujo isométrico y queremos saber cuánto mide en el dibujo una arista de 25 mm paralela a OY.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El dibujo isométrico es la perspectiva isométrica sin reducir: sale más grande, con las medidas reales sobre los ejes y la misma forma.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la perspectiva isométrica ampliándose hasta que las aristas de los ejes valen su medida real: es el dibujo isométrico.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Marca sobre cada eje las medidas reales, sin aplicar ningún coeficiente de reducción.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Dibuja la arista sobre el eje OY con su medida real: 25 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el coeficiente es 1, así que la medida dibujada y la real coinciden: 25 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: aplicar el coeficiente de reducción en un dibujo isométrico. Ese coeficiente es solo de la perspectiva isométrica; el dibujo no se reduce.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 20 mm): En caballera con coeficiente 0,5, ¿cuánto mide en el dibujo una arista de 40 mm paralela al eje Y?
+   - [ ] *Pista 1:* En caballera el eje Y se dibuja inclinado y reducido.
+   - [ ] *Pista 2:* La reducción del eje Y es el coeficiente de caballera: 0,5.
+   - [ ] *Pista 3:* Multiplica la medida real por ese coeficiente.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un cubo en caballera y queremos saber cuánto mide en el dibujo una arista de 40 mm paralela al eje Y.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En caballera el plano frontal XZ se ve en verdadera magnitud, y las aristas del eje Y se dibujan inclinadas y reducidas con el coeficiente, 0,5 en la PAU.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: las caras paralelas al cuadro no se deforman y la profundidad se acorta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el eje Y a 45° del eje X, hacia arriba y a la derecha, y los ejes X y Z a escala real.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre el eje Y la medida real, 40 mm, multiplicada por 0,5: 20 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 40 mm por 0,5 da 20 mm. Las aristas paralelas a X y a Z no se reducen.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la arista del eje Y con su medida real, 40 mm. En caballera la profundidad se reduce con el coeficiente.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 36.7 mm): En perspectiva isométrica, ¿cuánto mide en el dibujo una arista de 45 mm paralela al eje OZ?
+   - [ ] *Pista 1:* En perspectiva isométrica los tres ejes se acortan por igual.
+   - [ ] *Pista 2:* El coeficiente de reducción es 0,816: la medida dibujada es la real por ese coeficiente (la arista).
+   - [ ] *Pista 3:* Multiplica la medida real por el coeficiente, o llévala a la escala gráfica de reducción.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en perspectiva isométrica y queremos saber cuánto mide en el dibujo una medida real de 45 mm, paralela a un eje.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En la perspectiva isométrica los tres ejes forman 120° y se reducen con el mismo coeficiente, 0,816. Toda medida paralela a un eje se dibuja con su valor real por ese coeficiente.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva 45 mm a la escala gráfica y lee la medida reducida: 36,7 mm. Dibuja esa medida sobre el eje.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 45 mm por 0,816 da 36,7 mm. En el dibujo isométrico, sin reducir, esa misma medida saldría de 45 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la medida real, 45 mm, en una perspectiva isométrica. Esa es la medida del dibujo isométrico, sin reducir; en la perspectiva se reduce con el coeficiente.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 36 mm): En caballera, ¿cuánto mide en el dibujo una arista de 36 mm paralela al eje X?
+   - [ ] *Pista 1:* En caballera, el plano frontal XZ se ve en verdadera magnitud.
+   - [ ] *Pista 2:* Las aristas paralelas a OX y a OZ no se reducen.
+   - [ ] *Pista 3:* La arista dibujada mide lo mismo que la real.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un cubo en caballera y queremos saber cuánto mide en el dibujo una arista de 36 mm paralela al eje X.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En caballera el plano frontal XZ está en verdadera magnitud: las aristas paralelas a OX y a OZ se dibujan sin reducir. Solo se reducen las del eje Y.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: la cara de delante se ve igual que es, y solo la profundidad se acorta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el cuadrado frontal en verdadera magnitud y, desde sus vértices, los ejes Y reducidos hacia atrás.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre el eje X la medida real sin reducirla: 36 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la medida dibujada coincide con la real, 36 mm, porque el eje X no se reduce.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: reducir la arista del eje X con el coeficiente de la profundidad. Solo se reducen las medidas del eje Y.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 46.2 mm): Un octaedro de 40 mm de arista tiene una diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?
+   - [ ] *Pista 1:* La diagonal vertical del octaedro es paralela a OZ, así que se reduce como ese eje.
+   - [ ] *Pista 2:* Su medida real es la arista por raíz de dos.
+   - [ ] *Pista 3:* Calcula la diagonal real y multiplícala por el coeficiente isométrico.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un octaedro con la diagonal paralela a OZ se dibuja en perspectiva isométrica. Queremos saber cuánto mide esa diagonal en el dibujo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La diagonal vertical del octaedro va paralela a OZ, así que se reduce con el coeficiente de ese eje, 0,816. Su medida real es la arista por raíz de dos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La diagonal real mide 56,6 mm. Llévala a la escala gráfica y lee la reducida: 46,2 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 56,6 mm por 0,816 da 46,2 mm, y la diagonal queda centrada en el octaedro y paralela a OZ.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 41.6 mm): Como en la PAU: octaedro de 36 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?
+   - [ ] *Pista 1:* La diagonal vertical del octaedro es paralela a OZ, así que se reduce como ese eje.
+   - [ ] *Pista 2:* Su medida real es la arista por raíz de dos.
+   - [ ] *Pista 3:* Calcula la diagonal real y multiplícala por el coeficiente isométrico.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un octaedro con la diagonal paralela a OZ se dibuja en perspectiva isométrica. Queremos saber cuánto mide esa diagonal en el dibujo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La diagonal vertical del octaedro va paralela a OZ, así que se reduce con el coeficiente de ese eje, 0,816. Su medida real es la arista por raíz de dos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La diagonal real mide 50,9 mm. Llévala a la escala gráfica y lee la reducida: 41,6 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 50,9 mm por 0,816 da 41,6 mm, y la diagonal queda centrada en el octaedro y paralela a OZ.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 39.6 mm): Como en la PAU: octaedro de 28 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en caballera?
+   - [ ] *Pista 1:* En caballera, la diagonal vertical es paralela a OZ, un eje que no se reduce.
+   - [ ] *Pista 2:* Su medida real es la arista por raíz de dos.
+   - [ ] *Pista 3:* La diagonal dibujada mide lo mismo que la real.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un octaedro con la diagonal paralela a OZ se dibuja en caballera. Queremos saber cuánto mide esa diagonal en el dibujo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En caballera, la diagonal vertical va paralela a OZ, que no se reduce. Su medida real es la arista por raíz de dos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el octaedro proyectado con rayos oblicuos sobre el plano frontal: la diagonal vertical queda en el plano frontal y se ve en verdadera magnitud.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el cuadrado central del octaedro en el plano horizontal, con el eje Y reducido, y la diagonal vertical por su centro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La diagonal real mide 39,6 mm: se dibuja sobre el eje Z sin reducir, 39,6 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la diagonal dibujada coincide con la real, 39,6 mm, porque el eje Z no se reduce.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: reducir la diagonal con el coeficiente de caballera. Ese coeficiente es solo del eje Y; la diagonal vertical se dibuja sin reducir.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 27.7 mm): Como en la PAU: octaedro de 24 mm de arista con su diagonal paralela a OZ. ¿Cuánto mide esa diagonal en la perspectiva isométrica?
+   - [ ] *Pista 1:* La diagonal vertical del octaedro es paralela a OZ, así que se reduce como ese eje.
+   - [ ] *Pista 2:* Su medida real es la arista por raíz de dos.
+   - [ ] *Pista 3:* Calcula la diagonal real y multiplícala por el coeficiente isométrico.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un octaedro con la diagonal paralela a OZ se dibuja en perspectiva isométrica. Queremos saber cuánto mide esa diagonal en el dibujo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La diagonal vertical del octaedro va paralela a OZ, así que se reduce con el coeficiente de ese eje, 0,816. Su medida real es la arista por raíz de dos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes quedan igual de inclinados y las medidas, igual de acortadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°. Cada medida real tiene su medida reducida.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La diagonal real mide 33,9 mm. Llévala a la escala gráfica y lee la reducida: 27,7 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 33,9 mm por 0,816 da 27,7 mm, y la diagonal queda centrada en el octaedro y paralela a OZ.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.
 
 ### I-14 · ¿Por qué las paralelas se juntan?
 
@@ -606,9 +702,105 @@ Fichero: `src/content/lessons/09-paralelas-se-juntan.json` · DT I · nivel Inic
 
 **Ejercicios**
 
-1. [ ] *escribir una medida, dificultad 1* (respuesta: 45 mm): El ojo del observador está a 45 mm del geometral. ¿A qué altura sobre la LT se dibuja la línea del horizonte?
-2. [ ] *escribir una medida, dificultad 2* (respuesta: 70 mm): Perspectiva frontal con el observador a 70 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?
-3. [ ] *escribir una medida, dificultad 3* (respuesta: 40.4 mm): Como en la PAU: cubo girado 30° respecto al cuadro y observador a 70 mm. ¿A qué distancia de P está el punto de fuga más cercano?
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 35 mm): El ojo del observador está a 35 mm del geometral. ¿A qué altura sobre la LT se dibuja la línea del horizonte?
+   - [ ] *Pista 1:* El horizonte es la imagen de todos los puntos que están a la altura del ojo.
+   - [ ] *Pista 2:* Pasa por el punto principal y es paralelo a la línea de tierra.
+   - [ ] *Pista 3:* Mide sobre la vertical de P la altura del ojo.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una perspectiva cónica se dibuja sobre el cuadro, con su línea de tierra y su horizonte. Queremos saber a qué altura sobre la LT queda el horizonte cuando el ojo está a 35 mm del geometral.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La línea del horizonte es la imagen de todos los puntos que están a la altura del ojo. Está a esa altura sobre la línea de tierra y pasa por el punto principal.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que subes el ojo: el horizonte sube con él, siempre a su altura, y los objetos parecen más bajos.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja la LT, el cuadro y el punto principal P, que es la proyección del ojo sobre el cuadro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Mide sobre la vertical de P la altura del ojo, 35 mm, y traza el horizonte paralelo a la LT: queda a 35 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el horizonte pasa por P y está a la misma altura que el ojo, 35 mm, por encima de la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: confundir la altura del ojo con su distancia al cuadro. La altura da el horizonte sobre la LT; la distancia da, por ejemplo, los puntos de distancia.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 60 mm): Perspectiva frontal con el observador a 60 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?
+   - [ ] *Pista 1:* Los puntos de distancia son los puntos de fuga de las horizontales a 45°.
+   - [ ] *Pista 2:* Están en el horizonte, a la derecha y a la izquierda de P.
+   - [ ] *Pista 3:* Abate el ojo y traza la recta a 45° hasta el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En una perspectiva frontal con el observador a 60 mm del cuadro, buscamos a qué distancia del punto principal está cada punto de distancia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos de distancia son los puntos de fuga de las horizontales a 45° y están en el horizonte. Cada uno queda a una distancia de P igual a la distancia del ojo al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una recta horizontal a 45° con el cuadro que se aleja: se ve acercarse al horizonte hasta un punto, a la misma distancia de P que el ojo del cuadro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador sobre el cuadro: el ojo queda sobre la perpendicular al horizonte por P, a su distancia al cuadro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza por el ojo, abatido, la recta a 45° hasta el horizonte: lo corta a 60 mm de P, a derecha e izquierda. Son D₁ y D₂.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el triángulo formado por el ojo, P y D₁ es isósceles y rectángulo, así que PD₁ vale lo que la distancia del ojo al cuadro, 60 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar la altura del ojo como distancia de los puntos de distancia. La medida que cuenta es la distancia del ojo al cuadro, 60 mm, no su altura.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 60 mm): El cubo está girado 45° respecto al cuadro y el observador está a 60 mm de él. ¿A qué distancia de P está cada punto de fuga de las aristas horizontales?
+   - [ ] *Pista 1:* Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.
+   - [ ] *Pista 2:* Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.
+   - [ ] *Pista 3:* Mide desde P hasta el corte de esa paralela con el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo está girado respecto al cuadro y el observador está a 60 mm de él. Buscamos a qué distancia de P está el punto de fuga más cercano.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a 60 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 85 mm): Perspectiva frontal con el observador a 85 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?
+   - [ ] *Pista 1:* Los puntos de distancia son los puntos de fuga de las horizontales a 45°.
+   - [ ] *Pista 2:* Están en el horizonte, a la derecha y a la izquierda de P.
+   - [ ] *Pista 3:* Abate el ojo y traza la recta a 45° hasta el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En una perspectiva frontal con el observador a 85 mm del cuadro, buscamos a qué distancia del punto principal está cada punto de distancia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los puntos de distancia son los puntos de fuga de las horizontales a 45° y están en el horizonte. Cada uno queda a una distancia de P igual a la distancia del ojo al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una recta horizontal a 45° con el cuadro que se aleja: se ve acercarse al horizonte hasta un punto, a la misma distancia de P que el ojo del cuadro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador sobre el cuadro: el ojo queda sobre la perpendicular al horizonte por P, a su distancia al cuadro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza por el ojo, abatido, la recta a 45° hasta el horizonte: lo corta a 85 mm de P, a derecha e izquierda. Son D₁ y D₂.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el triángulo formado por el ojo, P y D₁ es isósceles y rectángulo, así que PD₁ vale lo que la distancia del ojo al cuadro, 85 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar la altura del ojo como distancia de los puntos de distancia. La medida que cuenta es la distancia del ojo al cuadro, 85 mm, no su altura.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 29.1 mm): El cubo está girado 20° respecto al cuadro y el observador está a 80 mm. ¿A qué distancia de P está el punto de fuga más cercano?
+   - [ ] *Pista 1:* Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.
+   - [ ] *Pista 2:* Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.
+   - [ ] *Pista 3:* Mide desde P hasta el corte de esa paralela con el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo está girado respecto al cuadro y el observador está a 80 mm de él. Buscamos a qué distancia de P está el punto de fuga más cercano.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a 29,1 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 85.7 mm): El cubo está girado 35° respecto al cuadro y el observador está a 60 mm. ¿A qué distancia de P está el punto de fuga más lejano?
+   - [ ] *Pista 1:* Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.
+   - [ ] *Pista 2:* Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.
+   - [ ] *Pista 3:* Mide desde P hasta el corte de esa paralela con el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo está girado respecto al cuadro y el observador está a 60 mm de él. Buscamos a qué distancia de P está el punto de fuga más lejano.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Cada paralela corta al horizonte en un punto de fuga. El más lejano queda a 85,7 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 42 mm): Como en la PAU: cubo girado 25° respecto al cuadro y observador a 90 mm. ¿A qué distancia de P está el punto de fuga más cercano?
+   - [ ] *Pista 1:* Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.
+   - [ ] *Pista 2:* Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.
+   - [ ] *Pista 3:* Mide desde P hasta el corte de esa paralela con el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo está girado respecto al cuadro y el observador está a 90 mm de él. Buscamos a qué distancia de P está el punto de fuga más cercano.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a 42 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 59.6 mm): Como en la PAU: cubo girado 40° respecto al cuadro y observador a 50 mm. ¿A qué distancia de P está el punto de fuga más lejano?
+   - [ ] *Pista 1:* Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.
+   - [ ] *Pista 2:* Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.
+   - [ ] *Pista 3:* Mide desde P hasta el corte de esa paralela con el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo está girado respecto al cuadro y el observador está a 50 mm de él. Buscamos a qué distancia de P está el punto de fuga más lejano.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Cada paralela corta al horizonte en un punto de fuga. El más lejano queda a 59,6 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 26.8 mm): Como en la PAU: cubo girado 15° respecto al cuadro y observador a 100 mm. ¿A qué distancia de P está el punto de fuga más cercano?
+   - [ ] *Pista 1:* Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.
+   - [ ] *Pista 2:* Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.
+   - [ ] *Pista 3:* Mide desde P hasta el corte de esa paralela con el horizonte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo está girado respecto al cuadro y el observador está a 100 mm de él. Buscamos a qué distancia de P está el punto de fuga más cercano.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a 26,8 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.
 
 ### II-06 · Ángulos, distancias y rectas con ángulo dado
 

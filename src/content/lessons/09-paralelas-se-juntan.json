@@ -6,7 +6,13 @@
   "stage": "DT I",
   "saberBasico": "Sistema cónico: fundamentos, elementos y perspectiva frontal y oblicua de sólidos sencillos.",
   "level": "Inicial",
-  "initialScene": { "points": { "P": [0, 0, 0] }, "objects": [], "activePoint": "P" },
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P"
+  },
   "steps": [
     {
       "narration": "Unas vías de tren son paralelas, pero en una foto se juntan a lo lejos. La perspectiva cónica explica por qué.",
@@ -14,7 +20,14 @@
       "sheet": ["cuadro", "paralelas"],
       "camera": "perspective",
       "foldAngle": 0,
-      "engines": { "conica": { "paralelas": { "angulo": 90, "cuantas": 3 } } }
+      "engines": {
+        "conica": {
+          "paralelas": {
+            "angulo": 90,
+            "cuantas": 3
+          }
+        }
+      }
     },
     {
       "narration": "El observador V mira a través de un plano vertical, el cuadro. Cada punto se dibuja donde el rayo visual que va del ojo al punto atraviesa el cuadro.",
@@ -23,7 +36,15 @@
       "highlight": ["rayos"],
       "camera": "perspective",
       "foldAngle": 0,
-      "engines": { "conica": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] } } }
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40]
+          }
+        }
+      }
     },
     {
       "narration": "Cuanto más lejos está un punto, más cerca del horizonte cae su imagen. Por eso lo lejano se ve más pequeño y las vías se acercan entre sí.",
@@ -32,7 +53,15 @@
       "highlight": ["paralelas"],
       "camera": "perspective",
       "foldAngle": 0,
-      "engines": { "conica": { "paralelas": { "angulo": 90, "cuantas": 4, "largo": 2000 } } }
+      "engines": {
+        "conica": {
+          "paralelas": {
+            "angulo": 90,
+            "cuantas": 4,
+            "largo": 2000
+          }
+        }
+      }
     },
     {
       "narration": "Perspectiva frontal: las caras del cubo paralelas al cuadro se ven sin deformar. Sus aristas perpendiculares al cuadro fugan al punto principal P, en la línea del horizonte.",
@@ -42,7 +71,14 @@
       "camera": "perspective",
       "foldAngle": 0,
       "engines": {
-        "conica": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] }, "fugas": true }
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40]
+          },
+          "fugas": true
+        }
       }
     },
     {
@@ -54,10 +90,18 @@
       "foldAngle": 0,
       "engines": {
         "conica": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] },
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40]
+          },
           "fugas": true,
           "metricos": true,
-          "observador": { "x": 0, "d": 70, "h": 45 }
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 45
+          }
         }
       }
     },
@@ -70,9 +114,18 @@
       "foldAngle": 0,
       "engines": {
         "conica": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 30
+          },
           "fugas": true,
-          "observador": { "x": 0, "d": 70, "h": 45 }
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 45
+          }
         }
       }
     },
@@ -85,10 +138,19 @@
       "foldAngle": 0,
       "engines": {
         "conica": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 30
+          },
           "fugas": true,
           "metricos": true,
-          "observador": { "x": 0, "d": 70, "h": 45 }
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 45
+          }
         }
       }
     },
@@ -101,9 +163,18 @@
       "foldAngle": 0,
       "engines": {
         "conica": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 30
+          },
           "construccion": 1,
-          "observador": { "x": 0, "d": 70, "h": 45 }
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 45
+          }
         }
       }
     },
@@ -115,10 +186,19 @@
       "foldAngle": 0,
       "engines": {
         "conica": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 30
+          },
           "fugas": true,
           "controles": true,
-          "observador": { "x": 0, "d": 70, "h": 45 }
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 45
+          }
         }
       }
     }
@@ -127,45 +207,1846 @@
     {
       "kind": "value",
       "difficulty": 1,
-      "prompt": "El ojo del observador está a 45 mm del geometral. ¿A qué altura sobre la LT se dibuja la línea del horizonte?",
-      "answer": 45,
+      "prompt": "El ojo del observador está a 35 mm del geometral. ¿A qué altura sobre la LT se dibuja la línea del horizonte?",
+      "answer": 35,
       "unit": "mm",
       "tolerance": 1,
+      "magnitud": "horizonte",
       "show3d": ["geometral", "cuadro", "observador"],
       "sheet": ["cuadricula"],
-      "engines": { "conica": { "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] } } }
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40]
+          },
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 35
+          }
+        }
+      },
+      "hints": [
+        "El horizonte es la imagen de todos los puntos que están a la altura del ojo.",
+        "Pasa por el punto principal y es paralelo a la línea de tierra.",
+        "Mide sobre la vertical de P la altura del ojo."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una perspectiva cónica se dibuja sobre el cuadro, con su línea de tierra y su horizonte. Queremos saber a qué altura sobre la LT queda el horizonte cuando el ojo está a {alturaOjo} del geometral.",
+          "show3d": ["geometral", "cuadro", "observador"],
+          "sheet": ["cuadro"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 35
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La línea del horizonte es la imagen de todos los puntos que están a la altura del ojo. Está a esa altura sobre la línea de tierra y pasa por el punto principal.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 35
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina que subes el ojo: el horizonte sube con él, siempre a su altura, y los objetos parecen más bajos.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 35
+              },
+              "rayos": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Dibuja la LT, el cuadro y el punto principal P, que es la proyección del ojo sobre el cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "cuadricula"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 35
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Mide sobre la vertical de P la altura del ojo, {alturaOjo}, y traza el horizonte paralelo a la LT: queda a {respuesta}.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 35
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el horizonte pasa por P y está a la misma altura que el ojo, {respuesta}, por encima de la LT.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 35
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: confundir la altura del ojo con su distancia al cuadro. La altura da el horizonte sobre la LT; la distancia da, por ejemplo, los puntos de distancia.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 35
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "Perspectiva frontal con el observador a 60 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?",
+      "answer": 60,
+      "unit": "mm",
+      "tolerance": 1,
+      "magnitud": "puntoDistancia",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40]
+          },
+          "observador": {
+            "x": 0,
+            "d": 60,
+            "h": 40
+          }
+        }
+      },
+      "hints": [
+        "Los puntos de distancia son los puntos de fuga de las horizontales a 45°.",
+        "Están en el horizonte, a la derecha y a la izquierda de P.",
+        "Abate el ojo y traza la recta a 45° hasta el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En una perspectiva frontal con el observador a {distanciaOjo} del cuadro, buscamos a qué distancia del punto principal está cada punto de distancia.",
+          "show3d": ["geometral", "cuadro", "observador"],
+          "sheet": ["cuadro"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Los puntos de distancia son los puntos de fuga de las horizontales a 45° y están en el horizonte. Cada uno queda a una distancia de P igual a la distancia del ojo al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una recta horizontal a 45° con el cuadro que se aleja: se ve acercarse al horizonte hasta un punto, a la misma distancia de P que el ojo del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador sobre el cuadro: el ojo queda sobre la perpendicular al horizonte por P, a su distancia al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza por el ojo, abatido, la recta a 45° hasta el horizonte: lo corta a {respuesta} de P, a derecha e izquierda. Son D₁ y D₂.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
+          "highlight": ["metricos"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el triángulo formado por el ojo, P y D₁ es isósceles y rectángulo, así que PD₁ vale lo que la distancia del ojo al cuadro, {respuesta}.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
+          "highlight": ["metricos"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar la altura del ojo como distancia de los puntos de distancia. La medida que cuenta es la distancia del ojo al cuadro, {distanciaOjo}, no su altura.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
+          "highlight": ["metricos"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "El cubo está girado 45° respecto al cuadro y el observador está a 60 mm de él. ¿A qué distancia de P está cada punto de fuga de las aristas horizontales?",
+      "answer": 60,
+      "unit": "mm",
+      "tolerance": 1,
+      "magnitud": "fugaCercana",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 45
+          },
+          "observador": {
+            "x": 0,
+            "d": 60,
+            "h": 40
+          }
+        }
+      },
+      "hints": [
+        "Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.",
+        "Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.",
+        "Mide desde P hasta el corte de esa paralela con el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto de fuga más cercano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
       "difficulty": 2,
-      "prompt": "Perspectiva frontal con el observador a 70 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?",
-      "answer": 70,
+      "prompt": "Perspectiva frontal con el observador a 85 mm del cuadro. ¿A qué distancia del punto principal está cada punto de distancia?",
+      "answer": 85,
       "unit": "mm",
       "tolerance": 1,
+      "magnitud": "puntoDistancia",
       "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
       "sheet": ["cuadro", "perspectiva", "cuadricula"],
       "engines": {
         "conica": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40] },
-          "observador": { "x": 0, "d": 70, "h": 45 }
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40]
+          },
+          "observador": {
+            "x": 0,
+            "d": 85,
+            "h": 50
+          }
         }
-      }
+      },
+      "hints": [
+        "Los puntos de distancia son los puntos de fuga de las horizontales a 45°.",
+        "Están en el horizonte, a la derecha y a la izquierda de P.",
+        "Abate el ojo y traza la recta a 45° hasta el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En una perspectiva frontal con el observador a {distanciaOjo} del cuadro, buscamos a qué distancia del punto principal está cada punto de distancia.",
+          "show3d": ["geometral", "cuadro", "observador"],
+          "sheet": ["cuadro"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Los puntos de distancia son los puntos de fuga de las horizontales a 45° y están en el horizonte. Cada uno queda a una distancia de P igual a la distancia del ojo al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una recta horizontal a 45° con el cuadro que se aleja: se ve acercarse al horizonte hasta un punto, a la misma distancia de P que el ojo del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 50
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador sobre el cuadro: el ojo queda sobre la perpendicular al horizonte por P, a su distancia al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 50
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza por el ojo, abatido, la recta a 45° hasta el horizonte: lo corta a {respuesta} de P, a derecha e izquierda. Son D₁ y D₂.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
+          "highlight": ["metricos"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 50
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el triángulo formado por el ojo, P y D₁ es isósceles y rectángulo, así que PD₁ vale lo que la distancia del ojo al cuadro, {respuesta}.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
+          "highlight": ["metricos"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 50
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar la altura del ojo como distancia de los puntos de distancia. La medida que cuenta es la distancia del ojo al cuadro, {distanciaOjo}, no su altura.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
+          "highlight": ["metricos"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40]
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 50
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "El cubo está girado 20° respecto al cuadro y el observador está a 80 mm. ¿A qué distancia de P está el punto de fuga más cercano?",
+      "answer": 29.1,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "fugaCercana",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 80,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.",
+        "Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.",
+        "Mide desde P hasta el corte de esa paralela con el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto de fuga más cercano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 45
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "El cubo está girado 35° respecto al cuadro y el observador está a 60 mm. ¿A qué distancia de P está el punto de fuga más lejano?",
+      "answer": 85.7,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "fugaLejana",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 35
+          },
+          "observador": {
+            "x": 0,
+            "d": 60,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.",
+        "Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.",
+        "Mide desde P hasta el corte de esa paralela con el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto de fuga más lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada paralela corta al horizonte en un punto de fuga. El más lejano queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "value",
       "difficulty": 3,
-      "prompt": "Como en la PAU: cubo girado 30° respecto al cuadro y observador a 70 mm. ¿A qué distancia de P está el punto de fuga más cercano?",
-      "answer": 40.4,
+      "prompt": "Como en la PAU: cubo girado 25° respecto al cuadro y observador a 90 mm. ¿A qué distancia de P está el punto de fuga más cercano?",
+      "answer": 42,
       "unit": "mm",
       "tolerance": 1.5,
+      "magnitud": "fugaCercana",
       "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
       "sheet": ["cuadro", "perspectiva", "cuadricula"],
       "engines": {
         "conica": {
-          "solido": { "tipo": "cubo", "arista": 30, "centro": [0, -40], "giro": 30 },
-          "observador": { "x": 0, "d": 70, "h": 45 }
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 25
+          },
+          "observador": {
+            "x": 0,
+            "d": 90,
+            "h": 45
+          }
         }
-      }
+      },
+      "hints": [
+        "Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.",
+        "Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.",
+        "Mide desde P hasta el corte de esa paralela con el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto de fuga más cercano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: cubo girado 40° respecto al cuadro y observador a 50 mm. ¿A qué distancia de P está el punto de fuga más lejano?",
+      "answer": 59.6,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "fugaLejana",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 40
+          },
+          "observador": {
+            "x": 0,
+            "d": 50,
+            "h": 40
+          }
+        }
+      },
+      "hints": [
+        "Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.",
+        "Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.",
+        "Mide desde P hasta el corte de esa paralela con el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto de fuga más lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 50,
+                "h": 40
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 50,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 50,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 50,
+                "h": 40
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada paralela corta al horizonte en un punto de fuga. El más lejano queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 50,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 50,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 50,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: cubo girado 15° respecto al cuadro y observador a 100 mm. ¿A qué distancia de P está el punto de fuga más cercano?",
+      "answer": 26.8,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "fugaCercana",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 15
+          },
+          "observador": {
+            "x": 0,
+            "d": 100,
+            "h": 50
+          }
+        }
+      },
+      "hints": [
+        "Las aristas paralelas del cubo comparten un punto de fuga en el horizonte.",
+        "Para hallarlo, desde el ojo abatido se traza la paralela a esas aristas.",
+        "Mide desde P hasta el corte de esa paralela con el horizonte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto de fuga más cercano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 15
+              },
+              "observador": {
+                "x": 0,
+                "d": 100,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada arista horizontal del cubo tiene un punto de fuga en el horizonte. Está a una distancia de P igual a la del ojo por la tangente del ángulo que forma la arista con la perpendicular al cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": ["cuadro"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 15
+              },
+              "observador": {
+                "x": 0,
+                "d": 100,
+                "h": 50
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina las aristas del cubo alejándose hasta el infinito: las de una dirección convergen en un punto del horizonte, y las de la otra, en otro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 15
+              },
+              "observador": {
+                "x": 0,
+                "d": 100,
+                "h": 50
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el observador y traza, desde el ojo, las paralelas a las dos direcciones de las aristas horizontales del cubo, que se ven en la planta.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["observador"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 15
+              },
+              "observador": {
+                "x": 0,
+                "d": 100,
+                "h": 50
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Cada paralela corta al horizonte en un punto de fuga. El más cercano queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 15
+              },
+              "observador": {
+                "x": 0,
+                "d": 100,
+                "h": 50
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los dos puntos de fuga están en el horizonte, a uno y otro lado de P, y sus distancias a P salen de la del ojo por la tangente de cada ángulo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 15
+              },
+              "observador": {
+                "x": 0,
+                "d": 100,
+                "h": 50
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": ["perspectiva"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 15
+              },
+              "observador": {
+                "x": 0,
+                "d": 100,
+                "h": 50
+              },
+              "fugas": true
+            }
+          }
+        }
+      ]
     }
   ]
 }

@@ -27,6 +27,15 @@ const COMPLETE_LESSONS: string[] = [
   'angulos-distancias',
   'seccion-piramide',
   'poliedros-regulares',
+  'cono-cilindro',
+  'potencia-tangencias',
+  'homologia-afinidad',
+  'conicas-trazado',
+  'lugares-geometricos',
+  'tangencias-basicas',
+  'vistas-isometrica',
+  'octaedro-isometrica',
+  'paralelas-se-juntan',
 ];
 
 const lessonNamed = (id: string): Lesson => {
