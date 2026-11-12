@@ -496,11 +496,20 @@
     {
       "kind": "engine",
       "difficulty": 1,
-      "prompt": "La homología tiene centro O, eje e y transforma A en A′. Arrastra Z hasta B′, el homólogo de B.",
+      "prompt": "Con el eje horizontal, la homología tiene centro O y transforma A en A′. Arrastra Z hasta B′, el homólogo de B.",
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
           "visibles": ["e", "O", "A", "B", "lOA", "A2", "Z"],
+          "posiciones": {
+            "E1": [-70, 0],
+            "E2": [70, 0],
+            "O": [0, 60],
+            "A": [-20, 20],
+            "A2": [-35, -10],
+            "B": [20, 30],
+            "Z": [60, 50]
+          },
           "respuesta": {
             "mover": "Z",
             "objetivo": "B2",
@@ -509,16 +518,208 @@
             "pista": "Prolonga AB hasta el eje: ese punto es doble. Únelo con A′ y corta con la recta OB."
           }
         }
-      }
+      },
+      "hints": [
+        "Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.",
+        "El homólogo de B está en la recta OB y en la recta que une A′ con el punto doble de AB.",
+        "Prolonga AB hasta el eje, únelo con A′ y corta con la recta OB."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "O": [0, 60],
+                "A": [-20, 20],
+                "A2": [-35, -10],
+                "B": [20, 30],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "O": [0, 60],
+                "A": [-20, 20],
+                "A2": [-35, -10],
+                "B": [20, 30],
+                "Z": [60, 50]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "O": [0, 60],
+                "A": [-20, 20],
+                "A2": [-35, -10],
+                "B": [20, 30],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AB hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AB pasa por él y por A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "O": [0, 60],
+                "A": [-20, 20],
+                "A2": [-35, -10],
+                "B": [20, 30],
+                "Z": [60, 50]
+              },
+              "trazar": ["lAB", "M"],
+              "destacar": ["M"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta del punto doble a A′ y la recta OB: se cortan en B′, el homólogo de B. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "lMA2", "lOB", "B2", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "O": [0, 60],
+                "A": [-20, 20],
+                "A2": [-35, -10],
+                "B": [20, 30],
+                "Z": [56, -24]
+              },
+              "trazar": ["lMA2", "lOB", "B2"],
+              "destacar": ["B2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: O, B y B′ están alineados, y las rectas AB y A′B′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "lMA2", "lOB", "B2", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "O": [0, 60],
+                "A": [-20, 20],
+                "A2": [-35, -10],
+                "B": [20, 30],
+                "Z": [56, -24]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por A′ una paralela a AB. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "lMA2", "lOB", "B2", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "O": [0, 60],
+                "A": [-20, 20],
+                "A2": [-35, -10],
+                "B": [20, 30],
+                "Z": [56, -24]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-73.8, -19.7],
+                    [3.8, -0.3]
+                  ],
+                  "rotulo": "Error: paralela a AB"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "engine",
-      "difficulty": 2,
-      "prompt": "Ahora es una afinidad de eje e que transforma A en A′. Arrastra Z hasta B′, el afín de B.",
+      "difficulty": 1,
+      "prompt": "Con el eje horizontal y AA′ vertical, arrastra Z hasta B′, el afín de B.",
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
           "visibles": ["e", "A", "B", "lAA3", "A3", "Z"],
+          "posiciones": {
+            "E1": [-70, 0],
+            "E2": [70, 0],
+            "A": [-20, 20],
+            "A3": [-20, -10],
+            "B": [20, 40],
+            "Z": [60, 50]
+          },
           "respuesta": {
             "mover": "Z",
             "objetivo": "B3",
@@ -527,7 +728,1012 @@
             "pista": "En la afinidad no hay centro: B′ está en la paralela a AA′ que pasa por B."
           }
         }
-      }
+      },
+      "hints": [
+        "En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.",
+        "El afín de B está en la paralela a AA′ por B y en la recta que une A′ con el punto doble de AB.",
+        "Prolonga AB hasta el eje, únelo con A′ y corta con la paralela a AA′ por B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-20, 20],
+                "A3": [-20, -10],
+                "B": [20, 40],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-20, 20],
+                "A3": [-20, -10],
+                "B": [20, 40],
+                "Z": [60, 50]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-20, 20],
+                "A3": [-20, -10],
+                "B": [20, 40],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AB hasta cortar al eje: ese punto es doble. Traza por B la paralela a AA′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "dB", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-20, 20],
+                "A3": [-20, -10],
+                "B": [20, 40],
+                "Z": [60, 50]
+              },
+              "trazar": ["lAB", "M", "dB"],
+              "destacar": ["M"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta del punto doble a A′ corta a esa paralela en B′, el afín de B. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "lMA3", "dB", "B3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-20, 20],
+                "A3": [-20, -10],
+                "B": [20, 40],
+                "Z": [20, -20]
+              },
+              "trazar": ["lMA3", "B3"],
+              "destacar": ["B3"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: BB′ es paralela a AA′, y las rectas AB y A′B′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "lMA3", "dB", "B3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-20, 20],
+                "A3": [-20, -10],
+                "B": [20, 40],
+                "Z": [20, -20]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por B la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "lMA3", "dB", "B3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-20, 20],
+                "A3": [-20, -10],
+                "B": [20, 40],
+                "Z": [20, -20]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, 40],
+                    [60, 40]
+                  ],
+                  "rotulo": "Error: paralela al eje"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Con el eje horizontal y AA′ vertical, arrastra Z hasta C′, el afín de C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "C", "lAA3", "A3", "Z"],
+          "posiciones": {
+            "E1": [-70, 0],
+            "E2": [70, 0],
+            "A": [-30, 20],
+            "A3": [-30, -20],
+            "C": [10, 50],
+            "Z": [60, 50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C3",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! C′ está en la paralela a AA′ por C y en la recta que une A′ con el punto doble de AC.",
+            "pista": "En la afinidad no hay centro: C′ está en la paralela a AA′ que pasa por C."
+          }
+        }
+      },
+      "hints": [
+        "En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.",
+        "El afín de C está en la paralela a AA′ por C y en la recta que une A′ con el punto doble de AC.",
+        "Prolonga AC hasta el eje, únelo con A′ y corta con la paralela a AA′ por C."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-30, 20],
+                "A3": [-30, -20],
+                "C": [10, 50],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-30, 20],
+                "A3": [-30, -20],
+                "C": [10, 50],
+                "Z": [60, 50]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-30, 20],
+                "A3": [-30, -20],
+                "C": [10, 50],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AC hasta cortar al eje: ese punto es doble. Traza por C la paralela a AA′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "dC", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-30, 20],
+                "A3": [-30, -20],
+                "C": [10, 50],
+                "Z": [60, 50]
+              },
+              "trazar": ["lAC", "N", "dC"],
+              "destacar": ["N"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta del punto doble a A′ corta a esa paralela en C′, el afín de C. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "lNA3", "dC", "C3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-30, 20],
+                "A3": [-30, -20],
+                "C": [10, 50],
+                "Z": [10, -50]
+              },
+              "trazar": ["lNA3", "C3"],
+              "destacar": ["C3"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: CC′ es paralela a AA′, y las rectas AC y A′C′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "lNA3", "dC", "C3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-30, 20],
+                "A3": [-30, -20],
+                "C": [10, 50],
+                "Z": [10, -50]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por C la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "lNA3", "dC", "C3", "Z"],
+              "posiciones": {
+                "E1": [-70, 0],
+                "E2": [70, 0],
+                "A": [-30, 20],
+                "A3": [-30, -20],
+                "C": [10, 50],
+                "Z": [10, -50]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 50],
+                    [50, 50]
+                  ],
+                  "rotulo": "Error: paralela al eje"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "La homología tiene su eje inclinado. Arrastra Z hasta B′, el homólogo de B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "O", "A", "B", "lOA", "A2", "Z"],
+          "posiciones": {
+            "E1": [-70, -20],
+            "E2": [70, 0],
+            "O": [10, 70],
+            "A": [-25, 25],
+            "A2": [-46, -2],
+            "B": [30, 35],
+            "Z": [-60, 50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "B2",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! B′ está en la recta OB y en la recta que une A′ con el punto doble de AB.",
+            "pista": "Prolonga AB hasta el eje: ese punto es doble. Únelo con A′ y corta con la recta OB."
+          }
+        }
+      },
+      "hints": [
+        "Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.",
+        "El homólogo de B está en la recta OB y en la recta que une A′ con el punto doble de AB.",
+        "Prolonga AB hasta el eje, únelo con A′ y corta con la recta OB."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-70, -20],
+                "E2": [70, 0],
+                "O": [10, 70],
+                "A": [-25, 25],
+                "A2": [-46, -2],
+                "B": [30, 35],
+                "Z": [-60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "Z"],
+              "posiciones": {
+                "E1": [-70, -20],
+                "E2": [70, 0],
+                "O": [10, 70],
+                "A": [-25, 25],
+                "A2": [-46, -2],
+                "B": [30, 35],
+                "Z": [-60, 50]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-70, -20],
+                "E2": [70, 0],
+                "O": [10, 70],
+                "A": [-25, 25],
+                "A2": [-46, -2],
+                "B": [30, 35],
+                "Z": [-60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AB hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AB pasa por él y por A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "Z"],
+              "posiciones": {
+                "E1": [-70, -20],
+                "E2": [70, 0],
+                "O": [10, 70],
+                "A": [-25, 25],
+                "A2": [-46, -2],
+                "B": [30, 35],
+                "Z": [-60, 50]
+              },
+              "trazar": ["lAB", "M"],
+              "destacar": ["M"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta del punto doble a A′ y la recta OB: se cortan en B′, el homólogo de B. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "lMA2", "lOB", "B2", "Z"],
+              "posiciones": {
+                "E1": [-70, -20],
+                "E2": [70, 0],
+                "O": [10, 70],
+                "A": [-25, 25],
+                "A2": [-46, -2],
+                "B": [30, 35],
+                "Z": [43.1, 12.1]
+              },
+              "trazar": ["lMA2", "lOB", "B2"],
+              "destacar": ["B2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: O, B y B′ están alineados, y las rectas AB y A′B′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "lMA2", "lOB", "B2", "Z"],
+              "posiciones": {
+                "E1": [-70, -20],
+                "E2": [70, 0],
+                "O": [10, 70],
+                "A": [-25, 25],
+                "A2": [-46, -2],
+                "B": [30, 35],
+                "Z": [43.1, 12.1]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por A′ una paralela a AB. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "B", "lOA", "A2", "lAB", "M", "lMA2", "lOB", "B2", "Z"],
+              "posiciones": {
+                "E1": [-70, -20],
+                "E2": [70, 0],
+                "O": [10, 70],
+                "A": [-25, 25],
+                "A2": [-46, -2],
+                "B": [30, 35],
+                "Z": [43.1, 12.1]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-85.4, -9.2],
+                    [-6.6, 5.2]
+                  ],
+                  "rotulo": "Error: paralela a AB"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Con el eje inclinado, arrastra Z hasta C′, el homólogo de C en la homología de centro O.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "O", "A", "C", "lOA", "A2", "Z"],
+          "posiciones": {
+            "E1": [-70, -10],
+            "E2": [70, -30],
+            "O": [-10, 65],
+            "A": [10, 15],
+            "A2": [20, -10],
+            "C": [-30, 40],
+            "Z": [60, 50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C2",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! C′ está en la recta OC y en la recta que une A′ con el punto doble de AC.",
+            "pista": "Prolonga AC hasta el eje: ese punto es doble. Únelo con A′ y corta con la recta OC."
+          }
+        }
+      },
+      "hints": [
+        "Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.",
+        "El homólogo de C está en la recta OC y en la recta que une A′ con el punto doble de AC.",
+        "Prolonga AC hasta el eje, únelo con A′ y corta con la recta OC."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-70, -10],
+                "E2": [70, -30],
+                "O": [-10, 65],
+                "A": [10, 15],
+                "A2": [20, -10],
+                "C": [-30, 40],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "Z"],
+              "posiciones": {
+                "E1": [-70, -10],
+                "E2": [70, -30],
+                "O": [-10, 65],
+                "A": [10, 15],
+                "A2": [20, -10],
+                "C": [-30, 40],
+                "Z": [60, 50]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-70, -10],
+                "E2": [70, -30],
+                "O": [-10, 65],
+                "A": [10, 15],
+                "A2": [20, -10],
+                "C": [-30, 40],
+                "Z": [60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AC hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AC pasa por él y por A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "Z"],
+              "posiciones": {
+                "E1": [-70, -10],
+                "E2": [70, -30],
+                "O": [-10, 65],
+                "A": [10, 15],
+                "A2": [20, -10],
+                "C": [-30, 40],
+                "Z": [60, 50]
+              },
+              "trazar": ["lAC", "N"],
+              "destacar": ["N"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta del punto doble a A′ y la recta OC: se cortan en C′, el homólogo de C. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "lNA2", "lOC", "C2", "Z"],
+              "posiciones": {
+                "E1": [-70, -10],
+                "E2": [70, -30],
+                "O": [-10, 65],
+                "A": [10, 15],
+                "A2": [20, -10],
+                "C": [-30, 40],
+                "Z": [-50.8, 14]
+              },
+              "trazar": ["lNA2", "lOC", "C2"],
+              "destacar": ["C2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: O, C y C′ están alineados, y las rectas AC y A′C′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "lNA2", "lOC", "C2", "Z"],
+              "posiciones": {
+                "E1": [-70, -10],
+                "E2": [70, -30],
+                "O": [-10, 65],
+                "A": [10, 15],
+                "A2": [20, -10],
+                "C": [-30, 40],
+                "Z": [-50.8, 14]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por A′ una paralela a AC. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "lNA2", "lOC", "C2", "Z"],
+              "posiciones": {
+                "E1": [-70, -10],
+                "E2": [70, -30],
+                "O": [-10, 65],
+                "A": [10, 15],
+                "A2": [20, -10],
+                "C": [-30, 40],
+                "Z": [-50.8, 14]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [53.9, -31.2],
+                    [-13.9, 11.2]
+                  ],
+                  "rotulo": "Error: paralela a AC"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "La afinidad tiene el eje inclinado y AA′ oblicua. Arrastra Z hasta B′, el afín de B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "B", "lAA3", "A3", "Z"],
+          "posiciones": {
+            "E1": [-70, -25],
+            "E2": [70, -5],
+            "A": [-25, 25],
+            "A3": [-5, -5],
+            "B": [25, 45],
+            "Z": [-60, 50]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "B3",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! B′ está en la paralela a AA′ por B y en la recta que une A′ con el punto doble de AB.",
+            "pista": "En la afinidad no hay centro: B′ está en la paralela a AA′ que pasa por B."
+          }
+        }
+      },
+      "hints": [
+        "En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.",
+        "El afín de B está en la paralela a AA′ por B y en la recta que une A′ con el punto doble de AB.",
+        "Prolonga AB hasta el eje, únelo con A′ y corta con la paralela a AA′ por B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-70, -25],
+                "E2": [70, -5],
+                "A": [-25, 25],
+                "A3": [-5, -5],
+                "B": [25, 45],
+                "Z": [-60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "Z"],
+              "posiciones": {
+                "E1": [-70, -25],
+                "E2": [70, -5],
+                "A": [-25, 25],
+                "A3": [-5, -5],
+                "B": [25, 45],
+                "Z": [-60, 50]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-70, -25],
+                "E2": [70, -5],
+                "A": [-25, 25],
+                "A3": [-5, -5],
+                "B": [25, 45],
+                "Z": [-60, 50]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AB hasta cortar al eje: ese punto es doble. Traza por B la paralela a AA′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "dB", "Z"],
+              "posiciones": {
+                "E1": [-70, -25],
+                "E2": [70, -5],
+                "A": [-25, 25],
+                "A3": [-5, -5],
+                "B": [25, 45],
+                "Z": [-60, 50]
+              },
+              "trazar": ["lAB", "M", "dB"],
+              "destacar": ["M"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta del punto doble a A′ corta a esa paralela en B′, el afín de B. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "lMA3", "dB", "B3", "Z"],
+              "posiciones": {
+                "E1": [-70, -25],
+                "E2": [70, -5],
+                "A": [-25, 25],
+                "A3": [-5, -5],
+                "B": [25, 45],
+                "Z": [50.9, 6.1]
+              },
+              "trazar": ["lMA3", "B3"],
+              "destacar": ["B3"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: BB′ es paralela a AA′, y las rectas AB y A′B′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "lMA3", "dB", "B3", "Z"],
+              "posiciones": {
+                "E1": [-70, -25],
+                "E2": [70, -5],
+                "A": [-25, 25],
+                "A3": [-5, -5],
+                "B": [25, 45],
+                "Z": [50.9, 6.1]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por B la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "B", "lAA3", "A3", "lAB", "M", "lMA3", "dB", "B3", "Z"],
+              "posiciones": {
+                "E1": [-70, -25],
+                "E2": [70, -5],
+                "A": [-25, 25],
+                "A3": [-5, -5],
+                "B": [25, 45],
+                "Z": [50.9, 6.1]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-14.6, 39.3],
+                    [64.6, 50.7]
+                  ],
+                  "rotulo": "Error: paralela al eje"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "engine",
@@ -536,16 +1742,631 @@
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
-          "visibles": ["e", "O", "A", "D", "A2", "Z"],
+          "visibles": ["e", "O", "A", "D", "lOA", "A2", "Z"],
+          "posiciones": {
+            "E1": [-80, -30],
+            "E2": [80, -5],
+            "O": [20, 75],
+            "A": [-30, 30],
+            "A2": [-55, 8],
+            "D": [-35, 50],
+            "Z": [60, -20]
+          },
           "respuesta": {
             "mover": "Z",
             "objetivo": "D2",
             "tolerancia": 3,
-            "acierto": "¡Correcto! D′ está alineado con O y D, y la recta A′D′ corta a AD en el eje.",
-            "pista": "Una recta y su homóloga se cortan en el eje. Usa la recta AD y su punto doble."
+            "acierto": "¡Correcto! D′ está en la recta OD y en la recta que une A′ con el punto doble de AD.",
+            "pista": "Prolonga AD hasta el eje: ese punto es doble. Únelo con A′ y corta con la recta OD."
           }
         }
-      }
+      },
+      "hints": [
+        "Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.",
+        "El homólogo de D está en la recta OD y en la recta que une A′ con el punto doble de AD.",
+        "Prolonga AD hasta el eje, únelo con A′ y corta con la recta OD."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de D.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "D", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-80, -30],
+                "E2": [80, -5],
+                "O": [20, 75],
+                "A": [-30, 30],
+                "A2": [-55, 8],
+                "D": [-35, 50],
+                "Z": [60, -20]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "D", "lOA", "A2", "lAD", "K", "Z"],
+              "posiciones": {
+                "E1": [-80, -30],
+                "E2": [80, -5],
+                "O": [20, 75],
+                "A": [-30, 30],
+                "A2": [-55, 8],
+                "D": [-35, 50],
+                "Z": [60, -20]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "D", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-80, -30],
+                "E2": [80, -5],
+                "O": [20, 75],
+                "A": [-30, 30],
+                "A2": [-55, 8],
+                "D": [-35, 50],
+                "Z": [60, -20]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AD hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AD pasa por él y por A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "D", "lOA", "A2", "lAD", "K", "Z"],
+              "posiciones": {
+                "E1": [-80, -30],
+                "E2": [80, -5],
+                "O": [20, 75],
+                "A": [-30, 30],
+                "A2": [-55, 8],
+                "D": [-35, 50],
+                "Z": [60, -20]
+              },
+              "trazar": ["lAD", "K"],
+              "destacar": ["K"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta del punto doble a A′ y la recta OD: se cortan en D′, el homólogo de D. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "D", "lOA", "A2", "lAD", "K", "lKA2", "lOD", "D2", "Z"],
+              "posiciones": {
+                "E1": [-80, -30],
+                "E2": [80, -5],
+                "O": [20, 75],
+                "A": [-30, 30],
+                "A2": [-55, 8],
+                "D": [-35, 50],
+                "Z": [-82.3, 28.5]
+              },
+              "trazar": ["lKA2", "lOD", "D2"],
+              "destacar": ["D2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: O, D y D′ están alineados, y las rectas AD y A′D′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "D", "lOA", "A2", "lAD", "K", "lKA2", "lOD", "D2", "Z"],
+              "posiciones": {
+                "E1": [-80, -30],
+                "E2": [80, -5],
+                "O": [20, 75],
+                "A": [-30, 30],
+                "A2": [-55, 8],
+                "D": [-35, 50],
+                "Z": [-82.3, 28.5]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por A′ una paralela a AD. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "D", "lOA", "A2", "lAD", "K", "lKA2", "lOD", "D2", "Z"],
+              "posiciones": {
+                "E1": [-80, -30],
+                "E2": [80, -5],
+                "O": [20, 75],
+                "A": [-30, 30],
+                "A2": [-55, 8],
+                "D": [-35, 50],
+                "Z": [-82.3, 28.5]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-45.3, -30.8],
+                    [-64.7, 46.8]
+                  ],
+                  "rotulo": "Error: paralela a AD"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: arrastra Z hasta C′, el homólogo de C en la homología de centro O, eje e y par A, A′.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "O", "A", "C", "lOA", "A2", "Z"],
+          "posiciones": {
+            "E1": [-75, -35],
+            "E2": [75, -10],
+            "O": [-30, 70],
+            "A": [10, 25],
+            "A2": [42, -11],
+            "C": [35, 55],
+            "Z": [-60, -20]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C2",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! C′ está en la recta OC y en la recta que une A′ con el punto doble de AC.",
+            "pista": "Prolonga AC hasta el eje: ese punto es doble. Únelo con A′ y corta con la recta OC."
+          }
+        }
+      },
+      "hints": [
+        "Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.",
+        "El homólogo de C está en la recta OC y en la recta que une A′ con el punto doble de AC.",
+        "Prolonga AC hasta el eje, únelo con A′ y corta con la recta OC."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-75, -35],
+                "E2": [75, -10],
+                "O": [-30, 70],
+                "A": [10, 25],
+                "A2": [42, -11],
+                "C": [35, 55],
+                "Z": [-60, -20]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "Z"],
+              "posiciones": {
+                "E1": [-75, -35],
+                "E2": [75, -10],
+                "O": [-30, 70],
+                "A": [10, 25],
+                "A2": [42, -11],
+                "C": [35, 55],
+                "Z": [-60, -20]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "Z"],
+              "posiciones": {
+                "E1": [-75, -35],
+                "E2": [75, -10],
+                "O": [-30, 70],
+                "A": [10, 25],
+                "A2": [42, -11],
+                "C": [35, 55],
+                "Z": [-60, -20]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AC hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AC pasa por él y por A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "Z"],
+              "posiciones": {
+                "E1": [-75, -35],
+                "E2": [75, -10],
+                "O": [-30, 70],
+                "A": [10, 25],
+                "A2": [42, -11],
+                "C": [35, 55],
+                "Z": [-60, -20]
+              },
+              "trazar": ["lAC", "N"],
+              "destacar": ["N"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la recta del punto doble a A′ y la recta OC: se cortan en C′, el homólogo de C. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "lNA2", "lOC", "C2", "Z"],
+              "posiciones": {
+                "E1": [-75, -35],
+                "E2": [75, -10],
+                "O": [-30, 70],
+                "A": [10, 25],
+                "A2": [42, -11],
+                "C": [35, 55],
+                "Z": [183.1, 20.8]
+              },
+              "trazar": ["lNA2", "lOC", "C2"],
+              "destacar": ["C2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: O, C y C′ están alineados, y las rectas AC y A′C′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "lNA2", "lOC", "C2", "Z"],
+              "posiciones": {
+                "E1": [-75, -35],
+                "E2": [75, -10],
+                "O": [-30, 70],
+                "A": [10, 25],
+                "A2": [42, -11],
+                "C": [35, 55],
+                "Z": [183.1, 20.8]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por A′ una paralela a AC. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "O", "A", "C", "lOA", "A2", "lAC", "N", "lNA2", "lOC", "C2", "Z"],
+              "posiciones": {
+                "E1": [-75, -35],
+                "E2": [75, -10],
+                "O": [-30, 70],
+                "A": [10, 25],
+                "A2": [42, -11],
+                "C": [35, 55],
+                "Z": [183.1, 20.8]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [16.4, -41.7],
+                    [67.6, 19.7]
+                  ],
+                  "rotulo": "Error: paralela a AC"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: con la afinidad de eje e y par A, A′, arrastra Z hasta C′, el afín de C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["e", "A", "C", "lAA3", "A3", "Z"],
+          "posiciones": {
+            "E1": [-75, -30],
+            "E2": [75, -5],
+            "A": [-35, 30],
+            "A3": [-5, -12],
+            "C": [-20, 60],
+            "D": [40, 40],
+            "Z": [-60, -20]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C3",
+            "tolerancia": 3,
+            "acierto": "¡Correcto! C′ está en la paralela a AA′ por C y en la recta que une A′ con el punto doble de AC.",
+            "pista": "En la afinidad no hay centro: C′ está en la paralela a AA′ que pasa por C."
+          }
+        }
+      },
+      "hints": [
+        "En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.",
+        "El afín de C está en la paralela a AA′ por C y en la recta que une A′ con el punto doble de AC.",
+        "Prolonga AC hasta el eje, únelo con A′ y corta con la paralela a AA′ por C."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-75, -30],
+                "E2": [75, -5],
+                "A": [-35, 30],
+                "A3": [-5, -12],
+                "C": [-20, 60],
+                "D": [40, 40],
+                "Z": [-60, -20]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "Z"],
+              "posiciones": {
+                "E1": [-75, -30],
+                "E2": [75, -5],
+                "A": [-35, 30],
+                "A3": [-5, -12],
+                "C": [-20, 60],
+                "D": [40, 40],
+                "Z": [-60, -20]
+              },
+              "destacar": ["e"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "Z"],
+              "posiciones": {
+                "E1": [-75, -30],
+                "E2": [75, -5],
+                "A": [-35, 30],
+                "A3": [-5, -12],
+                "C": [-20, 60],
+                "D": [40, 40],
+                "Z": [-60, -20]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga la recta AC hasta cortar al eje: ese punto es doble. Traza por C la paralela a AA′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "dC", "Z"],
+              "posiciones": {
+                "E1": [-75, -30],
+                "E2": [75, -5],
+                "A": [-35, 30],
+                "A3": [-5, -12],
+                "C": [-20, 60],
+                "D": [40, 40],
+                "Z": [-60, -20]
+              },
+              "trazar": ["lAC", "N", "dC"],
+              "destacar": ["N"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta del punto doble a A′ corta a esa paralela en C′, el afín de C. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "lNA3", "dC", "C3", "Z"],
+              "posiciones": {
+                "E1": [-75, -30],
+                "E2": [75, -5],
+                "A": [-35, 30],
+                "A3": [-5, -12],
+                "C": [-20, 60],
+                "D": [40, 40],
+                "Z": [25.5, -3.7]
+              },
+              "trazar": ["lNA3", "C3"],
+              "destacar": ["C3"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: CC′ es paralela a AA′, y las rectas AC y A′C′ se cortan en el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "lNA3", "dC", "C3", "Z"],
+              "posiciones": {
+                "E1": [-75, -30],
+                "E2": [75, -5],
+                "A": [-35, 30],
+                "A3": [-5, -12],
+                "C": [-20, 60],
+                "D": [40, 40],
+                "Z": [25.5, -3.7]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar por C la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["e", "A", "C", "lAA3", "A3", "lAC", "N", "lNA3", "dC", "C3", "Z"],
+              "posiciones": {
+                "E1": [-75, -30],
+                "E2": [75, -5],
+                "A": [-35, 30],
+                "A3": [-5, -12],
+                "C": [-20, 60],
+                "D": [40, 40],
+                "Z": [25.5, -3.7]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-59.5, 53.4],
+                    [19.5, 66.6]
+                  ],
+                  "rotulo": "Error: paralela al eje"
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }

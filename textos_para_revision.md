@@ -932,9 +932,105 @@ Fichero: `src/content/lessons/14-homologia-afinidad.json` · DT II · nivel Avan
 
 **Ejercicios**
 
-1. [ ] *construcción en la lámina, dificultad 1*: La homología tiene centro O, eje e y transforma A en A′. Arrastra Z hasta B′, el homólogo de B.
-2. [ ] *construcción en la lámina, dificultad 2*: Ahora es una afinidad de eje e que transforma A en A′. Arrastra Z hasta B′, el afín de B.
-3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: con la homología de centro O, eje e y par A, A′, halla el homólogo de D y arrastra Z hasta él.
+1. [ ] *construcción en la lámina, dificultad 1*: Con el eje horizontal, la homología tiene centro O y transforma A en A′. Arrastra Z hasta B′, el homólogo de B.
+   - [ ] *Pista 1:* Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.
+   - [ ] *Pista 2:* El homólogo de B está en la recta OB y en la recta que une A′ con el punto doble de AB.
+   - [ ] *Pista 3:* Prolonga AB hasta el eje, únelo con A′ y corta con la recta OB.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AB hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AB pasa por él y por A′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la recta del punto doble a A′ y la recta OB: se cortan en B′, el homólogo de B. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: O, B y B′ están alineados, y las rectas AB y A′B′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por A′ una paralela a AB. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.
+2. [ ] *construcción en la lámina, dificultad 1*: Con el eje horizontal y AA′ vertical, arrastra Z hasta B′, el afín de B.
+   - [ ] *Pista 1:* En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.
+   - [ ] *Pista 2:* El afín de B está en la paralela a AA′ por B y en la recta que une A′ con el punto doble de AB.
+   - [ ] *Pista 3:* Prolonga AB hasta el eje, únelo con A′ y corta con la paralela a AA′ por B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AB hasta cortar al eje: ese punto es doble. Traza por B la paralela a AA′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta del punto doble a A′ corta a esa paralela en B′, el afín de B. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: BB′ es paralela a AA′, y las rectas AB y A′B′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por B la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.
+3. [ ] *construcción en la lámina, dificultad 1*: Con el eje horizontal y AA′ vertical, arrastra Z hasta C′, el afín de C.
+   - [ ] *Pista 1:* En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.
+   - [ ] *Pista 2:* El afín de C está en la paralela a AA′ por C y en la recta que une A′ con el punto doble de AC.
+   - [ ] *Pista 3:* Prolonga AC hasta el eje, únelo con A′ y corta con la paralela a AA′ por C.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de C.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AC hasta cortar al eje: ese punto es doble. Traza por C la paralela a AA′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta del punto doble a A′ corta a esa paralela en C′, el afín de C. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: CC′ es paralela a AA′, y las rectas AC y A′C′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por C la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.
+4. [ ] *construcción en la lámina, dificultad 2*: La homología tiene su eje inclinado. Arrastra Z hasta B′, el homólogo de B.
+   - [ ] *Pista 1:* Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.
+   - [ ] *Pista 2:* El homólogo de B está en la recta OB y en la recta que une A′ con el punto doble de AB.
+   - [ ] *Pista 3:* Prolonga AB hasta el eje, únelo con A′ y corta con la recta OB.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AB hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AB pasa por él y por A′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la recta del punto doble a A′ y la recta OB: se cortan en B′, el homólogo de B. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: O, B y B′ están alineados, y las rectas AB y A′B′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por A′ una paralela a AB. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.
+5. [ ] *construcción en la lámina, dificultad 2*: Con el eje inclinado, arrastra Z hasta C′, el homólogo de C en la homología de centro O.
+   - [ ] *Pista 1:* Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.
+   - [ ] *Pista 2:* El homólogo de C está en la recta OC y en la recta que une A′ con el punto doble de AC.
+   - [ ] *Pista 3:* Prolonga AC hasta el eje, únelo con A′ y corta con la recta OC.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de C.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AC hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AC pasa por él y por A′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la recta del punto doble a A′ y la recta OC: se cortan en C′, el homólogo de C. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: O, C y C′ están alineados, y las rectas AC y A′C′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por A′ una paralela a AC. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.
+6. [ ] *construcción en la lámina, dificultad 2*: La afinidad tiene el eje inclinado y AA′ oblicua. Arrastra Z hasta B′, el afín de B.
+   - [ ] *Pista 1:* En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.
+   - [ ] *Pista 2:* El afín de B está en la paralela a AA′ por B y en la recta que une A′ con el punto doble de AB.
+   - [ ] *Pista 3:* Prolonga AB hasta el eje, únelo con A′ y corta con la paralela a AA′ por B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AB hasta cortar al eje: ese punto es doble. Traza por B la paralela a AA′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta del punto doble a A′ corta a esa paralela en B′, el afín de B. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: BB′ es paralela a AA′, y las rectas AB y A′B′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por B la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: con la homología de centro O, eje e y par A, A′, halla el homólogo de D y arrastra Z hasta él.
+   - [ ] *Pista 1:* Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.
+   - [ ] *Pista 2:* El homólogo de D está en la recta OD y en la recta que une A′ con el punto doble de AD.
+   - [ ] *Pista 3:* Prolonga AD hasta el eje, únelo con A′ y corta con la recta OD.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de D.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AD hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AD pasa por él y por A′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la recta del punto doble a A′ y la recta OD: se cortan en D′, el homólogo de D. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: O, D y D′ están alineados, y las rectas AD y A′D′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por A′ una paralela a AD. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: arrastra Z hasta C′, el homólogo de C en la homología de centro O, eje e y par A, A′.
+   - [ ] *Pista 1:* Una recta y su homóloga se cortan siempre en el eje: los puntos del eje son dobles.
+   - [ ] *Pista 2:* El homólogo de C está en la recta OC y en la recta que une A′ con el punto doble de AC.
+   - [ ] *Pista 3:* Prolonga AC hasta el eje, únelo con A′ y corta con la recta OC.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una homología queda definida por su centro O, su eje e y un par de puntos homólogos, A y A′. Hay que hallar el homólogo de C.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada punto está alineado con su homólogo y el centro O, y cada recta corta a su homóloga en el eje. Con esas dos propiedades se obtiene cualquier homólogo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura proyectada desde O sobre otro plano y abatida: cada punto se desliza por la recta que lo une con O, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AC hasta cortar al eje: ese punto es su propio homólogo, y la homóloga de AC pasa por él y por A′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la recta del punto doble a A′ y la recta OC: se cortan en C′, el homólogo de C. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: O, C y C′ están alineados, y las rectas AC y A′C′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por A′ una paralela a AC. En una homología la recta y su homóloga se cortan en el eje, no son paralelas.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: con la afinidad de eje e y par A, A′, arrastra Z hasta C′, el afín de C.
+   - [ ] *Pista 1:* En una afinidad, las rectas que unen puntos afines son todas paralelas entre sí.
+   - [ ] *Pista 2:* El afín de C está en la paralela a AA′ por C y en la recta que une A′ con el punto doble de AC.
+   - [ ] *Pista 3:* Prolonga AC hasta el eje, únelo con A′ y corta con la paralela a AA′ por C.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una afinidad queda definida por su eje e y un par de puntos afines, A y A′. Hay que hallar el afín de C.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada recta corta a su afín en el eje, y las rectas que unen puntos afines son paralelas, con la dirección de AA′. Con eso se obtiene cualquier afín.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la figura deslizándose en la dirección de AA′: cada punto se mueve por una recta paralela a AA′, y los puntos del eje no se mueven.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Prolonga la recta AC hasta cortar al eje: ese punto es doble. Traza por C la paralela a AA′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta del punto doble a A′ corta a esa paralela en C′, el afín de C. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: CC′ es paralela a AA′, y las rectas AC y A′C′ se cortan en el eje.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar por C la paralela al eje en vez de a AA′. La dirección de la afinidad la da el par A y A′.
 
 ### II-04 · Cónicas: definición, trazado por puntos y tangentes
 
