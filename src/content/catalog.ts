@@ -140,7 +140,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 1,
     pauNote: 'Base del ejercicio 1',
     scene: 'Centros de tangencia como lugares geométricos',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'I-07',

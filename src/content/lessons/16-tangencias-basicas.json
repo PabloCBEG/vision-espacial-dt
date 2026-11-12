@@ -1,0 +1,3276 @@
+{
+  "id": "tangencias-basicas",
+  "order": 2,
+  "title": "Tangencias y enlaces: el centro como lugar geométrico",
+  "topic": "I-06",
+  "stage": "DT I",
+  "saberBasico": "Geometría plana: tangencias entre rectas y circunferencias, y enlaces. El centro de la circunferencia tangente como corte de lugares geométricos.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "O1",
+            "tipo": "punto",
+            "en": [-45, 15],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "k1",
+            "tipo": "circunferencia",
+            "centro": "O1",
+            "radio": 20,
+            "rol": "dato",
+            "etiqueta": "k"
+          },
+          {
+            "id": "T",
+            "tipo": "puntoSobre",
+            "sobre": "k1",
+            "t": 0.1,
+            "etiqueta": "T"
+          },
+          {
+            "id": "rOT",
+            "tipo": "recta",
+            "por": ["O1", "T"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "sOT",
+            "tipo": "segmento",
+            "por": ["O1", "T"],
+            "rol": "proceso"
+          },
+          {
+            "id": "tg",
+            "tipo": "perpendicular",
+            "a": "rOT",
+            "por": "T",
+            "rol": "resultado",
+            "etiqueta": "t"
+          },
+          {
+            "id": "P",
+            "tipo": "punto",
+            "en": [20, 40],
+            "etiqueta": "P"
+          },
+          {
+            "id": "MP",
+            "tipo": "puntoMedio",
+            "de": ["P", "O1"],
+            "rol": "auxiliar",
+            "etiqueta": "M"
+          },
+          {
+            "id": "cMP",
+            "tipo": "circunferencia",
+            "centro": "MP",
+            "pasaPor": "P",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "TP1",
+            "tipo": "interseccion",
+            "de": ["cMP", "k1"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "T₁"
+          },
+          {
+            "id": "TP2",
+            "tipo": "interseccion",
+            "de": ["cMP", "k1"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "T₂"
+          },
+          {
+            "id": "sP1",
+            "tipo": "recta",
+            "por": ["P", "TP1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "sP2",
+            "tipo": "recta",
+            "por": ["P", "TP2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "oT1",
+            "tipo": "segmento",
+            "por": ["O1", "TP1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "oT2",
+            "tipo": "segmento",
+            "por": ["O1", "TP2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "Q1",
+            "tipo": "punto",
+            "en": [30, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "ka",
+            "tipo": "circunferencia",
+            "centro": "Q1",
+            "radio": 20,
+            "rol": "dato",
+            "etiqueta": "k₁"
+          },
+          {
+            "id": "Q2",
+            "tipo": "punto",
+            "en": [62, -25],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "kb",
+            "tipo": "circunferencia",
+            "centro": "Q2",
+            "radio": 12,
+            "rol": "dato",
+            "etiqueta": "k₂"
+          },
+          {
+            "id": "lQ",
+            "tipo": "recta",
+            "por": ["Q1", "Q2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "TE",
+            "tipo": "interseccion",
+            "de": ["ka", "lQ"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "T"
+          },
+          {
+            "id": "Q3",
+            "tipo": "punto",
+            "en": [-45, -30],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "kc",
+            "tipo": "circunferencia",
+            "centro": "Q3",
+            "radio": 20,
+            "rol": "dato",
+            "etiqueta": "k₁"
+          },
+          {
+            "id": "Q4",
+            "tipo": "punto",
+            "en": [-57, -30],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "kd",
+            "tipo": "circunferencia",
+            "centro": "Q4",
+            "radio": 8,
+            "rol": "dato",
+            "etiqueta": "k₂"
+          },
+          {
+            "id": "lI",
+            "tipo": "recta",
+            "por": ["Q3", "Q4"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "TI",
+            "tipo": "interseccion",
+            "de": ["kc", "lI"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "T"
+          },
+          {
+            "id": "S1",
+            "tipo": "punto",
+            "en": [-60, -8],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "S2",
+            "tipo": "punto",
+            "en": [60, -8],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "s",
+            "tipo": "recta",
+            "por": ["S1", "S2"],
+            "rol": "dato",
+            "etiqueta": "s"
+          },
+          {
+            "id": "K",
+            "tipo": "punto",
+            "en": [0, 20],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "kk",
+            "tipo": "circunferencia",
+            "centro": "K",
+            "radio": 20,
+            "rol": "dato",
+            "etiqueta": "k"
+          },
+          {
+            "id": "an",
+            "tipo": "perpendicular",
+            "a": "s",
+            "por": "K",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "aF",
+            "tipo": "interseccion",
+            "de": ["s", "an"],
+            "rol": "auxiliar",
+            "etiqueta": ""
+          },
+          {
+            "id": "al",
+            "tipo": "recta",
+            "por": ["aF", "K"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "ac",
+            "tipo": "circunferencia",
+            "centro": "aF",
+            "radio": 10,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "aW",
+            "tipo": "interseccion",
+            "de": ["ac", "al"],
+            "indice": 1,
+            "rol": "auxiliar",
+            "etiqueta": ""
+          },
+          {
+            "id": "ap",
+            "tipo": "paralela",
+            "a": "s",
+            "por": "aW",
+            "rol": "proceso"
+          },
+          {
+            "id": "cR",
+            "tipo": "circunferencia",
+            "centro": "K",
+            "radio": 30,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C1",
+            "tipo": "interseccion",
+            "de": ["ap", "cR"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "C₁"
+          },
+          {
+            "id": "C2",
+            "tipo": "interseccion",
+            "de": ["ap", "cR"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C₂"
+          },
+          {
+            "id": "c1",
+            "tipo": "circunferencia",
+            "centro": "C1",
+            "radio": 10,
+            "rol": "resultado"
+          },
+          {
+            "id": "c2",
+            "tipo": "circunferencia",
+            "centro": "C2",
+            "radio": 10,
+            "rol": "resultado"
+          },
+          {
+            "id": "u1n",
+            "tipo": "perpendicular",
+            "a": "s",
+            "por": "C1",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "U1",
+            "tipo": "interseccion",
+            "de": ["s", "u1n"],
+            "rol": "proceso",
+            "etiqueta": "T₁"
+          },
+          {
+            "id": "u2n",
+            "tipo": "perpendicular",
+            "a": "s",
+            "por": "C2",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "U2",
+            "tipo": "interseccion",
+            "de": ["s", "u2n"],
+            "rol": "proceso",
+            "etiqueta": "T₂"
+          },
+          {
+            "id": "lKC1",
+            "tipo": "recta",
+            "por": ["K", "C1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "V1",
+            "tipo": "interseccion",
+            "de": ["kk", "lKC1"],
+            "indice": 1,
+            "rol": "proceso",
+            "etiqueta": ""
+          },
+          {
+            "id": "V",
+            "tipo": "punto",
+            "en": [-55, -50],
+            "etiqueta": "V",
+            "fijo": true
+          },
+          {
+            "id": "Pa",
+            "tipo": "punto",
+            "en": [55, -35],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "Pb",
+            "tipo": "punto",
+            "en": [-25, 50],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "ra",
+            "tipo": "recta",
+            "por": ["V", "Pa"],
+            "rol": "dato",
+            "etiqueta": "a"
+          },
+          {
+            "id": "rb",
+            "tipo": "recta",
+            "por": ["V", "Pb"],
+            "rol": "dato",
+            "etiqueta": "b"
+          },
+          {
+            "id": "bn",
+            "tipo": "perpendicular",
+            "a": "ra",
+            "por": "Pb",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "bF",
+            "tipo": "interseccion",
+            "de": ["ra", "bn"],
+            "rol": "auxiliar",
+            "etiqueta": ""
+          },
+          {
+            "id": "bl",
+            "tipo": "recta",
+            "por": ["bF", "Pb"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "bc",
+            "tipo": "circunferencia",
+            "centro": "bF",
+            "radio": 15,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "bW",
+            "tipo": "interseccion",
+            "de": ["bc", "bl"],
+            "indice": 1,
+            "rol": "auxiliar",
+            "etiqueta": ""
+          },
+          {
+            "id": "bp",
+            "tipo": "paralela",
+            "a": "ra",
+            "por": "bW",
+            "rol": "proceso"
+          },
+          {
+            "id": "dn",
+            "tipo": "perpendicular",
+            "a": "rb",
+            "por": "Pa",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "dF",
+            "tipo": "interseccion",
+            "de": ["rb", "dn"],
+            "rol": "auxiliar",
+            "etiqueta": ""
+          },
+          {
+            "id": "dl",
+            "tipo": "recta",
+            "por": ["dF", "Pa"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "dc",
+            "tipo": "circunferencia",
+            "centro": "dF",
+            "radio": 15,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "dW",
+            "tipo": "interseccion",
+            "de": ["dc", "dl"],
+            "indice": 1,
+            "rol": "auxiliar",
+            "etiqueta": ""
+          },
+          {
+            "id": "dp",
+            "tipo": "paralela",
+            "a": "rb",
+            "por": "dW",
+            "rol": "proceso"
+          },
+          {
+            "id": "Cc",
+            "tipo": "interseccion",
+            "de": ["bp", "dp"],
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "ua",
+            "tipo": "perpendicular",
+            "a": "ra",
+            "por": "Cc",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "Ua",
+            "tipo": "interseccion",
+            "de": ["ra", "ua"],
+            "rol": "resultado",
+            "etiqueta": "T₁"
+          },
+          {
+            "id": "ub",
+            "tipo": "perpendicular",
+            "a": "rb",
+            "por": "Cc",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "Ub",
+            "tipo": "interseccion",
+            "de": ["rb", "ub"],
+            "rol": "resultado",
+            "etiqueta": "T₂"
+          },
+          {
+            "id": "arcE",
+            "tipo": "arco",
+            "centro": "Cc",
+            "desde": "Ub",
+            "hasta": "Ua",
+            "rol": "resultado"
+          },
+          {
+            "id": "A",
+            "tipo": "punto",
+            "en": [-40, 5],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "kA",
+            "tipo": "circunferencia",
+            "centro": "A",
+            "radio": 15,
+            "rol": "dato",
+            "etiqueta": "k₁"
+          },
+          {
+            "id": "B",
+            "tipo": "punto",
+            "en": [40, 12],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "kB",
+            "tipo": "circunferencia",
+            "centro": "B",
+            "radio": 20,
+            "rol": "dato",
+            "etiqueta": "k₂"
+          },
+          {
+            "id": "cAr",
+            "tipo": "circunferencia",
+            "centro": "A",
+            "radio": 40,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "cBr",
+            "tipo": "circunferencia",
+            "centro": "B",
+            "radio": 45,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "D1",
+            "tipo": "interseccion",
+            "de": ["cAr", "cBr"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "C₁"
+          },
+          {
+            "id": "D2",
+            "tipo": "interseccion",
+            "de": ["cAr", "cBr"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C₂"
+          },
+          {
+            "id": "lAD1",
+            "tipo": "recta",
+            "por": ["A", "D1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "lBD1",
+            "tipo": "recta",
+            "por": ["B", "D1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "TA1",
+            "tipo": "interseccion",
+            "de": ["kA", "lAD1"],
+            "indice": 1,
+            "rol": "proceso",
+            "etiqueta": "T₁"
+          },
+          {
+            "id": "TB1",
+            "tipo": "interseccion",
+            "de": ["kB", "lBD1"],
+            "indice": 1,
+            "rol": "proceso",
+            "etiqueta": "T₂"
+          },
+          {
+            "id": "sd1",
+            "tipo": "circunferencia",
+            "centro": "D1",
+            "radio": 25,
+            "rol": "resultado"
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [60, 45],
+            "etiqueta": "Z",
+            "rol": "resultado"
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Una recta es tangente a una circunferencia si la toca en un solo punto, T. El radio OT es perpendicular a la tangente en ese punto.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "k1", "T", "rOT", "sOT", "tg"],
+          "trazar": ["rOT", "sOT", "tg"],
+          "destacar": ["tg"]
+        }
+      }
+    },
+    {
+      "narration": "Desde un punto exterior P se pueden trazar dos tangentes. Como OT es perpendicular a PT, el punto T está en la circunferencia de diámetro OP.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "k1", "P", "MP", "cMP", "TP1", "TP2", "sP1", "sP2", "oT1", "oT2"],
+          "trazar": ["MP", "cMP", "TP1", "TP2", "sP1", "sP2", "oT1", "oT2"],
+          "destacar": ["cMP"]
+        }
+      }
+    },
+    {
+      "narration": "Dos circunferencias tangentes por fuera se tocan en un punto de la recta de los centros. La distancia entre los centros es la suma de los radios.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["Q1", "ka", "Q2", "kb", "lQ", "TE"],
+          "trazar": ["lQ", "TE"],
+          "destacar": ["TE"]
+        }
+      }
+    },
+    {
+      "narration": "Si una circunferencia es interior a la otra, también se tocan en la recta de los centros. Ahora la distancia entre los centros es la diferencia de los radios.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["Q3", "kc", "Q4", "kd", "lI", "TI"],
+          "trazar": ["lI", "TI"],
+          "destacar": ["TI"]
+        }
+      }
+    },
+    {
+      "narration": "Una circunferencia de radio r tangente a la recta s tiene su centro a distancia r de s. Por eso el centro está en una paralela a s.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["s", "K", "kk", "an", "aF", "al", "ac", "aW", "ap"],
+          "trazar": ["an", "aF", "al", "ac", "aW", "ap"],
+          "destacar": ["ap"]
+        }
+      }
+    },
+    {
+      "narration": "Si la circunferencia de radio r es tangente por fuera a k, la distancia entre los centros es R más r. Su centro está en la circunferencia concéntrica con k de radio R más r.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["s", "K", "kk", "ap", "cR"],
+          "trazar": ["cR"],
+          "destacar": ["cR"]
+        }
+      }
+    },
+    {
+      "narration": "El centro buscado está en la paralela y en la concéntrica: es su corte. Hay dos soluciones, y cada punto de tangencia está en la perpendicular a s por el centro o en la recta de centros.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "s",
+            "K",
+            "kk",
+            "ap",
+            "cR",
+            "C1",
+            "C2",
+            "c1",
+            "c2",
+            "u1n",
+            "U1",
+            "u2n",
+            "U2",
+            "lKC1",
+            "V1"
+          ],
+          "trazar": ["C1", "C2", "c1", "c2", "u1n", "U1", "u2n", "U2", "lKC1", "V1"],
+          "destacar": ["c1", "c2"]
+        }
+      }
+    },
+    {
+      "narration": "Para enlazar dos rectas con un arco de radio r, el centro está a distancia r de las dos. Es el corte de dos paralelas, una a cada recta, por el lado del interior del ángulo.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "V",
+            "Pa",
+            "Pb",
+            "ra",
+            "rb",
+            "bn",
+            "bF",
+            "bl",
+            "bc",
+            "bW",
+            "bp",
+            "dn",
+            "dF",
+            "dl",
+            "dc",
+            "dW",
+            "dp",
+            "Cc"
+          ],
+          "trazar": ["bn", "bF", "bl", "bc", "bW", "bp", "dn", "dF", "dl", "dc", "dW", "dp", "Cc"],
+          "destacar": ["bp", "dp", "Cc"]
+        }
+      }
+    },
+    {
+      "narration": "Los puntos de enlace son los pies de las perpendiculares desde el centro a las rectas. El arco va de un punto de enlace al otro y las dos rectas quedan tangentes a él.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "V",
+            "Pa",
+            "Pb",
+            "ra",
+            "rb",
+            "bp",
+            "dp",
+            "Cc",
+            "ua",
+            "Ua",
+            "ub",
+            "Ub",
+            "arcE"
+          ],
+          "trazar": ["ua", "Ua", "ub", "Ub", "arcE"],
+          "destacar": ["arcE"]
+        }
+      }
+    },
+    {
+      "narration": "Para enlazar dos circunferencias con un arco exterior de radio r, el centro está a R₁ más r de un centro y a R₂ más r del otro. Es el corte de dos concéntricas, y los puntos de enlace están en las rectas de centros.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "kA",
+            "B",
+            "kB",
+            "cAr",
+            "cBr",
+            "D1",
+            "D2",
+            "lAD1",
+            "lBD1",
+            "TA1",
+            "TB1",
+            "sd1"
+          ],
+          "trazar": ["cAr", "cBr", "D1", "D2", "lAD1", "lBD1", "TA1", "TB1", "sd1"],
+          "destacar": ["sd1"]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "El punto P está a 25 mm del centro O de una circunferencia de 20 mm de radio. Arrastra Z hasta uno de los dos puntos de tangencia.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "k1", "P", "Z"],
+          "posiciones": {
+            "O1": [0, 0],
+            "P": [25, 0],
+            "Z": [-50, 40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["TP1", "TP2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El radio hasta ese punto es perpendicular a la tangente desde P.",
+            "pista": "El punto de tangencia está en la circunferencia de diámetro OP."
+          }
+        }
+      },
+      "hints": [
+        "La tangente es perpendicular al radio en el punto de tangencia.",
+        "Por eso el ángulo O-T-P es recto, y T está en la circunferencia de diámetro OP.",
+        "Traza la circunferencia de diámetro OP y corta con la dada: salen los dos puntos de tangencia."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos un punto P exterior y una circunferencia k de centro O. Buscamos los puntos de tangencia de las dos tangentes desde P.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "P": [25, 0],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La tangente es perpendicular al radio en T, así que el ángulo OTP es recto. Por eso T está en la circunferencia de diámetro OP.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "P": [25, 0],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una recta que gira alrededor de P: toca a la circunferencia en dos posiciones, y en cada una el radio es perpendicular a ella.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "P": [25, 0],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el punto medio M de OP y la circunferencia de centro M que pasa por O y por P.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "MP", "cMP", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "P": [25, 0],
+                "Z": [-50, 40]
+              },
+              "trazar": ["MP", "cMP"],
+              "destacar": ["cMP"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Esa circunferencia corta a k en T₁ y T₂, los puntos de tangencia. Arrastra Z hasta uno y traza las tangentes.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O1",
+                "k1",
+                "P",
+                "MP",
+                "cMP",
+                "TP1",
+                "TP2",
+                "sP1",
+                "sP2",
+                "oT1",
+                "oT2",
+                "Z"
+              ],
+              "posiciones": {
+                "O1": [0, 0],
+                "P": [25, 0],
+                "Z": [16, -12]
+              },
+              "trazar": ["TP1", "TP2", "sP1", "sP2", "oT1", "oT2"],
+              "destacar": ["TP1", "TP2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los radios OT₁ y OT₂ son perpendiculares a las tangentes, y las dos tangentes desde P miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O1",
+                "k1",
+                "P",
+                "MP",
+                "cMP",
+                "TP1",
+                "TP2",
+                "sP1",
+                "sP2",
+                "oT1",
+                "oT2",
+                "Z"
+              ],
+              "posiciones": {
+                "O1": [0, 0],
+                "P": [25, 0],
+                "Z": [16, -12]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como punto de tangencia el punto de k más próximo a P. Ese punto está en la recta OP, y la tangente en él no pasa por P.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O1",
+                "k1",
+                "P",
+                "MP",
+                "cMP",
+                "TP1",
+                "TP2",
+                "sP1",
+                "sP2",
+                "oT1",
+                "oT2",
+                "Z"
+              ],
+              "posiciones": {
+                "O1": [0, 0],
+                "P": [25, 0],
+                "Z": [16, -12]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [25, 0],
+                    [20, 0]
+                  ],
+                  "rotulo": "Error: punto más próximo"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Busca una circunferencia de 10 mm de radio tangente a la recta s y tangente por fuera a k. Arrastra Z hasta su centro.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["s", "K", "kk", "Z"],
+          "posiciones": {
+            "S1": [-60, -6],
+            "S2": [60, -6],
+            "K": [10, 22],
+            "Z": [-50, 45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["C1", "C2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El centro está a distancia r de s y a distancia R más r del centro de k.",
+            "pista": "El centro está en la paralela a s a distancia r y en la concéntrica con k de radio R más r."
+          }
+        }
+      },
+      "hints": [
+        "El centro de una circunferencia tangente a la recta s está a distancia r de s, en una paralela.",
+        "Tangente por fuera a k significa que la distancia entre centros es R más r: el centro está en una concéntrica con k.",
+        "Traza la paralela a s a distancia r y la concéntrica con k de radio R más r: se cortan en los centros."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos una recta s, una circunferencia k y un radio r. Buscamos las circunferencias de radio r tangentes a s y tangentes por fuera a k.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "Z"],
+              "posiciones": {
+                "S1": [-60, -6],
+                "S2": [60, -6],
+                "K": [10, 22],
+                "Z": [-50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El centro está a distancia r de s y a distancia R más r del centro de k. Cada condición es un lugar geométrico: una paralela y una circunferencia concéntrica.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "Z"],
+              "posiciones": {
+                "S1": [-60, -6],
+                "S2": [60, -6],
+                "K": [10, 22],
+                "Z": [-50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia de radio r que rueda pegada a s: su centro recorre una paralela. Solo en dos posiciones también toca por fuera a k.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "ap", "Z"],
+              "posiciones": {
+                "S1": [-60, -6],
+                "S2": [60, -6],
+                "K": [10, 22],
+                "Z": [-50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a s a distancia r, por el lado donde está k: la perpendicular desde K y el radio r la determinan.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "an", "aF", "al", "ac", "aW", "ap", "Z"],
+              "posiciones": {
+                "S1": [-60, -6],
+                "S2": [60, -6],
+                "K": [10, 22],
+                "Z": [-50, 45]
+              },
+              "trazar": ["an", "aF", "al", "ac", "aW", "ap"],
+              "destacar": ["ap"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la circunferencia de centro K y radio R más r: corta a la paralela en los centros C₁ y C₂. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "s",
+                "K",
+                "kk",
+                "an",
+                "aF",
+                "al",
+                "ac",
+                "aW",
+                "ap",
+                "cR",
+                "C1",
+                "C2",
+                "Z"
+              ],
+              "posiciones": {
+                "S1": [-60, -6],
+                "S2": [60, -6],
+                "K": [10, 22],
+                "Z": [-14, 4]
+              },
+              "trazar": ["cR", "C1", "C2"],
+              "destacar": ["C1", "C2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la distancia de cada centro a s es r, su distancia a K es R más r, y los puntos de tangencia están en la perpendicular a s y en la recta KC.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "s",
+                "K",
+                "kk",
+                "an",
+                "aF",
+                "al",
+                "ac",
+                "aW",
+                "ap",
+                "cR",
+                "C1",
+                "C2",
+                "c1",
+                "c2",
+                "u1n",
+                "U1",
+                "u2n",
+                "U2",
+                "Z"
+              ],
+              "posiciones": {
+                "S1": [-60, -6],
+                "S2": [60, -6],
+                "K": [10, 22],
+                "Z": [-14, 4]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar la paralela por el lado contrario a k. Entonces el centro queda al otro lado de s y la circunferencia no toca a k por fuera.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "s",
+                "K",
+                "kk",
+                "an",
+                "aF",
+                "al",
+                "ac",
+                "aW",
+                "ap",
+                "cR",
+                "C1",
+                "C2",
+                "c1",
+                "c2",
+                "u1n",
+                "U1",
+                "u2n",
+                "U2",
+                "Z"
+              ],
+              "posiciones": {
+                "S1": [-60, -6],
+                "S2": [60, -6],
+                "K": [10, 22],
+                "Z": [-14, 4]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, -16],
+                    [60, -16]
+                  ],
+                  "rotulo": "Error: paralela por el otro lado"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Las dos rectas son perpendiculares. Arrastra Z hasta el centro del arco de 15 mm de radio que las enlaza.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+          "posiciones": {
+            "V": [-30, -30],
+            "Pa": [50, -30],
+            "Pb": [-30, 50],
+            "Z": [50, 45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "Cc",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El centro está a distancia r de las dos rectas.",
+            "pista": "El centro del arco está en una paralela a cada recta, a distancia r, por el lado interior del ángulo."
+          }
+        }
+      },
+      "hints": [
+        "El centro del arco de enlace está a distancia r de las dos rectas.",
+        "Está, por tanto, en una paralela a cada recta, por el lado interior del ángulo.",
+        "Traza las dos paralelas a distancia r: su corte es el centro."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos dos rectas que se cortan en V y un radio r. Buscamos el arco de radio r que las enlaza, tangente a las dos dentro de su ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El centro del arco está a distancia r de cada recta, así que está en una paralela a cada una. Es el corte de las dos paralelas, por el lado interior del ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia que crece dentro del ángulo tocando siempre a las dos rectas: su centro sigue la bisectriz hasta que el radio vale r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a la recta a a distancia r, por el lado donde está la recta b.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "bn", "bF", "bl", "bc", "bW", "bp", "Z"],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [50, 45]
+              },
+              "trazar": ["bn", "bF", "bl", "bc", "bW", "bp"],
+              "destacar": ["bp"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a b a distancia r, por el lado de a: se cortan en el centro C del arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [50, 45]
+              },
+              "trazar": ["dn", "dF", "dl", "dc", "dW", "dp", "Cc"],
+              "destacar": ["dp", "Cc"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Baja desde C las perpendiculares a las dos rectas: sus pies T₁ y T₂ son los puntos de enlace. Arrastra Z hasta C y traza el arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [-15, -15]
+              },
+              "trazar": ["ua", "Ua", "ub", "Ub", "arcE"],
+              "destacar": ["arcE"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: C está a distancia r de las dos rectas, los radios CT₁ y CT₂ son perpendiculares a ellas y el arco queda dentro del ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [-15, -15]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar una de las paralelas por el lado exterior del ángulo. El centro sale fuera del ángulo y el arco no enlaza las dos rectas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-30, -30],
+                "Pa": [50, -30],
+                "Pb": [-30, 50],
+                "Z": [-15, -15]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-90, -45],
+                    [30, -45]
+                  ],
+                  "rotulo": "Error: paralela por el exterior"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Desde el punto P se trazan dos tangentes a la circunferencia. Arrastra Z hasta uno de los puntos de tangencia.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "k1", "P", "Z"],
+          "posiciones": {
+            "O1": [-20, -10],
+            "P": [45, 30],
+            "Z": [-50, 40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["TP1", "TP2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El radio hasta ese punto es perpendicular a la tangente desde P.",
+            "pista": "El punto de tangencia está en la circunferencia de diámetro OP."
+          }
+        }
+      },
+      "hints": [
+        "La tangente es perpendicular al radio en el punto de tangencia.",
+        "Por eso el ángulo O-T-P es recto, y T está en la circunferencia de diámetro OP.",
+        "Traza la circunferencia de diámetro OP y corta con la dada: salen los dos puntos de tangencia."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos un punto P exterior y una circunferencia k de centro O. Buscamos los puntos de tangencia de las dos tangentes desde P.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "Z"],
+              "posiciones": {
+                "O1": [-20, -10],
+                "P": [45, 30],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La tangente es perpendicular al radio en T, así que el ángulo OTP es recto. Por eso T está en la circunferencia de diámetro OP.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "Z"],
+              "posiciones": {
+                "O1": [-20, -10],
+                "P": [45, 30],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una recta que gira alrededor de P: toca a la circunferencia en dos posiciones, y en cada una el radio es perpendicular a ella.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "Z"],
+              "posiciones": {
+                "O1": [-20, -10],
+                "P": [45, 30],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el punto medio M de OP y la circunferencia de centro M que pasa por O y por P.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "k1", "P", "MP", "cMP", "Z"],
+              "posiciones": {
+                "O1": [-20, -10],
+                "P": [45, 30],
+                "Z": [-50, 40]
+              },
+              "trazar": ["MP", "cMP"],
+              "destacar": ["cMP"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Esa circunferencia corta a k en T₁ y T₂, los puntos de tangencia. Arrastra Z hasta uno y traza las tangentes.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O1",
+                "k1",
+                "P",
+                "MP",
+                "cMP",
+                "TP1",
+                "TP2",
+                "sP1",
+                "sP2",
+                "oT1",
+                "oT2",
+                "Z"
+              ],
+              "posiciones": {
+                "O1": [-20, -10],
+                "P": [45, 30],
+                "Z": [-5.4, -23.7]
+              },
+              "trazar": ["TP1", "TP2", "sP1", "sP2", "oT1", "oT2"],
+              "destacar": ["TP1", "TP2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los radios OT₁ y OT₂ son perpendiculares a las tangentes, y las dos tangentes desde P miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O1",
+                "k1",
+                "P",
+                "MP",
+                "cMP",
+                "TP1",
+                "TP2",
+                "sP1",
+                "sP2",
+                "oT1",
+                "oT2",
+                "Z"
+              ],
+              "posiciones": {
+                "O1": [-20, -10],
+                "P": [45, 30],
+                "Z": [-5.4, -23.7]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como punto de tangencia el punto de k más próximo a P. Ese punto está en la recta OP, y la tangente en él no pasa por P.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O1",
+                "k1",
+                "P",
+                "MP",
+                "cMP",
+                "TP1",
+                "TP2",
+                "sP1",
+                "sP2",
+                "oT1",
+                "oT2",
+                "Z"
+              ],
+              "posiciones": {
+                "O1": [-20, -10],
+                "P": [45, 30],
+                "Z": [-5.4, -23.7]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [45, 30],
+                    [-3, 0.5]
+                  ],
+                  "rotulo": "Error: punto más próximo"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "La recta s está inclinada. Arrastra Z hasta el centro de una circunferencia de 10 mm de radio tangente a s y tangente por fuera a k.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["s", "K", "kk", "Z"],
+          "posiciones": {
+            "S1": [-60, -10],
+            "S2": [60, 10],
+            "K": [-15, 30],
+            "Z": [50, -40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["C1", "C2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El centro está a distancia r de s y a distancia R más r del centro de k.",
+            "pista": "El centro está en la paralela a s a distancia r y en la concéntrica con k de radio R más r."
+          }
+        }
+      },
+      "hints": [
+        "El centro de una circunferencia tangente a la recta s está a distancia r de s, en una paralela.",
+        "Tangente por fuera a k significa que la distancia entre centros es R más r: el centro está en una concéntrica con k.",
+        "Traza la paralela a s a distancia r y la concéntrica con k de radio R más r: se cortan en los centros."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos una recta s, una circunferencia k y un radio r. Buscamos las circunferencias de radio r tangentes a s y tangentes por fuera a k.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "Z"],
+              "posiciones": {
+                "S1": [-60, -10],
+                "S2": [60, 10],
+                "K": [-15, 30],
+                "Z": [50, -40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El centro está a distancia r de s y a distancia R más r del centro de k. Cada condición es un lugar geométrico: una paralela y una circunferencia concéntrica.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "Z"],
+              "posiciones": {
+                "S1": [-60, -10],
+                "S2": [60, 10],
+                "K": [-15, 30],
+                "Z": [50, -40]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia de radio r que rueda pegada a s: su centro recorre una paralela. Solo en dos posiciones también toca por fuera a k.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "ap", "Z"],
+              "posiciones": {
+                "S1": [-60, -10],
+                "S2": [60, 10],
+                "K": [-15, 30],
+                "Z": [50, -40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a s a distancia r, por el lado donde está k: la perpendicular desde K y el radio r la determinan.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["s", "K", "kk", "an", "aF", "al", "ac", "aW", "ap", "Z"],
+              "posiciones": {
+                "S1": [-60, -10],
+                "S2": [60, 10],
+                "K": [-15, 30],
+                "Z": [50, -40]
+              },
+              "trazar": ["an", "aF", "al", "ac", "aW", "ap"],
+              "destacar": ["ap"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la circunferencia de centro K y radio R más r: corta a la paralela en los centros C₁ y C₂. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "s",
+                "K",
+                "kk",
+                "an",
+                "aF",
+                "al",
+                "ac",
+                "aW",
+                "ap",
+                "cR",
+                "C1",
+                "C2",
+                "Z"
+              ],
+              "posiciones": {
+                "S1": [-60, -10],
+                "S2": [60, 10],
+                "K": [-15, 30],
+                "Z": [-31.4, 4.9]
+              },
+              "trazar": ["cR", "C1", "C2"],
+              "destacar": ["C1", "C2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la distancia de cada centro a s es r, su distancia a K es R más r, y los puntos de tangencia están en la perpendicular a s y en la recta KC.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "s",
+                "K",
+                "kk",
+                "an",
+                "aF",
+                "al",
+                "ac",
+                "aW",
+                "ap",
+                "cR",
+                "C1",
+                "C2",
+                "c1",
+                "c2",
+                "u1n",
+                "U1",
+                "u2n",
+                "U2",
+                "Z"
+              ],
+              "posiciones": {
+                "S1": [-60, -10],
+                "S2": [60, 10],
+                "K": [-15, 30],
+                "Z": [-31.4, 4.9]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: usar R menos r en vez de R más r. Esa circunferencia concéntrica da una tangencia interior, no la tangencia por fuera que se pide.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "s",
+                "K",
+                "kk",
+                "an",
+                "aF",
+                "al",
+                "ac",
+                "aW",
+                "ap",
+                "cR",
+                "C1",
+                "C2",
+                "c1",
+                "c2",
+                "u1n",
+                "U1",
+                "u2n",
+                "U2",
+                "Z"
+              ],
+              "posiciones": {
+                "S1": [-60, -10],
+                "S2": [60, 10],
+                "K": [-15, 30],
+                "Z": [-31.4, 4.9]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-5, 30],
+                    [-5.1, 31.6],
+                    [-5.5, 33.1],
+                    [-6.1, 34.5],
+                    [-6.9, 35.9],
+                    [-7.9, 37.1],
+                    [-9.1, 38.1],
+                    [-10.5, 38.9],
+                    [-11.9, 39.5],
+                    [-13.4, 39.9],
+                    [-15, 40],
+                    [-16.6, 39.9],
+                    [-18.1, 39.5],
+                    [-19.5, 38.9],
+                    [-20.9, 38.1],
+                    [-22.1, 37.1],
+                    [-23.1, 35.9],
+                    [-23.9, 34.5],
+                    [-24.5, 33.1],
+                    [-24.9, 31.6],
+                    [-25, 30],
+                    [-24.9, 28.4],
+                    [-24.5, 26.9],
+                    [-23.9, 25.5],
+                    [-23.1, 24.1],
+                    [-22.1, 22.9],
+                    [-20.9, 21.9],
+                    [-19.5, 21.1],
+                    [-18.1, 20.5],
+                    [-16.6, 20.1],
+                    [-15, 20],
+                    [-13.4, 20.1],
+                    [-11.9, 20.5],
+                    [-10.5, 21.1],
+                    [-9.1, 21.9],
+                    [-7.9, 22.9],
+                    [-6.9, 24.1],
+                    [-6.1, 25.5],
+                    [-5.5, 26.9],
+                    [-5.1, 28.4],
+                    [-5, 30]
+                  ],
+                  "rotulo": "Error: radio R − r"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Arrastra Z hasta el centro del arco de 15 mm de radio que enlaza las dos rectas dentro de su ángulo.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+          "posiciones": {
+            "V": [-50, -40],
+            "Pa": [50, -10],
+            "Pb": [0, 50],
+            "Z": [50, 45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "Cc",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El centro está a distancia r de las dos rectas.",
+            "pista": "El centro del arco está en una paralela a cada recta, a distancia r, por el lado interior del ángulo."
+          }
+        }
+      },
+      "hints": [
+        "El centro del arco de enlace está a distancia r de las dos rectas.",
+        "Está, por tanto, en una paralela a cada recta, por el lado interior del ángulo.",
+        "Traza las dos paralelas a distancia r: su corte es el centro."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos dos rectas que se cortan en V y un radio r. Buscamos el arco de radio r que las enlaza, tangente a las dos dentro de su ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El centro del arco está a distancia r de cada recta, así que está en una paralela a cada una. Es el corte de las dos paralelas, por el lado interior del ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia que crece dentro del ángulo tocando siempre a las dos rectas: su centro sigue la bisectriz hasta que el radio vale r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a la recta a a distancia r, por el lado donde está la recta b.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "bn", "bF", "bl", "bc", "bW", "bp", "Z"],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [50, 45]
+              },
+              "trazar": ["bn", "bF", "bl", "bc", "bW", "bp"],
+              "destacar": ["bp"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a b a distancia r, por el lado de a: se cortan en el centro C del arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [50, 45]
+              },
+              "trazar": ["dn", "dF", "dl", "dc", "dW", "dp", "Cc"],
+              "destacar": ["dp", "Cc"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Baja desde C las perpendiculares a las dos rectas: sus pies T₁ y T₂ son los puntos de enlace. Arrastra Z hasta C y traza el arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [-19, -15]
+              },
+              "trazar": ["ua", "Ua", "ub", "Ub", "arcE"],
+              "destacar": ["arcE"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: C está a distancia r de las dos rectas, los radios CT₁ y CT₂ son perpendiculares a ellas y el arco queda dentro del ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [-19, -15]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar una de las paralelas por el lado exterior del ángulo. El centro sale fuera del ángulo y el arco no enlaza las dos rectas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -40],
+                "Pa": [50, -10],
+                "Pb": [0, 50],
+                "Z": [-19, -15]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-32.5, -50.4],
+                    [82.4, -15.9]
+                  ],
+                  "rotulo": "Error: paralela por el exterior"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: enlaza las dos rectas con un arco de 15 mm de radio y arrastra Z hasta su punto de enlace T₁ con la recta a.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+          "posiciones": {
+            "V": [-50, -30],
+            "Pa": [55, -45],
+            "Pb": [-20, 55],
+            "Z": [50, 45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "Ua",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El punto de enlace es el pie de la perpendicular desde el centro del arco.",
+            "pista": "El centro del arco está en una paralela a cada recta, a distancia r, por el lado interior del ángulo."
+          }
+        }
+      },
+      "hints": [
+        "El punto de enlace es el pie de la perpendicular desde el centro del arco a la recta.",
+        "El centro del arco está a distancia r de las dos rectas: es el corte de dos paralelas.",
+        "Halla el centro con las dos paralelas y baja desde él la perpendicular a la recta a."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos dos rectas que se cortan en V y un radio r. Buscamos el arco de radio r que las enlaza, tangente a las dos dentro de su ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El centro del arco está a distancia r de cada recta, así que está en una paralela a cada una. Es el corte de las dos paralelas, por el lado interior del ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina una circunferencia que crece dentro del ángulo tocando siempre a las dos rectas: su centro sigue la bisectriz hasta que el radio vale r.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "Z"],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a la recta a a distancia r, por el lado donde está la recta b.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["V", "Pa", "Pb", "ra", "rb", "bn", "bF", "bl", "bc", "bW", "bp", "Z"],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [50, 45]
+              },
+              "trazar": ["bn", "bF", "bl", "bc", "bW", "bp"],
+              "destacar": ["bp"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la paralela a b a distancia r, por el lado de a: se cortan en el centro C del arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [50, 45]
+              },
+              "trazar": ["dn", "dF", "dl", "dc", "dW", "dp", "Cc"],
+              "destacar": ["dp", "Cc"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Baja desde C las perpendiculares a las dos rectas: sus pies T₁ y T₂ son los puntos de enlace. Arrastra Z hasta T₁ y traza el arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [-31.9, -32.6]
+              },
+              "trazar": ["ua", "Ua", "ub", "Ub", "arcE"],
+              "destacar": ["arcE"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: C está a distancia r de las dos rectas, los radios CT₁ y CT₂ son perpendiculares a ellas y el arco queda dentro del ángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [-31.9, -32.6]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar una de las paralelas por el lado exterior del ángulo. El centro sale fuera del ángulo y el arco no enlaza las dos rectas.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "V",
+                "Pa",
+                "Pb",
+                "ra",
+                "rb",
+                "bn",
+                "bF",
+                "bl",
+                "bc",
+                "bW",
+                "bp",
+                "dn",
+                "dF",
+                "dl",
+                "dc",
+                "dW",
+                "dp",
+                "Cc",
+                "ua",
+                "Ua",
+                "ub",
+                "Ub",
+                "arcE",
+                "Z"
+              ],
+              "posiciones": {
+                "V": [-50, -30],
+                "Pa": [55, -45],
+                "Pb": [-20, 55],
+                "Z": [-31.9, -32.6]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-94, -38.9],
+                    [24.8, -55.8]
+                  ],
+                  "rotulo": "Error: paralela por el exterior"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: busca el arco de 25 mm de radio tangente por fuera a las dos circunferencias y arrastra Z hasta el centro de una de las soluciones.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "kA", "B", "kB", "Z"],
+          "posiciones": {
+            "A": [-45, -10],
+            "B": [30, 10],
+            "Z": [-50, 45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["D1", "D2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El centro está a R₁ más r de A y a R₂ más r de B.",
+            "pista": "El centro del arco está en las concéntricas de radios R₁ más r y R₂ más r."
+          }
+        }
+      },
+      "hints": [
+        "Un arco tangente por fuera a una circunferencia tiene su centro a R más r del centro de esta.",
+        "El centro del arco está, por tanto, en una circunferencia concéntrica con cada una de las dadas.",
+        "Traza las dos concéntricas, de radios R₁ más r y R₂ más r, y busca su corte."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos dos circunferencias k₁ y k₂ y un radio r. Buscamos el arco de radio r tangente por fuera a las dos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "Z"],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El centro del arco está a R₁ más r de A y a R₂ más r de B. Es el corte de dos circunferencias concéntricas con las dadas.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "Z"],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un círculo de radio r que rueda por fuera de k₁: su centro recorre una circunferencia de radio R₁ más r. Solo en dos puntos también toca a k₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "Z"],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-50, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la circunferencia de centro A y radio R₁ más r: allí está el centro del arco si toca a k₁.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "cAr", "Z"],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-50, 45]
+              },
+              "trazar": ["cAr"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la de centro B y radio R₂ más r: se cortan en los centros C₁ y C₂ de las dos soluciones.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "cAr", "cBr", "D1", "D2", "Z"],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-50, 45]
+              },
+              "trazar": ["cBr", "D1", "D2"],
+              "destacar": ["D1", "D2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Une C₁ con A y con B: los puntos de tangencia están sobre esas rectas. Arrastra Z hasta un centro y traza el arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "kA",
+                "B",
+                "kB",
+                "cAr",
+                "cBr",
+                "D1",
+                "D2",
+                "lAD1",
+                "lBD1",
+                "TA1",
+                "TB1",
+                "sd1",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-14.6, 16]
+              },
+              "trazar": ["lAD1", "lBD1", "TA1", "TB1", "sd1"],
+              "destacar": ["sd1"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la distancia de C₁ a A es R₁ más r, la distancia a B es R₂ más r, y los puntos de enlace están en las rectas de centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "kA",
+                "B",
+                "kB",
+                "cAr",
+                "cBr",
+                "D1",
+                "D2",
+                "lAD1",
+                "lBD1",
+                "TA1",
+                "TB1",
+                "sd1",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-14.6, 16]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: restar los radios en vez de sumarlos. Con R menos r el arco sería tangente por dentro, no por fuera como se pide.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "kA",
+                "B",
+                "kB",
+                "cAr",
+                "cBr",
+                "D1",
+                "D2",
+                "lAD1",
+                "lBD1",
+                "TA1",
+                "TB1",
+                "sd1",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-45, -10],
+                "B": [30, 10],
+                "Z": [-14.6, 16]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, -10],
+                    [-35.1, -8.4],
+                    [-35.5, -6.9],
+                    [-36.1, -5.5],
+                    [-36.9, -4.1],
+                    [-37.9, -2.9],
+                    [-39.1, -1.9],
+                    [-40.5, -1.1],
+                    [-41.9, -0.5],
+                    [-43.4, -0.1],
+                    [-45, 0],
+                    [-46.6, -0.1],
+                    [-48.1, -0.5],
+                    [-49.5, -1.1],
+                    [-50.9, -1.9],
+                    [-52.1, -2.9],
+                    [-53.1, -4.1],
+                    [-53.9, -5.5],
+                    [-54.5, -6.9],
+                    [-54.9, -8.4],
+                    [-55, -10],
+                    [-54.9, -11.6],
+                    [-54.5, -13.1],
+                    [-53.9, -14.5],
+                    [-53.1, -15.9],
+                    [-52.1, -17.1],
+                    [-50.9, -18.1],
+                    [-49.5, -18.9],
+                    [-48.1, -19.5],
+                    [-46.6, -19.9],
+                    [-45, -20],
+                    [-43.4, -19.9],
+                    [-41.9, -19.5],
+                    [-40.5, -18.9],
+                    [-39.1, -18.1],
+                    [-37.9, -17.1],
+                    [-36.9, -15.9],
+                    [-36.1, -14.5],
+                    [-35.5, -13.1],
+                    [-35.1, -11.6],
+                    [-35, -10]
+                  ],
+                  "rotulo": "Error: radio R − r"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU, con otros datos: arrastra Z hasta un punto de enlace del arco de 25 mm de radio tangente por fuera a las dos circunferencias.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "kA", "B", "kB", "Z"],
+          "posiciones": {
+            "A": [-35, 20],
+            "B": [40, -10],
+            "Z": [-50, -45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["TA1", "TB1"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El punto de enlace está en la recta que une el centro del arco con el de la circunferencia.",
+            "pista": "El centro del arco está en las concéntricas de radios R₁ más r y R₂ más r."
+          }
+        }
+      },
+      "hints": [
+        "El punto de tangencia entre dos circunferencias está en la recta que une sus centros.",
+        "Primero se halla el centro del arco, como corte de dos concéntricas.",
+        "Une el centro del arco con el centro de la circunferencia dada: el punto de enlace es el corte con ella."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos dos circunferencias k₁ y k₂ y un radio r. Buscamos el arco de radio r tangente por fuera a las dos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "Z"],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-50, -45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El centro del arco está a R₁ más r de A y a R₂ más r de B. Es el corte de dos circunferencias concéntricas con las dadas.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "Z"],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-50, -45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un círculo de radio r que rueda por fuera de k₁: su centro recorre una circunferencia de radio R₁ más r. Solo en dos puntos también toca a k₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "Z"],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-50, -45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la circunferencia de centro A y radio R₁ más r: allí está el centro del arco si toca a k₁.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "cAr", "Z"],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-50, -45]
+              },
+              "trazar": ["cAr"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la de centro B y radio R₂ más r: se cortan en los centros C₁ y C₂ de las dos soluciones.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "kA", "B", "kB", "cAr", "cBr", "D1", "D2", "Z"],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-50, -45]
+              },
+              "trazar": ["cBr", "D1", "D2"],
+              "destacar": ["D1", "D2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Une C₁ con A y con B: los puntos de tangencia están sobre esas rectas. Arrastra Z hasta un punto de enlace y traza el arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "kA",
+                "B",
+                "kB",
+                "cAr",
+                "cBr",
+                "D1",
+                "D2",
+                "lAD1",
+                "lBD1",
+                "TA1",
+                "TB1",
+                "sd1",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-20, 19.3]
+              },
+              "trazar": ["lAD1", "lBD1", "TA1", "TB1", "sd1"],
+              "destacar": ["sd1"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la distancia de C₁ a A es R₁ más r, la distancia a B es R₂ más r, y los puntos de enlace están en las rectas de centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "kA",
+                "B",
+                "kB",
+                "cAr",
+                "cBr",
+                "D1",
+                "D2",
+                "lAD1",
+                "lBD1",
+                "TA1",
+                "TB1",
+                "sd1",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-20, 19.3]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: restar los radios en vez de sumarlos. Con R menos r el arco sería tangente por dentro, no por fuera como se pide.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "kA",
+                "B",
+                "kB",
+                "cAr",
+                "cBr",
+                "D1",
+                "D2",
+                "lAD1",
+                "lBD1",
+                "TA1",
+                "TB1",
+                "sd1",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-35, 20],
+                "B": [40, -10],
+                "Z": [-20, 19.3]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, 20],
+                    [-25.1, 21.6],
+                    [-25.5, 23.1],
+                    [-26.1, 24.5],
+                    [-26.9, 25.9],
+                    [-27.9, 27.1],
+                    [-29.1, 28.1],
+                    [-30.5, 28.9],
+                    [-31.9, 29.5],
+                    [-33.4, 29.9],
+                    [-35, 30],
+                    [-36.6, 29.9],
+                    [-38.1, 29.5],
+                    [-39.5, 28.9],
+                    [-40.9, 28.1],
+                    [-42.1, 27.1],
+                    [-43.1, 25.9],
+                    [-43.9, 24.5],
+                    [-44.5, 23.1],
+                    [-44.9, 21.6],
+                    [-45, 20],
+                    [-44.9, 18.4],
+                    [-44.5, 16.9],
+                    [-43.9, 15.5],
+                    [-43.1, 14.1],
+                    [-42.1, 12.9],
+                    [-40.9, 11.9],
+                    [-39.5, 11.1],
+                    [-38.1, 10.5],
+                    [-36.6, 10.1],
+                    [-35, 10],
+                    [-33.4, 10.1],
+                    [-31.9, 10.5],
+                    [-30.5, 11.1],
+                    [-29.1, 11.9],
+                    [-27.9, 12.9],
+                    [-26.9, 14.1],
+                    [-26.1, 15.5],
+                    [-25.5, 16.9],
+                    [-25.1, 18.4],
+                    [-25, 20]
+                  ],
+                  "rotulo": "Error: radio R − r"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

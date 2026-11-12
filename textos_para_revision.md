@@ -1250,6 +1250,132 @@ Fichero: `src/content/lessons/15-conicas-trazado.json` · DT II · nivel Avanzad
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: V está sobre el eje y a la misma distancia de F que de d. La parábola pasa por V y se abre hacia el lado del foco.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner el vértice en el foco. El foco queda a la mitad de la distancia a la directriz que el vértice: V equidista de F y de d.
 
+### I-06 · Tangencias y enlaces: el centro como lugar geométrico
+
+Fichero: `src/content/lessons/16-tangencias-basicas.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Geometría plana: tangencias entre rectas y circunferencias, y enlaces. El centro de la circunferencia tangente como corte de lugares geométricos.
+
+**Pasos**
+
+1. [ ] Una recta es tangente a una circunferencia si la toca en un solo punto, T. El radio OT es perpendicular a la tangente en ese punto.
+2. [ ] Desde un punto exterior P se pueden trazar dos tangentes. Como OT es perpendicular a PT, el punto T está en la circunferencia de diámetro OP.
+3. [ ] Dos circunferencias tangentes por fuera se tocan en un punto de la recta de los centros. La distancia entre los centros es la suma de los radios.
+4. [ ] Si una circunferencia es interior a la otra, también se tocan en la recta de los centros. Ahora la distancia entre los centros es la diferencia de los radios.
+5. [ ] Una circunferencia de radio r tangente a la recta s tiene su centro a distancia r de s. Por eso el centro está en una paralela a s.
+6. [ ] Si la circunferencia de radio r es tangente por fuera a k, la distancia entre los centros es R más r. Su centro está en la circunferencia concéntrica con k de radio R más r.
+7. [ ] El centro buscado está en la paralela y en la concéntrica: es su corte. Hay dos soluciones, y cada punto de tangencia está en la perpendicular a s por el centro o en la recta de centros.
+8. [ ] Para enlazar dos rectas con un arco de radio r, el centro está a distancia r de las dos. Es el corte de dos paralelas, una a cada recta, por el lado del interior del ángulo.
+9. [ ] Los puntos de enlace son los pies de las perpendiculares desde el centro a las rectas. El arco va de un punto de enlace al otro y las dos rectas quedan tangentes a él.
+10. [ ] Para enlazar dos circunferencias con un arco exterior de radio r, el centro está a R₁ más r de un centro y a R₂ más r del otro. Es el corte de dos concéntricas, y los puntos de enlace están en las rectas de centros.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: El punto P está a 25 mm del centro O de una circunferencia de 20 mm de radio. Arrastra Z hasta uno de los dos puntos de tangencia.
+   - [ ] *Pista 1:* La tangente es perpendicular al radio en el punto de tangencia.
+   - [ ] *Pista 2:* Por eso el ángulo O-T-P es recto, y T está en la circunferencia de diámetro OP.
+   - [ ] *Pista 3:* Traza la circunferencia de diámetro OP y corta con la dada: salen los dos puntos de tangencia.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un punto P exterior y una circunferencia k de centro O. Buscamos los puntos de tangencia de las dos tangentes desde P.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La tangente es perpendicular al radio en T, así que el ángulo OTP es recto. Por eso T está en la circunferencia de diámetro OP.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una recta que gira alrededor de P: toca a la circunferencia en dos posiciones, y en cada una el radio es perpendicular a ella.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el punto medio M de OP y la circunferencia de centro M que pasa por O y por P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Esa circunferencia corta a k en T₁ y T₂, los puntos de tangencia. Arrastra Z hasta uno y traza las tangentes.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los radios OT₁ y OT₂ son perpendiculares a las tangentes, y las dos tangentes desde P miden lo mismo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como punto de tangencia el punto de k más próximo a P. Ese punto está en la recta OP, y la tangente en él no pasa por P.
+2. [ ] *construcción en la lámina, dificultad 1*: Busca una circunferencia de 10 mm de radio tangente a la recta s y tangente por fuera a k. Arrastra Z hasta su centro.
+   - [ ] *Pista 1:* El centro de una circunferencia tangente a la recta s está a distancia r de s, en una paralela.
+   - [ ] *Pista 2:* Tangente por fuera a k significa que la distancia entre centros es R más r: el centro está en una concéntrica con k.
+   - [ ] *Pista 3:* Traza la paralela a s a distancia r y la concéntrica con k de radio R más r: se cortan en los centros.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una recta s, una circunferencia k y un radio r. Buscamos las circunferencias de radio r tangentes a s y tangentes por fuera a k.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro está a distancia r de s y a distancia R más r del centro de k. Cada condición es un lugar geométrico: una paralela y una circunferencia concéntrica.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia de radio r que rueda pegada a s: su centro recorre una paralela. Solo en dos posiciones también toca por fuera a k.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la paralela a s a distancia r, por el lado donde está k: la perpendicular desde K y el radio r la determinan.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la circunferencia de centro K y radio R más r: corta a la paralela en los centros C₁ y C₂. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la distancia de cada centro a s es r, su distancia a K es R más r, y los puntos de tangencia están en la perpendicular a s y en la recta KC.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar la paralela por el lado contrario a k. Entonces el centro queda al otro lado de s y la circunferencia no toca a k por fuera.
+3. [ ] *construcción en la lámina, dificultad 1*: Las dos rectas son perpendiculares. Arrastra Z hasta el centro del arco de 15 mm de radio que las enlaza.
+   - [ ] *Pista 1:* El centro del arco de enlace está a distancia r de las dos rectas.
+   - [ ] *Pista 2:* Está, por tanto, en una paralela a cada recta, por el lado interior del ángulo.
+   - [ ] *Pista 3:* Traza las dos paralelas a distancia r: su corte es el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos dos rectas que se cortan en V y un radio r. Buscamos el arco de radio r que las enlaza, tangente a las dos dentro de su ángulo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro del arco está a distancia r de cada recta, así que está en una paralela a cada una. Es el corte de las dos paralelas, por el lado interior del ángulo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia que crece dentro del ángulo tocando siempre a las dos rectas: su centro sigue la bisectriz hasta que el radio vale r.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la paralela a la recta a a distancia r, por el lado donde está la recta b.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la paralela a b a distancia r, por el lado de a: se cortan en el centro C del arco.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Baja desde C las perpendiculares a las dos rectas: sus pies T₁ y T₂ son los puntos de enlace. Arrastra Z hasta C y traza el arco.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: C está a distancia r de las dos rectas, los radios CT₁ y CT₂ son perpendiculares a ellas y el arco queda dentro del ángulo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar una de las paralelas por el lado exterior del ángulo. El centro sale fuera del ángulo y el arco no enlaza las dos rectas.
+4. [ ] *construcción en la lámina, dificultad 2*: Desde el punto P se trazan dos tangentes a la circunferencia. Arrastra Z hasta uno de los puntos de tangencia.
+   - [ ] *Pista 1:* La tangente es perpendicular al radio en el punto de tangencia.
+   - [ ] *Pista 2:* Por eso el ángulo O-T-P es recto, y T está en la circunferencia de diámetro OP.
+   - [ ] *Pista 3:* Traza la circunferencia de diámetro OP y corta con la dada: salen los dos puntos de tangencia.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un punto P exterior y una circunferencia k de centro O. Buscamos los puntos de tangencia de las dos tangentes desde P.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La tangente es perpendicular al radio en T, así que el ángulo OTP es recto. Por eso T está en la circunferencia de diámetro OP.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una recta que gira alrededor de P: toca a la circunferencia en dos posiciones, y en cada una el radio es perpendicular a ella.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el punto medio M de OP y la circunferencia de centro M que pasa por O y por P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Esa circunferencia corta a k en T₁ y T₂, los puntos de tangencia. Arrastra Z hasta uno y traza las tangentes.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los radios OT₁ y OT₂ son perpendiculares a las tangentes, y las dos tangentes desde P miden lo mismo.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como punto de tangencia el punto de k más próximo a P. Ese punto está en la recta OP, y la tangente en él no pasa por P.
+5. [ ] *construcción en la lámina, dificultad 2*: La recta s está inclinada. Arrastra Z hasta el centro de una circunferencia de 10 mm de radio tangente a s y tangente por fuera a k.
+   - [ ] *Pista 1:* El centro de una circunferencia tangente a la recta s está a distancia r de s, en una paralela.
+   - [ ] *Pista 2:* Tangente por fuera a k significa que la distancia entre centros es R más r: el centro está en una concéntrica con k.
+   - [ ] *Pista 3:* Traza la paralela a s a distancia r y la concéntrica con k de radio R más r: se cortan en los centros.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una recta s, una circunferencia k y un radio r. Buscamos las circunferencias de radio r tangentes a s y tangentes por fuera a k.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro está a distancia r de s y a distancia R más r del centro de k. Cada condición es un lugar geométrico: una paralela y una circunferencia concéntrica.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia de radio r que rueda pegada a s: su centro recorre una paralela. Solo en dos posiciones también toca por fuera a k.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la paralela a s a distancia r, por el lado donde está k: la perpendicular desde K y el radio r la determinan.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la circunferencia de centro K y radio R más r: corta a la paralela en los centros C₁ y C₂. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la distancia de cada centro a s es r, su distancia a K es R más r, y los puntos de tangencia están en la perpendicular a s y en la recta KC.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: usar R menos r en vez de R más r. Esa circunferencia concéntrica da una tangencia interior, no la tangencia por fuera que se pide.
+6. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el centro del arco de 15 mm de radio que enlaza las dos rectas dentro de su ángulo.
+   - [ ] *Pista 1:* El centro del arco de enlace está a distancia r de las dos rectas.
+   - [ ] *Pista 2:* Está, por tanto, en una paralela a cada recta, por el lado interior del ángulo.
+   - [ ] *Pista 3:* Traza las dos paralelas a distancia r: su corte es el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos dos rectas que se cortan en V y un radio r. Buscamos el arco de radio r que las enlaza, tangente a las dos dentro de su ángulo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro del arco está a distancia r de cada recta, así que está en una paralela a cada una. Es el corte de las dos paralelas, por el lado interior del ángulo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia que crece dentro del ángulo tocando siempre a las dos rectas: su centro sigue la bisectriz hasta que el radio vale r.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la paralela a la recta a a distancia r, por el lado donde está la recta b.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la paralela a b a distancia r, por el lado de a: se cortan en el centro C del arco.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Baja desde C las perpendiculares a las dos rectas: sus pies T₁ y T₂ son los puntos de enlace. Arrastra Z hasta C y traza el arco.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: C está a distancia r de las dos rectas, los radios CT₁ y CT₂ son perpendiculares a ellas y el arco queda dentro del ángulo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar una de las paralelas por el lado exterior del ángulo. El centro sale fuera del ángulo y el arco no enlaza las dos rectas.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: enlaza las dos rectas con un arco de 15 mm de radio y arrastra Z hasta su punto de enlace T₁ con la recta a.
+   - [ ] *Pista 1:* El punto de enlace es el pie de la perpendicular desde el centro del arco a la recta.
+   - [ ] *Pista 2:* El centro del arco está a distancia r de las dos rectas: es el corte de dos paralelas.
+   - [ ] *Pista 3:* Halla el centro con las dos paralelas y baja desde él la perpendicular a la recta a.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos dos rectas que se cortan en V y un radio r. Buscamos el arco de radio r que las enlaza, tangente a las dos dentro de su ángulo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro del arco está a distancia r de cada recta, así que está en una paralela a cada una. Es el corte de las dos paralelas, por el lado interior del ángulo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una circunferencia que crece dentro del ángulo tocando siempre a las dos rectas: su centro sigue la bisectriz hasta que el radio vale r.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la paralela a la recta a a distancia r, por el lado donde está la recta b.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la paralela a b a distancia r, por el lado de a: se cortan en el centro C del arco.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Baja desde C las perpendiculares a las dos rectas: sus pies T₁ y T₂ son los puntos de enlace. Arrastra Z hasta T₁ y traza el arco.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: C está a distancia r de las dos rectas, los radios CT₁ y CT₂ son perpendiculares a ellas y el arco queda dentro del ángulo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar una de las paralelas por el lado exterior del ángulo. El centro sale fuera del ángulo y el arco no enlaza las dos rectas.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: busca el arco de 25 mm de radio tangente por fuera a las dos circunferencias y arrastra Z hasta el centro de una de las soluciones.
+   - [ ] *Pista 1:* Un arco tangente por fuera a una circunferencia tiene su centro a R más r del centro de esta.
+   - [ ] *Pista 2:* El centro del arco está, por tanto, en una circunferencia concéntrica con cada una de las dadas.
+   - [ ] *Pista 3:* Traza las dos concéntricas, de radios R₁ más r y R₂ más r, y busca su corte.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos dos circunferencias k₁ y k₂ y un radio r. Buscamos el arco de radio r tangente por fuera a las dos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro del arco está a R₁ más r de A y a R₂ más r de B. Es el corte de dos circunferencias concéntricas con las dadas.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un círculo de radio r que rueda por fuera de k₁: su centro recorre una circunferencia de radio R₁ más r. Solo en dos puntos también toca a k₂.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la circunferencia de centro A y radio R₁ más r: allí está el centro del arco si toca a k₁.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la de centro B y radio R₂ más r: se cortan en los centros C₁ y C₂ de las dos soluciones.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Une C₁ con A y con B: los puntos de tangencia están sobre esas rectas. Arrastra Z hasta un centro y traza el arco.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la distancia de C₁ a A es R₁ más r, la distancia a B es R₂ más r, y los puntos de enlace están en las rectas de centros.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: restar los radios en vez de sumarlos. Con R menos r el arco sería tangente por dentro, no por fuera como se pide.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU, con otros datos: arrastra Z hasta un punto de enlace del arco de 25 mm de radio tangente por fuera a las dos circunferencias.
+   - [ ] *Pista 1:* El punto de tangencia entre dos circunferencias está en la recta que une sus centros.
+   - [ ] *Pista 2:* Primero se halla el centro del arco, como corte de dos concéntricas.
+   - [ ] *Pista 3:* Une el centro del arco con el centro de la circunferencia dada: el punto de enlace es el corte con ella.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos dos circunferencias k₁ y k₂ y un radio r. Buscamos el arco de radio r tangente por fuera a las dos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro del arco está a R₁ más r de A y a R₂ más r de B. Es el corte de dos circunferencias concéntricas con las dadas.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un círculo de radio r que rueda por fuera de k₁: su centro recorre una circunferencia de radio R₁ más r. Solo en dos puntos también toca a k₂.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la circunferencia de centro A y radio R₁ más r: allí está el centro del arco si toca a k₁.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la de centro B y radio R₂ más r: se cortan en los centros C₁ y C₂ de las dos soluciones.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Une C₁ con A y con B: los puntos de tangencia están sobre esas rectas. Arrastra Z hasta un punto de enlace y traza el arco.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la distancia de C₁ a A es R₁ más r, la distancia a B es R₂ más r, y los puntos de enlace están en las rectas de centros.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: restar los radios en vez de sumarlos. Con R menos r el arco sería tangente por dentro, no por fuera como se pide.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos
