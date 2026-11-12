@@ -116,70 +116,2278 @@
   "exercises": [
     {
       "kind": "condition",
-      "prompt": "Q está fuera del plano α. Muévelo hasta que esté en α: el aviso te dice a qué distancia está.",
+      "difficulty": 1,
+      "prompt": "Q está fuera del plano α. Llévalo hasta α: el aviso te dice cuánto te falta.",
       "condition": "pointOnPlane",
       "objects": ["Q", "α"],
       "points": {
-        "Q": [10, 30, 30]
+        "A": [-30, 10, 40],
+        "B": [30, 40, 10],
+        "C": [10, 50, 50],
+        "Q": [10, 20, 10]
       },
       "activePoint": "Q",
-      "show3d": ["planos", "plano:α", "trazas:α", "punto:Q", "proyecciones:Q", "medidas:Q"],
-      "sheet": ["lt", "trazas:α", "proyecciones:Q", "referencia:Q"]
-    },
-    {
-      "kind": "condition",
-      "prompt": "Mueve A, B o C hasta que el plano α sea paralelo a la LT.",
-      "condition": "planeParallelToLT",
-      "objects": ["α"],
-      "activePoint": "A",
       "show3d": [
         "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
         "punto:A",
         "punto:B",
         "punto:C",
         "proyecciones:A",
         "proyecciones:B",
         "proyecciones:C",
-        "plano:α",
-        "trazas:α"
+        "punto:Q",
+        "proyecciones:Q",
+        "medidas:Q"
       ],
       "sheet": [
         "lt",
+        "trazas:α",
+        "recta:r",
         "proyecciones:A",
         "proyecciones:B",
         "proyecciones:C",
         "referencia:A",
         "referencia:B",
         "referencia:C",
-        "trazas:α"
+        "proyecciones:Q",
+        "referencia:Q"
+      ],
+      "hints": [
+        "Un punto está en un plano si está en una recta del plano.",
+        "La recta r, por A y B, está en α: lleva Q sobre r.",
+        "Mueve Q hasta que Q′ esté en r′ y Q″ esté en r″."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C, y Q está fuera de él. Queremos llevar Q hasta α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["punto:Q"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un punto está en un plano si está en una recta del plano. La recta r, que pasa por A y por B, está contenida en α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Lleva Q sobre r: sus proyecciones Q′ y Q″ tienen que estar en r′ y r″, en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["punto:Q"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "Q": [0, 25, 25]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, Q′ queda sobre r′ y Q″ sobre r″, y los dos en una misma perpendicular a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Como r está en α, cualquier punto de r está en α: Q pertenece al plano.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: Q′ está en r′, Q″ está en r″ y el aviso de distancia de Q a α da cero.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["proyecciones:Q"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner Q′ en r′ y olvidar Q″. Con una sola proyección sobre r no basta: las dos tienen que estar sobre r.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, -25],
+                    [0, 10]
+                  ],
+                  "rotulo": "Error: Q″ fuera de r″"
+                }
+              ]
+            }
+          }
+        }
       ]
     },
     {
       "kind": "condition",
-      "prompt": "Mueve A, B o C hasta que el plano α contenga a la LT.",
-      "condition": "planeContainsLT",
+      "difficulty": 1,
+      "prompt": "Mueve B hasta que el plano α sea paralelo a la LT. Mira cómo quedan α₁ y α₂.",
+      "condition": "planeParallelToLT",
       "objects": ["α"],
-      "activePoint": "A",
+      "points": {
+        "A": [-40, 10, 30],
+        "B": [40, 50, 10],
+        "C": [0, 30, 50],
+        "Q": [10, 15, 7]
+      },
+      "activePoint": "B",
       "show3d": [
         "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "recta:r",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C"
+      ],
+      "hints": [
+        "Un plano paralelo a la LT contiene una recta paralela a la LT.",
+        "Hay que igualar la cota y el alejamiento de dos de sus puntos.",
+        "Mueve uno de ellos hasta que sus dos proyecciones queden paralelas a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C. Queremos que sea paralelo a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano es paralelo a la LT si contiene una recta paralela a la LT. Entonces sus trazas α₁ y α₂ son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["trazas:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B hasta que la recta AB sea paralela a la LT: toma la cota de A, {cotaA}, y su alejamiento, {alejA}.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [40, 10, 30]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, A′B′ y A″B″ son paralelas a la LT: α contiene una recta paralela a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Las trazas α₁ y α₂ salen paralelas a la LT: el plano es paralelo a ella y no la corta.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A y B tienen la misma cota, {cotaA}, y el mismo alejamiento, {alejA}; α₁ y α₂ son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar solo la cota de AB. Así la recta es horizontal, pero α₁ no sale paralela a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, -10],
+                    [40, -50]
+                  ],
+                  "rotulo": "Error: proyección horizontal inclinada"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "Mueve C hasta que el plano α contenga a la LT. Entonces α₁ y α₂ coinciden con ella.",
+      "condition": "planeContainsLT",
+      "objects": ["α"],
+      "points": {
+        "A": [-40, 5, 10],
+        "B": [40, 15, 30],
+        "C": [0, 20, 10],
+        "Q": [10, 15, 7]
+      },
+      "activePoint": "C",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "recta:r",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C"
+      ],
+      "hints": [
+        "Un plano que contiene a la LT tiene las dos trazas sobre ella.",
+        "En la vista de perfil, sus puntos están alineados con el origen.",
+        "Mueve un punto hasta que su cota y su alejamiento mantengan la razón de los otros dos."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C. Queremos que contenga a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano contiene a la LT si, visto de perfil, sus puntos están alineados con el origen, donde la LT se ve como un punto.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["trazas:α"],
+          "camera": "profile",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve C hasta que, visto de perfil, A, B y C estén alineados con el origen, donde está la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["punto:C"],
+          "camera": "profile",
+          "foldAngle": 0,
+          "points": {
+            "C": [0, 20, 40]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la vista de perfil, A, B y C están sobre una recta que pasa por el origen: el plano contiene a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "profile",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, α₁ y α₂ coinciden con la LT, así que las trazas no bastan: α se define con su tercera proyección.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: las trazas de α coinciden con la LT y la tercera proyección α₃ es una recta que pasa por el origen.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: alinear los puntos de perfil sin pasar por el origen. Así α es paralelo a la LT, pero no la contiene.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "front",
+          "foldAngle": 90
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "Q no está en α, que pasa por tres puntos de distintos cuadrantes. Llévalo hasta α.",
+      "condition": "pointOnPlane",
+      "objects": ["Q", "α"],
+      "points": {
+        "A": [-45, -15, 30],
+        "B": [30, 36, -12],
+        "C": [-5, 45, 45],
+        "Q": [15, 35, -30]
+      },
+      "activePoint": "Q",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
         "punto:A",
         "punto:B",
         "punto:C",
         "proyecciones:A",
         "proyecciones:B",
         "proyecciones:C",
-        "plano:α",
-        "trazas:α"
+        "punto:Q",
+        "proyecciones:Q",
+        "medidas:Q"
       ],
       "sheet": [
         "lt",
+        "trazas:α",
+        "recta:r",
         "proyecciones:A",
         "proyecciones:B",
         "proyecciones:C",
         "referencia:A",
         "referencia:B",
         "referencia:C",
-        "trazas:α"
+        "proyecciones:Q",
+        "referencia:Q"
+      ],
+      "hints": [
+        "Un punto está en un plano si está en una recta del plano.",
+        "La recta r, por A y B, está en α: lleva Q sobre r.",
+        "Mueve Q hasta que Q′ esté en r′ y Q″ esté en r″."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C, y Q está fuera de él. Queremos llevar Q hasta α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["punto:Q"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un punto está en un plano si está en una recta del plano. La recta r, que pasa por A y por B, está contenida en α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Lleva Q sobre r: sus proyecciones Q′ y Q″ tienen que estar en r′ y r″, en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["punto:Q"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "Q": [-20, 2, 16]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, Q′ queda sobre r′ y Q″ sobre r″, y los dos en una misma perpendicular a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Como r está en α, cualquier punto de r está en α: Q pertenece al plano.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: Q′ está en r′, Q″ está en r″ y el aviso de distancia de Q a α da cero.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["proyecciones:Q"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner Q′ en r′ y olvidar Q″. Con una sola proyección sobre r no basta: las dos tienen que estar sobre r.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, -2],
+                    [-20, -30]
+                  ],
+                  "rotulo": "Error: Q″ fuera de r″"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "Los puntos A, B y C están en distintos cuadrantes. Mueve B hasta que α sea paralelo a la LT.",
+      "condition": "planeParallelToLT",
+      "objects": ["α"],
+      "points": {
+        "A": [-30, 25, 20],
+        "B": [20, -15, 35],
+        "C": [-5, 45, -10],
+        "Q": [10, 15, 7]
+      },
+      "activePoint": "B",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "recta:r",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C"
+      ],
+      "hints": [
+        "Un plano paralelo a la LT contiene una recta paralela a la LT.",
+        "Hay que igualar la cota y el alejamiento de dos de sus puntos.",
+        "Mueve uno de ellos hasta que sus dos proyecciones queden paralelas a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C. Queremos que sea paralelo a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano es paralelo a la LT si contiene una recta paralela a la LT. Entonces sus trazas α₁ y α₂ son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["trazas:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B hasta que la recta AB sea paralela a la LT: toma la cota de A, {cotaA}, y su alejamiento, {alejA}.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [20, 25, 20]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, A′B′ y A″B″ son paralelas a la LT: α contiene una recta paralela a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Las trazas α₁ y α₂ salen paralelas a la LT: el plano es paralelo a ella y no la corta.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A y B tienen la misma cota, {cotaA}, y el mismo alejamiento, {alejA}; α₁ y α₂ son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar solo la cota de AB. Así la recta es horizontal, pero α₁ no sale paralela a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, -25],
+                    [20, 15]
+                  ],
+                  "rotulo": "Error: proyección horizontal inclinada"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "Mueve C hasta que el plano α contenga a la LT. Los tres puntos están en distintos cuadrantes.",
+      "condition": "planeContainsLT",
+      "objects": ["α"],
+      "points": {
+        "A": [-40, -15, -30],
+        "B": [30, 10, 20],
+        "C": [0, 20, 5],
+        "Q": [10, 15, 7]
+      },
+      "activePoint": "C",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "recta:r",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C"
+      ],
+      "hints": [
+        "Un plano que contiene a la LT tiene las dos trazas sobre ella.",
+        "En la vista de perfil, sus puntos están alineados con el origen.",
+        "Mueve un punto hasta que su cota y su alejamiento mantengan la razón de los otros dos."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C. Queremos que contenga a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano contiene a la LT si, visto de perfil, sus puntos están alineados con el origen, donde la LT se ve como un punto.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["trazas:α"],
+          "camera": "profile",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve C hasta que, visto de perfil, A, B y C estén alineados con el origen, donde está la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["punto:C"],
+          "camera": "profile",
+          "foldAngle": 0,
+          "points": {
+            "C": [0, 20, 40]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la vista de perfil, A, B y C están sobre una recta que pasa por el origen: el plano contiene a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "profile",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, α₁ y α₂ coinciden con la LT, así que las trazas no bastan: α se define con su tercera proyección.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: las trazas de α coinciden con la LT y la tercera proyección α₃ es una recta que pasa por el origen.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: alinear los puntos de perfil sin pasar por el origen. Así α es paralelo a la LT, pero no la contiene.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "front",
+          "foldAngle": 90
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: lleva Q hasta α, en la prolongación de la recta r y fuera del segmento AB.",
+      "condition": "pointOnPlane",
+      "objects": ["Q", "α"],
+      "points": {
+        "A": [-20, 30, -10],
+        "B": [40, 0, 20],
+        "C": [10, -20, 30],
+        "Q": [10, -30, 40]
+      },
+      "activePoint": "Q",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "punto:Q",
+        "proyecciones:Q",
+        "medidas:Q"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "recta:r",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C",
+        "proyecciones:Q",
+        "referencia:Q"
+      ],
+      "hints": [
+        "Un punto está en un plano si está en una recta del plano.",
+        "La recta r, por A y B, está en α: lleva Q sobre r.",
+        "Mueve Q hasta que Q′ esté en r′ y Q″ esté en r″."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C, y Q está fuera de él. Queremos llevar Q hasta α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["punto:Q"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un punto está en un plano si está en una recta del plano. La recta r, que pasa por A y por B, está contenida en α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Lleva Q sobre r: sus proyecciones Q′ y Q″ tienen que estar en r′ y r″, en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [],
+          "highlight": ["punto:Q"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "Q": [-50, 45, -25]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, Q′ queda sobre r′ y Q″ sobre r″, y los dos en una misma perpendicular a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Como r está en α, cualquier punto de r está en α: Q pertenece al plano.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: Q′ está en r′, Q″ está en r″ y el aviso de distancia de Q a α da cero.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q"
+          ],
+          "highlight": ["proyecciones:Q"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner Q′ en r′ y olvidar Q″. Con una sola proyección sobre r no basta: las dos tienen que estar sobre r.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "punto:Q",
+            "proyecciones:Q",
+            "medidas:Q"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-50, -45],
+                    [-50, 40]
+                  ],
+                  "rotulo": "Error: Q″ fuera de r″"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: mueve C hasta que α sea paralelo a la LT. Después comprueba sus trazas.",
+      "condition": "planeParallelToLT",
+      "objects": ["α"],
+      "points": {
+        "A": [-35, -20, -25],
+        "B": [5, 35, -5],
+        "C": [45, 30, 40],
+        "Q": [10, 15, 7]
+      },
+      "activePoint": "C",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "recta:r",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C"
+      ],
+      "hints": [
+        "Un plano paralelo a la LT contiene una recta paralela a la LT.",
+        "Hay que igualar la cota y el alejamiento de dos de sus puntos.",
+        "Mueve uno de ellos hasta que sus dos proyecciones queden paralelas a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C. Queremos que sea paralelo a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano es paralelo a la LT si contiene una recta paralela a la LT. Entonces sus trazas α₁ y α₂ son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["trazas:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve C hasta que la recta AC sea paralela a la LT: toma la cota de A, {cotaA}, y su alejamiento, {alejA}.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["punto:C"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "C": [45, -20, -25]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, A′C′ y A″C″ son paralelas a la LT: α contiene una recta paralela a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Las trazas α₁ y α₂ salen paralelas a la LT: el plano es paralelo a ella y no la corta.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A y C tienen la misma cota, {cotaA}, y el mismo alejamiento, {alejA}; α₁ y α₂ son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar solo la cota de AC. Así la recta es horizontal, pero α₁ no sale paralela a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, 20],
+                    [45, -30]
+                  ],
+                  "rotulo": "Error: proyección horizontal inclinada"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: mueve A y B hasta que α contenga a la LT, con C ya en su sitio.",
+      "condition": "planeContainsLT",
+      "objects": ["α"],
+      "points": {
+        "A": [-45, 20, 50],
+        "B": [40, 35, 10],
+        "C": [0, 25, 25],
+        "Q": [10, 15, 7]
+      },
+      "activePoint": "A",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "punto:A",
+        "punto:B",
+        "punto:C",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "recta:r",
+        "proyecciones:A",
+        "proyecciones:B",
+        "proyecciones:C",
+        "referencia:A",
+        "referencia:B",
+        "referencia:C"
+      ],
+      "hints": [
+        "Un plano que contiene a la LT tiene las dos trazas sobre ella.",
+        "En la vista de perfil, sus puntos están alineados con el origen.",
+        "Mueve un punto hasta que su cota y su alejamiento mantengan la razón de los otros dos."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "El plano α pasa por A, B y C. Queremos que contenga a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Un plano contiene a la LT si, visto de perfil, sus puntos están alineados con el origen, donde la LT se ve como un punto.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["trazas:α"],
+          "camera": "profile",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve A hasta que su cota sea igual a su alejamiento, como la de C: así A queda alineado con el origen en la vista de perfil.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["punto:A"],
+          "camera": "profile",
+          "foldAngle": 0,
+          "points": {
+            "A": [-45, 20, 20]
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B igual: su cota pasa a ser su alejamiento. Ahora A, B y C tienen cota y alejamiento iguales.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "profile",
+          "foldAngle": 0,
+          "points": {
+            "B": [40, 35, 35]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la vista de perfil, A, B y C están sobre una recta que pasa por el origen: el plano contiene a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "profile",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, α₁ y α₂ coinciden con la LT, así que las trazas no bastan: α se define con su tercera proyección.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["trazas:α"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: las trazas de α coinciden con la LT y la tercera proyección α₃ es una recta que pasa por el origen.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: alinear los puntos de perfil sin pasar por el origen. Así α es paralelo a la LT, pero no la contiene.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:A",
+            "punto:B",
+            "punto:C",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:A",
+            "proyecciones:B",
+            "proyecciones:C",
+            "referencia:A",
+            "referencia:B",
+            "referencia:C",
+            "perfil"
+          ],
+          "highlight": ["perfil"],
+          "camera": "front",
+          "foldAngle": 90
+        }
       ]
     }
   ]

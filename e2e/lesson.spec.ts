@@ -64,7 +64,7 @@ test.describe('lección 1: el punto', () => {
   test('ejercicio: detecta cota y alejamiento intercambiados y el acierto', async ({ page }) => {
     await openLesson(page);
     for (let i = 0; i < 8; i++) await page.keyboard.press('ArrowRight');
-    await expect(progress(page)).toContainText('Ejercicio 1 de 3');
+    await expect(progress(page)).toContainText('Ejercicio 1 de 9');
     // Objetivo: x 30, alejamiento 20, cota 35. Primero se intercambian.
     await page.getByRole('slider', { name: 'x', exact: true }).fill('30');
     await page.getByRole('slider', { name: 'Alejamiento (a)' }).fill('35');

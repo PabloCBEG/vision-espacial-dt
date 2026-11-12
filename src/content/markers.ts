@@ -55,6 +55,14 @@ export function exerciseMarkers(lesson: Lesson, exercise: Exercise): MarkerValue
     out[`alej${id}`] = formatMm(a);
     out[`cota${id}`] = formatMm(c);
   }
+  if (exercise.kind === 'placePoint') {
+    // Dónde hay que colocar el punto: x con su signo; alejamiento y cota en valor absoluto
+    // (el lado de la LT y el cuadrante se dicen con palabras).
+    const [x, a, c] = exercise.target;
+    out.xObj = formatMm(x);
+    out.alejObj = formatMm(Math.abs(a));
+    out.cotaObj = formatMm(Math.abs(c));
+  }
   if (exercise.kind !== 'value') return out;
 
   let value = exercise.answer;

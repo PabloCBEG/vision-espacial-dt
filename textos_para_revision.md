@@ -36,8 +36,104 @@ Fichero: `src/content/lessons/01-el-punto.json` · DT I · nivel Inicial
 **Ejercicios**
 
 1. [ ] *colocar el punto, dificultad 1*: Coloca P en el espacio para que sus proyecciones sean las de la lámina. Cada cuadro de la lámina mide 10 mm.
-2. [ ] *colocar el punto, dificultad 1*: Coloca P a partir de la lámina. Fíjate bien en qué proyección está sobre la LT y cuál debajo.
-3. [ ] *colocar el punto, dificultad 1*: Ahora P está en otro cuadrante. Colócalo en el espacio a partir de su lámina.
+   - [ ] *Pista 1:* P′ y P″ están en una misma línea de referencia, perpendicular a la LT.
+   - [ ] *Pista 2:* La cota se lee en P″ y el alejamiento, en P′; el lado de la LT en que están da el signo.
+   - [ ] *Pista 3:* Empieza por la cota: lleva P a la altura que marca P″ y después ajusta el alejamiento.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por encima de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 35 mm, se lee en P″ sobre la LT: P está por encima del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 20 mm, se lee en P′ bajo la LT: P está delante del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = 30 mm, P está en el primer cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: leer la cota en P′ y el alejamiento en P″. Así se intercambian y P quedaría con cota 20 mm y alejamiento 35 mm.
+2. [ ] *colocar el punto, dificultad 1*: Coloca P a partir de la lámina. Fíjate en qué proyección está sobre la LT y cuál debajo.
+   - [ ] *Pista 1:* P′ y P″ están en una misma línea de referencia, perpendicular a la LT.
+   - [ ] *Pista 2:* La cota se lee en P″ y el alejamiento, en P′; el lado de la LT en que están da el signo.
+   - [ ] *Pista 3:* Empieza por la cota: lleva P a la altura que marca P″ y después ajusta el alejamiento.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por encima de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 15 mm, se lee en P″ sobre la LT: P está por encima del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 40 mm, se lee en P′ bajo la LT: P está delante del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = −20 mm, P está en el primer cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: leer el alejamiento al revés. El positivo queda bajo la LT; con el signo cambiado, P pasaría al otro lado del PV.
+3. [ ] *colocar el punto, dificultad 1*: En la lámina, P″ está sobre la LT. Coloca P en el espacio y di en qué plano de proyección está.
+   - [ ] *Pista 1:* Si P″ está sobre la LT, la cota de P es nula.
+   - [ ] *Pista 2:* Un punto de cota nula está en el PH: P coincide con su proyección horizontal P′.
+   - [ ] *Pista 3:* Pon la cota a cero y ajusta el alejamiento con lo que marca P′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está sobre la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* P″ está sobre la LT: la cota es nula y P está en el PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 25 mm, se lee en P′ bajo la LT: P está delante del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = −30 mm, P está en el PH y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: leer la cota en P′ y el alejamiento en P″. Así se intercambian y P quedaría con cota 25 mm y alejamiento 0 mm.
+4. [ ] *colocar el punto, dificultad 2*: Ahora P está en otro cuadrante. Colócalo en el espacio a partir de su lámina.
+   - [ ] *Pista 1:* Si P′ está sobre la LT, el alejamiento es negativo y P está detrás del PV.
+   - [ ] *Pista 2:* Mira de qué lado de la LT cae cada proyección: eso da el signo de la cota y del alejamiento.
+   - [ ] *Pista 3:* Lleva primero P a la cota de P″ y después sitúalo detrás del PV según P′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por encima de la LT y P′ está por encima de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 35 mm, se lee en P″ sobre la LT: P está por encima del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 15 mm, se lee en P′ sobre la LT: P está detrás del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = 10 mm, P está en el segundo cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: leer el alejamiento al revés. El positivo queda bajo la LT; con el signo cambiado, P pasaría al otro lado del PV.
+5. [ ] *colocar el punto, dificultad 2*: Coloca P en el espacio a partir de su lámina. Decide si está por encima o por debajo del PH y delante o detrás del PV.
+   - [ ] *Pista 1:* Con P″ bajo la LT y P′ también bajo la LT, P está delante del PV y por debajo del PH.
+   - [ ] *Pista 2:* La cota negativa se lee bajo la LT en P″; el alejamiento positivo, bajo la LT en P′.
+   - [ ] *Pista 3:* Baja P bajo el PH hasta la cota de P″ y deja su alejamiento como marca P′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por debajo de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 25 mm, se lee en P″ bajo la LT: P está por debajo del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 30 mm, se lee en P′ bajo la LT: P está delante del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = 25 mm, P está en el cuarto cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: cambiar el signo de la cota. P pasaría al otro lado del PH y a otro cuadrante.
+6. [ ] *colocar el punto, dificultad 2*: Coloca P en el espacio a partir de su lámina, que no está en el primer cuadrante.
+   - [ ] *Pista 1:* Con P′ sobre la LT y P″ bajo la LT, P está detrás del PV y por debajo del PH.
+   - [ ] *Pista 2:* Es el tercer cuadrante: la cota y el alejamiento son negativos.
+   - [ ] *Pista 3:* Lleva P detrás del PV y bajo el PH, con la cota de P″ y el alejamiento de P′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por debajo de la LT y P′ está por encima de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 30 mm, se lee en P″ bajo la LT: P está por debajo del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 15 mm, se lee en P′ sobre la LT: P está detrás del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = −45 mm, P está en el tercer cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: leer el alejamiento al revés. El positivo queda bajo la LT; con el signo cambiado, P pasaría al otro lado del PV.
+7. [ ] *colocar el punto, dificultad 3*: Como en la PAU: P está en el primer bisector, a la misma distancia del PH que del PV. Colócalo en el espacio a partir de su lámina.
+   - [ ] *Pista 1:* En el primer bisector, la cota y el alejamiento de P valen lo mismo.
+   - [ ] *Pista 2:* P′ y P″ quedan a la misma distancia de la LT, una por debajo y otra por encima.
+   - [ ] *Pista 3:* Lleva P a la cota de P″ y comprueba que su alejamiento es igual.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por encima de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El primer bisector es el plano que pasa por la LT y reparte los cuadrantes primero y tercero: sus puntos tienen la misma cota que alejamiento.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 40 mm, se lee en P″ sobre la LT: P está por encima del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 40 mm, se lee en P′ bajo la LT: P está delante del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = −25 mm, P está en el primer cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: cambiar el signo de la cota. P pasaría al otro lado del PH y a otro cuadrante.
+8. [ ] *colocar el punto, dificultad 3*: Como en la PAU: P está en el segundo bisector, que pasa por los cuadrantes segundo y cuarto. Colócalo en el espacio.
+   - [ ] *Pista 1:* En el segundo bisector, la cota y el alejamiento valen lo mismo, con signo cambiado.
+   - [ ] *Pista 2:* P′ y P″ caen del mismo lado de la LT, a igual distancia de ella.
+   - [ ] *Pista 3:* Pon P detrás del PH, bajo él, con la cota y el alejamiento iguales en valor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por debajo de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El segundo bisector pasa por los cuadrantes segundo y cuarto: sus puntos tienen cota y alejamiento iguales en valor y de signo contrario.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 30 mm, se lee en P″ bajo la LT: P está por debajo del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 30 mm, se lee en P′ bajo la LT: P está delante del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = 35 mm, P está en el cuarto cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: leer la cota en P′ y el alejamiento en P″. Así se intercambian y P quedaría con cota 30 mm y alejamiento 30 mm.
+9. [ ] *colocar el punto, dificultad 3*: Como en la PAU: P está en el primer bisector, pero no en el primer cuadrante. Colócalo en el espacio a partir de su lámina.
+   - [ ] *Pista 1:* El primer bisector también pasa por el tercer cuadrante, donde la cota y el alejamiento son negativos.
+   - [ ] *Pista 2:* P′ queda sobre la LT y P″ bajo ella, a la misma distancia.
+   - [ ] *Pista 3:* Lleva P detrás del PV y bajo el PH, con cota y alejamiento iguales en valor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* En la lámina, P″ está por debajo de la LT y P′ está por encima de la LT, los dos sobre la misma línea de referencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El primer bisector atraviesa también el tercer cuadrante: allí la cota y el alejamiento son negativos, pero iguales.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota, 35 mm, se lee en P″ bajo la LT: P está por debajo del PH.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alejamiento, 35 mm, se lee en P′ sobre la LT: P está detrás del PV.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con x = −40 mm, P está en el tercer cuadrante y sus proyecciones caen en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: cambiar el signo de la cota. P pasaría al otro lado del PH y a otro cuadrante.
 
 ### I-08 · La recta
 
@@ -58,9 +154,105 @@ Fichero: `src/content/lessons/02-la-recta.json` · DT I · nivel Inicial
 
 **Ejercicios**
 
-1. [ ] *cumplir una condición, dificultad 1*: Mueve A o B hasta que r sea paralela al PH. Fíjate en cómo queda r″.
-2. [ ] *cumplir una condición, dificultad 1*: Mueve A o B hasta que r sea paralela a la LT.
-3. [ ] *cumplir una condición, dificultad 1*: Mueve A o B hasta que r corte a la LT. Sus trazas H y V tienen que coincidir.
+1. [ ] *cumplir una condición, dificultad 1*: Mueve B hasta que r sea paralela al PH. Fíjate en cómo queda r″ respecto de la LT.
+   - [ ] *Pista 1:* Una recta paralela al PH tiene todos sus puntos a la misma cota.
+   - [ ] *Pista 2:* Basta con igualar la cota de A y de B; su alejamiento y su x pueden ser distintos.
+   - [ ] *Pista 3:* Mueve B con el deslizador de la cota hasta que B″ quede a la altura de A″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B, que están a distinta cota. Queremos que r sea paralela al PH, es decir, horizontal.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta es paralela al PH si todos sus puntos tienen la misma cota. Entonces r″ es paralela a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Sube o baja B, sin cambiar su x ni su alejamiento, hasta que su cota sea la de A, 25 mm.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, B″ queda a la misma altura que A″ sobre la LT: r″ es paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta r no tiene traza horizontal: es paralela al PH y no lo corta. Solo conserva la traza vertical V.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A″ y B″ están a 25 mm de la LT y r″ es paralela a ella; r no tiene traza horizontal.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar el alejamiento en lugar de la cota. Entonces r′ sería paralela a la LT, pero r″ seguiría inclinada.
+2. [ ] *cumplir una condición, dificultad 1*: Mueve B hasta que r sea paralela al PV. Fíjate en cómo queda r′ respecto de la LT.
+   - [ ] *Pista 1:* Una recta paralela al PV tiene todos sus puntos al mismo alejamiento.
+   - [ ] *Pista 2:* Basta con igualar el alejamiento de A y de B; su cota y su x pueden ser distintas.
+   - [ ] *Pista 3:* Mueve B con el deslizador del alejamiento hasta que B′ quede a la distancia de A′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B, que están a distinto alejamiento. Queremos que r sea paralela al PV, es decir, frontal.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta es paralela al PV si todos sus puntos tienen el mismo alejamiento. Entonces r′ es paralela a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Acerca o aleja B, sin cambiar su x ni su cota, hasta que su alejamiento sea el de A, 15 mm.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, B′ queda a la misma distancia de la LT que A′: r′ es paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta r no tiene traza vertical: es paralela al PV y no lo corta. Solo conserva la traza horizontal H.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A′ y B′ están a 15 mm de la LT y r′ es paralela a ella; r no tiene traza vertical.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar la cota en lugar del alejamiento. Entonces r″ sería paralela a la LT, pero r′ seguiría inclinada.
+3. [ ] *cumplir una condición, dificultad 1*: Mueve B hasta que r sea paralela a la LT. Tendrá que ser paralela a los dos planos.
+   - [ ] *Pista 1:* Una recta paralela a la LT es paralela a los dos planos de proyección a la vez.
+   - [ ] *Pista 2:* Hay que igualar la cota y el alejamiento de A y B; solo su x puede ser distinta.
+   - [ ] *Pista 3:* Mueve B con los dos deslizadores hasta que r′ y r″ queden paralelas a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B. Queremos que sea paralela a la LT, o sea, a la vez al PH y al PV.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta paralela a la LT cumple las dos condiciones: la misma cota y el mismo alejamiento en todos sus puntos. Sus dos proyecciones son paralelas a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve B hasta que tenga la cota de A, 30 mm, y su alejamiento, 20 mm; solo cambia su x respecto de A.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, A″B″ y A′B′ son paralelas a la LT: las dos proyecciones quedan horizontales.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta r no corta ni al PH ni al PV, así que no tiene trazas. No se puede dibujar H ni V.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A y B tienen cota 30 mm y alejamiento 20 mm; r no tiene trazas y es paralela a la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar solo la cota. Entonces r″ es paralela a la LT, pero r′ sigue inclinada y r sí corta al PV.
+4. [ ] *cumplir una condición, dificultad 2*: Mueve B hasta que r sea una recta de perfil. Sus dos proyecciones quedan en una misma línea de referencia.
+   - [ ] *Pista 1:* Una recta de perfil está en un plano perpendicular a la LT.
+   - [ ] *Pista 2:* Sus dos puntos tienen la misma x: A′, A″, B′ y B″ quedan en una misma línea de referencia.
+   - [ ] *Pista 3:* Mueve B con el deslizador de la x hasta que su proyección coincida con la línea de A.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B, con distinta x. Queremos que r sea de perfil, es decir, perpendicular a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta de perfil está en un plano perpendicular a la LT: sus dos puntos tienen la misma x. Entonces r′ y r″ son perpendiculares a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve B a lo largo de la LT hasta que su x sea la de A, −15 mm; su cota y su alejamiento no cambian.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, A′, A″, B′ y B″ quedan en una misma línea de referencia: r′ y r″ son perpendiculares a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con las dos proyecciones en la misma línea no se puede medir nada de r: hace falta la tercera proyección, r‴.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A y B están en la misma x, −15 mm; r está contenida en un plano de perfil, perpendicular a la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dejar B en otra x. Con distinta x, r′ y r″ siguen inclinadas respecto a la LT y r no es de perfil.
+5. [ ] *cumplir una condición, dificultad 2*: Mueve B hasta que r corte a la LT. Sus trazas H y V tienen que coincidir.
+   - [ ] *Pista 1:* Una recta corta a la LT cuando sus trazas H y V son el mismo punto.
+   - [ ] *Pista 2:* Mira la recta de perfil: A, B y la LT, vista como un punto, deben estar alineados.
+   - [ ] *Pista 3:* Mueve B hasta que r′ y r″ lleguen a un mismo punto de la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B. Queremos que corte a la LT, así que pase de un cuadrante a otro justo por ella.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta corta a la LT cuando sus trazas H y V coinciden. Visto de perfil, A, B y la LT, que se ve como un punto, quedan alineados.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve B hasta que, visto de perfil, A, B y la LT estén alineados: así r pasa por un punto de la LT.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, r′ y r″ cortan a la LT en el mismo punto, que es la traza H y también la V.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Ese punto es H ≡ V. A cada lado de él, r cambia de cuadrante.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: las trazas H y V coinciden en la LT, y r′ y r″ se cortan sobre ella.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar la cota y el alejamiento de A y B. Eso hace r paralela a la LT, que no la corta nunca.
+6. [ ] *cumplir una condición, dificultad 2*: A está en el tercer cuadrante y B en el cuarto. Mueve B hasta que r sea paralela al PH.
+   - [ ] *Pista 1:* Una recta paralela al PH tiene todos sus puntos a la misma cota.
+   - [ ] *Pista 2:* Basta con igualar la cota de A y de B; su alejamiento y su x pueden ser distintos.
+   - [ ] *Pista 3:* Mueve B con el deslizador de la cota hasta que B″ quede a la altura de A″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B, que están a distinta cota. Queremos que r sea paralela al PH, es decir, horizontal.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta es paralela al PH si todos sus puntos tienen la misma cota. Entonces r″ es paralela a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Sube o baja B, sin cambiar su x ni su alejamiento, hasta que su cota sea la de A, 30 mm.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, B″ queda a la misma altura que A″ sobre la LT: r″ es paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta r no tiene traza horizontal: es paralela al PH y no lo corta. Solo conserva la traza vertical V.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A″ y B″ están a 30 mm de la LT y r″ es paralela a ella; r no tiene traza horizontal.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar el alejamiento en lugar de la cota. Entonces r′ sería paralela a la LT, pero r″ seguiría inclinada.
+7. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: A está en el segundo cuadrante y B en el cuarto. Mueve B hasta que r sea paralela al PV.
+   - [ ] *Pista 1:* Una recta paralela al PV tiene todos sus puntos al mismo alejamiento.
+   - [ ] *Pista 2:* Basta con igualar el alejamiento de A y de B; su cota y su x pueden ser distintas.
+   - [ ] *Pista 3:* Mueve B con el deslizador del alejamiento hasta que B′ quede a la distancia de A′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B, que están a distinto alejamiento. Queremos que r sea paralela al PV, es decir, frontal.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta es paralela al PV si todos sus puntos tienen el mismo alejamiento. Entonces r′ es paralela a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Acerca o aleja B, sin cambiar su x ni su cota, hasta que su alejamiento sea el de A, −20 mm.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, B′ queda a la misma distancia de la LT que A′: r′ es paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta r no tiene traza vertical: es paralela al PV y no lo corta. Solo conserva la traza horizontal H.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A′ y B′ están a −20 mm de la LT y r′ es paralela a ella; r no tiene traza vertical.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar la cota en lugar del alejamiento. Entonces r″ sería paralela a la LT, pero r′ seguiría inclinada.
+8. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: A está en el segundo cuadrante. Mueve B hasta que r corte a la LT en un solo punto.
+   - [ ] *Pista 1:* Una recta corta a la LT cuando sus trazas H y V son el mismo punto.
+   - [ ] *Pista 2:* Mira la recta de perfil: A, B y la LT, vista como un punto, deben estar alineados.
+   - [ ] *Pista 3:* Mueve B hasta que r′ y r″ lleguen a un mismo punto de la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B. Queremos que corte a la LT, así que pase de un cuadrante a otro justo por ella.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta corta a la LT cuando sus trazas H y V coinciden. Visto de perfil, A, B y la LT, que se ve como un punto, quedan alineados.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve B hasta que, visto de perfil, A, B y la LT estén alineados: así r pasa por un punto de la LT.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, r′ y r″ cortan a la LT en el mismo punto, que es la traza H y también la V.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Ese punto es H ≡ V. A cada lado de él, r cambia de cuadrante.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: las trazas H y V coinciden en la LT, y r′ y r″ se cortan sobre ella.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar la cota y el alejamiento de A y B. Eso hace r paralela a la LT, que no la corta nunca.
+9. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: A está en el cuarto cuadrante. Mueve B hasta que r sea paralela a la LT y sin trazas.
+   - [ ] *Pista 1:* Una recta paralela a la LT es paralela a los dos planos de proyección a la vez.
+   - [ ] *Pista 2:* Hay que igualar la cota y el alejamiento de A y B; solo su x puede ser distinta.
+   - [ ] *Pista 3:* Mueve B con los dos deslizadores hasta que r′ y r″ queden paralelas a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r pasa por A y por B. Queremos que sea paralela a la LT, o sea, a la vez al PH y al PV.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta paralela a la LT cumple las dos condiciones: la misma cota y el mismo alejamiento en todos sus puntos. Sus dos proyecciones son paralelas a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve B hasta que tenga la cota de A, −10 mm, y su alejamiento, 35 mm; solo cambia su x respecto de A.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, A″B″ y A′B′ son paralelas a la LT: las dos proyecciones quedan horizontales.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta r no corta ni al PH ni al PV, así que no tiene trazas. No se puede dibujar H ni V.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A y B tienen cota −10 mm y alejamiento 35 mm; r no tiene trazas y es paralela a la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar solo la cota. Entonces r″ es paralela a la LT, pero r′ sigue inclinada y r sí corta al PV.
 
 ### I-08 · El plano
 
@@ -80,9 +272,106 @@ Fichero: `src/content/lessons/03-el-plano.json` · DT I · nivel Intermedio
 
 **Ejercicios**
 
-1. [ ] *cumplir una condición, dificultad 1*: Q está fuera del plano α. Muévelo hasta que esté en α: el aviso te dice a qué distancia está.
-2. [ ] *cumplir una condición, dificultad 1*: Mueve A, B o C hasta que el plano α sea paralelo a la LT.
-3. [ ] *cumplir una condición, dificultad 1*: Mueve A, B o C hasta que el plano α contenga a la LT.
+1. [ ] *cumplir una condición, dificultad 1*: Q está fuera del plano α. Llévalo hasta α: el aviso te dice cuánto te falta.
+   - [ ] *Pista 1:* Un punto está en un plano si está en una recta del plano.
+   - [ ] *Pista 2:* La recta r, por A y B, está en α: lleva Q sobre r.
+   - [ ] *Pista 3:* Mueve Q hasta que Q′ esté en r′ y Q″ esté en r″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C, y Q está fuera de él. Queremos llevar Q hasta α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un punto está en un plano si está en una recta del plano. La recta r, que pasa por A y por B, está contenida en α.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Lleva Q sobre r: sus proyecciones Q′ y Q″ tienen que estar en r′ y r″, en la misma línea de referencia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, Q′ queda sobre r′ y Q″ sobre r″, y los dos en una misma perpendicular a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Como r está en α, cualquier punto de r está en α: Q pertenece al plano.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q′ está en r′, Q″ está en r″ y el aviso de distancia de Q a α da cero.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner Q′ en r′ y olvidar Q″. Con una sola proyección sobre r no basta: las dos tienen que estar sobre r.
+2. [ ] *cumplir una condición, dificultad 1*: Mueve B hasta que el plano α sea paralelo a la LT. Mira cómo quedan α₁ y α₂.
+   - [ ] *Pista 1:* Un plano paralelo a la LT contiene una recta paralela a la LT.
+   - [ ] *Pista 2:* Hay que igualar la cota y el alejamiento de dos de sus puntos.
+   - [ ] *Pista 3:* Mueve uno de ellos hasta que sus dos proyecciones queden paralelas a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C. Queremos que sea paralelo a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano es paralelo a la LT si contiene una recta paralela a la LT. Entonces sus trazas α₁ y α₂ son paralelas a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve B hasta que la recta AB sea paralela a la LT: toma la cota de A, 30 mm, y su alejamiento, 10 mm.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, A′B′ y A″B″ son paralelas a la LT: α contiene una recta paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Las trazas α₁ y α₂ salen paralelas a la LT: el plano es paralelo a ella y no la corta.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A y B tienen la misma cota, 30 mm, y el mismo alejamiento, 10 mm; α₁ y α₂ son paralelas a la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar solo la cota de AB. Así la recta es horizontal, pero α₁ no sale paralela a la LT.
+3. [ ] *cumplir una condición, dificultad 1*: Mueve C hasta que el plano α contenga a la LT. Entonces α₁ y α₂ coinciden con ella.
+   - [ ] *Pista 1:* Un plano que contiene a la LT tiene las dos trazas sobre ella.
+   - [ ] *Pista 2:* En la vista de perfil, sus puntos están alineados con el origen.
+   - [ ] *Pista 3:* Mueve un punto hasta que su cota y su alejamiento mantengan la razón de los otros dos.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C. Queremos que contenga a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano contiene a la LT si, visto de perfil, sus puntos están alineados con el origen, donde la LT se ve como un punto.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve C hasta que, visto de perfil, A, B y C estén alineados con el origen, donde está la LT.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la vista de perfil, A, B y C están sobre una recta que pasa por el origen: el plano contiene a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* En la lámina, α₁ y α₂ coinciden con la LT, así que las trazas no bastan: α se define con su tercera proyección.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: las trazas de α coinciden con la LT y la tercera proyección α₃ es una recta que pasa por el origen.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: alinear los puntos de perfil sin pasar por el origen. Así α es paralelo a la LT, pero no la contiene.
+4. [ ] *cumplir una condición, dificultad 2*: Q no está en α, que pasa por tres puntos de distintos cuadrantes. Llévalo hasta α.
+   - [ ] *Pista 1:* Un punto está en un plano si está en una recta del plano.
+   - [ ] *Pista 2:* La recta r, por A y B, está en α: lleva Q sobre r.
+   - [ ] *Pista 3:* Mueve Q hasta que Q′ esté en r′ y Q″ esté en r″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C, y Q está fuera de él. Queremos llevar Q hasta α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un punto está en un plano si está en una recta del plano. La recta r, que pasa por A y por B, está contenida en α.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Lleva Q sobre r: sus proyecciones Q′ y Q″ tienen que estar en r′ y r″, en la misma línea de referencia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, Q′ queda sobre r′ y Q″ sobre r″, y los dos en una misma perpendicular a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Como r está en α, cualquier punto de r está en α: Q pertenece al plano.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q′ está en r′, Q″ está en r″ y el aviso de distancia de Q a α da cero.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner Q′ en r′ y olvidar Q″. Con una sola proyección sobre r no basta: las dos tienen que estar sobre r.
+5. [ ] *cumplir una condición, dificultad 2*: Los puntos A, B y C están en distintos cuadrantes. Mueve B hasta que α sea paralelo a la LT.
+   - [ ] *Pista 1:* Un plano paralelo a la LT contiene una recta paralela a la LT.
+   - [ ] *Pista 2:* Hay que igualar la cota y el alejamiento de dos de sus puntos.
+   - [ ] *Pista 3:* Mueve uno de ellos hasta que sus dos proyecciones queden paralelas a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C. Queremos que sea paralelo a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano es paralelo a la LT si contiene una recta paralela a la LT. Entonces sus trazas α₁ y α₂ son paralelas a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve B hasta que la recta AB sea paralela a la LT: toma la cota de A, 20 mm, y su alejamiento, 25 mm.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, A′B′ y A″B″ son paralelas a la LT: α contiene una recta paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Las trazas α₁ y α₂ salen paralelas a la LT: el plano es paralelo a ella y no la corta.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A y B tienen la misma cota, 20 mm, y el mismo alejamiento, 25 mm; α₁ y α₂ son paralelas a la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar solo la cota de AB. Así la recta es horizontal, pero α₁ no sale paralela a la LT.
+6. [ ] *cumplir una condición, dificultad 2*: Mueve C hasta que el plano α contenga a la LT. Los tres puntos están en distintos cuadrantes.
+   - [ ] *Pista 1:* Un plano que contiene a la LT tiene las dos trazas sobre ella.
+   - [ ] *Pista 2:* En la vista de perfil, sus puntos están alineados con el origen.
+   - [ ] *Pista 3:* Mueve un punto hasta que su cota y su alejamiento mantengan la razón de los otros dos.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C. Queremos que contenga a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano contiene a la LT si, visto de perfil, sus puntos están alineados con el origen, donde la LT se ve como un punto.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve C hasta que, visto de perfil, A, B y C estén alineados con el origen, donde está la LT.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la vista de perfil, A, B y C están sobre una recta que pasa por el origen: el plano contiene a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* En la lámina, α₁ y α₂ coinciden con la LT, así que las trazas no bastan: α se define con su tercera proyección.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: las trazas de α coinciden con la LT y la tercera proyección α₃ es una recta que pasa por el origen.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: alinear los puntos de perfil sin pasar por el origen. Así α es paralelo a la LT, pero no la contiene.
+7. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: lleva Q hasta α, en la prolongación de la recta r y fuera del segmento AB.
+   - [ ] *Pista 1:* Un punto está en un plano si está en una recta del plano.
+   - [ ] *Pista 2:* La recta r, por A y B, está en α: lleva Q sobre r.
+   - [ ] *Pista 3:* Mueve Q hasta que Q′ esté en r′ y Q″ esté en r″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C, y Q está fuera de él. Queremos llevar Q hasta α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un punto está en un plano si está en una recta del plano. La recta r, que pasa por A y por B, está contenida en α.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Lleva Q sobre r: sus proyecciones Q′ y Q″ tienen que estar en r′ y r″, en la misma línea de referencia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, Q′ queda sobre r′ y Q″ sobre r″, y los dos en una misma perpendicular a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Como r está en α, cualquier punto de r está en α: Q pertenece al plano.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q′ está en r′, Q″ está en r″ y el aviso de distancia de Q a α da cero.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner Q′ en r′ y olvidar Q″. Con una sola proyección sobre r no basta: las dos tienen que estar sobre r.
+8. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: mueve C hasta que α sea paralelo a la LT. Después comprueba sus trazas.
+   - [ ] *Pista 1:* Un plano paralelo a la LT contiene una recta paralela a la LT.
+   - [ ] *Pista 2:* Hay que igualar la cota y el alejamiento de dos de sus puntos.
+   - [ ] *Pista 3:* Mueve uno de ellos hasta que sus dos proyecciones queden paralelas a la LT.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C. Queremos que sea paralelo a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano es paralelo a la LT si contiene una recta paralela a la LT. Entonces sus trazas α₁ y α₂ son paralelas a la LT.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve C hasta que la recta AC sea paralela a la LT: toma la cota de A, −25 mm, y su alejamiento, −20 mm.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la lámina, A′C′ y A″C″ son paralelas a la LT: α contiene una recta paralela a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Las trazas α₁ y α₂ salen paralelas a la LT: el plano es paralelo a ella y no la corta.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: A y C tienen la misma cota, −25 mm, y el mismo alejamiento, −20 mm; α₁ y α₂ son paralelas a la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: igualar solo la cota de AC. Así la recta es horizontal, pero α₁ no sale paralela a la LT.
+9. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: mueve A y B hasta que α contenga a la LT, con C ya en su sitio.
+   - [ ] *Pista 1:* Un plano que contiene a la LT tiene las dos trazas sobre ella.
+   - [ ] *Pista 2:* En la vista de perfil, sus puntos están alineados con el origen.
+   - [ ] *Pista 3:* Mueve un punto hasta que su cota y su alejamiento mantengan la razón de los otros dos.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por A, B y C. Queremos que contenga a la LT.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano contiene a la LT si, visto de perfil, sus puntos están alineados con el origen, donde la LT se ve como un punto.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Mueve A hasta que su cota sea igual a su alejamiento, como la de C: así A queda alineado con el origen en la vista de perfil.
+   - [ ] *Solución, paso 4 · 3. El movimiento:* Mueve B igual: su cota pasa a ser su alejamiento. Ahora A, B y C tienen cota y alejamiento iguales.
+   - [ ] *Solución, paso 5 · 4. El trazado:* En la vista de perfil, A, B y C están sobre una recta que pasa por el origen: el plano contiene a la LT.
+   - [ ] *Solución, paso 6 · 4. El trazado:* En la lámina, α₁ y α₂ coinciden con la LT, así que las trazas no bastan: α se define con su tercera proyección.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: las trazas de α coinciden con la LT y la tercera proyección α₃ es una recta que pasa por el origen.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: alinear los puntos de perfil sin pasar por el origen. Así α es paralelo a la LT, pero no la contiene.
 
 ### II-05 · Tres métodos, un mismo problema
 

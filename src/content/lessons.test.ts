@@ -21,12 +21,12 @@ describe('lecciones', () => {
     expect(lessons.length).toBeGreaterThan(0);
   });
 
-  it('la lección 1 tiene entre 6 y 8 pasos y 3 ejercicios', () => {
+  it('la lección 1 tiene entre 6 y 8 pasos y 9 ejercicios', () => {
     const { lessons } = parseLessons(readAll());
     const first = lessons.find((l) => l.id === 'el-punto');
     expect(first?.steps.length).toBeGreaterThanOrEqual(6);
     expect(first?.steps.length).toBeLessThanOrEqual(8);
-    expect(first?.exercises).toHaveLength(3);
+    expect(first?.exercises).toHaveLength(9);
   });
 
   it('las capas citadas son de puntos que existen en la lección', () => {

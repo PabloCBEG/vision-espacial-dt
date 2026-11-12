@@ -36,6 +36,9 @@ const COMPLETE_LESSONS: string[] = [
   'vistas-isometrica',
   'octaedro-isometrica',
   'paralelas-se-juntan',
+  'el-punto',
+  'la-recta',
+  'el-plano',
 ];
 
 const lessonNamed = (id: string): Lesson => {

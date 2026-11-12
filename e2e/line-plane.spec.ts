@@ -93,11 +93,13 @@ test.describe('lecciones 2 y 3', () => {
   test('ejercicio del plano: llevar Q al plano', async ({ page }) => {
     await openLesson(page, /El plano/);
     await goToPage(page, 7); // ejercicio 1
-    await expect(page.locator('#lesson-progress-text')).toContainText('Ejercicio 1 de 3');
+    await expect(page.locator('#lesson-progress-text')).toContainText('Ejercicio 1 de 9');
     await page.getByRole('button', { name: 'Comprobar' }).click();
     await expect(page.locator('#exercise-feedback')).toContainText('fuera del plano');
-    // Plano 21x − 14a + 30c = 210: con x = 10 y a = 30, la cota es 14.
-    await page.getByRole('slider', { name: 'Cota (c)' }).fill('14');
+    // Q en la recta r, en el punto medio de AB: x = 0, a = 25, c = 25.
+    await page.getByRole('slider', { name: 'x', exact: true }).fill('0');
+    await page.getByRole('slider', { name: 'Alejamiento (a)' }).fill('25');
+    await page.getByRole('slider', { name: 'Cota (c)' }).fill('25');
     await page.getByRole('button', { name: 'Comprobar' }).click();
     await expect(page.locator('#exercise-feedback')).toContainText('Correcto');
   });

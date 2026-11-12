@@ -97,21 +97,1092 @@
   "exercises": [
     {
       "kind": "placePoint",
+      "difficulty": 1,
       "prompt": "Coloca P en el espacio para que sus proyecciones sean las de la lámina. Cada cuadro de la lámina mide 10 mm.",
       "point": "P",
-      "target": [30, 20, 35]
+      "target": [30, 20, 35],
+      "hints": [
+        "P′ y P″ están en una misma línea de referencia, perpendicular a la LT.",
+        "La cota se lee en P″ y el alejamiento, en P′; el lado de la LT en que están da el signo.",
+        "Empieza por la cota: lleva P a la altura que marca P″ y después ajusta el alejamiento."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por encima de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [30, 20, 35]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ sobre la LT: P está por encima del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ bajo la LT: P está delante del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el primer cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: leer la cota en P′ y el alejamiento en P″. Así se intercambian y P quedaría con cota {alejObj} y alejamiento {cotaObj}.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [30, 20],
+                    [30, -35]
+                  ],
+                  "rotulo": "Error: cota y alejamiento"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "placePoint",
-      "prompt": "Coloca P a partir de la lámina. Fíjate bien en qué proyección está sobre la LT y cuál debajo.",
+      "difficulty": 1,
+      "prompt": "Coloca P a partir de la lámina. Fíjate en qué proyección está sobre la LT y cuál debajo.",
       "point": "P",
-      "target": [-20, 40, 15]
+      "target": [-20, 40, 15],
+      "hints": [
+        "P′ y P″ están en una misma línea de referencia, perpendicular a la LT.",
+        "La cota se lee en P″ y el alejamiento, en P′; el lado de la LT en que están da el signo.",
+        "Empieza por la cota: lleva P a la altura que marca P″ y después ajusta el alejamiento."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por encima de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [-20, 40, 15]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ sobre la LT: P está por encima del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ bajo la LT: P está delante del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el primer cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: leer el alejamiento al revés. El positivo queda bajo la LT; con el signo cambiado, P pasaría al otro lado del PV.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, 15],
+                    [-20, 40]
+                  ],
+                  "rotulo": "Error: signo del alejamiento"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "placePoint",
+      "difficulty": 1,
+      "prompt": "En la lámina, P″ está sobre la LT. Coloca P en el espacio y di en qué plano de proyección está.",
+      "point": "P",
+      "target": [-30, 25, 0],
+      "hints": [
+        "Si P″ está sobre la LT, la cota de P es nula.",
+        "Un punto de cota nula está en el PH: P coincide con su proyección horizontal P′.",
+        "Pon la cota a cero y ajusta el alejamiento con lo que marca P′."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está sobre la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [-30, 25, 0]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "P″ está sobre la LT: la cota es nula y P está en el PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ bajo la LT: P está delante del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el PH y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: leer la cota en P′ y el alejamiento en P″. Así se intercambian y P quedaría con cota {alejObj} y alejamiento {cotaObj}.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 25],
+                    [-30, 0]
+                  ],
+                  "rotulo": "Error: cota y alejamiento"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "placePoint",
+      "difficulty": 2,
       "prompt": "Ahora P está en otro cuadrante. Colócalo en el espacio a partir de su lámina.",
       "point": "P",
-      "target": [10, -15, 35]
+      "target": [10, -15, 35],
+      "hints": [
+        "Si P′ está sobre la LT, el alejamiento es negativo y P está detrás del PV.",
+        "Mira de qué lado de la LT cae cada proyección: eso da el signo de la cota y del alejamiento.",
+        "Lleva primero P a la cota de P″ y después sitúalo detrás del PV según P′."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por encima de la LT y P′ está por encima de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [10, -15, 35]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ sobre la LT: P está por encima del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ sobre la LT: P está detrás del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el segundo cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: leer el alejamiento al revés. El positivo queda bajo la LT; con el signo cambiado, P pasaría al otro lado del PV.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [10, 35],
+                    [10, -15]
+                  ],
+                  "rotulo": "Error: signo del alejamiento"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "placePoint",
+      "difficulty": 2,
+      "prompt": "Coloca P en el espacio a partir de su lámina. Decide si está por encima o por debajo del PH y delante o detrás del PV.",
+      "point": "P",
+      "target": [25, 30, -25],
+      "hints": [
+        "Con P″ bajo la LT y P′ también bajo la LT, P está delante del PV y por debajo del PH.",
+        "La cota negativa se lee bajo la LT en P″; el alejamiento positivo, bajo la LT en P′.",
+        "Baja P bajo el PH hasta la cota de P″ y deja su alejamiento como marca P′."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por debajo de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [25, 30, -25]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ bajo la LT: P está por debajo del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ bajo la LT: P está delante del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el cuarto cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: cambiar el signo de la cota. P pasaría al otro lado del PH y a otro cuadrante.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [25, 25],
+                    [25, -30]
+                  ],
+                  "rotulo": "Error: signo de la cota"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "placePoint",
+      "difficulty": 2,
+      "prompt": "Coloca P en el espacio a partir de su lámina, que no está en el primer cuadrante.",
+      "point": "P",
+      "target": [-45, -15, -30],
+      "hints": [
+        "Con P′ sobre la LT y P″ bajo la LT, P está detrás del PV y por debajo del PH.",
+        "Es el tercer cuadrante: la cota y el alejamiento son negativos.",
+        "Lleva P detrás del PV y bajo el PH, con la cota de P″ y el alejamiento de P′."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por debajo de la LT y P′ está por encima de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [-45, -15, -30]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La cota es la distancia de P″ a la LT y el alejamiento, la de P′ a la LT. El lado de la LT en que cae cada una dice en qué cuadrante está P.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ bajo la LT: P está por debajo del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ sobre la LT: P está detrás del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el tercer cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: leer el alejamiento al revés. El positivo queda bajo la LT; con el signo cambiado, P pasaría al otro lado del PV.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-45, -30],
+                    [-45, -15]
+                  ],
+                  "rotulo": "Error: signo del alejamiento"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "placePoint",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: P está en el primer bisector, a la misma distancia del PH que del PV. Colócalo en el espacio a partir de su lámina.",
+      "point": "P",
+      "target": [-25, 40, 40],
+      "hints": [
+        "En el primer bisector, la cota y el alejamiento de P valen lo mismo.",
+        "P′ y P″ quedan a la misma distancia de la LT, una por debajo y otra por encima.",
+        "Lleva P a la cota de P″ y comprueba que su alejamiento es igual."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por encima de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [-25, 40, 40]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El primer bisector es el plano que pasa por la LT y reparte los cuadrantes primero y tercero: sus puntos tienen la misma cota que alejamiento.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ sobre la LT: P está por encima del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ bajo la LT: P está delante del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el primer cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: cambiar el signo de la cota. P pasaría al otro lado del PH y a otro cuadrante.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, -40],
+                    [-25, -40]
+                  ],
+                  "rotulo": "Error: signo de la cota"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "placePoint",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: P está en el segundo bisector, que pasa por los cuadrantes segundo y cuarto. Colócalo en el espacio.",
+      "point": "P",
+      "target": [35, 30, -30],
+      "hints": [
+        "En el segundo bisector, la cota y el alejamiento valen lo mismo, con signo cambiado.",
+        "P′ y P″ caen del mismo lado de la LT, a igual distancia de ella.",
+        "Pon P detrás del PH, bajo él, con la cota y el alejamiento iguales en valor."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por debajo de la LT y P′ está por debajo de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [35, 30, -30]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El segundo bisector pasa por los cuadrantes segundo y cuarto: sus puntos tienen cota y alejamiento iguales en valor y de signo contrario.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ bajo la LT: P está por debajo del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ bajo la LT: P está delante del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el cuarto cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: leer la cota en P′ y el alejamiento en P″. Así se intercambian y P quedaría con cota {alejObj} y alejamiento {cotaObj}.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [35, 30],
+                    [35, 30]
+                  ],
+                  "rotulo": "Error: cota y alejamiento"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "placePoint",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: P está en el primer bisector, pero no en el primer cuadrante. Colócalo en el espacio a partir de su lámina.",
+      "point": "P",
+      "target": [-40, -35, -35],
+      "hints": [
+        "El primer bisector también pasa por el tercer cuadrante, donde la cota y el alejamiento son negativos.",
+        "P′ queda sobre la LT y P″ bajo ella, a la misma distancia.",
+        "Lleva P detrás del PV y bajo el PH, con cota y alejamiento iguales en valor."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "En la lámina, P″ está por debajo de la LT y P′ está por encima de la LT, los dos sobre la misma línea de referencia.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["referencia:P"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "P": [-40, -35, -35]
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El primer bisector atraviesa también el tercer cuadrante: allí la cota y el alejamiento son negativos, pero iguales.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "movimiento",
+          "narration": "Deshaz el abatimiento: el PH gira hacia abajo con P′ y P queda donde se cortan las perpendiculares a los planos por P′ y por P″.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["proyectantes:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "La cota, {cotaObj}, se lee en P″ bajo la LT: P está por debajo del PH.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "trazado",
+          "narration": "El alejamiento, {alejObj}, se lee en P′ sobre la LT: P está detrás del PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["medidas:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con x = {xObj}, P está en el tercer cuadrante y sus proyecciones caen en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:P",
+            "proyectantes:P",
+            "proyecciones:P",
+            "medidas:P"
+          ],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P"],
+          "highlight": ["punto:P"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: cambiar el signo de la cota. P pasaría al otro lado del PH y a otro cuadrante.",
+          "show3d": ["planos", "punto:P", "proyecciones:P", "medidas:P"],
+          "sheet": ["lt", "proyecciones:P", "referencia:P", "medidas:P", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, 35],
+                    [-40, 35]
+                  ],
+                  "rotulo": "Error: signo de la cota"
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }

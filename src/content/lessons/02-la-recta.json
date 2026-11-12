@@ -145,9 +145,15 @@
   "exercises": [
     {
       "kind": "condition",
-      "prompt": "Mueve A o B hasta que r sea paralela al PH. Fíjate en cómo queda r″.",
+      "difficulty": 1,
+      "prompt": "Mueve B hasta que r sea paralela al PH. Fíjate en cómo queda r″ respecto de la LT.",
       "condition": "lineParallelToPH",
       "objects": ["r"],
+      "points": {
+        "A": [-30, 20, 25],
+        "B": [30, 40, 45]
+      },
+      "activePoint": "B",
       "show3d": [
         "planos",
         "cuadrantes",
@@ -166,13 +172,414 @@
         "referencia:B",
         "recta:r",
         "trazas:r"
+      ],
+      "hints": [
+        "Una recta paralela al PH tiene todos sus puntos a la misma cota.",
+        "Basta con igualar la cota de A y de B; su alejamiento y su x pueden ser distintos.",
+        "Mueve B con el deslizador de la cota hasta que B″ quede a la altura de A″."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B, que están a distinta cota. Queremos que r sea paralela al PH, es decir, horizontal.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta es paralela al PH si todos sus puntos tienen la misma cota. Entonces r″ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Sube o baja B, sin cambiar su x ni su alejamiento, hasta que su cota sea la de A, {cotaA}.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [30, 40, 25]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, B″ queda a la misma altura que A″ sobre la LT: r″ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta r no tiene traza horizontal: es paralela al PH y no lo corta. Solo conserva la traza vertical V.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A″ y B″ están a {cotaA} de la LT y r″ es paralela a ella; r no tiene traza horizontal.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar el alejamiento en lugar de la cota. Entonces r′ sería paralela a la LT, pero r″ seguiría inclinada.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 25],
+                    [30, 45]
+                  ],
+                  "rotulo": "Error: r″ sigue inclinada"
+                }
+              ]
+            }
+          }
+        }
       ]
     },
     {
       "kind": "condition",
-      "prompt": "Mueve A o B hasta que r sea paralela a la LT.",
+      "difficulty": 1,
+      "prompt": "Mueve B hasta que r sea paralela al PV. Fíjate en cómo queda r′ respecto de la LT.",
+      "condition": "lineParallelToPV",
+      "objects": ["r"],
+      "points": {
+        "A": [-30, 15, 30],
+        "B": [30, 40, 10]
+      },
+      "activePoint": "B",
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "hints": [
+        "Una recta paralela al PV tiene todos sus puntos al mismo alejamiento.",
+        "Basta con igualar el alejamiento de A y de B; su cota y su x pueden ser distintas.",
+        "Mueve B con el deslizador del alejamiento hasta que B′ quede a la distancia de A′."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B, que están a distinto alejamiento. Queremos que r sea paralela al PV, es decir, frontal.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta es paralela al PV si todos sus puntos tienen el mismo alejamiento. Entonces r′ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Acerca o aleja B, sin cambiar su x ni su cota, hasta que su alejamiento sea el de A, {alejA}.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [30, 15, 10]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, B′ queda a la misma distancia de la LT que A′: r′ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta r no tiene traza vertical: es paralela al PV y no lo corta. Solo conserva la traza horizontal H.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A′ y B′ están a {alejA} de la LT y r′ es paralela a ella; r no tiene traza vertical.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar la cota en lugar del alejamiento. Entonces r″ sería paralela a la LT, pero r′ seguiría inclinada.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, -15],
+                    [30, -40]
+                  ],
+                  "rotulo": "Error: r′ sigue inclinada"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "Mueve B hasta que r sea paralela a la LT. Tendrá que ser paralela a los dos planos.",
       "condition": "lineParallelToLT",
       "objects": ["r"],
+      "points": {
+        "A": [-25, 20, 30],
+        "B": [35, 45, 10]
+      },
+      "activePoint": "B",
       "show3d": [
         "planos",
         "cuadrantes",
@@ -191,13 +598,201 @@
         "referencia:B",
         "recta:r",
         "trazas:r"
+      ],
+      "hints": [
+        "Una recta paralela a la LT es paralela a los dos planos de proyección a la vez.",
+        "Hay que igualar la cota y el alejamiento de A y B; solo su x puede ser distinta.",
+        "Mueve B con los dos deslizadores hasta que r′ y r″ queden paralelas a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B. Queremos que sea paralela a la LT, o sea, a la vez al PH y al PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta paralela a la LT cumple las dos condiciones: la misma cota y el mismo alejamiento en todos sus puntos. Sus dos proyecciones son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B hasta que tenga la cota de A, {cotaA}, y su alejamiento, {alejA}; solo cambia su x respecto de A.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [35, 20, 30]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, A″B″ y A′B′ son paralelas a la LT: las dos proyecciones quedan horizontales.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta r no corta ni al PH ni al PV, así que no tiene trazas. No se puede dibujar H ni V.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A y B tienen cota {cotaA} y alejamiento {alejA}; r no tiene trazas y es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar solo la cota. Entonces r″ es paralela a la LT, pero r′ sigue inclinada y r sí corta al PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, -20],
+                    [35, -45]
+                  ],
+                  "rotulo": "Error: r′ sigue inclinada"
+                }
+              ]
+            }
+          }
+        }
       ]
     },
     {
       "kind": "condition",
-      "prompt": "Mueve A o B hasta que r corte a la LT. Sus trazas H y V tienen que coincidir.",
-      "condition": "lineCrossesLT",
+      "difficulty": 2,
+      "prompt": "Mueve B hasta que r sea una recta de perfil. Sus dos proyecciones quedan en una misma línea de referencia.",
+      "condition": "lineProfile",
       "objects": ["r"],
+      "points": {
+        "A": [-15, 10, 45],
+        "B": [35, 45, 10]
+      },
+      "activePoint": "B",
       "show3d": [
         "planos",
         "cuadrantes",
@@ -216,6 +811,1260 @@
         "referencia:B",
         "recta:r",
         "trazas:r"
+      ],
+      "hints": [
+        "Una recta de perfil está en un plano perpendicular a la LT.",
+        "Sus dos puntos tienen la misma x: A′, A″, B′ y B″ quedan en una misma línea de referencia.",
+        "Mueve B con el deslizador de la x hasta que su proyección coincida con la línea de A."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B, con distinta x. Queremos que r sea de perfil, es decir, perpendicular a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta de perfil está en un plano perpendicular a la LT: sus dos puntos tienen la misma x. Entonces r′ y r″ son perpendiculares a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B a lo largo de la LT hasta que su x sea la de A, {xA}; su cota y su alejamiento no cambian.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [-15, 45, 10]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, A′, A″, B′ y B″ quedan en una misma línea de referencia: r′ y r″ son perpendiculares a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Con las dos proyecciones en la misma línea no se puede medir nada de r: hace falta la tercera proyección, r‴.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "perfil"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A y B están en la misma x, {xA}; r está contenida en un plano de perfil, perpendicular a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "perfil"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dejar B en otra x. Con distinta x, r′ y r″ siguen inclinadas respecto a la LT y r no es de perfil.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r",
+            "perfil"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "perfil",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-15, -10],
+                    [35, -45]
+                  ],
+                  "rotulo": "Error: r′ no es perpendicular"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "Mueve B hasta que r corte a la LT. Sus trazas H y V tienen que coincidir.",
+      "condition": "lineCrossesLT",
+      "objects": ["r"],
+      "points": {
+        "A": [-30, 10, 20],
+        "B": [30, 45, 15]
+      },
+      "activePoint": "B",
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "hints": [
+        "Una recta corta a la LT cuando sus trazas H y V son el mismo punto.",
+        "Mira la recta de perfil: A, B y la LT, vista como un punto, deben estar alineados.",
+        "Mueve B hasta que r′ y r″ lleguen a un mismo punto de la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B. Queremos que corte a la LT, así que pase de un cuadrante a otro justo por ella.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta corta a la LT cuando sus trazas H y V coinciden. Visto de perfil, A, B y la LT, que se ve como un punto, quedan alineados.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B hasta que, visto de perfil, A, B y la LT estén alineados: así r pasa por un punto de la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "profile",
+          "foldAngle": 0,
+          "points": {
+            "B": [30, 20, 40]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, r′ y r″ cortan a la LT en el mismo punto, que es la traza H y también la V.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Ese punto es H ≡ V. A cada lado de él, r cambia de cuadrante.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: las trazas H y V coinciden en la LT, y r′ y r″ se cortan sobre ella.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar la cota y el alejamiento de A y B. Eso hace r paralela a la LT, que no la corta nunca.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 20],
+                    [30, 20]
+                  ],
+                  "rotulo": "Error: eso es paralela a la LT"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "A está en el tercer cuadrante y B en el cuarto. Mueve B hasta que r sea paralela al PH.",
+      "condition": "lineParallelToPH",
+      "objects": ["r"],
+      "points": {
+        "A": [-35, -20, 30],
+        "B": [25, 15, -25]
+      },
+      "activePoint": "B",
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "hints": [
+        "Una recta paralela al PH tiene todos sus puntos a la misma cota.",
+        "Basta con igualar la cota de A y de B; su alejamiento y su x pueden ser distintos.",
+        "Mueve B con el deslizador de la cota hasta que B″ quede a la altura de A″."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B, que están a distinta cota. Queremos que r sea paralela al PH, es decir, horizontal.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta es paralela al PH si todos sus puntos tienen la misma cota. Entonces r″ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Sube o baja B, sin cambiar su x ni su alejamiento, hasta que su cota sea la de A, {cotaA}.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [25, 15, 30]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, B″ queda a la misma altura que A″ sobre la LT: r″ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta r no tiene traza horizontal: es paralela al PH y no lo corta. Solo conserva la traza vertical V.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A″ y B″ están a {cotaA} de la LT y r″ es paralela a ella; r no tiene traza horizontal.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar el alejamiento en lugar de la cota. Entonces r′ sería paralela a la LT, pero r″ seguiría inclinada.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, 30],
+                    [25, -25]
+                  ],
+                  "rotulo": "Error: r″ sigue inclinada"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: A está en el segundo cuadrante y B en el cuarto. Mueve B hasta que r sea paralela al PV.",
+      "condition": "lineParallelToPV",
+      "objects": ["r"],
+      "points": {
+        "A": [-30, -20, 40],
+        "B": [35, 30, -15]
+      },
+      "activePoint": "B",
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "hints": [
+        "Una recta paralela al PV tiene todos sus puntos al mismo alejamiento.",
+        "Basta con igualar el alejamiento de A y de B; su cota y su x pueden ser distintas.",
+        "Mueve B con el deslizador del alejamiento hasta que B′ quede a la distancia de A′."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B, que están a distinto alejamiento. Queremos que r sea paralela al PV, es decir, frontal.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta es paralela al PV si todos sus puntos tienen el mismo alejamiento. Entonces r′ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Acerca o aleja B, sin cambiar su x ni su cota, hasta que su alejamiento sea el de A, {alejA}.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [35, -20, -15]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, B′ queda a la misma distancia de la LT que A′: r′ es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta r no tiene traza vertical: es paralela al PV y no lo corta. Solo conserva la traza horizontal H.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A′ y B′ están a {alejA} de la LT y r′ es paralela a ella; r no tiene traza vertical.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar la cota en lugar del alejamiento. Entonces r″ sería paralela a la LT, pero r′ seguiría inclinada.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 20],
+                    [35, -30]
+                  ],
+                  "rotulo": "Error: r′ sigue inclinada"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: A está en el segundo cuadrante. Mueve B hasta que r corte a la LT en un solo punto.",
+      "condition": "lineCrossesLT",
+      "objects": ["r"],
+      "points": {
+        "A": [-35, -15, 25],
+        "B": [30, 40, 10]
+      },
+      "activePoint": "B",
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "hints": [
+        "Una recta corta a la LT cuando sus trazas H y V son el mismo punto.",
+        "Mira la recta de perfil: A, B y la LT, vista como un punto, deben estar alineados.",
+        "Mueve B hasta que r′ y r″ lleguen a un mismo punto de la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B. Queremos que corte a la LT, así que pase de un cuadrante a otro justo por ella.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta corta a la LT cuando sus trazas H y V coinciden. Visto de perfil, A, B y la LT, que se ve como un punto, quedan alineados.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B hasta que, visto de perfil, A, B y la LT estén alineados: así r pasa por un punto de la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "profile",
+          "foldAngle": 0,
+          "points": {
+            "B": [30, -30, 50]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, r′ y r″ cortan a la LT en el mismo punto, que es la traza H y también la V.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "Ese punto es H ≡ V. A cada lado de él, r cambia de cuadrante.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: las trazas H y V coinciden en la LT, y r′ y r″ se cortan sobre ella.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar la cota y el alejamiento de A y B. Eso hace r paralela a la LT, que no la corta nunca.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, 25],
+                    [30, 25]
+                  ],
+                  "rotulo": "Error: eso es paralela a la LT"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: A está en el cuarto cuadrante. Mueve B hasta que r sea paralela a la LT y sin trazas.",
+      "condition": "lineParallelToLT",
+      "objects": ["r"],
+      "points": {
+        "A": [-40, 35, -10],
+        "B": [45, 10, 30]
+      },
+      "activePoint": "B",
+      "show3d": [
+        "planos",
+        "cuadrantes",
+        "punto:A",
+        "punto:B",
+        "proyecciones:A",
+        "proyecciones:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "recta:r",
+        "trazas:r"
+      ],
+      "hints": [
+        "Una recta paralela a la LT es paralela a los dos planos de proyección a la vez.",
+        "Hay que igualar la cota y el alejamiento de A y B; solo su x puede ser distinta.",
+        "Mueve B con los dos deslizadores hasta que r′ y r″ queden paralelas a la LT."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "La recta r pasa por A y por B. Queremos que sea paralela a la LT, o sea, a la vez al PH y al PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "idea",
+          "narration": "Una recta paralela a la LT cumple las dos condiciones: la misma cota y el mismo alejamiento en todos sus puntos. Sus dos proyecciones son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0
+        },
+        {
+          "part": "movimiento",
+          "narration": "Mueve B hasta que tenga la cota de A, {cotaA}, y su alejamiento, {alejA}; solo cambia su x respecto de A.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [],
+          "highlight": ["punto:B"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "points": {
+            "B": [45, 35, -10]
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En la lámina, A″B″ y A′B′ son paralelas a la LT: las dos proyecciones quedan horizontales.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "trazado",
+          "narration": "La recta r no corta ni al PH ni al PV, así que no tiene trazas. No se puede dibujar H ni V.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["trazas:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: A y B tienen cota {cotaA} y alejamiento {alejA}; r no tiene trazas y es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "highlight": ["recta:r"],
+          "camera": "front",
+          "foldAngle": 90
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: igualar solo la cota. Entonces r″ es paralela a la LT, pero r′ sigue inclinada y r sí corta al PV.",
+          "show3d": [
+            "planos",
+            "cuadrantes",
+            "punto:A",
+            "punto:B",
+            "proyecciones:A",
+            "proyecciones:B",
+            "recta:r",
+            "trazas:r"
+          ],
+          "sheet": [
+            "lt",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "recta:r",
+            "trazas:r",
+            "error"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, -35],
+                    [45, -10]
+                  ],
+                  "rotulo": "Error: r′ sigue inclinada"
+                }
+              ]
+            }
+          }
+        }
       ]
     }
   ]
