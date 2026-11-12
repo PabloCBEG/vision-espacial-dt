@@ -463,8 +463,104 @@ Fichero: `src/content/lessons/07-vistas-isometrica.json` · DT II · nivel Inter
 **Ejercicios**
 
 1. [ ] *construcción en la lámina, dificultad 1*: Se ven el alzado y la planta de una pieza. ¿Cuál es su perfil izquierdo?
-2. [ ] *construcción en la lámina, dificultad 2*: Marca solo las vistas imprescindibles para definir esta brida: ni una más ni una menos.
-3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: dibuja el alzado de la brida en corte total por su plano de simetría frontal, A-A. ¿Cuál de estos dibujos es el correcto?
+   - [ ] *Pista 1:* Cada medida de la pieza aparece en dos vistas, alineada con las líneas de referencia.
+   - [ ] *Pista 2:* La vista que falta comparte una medida con cada una de las dos vistas que se ven.
+   - [ ] *Pista 3:* Traza líneas de referencia desde las dos vistas y compara las siluetas con las opciones.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven dos vistas de una pieza y hay que elegir, entre varias piezas, la vista que falta. Cada opción es el dibujo de una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El perfil comparte la altura con el alzado y la profundidad con la planta. Con esas dos medidas se puede reconstruir.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección: al desplegar la caja, las tres vistas quedan en un mismo plano y las medidas comunes quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Desde cada arista horizontal del alzado, traza una línea de referencia hacia la derecha: marca las alturas del perfil.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Pasa cada profundidad de la planta al perfil, a la derecha del alzado, y elige la opción que coincide con ese dibujo.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: cada altura, anchura y profundidad de la opción elegida coincide con las de las vistas dadas, y sus aristas ocultas también.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: elegir el perfil con la misma silueta pero invertida. El perfil izquierdo se mira desde la izquierda, y la parte de delante queda a su derecha.
+2. [ ] *construcción en la lámina, dificultad 1*: Se ven el alzado y el perfil izquierdo de una pieza. ¿Cuál es su planta?
+   - [ ] *Pista 1:* Cada medida de la pieza aparece en dos vistas, alineada con las líneas de referencia.
+   - [ ] *Pista 2:* La vista que falta comparte una medida con cada una de las dos vistas que se ven.
+   - [ ] *Pista 3:* Traza líneas de referencia desde las dos vistas y compara las siluetas con las opciones.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven dos vistas de una pieza y hay que elegir, entre varias piezas, la vista que falta. Cada opción es el dibujo de una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La planta comparte la anchura con el alzado y la profundidad con el perfil. Con esas dos medidas se puede reconstruir.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección: al desplegar la caja, las tres vistas quedan en un mismo plano y las medidas comunes quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Desde cada arista vertical del alzado, baja una línea de referencia: marca las anchuras de la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Pasa cada profundidad del perfil a la planta con una recta a 45° o con el compás, y elige la opción que coincide.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: cada altura, anchura y profundidad de la opción elegida coincide con las de las vistas dadas, y sus aristas ocultas también.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: colocar la planta encima del alzado. En el sistema europeo la planta va debajo del alzado.
+3. [ ] *construcción en la lámina, dificultad 1*: Se ven la planta y el perfil izquierdo de una pieza. ¿Cuál es su alzado?
+   - [ ] *Pista 1:* Cada medida de la pieza aparece en dos vistas, alineada con las líneas de referencia.
+   - [ ] *Pista 2:* La vista que falta comparte una medida con cada una de las dos vistas que se ven.
+   - [ ] *Pista 3:* Traza líneas de referencia desde las dos vistas y compara las siluetas con las opciones.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven dos vistas de una pieza y hay que elegir, entre varias piezas, la vista que falta. Cada opción es el dibujo de una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El alzado comparte la anchura con la planta y la altura con el perfil. Con esas dos medidas se puede reconstruir.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección: al desplegar la caja, las tres vistas quedan en un mismo plano y las medidas comunes quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Desde cada arista de la planta, sube una línea de referencia: marca las anchuras del alzado.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva las alturas del perfil con líneas horizontales hasta el alzado y elige la opción que coincide.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: cada altura, anchura y profundidad de la opción elegida coincide con las de las vistas dadas, y sus aristas ocultas también.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar el alzado con las alturas del perfil al revés. La altura de una arista se mide desde la base y es la misma en el alzado y en el perfil.
+4. [ ] *construcción en la lámina, dificultad 2*: Marca solo las vistas imprescindibles para definir esta brida: ni una más ni una menos.
+   - [ ] *Pista 1:* Una vista es imprescindible cuando muestra algo que las demás no enseñan.
+   - [ ] *Pista 2:* Mira qué forma aparece en cada cara: taladros, ranuras o planos inclinados.
+   - [ ] *Pista 3:* Empieza por el alzado y añade solo las vistas que aportan una forma nueva.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una brida con buje se puede dibujar con tres vistas, pero no siempre hacen falta todas. Hay que marcar las imprescindibles.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una vista es imprescindible si aporta una forma que no se ve en las demás. Si una vista no añade nada nuevo, sobra.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza girando delante del observador: cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Mira el alzado: muestra el buje, los espesores y la altura del taladro central. Es la primera vista que se elige.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La planta añade los taladros de fijación y la forma circular del buje, y el perfil repite el alzado: sobra.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna arista sin definir, y ninguna vista repite lo que ya muestran las otras.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: marcar las tres vistas por seguridad. El perfil de una pieza de revolución como esta repite el alzado y se omite.
+5. [ ] *construcción en la lámina, dificultad 2*: Marca solo las vistas imprescindibles para definir este soporte en U: ni una más ni una menos.
+   - [ ] *Pista 1:* Una vista es imprescindible cuando muestra algo que las demás no enseñan.
+   - [ ] *Pista 2:* Mira qué forma aparece en cada cara: taladros, ranuras o planos inclinados.
+   - [ ] *Pista 3:* Empieza por el alzado y añade solo las vistas que aportan una forma nueva.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El soporte en U tiene una ranura pasante y un taladro lateral. Hay que marcar las vistas imprescindibles para definirlo.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una vista es imprescindible si aporta una forma que no se ve en las demás. Si una vista no añade nada nuevo, sobra.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza girando delante del observador: cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Mira el alzado: muestra la U con su ancho y su fondo. Es la primera vista que se elige.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La planta muestra la ranura pasante y la posición del taladro lateral; el perfil no añade ninguna forma que no esté ya definida.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna arista sin definir, y ninguna vista repite lo que ya muestran las otras.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: añadir el perfil porque el taladro es lateral. Su diámetro y su posición ya quedan definidos con el alzado y la planta.
+6. [ ] *construcción en la lámina, dificultad 2*: Marca solo las vistas imprescindibles para definir esta cuña con rebaje: ni una más ni una menos.
+   - [ ] *Pista 1:* Una vista es imprescindible cuando muestra algo que las demás no enseñan.
+   - [ ] *Pista 2:* Mira qué forma aparece en cada cara: taladros, ranuras o planos inclinados.
+   - [ ] *Pista 3:* Empieza por el alzado y añade solo las vistas que aportan una forma nueva.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La cuña con rebaje tiene un plano inclinado y una ranura. Hay que marcar las vistas imprescindibles para definirla.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una vista es imprescindible si aporta una forma que no se ve en las demás. Si una vista no añade nada nuevo, sobra.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza girando delante del observador: cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Mira el alzado: muestra la ranura y la altura de la cuña, pero el plano inclinado se ve solo como una línea.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La planta muestra la ranura y el perfil enseña el plano inclinado: sin una de ellas, quedan formas sin definir. Hacen falta las tres.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna arista sin definir, y ninguna vista repite lo que ya muestran las otras.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: omitir el perfil porque se parece al alzado. Es la única vista que muestra la inclinación de la cuña.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: dibuja el alzado de la brida en corte total por su plano de simetría frontal, A-A. ¿Cuál de estos dibujos es el correcto?
+   - [ ] *Pista 1:* El plano de simetría pasa por el centro de la pieza, a mitad de su profundidad.
+   - [ ] *Pista 2:* En el corte total se quita toda la parte de delante del plano y se rayan las caras cortadas.
+   - [ ] *Pista 3:* Elige el dibujo con rayado a 45° y sin aristas ocultas, cortado justo por el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se pide el alzado de la brida en corte total por su plano de simetría frontal, A-A. Hay que elegir entre varios dibujos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En un corte total, el plano atraviesa la pieza y se quita la parte de delante. Las caras cortadas se rayan y no se dibujan aristas ocultas.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano A-A pasa por el centro de la pieza y la parte de delante se retira: queda a la vista el interior, con los huecos cortados por la mitad.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el contorno de lo que queda: las aristas visibles detrás del plano y el contorno de la sección en el propio plano A-A.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya las caras cortadas con líneas finas a 45° y elige el dibujo que coincide: cortado por el centro y sin aristas ocultas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el plano pasa por el centro, así que los huecos aparecen cortados por la mitad, y el rayado está solo en el material cortado.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar aristas ocultas en un dibujo en corte. En los cortes no se dibujan: lo que no se ve se ha quitado o se ve en otra vista.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: dibuja el alzado del soporte en U en corte total por su plano de simetría frontal, A-A. ¿Cuál de estos dibujos es el correcto?
+   - [ ] *Pista 1:* El plano de simetría pasa por el centro de la pieza, a mitad de su profundidad.
+   - [ ] *Pista 2:* En el corte total se quita toda la parte de delante del plano y se rayan las caras cortadas.
+   - [ ] *Pista 3:* Elige el dibujo con rayado a 45° y sin aristas ocultas, cortado justo por el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se pide el alzado del soporte en U en corte total por su plano de simetría frontal, A-A. Hay que elegir entre varios dibujos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En un corte total, el plano atraviesa la pieza y se quita la parte de delante. Las caras cortadas se rayan y no se dibujan aristas ocultas.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano A-A pasa por el centro de la pieza y la parte de delante se retira: queda a la vista el interior, con los huecos cortados por la mitad.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el contorno de lo que queda: las aristas visibles detrás del plano y el contorno de la sección en el propio plano A-A.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya la U cortada con líneas finas a 45°: el taladro lateral queda cortado por la mitad. Elige el dibujo que coincide.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el plano pasa por el centro, así que los huecos aparecen cortados por la mitad, y el rayado está solo en el material cortado.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar aristas ocultas en un dibujo en corte. En los cortes no se dibujan: lo que no se ve se ha quitado o se ve en otra vista.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: dibuja el alzado de la pieza en T con chaflanes en corte total por su plano de simetría frontal, A-A. ¿Cuál de estos dibujos es el correcto?
+   - [ ] *Pista 1:* El plano de simetría pasa por el centro de la pieza, a mitad de su profundidad.
+   - [ ] *Pista 2:* En el corte total se quita toda la parte de delante del plano y se rayan las caras cortadas.
+   - [ ] *Pista 3:* Elige el dibujo con rayado a 45° y sin aristas ocultas, cortado justo por el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se pide el alzado de la pieza en T en corte total por su plano de simetría frontal, A-A. Hay que elegir entre varios dibujos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En un corte total, el plano atraviesa la pieza y se quita la parte de delante. Las caras cortadas se rayan y no se dibujan aristas ocultas.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano A-A pasa por el centro de la pieza y la parte de delante se retira: queda a la vista el interior, con los huecos cortados por la mitad.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el contorno de lo que queda: las aristas visibles detrás del plano y el contorno de la sección en el propio plano A-A.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya la T cortada con líneas finas a 45°: el taladro del vástago aparece cortado por la mitad. Elige el dibujo que coincide.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el plano pasa por el centro, así que los huecos aparecen cortados por la mitad, y el rayado está solo en el material cortado.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar aristas ocultas en un dibujo en corte. En los cortes no se dibujan: lo que no se ve se ha quitado o se ve en otra vista.
 
 ### II-10 · Octaedro en isométrica con diagonal paralela a OZ
 
@@ -1748,13 +1844,8 @@ Fichero: `src/engines/normalizacion/runtime.ts`
 
 Fichero: `src/engines/normalizacion/controller.ts`
 
-- [ ] Perfil izquierdo
-- [ ] Perspectiva isométrica
 - [ ] No existe la pieza «‹data.pieza›» en la biblioteca.
 - [ ] Falta la pieza ‹id›
-- [ ] Elige uno de los dibujos.
-- [ ] ¡Correcto! Las caras cortadas van rayadas a 45° y no hay aristas ocultas.
-- [ ] No es ese. Fíjate en dónde pasa el plano de corte y qué parte se quita.
 
 ### Motor de perspectiva cónica
 

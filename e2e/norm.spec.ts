@@ -54,7 +54,8 @@ test.describe('motor de normalización (II-12)', () => {
     await page.getByRole('button', { name: 'Comprobar' }).click();
     await expect(page.locator('#exercise-feedback')).toContainText('Correcto');
 
-    await page.getByRole('button', { name: 'Siguiente →' }).click();
+    // Ejercicios 2 y 3: otras dos vistas que faltan; el 4 es el de las vistas necesarias.
+    for (let i = 0; i < 3; i++) await page.getByRole('button', { name: 'Siguiente →' }).click();
     await page.getByRole('button', { name: 'Alzado', exact: true }).click();
     await page.getByRole('button', { name: 'Comprobar' }).click();
     await expect(page.locator('#exercise-feedback')).toContainText('falta: planta');
@@ -62,7 +63,8 @@ test.describe('motor de normalización (II-12)', () => {
     await page.getByRole('button', { name: 'Comprobar' }).click();
     await expect(page.locator('#exercise-feedback')).toContainText('Correcto');
 
-    await page.getByRole('button', { name: 'Siguiente →' }).click();
+    // Ejercicios 5 y 6: más vistas necesarias; el 7 es el del corte de la brida.
+    for (let i = 0; i < 3; i++) await page.getByRole('button', { name: 'Siguiente →' }).click();
     await page.getByRole('button', { name: 'Opción 1' }).click();
     await page.getByRole('button', { name: 'Comprobar' }).click();
     await expect(page.locator('#exercise-feedback')).toContainText('No es ese');
@@ -82,7 +84,7 @@ for (const viewport of [
     await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     await openLesson(page);
-    const pages = 11;
+    const pages = 17;
     for (let i = 1; i <= pages; i++) {
       await page.waitForTimeout(i === 1 ? 2500 : 1200);
       await page.screenshot({
