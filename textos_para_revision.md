@@ -1053,9 +1053,106 @@ Fichero: `src/content/lessons/15-conicas-trazado.json` · DT II · nivel Avanzad
 
 **Ejercicios**
 
-1. [ ] *construcción en la lámina, dificultad 1*: Te dan los ejes de una elipse. Arrastra Z hasta uno de sus focos.
-2. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el vértice de la parábola de foco F y directriz d.
-3. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: traza la tangente a la hipérbola en Q y arrastra Z hasta el punto donde corta al eje real.
+1. [ ] *construcción en la lámina, dificultad 1*: Te dan los ejes de una elipse, con a = 30 y b = 18 mm. Arrastra Z hasta uno de sus focos.
+   - [ ] *Pista 1:* Un extremo del eje menor equidista de los dos focos, y esa distancia es la mitad del eje mayor.
+   - [ ] *Pista 2:* Con el compás en B₁ y esa distancia se corta el eje mayor en los focos.
+   - [ ] *Pista 3:* Pincha en B₁, abre el compás hasta A₁O y corta el eje mayor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Conocemos los dos ejes de una elipse, A₁A₂ y B₁B₂, y buscamos sus focos. El punto Z se puede arrastrar.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La suma de las distancias de un punto de la elipse a los focos es el eje mayor, 2a. En un extremo del eje menor las dos distancias son iguales, así que cada una mide a.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre la elipse con sus dos radios vectores a los focos: su suma no cambia. Al llegar a B₁ los dos radios son iguales.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el eje mayor A₁A₂ y el eje menor B₁B₂, que se cruzan en el centro O.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en B₁ y radio la mitad del eje mayor, traza un arco que corte al eje mayor en los dos focos. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los focos están a la misma distancia del centro, y esa distancia c cumple que c² es a² menos b². Cada foco está a la distancia a de B₁ y de B₂.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como radio del arco la mitad del eje menor. El radio es la mitad del eje mayor, que es la distancia de B a cada foco.
+2. [ ] *construcción en la lámina, dificultad 1*: Arrastra Z hasta el vértice de la parábola de foco F y directriz d, que es horizontal.
+   - [ ] *Pista 1:* El vértice de la parábola equidista del foco y de la directriz.
+   - [ ] *Pista 2:* Está sobre el eje, que es la perpendicular a la directriz por el foco.
+   - [ ] *Pista 3:* Baja desde F la perpendicular a d y toma el punto medio entre F y su pie.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una parábola está definida por su foco F y su directriz d. Buscamos su vértice V, y el punto Z se puede arrastrar.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Todos los puntos de una parábola equidistan del foco y de la directriz. El vértice, que está en el eje, queda a mitad de camino entre ambos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre la parábola: su distancia a F y su distancia a d son siempre iguales. El más cercano a la directriz, sobre el eje, es el vértice.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza desde F la perpendicular a la directriz: es el eje de la parábola, y corta a d en H₀.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El vértice V es el punto medio de F y H₀. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: V está sobre el eje y a la misma distancia de F que de d. La parábola pasa por V y se abre hacia el lado del foco.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner el vértice en el foco. El foco queda a la mitad de la distancia a la directriz que el vértice: V equidista de F y de d.
+3. [ ] *construcción en la lámina, dificultad 1*: Los semiejes de la elipse miden 25 y 15 mm. Arrastra Z hasta uno de los focos.
+   - [ ] *Pista 1:* Un extremo del eje menor equidista de los dos focos, y esa distancia es la mitad del eje mayor.
+   - [ ] *Pista 2:* Con el compás en B₁ y esa distancia se corta el eje mayor en los focos.
+   - [ ] *Pista 3:* Pincha en B₁, abre el compás hasta A₁O y corta el eje mayor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Conocemos los dos ejes de una elipse, A₁A₂ y B₁B₂, y buscamos sus focos. El punto Z se puede arrastrar.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La suma de las distancias de un punto de la elipse a los focos es el eje mayor, 2a. En un extremo del eje menor las dos distancias son iguales, así que cada una mide a.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre la elipse con sus dos radios vectores a los focos: su suma no cambia. Al llegar a B₁ los dos radios son iguales.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el eje mayor A₁A₂ y el eje menor B₁B₂, que se cruzan en el centro O.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en B₁ y radio la mitad del eje mayor, traza un arco que corte al eje mayor en los dos focos. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los focos están a la misma distancia del centro, y esa distancia c cumple que c² es a² menos b². Cada foco está a la distancia a de B₁ y de B₂.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como radio del arco la mitad del eje menor. El radio es la mitad del eje mayor, que es la distancia de B a cada foco.
+4. [ ] *construcción en la lámina, dificultad 2*: Los ejes de la elipse están inclinados. Arrastra Z hasta uno de sus focos.
+   - [ ] *Pista 1:* Un extremo del eje menor equidista de los dos focos, y esa distancia es la mitad del eje mayor.
+   - [ ] *Pista 2:* Con el compás en B₁ y esa distancia se corta el eje mayor en los focos.
+   - [ ] *Pista 3:* Pincha en B₁, abre el compás hasta A₁O y corta el eje mayor.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Conocemos los dos ejes de una elipse, A₁A₂ y B₁B₂, y buscamos sus focos. El punto Z se puede arrastrar.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La suma de las distancias de un punto de la elipse a los focos es el eje mayor, 2a. En un extremo del eje menor las dos distancias son iguales, así que cada una mide a.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre la elipse con sus dos radios vectores a los focos: su suma no cambia. Al llegar a B₁ los dos radios son iguales.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el eje mayor A₁A₂ y el eje menor B₁B₂, que se cruzan en el centro O.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en B₁ y radio la mitad del eje mayor, traza un arco que corte al eje mayor en los dos focos. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los focos están a la misma distancia del centro, y esa distancia c cumple que c² es a² menos b². Cada foco está a la distancia a de B₁ y de B₂.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como radio del arco la mitad del eje menor. El radio es la mitad del eje mayor, que es la distancia de B a cada foco.
+5. [ ] *construcción en la lámina, dificultad 2*: La directriz de la parábola está inclinada. Arrastra Z hasta su vértice.
+   - [ ] *Pista 1:* El vértice de la parábola equidista del foco y de la directriz.
+   - [ ] *Pista 2:* Está sobre el eje, que es la perpendicular a la directriz por el foco.
+   - [ ] *Pista 3:* Baja desde F la perpendicular a d y toma el punto medio entre F y su pie.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una parábola está definida por su foco F y su directriz d. Buscamos su vértice V, y el punto Z se puede arrastrar.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Todos los puntos de una parábola equidistan del foco y de la directriz. El vértice, que está en el eje, queda a mitad de camino entre ambos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre la parábola: su distancia a F y su distancia a d son siempre iguales. El más cercano a la directriz, sobre el eje, es el vértice.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza desde F la perpendicular a la directriz: es el eje de la parábola, y corta a d en H₀.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El vértice V es el punto medio de F y H₀. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: V está sobre el eje y a la misma distancia de F que de d. La parábola pasa por V y se abre hacia el lado del foco.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner el vértice en el foco. El foco queda a la mitad de la distancia a la directriz que el vértice: V equidista de F y de d.
+6. [ ] *construcción en la lámina, dificultad 2*: Con los focos y los vértices dados, construye puntos de la elipse con el punto X. Arrastra Z hasta uno de ellos.
+   - [ ] *Pista 1:* Cada punto de la elipse cumple que la suma de sus distancias a los focos es el eje mayor.
+   - [ ] *Pista 2:* Un punto X del eje mayor lo reparte en dos trozos, A₁X y XA₂, que serán los radios.
+   - [ ] *Pista 3:* Traza desde F₁ un arco de radio A₁X y desde F₂ uno de radio XA₂: se cortan en dos puntos de la curva.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Conocemos los focos y los vértices del eje mayor de una elipse, y queremos construir puntos de la curva. Arrastra Z hasta uno de los que salen con el punto X.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un punto de la elipse tiene las distancias a los focos sumando 2a. Si X está en el eje mayor, A₁X y XA₂ suman justo 2a.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el punto X deslizándose entre los focos: cada posición reparte 2a en dos radios, y los arcos con esos radios se cruzan sobre la elipse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Marca X entre los focos y toma las medidas A₁X y XA₂ con el compás.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en F₁ y radio A₁X, y con centro en F₂ y radio XA₂, traza dos arcos: se cortan en dos puntos de la elipse.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Intercambia los radios para obtener otros dos puntos simétricos. Arrastra Z hasta uno de los cuatro.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: en cada uno de los cuatro puntos, las distancias a F₁ y a F₂ suman el eje mayor, 2a.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: usar el mismo radio desde los dos focos. Los radios son A₁X y XA₂, que suman 2a pero no son iguales.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: traza la tangente a la hipérbola en Q y arrastra Z hasta el punto donde corta a la recta de los focos.
+   - [ ] *Pista 1:* La tangente a la hipérbola en Q es la bisectriz interior del ángulo que forman los radios vectores.
+   - [ ] *Pista 2:* Los radios vectores son los segmentos que unen Q con los focos.
+   - [ ] *Pista 3:* Une Q con F₁ y F₂, traza la bisectriz del ángulo y corta con la recta de los focos.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una hipérbola con focos F₁ y F₂ y un punto Q de ella. Buscamos dónde su tangente en Q corta a la recta de los focos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La tangente a la hipérbola en un punto es la bisectriz interior del ángulo que forman sus radios vectores a los focos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina Q recorriendo la hipérbola: la diferencia de sus distancias a los focos es constante, y la tangente gira dejando iguales los ángulos con los dos radios.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Une Q con los focos F₁ y F₂: son los radios vectores.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la bisectriz interior del ángulo F₁QF₂: es la tangente. Su corte con la recta de los focos es I; arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: I divide el segmento F₁F₂ en la misma razón que los radios vectores, y la tangente deja los dos focos a distinto lado.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar la bisectriz exterior. Esa es la tangente a la elipse; en la hipérbola la tangente es la bisectriz interior.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU, con los focos en posición general: arrastra Z hasta el corte de la tangente en Q con la recta de los focos.
+   - [ ] *Pista 1:* La tangente a la hipérbola en Q es la bisectriz interior del ángulo que forman los radios vectores.
+   - [ ] *Pista 2:* Los radios vectores son los segmentos que unen Q con los focos.
+   - [ ] *Pista 3:* Une Q con F₁ y F₂, traza la bisectriz del ángulo y corta con la recta de los focos.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una hipérbola con focos F₁ y F₂ y un punto Q de ella. Buscamos dónde su tangente en Q corta a la recta de los focos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La tangente a la hipérbola en un punto es la bisectriz interior del ángulo que forman sus radios vectores a los focos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina Q recorriendo la hipérbola: la diferencia de sus distancias a los focos es constante, y la tangente gira dejando iguales los ángulos con los dos radios.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Une Q con los focos F₁ y F₂: son los radios vectores.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la bisectriz interior del ángulo F₁QF₂: es la tangente. Su corte con la recta de los focos es I; arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: I divide el segmento F₁F₂ en la misma razón que los radios vectores, y la tangente deja los dos focos a distinto lado.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar la bisectriz exterior. Esa es la tangente a la elipse; en la hipérbola la tangente es la bisectriz interior.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: arrastra Z hasta el vértice de la parábola de foco F y directriz d.
+   - [ ] *Pista 1:* El vértice de la parábola equidista del foco y de la directriz.
+   - [ ] *Pista 2:* Está sobre el eje, que es la perpendicular a la directriz por el foco.
+   - [ ] *Pista 3:* Baja desde F la perpendicular a d y toma el punto medio entre F y su pie.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una parábola está definida por su foco F y su directriz d. Buscamos su vértice V, y el punto Z se puede arrastrar.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Todos los puntos de una parábola equidistan del foco y de la directriz. El vértice, que está en el eje, queda a mitad de camino entre ambos.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un punto que recorre la parábola: su distancia a F y su distancia a d son siempre iguales. El más cercano a la directriz, sobre el eje, es el vértice.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza desde F la perpendicular a la directriz: es el eje de la parábola, y corta a d en H₀.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El vértice V es el punto medio de F y H₀. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: V está sobre el eje y a la misma distancia de F que de d. La parábola pasa por V y se abre hacia el lado del foco.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner el vértice en el foco. El foco queda a la mitad de la distancia a la directriz que el vértice: V equidista de F y de d.
 
 ## 2. Ejercicios PAU (ejemplos de formato)
 

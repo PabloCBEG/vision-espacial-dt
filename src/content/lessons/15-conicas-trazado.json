@@ -573,29 +573,250 @@
     {
       "kind": "engine",
       "difficulty": 1,
-      "prompt": "Te dan los ejes de una elipse. Arrastra Z hasta uno de sus focos.",
+      "prompt": "Te dan los ejes de una elipse, con a = 30 y b = 18 mm. Arrastra Z hasta uno de sus focos.",
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
           "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+          "posiciones": {
+            "A1": [-30, 0],
+            "A2": [30, 0],
+            "B1": [0, 18],
+            "B2": [0, -18],
+            "Z": [50, 40]
+          },
           "respuesta": {
             "mover": "Z",
-            "objetivo": ["F1", "F2"],
+            "objetivo": ["Fa", "Fb"],
             "tolerancia": 2.5,
             "acierto": "¡Correcto! Desde B₁, cada foco está a la distancia a, la mitad del eje mayor.",
             "pista": "Pincha el compás en B₁ con radio la mitad del eje mayor y corta el eje mayor."
           }
         }
-      }
+      },
+      "hints": [
+        "Un extremo del eje menor equidista de los dos focos, y esa distancia es la mitad del eje mayor.",
+        "Con el compás en B₁ y esa distancia se corta el eje mayor en los focos.",
+        "Pincha en B₁, abre el compás hasta A₁O y corta el eje mayor."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Conocemos los dos ejes de una elipse, A₁A₂ y B₁B₂, y buscamos sus focos. El punto Z se puede arrastrar.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+              "posiciones": {
+                "A1": [-30, 0],
+                "A2": [30, 0],
+                "B1": [0, 18],
+                "B2": [0, -18],
+                "Z": [50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La suma de las distancias de un punto de la elipse a los focos es el eje mayor, 2a. En un extremo del eje menor las dos distancias son iguales, así que cada una mide a.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "Z"],
+              "posiciones": {
+                "A1": [-30, 0],
+                "A2": [30, 0],
+                "B1": [0, 18],
+                "B2": [0, -18],
+                "Z": [50, 40]
+              },
+              "destacar": ["ejeA"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que recorre la elipse con sus dos radios vectores a los focos: su suma no cambia. Al llegar a B₁ los dos radios son iguales.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+              "posiciones": {
+                "A1": [-30, 0],
+                "A2": [30, 0],
+                "B1": [0, 18],
+                "B2": [0, -18],
+                "Z": [50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el eje mayor A₁A₂ y el eje menor B₁B₂, que se cruzan en el centro O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "Z"],
+              "posiciones": {
+                "A1": [-30, 0],
+                "A2": [30, 0],
+                "B1": [0, 18],
+                "B2": [0, -18],
+                "Z": [50, 40]
+              },
+              "trazar": ["ejeA", "ejeB", "O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en B₁ y radio la mitad del eje mayor, traza un arco que corte al eje mayor en los dos focos. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-30, 0],
+                "A2": [30, 0],
+                "B1": [0, 18],
+                "B2": [0, -18],
+                "Z": [-24, 0]
+              },
+              "trazar": ["cB", "Fa", "Fb"],
+              "destacar": ["Fa", "Fb"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los focos están a la misma distancia del centro, y esa distancia c cumple que c² es a² menos b². Cada foco está a la distancia a de B₁ y de B₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-30, 0],
+                "A2": [30, 0],
+                "B1": [0, 18],
+                "B2": [0, -18],
+                "Z": [-24, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como radio del arco la mitad del eje menor. El radio es la mitad del eje mayor, que es la distancia de B a cada foco.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-30, 0],
+                "A2": [30, 0],
+                "B1": [0, 18],
+                "B2": [0, -18],
+                "Z": [-24, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [18, 18],
+                    [17.8, 20.8],
+                    [17.1, 23.6],
+                    [16, 26.2],
+                    [14.6, 28.6],
+                    [12.7, 30.7],
+                    [10.6, 32.6],
+                    [8.2, 34],
+                    [5.6, 35.1],
+                    [2.8, 35.8],
+                    [0, 36],
+                    [-2.8, 35.8],
+                    [-5.6, 35.1],
+                    [-8.2, 34],
+                    [-10.6, 32.6],
+                    [-12.7, 30.7],
+                    [-14.6, 28.6],
+                    [-16, 26.2],
+                    [-17.1, 23.6],
+                    [-17.8, 20.8],
+                    [-18, 18],
+                    [-17.8, 15.2],
+                    [-17.1, 12.4],
+                    [-16, 9.8],
+                    [-14.6, 7.4],
+                    [-12.7, 5.3],
+                    [-10.6, 3.4],
+                    [-8.2, 2],
+                    [-5.6, 0.9],
+                    [-2.8, 0.2],
+                    [0, 0],
+                    [2.8, 0.2],
+                    [5.6, 0.9],
+                    [8.2, 2],
+                    [10.6, 3.4],
+                    [12.7, 5.3],
+                    [14.6, 7.4],
+                    [16, 9.8],
+                    [17.1, 12.4],
+                    [17.8, 15.2],
+                    [18, 18]
+                  ],
+                  "rotulo": "Error: radio b"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "engine",
-      "difficulty": 2,
-      "prompt": "Arrastra Z hasta el vértice de la parábola de foco F y directriz d.",
+      "difficulty": 1,
+      "prompt": "Arrastra Z hasta el vértice de la parábola de foco F y directriz d, que es horizontal.",
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
           "visibles": ["F", "d", "Z"],
+          "posiciones": {
+            "F": [20, 20],
+            "D1": [-55, 0],
+            "D2": [55, 0],
+            "Z": [-50, 40]
+          },
           "respuesta": {
             "mover": "Z",
             "objetivo": "V",
@@ -604,16 +825,1165 @@
             "pista": "El vértice está en el eje (la perpendicular a d por F), a la misma distancia de F que de d."
           }
         }
-      }
+      },
+      "hints": [
+        "El vértice de la parábola equidista del foco y de la directriz.",
+        "Está sobre el eje, que es la perpendicular a la directriz por el foco.",
+        "Baja desde F la perpendicular a d y toma el punto medio entre F y su pie."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una parábola está definida por su foco F y su directriz d. Buscamos su vértice V, y el punto Z se puede arrastrar.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "Z"],
+              "posiciones": {
+                "F": [20, 20],
+                "D1": [-55, 0],
+                "D2": [55, 0],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Todos los puntos de una parábola equidistan del foco y de la directriz. El vértice, que está en el eje, queda a mitad de camino entre ambos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "Z"],
+              "posiciones": {
+                "F": [20, 20],
+                "D1": [-55, 0],
+                "D2": [55, 0],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que recorre la parábola: su distancia a F y su distancia a d son siempre iguales. El más cercano a la directriz, sobre el eje, es el vértice.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "pb", "Z"],
+              "posiciones": {
+                "F": [20, 20],
+                "D1": [-55, 0],
+                "D2": [55, 0],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza desde F la perpendicular a la directriz: es el eje de la parábola, y corta a d en H₀.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "Z"],
+              "posiciones": {
+                "F": [20, 20],
+                "D1": [-55, 0],
+                "D2": [55, 0],
+                "Z": [-50, 40]
+              },
+              "trazar": ["nF", "H0"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El vértice V es el punto medio de F y H₀. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [20, 20],
+                "D1": [-55, 0],
+                "D2": [55, 0],
+                "Z": [20, 10]
+              },
+              "trazar": ["V", "pb"],
+              "destacar": ["V"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: V está sobre el eje y a la misma distancia de F que de d. La parábola pasa por V y se abre hacia el lado del foco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [20, 20],
+                "D1": [-55, 0],
+                "D2": [55, 0],
+                "Z": [20, 10]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el vértice en el foco. El foco queda a la mitad de la distancia a la directriz que el vértice: V equidista de F y de d.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [20, 20],
+                "D1": [-55, 0],
+                "D2": [55, 0],
+                "Z": [20, 10]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [13, 20],
+                    [27, 20]
+                  ],
+                  "rotulo": "Error: V no es F",
+                  "desplaza": [0, 5]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Los semiejes de la elipse miden 25 y 15 mm. Arrastra Z hasta uno de los focos.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+          "posiciones": {
+            "A1": [-25, 0],
+            "A2": [25, 0],
+            "B1": [0, 15],
+            "B2": [0, -15],
+            "Z": [50, 40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["Fa", "Fb"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Desde B₁, cada foco está a la distancia a, la mitad del eje mayor.",
+            "pista": "Pincha el compás en B₁ con radio la mitad del eje mayor y corta el eje mayor."
+          }
+        }
+      },
+      "hints": [
+        "Un extremo del eje menor equidista de los dos focos, y esa distancia es la mitad del eje mayor.",
+        "Con el compás en B₁ y esa distancia se corta el eje mayor en los focos.",
+        "Pincha en B₁, abre el compás hasta A₁O y corta el eje mayor."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Conocemos los dos ejes de una elipse, A₁A₂ y B₁B₂, y buscamos sus focos. El punto Z se puede arrastrar.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+              "posiciones": {
+                "A1": [-25, 0],
+                "A2": [25, 0],
+                "B1": [0, 15],
+                "B2": [0, -15],
+                "Z": [50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La suma de las distancias de un punto de la elipse a los focos es el eje mayor, 2a. En un extremo del eje menor las dos distancias son iguales, así que cada una mide a.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "Z"],
+              "posiciones": {
+                "A1": [-25, 0],
+                "A2": [25, 0],
+                "B1": [0, 15],
+                "B2": [0, -15],
+                "Z": [50, 40]
+              },
+              "destacar": ["ejeA"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que recorre la elipse con sus dos radios vectores a los focos: su suma no cambia. Al llegar a B₁ los dos radios son iguales.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+              "posiciones": {
+                "A1": [-25, 0],
+                "A2": [25, 0],
+                "B1": [0, 15],
+                "B2": [0, -15],
+                "Z": [50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el eje mayor A₁A₂ y el eje menor B₁B₂, que se cruzan en el centro O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "Z"],
+              "posiciones": {
+                "A1": [-25, 0],
+                "A2": [25, 0],
+                "B1": [0, 15],
+                "B2": [0, -15],
+                "Z": [50, 40]
+              },
+              "trazar": ["ejeA", "ejeB", "O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en B₁ y radio la mitad del eje mayor, traza un arco que corte al eje mayor en los dos focos. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-25, 0],
+                "A2": [25, 0],
+                "B1": [0, 15],
+                "B2": [0, -15],
+                "Z": [-20, 0]
+              },
+              "trazar": ["cB", "Fa", "Fb"],
+              "destacar": ["Fa", "Fb"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los focos están a la misma distancia del centro, y esa distancia c cumple que c² es a² menos b². Cada foco está a la distancia a de B₁ y de B₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-25, 0],
+                "A2": [25, 0],
+                "B1": [0, 15],
+                "B2": [0, -15],
+                "Z": [-20, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como radio del arco la mitad del eje menor. El radio es la mitad del eje mayor, que es la distancia de B a cada foco.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-25, 0],
+                "A2": [25, 0],
+                "B1": [0, 15],
+                "B2": [0, -15],
+                "Z": [-20, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [15, 15],
+                    [14.8, 17.3],
+                    [14.3, 19.6],
+                    [13.4, 21.8],
+                    [12.1, 23.8],
+                    [10.6, 25.6],
+                    [8.8, 27.1],
+                    [6.8, 28.4],
+                    [4.6, 29.3],
+                    [2.3, 29.8],
+                    [0, 30],
+                    [-2.3, 29.8],
+                    [-4.6, 29.3],
+                    [-6.8, 28.4],
+                    [-8.8, 27.1],
+                    [-10.6, 25.6],
+                    [-12.1, 23.8],
+                    [-13.4, 21.8],
+                    [-14.3, 19.6],
+                    [-14.8, 17.3],
+                    [-15, 15],
+                    [-14.8, 12.7],
+                    [-14.3, 10.4],
+                    [-13.4, 8.2],
+                    [-12.1, 6.2],
+                    [-10.6, 4.4],
+                    [-8.8, 2.9],
+                    [-6.8, 1.6],
+                    [-4.6, 0.7],
+                    [-2.3, 0.2],
+                    [0, 0],
+                    [2.3, 0.2],
+                    [4.6, 0.7],
+                    [6.8, 1.6],
+                    [8.8, 2.9],
+                    [10.6, 4.4],
+                    [12.1, 6.2],
+                    [13.4, 8.2],
+                    [14.3, 10.4],
+                    [14.8, 12.7],
+                    [15, 15]
+                  ],
+                  "rotulo": "Error: radio b"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Los ejes de la elipse están inclinados. Arrastra Z hasta uno de sus focos.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+          "posiciones": {
+            "A1": [-32, -24],
+            "A2": [32, 24],
+            "B1": [-14.4, 19.2],
+            "B2": [14.4, -19.2],
+            "Z": [50, -40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["Fa", "Fb"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Desde B₁, cada foco está a la distancia a, la mitad del eje mayor.",
+            "pista": "Pincha el compás en B₁ con radio la mitad del eje mayor y corta el eje mayor."
+          }
+        }
+      },
+      "hints": [
+        "Un extremo del eje menor equidista de los dos focos, y esa distancia es la mitad del eje mayor.",
+        "Con el compás en B₁ y esa distancia se corta el eje mayor en los focos.",
+        "Pincha en B₁, abre el compás hasta A₁O y corta el eje mayor."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Conocemos los dos ejes de una elipse, A₁A₂ y B₁B₂, y buscamos sus focos. El punto Z se puede arrastrar.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+              "posiciones": {
+                "A1": [-32, -24],
+                "A2": [32, 24],
+                "B1": [-14.4, 19.2],
+                "B2": [14.4, -19.2],
+                "Z": [50, -40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La suma de las distancias de un punto de la elipse a los focos es el eje mayor, 2a. En un extremo del eje menor las dos distancias son iguales, así que cada una mide a.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "Z"],
+              "posiciones": {
+                "A1": [-32, -24],
+                "A2": [32, 24],
+                "B1": [-14.4, 19.2],
+                "B2": [14.4, -19.2],
+                "Z": [50, -40]
+              },
+              "destacar": ["ejeA"]
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que recorre la elipse con sus dos radios vectores a los focos: su suma no cambia. Al llegar a B₁ los dos radios son iguales.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "Z"],
+              "posiciones": {
+                "A1": [-32, -24],
+                "A2": [32, 24],
+                "B1": [-14.4, 19.2],
+                "B2": [14.4, -19.2],
+                "Z": [50, -40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza el eje mayor A₁A₂ y el eje menor B₁B₂, que se cruzan en el centro O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "Z"],
+              "posiciones": {
+                "A1": [-32, -24],
+                "A2": [32, 24],
+                "B1": [-14.4, 19.2],
+                "B2": [14.4, -19.2],
+                "Z": [50, -40]
+              },
+              "trazar": ["ejeA", "ejeB", "O"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en B₁ y radio la mitad del eje mayor, traza un arco que corte al eje mayor en los dos focos. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-32, -24],
+                "A2": [32, 24],
+                "B1": [-14.4, 19.2],
+                "B2": [14.4, -19.2],
+                "Z": [-25.6, -19.2]
+              },
+              "trazar": ["cB", "Fa", "Fb"],
+              "destacar": ["Fa", "Fb"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: los focos están a la misma distancia del centro, y esa distancia c cumple que c² es a² menos b². Cada foco está a la distancia a de B₁ y de B₂.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-32, -24],
+                "A2": [32, 24],
+                "B1": [-14.4, 19.2],
+                "B2": [14.4, -19.2],
+                "Z": [-25.6, -19.2]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: tomar como radio del arco la mitad del eje menor. El radio es la mitad del eje mayor, que es la distancia de B a cada foco.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "A2", "B1", "B2", "ejeA", "ejeB", "O", "cB", "Fa", "Fb", "Z"],
+              "posiciones": {
+                "A1": [-32, -24],
+                "A2": [32, 24],
+                "B1": [-14.4, 19.2],
+                "B2": [14.4, -19.2],
+                "Z": [-25.6, -19.2]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [9.6, 19.2],
+                    [9.3, 23],
+                    [8.4, 26.6],
+                    [7, 30.1],
+                    [5, 33.3],
+                    [2.6, 36.2],
+                    [-0.3, 38.6],
+                    [-3.5, 40.6],
+                    [-7, 42],
+                    [-10.6, 42.9],
+                    [-14.4, 43.2],
+                    [-18.2, 42.9],
+                    [-21.8, 42],
+                    [-25.3, 40.6],
+                    [-28.5, 38.6],
+                    [-31.4, 36.2],
+                    [-33.8, 33.3],
+                    [-35.8, 30.1],
+                    [-37.2, 26.6],
+                    [-38.1, 23],
+                    [-38.4, 19.2],
+                    [-38.1, 15.4],
+                    [-37.2, 11.8],
+                    [-35.8, 8.3],
+                    [-33.8, 5.1],
+                    [-31.4, 2.2],
+                    [-28.5, -0.2],
+                    [-25.3, -2.2],
+                    [-21.8, -3.6],
+                    [-18.2, -4.5],
+                    [-14.4, -4.8],
+                    [-10.6, -4.5],
+                    [-7, -3.6],
+                    [-3.5, -2.2],
+                    [-0.3, -0.2],
+                    [2.6, 2.2],
+                    [5, 5.1],
+                    [7, 8.3],
+                    [8.4, 11.8],
+                    [9.3, 15.4],
+                    [9.6, 19.2]
+                  ],
+                  "rotulo": "Error: radio b"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "La directriz de la parábola está inclinada. Arrastra Z hasta su vértice.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["F", "d", "Z"],
+          "posiciones": {
+            "F": [10, 25],
+            "D1": [-55, -30],
+            "D2": [55, -10],
+            "Z": [-50, 40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "V",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El vértice está a la misma distancia del foco que de la directriz.",
+            "pista": "El vértice está en el eje (la perpendicular a d por F), a la misma distancia de F que de d."
+          }
+        }
+      },
+      "hints": [
+        "El vértice de la parábola equidista del foco y de la directriz.",
+        "Está sobre el eje, que es la perpendicular a la directriz por el foco.",
+        "Baja desde F la perpendicular a d y toma el punto medio entre F y su pie."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una parábola está definida por su foco F y su directriz d. Buscamos su vértice V, y el punto Z se puede arrastrar.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "Z"],
+              "posiciones": {
+                "F": [10, 25],
+                "D1": [-55, -30],
+                "D2": [55, -10],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Todos los puntos de una parábola equidistan del foco y de la directriz. El vértice, que está en el eje, queda a mitad de camino entre ambos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "Z"],
+              "posiciones": {
+                "F": [10, 25],
+                "D1": [-55, -30],
+                "D2": [55, -10],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que recorre la parábola: su distancia a F y su distancia a d son siempre iguales. El más cercano a la directriz, sobre el eje, es el vértice.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "pb", "Z"],
+              "posiciones": {
+                "F": [10, 25],
+                "D1": [-55, -30],
+                "D2": [55, -10],
+                "Z": [-50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza desde F la perpendicular a la directriz: es el eje de la parábola, y corta a d en H₀.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "Z"],
+              "posiciones": {
+                "F": [10, 25],
+                "D1": [-55, -30],
+                "D2": [55, -10],
+                "Z": [-50, 40]
+              },
+              "trazar": ["nF", "H0"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El vértice V es el punto medio de F y H₀. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [10, 25],
+                "D1": [-55, -30],
+                "D2": [55, -10],
+                "Z": [13.8, 4.1]
+              },
+              "trazar": ["V", "pb"],
+              "destacar": ["V"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: V está sobre el eje y a la misma distancia de F que de d. La parábola pasa por V y se abre hacia el lado del foco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [10, 25],
+                "D1": [-55, -30],
+                "D2": [55, -10],
+                "Z": [13.8, 4.1]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el vértice en el foco. El foco queda a la mitad de la distancia a la directriz que el vértice: V equidista de F y de d.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [10, 25],
+                "D1": [-55, -30],
+                "D2": [55, -10],
+                "Z": [13.8, 4.1]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [3, 25],
+                    [17, 25]
+                  ],
+                  "rotulo": "Error: V no es F",
+                  "desplaza": [0, 5]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Con los focos y los vértices dados, construye puntos de la elipse con el punto X. Arrastra Z hasta uno de ellos.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "A1", "A2", "ejeA", "Z"],
+          "posiciones": {
+            "F1": [-24, 0],
+            "F2": [24, 0],
+            "A1": [-40, 0],
+            "A2": [40, 0],
+            "Z": [50, 45]
+          },
+          "parametros": {
+            "X": 0.35
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["P1", "P2", "P3", "P4"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! La suma de las distancias de ese punto a los focos es el eje mayor.",
+            "pista": "Con centro en cada foco, traza arcos de radios A₁X y XA₂: se cortan en puntos de la elipse."
+          }
+        }
+      },
+      "hints": [
+        "Cada punto de la elipse cumple que la suma de sus distancias a los focos es el eje mayor.",
+        "Un punto X del eje mayor lo reparte en dos trozos, A₁X y XA₂, que serán los radios.",
+        "Traza desde F₁ un arco de radio A₁X y desde F₂ uno de radio XA₂: se cortan en dos puntos de la curva."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Conocemos los focos y los vértices del eje mayor de una elipse, y queremos construir puntos de la curva. Arrastra Z hasta uno de los que salen con el punto X.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "A1", "A2", "ejeA", "Z"],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [50, 45]
+              },
+              "parametros": {
+                "X": 0.35
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Un punto de la elipse tiene las distancias a los focos sumando 2a. Si X está en el eje mayor, A₁X y XA₂ suman justo 2a.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "A1", "A2", "ejeA", "Z"],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [50, 45]
+              },
+              "parametros": {
+                "X": 0.35
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el punto X deslizándose entre los focos: cada posición reparte 2a en dos radios, y los arcos con esos radios se cruzan sobre la elipse.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "A1", "A2", "ejeA", "X", "Z"],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [50, 45]
+              },
+              "parametros": {
+                "X": 0.35
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Marca X entre los focos y toma las medidas A₁X y XA₂ con el compás.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "A1", "A2", "ejeA", "X", "Z"],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [50, 45]
+              },
+              "parametros": {
+                "X": 0.35
+              },
+              "trazar": ["X"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en F₁ y radio A₁X, y con centro en F₂ y radio XA₂, traza dos arcos: se cortan en dos puntos de la elipse.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "A1", "A2", "ejeA", "X", "c1", "c2", "P1", "P2", "Z"],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [50, 45]
+              },
+              "parametros": {
+                "X": 0.35
+              },
+              "trazar": ["c1", "c2", "P1", "P2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Intercambia los radios para obtener otros dos puntos simétricos. Arrastra Z hasta uno de los cuatro.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "F1",
+                "F2",
+                "A1",
+                "A2",
+                "ejeA",
+                "X",
+                "c1",
+                "c2",
+                "P1",
+                "P2",
+                "c3",
+                "c4",
+                "P3",
+                "P4",
+                "Z"
+              ],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [-12, 30.5]
+              },
+              "parametros": {
+                "X": 0.35
+              },
+              "trazar": ["c3", "c4", "P3", "P4"],
+              "destacar": ["P1", "P2", "P3", "P4"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: en cada uno de los cuatro puntos, las distancias a F₁ y a F₂ suman el eje mayor, 2a.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "F1",
+                "F2",
+                "A1",
+                "A2",
+                "ejeA",
+                "X",
+                "c1",
+                "c2",
+                "P1",
+                "P2",
+                "c3",
+                "c4",
+                "P3",
+                "P4",
+                "Z"
+              ],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [-12, 30.5]
+              },
+              "parametros": {
+                "X": 0.35
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: usar el mismo radio desde los dos focos. Los radios son A₁X y XA₂, que suman 2a pero no son iguales.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "F1",
+                "F2",
+                "A1",
+                "A2",
+                "ejeA",
+                "X",
+                "c1",
+                "c2",
+                "P1",
+                "P2",
+                "c3",
+                "c4",
+                "P3",
+                "P4",
+                "Z"
+              ],
+              "posiciones": {
+                "F1": [-24, 0],
+                "F2": [24, 0],
+                "A1": [-40, 0],
+                "A2": [40, 0],
+                "Z": [-12, 30.5]
+              },
+              "parametros": {
+                "X": 0.35
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [16, 0],
+                    [15.5, 6.3],
+                    [14, 12.4],
+                    [11.6, 18.2],
+                    [8.4, 23.5],
+                    [4.3, 28.3],
+                    [-0.5, 32.4],
+                    [-5.8, 35.6],
+                    [-11.6, 38],
+                    [-17.7, 39.5],
+                    [-24, 40],
+                    [-30.3, 39.5],
+                    [-36.4, 38],
+                    [-42.2, 35.6],
+                    [-47.5, 32.4],
+                    [-52.3, 28.3],
+                    [-56.4, 23.5],
+                    [-59.6, 18.2],
+                    [-62, 12.4],
+                    [-63.5, 6.3],
+                    [-64, 0],
+                    [-63.5, -6.3],
+                    [-62, -12.4],
+                    [-59.6, -18.2],
+                    [-56.4, -23.5],
+                    [-52.3, -28.3],
+                    [-47.5, -32.4],
+                    [-42.2, -35.6],
+                    [-36.4, -38],
+                    [-30.3, -39.5],
+                    [-24, -40],
+                    [-17.7, -39.5],
+                    [-11.6, -38],
+                    [-5.8, -35.6],
+                    [-0.5, -32.4],
+                    [4.3, -28.3],
+                    [8.4, -23.5],
+                    [11.6, -18.2],
+                    [14, -12.4],
+                    [15.5, -6.3],
+                    [16, 0]
+                  ],
+                  "rotulo": "Error: radio a en los dos focos"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
       "kind": "engine",
       "difficulty": 3,
-      "prompt": "Como en la PAU: traza la tangente a la hipérbola en Q y arrastra Z hasta el punto donde corta al eje real.",
+      "prompt": "Como en la PAU: traza la tangente a la hipérbola en Q y arrastra Z hasta el punto donde corta a la recta de los focos.",
       "sheet": ["cuadricula"],
       "engines": {
         "plana": {
           "visibles": ["F1", "F2", "h", "Q", "Z"],
+          "posiciones": {
+            "F1": [-30, 0],
+            "F2": [30, 0],
+            "Z": [50, 40]
+          },
+          "parametros": {},
           "respuesta": {
             "mover": "Z",
             "objetivo": "I",
@@ -622,7 +1992,555 @@
             "pista": "Une Q con los dos focos y traza la bisectriz del ángulo que forman: esa es la tangente."
           }
         }
-      }
+      },
+      "hints": [
+        "La tangente a la hipérbola en Q es la bisectriz interior del ángulo que forman los radios vectores.",
+        "Los radios vectores son los segmentos que unen Q con los focos.",
+        "Une Q con F₁ y F₂, traza la bisectriz del ángulo y corta con la recta de los focos."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos una hipérbola con focos F₁ y F₂ y un punto Q de ella. Buscamos dónde su tangente en Q corta a la recta de los focos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "Z"],
+              "posiciones": {
+                "F1": [-30, 0],
+                "F2": [30, 0],
+                "Z": [50, 40]
+              },
+              "parametros": {}
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La tangente a la hipérbola en un punto es la bisectriz interior del ángulo que forman sus radios vectores a los focos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "Z"],
+              "posiciones": {
+                "F1": [-30, 0],
+                "F2": [30, 0],
+                "Z": [50, 40]
+              },
+              "parametros": {}
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina Q recorriendo la hipérbola: la diferencia de sus distancias a los focos es constante, y la tangente gira dejando iguales los ángulos con los dos radios.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "Z"],
+              "posiciones": {
+                "F1": [-30, 0],
+                "F2": [30, 0],
+                "Z": [50, 40]
+              },
+              "parametros": {}
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Une Q con los focos F₁ y F₂: son los radios vectores.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "Z"],
+              "posiciones": {
+                "F1": [-30, 0],
+                "F2": [30, 0],
+                "Z": [50, 40]
+              },
+              "parametros": {},
+              "trazar": ["QF1", "QF2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la bisectriz interior del ángulo F₁QF₂: es la tangente. Su corte con la recta de los focos es I; arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "th", "lF", "I", "Z"],
+              "posiciones": {
+                "F1": [-30, 0],
+                "F2": [30, 0],
+                "Z": [9.5, 0]
+              },
+              "parametros": {},
+              "trazar": ["th", "I"],
+              "destacar": ["th", "I"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: I divide el segmento F₁F₂ en la misma razón que los radios vectores, y la tangente deja los dos focos a distinto lado.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "th", "lF", "I", "Z"],
+              "posiciones": {
+                "F1": [-30, 0],
+                "F2": [30, 0],
+                "Z": [9.5, 0]
+              },
+              "parametros": {}
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar la bisectriz exterior. Esa es la tangente a la elipse; en la hipérbola la tangente es la bisectriz interior.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "th", "lF", "I", "Z"],
+              "posiciones": {
+                "F1": [-30, 0],
+                "F2": [30, 0],
+                "Z": [9.5, 0]
+              },
+              "parametros": {}
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [60.2, -15.4],
+                    [-12.8, -48.1]
+                  ],
+                  "rotulo": "Error: bisectriz exterior"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU, con los focos en posición general: arrastra Z hasta el corte de la tangente en Q con la recta de los focos.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["F1", "F2", "h", "Q", "Z"],
+          "posiciones": {
+            "F1": [-35, -10],
+            "F2": [20, 15],
+            "Z": [50, -40]
+          },
+          "parametros": {
+            "Q": 0.45
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "I",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! La tangente es la bisectriz interior de los radios vectores QF₁ y QF₂.",
+            "pista": "Une Q con los dos focos y traza la bisectriz del ángulo que forman: esa es la tangente."
+          }
+        }
+      },
+      "hints": [
+        "La tangente a la hipérbola en Q es la bisectriz interior del ángulo que forman los radios vectores.",
+        "Los radios vectores son los segmentos que unen Q con los focos.",
+        "Une Q con F₁ y F₂, traza la bisectriz del ángulo y corta con la recta de los focos."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Tenemos una hipérbola con focos F₁ y F₂ y un punto Q de ella. Buscamos dónde su tangente en Q corta a la recta de los focos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "Z"],
+              "posiciones": {
+                "F1": [-35, -10],
+                "F2": [20, 15],
+                "Z": [50, -40]
+              },
+              "parametros": {
+                "Q": 0.45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La tangente a la hipérbola en un punto es la bisectriz interior del ángulo que forman sus radios vectores a los focos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "Z"],
+              "posiciones": {
+                "F1": [-35, -10],
+                "F2": [20, 15],
+                "Z": [50, -40]
+              },
+              "parametros": {
+                "Q": 0.45
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina Q recorriendo la hipérbola: la diferencia de sus distancias a los focos es constante, y la tangente gira dejando iguales los ángulos con los dos radios.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "Z"],
+              "posiciones": {
+                "F1": [-35, -10],
+                "F2": [20, 15],
+                "Z": [50, -40]
+              },
+              "parametros": {
+                "Q": 0.45
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Une Q con los focos F₁ y F₂: son los radios vectores.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "Z"],
+              "posiciones": {
+                "F1": [-35, -10],
+                "F2": [20, 15],
+                "Z": [50, -40]
+              },
+              "parametros": {
+                "Q": 0.45
+              },
+              "trazar": ["QF1", "QF2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la bisectriz interior del ángulo F₁QF₂: es la tangente. Su corte con la recta de los focos es I; arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "th", "lF", "I", "Z"],
+              "posiciones": {
+                "F1": [-35, -10],
+                "F2": [20, 15],
+                "Z": [-14, -0.5]
+              },
+              "parametros": {
+                "Q": 0.45
+              },
+              "trazar": ["th", "I"],
+              "destacar": ["th", "I"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: I divide el segmento F₁F₂ en la misma razón que los radios vectores, y la tangente deja los dos focos a distinto lado.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "th", "lF", "I", "Z"],
+              "posiciones": {
+                "F1": [-35, -10],
+                "F2": [20, 15],
+                "Z": [-14, -0.5]
+              },
+              "parametros": {
+                "Q": 0.45
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar la bisectriz exterior. Esa es la tangente a la elipse; en la hipérbola la tangente es la bisectriz interior.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F1", "F2", "h", "Q", "QF1", "QF2", "th", "lF", "I", "Z"],
+              "posiciones": {
+                "F1": [-35, -10],
+                "F2": [20, 15],
+                "Z": [-14, -0.5]
+              },
+              "parametros": {
+                "Q": 0.45
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-81, 2.2],
+                    [-30.8, 64.4]
+                  ],
+                  "rotulo": "Error: bisectriz exterior"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: arrastra Z hasta el vértice de la parábola de foco F y directriz d.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["F", "d", "Z"],
+          "posiciones": {
+            "F": [-20, 30],
+            "D1": [-55, -40],
+            "D2": [55, -5],
+            "Z": [50, 40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "V",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El vértice está a la misma distancia del foco que de la directriz.",
+            "pista": "El vértice está en el eje (la perpendicular a d por F), a la misma distancia de F que de d."
+          }
+        }
+      },
+      "hints": [
+        "El vértice de la parábola equidista del foco y de la directriz.",
+        "Está sobre el eje, que es la perpendicular a la directriz por el foco.",
+        "Baja desde F la perpendicular a d y toma el punto medio entre F y su pie."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una parábola está definida por su foco F y su directriz d. Buscamos su vértice V, y el punto Z se puede arrastrar.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "Z"],
+              "posiciones": {
+                "F": [-20, 30],
+                "D1": [-55, -40],
+                "D2": [55, -5],
+                "Z": [50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Todos los puntos de una parábola equidistan del foco y de la directriz. El vértice, que está en el eje, queda a mitad de camino entre ambos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "Z"],
+              "posiciones": {
+                "F": [-20, 30],
+                "D1": [-55, -40],
+                "D2": [55, -5],
+                "Z": [50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un punto que recorre la parábola: su distancia a F y su distancia a d son siempre iguales. El más cercano a la directriz, sobre el eje, es el vértice.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "pb", "Z"],
+              "posiciones": {
+                "F": [-20, 30],
+                "D1": [-55, -40],
+                "D2": [55, -5],
+                "Z": [50, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza desde F la perpendicular a la directriz: es el eje de la parábola, y corta a d en H₀.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "Z"],
+              "posiciones": {
+                "F": [-20, 30],
+                "D1": [-55, -40],
+                "D2": [55, -5],
+                "Z": [50, 40]
+              },
+              "trazar": ["nF", "H0"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El vértice V es el punto medio de F y H₀. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [-20, 30],
+                "D1": [-55, -40],
+                "D2": [55, -5],
+                "Z": [-11.5, 3.3]
+              },
+              "trazar": ["V", "pb"],
+              "destacar": ["V"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: V está sobre el eje y a la misma distancia de F que de d. La parábola pasa por V y se abre hacia el lado del foco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [-20, 30],
+                "D1": [-55, -40],
+                "D2": [55, -5],
+                "Z": [-11.5, 3.3]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el vértice en el foco. El foco queda a la mitad de la distancia a la directriz que el vértice: V equidista de F y de d.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["F", "d", "nF", "H0", "V", "pb", "Z"],
+              "posiciones": {
+                "F": [-20, 30],
+                "D1": [-55, -40],
+                "D2": [55, -5],
+                "Z": [-11.5, 3.3]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-27, 30],
+                    [-13, 30]
+                  ],
+                  "rotulo": "Error: V no es F",
+                  "desplaza": [0, 5]
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
