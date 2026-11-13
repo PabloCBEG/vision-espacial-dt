@@ -41,6 +41,7 @@ const COMPLETE_LESSONS: string[] = [
   'el-plano',
   'lo-que-se-ve',
   'distancia-por-abatimiento',
+  'cada-eje-se-reduce',
 ];
 
 const lessonNamed = (id: string): Lesson => {

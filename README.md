@@ -183,7 +183,8 @@ Copia un ejercicio de una lección existente y cambia sus valores.
   superficie) y `cuerda` (el tramo de la `"recta"` dentro del sólido). Una sección curva (cono y
   cilindro) solo admite `ladoMayor`, que es su eje mayor.
   En axonometría, `ejeX`, `ejeY`, `ejeZ` (longitud en el dibujo de una arista paralela a ese eje) y
-  `diagonalVertical` (la del octaedro); en cónica, `horizonte`, `puntoDistancia`, `fugaCercana` y
+  `diagonalVertical` (la del octaedro) y `diagonalCara` (la de la cara frontal del cubo, que no se
+  reduce con ningún coeficiente); `ejeZ` también vale para la altura de un prisma; en cónica, `horizonte`, `puntoDistancia`, `fugaCercana` y
   `fugaLejana` (distancia de P al punto de fuga de las aristas del cubo girado).
 
 Los tests recorren todos los ejercicios (`src/content/exercises.test.ts`) y comprueban que la

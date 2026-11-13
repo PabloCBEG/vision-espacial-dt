@@ -2191,6 +2191,125 @@ Fichero: `src/content/lessons/18-distancia-por-abatimiento.json` · DT I · nive
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (71,1 mm) y la suma de cotas (45 mm). Mide 84,1 mm.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar la cota de un punto al lado equivocado de la charnela. Cada punto se abate sobre la perpendicular a la charnela, hacia el lado donde está respecto al plano elegido.
 
+### I-13 · Cada eje se reduce
+
+Fichero: `src/content/lessons/19-cada-eje-se-reduce.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Sistemas de representación: perspectiva isométrica, dibujo isométrico y perspectiva caballera de cubos y prismas, con sus coeficientes de reducción.
+
+**Pasos**
+
+1. [ ] Este cubo tiene 32 mm de arista. En diédrico, su planta y su alzado son dos cuadrados iguales y no se ve a la vez su forma completa.
+2. [ ] La axonometría es una proyección del mismo cubo desde otra dirección. Empezamos mirando de frente y solo se ve una cara.
+3. [ ] Giramos hasta la dirección isométrica, que forma el mismo ángulo con los tres ejes. En el dibujo, los ejes quedan a 120° y se ven tres caras.
+4. [ ] Cada medida paralela a un eje se reduce con el coeficiente 0,816. La escala gráfica lo construye: medidas reales a 45° y proyectadas a 30°.
+5. [ ] Las medidas se llevan solo sobre los ejes, o paralelas a ellos. Lo demás, como una diagonal, se obtiene uniendo vértices ya dibujados.
+6. [ ] El dibujo isométrico es el mismo cubo sin reducir: sale más grande, con las mismas proporciones. En él las aristas miden lo real.
+7. [ ] En caballera, el plano frontal XZ queda en verdadera magnitud y el eje Y se dibuja a 45° y reducido a la mitad. Los rayos son oblicuos.
+8. [ ] En isométrica se reducen los tres ejes por igual; en caballera, solo el Y. No se mezclan los coeficientes de un sistema con los del otro.
+
+**Ejercicios**
+
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 24.5 mm): En perspectiva isométrica, ¿cuánto mide en el dibujo una arista de 30 mm de un cubo, paralela al eje Y?
+   - [ ] *Pista 1:* En la perspectiva isométrica las tres direcciones se acortan por igual.
+   - [ ] *Pista 2:* El coeficiente de reducción vale 0,816 en los tres ejes.
+   - [ ] *Pista 3:* Multiplica la medida real por 0,816.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en perspectiva isométrica y queremos saber cuánto mide en el dibujo una arista de 30 mm paralela al eje Y.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En la perspectiva isométrica los tres ejes forman 120° y se reducen con el mismo coeficiente, 0,816. Toda medida paralela a un eje se multiplica por él.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes se ven igual de inclinados y a 120° entre sí.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva 30 mm a la escala gráfica y lee la medida reducida: 24,5 mm. Dibuja esa medida sobre el eje.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 30 mm por 0,816 da 24,5 mm. La misma reducción vale para las aristas paralelas a X y a Z.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la medida real, 30 mm, en una perspectiva isométrica. Esa es la medida del dibujo isométrico; aquí hay que reducirla con el coeficiente.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 50 mm): En dibujo isométrico, sin reducir, ¿cuánto mide en el dibujo la altura de 50 mm de un prisma, paralela al eje Z?
+   - [ ] *Pista 1:* El dibujo isométrico no aplica coeficiente de reducción.
+   - [ ] *Pista 2:* Las medidas paralelas a los ejes se dibujan con su valor real.
+   - [ ] *Pista 3:* La altura dibujada mide lo mismo que la real.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en dibujo isométrico y queremos saber cuánto mide en el dibujo la altura de 50 mm paralela al eje Z.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En el dibujo isométrico los ejes también forman 120°, pero no se reduce nada: las medidas paralelas a los ejes se dibujan con su valor real.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes se ven igual de inclinados y a 120° entre sí.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja los tres ejes a 120° entre sí; en el dibujo isométrico no hace falta escala de reducción.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre el eje la medida real, 50 mm, sin reducirla: 50 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la medida dibujada coincide con la real, 50 mm, porque ese eje no se reduce en este sistema.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: aplicar el coeficiente de la perspectiva isométrica en un dibujo isométrico. Aquí no se reduce nada, y la medida dibujada es la real.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 15 mm): En caballera con coeficiente 0,5, ¿cuánto mide en el dibujo una arista de 30 mm de un cubo, paralela al eje Y?
+   - [ ] *Pista 1:* En caballera solo el eje Y se dibuja reducido.
+   - [ ] *Pista 2:* La reducción del eje Y es el coeficiente de caballera.
+   - [ ] *Pista 3:* Multiplica la medida real por ese coeficiente.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en caballera y queremos saber cuánto mide en el dibujo una arista de 30 mm paralela al eje Y.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En caballera el plano frontal XZ se ve en verdadera magnitud, y el eje Y se dibuja inclinado y reducido con el coeficiente, 0,5.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: las caras paralelas al cuadro no se deforman y solo la profundidad se acorta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el eje Y a 45° del eje X, hacia arriba y a la derecha, y los ejes X y Z a escala real.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre el eje Y la medida real, 30 mm, multiplicada por 0,5: 15 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 30 mm por 0,5 da 15 mm. Las aristas paralelas a X y a Z no se reducen.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la arista del eje Y con su medida real, 30 mm. En caballera la profundidad se reduce con el coeficiente.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 36.7 mm): En perspectiva isométrica, ¿cuánto mide en el dibujo la altura de 45 mm de un prisma, paralela al eje Z?
+   - [ ] *Pista 1:* La altura del prisma va paralela al eje Z.
+   - [ ] *Pista 2:* Los tres ejes se reducen con el mismo coeficiente isométrico.
+   - [ ] *Pista 3:* Multiplica la altura real por el coeficiente.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en perspectiva isométrica y queremos saber cuánto mide en el dibujo la altura de 45 mm paralela al eje Z.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En la perspectiva isométrica los tres ejes forman 120° y se reducen con el mismo coeficiente, 0,816. Toda medida paralela a un eje se multiplica por él.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes se ven igual de inclinados y a 120° entre sí.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica de reducción: lleva medidas reales sobre una recta a 45° y proyéctalas sobre otra a 30°.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva 45 mm a la escala gráfica y lee la medida reducida: 36,7 mm. Dibuja esa medida sobre el eje.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 45 mm por 0,816 da 36,7 mm. La misma reducción vale para las aristas paralelas a X y a Z.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar la medida real, 45 mm, en una perspectiva isométrica. Esa es la medida del dibujo isométrico; aquí hay que reducirla con el coeficiente.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 40 mm): En caballera con coeficiente 0,5, ¿cuánto mide en el dibujo la altura de 40 mm de un prisma, paralela al eje Z?
+   - [ ] *Pista 1:* En caballera, el plano frontal XZ está en verdadera magnitud.
+   - [ ] *Pista 2:* Los ejes X y Z no se reducen; solo se reduce el Y.
+   - [ ] *Pista 3:* La altura dibujada mide lo mismo que la real.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en caballera y queremos saber cuánto mide en el dibujo la altura de 40 mm paralela al eje Z.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En caballera el plano frontal XZ está en verdadera magnitud: las aristas paralelas a X y a Z se dibujan sin reducir. Solo se reduce el eje Y.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: las caras paralelas al cuadro no se deforman y solo la profundidad se acorta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el cuadrado frontal en verdadera magnitud y, desde sus vértices, los ejes Y reducidos hacia atrás.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre el eje la medida real, 40 mm, sin reducirla: 40 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la medida dibujada coincide con la real, 40 mm, porque ese eje no se reduce en este sistema.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: reducir con el coeficiente de caballera una medida del eje Z. Solo se reducen las medidas del eje Y.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 44 mm): En caballera, ¿cuánto mide en el dibujo una arista de 44 mm de un cubo, paralela al eje X?
+   - [ ] *Pista 1:* En caballera hay que olvidar los coeficientes de la isométrica.
+   - [ ] *Pista 2:* El eje X está en el plano frontal, que se ve en verdadera magnitud.
+   - [ ] *Pista 3:* La arista dibujada mide lo mismo que la real.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un sólido en caballera y queremos saber cuánto mide en el dibujo una arista de 44 mm paralela al eje X.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En caballera el plano frontal XZ está en verdadera magnitud: las aristas paralelas a X y a Z se dibujan sin reducir. Solo se reduce el eje Y.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: las caras paralelas al cuadro no se deforman y solo la profundidad se acorta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el cuadrado frontal en verdadera magnitud y, desde sus vértices, los ejes Y reducidos hacia atrás.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre el eje la medida real, 44 mm, sin reducirla: 44 mm.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la medida dibujada coincide con la real, 44 mm, porque ese eje no se reduce en este sistema.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: aplicar un coeficiente de la isométrica en caballera. Allí los ejes X y Z no se reducen y solo cambia el Y.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 56.6 mm): Como en la PAU: en caballera, ¿cuánto mide en el dibujo la diagonal de la cara frontal de un cubo de 40 mm de arista?
+   - [ ] *Pista 1:* La diagonal no es paralela a ningún eje: no se mide con un coeficiente.
+   - [ ] *Pista 2:* La cara frontal está en el plano XZ, que en caballera se ve en verdadera magnitud.
+   - [ ] *Pista 3:* Dibuja la cara y mide la diagonal: es la hipotenusa de dos aristas.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un cubo en caballera y queremos saber cuánto mide en el dibujo la diagonal de su cara frontal, de 56,6 mm de verdad.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una diagonal no es paralela a ningún eje, así que no se mide con un coeficiente. Se dibujan las aristas de la cara, con su reducción, y se mide la recta que las une.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido proyectado con rayos oblicuos sobre el plano frontal: las caras paralelas al cuadro no se deforman y solo la profundidad se acorta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el cuadrado frontal en verdadera magnitud, con las aristas de los ejes X y Z sin reducir.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Une los extremos de las dos aristas: la diagonal mide 56,6 mm, igual que en la realidad, porque la cara frontal no se deforma en caballera.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la diagonal del cuadrado frontal mide 56,6 mm, su valor real, porque el plano XZ está en verdadera magnitud.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: multiplicar la diagonal real, 56,6 mm, por el coeficiente de caballera. Esa cara no está en el eje Y y no se reduce.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 32.7 mm): Como en la PAU: en perspectiva isométrica, ¿cuánto mide en el dibujo la diagonal de la cara frontal de un cubo de 40 mm de arista?
+   - [ ] *Pista 1:* La diagonal no es paralela a ningún eje: no se reduce con el coeficiente.
+   - [ ] *Pista 2:* Dibuja primero las dos aristas de la cara, reducidas, y une sus extremos.
+   - [ ] *Pista 3:* Mide en el dibujo la recta que une el origen con el vértice opuesto de la cara.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un cubo en perspectiva isométrica y queremos saber cuánto mide en el dibujo la diagonal de su cara frontal, de 56,6 mm de verdad.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una diagonal no es paralela a ningún eje, así que no se mide con un coeficiente. Se dibujan las aristas de la cara, con su reducción, y se mide la recta que las une.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes se ven igual de inclinados y a 120° entre sí.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Construye la escala gráfica y dibuja las dos aristas de la cara, sobre los ejes X y Z, reducidas con ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Une los extremos de las dos aristas: esa diagonal mide 32,7 mm en el dibujo. No es la medida real, 56,6 mm, ni esa por el coeficiente.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la diagonal dibujada, 32,7 mm, se mide sobre el dibujo y no sale de multiplicar 56,6 mm por un coeficiente.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: multiplicar la diagonal real, 56,6 mm, por el coeficiente del eje. La diagonal no es paralela a un eje y se mide en el dibujo.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 36 mm): Como en la PAU: en dibujo isométrico, ¿cuánto mide en el dibujo la diagonal de la cara frontal de un cubo de 36 mm de arista?
+   - [ ] *Pista 1:* La diagonal no es paralela a ningún eje: su longitud real no se traslada al dibujo.
+   - [ ] *Pista 2:* Dibuja las dos aristas de la cara a su medida real y une sus extremos.
+   - [ ] *Pista 3:* Mide en el dibujo la recta que une el origen con el vértice opuesto de la cara.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dibujamos un cubo en dibujo isométrico y queremos saber cuánto mide en el dibujo la diagonal de su cara frontal, de 50,9 mm de verdad.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una diagonal no es paralela a ningún eje, así que no se mide con un coeficiente. Se dibujan las aristas de la cara, con su reducción, y se mide la recta que las une.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido girando hasta que una de sus diagonales mira al observador: los tres ejes se ven igual de inclinados y a 120° entre sí.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja las dos aristas de la cara, sobre los ejes X y Z, con su medida real.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Une los extremos de las dos aristas: esa diagonal mide 36 mm en el dibujo. No es la medida real, 50,9 mm, ni esa por el coeficiente.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la diagonal dibujada, 36 mm, se mide sobre el dibujo y no sale de multiplicar 50,9 mm por un coeficiente.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: multiplicar la diagonal real, 50,9 mm, por el coeficiente del eje. La diagonal no es paralela a un eje y se mide en el dibujo.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos

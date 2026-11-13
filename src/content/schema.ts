@@ -210,6 +210,7 @@ export const SOLID_MAGNITUDES = [
   'ejeY',
   'ejeZ',
   'diagonalVertical',
+  'diagonalCara',
   // Perspectiva cónica: horizonte, punto de distancia y puntos de fuga de un cubo girado.
   'horizonte',
   'puntoDistancia',
