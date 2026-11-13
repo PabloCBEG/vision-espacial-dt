@@ -151,7 +151,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: null,
     pauNote: 'No entra',
     scene: 'Enlace de arcos con sus centros visibles',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'I-08',

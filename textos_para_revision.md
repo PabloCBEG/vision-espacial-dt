@@ -2310,6 +2310,133 @@ Fichero: `src/content/lessons/19-cada-eje-se-reduce.json` · DT I · nivel Inici
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la diagonal dibujada, 36 mm, se mide sobre el dibujo y no sale de multiplicar 50,9 mm por un coeficiente.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: multiplicar la diagonal real, 50,9 mm, por el coeficiente del eje. La diagonal no es paralela a un eje y se mide en el dibujo.
 
+### I-07 · Curvas con arcos enlazados
+
+Fichero: `src/content/lessons/20-curvas-de-arcos.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Geometría: curvas técnicas, óvalo de cuatro centros y espiral de dos centros, con enlaces tangentes sobre la recta de los centros.
+
+**Pasos**
+
+1. [ ] Las curvas técnicas se dibujan con arcos de circunferencia enlazados, sin picos. Cada arco tiene su centro y su radio.
+2. [ ] Dos arcos son tangentes cuando su punto de enlace está en la recta que une sus centros. Así la curva no cambia de dirección en el enlace.
+3. [ ] Óvalo de ejes AB y CD: llevamos el semieje mayor sobre el menor con un arco de centro O. Con centro C y radio CF marcamos G sobre CA.
+4. [ ] La mediatriz de AG corta a los ejes en O₁ y O₂. Son los centros del arco que pasa por A y del arco que pasa por C.
+5. [ ] Los otros dos centros, O₃ y O₄, son los simétricos de O₁ y O₂ respecto de O. Los cuatro centros forman un rombo.
+6. [ ] Los puntos de enlace están en las rectas que unen los centros, a la distancia del radio de cada arco. Salen al cortar esas rectas con las circunferencias.
+7. [ ] Cada arco va de un punto de enlace al siguiente, con su centro. El óvalo queda cerrado, sin picos.
+8. [ ] La espiral de dos centros usa semicircunferencias de centros A y B alternados. Los enlaces están sobre AB y el radio crece AB en cada arco.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: Espiral de dos centros A y B, con AB de 10 mm. Arrastra Z hasta el punto S₁ donde acaba la primera semicircunferencia.
+   - [ ] *Pista 1:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.
+   - [ ] *Pista 2:* Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.
+   - [ ] *Pista 3:* Con centro A y radio AB corta la recta AB por el otro lado: ese es el primer enlace.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₁, donde acaba la primera semicircunferencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con centro A y radio AB traza la circunferencia: corta a la recta AB, al otro lado de A, en S₁. Arrastra Z hasta ese punto.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la semicircunferencia de centro A desde B hasta S₁, por un lado de la recta AB.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: S₁ está en la recta AB y a una distancia de A igual al radio de ese arco, que crece AB en cada semicircunferencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: seguir el arco más allá del punto de enlace. El arco termina justo en la recta de los centros; si se pasa, la espiral se tuerce.
+2. [ ] *construcción en la lámina, dificultad 1*: Óvalo de eje mayor AB de 80 mm y eje menor CD de 40 mm. Arrastra Z hasta el centro del arco que pasa por A, en el eje mayor.
+   - [ ] *Pista 1:* Un óvalo son cuatro arcos tangentes, y sus centros están sobre los ejes.
+   - [ ] *Pista 2:* Un centro se obtiene con la mediatriz del extremo del eje mayor y un punto de la diagonal.
+   - [ ] *Pista 3:* Lleva el semieje mayor sobre el menor, marca G sobre CA y traza la mediatriz de AG.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos el centro del arco que pasa por A, en el eje mayor.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz de AG corta a los ejes en O₁ y O₂: O₁ es el centro del arco que pasa por A. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Los otros dos centros son los simétricos de O₁ y O₂ respecto de O. Con los cuatro centros ya se pueden hallar los enlaces.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el centro está sobre su eje, y su distancia al extremo del eje y al punto G es la misma, porque está en la mediatriz de AG.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: poner el centro del arco a ojo, o a una distancia de A que no sale de la mediatriz. Con otro radio el arco no llega a tocar al siguiente.
+3. [ ] *construcción en la lámina, dificultad 1*: Espiral de dos centros A y B, con AB de 12 mm. Arrastra Z hasta el punto S₂ donde acaba la segunda semicircunferencia.
+   - [ ] *Pista 1:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.
+   - [ ] *Pista 2:* Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.
+   - [ ] *Pista 3:* Traza cada semicircunferencia con el centro que toca, empezando donde acabó la anterior.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₂, donde acaba la segunda semicircunferencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza las primera semicircunferencia, alternando los centros A y B: cada una empieza donde acaba la anterior.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Ahora el centro es B y el radio llega hasta el punto anterior: corta la recta AB en S₂. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Traza la semicircunferencia de centro B hasta S₂: es la segunda del dibujo.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: S₂ está en la recta AB y a una distancia de B igual al radio de ese arco, que crece AB en cada semicircunferencia.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: usar el centro A en lugar del B para este arco. Los centros se alternan: si no, el enlace no queda sobre AB.
+4. [ ] *construcción en la lámina, dificultad 2*: Óvalo de eje mayor AB de 90 mm y eje menor CD de 50 mm. Arrastra Z hasta el centro del arco que pasa por C, en el eje menor.
+   - [ ] *Pista 1:* Un óvalo son cuatro arcos tangentes, y sus centros están sobre los ejes.
+   - [ ] *Pista 2:* Un centro se obtiene con la mediatriz del extremo del eje mayor y un punto de la diagonal.
+   - [ ] *Pista 3:* Lleva el semieje mayor sobre el menor, marca G sobre CA y traza la mediatriz de AG.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos el centro del arco que pasa por C, en el eje menor.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz de AG corta a los ejes en O₁ y O₂: O₂ es el centro del arco que pasa por C. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Los otros dos centros son los simétricos de O₁ y O₂ respecto de O. Con los cuatro centros ya se pueden hallar los enlaces.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el centro está sobre su eje, y su distancia al extremo del eje y al punto G es la misma, porque está en la mediatriz de AG.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar el arco que pasa por C con el centro de otro arco. Cada arco tiene su centro: el de C está en el eje menor, del lado opuesto.
+5. [ ] *construcción en la lámina, dificultad 2*: Óvalo de eje mayor AB de 88 mm y eje menor CD de 56 mm. Arrastra Z hasta un punto de enlace de dos arcos.
+   - [ ] *Pista 1:* Los puntos de enlace están siempre en la recta que une los centros de dos arcos.
+   - [ ] *Pista 2:* Primero hay que tener los cuatro centros, que son un rombo con vértices en los ejes.
+   - [ ] *Pista 3:* Traza las rectas que unen los centros y córtalas con la circunferencia del arco pequeño.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos uno de los puntos donde dos arcos se enlazan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz de AG corta a los ejes en O₁ y O₂. Sus simétricos respecto de O, O₃ y O₄, completan los cuatro centros.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Prolonga las rectas que unen los centros: cada una corta a la circunferencia del arco pequeño en un punto de enlace. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el punto de enlace está en la recta de los dos centros, y a la misma distancia de cada uno que su radio.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: poner el punto de enlace sobre el arco, pero fuera de la recta de centros. Entonces las tangentes de los dos arcos no coinciden y aparece un pico.
+6. [ ] *construcción en la lámina, dificultad 2*: Espiral de dos centros A y B, con AB de 8 mm. Arrastra Z hasta el punto S₃ donde acaba la tercera semicircunferencia.
+   - [ ] *Pista 1:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.
+   - [ ] *Pista 2:* Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.
+   - [ ] *Pista 3:* Traza cada semicircunferencia con el centro que toca, empezando donde acabó la anterior.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₃, donde acaba la tercera semicircunferencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza las 2 primeras semicircunferencias, alternando los centros A y B: cada una empieza donde acaba la anterior.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Ahora el centro es A y el radio llega hasta el punto anterior: corta la recta AB en S₃. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Traza la semicircunferencia de centro A hasta S₃: es la tercera del dibujo.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: S₃ está en la recta AB y a una distancia de A igual al radio de ese arco, que crece AB en cada semicircunferencia.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: usar el centro B en lugar del A para este arco. Los centros se alternan: si no, el enlace no queda sobre AB.
+7. [ ] *construcción en la lámina, dificultad 3*: Óvalo de eje mayor AB de 110 mm y eje menor CD de 50 mm. Arrastra Z hasta el centro del arco que pasa por A, en el eje mayor.
+   - [ ] *Pista 1:* Un óvalo son cuatro arcos tangentes, y sus centros están sobre los ejes.
+   - [ ] *Pista 2:* Un centro se obtiene con la mediatriz del extremo del eje mayor y un punto de la diagonal.
+   - [ ] *Pista 3:* Lleva el semieje mayor sobre el menor, marca G sobre CA y traza la mediatriz de AG.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos el centro del arco que pasa por A, en el eje mayor.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz de AG corta a los ejes en O₁ y O₂: O₁ es el centro del arco que pasa por A. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Los otros dos centros son los simétricos de O₁ y O₂ respecto de O. Con los cuatro centros ya se pueden hallar los enlaces.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el centro está sobre su eje, y su distancia al extremo del eje y al punto G es la misma, porque está en la mediatriz de AG.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: poner el centro del arco a ojo, o a una distancia de A que no sale de la mediatriz. Con otro radio el arco no llega a tocar al siguiente.
+8. [ ] *construcción en la lámina, dificultad 3*: Óvalo de eje mayor AB de 96 mm y eje menor CD de 44 mm. Arrastra Z hasta un punto de enlace de dos arcos.
+   - [ ] *Pista 1:* Los puntos de enlace están siempre en la recta que une los centros de dos arcos.
+   - [ ] *Pista 2:* Primero hay que tener los cuatro centros, que son un rombo con vértices en los ejes.
+   - [ ] *Pista 3:* Traza las rectas que unen los centros y córtalas con la circunferencia del arco pequeño.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos uno de los puntos donde dos arcos se enlazan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La mediatriz de AG corta a los ejes en O₁ y O₂. Sus simétricos respecto de O, O₃ y O₄, completan los cuatro centros.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Prolonga las rectas que unen los centros: cada una corta a la circunferencia del arco pequeño en un punto de enlace. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el punto de enlace está en la recta de los dos centros, y a la misma distancia de cada uno que su radio.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: poner el punto de enlace sobre el arco, pero fuera de la recta de centros. Entonces las tangentes de los dos arcos no coinciden y aparece un pico.
+9. [ ] *construcción en la lámina, dificultad 3*: Espiral de dos centros A y B, con AB de 9 mm. Arrastra Z hasta el punto S₄ donde acaba la cuarta semicircunferencia.
+   - [ ] *Pista 1:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.
+   - [ ] *Pista 2:* Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.
+   - [ ] *Pista 3:* Traza cada semicircunferencia con el centro que toca, empezando donde acabó la anterior.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₄, donde acaba la cuarta semicircunferencia.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza las 3 primeras semicircunferencias, alternando los centros A y B: cada una empieza donde acaba la anterior.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Ahora el centro es B y el radio llega hasta el punto anterior: corta la recta AB en S₄. Arrastra Z hasta él.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Traza la semicircunferencia de centro B hasta S₄: es la cuarta del dibujo.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: S₄ está en la recta AB y a una distancia de B igual al radio de ese arco, que crece AB en cada semicircunferencia.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: seguir el arco más allá del punto de enlace. El arco termina justo en la recta de los centros; si se pasa, la espiral se tuerce.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos

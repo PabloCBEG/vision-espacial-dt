@@ -1,0 +1,3157 @@
+{
+  "id": "curvas-de-arcos",
+  "order": 6,
+  "title": "Curvas con arcos enlazados",
+  "topic": "I-07",
+  "stage": "DT I",
+  "saberBasico": "Geometría: curvas técnicas, óvalo de cuatro centros y espiral de dos centros, con enlaces tangentes sobre la recta de los centros.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "A",
+            "tipo": "punto",
+            "en": [-50, 0],
+            "fijo": true,
+            "rol": "dato"
+          },
+          {
+            "id": "B",
+            "tipo": "punto",
+            "en": [50, 0],
+            "fijo": true,
+            "rol": "dato"
+          },
+          {
+            "id": "C",
+            "tipo": "punto",
+            "en": [0, 30],
+            "fijo": true,
+            "rol": "dato"
+          },
+          {
+            "id": "D",
+            "tipo": "punto",
+            "en": [0, -30],
+            "fijo": true,
+            "rol": "dato"
+          },
+          {
+            "id": "rAB",
+            "tipo": "recta",
+            "por": ["A", "B"],
+            "rol": "dato"
+          },
+          {
+            "id": "rCD",
+            "tipo": "recta",
+            "por": ["C", "D"],
+            "rol": "dato"
+          },
+          {
+            "id": "O",
+            "tipo": "puntoMedio",
+            "de": ["A", "B"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "kO",
+            "tipo": "circunferencia",
+            "centro": "O",
+            "pasaPor": "A",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "F",
+            "tipo": "interseccion",
+            "de": ["kO", "rCD"],
+            "indice": 0,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "kC",
+            "tipo": "circunferencia",
+            "centro": "C",
+            "pasaPor": "F",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "sCA",
+            "tipo": "segmento",
+            "por": ["C", "A"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "G",
+            "tipo": "interseccion",
+            "de": ["kC", "sCA"],
+            "indice": 0,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "mAG",
+            "tipo": "mediatriz",
+            "de": ["A", "G"],
+            "rol": "proceso"
+          },
+          {
+            "id": "O1",
+            "tipo": "interseccion",
+            "de": ["mAG", "rAB"],
+            "rol": "resultado"
+          },
+          {
+            "id": "O2",
+            "tipo": "interseccion",
+            "de": ["mAG", "rCD"],
+            "rol": "resultado"
+          },
+          {
+            "id": "kOO1",
+            "tipo": "circunferencia",
+            "centro": "O",
+            "pasaPor": "O1",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "O3",
+            "tipo": "interseccion",
+            "de": ["kOO1", "rAB"],
+            "indice": 1,
+            "rol": "resultado"
+          },
+          {
+            "id": "kOO2",
+            "tipo": "circunferencia",
+            "centro": "O",
+            "pasaPor": "O2",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "O4",
+            "tipo": "interseccion",
+            "de": ["kOO2", "rCD"],
+            "indice": 0,
+            "rol": "resultado"
+          },
+          {
+            "id": "kR1",
+            "tipo": "circunferencia",
+            "centro": "O1",
+            "pasaPor": "A",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "kR3",
+            "tipo": "circunferencia",
+            "centro": "O3",
+            "pasaPor": "B",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "l21",
+            "tipo": "recta",
+            "por": ["O2", "O1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "l23",
+            "tipo": "recta",
+            "por": ["O2", "O3"],
+            "rol": "proceso"
+          },
+          {
+            "id": "l41",
+            "tipo": "recta",
+            "por": ["O4", "O1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "l43",
+            "tipo": "recta",
+            "por": ["O4", "O3"],
+            "rol": "proceso"
+          },
+          {
+            "id": "E1",
+            "tipo": "interseccion",
+            "de": ["l21", "kR1"],
+            "indice": 1,
+            "rol": "resultado"
+          },
+          {
+            "id": "E2",
+            "tipo": "interseccion",
+            "de": ["l23", "kR3"],
+            "indice": 1,
+            "rol": "resultado"
+          },
+          {
+            "id": "E3",
+            "tipo": "interseccion",
+            "de": ["l43", "kR3"],
+            "indice": 1,
+            "rol": "resultado"
+          },
+          {
+            "id": "E4",
+            "tipo": "interseccion",
+            "de": ["l41", "kR1"],
+            "indice": 1,
+            "rol": "resultado"
+          },
+          {
+            "id": "arcA",
+            "tipo": "arco",
+            "centro": "O1",
+            "desde": "E1",
+            "hasta": "E4",
+            "rol": "resultado"
+          },
+          {
+            "id": "arcB",
+            "tipo": "arco",
+            "centro": "O3",
+            "desde": "E3",
+            "hasta": "E2",
+            "rol": "resultado"
+          },
+          {
+            "id": "arcC",
+            "tipo": "arco",
+            "centro": "O2",
+            "desde": "E2",
+            "hasta": "E1",
+            "rol": "resultado"
+          },
+          {
+            "id": "arcD",
+            "tipo": "arco",
+            "centro": "O4",
+            "desde": "E4",
+            "hasta": "E3",
+            "rol": "resultado"
+          },
+          {
+            "id": "SA",
+            "tipo": "punto",
+            "en": [-5, 0],
+            "fijo": true,
+            "rol": "dato",
+            "etiqueta": "A"
+          },
+          {
+            "id": "SB",
+            "tipo": "punto",
+            "en": [5, 0],
+            "fijo": true,
+            "rol": "dato",
+            "etiqueta": "B"
+          },
+          {
+            "id": "lS",
+            "tipo": "recta",
+            "por": ["SA", "SB"],
+            "rol": "dato"
+          },
+          {
+            "id": "kS1",
+            "tipo": "circunferencia",
+            "centro": "SA",
+            "pasaPor": "SB",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "S1",
+            "tipo": "interseccion",
+            "de": ["kS1", "lS"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "S₁"
+          },
+          {
+            "id": "kS2",
+            "tipo": "circunferencia",
+            "centro": "SB",
+            "pasaPor": "S1",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "S2",
+            "tipo": "interseccion",
+            "de": ["kS2", "lS"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "S₂"
+          },
+          {
+            "id": "kS3",
+            "tipo": "circunferencia",
+            "centro": "SA",
+            "pasaPor": "S2",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "S3",
+            "tipo": "interseccion",
+            "de": ["kS3", "lS"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "S₃"
+          },
+          {
+            "id": "kS4",
+            "tipo": "circunferencia",
+            "centro": "SB",
+            "pasaPor": "S3",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "S4",
+            "tipo": "interseccion",
+            "de": ["kS4", "lS"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "S₄"
+          },
+          {
+            "id": "sp1",
+            "tipo": "arco",
+            "centro": "SA",
+            "desde": "SB",
+            "hasta": "S1",
+            "rol": "resultado"
+          },
+          {
+            "id": "sp2",
+            "tipo": "arco",
+            "centro": "SB",
+            "desde": "S1",
+            "hasta": "S2",
+            "rol": "resultado"
+          },
+          {
+            "id": "sp3",
+            "tipo": "arco",
+            "centro": "SA",
+            "desde": "S2",
+            "hasta": "S3",
+            "rol": "resultado"
+          },
+          {
+            "id": "sp4",
+            "tipo": "arco",
+            "centro": "SB",
+            "desde": "S3",
+            "hasta": "S4",
+            "rol": "resultado"
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "Z",
+            "rol": "dato"
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Las curvas técnicas se dibujan con arcos de circunferencia enlazados, sin picos. Cada arco tiene su centro y su radio.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "D", "rAB", "rCD", "arcA", "arcB", "arcC", "arcD"],
+          "destacar": ["arcA", "arcB", "arcC", "arcD"],
+          "posiciones": {
+            "A": [-50, 0],
+            "B": [50, 0],
+            "C": [0, 30],
+            "D": [0, -30],
+            "Z": [0, 0]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Dos arcos son tangentes cuando su punto de enlace está en la recta que une sus centros. Así la curva no cambia de dirección en el enlace.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "rAB",
+            "rCD",
+            "O1",
+            "O2",
+            "l21",
+            "E1",
+            "kR1",
+            "arcA",
+            "arcB",
+            "arcC",
+            "arcD"
+          ],
+          "destacar": ["l21", "E1"],
+          "posiciones": {
+            "A": [-50, 0],
+            "B": [50, 0],
+            "C": [0, 30],
+            "D": [0, -30],
+            "Z": [0, 0]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Óvalo de ejes AB y CD: llevamos el semieje mayor sobre el menor con un arco de centro O. Con centro C y radio CF marcamos G sobre CA.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "D", "rAB", "rCD", "O", "kO", "F", "kC", "sCA", "G"],
+          "trazar": ["O", "kO", "F", "kC", "sCA", "G"],
+          "destacar": ["G"],
+          "posiciones": {
+            "A": [-50, 0],
+            "B": [50, 0],
+            "C": [0, 30],
+            "D": [0, -30],
+            "Z": [0, 0]
+          }
+        }
+      }
+    },
+    {
+      "narration": "La mediatriz de AG corta a los ejes en O₁ y O₂. Son los centros del arco que pasa por A y del arco que pasa por C.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "rAB",
+            "rCD",
+            "O",
+            "kO",
+            "F",
+            "kC",
+            "sCA",
+            "G",
+            "mAG",
+            "O1",
+            "O2"
+          ],
+          "trazar": ["mAG", "O1", "O2"],
+          "destacar": ["O1", "O2"],
+          "posiciones": {
+            "A": [-50, 0],
+            "B": [50, 0],
+            "C": [0, 30],
+            "D": [0, -30],
+            "Z": [0, 0]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Los otros dos centros, O₃ y O₄, son los simétricos de O₁ y O₂ respecto de O. Los cuatro centros forman un rombo.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "rAB",
+            "rCD",
+            "O",
+            "kO",
+            "F",
+            "kC",
+            "sCA",
+            "G",
+            "mAG",
+            "O1",
+            "O2",
+            "kOO1",
+            "O3",
+            "kOO2",
+            "O4"
+          ],
+          "trazar": ["kOO1", "O3", "kOO2", "O4"],
+          "destacar": ["O3", "O4"],
+          "posiciones": {
+            "A": [-50, 0],
+            "B": [50, 0],
+            "C": [0, 30],
+            "D": [0, -30],
+            "Z": [0, 0]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Los puntos de enlace están en las rectas que unen los centros, a la distancia del radio de cada arco. Salen al cortar esas rectas con las circunferencias.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "rAB",
+            "rCD",
+            "O",
+            "kO",
+            "F",
+            "kC",
+            "sCA",
+            "G",
+            "mAG",
+            "O1",
+            "O2",
+            "kOO1",
+            "O3",
+            "kOO2",
+            "O4",
+            "kR1",
+            "kR3",
+            "l21",
+            "l23",
+            "l41",
+            "l43",
+            "E1",
+            "E2",
+            "E3",
+            "E4"
+          ],
+          "trazar": ["kR1", "kR3", "l21", "l23", "l41", "l43", "E1", "E2", "E3", "E4"],
+          "destacar": ["E1", "E2", "E3", "E4"],
+          "posiciones": {
+            "A": [-50, 0],
+            "B": [50, 0],
+            "C": [0, 30],
+            "D": [0, -30],
+            "Z": [0, 0]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Cada arco va de un punto de enlace al siguiente, con su centro. El óvalo queda cerrado, sin picos.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "rAB",
+            "rCD",
+            "O",
+            "kO",
+            "F",
+            "kC",
+            "sCA",
+            "G",
+            "mAG",
+            "O1",
+            "O2",
+            "kOO1",
+            "O3",
+            "kOO2",
+            "O4",
+            "kR1",
+            "kR3",
+            "l21",
+            "l23",
+            "l41",
+            "l43",
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "arcA",
+            "arcB",
+            "arcC",
+            "arcD"
+          ],
+          "trazar": ["arcA", "arcB", "arcC", "arcD"],
+          "destacar": ["arcA", "arcB", "arcC", "arcD"],
+          "posiciones": {
+            "A": [-50, 0],
+            "B": [50, 0],
+            "C": [0, 30],
+            "D": [0, -30],
+            "Z": [0, 0]
+          }
+        }
+      }
+    },
+    {
+      "narration": "La espiral de dos centros usa semicircunferencias de centros A y B alternados. Los enlaces están sobre AB y el radio crece AB en cada arco.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "SA",
+            "SB",
+            "lS",
+            "kS1",
+            "S1",
+            "kS2",
+            "S2",
+            "kS3",
+            "S3",
+            "kS4",
+            "S4",
+            "sp1",
+            "sp2",
+            "sp3",
+            "sp4"
+          ],
+          "trazar": [
+            "kS1",
+            "S1",
+            "sp1",
+            "kS2",
+            "S2",
+            "sp2",
+            "kS3",
+            "S3",
+            "sp3",
+            "kS4",
+            "S4",
+            "sp4"
+          ],
+          "destacar": ["sp1", "sp2", "sp3", "sp4"],
+          "posiciones": {
+            "SA": [-7, 0],
+            "SB": [7, 0],
+            "Z": [0, 0]
+          }
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Espiral de dos centros A y B, con AB de 10 mm. Arrastra Z hasta el punto S₁ donde acaba la primera semicircunferencia.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["SA", "SB", "lS", "Z"],
+          "posiciones": {
+            "SA": [-5, 0],
+            "SB": [5, 0],
+            "Z": [30, 20]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "S1",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese enlace está en la recta de los centros.",
+            "pista": "El enlace está en la recta AB, a una distancia del centro igual al radio del arco."
+          }
+        }
+      },
+      "hints": [
+        "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.",
+        "Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.",
+        "Con centro A y radio AB corta la recta AB por el otro lado: ese es el primer enlace."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₁, donde acaba la primera semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-5, 0],
+                "SB": [5, 0],
+                "Z": [30, 20]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-5, 0],
+                "SB": [5, 0],
+                "Z": [30, 20]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-5, 0],
+                "SB": [5, 0],
+                "Z": [30, 20]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro A y radio AB traza la circunferencia: corta a la recta AB, al otro lado de A, en S₁. Arrastra Z hasta ese punto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "Z"],
+              "posiciones": {
+                "SA": [-5, 0],
+                "SB": [5, 0],
+                "Z": [-15, 0]
+              },
+              "trazar": ["kS1", "S1"],
+              "destacar": ["S1"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la semicircunferencia de centro A desde B hasta S₁, por un lado de la recta AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "Z"],
+              "posiciones": {
+                "SA": [-5, 0],
+                "SB": [5, 0],
+                "Z": [-15, 0]
+              },
+              "trazar": ["sp1"],
+              "destacar": ["sp1"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: S₁ está en la recta AB y a una distancia de A igual al radio de ese arco, que crece AB en cada semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "Z"],
+              "posiciones": {
+                "SA": [-5, 0],
+                "SB": [5, 0],
+                "Z": [-15, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: seguir el arco más allá del punto de enlace. El arco termina justo en la recta de los centros; si se pasa, la espiral se tuerce.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "Z"],
+              "posiciones": {
+                "SA": [-5, 0],
+                "SB": [5, 0],
+                "Z": [-15, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-15, 0],
+                    [-15, 6]
+                  ],
+                  "rotulo": "Error: arco pasado del enlace",
+                  "rotuloEn": [-27, 14]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Óvalo de eje mayor AB de 80 mm y eje menor CD de 40 mm. Arrastra Z hasta el centro del arco que pasa por A, en el eje mayor.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+          "posiciones": {
+            "A": [-40, 0],
+            "B": [40, 0],
+            "C": [0, 20],
+            "D": [0, -20],
+            "Z": [30, 25]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["O1", "O3"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese centro equidista del extremo del eje y de G, está en la mediatriz.",
+            "pista": "El centro está en la mediatriz del segmento AG, sobre el eje."
+          }
+        }
+      },
+      "hints": [
+        "Un óvalo son cuatro arcos tangentes, y sus centros están sobre los ejes.",
+        "Un centro se obtiene con la mediatriz del extremo del eje mayor y un punto de la diagonal.",
+        "Lleva el semieje mayor sobre el menor, marca G sobre CA y traza la mediatriz de AG."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos el centro del arco que pasa por A, en el eje mayor.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [30, 25]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [30, 25]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [30, 25]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "O", "kO", "F", "kC", "sCA", "G", "Z"],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [30, 25]
+              },
+              "trazar": ["O", "kO", "F", "kC", "sCA", "G"],
+              "destacar": ["G"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La mediatriz de AG corta a los ejes en O₁ y O₂: O₁ es el centro del arco que pasa por A. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [-26.18033988749895, 0]
+              },
+              "trazar": ["mAG", "O1", "O2"],
+              "destacar": ["O1"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Los otros dos centros son los simétricos de O₁ y O₂ respecto de O. Con los cuatro centros ya se pueden hallar los enlaces.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [-26.18033988749895, 0]
+              },
+              "trazar": ["kOO1", "O3", "kOO2", "O4"],
+              "destacar": ["O3", "O4"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el centro está sobre su eje, y su distancia al extremo del eje y al punto G es la misma, porque está en la mediatriz de AG.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [-26.18033988749895, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el centro del arco a ojo, o a una distancia de A que no sale de la mediatriz. Con otro radio el arco no llega a tocar al siguiente.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-40, 0],
+                "B": [40, 0],
+                "C": [0, 20],
+                "D": [0, -20],
+                "Z": [-26.18033988749895, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, 0],
+                    [-20, 0]
+                  ],
+                  "rotulo": "Error: centro a ojo",
+                  "rotuloEn": [0, -42]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Espiral de dos centros A y B, con AB de 12 mm. Arrastra Z hasta el punto S₂ donde acaba la segunda semicircunferencia.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["SA", "SB", "lS", "Z"],
+          "posiciones": {
+            "SA": [-6, 0],
+            "SB": [6, 0],
+            "Z": [40, 30]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "S2",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese enlace está en la recta de los centros.",
+            "pista": "El enlace está en la recta AB, a una distancia del centro igual al radio del arco."
+          }
+        }
+      },
+      "hints": [
+        "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.",
+        "Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.",
+        "Traza cada semicircunferencia con el centro que toca, empezando donde acabó la anterior."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₂, donde acaba la segunda semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [40, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [40, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [40, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza las primera semicircunferencia, alternando los centros A y B: cada una empieza donde acaba la anterior.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [40, 30]
+              },
+              "trazar": ["kS1", "S1", "sp1"],
+              "destacar": ["sp1"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Ahora el centro es B y el radio llega hasta el punto anterior: corta la recta AB en S₂. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "kS2", "S2", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [30, 0]
+              },
+              "trazar": ["kS2", "S2"],
+              "destacar": ["S2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la semicircunferencia de centro B hasta S₂: es la segunda del dibujo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "kS2", "S2", "sp2", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [30, 0]
+              },
+              "trazar": ["sp2"],
+              "destacar": ["sp2"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: S₂ está en la recta AB y a una distancia de B igual al radio de ese arco, que crece AB en cada semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "kS2", "S2", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [30, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: usar el centro A en lugar del B para este arco. Los centros se alternan: si no, el enlace no queda sobre AB.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "kS2", "S2", "Z"],
+              "posiciones": {
+                "SA": [-6, 0],
+                "SB": [6, 0],
+                "Z": [30, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-6, 0],
+                    [30, 0]
+                  ],
+                  "rotulo": "Error: centro equivocado",
+                  "rotuloEn": [18, 14]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Óvalo de eje mayor AB de 90 mm y eje menor CD de 50 mm. Arrastra Z hasta el centro del arco que pasa por C, en el eje menor.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+          "posiciones": {
+            "A": [-45, 0],
+            "B": [45, 0],
+            "C": [0, 25],
+            "D": [0, -25],
+            "Z": [30, 30]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["O2", "O4"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese centro equidista del extremo del eje y de G, está en la mediatriz.",
+            "pista": "El centro está en la mediatriz del segmento AG, sobre el eje."
+          }
+        }
+      },
+      "hints": [
+        "Un óvalo son cuatro arcos tangentes, y sus centros están sobre los ejes.",
+        "Un centro se obtiene con la mediatriz del extremo del eje mayor y un punto de la diagonal.",
+        "Lleva el semieje mayor sobre el menor, marca G sobre CA y traza la mediatriz de AG."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos el centro del arco que pasa por C, en el eje menor.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [30, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [30, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [30, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "O", "kO", "F", "kC", "sCA", "G", "Z"],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [30, 30]
+              },
+              "trazar": ["O", "kO", "F", "kC", "sCA", "G"],
+              "destacar": ["G"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La mediatriz de AG corta a los ejes en O₁ y O₂: O₂ es el centro del arco que pasa por C. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [3.552713678800501e-15, -48.59126028197401]
+              },
+              "trazar": ["mAG", "O1", "O2"],
+              "destacar": ["O2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Los otros dos centros son los simétricos de O₁ y O₂ respecto de O. Con los cuatro centros ya se pueden hallar los enlaces.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [3.552713678800501e-15, -48.59126028197401]
+              },
+              "trazar": ["kOO1", "O3", "kOO2", "O4"],
+              "destacar": ["O3", "O4"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el centro está sobre su eje, y su distancia al extremo del eje y al punto G es la misma, porque está en la mediatriz de AG.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [3.552713678800501e-15, -48.59126028197401]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: trazar el arco que pasa por C con el centro de otro arco. Cada arco tiene su centro: el de C está en el eje menor, del lado opuesto.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-45, 0],
+                "B": [45, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [3.552713678800501e-15, -48.59126028197401]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-26.995144601096666, 0],
+                    [0, 25]
+                  ],
+                  "rotulo": "Error: centro de otro arco",
+                  "rotuloEn": [0, -47]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Óvalo de eje mayor AB de 88 mm y eje menor CD de 56 mm. Arrastra Z hasta un punto de enlace de dos arcos.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+          "posiciones": {
+            "A": [-44, 0],
+            "B": [44, 0],
+            "C": [0, 28],
+            "D": [0, -28],
+            "Z": [10, -45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["E1", "E2", "E3", "E4"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese punto está en la recta de centros de dos arcos.",
+            "pista": "El punto de enlace está en la recta que une los centros de los dos arcos."
+          }
+        }
+      },
+      "hints": [
+        "Los puntos de enlace están siempre en la recta que une los centros de dos arcos.",
+        "Primero hay que tener los cuatro centros, que son un rombo con vértices en los ejes.",
+        "Traza las rectas que unen los centros y córtalas con la circunferencia del arco pequeño."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos uno de los puntos donde dos arcos se enlazan.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [10, -45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [10, -45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [10, -45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "O", "kO", "F", "kC", "sCA", "G", "Z"],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [10, -45]
+              },
+              "trazar": ["O", "kO", "F", "kC", "sCA", "G"],
+              "destacar": ["G"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La mediatriz de AG corta a los ejes en O₁ y O₂. Sus simétricos respecto de O, O₃ y O₄, completan los cuatro centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [10, -45]
+              },
+              "trazar": ["mAG", "O1", "O2", "kOO1", "O3", "kOO2", "O4"],
+              "destacar": ["O1", "O2", "O3", "O4"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga las rectas que unen los centros: cada una corta a la circunferencia del arco pequeño en un punto de enlace. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "kR1",
+                "kR3",
+                "l21",
+                "l23",
+                "l41",
+                "l43",
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [-34.0768096208106, 18.076809620810614]
+              },
+              "trazar": ["kR1", "kR3", "l21", "l23", "l41", "l43", "E1", "E2", "E3", "E4"],
+              "destacar": ["E1", "E2", "E3", "E4"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el punto de enlace está en la recta de los dos centros, y a la misma distancia de cada uno que su radio.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "kR1",
+                "kR3",
+                "l21",
+                "l23",
+                "l41",
+                "l43",
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [-34.0768096208106, 18.076809620810614]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el punto de enlace sobre el arco, pero fuera de la recta de centros. Entonces las tangentes de los dos arcos no coinciden y aparece un pico.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "kR1",
+                "kR3",
+                "l21",
+                "l23",
+                "l41",
+                "l43",
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-44, 0],
+                "B": [44, 0],
+                "C": [0, 28],
+                "D": [0, -28],
+                "Z": [-34.0768096208106, 18.076809620810614]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-22.573385316658396, 0],
+                    [-25.4, 21.2]
+                  ],
+                  "rotulo": "Error: fuera de la recta",
+                  "rotuloEn": [0, -50]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Espiral de dos centros A y B, con AB de 8 mm. Arrastra Z hasta el punto S₃ donde acaba la tercera semicircunferencia.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["SA", "SB", "lS", "Z"],
+          "posiciones": {
+            "SA": [-4, 0],
+            "SB": [4, 0],
+            "Z": [30, 25]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "S3",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese enlace está en la recta de los centros.",
+            "pista": "El enlace está en la recta AB, a una distancia del centro igual al radio del arco."
+          }
+        }
+      },
+      "hints": [
+        "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.",
+        "Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.",
+        "Traza cada semicircunferencia con el centro que toca, empezando donde acabó la anterior."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₃, donde acaba la tercera semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [30, 25]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [30, 25]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [30, 25]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza las 2 primeras semicircunferencias, alternando los centros A y B: cada una empieza donde acaba la anterior.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "kS1", "S1", "sp1", "kS2", "S2", "sp2", "Z"],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [30, 25]
+              },
+              "trazar": ["kS1", "S1", "sp1", "kS2", "S2", "sp2"],
+              "destacar": ["sp2"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Ahora el centro es A y el radio llega hasta el punto anterior: corta la recta AB en S₃. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [-28, 0]
+              },
+              "trazar": ["kS3", "S3"],
+              "destacar": ["S3"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la semicircunferencia de centro A hasta S₃: es la tercera del dibujo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "sp3",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [-28, 0]
+              },
+              "trazar": ["sp3"],
+              "destacar": ["sp3"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: S₃ está en la recta AB y a una distancia de A igual al radio de ese arco, que crece AB en cada semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [-28, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: usar el centro B en lugar del A para este arco. Los centros se alternan: si no, el enlace no queda sobre AB.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4, 0],
+                "SB": [4, 0],
+                "Z": [-28, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [4, 0],
+                    [-28, 0]
+                  ],
+                  "rotulo": "Error: centro equivocado",
+                  "rotuloEn": [-40, 14]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Óvalo de eje mayor AB de 110 mm y eje menor CD de 50 mm. Arrastra Z hasta el centro del arco que pasa por A, en el eje mayor.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+          "posiciones": {
+            "A": [-55, 0],
+            "B": [55, 0],
+            "C": [0, 25],
+            "D": [0, -25],
+            "Z": [10, 40]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["O1", "O3"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese centro equidista del extremo del eje y de G, está en la mediatriz.",
+            "pista": "El centro está en la mediatriz del segmento AG, sobre el eje."
+          }
+        }
+      },
+      "hints": [
+        "Un óvalo son cuatro arcos tangentes, y sus centros están sobre los ejes.",
+        "Un centro se obtiene con la mediatriz del extremo del eje mayor y un punto de la diagonal.",
+        "Lleva el semieje mayor sobre el menor, marca G sobre CA y traza la mediatriz de AG."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos el centro del arco que pasa por A, en el eje mayor.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [10, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [10, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [10, 40]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "O", "kO", "F", "kC", "sCA", "G", "Z"],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [10, 40]
+              },
+              "trazar": ["O", "kO", "F", "kC", "sCA", "G"],
+              "destacar": ["G"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La mediatriz de AG corta a los ejes en O₁ y O₂: O₁ es el centro del arco que pasa por A. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [-38.29506269126533, 0]
+              },
+              "trazar": ["mAG", "O1", "O2"],
+              "destacar": ["O1"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Los otros dos centros son los simétricos de O₁ y O₂ respecto de O. Con los cuatro centros ya se pueden hallar los enlaces.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [-38.29506269126533, 0]
+              },
+              "trazar": ["kOO1", "O3", "kOO2", "O4"],
+              "destacar": ["O3", "O4"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el centro está sobre su eje, y su distancia al extremo del eje y al punto G es la misma, porque está en la mediatriz de AG.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [-38.29506269126533, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el centro del arco a ojo, o a una distancia de A que no sale de la mediatriz. Con otro radio el arco no llega a tocar al siguiente.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-55, 0],
+                "B": [55, 0],
+                "C": [0, 25],
+                "D": [0, -25],
+                "Z": [-38.29506269126533, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-55, 0],
+                    [-25, 0]
+                  ],
+                  "rotulo": "Error: centro a ojo",
+                  "rotuloEn": [0, -47]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Óvalo de eje mayor AB de 96 mm y eje menor CD de 44 mm. Arrastra Z hasta un punto de enlace de dos arcos.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+          "posiciones": {
+            "A": [-48, 0],
+            "B": [48, 0],
+            "C": [0, 22],
+            "D": [0, -22],
+            "Z": [0, 45]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["E1", "E2", "E3", "E4"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese punto está en la recta de centros de dos arcos.",
+            "pista": "El punto de enlace está en la recta que une los centros de los dos arcos."
+          }
+        }
+      },
+      "hints": [
+        "Los puntos de enlace están siempre en la recta que une los centros de dos arcos.",
+        "Primero hay que tener los cuatro centros, que son un rombo con vértices en los ejes.",
+        "Traza las rectas que unen los centros y córtalas con la circunferencia del arco pequeño."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos construir un óvalo de ejes AB y CD, hecho con cuatro arcos. Buscamos uno de los puntos donde dos arcos se enlazan.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [0, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Dos arcos son tangentes si su punto de enlace está en la recta que une sus centros. Por eso los cuatro centros y los enlaces se obtienen a partir de los ejes.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [0, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el arco que sale de A cerrándose hacia C: sigue siendo una circunferencia hasta que toca al arco de C justo sobre la recta de sus centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "Z"],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [0, 45]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva el semieje mayor sobre el eje menor con un arco de centro O: corta a CD en F. Con centro C y radio CF marca G sobre CA.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A", "B", "C", "D", "rAB", "rCD", "O", "kO", "F", "kC", "sCA", "G", "Z"],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [0, 45]
+              },
+              "trazar": ["O", "kO", "F", "kC", "sCA", "G"],
+              "destacar": ["G"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La mediatriz de AG corta a los ejes en O₁ y O₂. Sus simétricos respecto de O, O₃ y O₄, completan los cuatro centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [0, 45]
+              },
+              "trazar": ["mAG", "O1", "O2", "kOO1", "O3", "kOO2", "O4"],
+              "destacar": ["O1", "O2", "O3", "O4"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Prolonga las rectas que unen los centros: cada una corta a la circunferencia del arco pequeño en un punto de enlace. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "kR1",
+                "kR3",
+                "l21",
+                "l23",
+                "l41",
+                "l43",
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [-39.40075756488816, 13.400757564888158]
+              },
+              "trazar": ["kR1", "kR3", "l21", "l23", "l41", "l43", "E1", "E2", "E3", "E4"],
+              "destacar": ["E1", "E2", "E3", "E4"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: el punto de enlace está en la recta de los dos centros, y a la misma distancia de cada uno que su radio.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "kR1",
+                "kR3",
+                "l21",
+                "l23",
+                "l41",
+                "l43",
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [-39.40075756488816, 13.400757564888158]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el punto de enlace sobre el arco, pero fuera de la recta de centros. Entonces las tangentes de los dos arcos no coinciden y aparece un pico.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "rAB",
+                "rCD",
+                "O",
+                "kO",
+                "F",
+                "kC",
+                "sCA",
+                "G",
+                "mAG",
+                "O1",
+                "O2",
+                "kOO1",
+                "O3",
+                "kOO2",
+                "O4",
+                "kR1",
+                "kR3",
+                "l21",
+                "l23",
+                "l41",
+                "l43",
+                "E1",
+                "E2",
+                "E3",
+                "E4",
+                "Z"
+              ],
+              "posiciones": {
+                "A": [-48, 0],
+                "B": [48, 0],
+                "C": [0, 22],
+                "D": [0, -22],
+                "Z": [-39.40075756488816, 13.400757564888158]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-33.25874368098109, 0],
+                    [-33.2, 14.7]
+                  ],
+                  "rotulo": "Error: fuera de la recta",
+                  "rotuloEn": [0, -44]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Espiral de dos centros A y B, con AB de 9 mm. Arrastra Z hasta el punto S₄ donde acaba la cuarta semicircunferencia.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["SA", "SB", "lS", "Z"],
+          "posiciones": {
+            "SA": [-4.5, 0],
+            "SB": [4.5, 0],
+            "Z": [30, 30]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "S4",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Ese enlace está en la recta de los centros.",
+            "pista": "El enlace está en la recta AB, a una distancia del centro igual al radio del arco."
+          }
+        }
+      },
+      "hints": [
+        "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados.",
+        "Los puntos de enlace están siempre en la recta AB, y el radio crece AB en cada arco.",
+        "Traza cada semicircunferencia con el centro que toca, empezando donde acabó la anterior."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Queremos trazar una espiral de dos centros A y B. Buscamos el punto S₄, donde acaba la cuarta semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [30, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una espiral de dos centros es una cadena de semicircunferencias con centros alternados A y B. Sus enlaces están siempre en la recta AB, la recta de los centros.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [30, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina un compás que gira media vuelta alrededor de A, luego media vuelta alrededor de B, y así sucesivamente: el radio crece AB cada vez.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["SA", "SB", "lS", "Z"],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [30, 30]
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza las 3 primeras semicircunferencias, alternando los centros A y B: cada una empieza donde acaba la anterior.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "sp3",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [30, 30]
+              },
+              "trazar": ["kS1", "S1", "sp1", "kS2", "S2", "sp2", "kS3", "S3", "sp3"],
+              "destacar": ["sp3"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Ahora el centro es B y el radio llega hasta el punto anterior: corta la recta AB en S₄. Arrastra Z hasta él.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "sp3",
+                "kS4",
+                "S4",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [40.5, 0]
+              },
+              "trazar": ["kS4", "S4"],
+              "destacar": ["S4"]
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Traza la semicircunferencia de centro B hasta S₄: es la cuarta del dibujo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "sp3",
+                "kS4",
+                "S4",
+                "sp4",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [40.5, 0]
+              },
+              "trazar": ["sp4"],
+              "destacar": ["sp4"]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: S₄ está en la recta AB y a una distancia de B igual al radio de ese arco, que crece AB en cada semicircunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "sp3",
+                "kS4",
+                "S4",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [40.5, 0]
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: seguir el arco más allá del punto de enlace. El arco termina justo en la recta de los centros; si se pasa, la espiral se tuerce.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "SA",
+                "SB",
+                "lS",
+                "kS1",
+                "S1",
+                "sp1",
+                "kS2",
+                "S2",
+                "sp2",
+                "kS3",
+                "S3",
+                "sp3",
+                "kS4",
+                "S4",
+                "Z"
+              ],
+              "posiciones": {
+                "SA": [-4.5, 0],
+                "SB": [4.5, 0],
+                "Z": [40.5, 0]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [40.5, 0],
+                    [40.5, -6]
+                  ],
+                  "rotulo": "Error: arco pasado del enlace",
+                  "rotuloEn": [28.5, 14]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
