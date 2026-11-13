@@ -22,10 +22,10 @@ beforeAll(async () => {
 }, 30_000);
 
 describe('biblioteca de piezas', () => {
-  it('veintidós piezas válidas, de dificultad creciente, sin ids repetidos', () => {
+  it('veintitrés piezas válidas, de dificultad creciente, sin ids repetidos', () => {
     expect(errors).toEqual([]);
-    expect(pieces).toHaveLength(22);
-    expect(new Set(pieces.map((p) => p.id)).size).toBe(22);
+    expect(pieces).toHaveLength(23);
+    expect(new Set(pieces.map((p) => p.id)).size).toBe(23);
     expect(pieces.map((p) => p.dificultad)).toEqual([...pieces.map((p) => p.dificultad)].sort());
   });
 
@@ -114,6 +114,99 @@ describe('biblioteca de piezas', () => {
     // Planta: contorno, cruz central (120) y dos diagonales de 30·√2.
     const planta = drawView(mesh, 'plantaInversa', { hidden: false });
     expect(len(planta.visible)).toBeCloseTo(240 + 120 + 2 * 30 * Math.SQRT2, 0);
+  });
+
+  it('cuña escalonada con canal: sus tres vistas son exactamente las de la lámina de la PAU 2025 ord. 3', () => {
+    type Seg = [number, number, number, number];
+    const alzado: Seg[] = [
+      [0, 0, 20, 0],
+      [40, 0, 60, 0],
+      [20, 0, 20, 20],
+      [20, 20, 40, 20],
+      [40, 20, 40, 0],
+      [0, 0, 0, 40],
+      [0, 40, 60, 40],
+      [60, 0, 60, 60],
+      [30, 40, 30, 60],
+      [30, 60, 60, 60],
+      [30, 60, 0, 60],
+      [0, 40, 0, 100],
+      [60, 60, 0, 100],
+    ];
+    const perfilDerecho: Seg[] = [
+      [0, 0, 0, 40],
+      [0, 40, 40, 40],
+      [40, 40, 40, 60],
+      [40, 60, 60, 60],
+      [60, 60, 60, 0],
+      [60, 0, 0, 0],
+      [40, 60, 60, 100],
+      [60, 100, 60, 60],
+      [20, 40, 20, 60],
+      [20, 60, 40, 60],
+      [0, 20, 60, 20],
+    ];
+    const planta: Seg[] = [
+      [0, 0, 60, 0],
+      [60, 0, 60, 60],
+      [60, 60, 0, 60],
+      [0, 60, 0, 0],
+      [0, 40, 60, 40],
+      [0, 60, 60, 40],
+      [0, 40, 30, 20],
+      [30, 20, 60, 40],
+      [20, 0, 20, 60],
+      [40, 0, 40, 60],
+    ];
+    const key = (s: Seg): string => {
+      const [a, b, c, d] = s.map((n) => Math.round(n * 2) / 2) as Seg;
+      return a < c || (a === c && b <= d) ? `${a},${b},${c},${d}` : `${c},${d},${a},${b}`;
+    };
+    const unit = (segs: Seg[]): Set<string> => {
+      const out = new Set<string>();
+      for (const [x1, y1, x2, y2] of segs) {
+        const n = Math.max(1, Math.round(Math.hypot(x2 - x1, y2 - y1) / 5));
+        for (let k = 0; k < n; k++) {
+          out.add(
+            key([
+              x1 + ((x2 - x1) * k) / n,
+              y1 + ((y2 - y1) * k) / n,
+              x1 + ((x2 - x1) * (k + 1)) / n,
+              y1 + ((y2 - y1) * (k + 1)) / n,
+            ]),
+          );
+        }
+      }
+      return out;
+    };
+    const piece = pieces.find((p) => p.id === 'cuna-escalonada-con-canal');
+    if (!piece) throw new Error('falta la pieza');
+    const solid = buildSolid(wasm, piece);
+    expect(solid.status()).toBe('NoError');
+    expect(volume(solid)).toBeCloseTo(172000, -1);
+    const mesh = toMesh(solid);
+    for (const [view, target] of [
+      ['alzado', alzado],
+      ['perfilDerecho', perfilDerecho],
+      ['planta', planta],
+    ] as const) {
+      const d = drawView(mesh, view, { hidden: true });
+      const all = [...d.visible, ...d.hidden];
+      const us = all.flatMap((g) => [g.x1, g.x2]);
+      const vs = all.flatMap((g) => [g.y1, g.y2]);
+      const u0 = Math.min(...us);
+      const v0 = Math.min(...vs);
+      const got = unit(all.map((g) => [g.x1 - u0, g.y1 - v0, g.x2 - u0, g.y2 - v0] as Seg));
+      const want = unit([...target]);
+      expect(
+        [...got].filter((k) => !want.has(k)),
+        `${view}: sobran`,
+      ).toEqual([]);
+      expect(
+        [...want].filter((k) => !got.has(k)),
+        `${view}: faltan`,
+      ).toEqual([]);
+    }
   });
 
   it('brida: en planta se ven el buje, su taladro y los dos taladros de la base', () => {

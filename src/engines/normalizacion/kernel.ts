@@ -57,6 +57,67 @@ function polygonSection(
   return new wasm.CrossSection([ordered.map((p) => [p[0], p[1]] as [number, number])]);
 }
 
+/** Triangula un polígono plano 3D (convexo o no) por recorte de orejas. */
+function triangulate(
+  face: readonly number[],
+  at: (i: number) => readonly [number, number, number],
+): [number, number, number][] {
+  // Normal por el método de Newell y proyección al plano de coordenadas más favorable.
+  const n = [0, 0, 0];
+  face.forEach((v, i) => {
+    const [x1, y1, z1] = at(v);
+    const [x2, y2, z2] = at(face[(i + 1) % face.length] as number);
+    n[0] = (n[0] ?? 0) + (y1 - y2) * (z1 + z2);
+    n[1] = (n[1] ?? 0) + (z1 - z2) * (x1 + x2);
+    n[2] = (n[2] ?? 0) + (x1 - x2) * (y1 + y2);
+  });
+  const ax = Math.abs(n[0] ?? 0);
+  const ay = Math.abs(n[1] ?? 0);
+  const az = Math.abs(n[2] ?? 0);
+  const drop = ax >= ay && ax >= az ? 0 : ay >= az ? 1 : 2;
+  const flat = (v: number): [number, number] => {
+    const p = at(v);
+    return drop === 0 ? [p[1], p[2]] : drop === 1 ? [p[2], p[0]] : [p[0], p[1]];
+  };
+  const cross = (a: [number, number], b: [number, number], c: [number, number]): number =>
+    (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
+  let ring = [...face];
+  let area = 0;
+  ring.forEach((v, i) => {
+    const p = flat(v);
+    const q = flat(ring[(i + 1) % ring.length] as number);
+    area += p[0] * q[1] - q[0] * p[1];
+  });
+  const reversed = area < 0;
+  if (reversed) ring = ring.reverse();
+  const out: [number, number, number][] = [];
+  const EPS = 1e-9;
+  let guard = 0;
+  while (ring.length > 3 && guard++ < 1000) {
+    let clipped = false;
+    for (let i = 0; i < ring.length && !clipped; i++) {
+      const a = ring[(i + ring.length - 1) % ring.length] as number;
+      const b = ring[i] as number;
+      const c = ring[(i + 1) % ring.length] as number;
+      const [pa, pb, pc] = [flat(a), flat(b), flat(c)];
+      if (cross(pa, pb, pc) <= EPS) continue; // reflejo o alineado: no es oreja
+      const blocked = ring.some((v) => {
+        if (v === a || v === b || v === c) return false;
+        const p = flat(v);
+        return cross(pa, pb, p) >= -EPS && cross(pb, pc, p) >= -EPS && cross(pc, pa, p) >= -EPS;
+      });
+      if (blocked) continue;
+      out.push(reversed ? [c, b, a] : [a, b, c]);
+      ring.splice(i, 1);
+      clipped = true;
+    }
+    if (!clipped) throw new Error('No se puede triangular una cara del poliedro.');
+  }
+  const [a, b, c] = ring as [number, number, number];
+  out.push(reversed ? [c, b, a] : [a, b, c]);
+  return out;
+}
+
 /**
  * Poliedro cerrado a partir de caras planas y convexas. Cada cara se triangula en abanico desde un
  * vértice que no deje triángulos degenerados, y el sentido de las caras se ordena para que cada
@@ -68,28 +129,9 @@ function polyhedron(
   faces: readonly (readonly number[])[],
 ): Manifold {
   const at = (i: number): readonly [number, number, number] => points[i] ?? [0, 0, 0];
-  const area = (a: number, b: number, c: number): number => {
-    const [px, py, pz] = at(a);
-    const [qx, qy, qz] = at(b);
-    const [rx, ry, rz] = at(c);
-    const [ux, uy, uz] = [qx - px, qy - py, qz - pz];
-    const [vx, vy, vz] = [rx - px, ry - py, rz - pz];
-    return Math.hypot(uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx);
-  };
-  // Triangulación: abanico desde un vértice sin triángulos de área nula.
-  const tris: [number, number, number][][] = faces.map((f) => {
-    for (let k = 0; k < f.length; k++) {
-      const apex = f[k] as number;
-      const ring = [...f.slice(k + 1), ...f.slice(0, k)];
-      const out: [number, number, number][] = [];
-      ring.forEach((v, i) => {
-        const next = ring[i + 1];
-        if (next !== undefined) out.push([apex, v, next]);
-      });
-      if (out.every(([a, b, c]) => area(a, b, c) > 1e-6)) return out;
-    }
-    throw new Error('Una cara del poliedro es degenerada.');
-  });
+  // Triangulación de cada cara (plana, convexa o no) por recorte de orejas. Los vértices que
+  // quedan sobre una arista se conservan (no se admiten triángulos de área nula).
+  const tris: [number, number, number][][] = faces.map((f) => triangulate(f, at));
   // Orientación coherente: se recorre la adyacencia y se da la vuelta a las caras al revés.
   const flipped = new Array<boolean>(faces.length).fill(false);
   const seen = new Array<boolean>(faces.length).fill(false);

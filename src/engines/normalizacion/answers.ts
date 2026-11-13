@@ -11,6 +11,7 @@ export const VIEW_LABELS: Record<ViewName, string> = {
   isometrica: 'Perspectiva isométrica',
   caballera: 'Perspectiva caballera',
   plantaInversa: 'Planta',
+  perfilDerecho: 'Perfil derecho',
 };
 
 export interface ChoiceResult {

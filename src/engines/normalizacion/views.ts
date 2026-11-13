@@ -15,7 +15,7 @@ import { ISO_RIGHT, ISO_TOWARD, ISO_UP } from '../axonometria/projection.ts';
 import type { TriMesh } from './kernel.ts';
 
 export type ViewName =
-  'alzado' | 'planta' | 'plantaInversa' | 'perfil' | 'isometrica' | 'caballera';
+  'alzado' | 'planta' | 'plantaInversa' | 'perfil' | 'perfilDerecho' | 'isometrica' | 'caballera';
 
 /** Perspectiva caballera de la PAU: eje Y a 45° y coeficiente de reducción 1/2. */
 export const CABALLERA = { angle: 45, coef: 0.5 } as const;
@@ -56,6 +56,9 @@ export function project(view: ViewName, p: readonly number[]): V3 {
       return [x, a, c];
     case 'perfil':
       return [a, c, -x];
+    case 'perfilDerecho':
+      // Vista lateral derecha: lo de delante queda a la izquierda.
+      return [-a, c, x];
     case 'isometrica':
       // Perspectiva isométrica (coeficiente 0,816), la misma que la cámara «isometric».
       return [

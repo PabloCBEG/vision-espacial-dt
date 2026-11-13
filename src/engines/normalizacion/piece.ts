@@ -67,8 +67,8 @@ export const OperationSchema = z.discriminatedUnion('tipo', [
    * una pirámide o una cuña; con 6, un prisma triangular inclinado… `quitar` lo resta.
    */
   /**
-   * Poliedro cerrado dado por sus vértices y sus caras (listas de índices de `puntos`, planas y
-   * convexas; pueden llevar vértices intermedios sobre sus aristas). El sentido de las caras se
+   * Poliedro cerrado dado por sus vértices y sus caras (listas de índices de `puntos`, planas, con
+   * entrantes o sin ellos; pueden llevar vértices intermedios sobre sus aristas). El sentido de las caras se
    * ordena solo. Sirve para piezas con cortes inclinados que no son un prisma ni una envolvente.
    */
   z.object({
