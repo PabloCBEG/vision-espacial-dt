@@ -1,0 +1,443 @@
+{
+  "id": "pau-2025-ord-4-soporte-corte",
+  "convocatoria": "2025 ordinaria",
+  "ejercicio": 4,
+  "opcion": null,
+  "temas": ["II-12", "I-15"],
+  "titulo": "Corte A-A y acotación de un soporte con orejeta redonda",
+  "enunciado": "Dados planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide: 1. Dibujar el corte A-A a escala 1:2. 2. Acotar según normas.",
+  "datos": [
+    "Medidos en la lámina del examen (a escala 1:2, aquí a tamaño real): dos bloques de 75 mm de largo, de 45 y 30 mm de alto, unidos por una orejeta de 30 mm de grosor, 100 mm de ancho y 150 mm de alto, con la parte de arriba redonda de R50 y un taladro de ⌀50; taladro vertical de ⌀30 en el bloque más alto.",
+    "La lámina original dibuja el perfil visto desde el lado contrario al perfil izquierdo; aquí se muestra el perfil izquierdo, con las mismas medidas."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "soporte-con-orejeta"
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "engines": {
+      "normalizacion": {
+        "vistas": ["planta", "perfil"],
+        "ejes": true,
+        "ocultas": true
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "La pieza tiene dos bloques de distinta altura unidos por una orejeta redonda con un taladro horizontal, y un taladro vertical en el bloque alto. El plano A-A pasa por los ejes de los dos taladros.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["planta", "perfil"]
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "El plano A-A es paralelo al alzado y pasa por los ejes de los dos taladros. Se quita la parte de delante y se dibuja lo que queda, mirando hacia atrás.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["planta"]
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina que cortas la pieza por A-A y retiras la mitad de delante. Lo que ves por el corte es el alzado en corte.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Dibuja el contorno del alzado en corte: los dos bloques, la orejeta y los dos taladros, que ahora se ven como huecos, sin aristas ocultas.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Raya a 45° solo donde el plano ha cortado el material y deja vacíos los taladros. El rayado de la orejeta queda partido en dos por el hueco del taladro horizontal.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Acota cada medida una sola vez, fuera de la pieza: longitudes debajo, con la total más lejos, y alturas y diámetros a los lados.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["cotas"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false,
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [75, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -28
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [75, 60, 0],
+                [105, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -28
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [105, 60, 0],
+                [180, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -28
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [180, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -44
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [0, 60, 45]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [0, 60, 150]
+              ],
+              "direccion": "v",
+              "desplazamiento": -22
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [180, 60, 0],
+                [180, 60, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [180, 60, 0],
+                [180, 60, 100]
+              ],
+              "direccion": "v",
+              "desplazamiento": 22
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [105, 60, 75],
+                [105, 60, 125]
+              ],
+              "direccion": "v",
+              "desplazamiento": 12,
+              "valor": "⌀50"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [30, 60, 45],
+                [60, 60, 45]
+              ],
+              "direccion": "h",
+              "desplazamiento": 8,
+              "valor": "⌀30"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 45],
+                [45, 60, 45]
+              ],
+              "direccion": "h",
+              "desplazamiento": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: el rayado ocupa todo el material cortado y nada más, los dos taladros quedan vacíos y las medidas de las cadenas suman la total.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false,
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [75, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -28
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [75, 60, 0],
+                [105, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -28
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [105, 60, 0],
+                [180, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -28
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [180, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -44
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [0, 60, 45]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 0],
+                [0, 60, 150]
+              ],
+              "direccion": "v",
+              "desplazamiento": -22
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [180, 60, 0],
+                [180, 60, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [180, 60, 0],
+                [180, 60, 100]
+              ],
+              "direccion": "v",
+              "desplazamiento": 22
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [105, 60, 75],
+                [105, 60, 125]
+              ],
+              "direccion": "v",
+              "desplazamiento": 12,
+              "valor": "⌀50"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [30, 60, 45],
+                [60, 60, 45]
+              ],
+              "direccion": "h",
+              "desplazamiento": 8,
+              "valor": "⌀30"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 45],
+                [45, 60, 45]
+              ],
+              "direccion": "h",
+              "desplazamiento": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: cortar por un plano que no pasa por los ejes de los taladros. Entonces los taladros no se ven como huecos y el corte no enseña lo que hay dentro.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Contorno del corte A-A con los bloques, la orejeta y los dos taladros",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Rayado a 45° solo en el material cortado, con los taladros vacíos",
+        "puntos": 0.3
+      },
+      {
+        "texto": "Sin aristas ocultas y con los ejes de simetría",
+        "puntos": 0.2
+      },
+      {
+        "texto": "Cotas de longitud y altura de los bloques y de la orejeta",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Cotas de los diámetros y de la posición de los taladros, sin repetir",
+        "puntos": 0.5
+      }
+    ]
+  }
+}

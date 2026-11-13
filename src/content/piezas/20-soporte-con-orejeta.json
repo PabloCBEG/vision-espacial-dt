@@ -1,0 +1,14 @@
+{
+  "id": "soporte-con-orejeta",
+  "nombre": "Soporte con orejeta redonda y taladro vertical",
+  "dificultad": 3,
+  "vistasNecesarias": ["planta", "perfil"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [0, 10, 0], "hasta": [75, 110, 45] },
+    { "tipo": "bloque", "desde": [105, 10, 0], "hasta": [180, 110, 30] },
+    { "tipo": "bloque", "desde": [75, 10, 0], "hasta": [105, 110, 100] },
+    { "tipo": "cilindro", "centro": [75, 60, 100], "eje": "x", "radio": 50, "largo": 30 },
+    { "tipo": "taladro", "centro": [45, 60, 45], "eje": "c", "sentido": -1, "diametro": 30 },
+    { "tipo": "taladro", "centro": [75, 60, 100], "eje": "x", "sentido": 1, "diametro": 50 }
+  ]
+}

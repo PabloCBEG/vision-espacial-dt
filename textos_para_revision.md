@@ -2610,6 +2610,33 @@ Fichero: `src/content/pau/2025-ord-2-octaedro.json` · 2025 ordinaria
 - [ ] Proyección vertical de R, a 30° con el PH — 0,6 p
 - [ ] Recta S paralela a R por el punto medio de EF — 0,2 p
 
+### Ejercicio 4 · Corte A-A y acotación de un soporte con orejeta redonda
+
+Fichero: `src/content/pau/2025-ord-4-soporte-corte.json` · 2025 ordinaria
+
+- [ ] **Enunciado:** Dados planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide: 1. Dibujar el corte A-A a escala 1:2. 2. Acotar según normas.
+- [ ] **Dato:** Medidos en la lámina del examen (a escala 1:2, aquí a tamaño real): dos bloques de 75 mm de largo, de 45 y 30 mm de alto, unidos por una orejeta de 30 mm de grosor, 100 mm de ancho y 150 mm de alto, con la parte de arriba redonda de R50 y un taladro de ⌀50; taladro vertical de ⌀30 en el bloque más alto.
+- [ ] **Dato:** La lámina original dibuja el perfil visto desde el lado contrario al perfil izquierdo; aquí se muestra el perfil izquierdo, con las mismas medidas.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* La pieza tiene dos bloques de distinta altura unidos por una orejeta redonda con un taladro horizontal, y un taladro vertical en el bloque alto. El plano A-A pasa por los ejes de los dos taladros.
+2. [ ] *2. La idea clave:* El plano A-A es paralelo al alzado y pasa por los ejes de los dos taladros. Se quita la parte de delante y se dibuja lo que queda, mirando hacia atrás.
+3. [ ] *3. El movimiento:* Imagina que cortas la pieza por A-A y retiras la mitad de delante. Lo que ves por el corte es el alzado en corte.
+4. [ ] *4. El trazado:* Dibuja el contorno del alzado en corte: los dos bloques, la orejeta y los dos taladros, que ahora se ven como huecos, sin aristas ocultas.
+5. [ ] *4. El trazado:* Raya a 45° solo donde el plano ha cortado el material y deja vacíos los taladros. El rayado de la orejeta queda partido en dos por el hueco del taladro horizontal.
+6. [ ] *4. El trazado:* Acota cada medida una sola vez, fuera de la pieza: longitudes debajo, con la total más lejos, y alturas y diámetros a los lados.
+7. [ ] *5. Comprobación:* Comprobación: el rayado ocupa todo el material cortado y nada más, los dos taladros quedan vacíos y las medidas de las cadenas suman la total.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: cortar por un plano que no pasa por los ejes de los taladros. Entonces los taladros no se ven como huecos y el corte no enseña lo que hay dentro.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Contorno del corte A-A con los bloques, la orejeta y los dos taladros — 0,5 p
+- [ ] Rayado a 45° solo en el material cortado, con los taladros vacíos — 0,3 p
+- [ ] Sin aristas ocultas y con los ejes de simetría — 0,2 p
+- [ ] Cotas de longitud y altura de los bloques y de la orejeta — 0,5 p
+- [ ] Cotas de los diámetros y de la posición de los taladros, sin repetir — 0,5 p
+
 ### Ejercicio 1 (opción A) · Parábola por su directriz, un punto y la tangente en él
 
 Fichero: `src/content/pau/2026-ext-1a-parabola.json` · 2026 extraordinaria
@@ -2852,6 +2879,7 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Escalera con taladro** (`src/content/piezas/17-escalera-taladrada.json`)
 - [ ] **Canal en V con ranura y taladro** (`src/content/piezas/18-canal-en-v.json`)
 - [ ] **Eje escalonado con placa y taladro pasante** (`src/content/piezas/19-eje-escalonado-con-placa.json`)
+- [ ] **Soporte con orejeta redonda y taladro vertical** (`src/content/piezas/20-soporte-con-orejeta.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 

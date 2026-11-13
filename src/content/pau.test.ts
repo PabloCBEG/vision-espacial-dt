@@ -111,7 +111,7 @@ describe('ejercicios PAU reales (Andalucía 2025 y 2026)', () => {
   it('hay tres del ejercicio 1 y tres del ejercicio 2', () => {
     expect(real.filter((e) => e.ejercicio === 1)).toHaveLength(3);
     expect(real.filter((e) => e.ejercicio === 2)).toHaveLength(3);
-    expect(real.filter((e) => e.ejercicio === 4)).toHaveLength(1);
+    expect(real.filter((e) => e.ejercicio === 4)).toHaveLength(2);
   });
 
   it('normalización 2026 ord. 4: la pieza y las cotas del corte cuadran con lo medido', () => {
@@ -133,6 +133,32 @@ describe('ejercicios PAU reales (Andalucía 2025 y 2026)', () => {
       (c) => c.tipo === 'lineal' && c.direccion === 'h' && c.de[1][0] - c.de[0][0] === 200,
     );
     expect(totals.length).toBeGreaterThan(0);
+  });
+
+  it('normalización 2025 ord. 4: la pieza y las cotas del corte cuadran con lo medido', () => {
+    const e = real.find((x) => x.id === 'pau-2025-ord-4-soporte-corte');
+    const piece = findPiece('soporte-con-orejeta');
+    if (!e || !piece) throw new Error('Falta el ejercicio o su pieza');
+    const blocks = piece.operaciones.flatMap((o) => (o.tipo === 'bloque' ? [o] : []));
+    // Bloques de 75 y 75 mm de largo con la orejeta de 30 mm entre ellos: 180 mm en total.
+    const lengths = blocks.map((b) => b.hasta[0] - b.desde[0]).sort((a, b) => a - b);
+    expect(lengths).toEqual([30, 75, 75]);
+    expect(lengths.reduce((s, n) => s + n, 0)).toBe(180);
+    const heights = blocks.map((b) => b.hasta[2] - b.desde[2]).sort((a, b) => a - b);
+    expect(heights).toEqual([30, 45, 100]);
+    const cyl = piece.operaciones.find((o) => o.tipo === 'cilindro');
+    if (cyl?.tipo !== 'cilindro') throw new Error('Falta la parte redonda');
+    // La cabeza redonda llega a 100 + 50 = 150 mm de alto.
+    expect(cyl.centro[2] + cyl.radio).toBe(150);
+    const diameters = piece.operaciones.flatMap((o) => (o.tipo === 'taladro' ? [o.diametro] : []));
+    expect(diameters.sort((a, b) => a - b)).toEqual([30, 50]);
+    const cuts = e.solucion.flatMap(
+      (s) => NormStepSchema.parse(s.engines?.normalizacion ?? {}).cotas,
+    );
+    const widths = cuts
+      .filter((c) => c.tipo === 'lineal' && c.direccion === 'h')
+      .map((c) => (c.tipo === 'lineal' ? c.de[1][0] - c.de[0][0] : 0));
+    expect(widths).toContain(180);
   });
 
   it('la solución sigue las seis partes y la rúbrica está marcada como derivada', () => {
