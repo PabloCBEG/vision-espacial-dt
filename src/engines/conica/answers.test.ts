@@ -25,6 +25,23 @@ describe('respuestas de perspectiva cónica', () => {
     expect(conicValue(data(45, 60), 'fugaLejana')).toBeCloseTo(60, 6);
   });
 
+  it('el punto métrico está a la distancia ojo-fuga de su fuga, hacia P', () => {
+    // 30° con el ojo a 70 mm: fuga cercana a 40,4 mm; ojo-fuga = 70 / cos 30° = 80,8 mm.
+    const near = Math.abs(70 / Math.cos(Math.PI / 6) - 70 * Math.tan(Math.PI / 6));
+    expect(conicValue(data(30), 'metricoCercano')).toBeCloseTo(near, 6);
+    const far = Math.abs(70 / Math.cos(Math.PI / 3) - 70 * Math.tan(Math.PI / 3));
+    expect(conicValue(data(30), 'metricoLejano')).toBeCloseTo(far, 6);
+  });
+
+  it('la altura de la arista más cercana se reduce con la distancia al ojo', () => {
+    // Cubo de 30 mm con su centro a 40 mm detrás del cuadro, sin girar: la cara de delante
+    // está a 40 − 15 = 25 mm del cuadro, y la escala es d / (d + 25).
+    const d = 70;
+    expect(conicValue(data(0, d), 'alturaArista')).toBeCloseTo((30 * d) / (d + 25), 6);
+    // Un cubo girado 45° tiene su vértice más cercano más cerca del cuadro, y se ve mayor.
+    expect(conicValue(data(45, d), 'alturaArista')).toBeGreaterThan((30 * d) / (d + 40));
+  });
+
   it('ignora lo que no es una magnitud de cónica', () => {
     expect(conicValue(data(30), 'ejeX')).toBeNull();
     expect(conicValue(data(30), undefined)).toBeNull();

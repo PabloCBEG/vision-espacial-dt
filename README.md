@@ -185,7 +185,10 @@ Copia un ejercicio de una lección existente y cambia sus valores.
   En axonometría, `ejeX`, `ejeY`, `ejeZ` (longitud en el dibujo de una arista paralela a ese eje) y
   `diagonalVertical` (la del octaedro) y `diagonalCara` (la de la cara frontal del cubo, que no se
   reduce con ningún coeficiente); `ejeZ` también vale para la altura de un prisma; en cónica, `horizonte`, `puntoDistancia`, `fugaCercana` y
-  `fugaLejana` (distancia de P al punto de fuga de las aristas del cubo girado).
+  `fugaLejana` (distancia de P al punto de fuga de las aristas del cubo girado), `metricoCercano`
+  y `metricoLejano` (distancia de P al punto métrico de esa fuga) y `alturaArista` (altura en el
+  dibujo de la arista vertical más cercana al cuadro). Marcadores de cónica: `{fugaCercana}`,
+  `{fugaLejana}`, `{ojoFuga}`, `{alturaReal}`, `{profundidad}` y `{escala}`.
 
 Los tests recorren todos los ejercicios (`src/content/exercises.test.ts`) y comprueban que la
 respuesta coincide con la que calcula el motor, que el estado final de la solución cumple la

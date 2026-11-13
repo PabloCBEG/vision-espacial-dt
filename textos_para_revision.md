@@ -2437,6 +2437,125 @@ Fichero: `src/content/lessons/20-curvas-de-arcos.json` · DT I · nivel Inicial
    - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: S₄ está en la recta AB y a una distancia de B igual al radio de ese arco, que crece AB en cada semicircunferencia.
    - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: seguir el arco más allá del punto de enlace. El arco termina justo en la recta de los centros; si se pasa, la espiral se tuerce.
 
+### II-11 · Cada dirección tiene su fuga
+
+Fichero: `src/content/lessons/21-cada-direccion-su-fuga.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Sistemas de representación: perspectiva cónica de sólidos dados por sus vistas, con puntos de fuga, puntos métricos y alturas reducidas.
+
+**Pasos**
+
+1. [ ] Un sólido dado por sus vistas se apoya en el geometral, detrás del cuadro. Para dibujarlo en cónica hacen falta su planta, su alzado y la posición del observador.
+2. [ ] Primero la planta, abatida sobre el cuadro. Da la posición a lo ancho y la profundidad de cada vértice.
+3. [ ] Cada dirección de aristas horizontales tiene su punto de fuga en el horizonte. Todas las aristas paralelas del sólido comparten el mismo.
+4. [ ] El punto de fuga sale de trazar, desde el ojo abatido, la paralela a esas aristas. Su corte con el horizonte es la fuga.
+5. [ ] Los puntos métricos llevan a la perspectiva las medidas reales de la LT. Cada uno está en el horizonte, a la distancia del ojo abatido a su fuga.
+6. [ ] Las verticales se dibujan reducidas: cuanto más lejos del cuadro, más cortas. Solo en el cuadro se ven en verdadera magnitud.
+7. [ ] Se unen los vértices. Las aristas ocultas son obligatorias en cónica y se dibujan con línea discontinua fina.
+8. [ ] Mueve al observador y gira el sólido: las fugas y los puntos métricos cambian al momento, pero siempre están en el horizonte.
+
+**Ejercicios**
+
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 24 mm): Un cubo de 30 mm de arista, dado por sus vistas, se apoya en el geometral. ¿Cuánto mide en el dibujo su arista vertical más cercana al cuadro, con el observador a 60 mm?
+   - [ ] *Pista 1:* Las aristas verticales se reducen a medida que se alejan del cuadro.
+   - [ ] *Pista 2:* La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.
+   - [ ] *Pista 3:* Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide 30 mm.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a 15 mm detrás del cuadro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva la altura real, 30 mm, sobre la vertical del pie con la escala del cuadro, 0,8: la arista mide 24 mm en el dibujo.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 30 mm por 0,8 da 24 mm, menos que la altura real porque la arista está detrás del cuadro.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar la altura real, 30 mm, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 24.9 mm): El cubo está girado 45° respecto al cuadro y el observador está a 60 mm. ¿A qué distancia de P está el punto métrico de una de sus fugas?
+   - [ ] *Pista 1:* El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.
+   - [ ] *Pista 2:* Primero hay que hallar la fuga, trazando desde el ojo abatido la paralela a las aristas.
+   - [ ] *Pista 3:* Con centro en la fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a 60 mm de él. Buscamos a qué distancia de P está el punto métrico de la fuga más cercana.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, 84,9 mm, del lado de P. Con él se llevan a la perspectiva las medidas reales.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más cercana queda a 60 mm de P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en la fuga y radio hasta el ojo abatido, 84,9 mm, corta el horizonte hacia P: ese punto es M y queda a 24,9 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M y el ojo abatido están a la misma distancia de la fuga, 84,9 mm, y M está en el horizonte, hacia P.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner el punto métrico al otro lado de la fuga. Se toma del lado del punto principal; al otro lado, las medidas reales se llevarían al revés.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 29.7 mm): Un prisma de base cuadrada y 40 mm de altura se apoya en el geometral. ¿Cuánto mide en el dibujo su arista vertical más cercana, con el observador a 70 mm?
+   - [ ] *Pista 1:* Las aristas verticales se reducen a medida que se alejan del cuadro.
+   - [ ] *Pista 2:* La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.
+   - [ ] *Pista 3:* Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide 40 mm.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a 24,4 mm detrás del cuadro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva la altura real, 40 mm, sobre la vertical del pie con la escala del cuadro, 0,74: la arista mide 29,7 mm en el dibujo.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 40 mm por 0,74 da 29,7 mm, menos que la altura real porque la arista está detrás del cuadro.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar la altura real, 40 mm, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 40.4 mm): El cubo está girado 30° respecto al cuadro y el observador está a 70 mm. ¿A qué distancia de P está el punto métrico de la fuga más cercana?
+   - [ ] *Pista 1:* El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.
+   - [ ] *Pista 2:* Primero hay que hallar la fuga, trazando desde el ojo abatido la paralela a las aristas.
+   - [ ] *Pista 3:* Con centro en la fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a 70 mm de él. Buscamos a qué distancia de P está el punto métrico de la fuga más cercana.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, 80,8 mm, del lado de P. Con él se llevan a la perspectiva las medidas reales.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más cercana queda a 40,4 mm de P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en la fuga y radio hasta el ojo abatido, 80,8 mm, corta el horizonte hacia P: ese punto es M y queda a 40,4 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M y el ojo abatido están a la misma distancia de la fuga, 80,8 mm, y M está en el horizonte, hacia P.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de las aristas con el cuadro y no con la perpendicular al cuadro. Entonces la fuga cercana y la lejana se confunden y el punto métrico sale en otro sitio.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 24.1 mm): Un cubo de 30 mm de arista, girado 30° respecto al cuadro, se apoya en el geometral. ¿Cuánto mide en el dibujo su arista vertical más cercana, con el observador a 80 mm?
+   - [ ] *Pista 1:* Las aristas verticales se reducen a medida que se alejan del cuadro.
+   - [ ] *Pista 2:* La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.
+   - [ ] *Pista 3:* Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide 30 mm.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a 19,5 mm detrás del cuadro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva la altura real, 30 mm, sobre la vertical del pie con la escala del cuadro, 0,8: la arista mide 24,1 mm en el dibujo.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 30 mm por 0,8 da 24,1 mm, menos que la altura real porque la arista está detrás del cuadro.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar la altura real, 30 mm, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 14.4 mm): El cubo está girado 25° respecto al cuadro y el observador está a 65 mm. ¿A qué distancia de P está el punto métrico de la fuga más lejana?
+   - [ ] *Pista 1:* El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.
+   - [ ] *Pista 2:* Primero hay que hallar la fuga más lejana, con la paralela a las aristas desde el ojo abatido.
+   - [ ] *Pista 3:* Con centro en esa fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a 65 mm de él. Buscamos a qué distancia de P está el punto métrico de la fuga más lejana.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, 153,8 mm, del lado de P. Con él se llevan a la perspectiva las medidas reales.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más lejana queda a 139,4 mm de P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en la fuga y radio hasta el ojo abatido, 153,8 mm, corta el horizonte hacia P: ese punto es M y queda a 14,4 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M y el ojo abatido están a la misma distancia de la fuga, 153,8 mm, y M está en el horizonte, hacia P.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo de las aristas con el cuadro y no con la perpendicular al cuadro. Entonces la fuga cercana y la lejana se confunden y el punto métrico sale en otro sitio.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 46.9 mm): Como en la PAU: cubo girado 35° respecto al cuadro y observador a 90 mm. ¿A qué distancia de P está el punto métrico de la fuga más cercana?
+   - [ ] *Pista 1:* El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.
+   - [ ] *Pista 2:* Primero hay que hallar la fuga, trazando desde el ojo abatido la paralela a las aristas.
+   - [ ] *Pista 3:* Con centro en la fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a 90 mm de él. Buscamos a qué distancia de P está el punto métrico de la fuga más cercana.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, 109,9 mm, del lado de P. Con él se llevan a la perspectiva las medidas reales.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más cercana queda a 63 mm de P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en la fuga y radio hasta el ojo abatido, 109,9 mm, corta el horizonte hacia P: ese punto es M y queda a 46,9 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M y el ojo abatido están a la misma distancia de la fuga, 109,9 mm, y M está en el horizonte, hacia P.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: poner el punto métrico al otro lado de la fuga. Se toma del lado del punto principal; al otro lado, las medidas reales se llevarían al revés.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 36.5 mm): Como en la PAU: prisma de base cuadrada y 50 mm de altura, girado 20° respecto al cuadro, con el observador a 85 mm. ¿Cuánto mide en el dibujo su arista vertical más cercana?
+   - [ ] *Pista 1:* Las aristas verticales se reducen a medida que se alejan del cuadro.
+   - [ ] *Pista 2:* La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.
+   - [ ] *Pista 3:* Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide 50 mm.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a 31,4 mm detrás del cuadro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva la altura real, 50 mm, sobre la vertical del pie con la escala del cuadro, 0,73: la arista mide 36,5 mm en el dibujo.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: 50 mm por 0,73 da 36,5 mm, menos que la altura real porque la arista está detrás del cuadro.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar solo las aristas vistas del sólido. En cónica las aristas ocultas son obligatorias y se dibujan con línea discontinua fina.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 20 mm): Como en la PAU: cubo girado 40° respecto al cuadro y observador a 55 mm. ¿A qué distancia de P está el punto métrico de la fuga más lejana?
+   - [ ] *Pista 1:* El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.
+   - [ ] *Pista 2:* Primero hay que hallar la fuga más lejana, con la paralela a las aristas desde el ojo abatido.
+   - [ ] *Pista 3:* Con centro en esa fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a 55 mm de él. Buscamos a qué distancia de P está el punto métrico de la fuga más lejana.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, 85,6 mm, del lado de P. Con él se llevan a la perspectiva las medidas reales.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más lejana queda a 65,5 mm de P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en la fuga y radio hasta el ojo abatido, 85,6 mm, corta el horizonte hacia P: ese punto es M y queda a 20 mm de P.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M y el ojo abatido están a la misma distancia de la fuga, 85,6 mm, y M está en el horizonte, hacia P.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar solo las aristas vistas del sólido. En cónica las aristas ocultas son obligatorias y se dibujan con línea discontinua fina.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos

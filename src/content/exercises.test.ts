@@ -43,6 +43,7 @@ const COMPLETE_LESSONS: string[] = [
   'distancia-por-abatimiento',
   'cada-eje-se-reduce',
   'curvas-de-arcos',
+  'cada-direccion-su-fuga',
 ];
 
 const lessonNamed = (id: string): Lesson => {

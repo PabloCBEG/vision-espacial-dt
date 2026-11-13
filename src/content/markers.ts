@@ -5,7 +5,7 @@
 import { formatMeasure, formatMm } from '../ui/format.ts';
 import { axonCoefficient, axonRealLength, axonValue } from '../engines/axonometria/answers.ts';
 import { AxonStepSchema } from '../engines/axonometria/definition.ts';
-import { conicValue } from '../engines/conica/answers.ts';
+import { conicValue, measuringDistances, nearestVerticalEdge } from '../engines/conica/answers.ts';
 import { ConicStepSchema } from '../engines/conica/definition.ts';
 import { MethodsStepSchema } from '../engines/metodos/definition.ts';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
@@ -138,6 +138,21 @@ export function exerciseMarkers(lesson: Lesson, exercise: Exercise): MarkerValue
     }
     out.alturaOjo = formatMeasure(data.observador.h, 'mm');
     out.distanciaOjo = formatMeasure(data.observador.d, 'mm');
+    // Fugas y puntos métricos: distancia de P a cada fuga y del ojo abatido a la fuga que se pide.
+    const list = measuringDistances(data);
+    const near = list[0];
+    const far = list[list.length - 1];
+    if (near) out.fugaCercana = formatMeasure(near.fuga, 'mm');
+    if (far) out.fugaLejana = formatMeasure(far.fuga, 'mm');
+    const asked = exercise.magnitud === 'metricoLejano' ? far : near;
+    if (asked) out.ojoFuga = formatMeasure(asked.ojo, 'mm');
+    // Altura de la arista vertical más cercana: real, profundidad y escala en el cuadro.
+    const edge = nearestVerticalEdge(data);
+    if (edge) {
+      out.alturaReal = formatMeasure(edge.real, 'mm');
+      out.profundidad = formatMeasure(edge.profundidad, 'mm');
+      out.escala = String(Number((edge.dibujo / edge.real).toFixed(2))).replace('.', ',');
+    }
   }
 
   out.respuesta = formatMeasure(value, unit);

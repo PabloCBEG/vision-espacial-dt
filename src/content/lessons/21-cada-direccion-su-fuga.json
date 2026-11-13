@@ -1,0 +1,2094 @@
+{
+  "id": "cada-direccion-su-fuga",
+  "order": 7,
+  "title": "Cada dirección tiene su fuga",
+  "topic": "II-11",
+  "stage": "DT II",
+  "saberBasico": "Sistemas de representación: perspectiva cónica de sólidos dados por sus vistas, con puntos de fuga, puntos métricos y alturas reducidas.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P"
+  },
+  "steps": [
+    {
+      "narration": "Un sólido dado por sus vistas se apoya en el geometral, detrás del cuadro. Para dibujarlo en cónica hacen falta su planta, su alzado y la posición del observador.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva", "rayos"],
+      "sheet": ["cuadro", "perspectiva"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "rayos": true
+        }
+      }
+    },
+    {
+      "narration": "Primero la planta, abatida sobre el cuadro. Da la posición a lo ancho y la profundidad de cada vértice.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva", "rayos"],
+      "sheet": ["cuadro", "perspectiva", "construccion"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "construccion": 0.6
+        }
+      }
+    },
+    {
+      "narration": "Cada dirección de aristas horizontales tiene su punto de fuga en el horizonte. Todas las aristas paralelas del sólido comparten el mismo.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "fugas": true,
+          "rayos": false
+        }
+      }
+    },
+    {
+      "narration": "El punto de fuga sale de trazar, desde el ojo abatido, la paralela a esas aristas. Su corte con el horizonte es la fuga.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas", "cuadricula"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "fugas": true,
+          "construccion": 1,
+          "rayos": false
+        }
+      }
+    },
+    {
+      "narration": "Los puntos métricos llevan a la perspectiva las medidas reales de la LT. Cada uno está en el horizonte, a la distancia del ojo abatido a su fuga.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "fugas", "metricos"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "fugas": true,
+          "metricos": true,
+          "rayos": false
+        }
+      }
+    },
+    {
+      "narration": "Las verticales se dibujan reducidas: cuanto más lejos del cuadro, más cortas. Solo en el cuadro se ven en verdadera magnitud.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva", "rayos"],
+      "sheet": ["cuadro", "perspectiva"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "rayos": true
+        }
+      }
+    },
+    {
+      "narration": "Se unen los vértices. Las aristas ocultas son obligatorias en cónica y se dibujan con línea discontinua fina.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "ocultas": true,
+          "rayos": false
+        }
+      }
+    },
+    {
+      "narration": "Mueve al observador y gira el sólido: las fugas y los puntos métricos cambian al momento, pero siempre están en el horizonte.",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva", "rayos"],
+      "sheet": ["cuadro", "perspectiva", "fugas", "metricos"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 75,
+            "h": 50
+          },
+          "fugas": true,
+          "metricos": true,
+          "controles": true
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "Un cubo de 30 mm de arista, dado por sus vistas, se apoya en el geometral. ¿Cuánto mide en el dibujo su arista vertical más cercana al cuadro, con el observador a 60 mm?",
+      "answer": 24,
+      "unit": "mm",
+      "tolerance": 0.6,
+      "magnitud": "alturaArista",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -30]
+          },
+          "observador": {
+            "x": 0,
+            "d": 60,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "Las aristas verticales se reducen a medida que se alejan del cuadro.",
+        "La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.",
+        "Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide {alturaReal}.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -30]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -30]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -30]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a {profundidad} detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "construccion"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -30]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva la altura real, {alturaReal}, sobre la vertical del pie con la escala del cuadro, {escala}: la arista mide {respuesta} en el dibujo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -30]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {alturaReal} por {escala} da {respuesta}, menos que la altura real porque la arista está detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -30]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar la altura real, {alturaReal}, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -30]
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "El cubo está girado 45° respecto al cuadro y el observador está a 60 mm. ¿A qué distancia de P está el punto métrico de una de sus fugas?",
+      "answer": 24.9,
+      "unit": "mm",
+      "tolerance": 1,
+      "magnitud": "metricoCercano",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 45
+          },
+          "observador": {
+            "x": 0,
+            "d": 60,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.",
+        "Primero hay que hallar la fuga, trazando desde el ojo abatido la paralela a las aristas.",
+        "Con centro en la fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto métrico de la fuga más cercana.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, {ojoFuga}, del lado de P. Con él se llevan a la perspectiva las medidas reales.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más cercana queda a {fugaCercana} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en la fuga y radio hasta el ojo abatido, {ojoFuga}, corta el horizonte hacia P: ese punto es M y queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: M y el ojo abatido están a la misma distancia de la fuga, {ojoFuga}, y M está en el horizonte, hacia P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el punto métrico al otro lado de la fuga. Se toma del lado del punto principal; al otro lado, las medidas reales se llevarían al revés.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 45
+              },
+              "observador": {
+                "x": 0,
+                "d": 60,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "Un prisma de base cuadrada y 40 mm de altura se apoya en el geometral. ¿Cuánto mide en el dibujo su arista vertical más cercana, con el observador a 70 mm?",
+      "answer": 29.7,
+      "unit": "mm",
+      "tolerance": 0.6,
+      "magnitud": "alturaArista",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "prisma",
+            "lados": 4,
+            "radio": 15,
+            "altura": 40,
+            "centro": [0, -35]
+          },
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "Las aristas verticales se reducen a medida que se alejan del cuadro.",
+        "La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.",
+        "Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide {alturaReal}.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 40,
+                "centro": [0, -35]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 40,
+                "centro": [0, -35]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 40,
+                "centro": [0, -35]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a {profundidad} detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "construccion"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 40,
+                "centro": [0, -35]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              },
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva la altura real, {alturaReal}, sobre la vertical del pie con la escala del cuadro, {escala}: la arista mide {respuesta} en el dibujo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 40,
+                "centro": [0, -35]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {alturaReal} por {escala} da {respuesta}, menos que la altura real porque la arista está detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 40,
+                "centro": [0, -35]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar la altura real, {alturaReal}, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 40,
+                "centro": [0, -35]
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "El cubo está girado 30° respecto al cuadro y el observador está a 70 mm. ¿A qué distancia de P está el punto métrico de la fuga más cercana?",
+      "answer": 40.4,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "metricoCercano",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 30
+          },
+          "observador": {
+            "x": 0,
+            "d": 70,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.",
+        "Primero hay que hallar la fuga, trazando desde el ojo abatido la paralela a las aristas.",
+        "Con centro en la fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto métrico de la fuga más cercana.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, {ojoFuga}, del lado de P. Con él se llevan a la perspectiva las medidas reales.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más cercana queda a {fugaCercana} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en la fuga y radio hasta el ojo abatido, {ojoFuga}, corta el horizonte hacia P: ese punto es M y queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: M y el ojo abatido están a la misma distancia de la fuga, {ojoFuga}, y M está en el horizonte, hacia P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de las aristas con el cuadro y no con la perpendicular al cuadro. Entonces la fuga cercana y la lejana se confunden y el punto métrico sale en otro sitio.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 70,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Un cubo de 30 mm de arista, girado 30° respecto al cuadro, se apoya en el geometral. ¿Cuánto mide en el dibujo su arista vertical más cercana, con el observador a 80 mm?",
+      "answer": 24.1,
+      "unit": "mm",
+      "tolerance": 0.8,
+      "magnitud": "alturaArista",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [10, -40],
+            "giro": 30
+          },
+          "observador": {
+            "x": 0,
+            "d": 80,
+            "h": 50
+          }
+        }
+      },
+      "hints": [
+        "Las aristas verticales se reducen a medida que se alejan del cuadro.",
+        "La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.",
+        "Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide {alturaReal}.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [10, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [10, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [10, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a {profundidad} detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "construccion"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [10, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 50
+              },
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva la altura real, {alturaReal}, sobre la vertical del pie con la escala del cuadro, {escala}: la arista mide {respuesta} en el dibujo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [10, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {alturaReal} por {escala} da {respuesta}, menos que la altura real porque la arista está detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [10, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 50
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar la altura real, {alturaReal}, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [10, -40],
+                "giro": 30
+              },
+              "observador": {
+                "x": 0,
+                "d": 80,
+                "h": 50
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "El cubo está girado 25° respecto al cuadro y el observador está a 65 mm. ¿A qué distancia de P está el punto métrico de la fuga más lejana?",
+      "answer": 14.4,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "metricoLejano",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 25
+          },
+          "observador": {
+            "x": 0,
+            "d": 65,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.",
+        "Primero hay que hallar la fuga más lejana, con la paralela a las aristas desde el ojo abatido.",
+        "Con centro en esa fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto métrico de la fuga más lejana.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 65,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, {ojoFuga}, del lado de P. Con él se llevan a la perspectiva las medidas reales.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 65,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 65,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más lejana queda a {fugaLejana} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 65,
+                "h": 45
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en la fuga y radio hasta el ojo abatido, {ojoFuga}, corta el horizonte hacia P: ese punto es M y queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 65,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: M y el ojo abatido están a la misma distancia de la fuga, {ojoFuga}, y M está en el horizonte, hacia P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 65,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir el ángulo de las aristas con el cuadro y no con la perpendicular al cuadro. Entonces la fuga cercana y la lejana se confunden y el punto métrico sale en otro sitio.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 25
+              },
+              "observador": {
+                "x": 0,
+                "d": 65,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: cubo girado 35° respecto al cuadro y observador a 90 mm. ¿A qué distancia de P está el punto métrico de la fuga más cercana?",
+      "answer": 46.9,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "metricoCercano",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 35
+          },
+          "observador": {
+            "x": 0,
+            "d": 90,
+            "h": 45
+          }
+        }
+      },
+      "hints": [
+        "El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.",
+        "Primero hay que hallar la fuga, trazando desde el ojo abatido la paralela a las aristas.",
+        "Con centro en la fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto métrico de la fuga más cercana.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, {ojoFuga}, del lado de P. Con él se llevan a la perspectiva las medidas reales.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más cercana queda a {fugaCercana} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en la fuga y radio hasta el ojo abatido, {ojoFuga}, corta el horizonte hacia P: ese punto es M y queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: M y el ojo abatido están a la misma distancia de la fuga, {ojoFuga}, y M está en el horizonte, hacia P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: poner el punto métrico al otro lado de la fuga. Se toma del lado del punto principal; al otro lado, las medidas reales se llevarían al revés.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 35
+              },
+              "observador": {
+                "x": 0,
+                "d": 90,
+                "h": 45
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: prisma de base cuadrada y 50 mm de altura, girado 20° respecto al cuadro, con el observador a 85 mm. ¿Cuánto mide en el dibujo su arista vertical más cercana?",
+      "answer": 36.5,
+      "unit": "mm",
+      "tolerance": 0.8,
+      "magnitud": "alturaArista",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "prisma",
+            "lados": 4,
+            "radio": 15,
+            "altura": 50,
+            "centro": [-10, -45],
+            "giro": 20
+          },
+          "observador": {
+            "x": 0,
+            "d": 85,
+            "h": 65
+          }
+        }
+      },
+      "hints": [
+        "Las aristas verticales se reducen a medida que se alejan del cuadro.",
+        "La escala es la distancia del ojo al cuadro entre esa distancia más la profundidad del pie de la arista.",
+        "Halla la profundidad del pie con la construcción del geometral y multiplica la altura real por la escala."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un sólido dado por sus vistas se apoya en el geometral. Buscamos cuánto mide en el dibujo su arista vertical más cercana al cuadro, que de verdad mide {alturaReal}.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 50,
+                "centro": [-10, -45],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 65
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Las verticales se reducen con la distancia: se multiplican por la escala del cuadro, que es la distancia del ojo entre esa distancia más la profundidad. En el cuadro valen lo real.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 50,
+                "centro": [-10, -45],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 65
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el sólido alejándose del cuadro: sus verticales se acortan cada vez más, hasta confundirse con el horizonte.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 50,
+                "centro": [-10, -45],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 65
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Abate el geometral y halla la imagen del pie de la arista con la visual en planta y la directriz, que fuga a P. El pie queda a {profundidad} detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "construccion"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 50,
+                "centro": [-10, -45],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 65
+              },
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva la altura real, {alturaReal}, sobre la vertical del pie con la escala del cuadro, {escala}: la arista mide {respuesta} en el dibujo.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 50,
+                "centro": [-10, -45],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 65
+              }
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: {alturaReal} por {escala} da {respuesta}, menos que la altura real porque la arista está detrás del cuadro.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 50,
+                "centro": [-10, -45],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 65
+              }
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar solo las aristas vistas del sólido. En cónica las aristas ocultas son obligatorias y se dibujan con línea discontinua fina.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "prisma",
+                "lados": 4,
+                "radio": 15,
+                "altura": 50,
+                "centro": [-10, -45],
+                "giro": 20
+              },
+              "observador": {
+                "x": 0,
+                "d": 85,
+                "h": 65
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: cubo girado 40° respecto al cuadro y observador a 55 mm. ¿A qué distancia de P está el punto métrico de la fuga más lejana?",
+      "answer": 20,
+      "unit": "mm",
+      "tolerance": 1.5,
+      "magnitud": "metricoLejano",
+      "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+      "sheet": ["cuadro", "perspectiva", "cuadricula"],
+      "engines": {
+        "conica": {
+          "solido": {
+            "tipo": "cubo",
+            "arista": 30,
+            "centro": [0, -40],
+            "giro": 40
+          },
+          "observador": {
+            "x": 0,
+            "d": 55,
+            "h": 40
+          }
+        }
+      },
+      "hints": [
+        "El punto métrico de una fuga está en el horizonte, a la misma distancia de la fuga que el ojo abatido.",
+        "Primero hay que hallar la fuga más lejana, con la paralela a las aristas desde el ojo abatido.",
+        "Con centro en esa fuga y radio hasta el ojo abatido, corta el horizonte hacia P y mide desde P."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un cubo, dado por sus vistas, está girado respecto al cuadro y el observador está a {distanciaOjo} de él. Buscamos a qué distancia de P está el punto métrico de la fuga más lejana.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 55,
+                "h": 40
+              }
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El punto métrico M de una fuga F está en el horizonte, a la misma distancia de F que el ojo abatido, {ojoFuga}, del lado de P. Con él se llevan a la perspectiva las medidas reales.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 55,
+                "h": 40
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina el ojo abatido sobre el cuadro y haz girar la recta que lo une con la fuga hasta el horizonte: su extremo marca el punto métrico.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 55,
+                "h": 40
+              },
+              "fugas": true
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Halla la fuga trazando, desde el ojo abatido, la paralela a las aristas del cubo. La fuga más lejana queda a {fugaLejana} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 55,
+                "h": 40
+              },
+              "fugas": true,
+              "construccion": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Con centro en la fuga y radio hasta el ojo abatido, {ojoFuga}, corta el horizonte hacia P: ese punto es M y queda a {respuesta} de P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 55,
+                "h": 40
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: M y el ojo abatido están a la misma distancia de la fuga, {ojoFuga}, y M está en el horizonte, hacia P.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 55,
+                "h": 40
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar solo las aristas vistas del sólido. En cónica las aristas ocultas son obligatorias y se dibujan con línea discontinua fina.",
+          "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "conica": {
+              "solido": {
+                "tipo": "cubo",
+                "arista": 30,
+                "centro": [0, -40],
+                "giro": 40
+              },
+              "observador": {
+                "x": 0,
+                "d": 55,
+                "h": 40
+              },
+              "fugas": true,
+              "metricos": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

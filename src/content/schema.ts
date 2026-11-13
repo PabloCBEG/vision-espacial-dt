@@ -216,6 +216,9 @@ export const SOLID_MAGNITUDES = [
   'puntoDistancia',
   'fugaCercana',
   'fugaLejana',
+  'metricoCercano',
+  'metricoLejano',
+  'alturaArista',
 ] as const;
 export type SolidMagnitude = (typeof SOLID_MAGNITUDES)[number];
 
