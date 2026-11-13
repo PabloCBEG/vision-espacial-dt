@@ -1,0 +1,190 @@
+{
+  "id": "pau-2025-ord-3-isometrica-escalonada",
+  "convocatoria": "2025 ordinaria",
+  "ejercicio": 3,
+  "opcion": null,
+  "temas": ["II-10", "I-13"],
+  "titulo": "Perspectiva isométrica de una pieza escalonada con canal y tejado inclinado",
+  "enunciado": "Dados alzado, planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide: 1. Representar su perspectiva isométrica a escala 1:1, según los ejes dados. 2. Indicar el valor de la cifra de cota marcada con la letra C.",
+  "datos": [
+    "Medidas leídas del vector de la lámina y pasadas a escala real: planta de 60 × 60 mm, alturas de 20, 40, 60 y 100 mm. La cota C es el ancho de la planta.",
+    "Perspectiva isométrica con coeficiente de reducción 0,816; ejes X hacia abajo-izquierda, Y hacia abajo-derecha y Z hacia arriba.",
+    "La lámina dibuja el perfil visto desde la derecha, a la izquierda del alzado, como pide el sistema europeo."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "cuna-escalonada-con-canal"
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "engines": {
+      "normalizacion": {
+        "vistas": ["alzado", "planta", "perfilDerecho"],
+        "ejes": false,
+        "ocultas": true
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "La planta es un cuadrado de 60 mm. Un canal de 20 mm atraviesa la pieza por abajo, hay un tramo a 40 mm de altura, un escalón a 60 mm y un tejado inclinado que sube hasta 100 mm en un extremo.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta", "perfilDerecho"],
+          "ocultas": true,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "Cada vista enseña lo que se ve desde su lado y comparten medidas. Con el alzado se obtienen la anchura y las alturas, y con el perfil y la planta, los fondos; todas se llevan a los ejes con el coeficiente 0,816.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["pieza"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta", "perfilDerecho"],
+          "ocultas": true,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina la pieza girando hasta que su diagonal mira al observador: los tres ejes se ven a 120° y la torre inclinada queda a la izquierda.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Pasa las medidas de la lámina, a escala 1:2, a escala 1:1 duplicándolas, y reduce las que van sobre los ejes con el coeficiente 0,816. Dibuja el prisma de 60 × 60 mm de planta y 40 mm de altura.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Sobre ese prisma, dibuja el escalón de 20 mm que sube hasta los 60 mm y el tejado inclinado: la arista de arriba va de los 100 mm en el extremo a los 60 mm en el otro.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Abre el canal de 20 mm de ancho y 20 mm de alto por la cara de abajo, de lado a lado, y une los vértices que faltan. Las aristas ocultas no se dibujan.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["pieza"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación del apartado 2: la cota C es el ancho de la planta. En la lámina mide 30 mm, y a escala 1:2 la pieza mide el doble: C = 60 mm.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: contestar el valor medido en la lámina, 30 mm, sin aplicar la escala 1:2. También es un error dibujar la isométrica sin el coeficiente 0,816 y sacar un dibujo isométrico.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Aplicación de la escala 1:2 a 1:1",
+        "puntos": 0.25
+      },
+      {
+        "texto": "Aplicación del coeficiente de reducción 0,816",
+        "puntos": 0.25
+      },
+      {
+        "texto": "Ejes isométricos y prisma base con sus medidas",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Escalón, tejado inclinado y canal inferior",
+        "puntos": 0.75
+      },
+      {
+        "texto": "Cota C = 60 mm",
+        "puntos": 0.25
+      }
+    ]
+  }
+}

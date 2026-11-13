@@ -2610,6 +2610,34 @@ Fichero: `src/content/pau/2025-ord-2-octaedro.json` · 2025 ordinaria
 - [ ] Proyección vertical de R, a 30° con el PH — 0,6 p
 - [ ] Recta S paralela a R por el punto medio de EF — 0,2 p
 
+### Ejercicio 3 · Perspectiva isométrica de una pieza escalonada con canal y tejado inclinado
+
+Fichero: `src/content/pau/2025-ord-3-isometrica-escalonada.json` · 2025 ordinaria
+
+- [ ] **Enunciado:** Dados alzado, planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide: 1. Representar su perspectiva isométrica a escala 1:1, según los ejes dados. 2. Indicar el valor de la cifra de cota marcada con la letra C.
+- [ ] **Dato:** Medidas leídas del vector de la lámina y pasadas a escala real: planta de 60 × 60 mm, alturas de 20, 40, 60 y 100 mm. La cota C es el ancho de la planta.
+- [ ] **Dato:** Perspectiva isométrica con coeficiente de reducción 0,816; ejes X hacia abajo-izquierda, Y hacia abajo-derecha y Z hacia arriba.
+- [ ] **Dato:** La lámina dibuja el perfil visto desde la derecha, a la izquierda del alzado, como pide el sistema europeo.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* La planta es un cuadrado de 60 mm. Un canal de 20 mm atraviesa la pieza por abajo, hay un tramo a 40 mm de altura, un escalón a 60 mm y un tejado inclinado que sube hasta 100 mm en un extremo.
+2. [ ] *2. La idea clave:* Cada vista enseña lo que se ve desde su lado y comparten medidas. Con el alzado se obtienen la anchura y las alturas, y con el perfil y la planta, los fondos; todas se llevan a los ejes con el coeficiente 0,816.
+3. [ ] *3. El movimiento:* Imagina la pieza girando hasta que su diagonal mira al observador: los tres ejes se ven a 120° y la torre inclinada queda a la izquierda.
+4. [ ] *4. El trazado:* Pasa las medidas de la lámina, a escala 1:2, a escala 1:1 duplicándolas, y reduce las que van sobre los ejes con el coeficiente 0,816. Dibuja el prisma de 60 × 60 mm de planta y 40 mm de altura.
+5. [ ] *4. El trazado:* Sobre ese prisma, dibuja el escalón de 20 mm que sube hasta los 60 mm y el tejado inclinado: la arista de arriba va de los 100 mm en el extremo a los 60 mm en el otro.
+6. [ ] *4. El trazado:* Abre el canal de 20 mm de ancho y 20 mm de alto por la cara de abajo, de lado a lado, y une los vértices que faltan. Las aristas ocultas no se dibujan.
+7. [ ] *5. Comprobación:* Comprobación del apartado 2: la cota C es el ancho de la planta. En la lámina mide 30 mm, y a escala 1:2 la pieza mide el doble: C = 60 mm.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: contestar el valor medido en la lámina, 30 mm, sin aplicar la escala 1:2. También es un error dibujar la isométrica sin el coeficiente 0,816 y sacar un dibujo isométrico.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Aplicación de la escala 1:2 a 1:1 — 0,25 p
+- [ ] Aplicación del coeficiente de reducción 0,816 — 0,25 p
+- [ ] Ejes isométricos y prisma base con sus medidas — 0,5 p
+- [ ] Escalón, tejado inclinado y canal inferior — 0,75 p
+- [ ] Cota C = 60 mm — 0,25 p
+
 ### Ejercicio 4 · Corte A-A y acotación de un soporte con orejeta redonda
 
 Fichero: `src/content/pau/2025-ord-4-soporte-corte.json` · 2025 ordinaria
@@ -2937,6 +2965,7 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Soporte con orejeta redonda y taladro vertical** (`src/content/piezas/20-soporte-con-orejeta.json`)
 - [ ] **Pared con pendiente, bloque con entrante y cuña** (`src/content/piezas/21-pared-escalon-y-cuna.json`)
 - [ ] **Cubo con vaciado inclinado en una esquina** (`src/content/piezas/22-cubo-con-vaciado.json`)
+- [ ] **Bloque escalonado con canal inferior y torre inclinada** (`src/content/piezas/23-cuna-escalonada-con-canal.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 
