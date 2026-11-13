@@ -2072,6 +2072,125 @@ Fichero: `src/content/lessons/17-lo-que-se-ve.json` · DT I · nivel Inicial
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: quitar la planta pensando que repite el alzado. Solo la planta sitúa el taladro, y sin ella la pieza no queda definida.
 
+### I-11 · La distancia entre dos puntos
+
+Fichero: `src/content/lessons/18-distancia-por-abatimiento.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Sistema diédrico: verdadera magnitud de un segmento por abatimiento del plano proyectante sobre el PH y sobre el PV.
+
+**Pasos**
+
+1. [ ] ¿Cuánto mide el segmento AB? Está inclinado respecto a los dos planos, así que ninguna de sus proyecciones lo muestra en verdadera magnitud.
+2. [ ] Mira el triángulo que forman AB, su proyección horizontal A′B′ y la diferencia de cotas. Es rectángulo, con AB como hipotenusa.
+3. [ ] Ese triángulo está en el plano vertical que contiene a A′B′. Si lo abatimos sobre el PH, lo veremos sin deformar.
+4. [ ] El plano vertical gira como una bisagra alrededor de A′B′, que es su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+5. [ ] En la lámina, trazamos por A′ y B′ las perpendiculares a A′B′. Sobre ellas llevamos la cota de cada punto, medida desde la charnela.
+6. [ ] El segmento (A)(B) es la verdadera magnitud de AB. Es la hipotenusa del triángulo de catetos A′B′ y la diferencia de cotas.
+7. [ ] Si A y B están a distinto lado del PH, sus cotas se llevan a lados opuestos de la charnela. Entonces el cateto es la suma de las cotas.
+8. [ ] Sobre el PV es igual: la charnela es A″B″ y se llevan los alejamientos. Siempre se abate el plano que contiene al segmento y es perpendicular al plano elegido.
+
+**Ejercicios**
+
+1. [ ] *escribir una medida, dificultad 1* (respuesta: 50 mm): AB tiene sus dos extremos al mismo alejamiento. Abátela sobre el PH y mide su verdadera magnitud; ayúdate de la cuadrícula de 10 mm.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están al mismo alejamiento: AB es paralela al PV y A″B″ parece conservar el tamaño real. Veamos qué da el abatimiento.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (40 mm) y la diferencia de cotas (30 mm). Mide 50 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A′B′, que da 40 mm, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, 50 mm.
+2. [ ] *escribir una medida, dificultad 1* (respuesta: 50 mm): AB tiene sus dos extremos a la misma cota. Abátela sobre el PH y mide su verdadera magnitud en milímetros.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están a la misma cota: AB es paralela al PH. Al abatir, la diferencia de cotas será cero y habrá que ver qué queda.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (50 mm) y la diferencia de cotas (0 mm). Mide 50 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A′B′, que da 50 mm, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, 50 mm.
+3. [ ] *escribir una medida, dificultad 1* (respuesta: 50 mm): AB es una recta de perfil: A y B están en la misma línea de referencia. Abátela sobre el PH y mide su verdadera magnitud.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B tienen la misma x: AB es de perfil y sus proyecciones están sobre una misma perpendicular a la LT. Ninguna de las dos la mide.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (30 mm) y la diferencia de cotas (40 mm). Mide 50 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A′B′, que da 30 mm, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, 50 mm.
+4. [ ] *escribir una medida, dificultad 2* (respuesta: 65.6 mm): AB está inclinada respecto a los dos planos. Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B tienen distinta cota y distinto alejamiento: AB no es paralela a ningún plano de proyección. Ninguna proyección la mide.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (58,3 mm) y la diferencia de cotas (30 mm). Mide 65,6 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar la cota de un punto al lado equivocado de la charnela. Cada punto se abate sobre la perpendicular a la charnela, hacia el lado donde está respecto al plano elegido.
+5. [ ] *escribir una medida, dificultad 2* (respuesta: 63.4 mm): Abate sobre el PV el plano proyectante de AB y mide la verdadera magnitud del segmento en milímetros.
+   - [ ] *Pista 1:* Abatir sobre el PV es girar el plano que contiene a AB y es perpendicular al PV, hasta que quede sobre él.
+   - [ ] *Pista 2:* La charnela es la traza vertical de ese plano, y cada punto cae a una distancia de ella igual a su alejamiento.
+   - [ ] *Pista 3:* Traza por A″ y B″ las perpendiculares a la charnela y lleva sobre ellas los alejamientos de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* AB es oblicua. Esta vez la abatiremos sobre el PV, así que importa su alzado A″B″ y los alejamientos de A y B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A″B″ y la diferencia de alejamientos forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PV lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular el alejamiento del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ (58,3 mm) y la diferencia de alejamientos (25 mm). Mide 63,4 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: abatir sobre el PV llevando las cotas en vez de los alejamientos. La distancia de cada punto a la charnela es su alejamiento, y la cota ya está en el alzado.
+6. [ ] *escribir una medida, dificultad 2* (respuesta: 67.8 mm): Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud. B está más cerca de la LT que A en planta.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A y B están en el primer cuadrante, con B más cerca del PV que A y a más cota. AB es oblicua a los dos planos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (62,6 mm) y la diferencia de cotas (26 mm). Mide 67,8 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: medir A′B′, que da 62,6 mm, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, 67,8 mm.
+7. [ ] *escribir una medida, dificultad 3* (respuesta: 71.8 mm): Como en la PAU: A está en el primer cuadrante y B en el cuarto. Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A está por encima del PH y B por debajo: AB atraviesa el plano horizontal. Sus cotas tienen signos distintos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A′B′ y la suma de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva la cota de A a un lado de la charnela y la cota de B al otro, porque están en lados opuestos. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (55,9 mm) y la suma de cotas (45 mm). Mide 71,8 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: restar las cotas como si A y B estuvieran del mismo lado. Al estar en lados opuestos, el cateto es su suma, 45 mm.
+8. [ ] *escribir una medida, dificultad 3* (respuesta: 79.1 mm): Como en la PAU: A está en el primer cuadrante y B en el segundo. Abate sobre el PV el plano proyectante de AB y mide su verdadera magnitud.
+   - [ ] *Pista 1:* Abatir sobre el PV es girar el plano que contiene a AB y es perpendicular al PV, hasta que quede sobre él.
+   - [ ] *Pista 2:* La charnela es la traza vertical de ese plano, y cada punto cae a una distancia de ella igual a su alejamiento.
+   - [ ] *Pista 3:* Traza por A″ y B″ las perpendiculares a la charnela y lleva sobre ellas los alejamientos de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A está delante del PV y B detrás: AB atraviesa el plano vertical. Sus alejamientos tienen signos distintos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A″B″ y la suma de alejamientos forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PV lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva el alejamiento de A a un lado de la charnela y el alejamiento de B al otro, porque están en lados opuestos. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ (65 mm) y la suma de alejamientos (45 mm). Mide 79,1 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: restar los alejamientos como si A y B estuvieran del mismo lado. Al estar en lados opuestos, el cateto es su suma, 45 mm.
+9. [ ] *escribir una medida, dificultad 3* (respuesta: 84.1 mm): Como en la PAU: A está en el segundo cuadrante y B en el cuarto. Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud.
+   - [ ] *Pista 1:* Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.
+   - [ ] *Pista 2:* La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.
+   - [ ] *Pista 3:* Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* A está detrás del PV y por encima del PH; B, delante y por debajo. Las cotas y los alejamientos cambian de signo a la vez.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* AB, su proyección A′B′ y la suma de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Lleva la cota de A a un lado de la charnela y la cota de B al otro, porque están en lados opuestos. El segmento (A)(B) es la verdadera magnitud.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ (71,1 mm) y la suma de cotas (45 mm). Mide 84,1 mm.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: llevar la cota de un punto al lado equivocado de la charnela. Cada punto se abate sobre la perpendicular a la charnela, hacia el lado donde está respecto al plano elegido.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos

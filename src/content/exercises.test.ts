@@ -40,6 +40,7 @@ const COMPLETE_LESSONS: string[] = [
   'la-recta',
   'el-plano',
   'lo-que-se-ve',
+  'distancia-por-abatimiento',
 ];
 
 const lessonNamed = (id: string): Lesson => {

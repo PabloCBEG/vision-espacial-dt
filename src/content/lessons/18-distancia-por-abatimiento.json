@@ -1,0 +1,2841 @@
+{
+  "id": "distancia-por-abatimiento",
+  "order": 4,
+  "title": "La distancia entre dos puntos",
+  "topic": "I-11",
+  "stage": "DT I",
+  "saberBasico": "Sistema diédrico: verdadera magnitud de un segmento por abatimiento del plano proyectante sobre el PH y sobre el PV.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": {
+      "A": [-35, 10, 12],
+      "B": [25, 36, 42]
+    },
+    "objects": [
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      }
+    ],
+    "activePoint": "A"
+  },
+  "steps": [
+    {
+      "narration": "¿Cuánto mide el segmento AB? Está inclinado respecto a los dos planos, así que ninguna de sus proyecciones lo muestra en verdadera magnitud.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "narration": "Mira el triángulo que forman AB, su proyección horizontal A′B′ y la diferencia de cotas. Es rectángulo, con AB como hipotenusa.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": ["figura"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "narration": "Ese triángulo está en el plano vertical que contiene a A′B′. Si lo abatimos sobre el PH, lo veremos sin deformar.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": ["lt", "proyecciones:A", "proyecciones:B", "referencia:A", "referencia:B", "figura"],
+      "highlight": ["charnela"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 0
+        }
+      }
+    },
+    {
+      "narration": "El plano vertical gira como una bisagra alrededor de A′B′, que es su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento"
+      ],
+      "highlight": ["movimiento"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 0.5
+        }
+      }
+    },
+    {
+      "narration": "En la lámina, trazamos por A′ y B′ las perpendiculares a A′B′. Sobre ellas llevamos la cota de cada punto, medida desde la charnela.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento"
+      ],
+      "highlight": ["movimiento"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 1
+        }
+      }
+    },
+    {
+      "narration": "El segmento (A)(B) es la verdadera magnitud de AB. Es la hipotenusa del triángulo de catetos A′B′ y la diferencia de cotas.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 1
+        }
+      }
+    },
+    {
+      "narration": "Si A y B están a distinto lado del PH, sus cotas se llevan a lados opuestos de la charnela. Entonces el cateto es la suma de las cotas.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado", "medida"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 1
+        }
+      },
+      "points": {
+        "A": [-30, 15, 25],
+        "B": [20, 40, -20]
+      }
+    },
+    {
+      "narration": "Sobre el PV es igual: la charnela es A″B″ y se llevan los alejamientos. Siempre se abate el plano que contiene al segmento y es perpendicular al plano elegido.",
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado",
+        "medida"
+      ],
+      "highlight": ["resultado"],
+      "camera": "front",
+      "foldAngle": 90,
+      "engines": {
+        "metodos": {
+          "figura": ["A", "B"],
+          "metodo": "abatimiento",
+          "progreso": 1,
+          "sobre": "PV"
+        }
+      },
+      "points": {
+        "A": [-35, 12, 10],
+        "B": [25, 40, 36]
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "AB tiene sus dos extremos al mismo alejamiento. Abátela sobre el PH y mide su verdadera magnitud; ayúdate de la cuadrícula de 10 mm.",
+      "answer": 50,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-30, 20, 10],
+        "B": [10, 20, 40]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están al mismo alejamiento: AB es paralela al PV y A″B″ parece conservar el tamaño real. Veamos qué da el abatimiento.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la diferencia de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir A′B′, que da {proyH}, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -10]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "AB tiene sus dos extremos a la misma cota. Abátela sobre el PH y mide su verdadera magnitud en milímetros.",
+      "answer": 50,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-20, 10, 10],
+        "B": [20, 40, 10]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están a la misma cota: AB es paralela al PH. Al abatir, la diferencia de cotas será cero y habrá que ver qué queda.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la diferencia de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir A′B′, que da {proyH}, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -10]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 1,
+      "prompt": "AB es una recta de perfil: A y B están en la misma línea de referencia. Abátela sobre el PH y mide su verdadera magnitud.",
+      "answer": 50,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [10, 10, 10],
+        "B": [10, 40, 50]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B tienen la misma x: AB es de perfil y sus proyecciones están sobre una misma perpendicular a la LT. Ninguna de las dos la mide.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la diferencia de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir A′B′, que da {proyH}, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -10]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "AB está inclinada respecto a los dos planos. Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud.",
+      "answer": 65.6,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-30, 10, 10],
+        "B": [20, 40, 40]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B tienen distinta cota y distinto alejamiento: AB no es paralela a ningún plano de proyección. Ninguna proyección la mide.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la diferencia de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar la cota de un punto al lado equivocado de la charnela. Cada punto se abate sobre la perpendicular a la charnela, hacia el lado donde está respecto al plano elegido.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Abate sobre el PV el plano proyectante de AB y mide la verdadera magnitud del segmento en milímetros.",
+      "answer": 63.4,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-40, 35, 15],
+        "B": [10, 10, 45]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "sobre": "PV",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Abatir sobre el PV es girar el plano que contiene a AB y es perpendicular al PV, hasta que quede sobre él.",
+        "La charnela es la traza vertical de ese plano, y cada punto cae a una distancia de ella igual a su alejamiento.",
+        "Traza por A″ y B″ las perpendiculares a la charnela y lleva sobre ellas los alejamientos de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "AB es oblicua. Esta vez la abatiremos sobre el PV, así que importa su alzado A″B″ y los alejamientos de A y B.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A″B″ y la diferencia de alejamientos forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PV lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular el alejamiento del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ ({proyV}) y la diferencia de alejamientos ({difAlej}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: abatir sobre el PV llevando las cotas en vez de los alejamientos. La distancia de cada punto a la charnela es su alejamiento, y la cota ya está en el alzado.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A″", "B″"],
+                  "rotulo": "Error",
+                  "desplaza": [0, 12]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 2,
+      "prompt": "Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud. B está más cerca de la LT que A en planta.",
+      "answer": 67.8,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-25, 45, 8],
+        "B": [30, 15, 34]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A y B están en el primer cuadrante, con B más cerca del PV que A y a más cota. AB es oblicua a los dos planos.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A′B′ y la diferencia de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva sobre cada perpendicular la cota del punto, medida desde la charnela. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la diferencia de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: medir A′B′, que da {proyH}, y contestar eso. AB no es paralela al PH, así que su planta sale más corta que la verdadera magnitud, {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida",
+            "error"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["A′", "B′"],
+                  "rotulo": "Error",
+                  "desplaza": [0, -10]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: A está en el primer cuadrante y B en el cuarto. Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud.",
+      "answer": 71.8,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-35, 20, 30],
+        "B": [15, 45, -15]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A está por encima del PH y B por debajo: AB atraviesa el plano horizontal. Sus cotas tienen signos distintos.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A′B′ y la suma de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva la cota de A a un lado de la charnela y la cota de B al otro, porque están en lados opuestos. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la suma de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: restar las cotas como si A y B estuvieran del mismo lado. Al estar en lados opuestos, el cateto es su suma, {difCota}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: A está en el primer cuadrante y B en el segundo. Abate sobre el PV el plano proyectante de AB y mide su verdadera magnitud.",
+      "answer": 79.1,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-35, 30, 20],
+        "B": [25, -15, 45]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "sobre": "PV",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Abatir sobre el PV es girar el plano que contiene a AB y es perpendicular al PV, hasta que quede sobre él.",
+        "La charnela es la traza vertical de ese plano, y cada punto cae a una distancia de ella igual a su alejamiento.",
+        "Traza por A″ y B″ las perpendiculares a la charnela y lleva sobre ellas los alejamientos de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A está delante del PV y B detrás: AB atraviesa el plano vertical. Sus alejamientos tienen signos distintos.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A″B″ y la suma de alejamientos forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PV lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza vertical, hasta quedar sobre el PV. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza vertical del plano proyectante de AB: pasa por A″B″. Traza por A″ y B″ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva el alejamiento de A a un lado de la charnela y el alejamiento de B al otro, porque están en lados opuestos. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A″B″ ({proyV}) y la suma de alejamientos ({difAlej}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: restar los alejamientos como si A y B estuvieran del mismo lado. Al estar en lados opuestos, el cateto es su suma, {difAlej}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "sobre": "PV",
+              "progreso": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "value",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: A está en el segundo cuadrante y B en el cuarto. Abate sobre el PH el plano proyectante de AB y mide su verdadera magnitud.",
+      "answer": 84.1,
+      "unit": "mm",
+      "tolerance": 2,
+      "points": {
+        "A": [-25, -20, 30],
+        "B": [30, 25, -15]
+      },
+      "show3d": ["planos", "punto:A", "punto:B", "figura", "charnela", "movimiento", "resultado"],
+      "sheet": [
+        "lt",
+        "cuadricula",
+        "proyecciones:A",
+        "proyecciones:B",
+        "referencia:A",
+        "referencia:B",
+        "figura",
+        "charnela",
+        "movimiento",
+        "resultado"
+      ],
+      "engines": {
+        "metodos": {
+          "metodo": "abatimiento",
+          "figura": ["A", "B"]
+        }
+      },
+      "hints": [
+        "Si abatimos el plano que contiene a AB, el segmento llega a la lámina sin deformarse, esté como esté.",
+        "La charnela es la traza horizontal de ese plano vertical, y cada punto cae a una distancia de ella igual a su cota.",
+        "Traza por A′ y B′ las perpendiculares a la charnela y lleva sobre ellas las cotas de A y B."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "A está detrás del PV y por encima del PH; B, delante y por debajo. Las cotas y los alejamientos cambian de signo a la vez.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "AB, su proyección A′B′ y la suma de cotas forman un triángulo rectángulo con AB como hipotenusa. Abatirlo sobre el PH lo muestra sin deformar.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura"
+          ],
+          "highlight": ["figura"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "El plano proyectante de AB gira como una bisagra alrededor de su traza horizontal, hasta quedar sobre el PH. AB gira con él sin deformarse.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 0.5
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La charnela es la traza horizontal del plano proyectante de AB: pasa por A′B′. Traza por A′ y B′ las perpendiculares a ella.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento"
+          ],
+          "highlight": ["movimiento"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Lleva la cota de A a un lado de la charnela y la cota de B al otro, porque están en lados opuestos. El segmento (A)(B) es la verdadera magnitud.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: (A)(B) es la hipotenusa del triángulo de catetos A′B′ ({proyH}) y la suma de cotas ({difCota}). Mide {respuesta}.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado", "medida"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: llevar la cota de un punto al lado equivocado de la charnela. Cada punto se abate sobre la perpendicular a la charnela, hacia el lado donde está respecto al plano elegido.",
+          "show3d": [
+            "planos",
+            "punto:A",
+            "punto:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado"
+          ],
+          "sheet": [
+            "lt",
+            "cuadricula",
+            "proyecciones:A",
+            "proyecciones:B",
+            "referencia:A",
+            "referencia:B",
+            "figura",
+            "charnela",
+            "movimiento",
+            "resultado",
+            "medida"
+          ],
+          "highlight": ["resultado"],
+          "camera": "front",
+          "foldAngle": 90,
+          "engines": {
+            "metodos": {
+              "figura": ["A", "B"],
+              "selector": false,
+              "metodo": "abatimiento",
+              "progreso": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
