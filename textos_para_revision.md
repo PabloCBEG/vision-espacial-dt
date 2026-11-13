@@ -2719,6 +2719,34 @@ Fichero: `src/content/pau/2026-ext-2-hexaedro-seccion.json` · 2026 extraordinar
 - [ ] Proyecciones de la sección — 0,2 p
 - [ ] Partes vistas y ocultas tras el corte — 0,2 p
 
+### Ejercicio 3 (opción A) · Perspectiva caballera de un semitubo con un bloque ranurado
+
+Fichero: `src/content/pau/2026-ext-3a-caballera-semitubo.json` · 2026 extraordinaria
+
+- [ ] **Enunciado:** Dados alzado, planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide: representar su perspectiva caballera a escala 1:1, según los ejes dados, aplicando un coeficiente de reducción de 1/2 y dibujando las aristas ocultas.
+- [ ] **Dato:** Medidas leídas del vector de la lámina y pasadas a escala real: la pieza cabe en un cubo de 80 mm de lado. El semitubo mide 80 mm de diámetro exterior, 40 mm de diámetro interior y 40 mm de largo; el bloque de detrás mide 80 × 40 × 80 mm.
+- [ ] **Dato:** El bloque lleva una ranura de 40 mm de ancho y 20 mm de profundidad, con un cuarto de círculo de radio 20 mm en un lado, y su base se corta en pendiente de 40 mm.
+- [ ] **Dato:** Perspectiva caballera con coeficiente de reducción 1/2: el plano XZ se dibuja en verdadera magnitud y el eje Y, reducido a la mitad, hacia abajo-izquierda. La lámina dibuja el perfil visto desde la derecha, a la izquierda del alzado.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* La pieza tiene delante medio tubo de 80 mm de diámetro y un hueco de 40 mm. Detrás hay un bloque de 80 mm de alto con una ranura redondeada arriba y la base cortada en pendiente.
+2. [ ] *2. La idea clave:* En caballera el plano frontal XZ se dibuja en verdadera magnitud y solo el eje Y se reduce, con el coeficiente 1/2, a 45°. Por eso el semitubo, que es una circunferencia en el plano frontal, se dibuja como un semicírculo de verdad.
+3. [ ] *3. El movimiento:* Imagina la pieza proyectada con rayos oblicuos sobre el plano frontal: lo que está delante no se deforma y la profundidad se acorta a la mitad y se desplaza hacia arriba y a la derecha.
+4. [ ] *4. El trazado:* Dibuja primero la cara frontal en verdadera magnitud: el semicírculo de 80 mm de diámetro con su hueco de 40 mm. Pasa las medidas de la lámina, a escala 1:2, a escala 1:1.
+5. [ ] *4. El trazado:* Desde cada vértice y desde los centros de los arcos, traza paralelas a 45° y lleva sobre ellas la mitad de la profundidad real, 20 mm cada 40 mm. Dibuja los arcos de detrás, iguales a los de delante.
+6. [ ] *4. El trazado:* Dibuja el bloque de detrás con su ranura y su base en pendiente. Añade con discontinua fina las aristas ocultas: la parte de atrás del hueco y los bordes que tapa el semitubo.
+7. [ ] *5. Comprobación:* Comprobación: la cara de delante se ve igual que en el alzado, las aristas de profundidad miden la mitad que en la realidad y salen a 45°, y las ocultas van con discontinua.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: dibujar la profundidad sin reducir a la mitad, o reducir también los ejes X y Z. En caballera solo se reduce el eje Y, y el plano frontal queda en verdadera magnitud.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Aplicación de la escala 1:2 a 1:1 — 0,25 p
+- [ ] Aplicación del coeficiente de reducción 1/2 al eje Y — 0,25 p
+- [ ] Cara frontal en verdadera magnitud: semitubo, hueco y contorno — 0,5 p
+- [ ] Fondos a 45° reducidos a la mitad, bloque, ranura y pendiente — 0,5 p
+- [ ] Aristas ocultas con discontinua fina — 0,5 p
+
 ### Ejercicio 4 · Alzado, planta y acotación de una pieza con pared inclinada y cuña
 
 Fichero: `src/content/pau/2026-ext-4-vistas-cuna.json` · 2026 extraordinaria
@@ -2966,6 +2994,7 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Pared con pendiente, bloque con entrante y cuña** (`src/content/piezas/21-pared-escalon-y-cuna.json`)
 - [ ] **Cubo con vaciado inclinado en una esquina** (`src/content/piezas/22-cubo-con-vaciado.json`)
 - [ ] **Bloque escalonado con canal inferior y torre inclinada** (`src/content/piezas/23-cuna-escalonada-con-canal.json`)
+- [ ] **Semitubo con bloque ranurado y base en pendiente** (`src/content/piezas/24-semitubo-con-bloque-ranurado.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 
