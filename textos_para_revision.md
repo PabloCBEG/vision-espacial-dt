@@ -2772,6 +2772,34 @@ Fichero: `src/content/pau/2026-ord-2-cuadrado-en-plano.json` · 2026 ordinaria
 - [ ] Verdadera magnitud de la diagonal — 0,3 p
 - [ ] Valor de la diagonal en milímetros — 0,1 p
 
+### Ejercicio 3 (opción A) · Perspectiva isométrica de un cubo con un vaciado inclinado
+
+Fichero: `src/content/pau/2026-ord-3a-isometrica-vaciado.json` · 2026 ordinaria
+
+- [ ] **Enunciado:** Dados alzado, planta y perfil de una pieza a escala 2:3, según el método de representación del primer diedro de proyección, se pide: representar su perspectiva isométrica a escala 1:1, según los ejes dados.
+- [ ] **Dato:** Medidas leídas del vector de la lámina y pasadas a escala real: la pieza cabe en un cubo de 60 mm de lado y todas las cotas son múltiplos de 30 mm.
+- [ ] **Dato:** Perspectiva isométrica con coeficiente de reducción 0,816. Los ejes de la lámina son X hacia abajo-izquierda, Y hacia abajo-derecha y Z hacia arriba.
+- [ ] **Dato:** La lámina dibuja la planta con el eje Y hacia arriba y el perfil visto con el alejamiento hacia la derecha; aquí se muestran igual.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* Las tres vistas son cuadrados de 60 mm con diagonales: es un cubo al que le falta un vaciado inclinado en una esquina. Hay que dibujarlo en isométrica a escala 1:1, con el coeficiente 0,816.
+2. [ ] *2. La idea clave:* El cubo envolvente se dibuja primero sobre los tres ejes, con cada arista reducida por el coeficiente. Los vértices del vaciado están en los puntos medios de las aristas y en el centro del cubo.
+3. [ ] *3. El movimiento:* Imagina el cubo girando hasta que su diagonal mira al observador: los tres ejes se ven a 120° y la esquina del vaciado queda justo en el centro del dibujo.
+4. [ ] *4. El trazado:* Aplica la escala y el coeficiente: las medidas de la lámina, a 2:3, se pasan a 1:1 multiplicando por 3/2, y las reales se multiplican por 0,816. Las aristas de 60 mm miden 49 mm y las de 30 mm, 24,5 mm.
+5. [ ] *4. El trazado:* Dibuja el hexágono de contorno del cubo, que son las seis aristas que no tocan las esquinas de la diagonal. Marca después los puntos medios de las aristas del vaciado y el vértice del centro.
+6. [ ] *4. El trazado:* Une los vértices: el triángulo de arriba, la V que baja al centro, el triángulo pequeño de abajo y las caras inclinadas. Las aristas ocultas no se dibujan en isométrica.
+7. [ ] *5. Comprobación:* Comprobación: el dibujo tiene el contorno hexagonal del cubo, el vértice central a la mitad del cubo y las mismas caras que muestran el alzado, la planta y el perfil.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: dibujar las medidas reales sin el coeficiente 0,816. El cubo saldría más grande, y la figura sería un dibujo isométrico, no una perspectiva isométrica.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Aplicación de la escala 2:3 a 1:1 — 0,25 p
+- [ ] Aplicación del coeficiente de reducción 0,816 — 0,25 p
+- [ ] Ejes isométricos y cubo envolvente con sus aristas reducidas — 0,5 p
+- [ ] Vértices del vaciado: puntos medios y vértice central — 0,6 p
+- [ ] Caras y aristas vistas correctas, sin ocultas — 0,4 p
+
 ### Ejercicio 4 · Corte longitudinal y acotación de un eje escalonado con placa
 
 Fichero: `src/content/pau/2026-ord-4-eje-corte.json` · 2026 ordinaria
@@ -2908,6 +2936,7 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Eje escalonado con placa y taladro pasante** (`src/content/piezas/19-eje-escalonado-con-placa.json`)
 - [ ] **Soporte con orejeta redonda y taladro vertical** (`src/content/piezas/20-soporte-con-orejeta.json`)
 - [ ] **Pared con pendiente, bloque con entrante y cuña** (`src/content/piezas/21-pared-escalon-y-cuna.json`)
+- [ ] **Cubo con vaciado inclinado en una esquina** (`src/content/piezas/22-cubo-con-vaciado.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 

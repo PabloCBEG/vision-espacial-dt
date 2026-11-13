@@ -1,0 +1,190 @@
+{
+  "id": "pau-2026-ord-3a-isometrica-vaciado",
+  "convocatoria": "2026 ordinaria",
+  "ejercicio": 3,
+  "opcion": "A",
+  "temas": ["II-10", "I-13"],
+  "titulo": "Perspectiva isométrica de un cubo con un vaciado inclinado",
+  "enunciado": "Dados alzado, planta y perfil de una pieza a escala 2:3, según el método de representación del primer diedro de proyección, se pide: representar su perspectiva isométrica a escala 1:1, según los ejes dados.",
+  "datos": [
+    "Medidas leídas del vector de la lámina y pasadas a escala real: la pieza cabe en un cubo de 60 mm de lado y todas las cotas son múltiplos de 30 mm.",
+    "Perspectiva isométrica con coeficiente de reducción 0,816. Los ejes de la lámina son X hacia abajo-izquierda, Y hacia abajo-derecha y Z hacia arriba.",
+    "La lámina dibuja la planta con el eje Y hacia arriba y el perfil visto con el alejamiento hacia la derecha; aquí se muestran igual."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "cubo-con-vaciado"
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "engines": {
+      "normalizacion": {
+        "vistas": ["alzado", "plantaInversa", "perfil"],
+        "ejes": false,
+        "ocultas": false
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "Las tres vistas son cuadrados de 60 mm con diagonales: es un cubo al que le falta un vaciado inclinado en una esquina. Hay que dibujarlo en isométrica a escala 1:1, con el coeficiente 0,816.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "plantaInversa", "perfil"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "El cubo envolvente se dibuja primero sobre los tres ejes, con cada arista reducida por el coeficiente. Los vértices del vaciado están en los puntos medios de las aristas y en el centro del cubo.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["pieza"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "plantaInversa", "perfil"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina el cubo girando hasta que su diagonal mira al observador: los tres ejes se ven a 120° y la esquina del vaciado queda justo en el centro del dibujo.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Aplica la escala y el coeficiente: las medidas de la lámina, a 2:3, se pasan a 1:1 multiplicando por 3/2, y las reales se multiplican por 0,816. Las aristas de 60 mm miden 49 mm y las de 30 mm, 24,5 mm.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Dibuja el hexágono de contorno del cubo, que son las seis aristas que no tocan las esquinas de la diagonal. Marca después los puntos medios de las aristas del vaciado y el vértice del centro.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Une los vértices: el triángulo de arriba, la V que baja al centro, el triángulo pequeño de abajo y las caras inclinadas. Las aristas ocultas no se dibujan en isométrica.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["pieza"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: el dibujo tiene el contorno hexagonal del cubo, el vértice central a la mitad del cubo y las mismas caras que muestran el alzado, la planta y el perfil.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: dibujar las medidas reales sin el coeficiente 0,816. El cubo saldría más grande, y la figura sería un dibujo isométrico, no una perspectiva isométrica.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["isometrica"],
+          "ocultas": false,
+          "ejes": false
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Aplicación de la escala 2:3 a 1:1",
+        "puntos": 0.25
+      },
+      {
+        "texto": "Aplicación del coeficiente de reducción 0,816",
+        "puntos": 0.25
+      },
+      {
+        "texto": "Ejes isométricos y cubo envolvente con sus aristas reducidas",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Vértices del vaciado: puntos medios y vértice central",
+        "puntos": 0.6
+      },
+      {
+        "texto": "Caras y aristas vistas correctas, sin ocultas",
+        "puntos": 0.4
+      }
+    ]
+  }
+}
