@@ -39,6 +39,7 @@ const COMPLETE_LESSONS: string[] = [
   'el-punto',
   'la-recta',
   'el-plano',
+  'lo-que-se-ve',
 ];
 
 const lessonNamed = (id: string): Lesson => {

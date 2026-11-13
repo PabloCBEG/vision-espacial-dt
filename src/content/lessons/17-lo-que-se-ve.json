@@ -1,0 +1,1388 @@
+{
+  "id": "lo-que-se-ve",
+  "order": 3,
+  "title": "Lo que se ve desde cada lado",
+  "topic": "I-15",
+  "stage": "DT I",
+  "saberBasico": "Normalización: vistas de una pieza en el sistema europeo (UNE-EN ISO 5456-2), aristas ocultas, ejes y vistas necesarias.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "taco-agujero-ciego"
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Esta pieza se dibuja con sus vistas. Cada vista enseña solo lo que se ve mirando la pieza desde un lado.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": []
+        }
+      }
+    },
+    {
+      "narration": "Metemos la pieza en una caja. Cada cara de la caja recoge lo que se ve desde el lado contrario.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "caja": {
+            "proyectar": []
+          }
+        }
+      }
+    },
+    {
+      "narration": "Mirando desde delante, el alzado se proyecta en la cara de detrás. Dejan línea las caras que miran al observador; las demás quedan tapadas.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "ocultas": false,
+          "ejes": false,
+          "caja": {
+            "proyectar": ["alzado"]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Desde arriba, la planta se proyecta en la cara de abajo. Desde la izquierda, el perfil izquierdo se proyecta en la cara de la derecha.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "ocultas": false,
+          "ejes": false,
+          "caja": {
+            "proyectar": ["alzado", "planta", "perfil"]
+          }
+        }
+      }
+    },
+    {
+      "narration": "Al desplegar la caja, la planta queda debajo del alzado y el perfil izquierdo, a su derecha. Es el sistema europeo: el perfil izquierdo nunca va a la izquierda.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "ocultas": false,
+          "ejes": false,
+          "caja": {
+            "proyectar": ["alzado", "planta", "perfil"],
+            "desplegar": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "Lo que está tapado se dibuja con línea discontinua fina. El agujero ciego no se ve desde fuera, pero aparece así en las vistas.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["ocultas"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "ejes": false
+        }
+      }
+    },
+    {
+      "narration": "El eje del agujero va con trazo y punto fino y sobresale un poco. En la vista de frente se ve como dos ejes cruzados.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["ejes"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {}
+      }
+    },
+    {
+      "narration": "No siempre hacen falta tres vistas. Una vista sobra si no enseña nada que las otras no muestren.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta"]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Se ven el alzado y la planta de una pieza. ¿Cuál es su perfil izquierdo?",
+      "show3d": [],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "taco-biselado",
+          "vistas": ["alzado", "planta"],
+          "ejercicio": {
+            "tipo": "vistaQueFalta",
+            "falta": "perfil",
+            "opciones": ["taco-biselado", "escalon", "bloque-ranurado"]
+          }
+        }
+      },
+      "hints": [
+        "Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.",
+        "Las alturas del perfil son las del alzado y sus profundidades, las de la planta.",
+        "Prolonga con líneas de referencia las aristas del alzado y la planta hasta el perfil."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Se ven el alzado y el planta de una pieza y hay que elegir su perfil izquierdo entre varios dibujos. Cada opción es una pieza distinta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta"]
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El perfil izquierdo comparte la altura con el alzado y la profundidad con la planta. Con esas dos medidas se reconstruye.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta"],
+              "caja": {
+                "proyectar": ["alzado", "planta"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 0.6
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El alzado y la planta tienen una línea paralela al borde: es una arista biselada. En el perfil se ve como una oblicua en la esquina de arriba, del lado de delante.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: elegir el perfil con el bisel arriba a la izquierda. El perfil izquierdo se mira desde la izquierda y la parte de delante queda a su derecha.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Se ven el alzado y el perfil izquierdo de una pieza. ¿Cuál es su planta?",
+      "show3d": [],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "placa-taladrada",
+          "vistas": ["alzado", "perfil"],
+          "ejercicio": {
+            "tipo": "vistaQueFalta",
+            "falta": "planta",
+            "opciones": ["placa-taladrada", "escuadra-taladrada", "placa-en-ele"]
+          }
+        }
+      },
+      "hints": [
+        "Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.",
+        "Las anchuras de la planta son las del alzado y sus profundidades, las del perfil.",
+        "Baja desde el alzado las líneas de referencia y pasa las profundidades del perfil."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Se ven el alzado y el perfil izquierdo de una pieza y hay que elegir su planta entre varios dibujos. Cada opción es una pieza distinta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"]
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La planta comparte la anchura con el alzado y la profundidad con el perfil. Con esas dos medidas se reconstruye.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "perfil"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 0.6
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el alzado y en el perfil hay dos pares de líneas discontinuas verticales: son taladros que no se ven. En la planta, mirados de punta, aparecen como dos circunferencias.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: elegir una planta lisa porque en las otras vistas solo hay discontinuas. Esas líneas son los taladros, y desde arriba se ven como circunferencias continuas.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Se ven la planta y el perfil izquierdo de una pieza. ¿Cuál es su alzado?",
+      "show3d": [],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "placa-en-ele",
+          "vistas": ["planta", "perfil"],
+          "ejercicio": {
+            "tipo": "vistaQueFalta",
+            "falta": "alzado",
+            "opciones": ["placa-en-ele", "taco-biselado", "placa-taladrada"]
+          }
+        }
+      },
+      "hints": [
+        "Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.",
+        "Las anchuras del alzado son las de la planta y sus alturas, las del perfil.",
+        "Sube desde la planta las líneas de referencia y pasa las alturas del perfil."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Se ven el planta y el perfil izquierdo de una pieza y hay que elegir su alzado entre varios dibujos. Cada opción es una pieza distinta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"]
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El alzado comparte la anchura con la planta y la altura con el perfil. Con esas dos medidas se reconstruye.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"],
+              "caja": {
+                "proyectar": ["planta", "perfil"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 0.6
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La planta tiene un escalón en forma de L. Esa arista sube hasta el alzado y se ve de frente como una línea vertical dentro del rectángulo.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: elegir un alzado liso. La planta tiene un escalón, y desde delante se ve su arista como una línea vertical continua.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Marca solo las vistas imprescindibles para definir esta placa con dos taladros: ni una más ni una menos.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "placa-taladrada",
+          "ejercicio": {
+            "tipo": "vistasNecesarias"
+          }
+        }
+      },
+      "hints": [
+        "Una vista es imprescindible cuando enseña algo que las otras no enseñan.",
+        "Mira qué aparece en cada cara: espesores, taladros o planos inclinados.",
+        "Empieza por el alzado y añade solo la vista que aporta una forma nueva."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Una placa con dos taladros se puede dibujar con tres vistas, pero no hacen falta todas. Hay que marcar las imprescindibles.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": [],
+              "caja": {
+                "proyectar": [],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El alzado da la anchura y el espesor de la placa, y muestra los taladros con discontinua.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado"],
+              "caja": {
+                "proyectar": ["alzado"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La planta da la profundidad y enseña los dos taladros como circunferencias. El perfil repite el espesor del alzado y sobra.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta"],
+              "caja": {
+                "proyectar": ["alzado", "planta"],
+                "desplegar": 1
+              },
+              "eleccion": [0, 1]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta"],
+              "eleccion": [0, 1]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: marcar las tres vistas por seguridad. El perfil solo repite el espesor que ya se ve en el alzado y se omite.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta"],
+              "eleccion": [0, 1]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Marca solo las vistas imprescindibles para definir este taco con una arista biselada.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "taco-biselado",
+          "ejercicio": {
+            "tipo": "vistasNecesarias"
+          }
+        }
+      },
+      "hints": [
+        "Una vista es imprescindible cuando enseña algo que las otras no enseñan.",
+        "Busca la vista donde la arista inclinada se vea de perfil, como una oblicua.",
+        "Marca el alzado y la vista en la que el bisel aparece como un corte inclinado."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Un taco con una arista biselada parece un simple prisma. Hay que decidir qué vistas lo definen sin repetir nada.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": [],
+              "caja": {
+                "proyectar": [],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El alzado da la anchura y la altura del taco. El perfil izquierdo es el único que enseña el bisel de verdad, como una oblicua.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado"],
+              "caja": {
+                "proyectar": ["alzado"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La planta solo muestra un rectángulo con una línea: no enseña la forma del bisel y sobra.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [0, 2]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"],
+              "eleccion": [0, 2]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: elegir alzado y planta. Ninguna de las dos enseña la forma del bisel; hace falta el perfil.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"],
+              "eleccion": [0, 2]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Marca solo las vistas imprescindibles para definir esta escalera con un taladro.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "escalera-taladrada",
+          "ejercicio": {
+            "tipo": "vistasNecesarias"
+          }
+        }
+      },
+      "hints": [
+        "Una vista es imprescindible cuando enseña algo que las otras no enseñan.",
+        "Busca la vista donde se ve el perfil de los escalones y la vista donde se ve el taladro.",
+        "Marca esas dos y comprueba que el alzado no añade ninguna forma nueva."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Esta pieza tiene tres escalones y un taladro en el más bajo. Hay que marcar las vistas que la definen sin repetir nada.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": [],
+              "caja": {
+                "proyectar": [],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El perfil izquierdo enseña los tres escalones con su altura y su profundidad. La planta enseña la anchura y el taladro como circunferencia.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta"],
+              "caja": {
+                "proyectar": ["planta"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El alzado es un rectángulo con las líneas de los escalones: no añade nada que no estén diciendo ya la planta y el perfil.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"],
+              "caja": {
+                "proyectar": ["planta", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [1, 2]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"],
+              "eleccion": [1, 2]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: marcar siempre el alzado. Aquí repite las medidas que ya dan la planta y el perfil, y el taladro se ve mejor en la planta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"],
+              "eleccion": [1, 2]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: se ven el alzado y el perfil izquierdo de una pieza. ¿Cuál es su planta?",
+      "show3d": [],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "horquilla",
+          "vistas": ["alzado", "perfil"],
+          "ejercicio": {
+            "tipo": "vistaQueFalta",
+            "falta": "planta",
+            "opciones": ["horquilla", "soporte-u", "escalon"]
+          }
+        }
+      },
+      "hints": [
+        "Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.",
+        "Las anchuras de la planta son las del alzado y sus profundidades, las del perfil.",
+        "Baja desde el alzado las líneas de referencia y pasa las profundidades del perfil."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Se ven el alzado y el perfil izquierdo de una pieza y hay que elegir su planta entre varios dibujos. Cada opción es una pieza distinta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"]
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "La planta comparte la anchura con el alzado y la profundidad con el perfil. Con esas dos medidas se reconstruye.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "perfil"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 0.6
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El perfil muestra la cabeza redondeada de las orejas con un taladro circular que las atraviesa. En la planta, las orejas son dos cuadrados en los extremos y el taladro queda tapado.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar con línea continua el taladro de las orejas en la planta, donde no se ve. Desde arriba queda tapado y va con discontinua fina.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: se ven la planta y el perfil izquierdo de una pieza. ¿Cuál es su alzado?",
+      "show3d": [],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "soporte-redondeado",
+          "vistas": ["planta", "perfil"],
+          "ejercicio": {
+            "tipo": "vistaQueFalta",
+            "falta": "alzado",
+            "opciones": ["soporte-redondeado", "horquilla", "escalera-taladrada"]
+          }
+        }
+      },
+      "hints": [
+        "Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.",
+        "Las anchuras del alzado son las de la planta y sus alturas, las del perfil.",
+        "Sube desde la planta las líneas de referencia y pasa las alturas del perfil."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Se ven el planta y el perfil izquierdo de una pieza y hay que elegir su alzado entre varios dibujos. Cada opción es una pieza distinta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"]
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "El alzado comparte la anchura con la planta y la altura con el perfil. Con esas dos medidas se reconstruye.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"],
+              "caja": {
+                "proyectar": ["planta", "perfil"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 0.6
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "En el perfil hay un taladro circular y la planta enseña una banda central más estrecha que la base. En el alzado, esa banda sube con la cabeza redondeada y el taladro va con discontinua.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: dibujar el taladro del alzado con línea continua. Está tapado por la pared de la pieza y va con discontinua fina, con su eje de trazo y punto.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: marca solo las vistas imprescindibles para definir este canal en V con una ranura y un taladro.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "canal-en-v",
+          "ejercicio": {
+            "tipo": "vistasNecesarias"
+          }
+        }
+      },
+      "hints": [
+        "Una vista es imprescindible cuando enseña algo que las otras no enseñan.",
+        "Pregúntate qué forma solo se ve en una vista: el canal, la ranura y el taladro.",
+        "Si cada forma aparece en una vista distinta, hacen falta las tres."
+      ],
+      "solution": [
+        {
+          "part": "mira",
+          "narration": "Esta pieza tiene un canal en V, una ranura que lo atraviesa y un taladro pequeño. Hay que ver cuántas vistas hacen falta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "idea",
+          "narration": "Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "isometric",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": []
+            }
+          }
+        },
+        {
+          "part": "movimiento",
+          "narration": "Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": [],
+              "caja": {
+                "proyectar": [],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "El perfil enseña el canal en V. El alzado enseña la ranura, con su profundidad, que atraviesa las dos paredes.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado"],
+              "caja": {
+                "proyectar": ["alzado"],
+                "desplegar": 0
+              }
+            }
+          }
+        },
+        {
+          "part": "trazado",
+          "narration": "La planta enseña dónde está el taladro y que la ranura cruza de lado a lado. Cada vista aporta algo que las otras no dicen.",
+          "show3d": ["pieza", "caja"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "caja": {
+                "proyectar": ["alzado", "planta", "perfil"],
+                "desplegar": 1
+              },
+              "eleccion": [0, 1, 2]
+            }
+          }
+        },
+        {
+          "part": "comprobacion",
+          "narration": "Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0, 1, 2]
+            }
+          }
+        },
+        {
+          "part": "error",
+          "narration": "Error típico: quitar la planta pensando que repite el alzado. Solo la planta sitúa el taladro, y sin ella la pieza no queda definida.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "vistas": ["alzado", "planta", "perfil"],
+              "eleccion": [0, 1, 2]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

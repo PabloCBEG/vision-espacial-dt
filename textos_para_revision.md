@@ -1953,6 +1953,125 @@ Fichero: `src/content/lessons/16-tangencias-basicas.json` · DT I · nivel Inici
    - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la distancia de C₁ a A es R₁ más r, la distancia a B es R₂ más r, y los puntos de enlace están en las rectas de centros.
    - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: restar los radios en vez de sumarlos. Con R menos r el arco sería tangente por dentro, no por fuera como se pide.
 
+### I-15 · Lo que se ve desde cada lado
+
+Fichero: `src/content/lessons/17-lo-que-se-ve.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Normalización: vistas de una pieza en el sistema europeo (UNE-EN ISO 5456-2), aristas ocultas, ejes y vistas necesarias.
+
+**Pasos**
+
+1. [ ] Esta pieza se dibuja con sus vistas. Cada vista enseña solo lo que se ve mirando la pieza desde un lado.
+2. [ ] Metemos la pieza en una caja. Cada cara de la caja recoge lo que se ve desde el lado contrario.
+3. [ ] Mirando desde delante, el alzado se proyecta en la cara de detrás. Dejan línea las caras que miran al observador; las demás quedan tapadas.
+4. [ ] Desde arriba, la planta se proyecta en la cara de abajo. Desde la izquierda, el perfil izquierdo se proyecta en la cara de la derecha.
+5. [ ] Al desplegar la caja, la planta queda debajo del alzado y el perfil izquierdo, a su derecha. Es el sistema europeo: el perfil izquierdo nunca va a la izquierda.
+6. [ ] Lo que está tapado se dibuja con línea discontinua fina. El agujero ciego no se ve desde fuera, pero aparece así en las vistas.
+7. [ ] El eje del agujero va con trazo y punto fino y sobresale un poco. En la vista de frente se ve como dos ejes cruzados.
+8. [ ] No siempre hacen falta tres vistas. Una vista sobra si no enseña nada que las otras no muestren.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: Se ven el alzado y la planta de una pieza. ¿Cuál es su perfil izquierdo?
+   - [ ] *Pista 1:* Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.
+   - [ ] *Pista 2:* Las alturas del perfil son las del alzado y sus profundidades, las de la planta.
+   - [ ] *Pista 3:* Prolonga con líneas de referencia las aristas del alzado y la planta hasta el perfil.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven el alzado y el planta de una pieza y hay que elegir su perfil izquierdo entre varios dibujos. Cada opción es una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El perfil izquierdo comparte la altura con el alzado y la profundidad con la planta. Con esas dos medidas se reconstruye.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El alzado y la planta tienen una línea paralela al borde: es una arista biselada. En el perfil se ve como una oblicua en la esquina de arriba, del lado de delante.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: elegir el perfil con el bisel arriba a la izquierda. El perfil izquierdo se mira desde la izquierda y la parte de delante queda a su derecha.
+2. [ ] *construcción en la lámina, dificultad 1*: Se ven el alzado y el perfil izquierdo de una pieza. ¿Cuál es su planta?
+   - [ ] *Pista 1:* Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.
+   - [ ] *Pista 2:* Las anchuras de la planta son las del alzado y sus profundidades, las del perfil.
+   - [ ] *Pista 3:* Baja desde el alzado las líneas de referencia y pasa las profundidades del perfil.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven el alzado y el perfil izquierdo de una pieza y hay que elegir su planta entre varios dibujos. Cada opción es una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La planta comparte la anchura con el alzado y la profundidad con el perfil. Con esas dos medidas se reconstruye.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado y en el perfil hay dos pares de líneas discontinuas verticales: son taladros que no se ven. En la planta, mirados de punta, aparecen como dos circunferencias.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: elegir una planta lisa porque en las otras vistas solo hay discontinuas. Esas líneas son los taladros, y desde arriba se ven como circunferencias continuas.
+3. [ ] *construcción en la lámina, dificultad 1*: Se ven la planta y el perfil izquierdo de una pieza. ¿Cuál es su alzado?
+   - [ ] *Pista 1:* Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.
+   - [ ] *Pista 2:* Las anchuras del alzado son las de la planta y sus alturas, las del perfil.
+   - [ ] *Pista 3:* Sube desde la planta las líneas de referencia y pasa las alturas del perfil.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven el planta y el perfil izquierdo de una pieza y hay que elegir su alzado entre varios dibujos. Cada opción es una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El alzado comparte la anchura con la planta y la altura con el perfil. Con esas dos medidas se reconstruye.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La planta tiene un escalón en forma de L. Esa arista sube hasta el alzado y se ve de frente como una línea vertical dentro del rectángulo.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: elegir un alzado liso. La planta tiene un escalón, y desde delante se ve su arista como una línea vertical continua.
+4. [ ] *construcción en la lámina, dificultad 2*: Marca solo las vistas imprescindibles para definir esta placa con dos taladros: ni una más ni una menos.
+   - [ ] *Pista 1:* Una vista es imprescindible cuando enseña algo que las otras no enseñan.
+   - [ ] *Pista 2:* Mira qué aparece en cada cara: espesores, taladros o planos inclinados.
+   - [ ] *Pista 3:* Empieza por el alzado y añade solo la vista que aporta una forma nueva.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una placa con dos taladros se puede dibujar con tres vistas, pero no hacen falta todas. Hay que marcar las imprescindibles.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El alzado da la anchura y el espesor de la placa, y muestra los taladros con discontinua.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La planta da la profundidad y enseña los dos taladros como circunferencias. El perfil repite el espesor del alzado y sobra.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: marcar las tres vistas por seguridad. El perfil solo repite el espesor que ya se ve en el alzado y se omite.
+5. [ ] *construcción en la lámina, dificultad 2*: Marca solo las vistas imprescindibles para definir este taco con una arista biselada.
+   - [ ] *Pista 1:* Una vista es imprescindible cuando enseña algo que las otras no enseñan.
+   - [ ] *Pista 2:* Busca la vista donde la arista inclinada se vea de perfil, como una oblicua.
+   - [ ] *Pista 3:* Marca el alzado y la vista en la que el bisel aparece como un corte inclinado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un taco con una arista biselada parece un simple prisma. Hay que decidir qué vistas lo definen sin repetir nada.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El alzado da la anchura y la altura del taco. El perfil izquierdo es el único que enseña el bisel de verdad, como una oblicua.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La planta solo muestra un rectángulo con una línea: no enseña la forma del bisel y sobra.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: elegir alzado y planta. Ninguna de las dos enseña la forma del bisel; hace falta el perfil.
+6. [ ] *construcción en la lámina, dificultad 2*: Marca solo las vistas imprescindibles para definir esta escalera con un taladro.
+   - [ ] *Pista 1:* Una vista es imprescindible cuando enseña algo que las otras no enseñan.
+   - [ ] *Pista 2:* Busca la vista donde se ve el perfil de los escalones y la vista donde se ve el taladro.
+   - [ ] *Pista 3:* Marca esas dos y comprueba que el alzado no añade ninguna forma nueva.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Esta pieza tiene tres escalones y un taladro en el más bajo. Hay que marcar las vistas que la definen sin repetir nada.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El perfil izquierdo enseña los tres escalones con su altura y su profundidad. La planta enseña la anchura y el taladro como circunferencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El alzado es un rectángulo con las líneas de los escalones: no añade nada que no estén diciendo ya la planta y el perfil.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: marcar siempre el alzado. Aquí repite las medidas que ya dan la planta y el perfil, y el taladro se ve mejor en la planta.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: se ven el alzado y el perfil izquierdo de una pieza. ¿Cuál es su planta?
+   - [ ] *Pista 1:* Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.
+   - [ ] *Pista 2:* Las anchuras de la planta son las del alzado y sus profundidades, las del perfil.
+   - [ ] *Pista 3:* Baja desde el alzado las líneas de referencia y pasa las profundidades del perfil.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven el alzado y el perfil izquierdo de una pieza y hay que elegir su planta entre varios dibujos. Cada opción es una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La planta comparte la anchura con el alzado y la profundidad con el perfil. Con esas dos medidas se reconstruye.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El perfil muestra la cabeza redondeada de las orejas con un taladro circular que las atraviesa. En la planta, las orejas son dos cuadrados en los extremos y el taladro queda tapado.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar con línea continua el taladro de las orejas en la planta, donde no se ve. Desde arriba queda tapado y va con discontinua fina.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: se ven la planta y el perfil izquierdo de una pieza. ¿Cuál es su alzado?
+   - [ ] *Pista 1:* Cada vista muestra lo que se ve desde su lado, y comparte medidas con sus vecinas.
+   - [ ] *Pista 2:* Las anchuras del alzado son las de la planta y sus alturas, las del perfil.
+   - [ ] *Pista 3:* Sube desde la planta las líneas de referencia y pasa las alturas del perfil.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Se ven el planta y el perfil izquierdo de una pieza y hay que elegir su alzado entre varios dibujos. Cada opción es una pieza distinta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El alzado comparte la anchura con la planta y la altura con el perfil. Con esas dos medidas se reconstruye.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza dentro de la caja de proyección. Al desplegarla, las medidas comunes de las vistas quedan alineadas.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el perfil hay un taladro circular y la planta enseña una banda central más estrecha que la base. En el alzado, esa banda sube con la cabeza redondeada y el taladro va con discontinua.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Descarta las opciones cuya silueta o cuyas líneas discontinuas no coinciden, y elige la que respeta todas las medidas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la opción elegida tiene las mismas medidas que las vistas dadas, y sus aristas ocultas también coinciden.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar el taladro del alzado con línea continua. Está tapado por la pared de la pieza y va con discontinua fina, con su eje de trazo y punto.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: marca solo las vistas imprescindibles para definir este canal en V con una ranura y un taladro.
+   - [ ] *Pista 1:* Una vista es imprescindible cuando enseña algo que las otras no enseñan.
+   - [ ] *Pista 2:* Pregúntate qué forma solo se ve en una vista: el canal, la ranura y el taladro.
+   - [ ] *Pista 3:* Si cada forma aparece en una vista distinta, hacen falta las tres.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Esta pieza tiene un canal en V, una ranura que lo atraviesa y un taladro pequeño. Hay que ver cuántas vistas hacen falta.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una vista es imprescindible si aporta una forma que no se ve en las demás. Si no añade nada nuevo, sobra.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina la pieza girando delante del observador. Cada vez que cambia la cara que miras aparece una forma nueva, o no aparece ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El perfil enseña el canal en V. El alzado enseña la ranura, con su profundidad, que atraviesa las dos paredes.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La planta enseña dónde está el taladro y que la ranura cruza de lado a lado. Cada vista aporta algo que las otras no dicen.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: con las vistas marcadas no queda ninguna forma sin definir, y ninguna vista repite lo que ya muestran las otras.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: quitar la planta pensando que repite el alzado. Solo la planta sitúa el taladro, y sin ella la pieza no queda definida.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos
