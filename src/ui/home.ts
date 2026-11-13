@@ -1,6 +1,5 @@
-// Pantalla de inicio: curso, luego bloque, luego tema. Cada tema disponible muestra sus
-// lecciones y el progreso del alumno (guardado solo en su navegador); los demás aparecen
-// como «Próximamente».
+// Pantalla de inicio: un camino por bloques (A, B, C, D) con el progreso de cada tema, y arriba
+// «Continúa donde lo dejaste». El progreso se guarda solo en el navegador del alumno.
 import {
   BLOCK_TITLES,
   CATALOG,
@@ -11,10 +10,26 @@ import {
 } from '../content/catalog.ts';
 import type { LessonLoadError } from '../content/lessons.ts';
 import type { Lesson } from '../content/schema.ts';
-import { loadResults, loadSeenLessons, topicProgress } from '../player/index.ts';
+import {
+  loadLastLesson,
+  loadResults,
+  loadSeenLessons,
+  topicProgress,
+  type TopicProgress,
+} from '../player/index.ts';
 
 const COURSES: readonly Stage[] = ['DT I', 'DT II'];
 const COURSE_KEY = 'inicio:curso';
+
+type NodeState = 'done' | 'current' | 'progress' | 'new' | 'soon';
+
+const STATE_LABEL: Record<NodeState, string> = {
+  done: 'Completado ✓',
+  current: 'Sigue aquí',
+  progress: 'En curso',
+  new: 'Nuevo',
+  soon: 'Próximamente',
+};
 
 function loadCourse(): Stage {
   try {
@@ -37,6 +52,14 @@ function saveCourse(course: Stage): void {
 const solvedIn = (lessonId: string): number =>
   Object.values(loadResults(lessonId)).filter((r) => r.solved).length;
 
+/** Porcentaje del anillo: mitad lecciones vistas, mitad ejercicios resueltos. */
+function percent(p: TopicProgress): number {
+  if (p.lessons === 0) return 0;
+  const lessonsPart = p.lessonsSeen / p.lessons;
+  const exercisesPart = p.exercises > 0 ? p.exercisesSolved / p.exercises : lessonsPart;
+  return Math.round(100 * (lessonsPart + exercisesPart) * 0.5);
+}
+
 export function renderHome(
   list: HTMLElement,
   errorsBox: HTMLElement,
@@ -49,6 +72,16 @@ export function renderHome(
 
   const draw = (): void => {
     list.replaceChildren();
+    const blocks = topicsByBlock(course);
+
+    // Lecciones del curso, en el orden del temario.
+    const ordered: Lesson[] = [];
+    for (const topics of blocks.values()) {
+      for (const t of topics) ordered.push(...lessonsOf(t.code));
+    }
+    const target = pickResumeLesson(ordered, lessons, seen);
+
+    list.append(resumeCard(target, ordered.length > 0, seen));
 
     // Curso.
     const tabs = document.createElement('div');
@@ -74,21 +107,49 @@ export function renderHome(
     const featured = document.createElement('ul');
     featured.className = 'lesson-list featured-list';
     const trainer = findTopic('E-00');
-    if (trainer) featured.append(topicCard(trainer, lessonsOf(trainer.code), seen));
+    if (trainer?.route) featured.append(trainerCard(trainer));
     featured.append(freeCard());
     if (course === 'DT II') featured.append(pauCard(), labCard());
     list.append(featured);
 
-    // Bloques del curso con sus temas.
-    for (const [block, topics] of topicsByBlock(course)) {
+    // Bloques del curso con sus temas: el camino.
+    let currentFound = false;
+    for (const [block, topics] of blocks) {
       const section = document.createElement('section');
       section.className = 'block-section';
-      const heading = document.createElement('h2');
-      heading.className = 'block-title';
-      heading.textContent = `Bloque ${block}. ${BLOCK_TITLES[block]}`;
+      section.dataset.block = block;
+
+      const states = topics.map((t) => {
+        const own = lessonsOf(t.code);
+        const available = t.status === 'disponible' && own.length > 0;
+        const p = topicProgress(own, seen, solvedIn);
+        let state: NodeState = !available
+          ? 'soon'
+          : p.lessons > 0 && p.lessonsSeen === p.lessons
+            ? 'done'
+            : p.lessonsSeen > 0 || p.exercisesSolved > 0
+              ? 'progress'
+              : 'new';
+        // «Sigue aquí»: el tema de la lección que toca ahora (o el primero sin terminar).
+        const isTarget = target !== undefined && own.some((l) => l.id === target.id);
+        if (!currentFound && available && state !== 'done' && (isTarget || target === undefined)) {
+          state = 'current';
+          currentFound = true;
+        }
+        return { topic: t, own, available, p, state };
+      });
+
+      const done = states.filter((s) => s.state === 'done').length;
+      const open = states.filter((s) => s.available).length;
+      const heading = document.createElement('header');
+      heading.className = 'block-head';
+      heading.innerHTML = `
+        <span class="block-badge" aria-hidden="true">${block}</span>
+        <h2 class="block-title">Bloque ${block}. ${escapeHtml(BLOCK_TITLES[block])}</h2>
+        <span class="block-meter" aria-label="${done} de ${open} temas completados">${done}/${open}</span>`;
       const ul = document.createElement('ul');
       ul.className = 'lesson-list topic-list';
-      for (const t of topics) ul.append(topicCard(t, lessonsOf(t.code), seen));
+      for (const s of states) ul.append(topicCard(s.topic, s.own, seen, s.p, s.state));
       section.append(heading, ul);
       list.append(section);
     }
@@ -111,25 +172,103 @@ export function renderHome(
     .join('');
 }
 
+interface ResumeTarget {
+  id: string;
+  title: string;
+  /** La última lección abierta quedó sin terminar. */
+  unfinished: boolean;
+  started: boolean;
+}
+
+/** Elige a qué lección lleva el botón grande de la portada. */
+function pickResumeLesson(
+  ordered: readonly Lesson[],
+  all: readonly Lesson[],
+  seen: ReadonlySet<string>,
+): ResumeTarget | undefined {
+  const lastId = loadLastLesson();
+  const last = lastId ? all.find((l) => l.id === lastId) : undefined;
+  if (last && !seen.has(last.id)) {
+    return { id: last.id, title: last.title, unfinished: true, started: true };
+  }
+  const next = ordered.find((l) => !seen.has(l.id));
+  if (next) return { id: next.id, title: next.title, unfinished: false, started: seen.size > 0 };
+  return undefined;
+}
+
+const RESUME_ART = `
+  <svg class="resume-art" viewBox="0 0 120 100" aria-hidden="true" focusable="false">
+    <polygon points="10,72 80,72 106,52 36,52" fill="#3d8bd9"/>
+    <polygon points="36,52 106,52 106,8 36,8" fill="#d9962b"/>
+    <line x1="36" y1="52" x2="106" y2="52" stroke="#fff" stroke-width="2.5"/>
+    <circle cx="64" cy="30" r="5" fill="#c2185b" stroke="#fff" stroke-width="2"/>
+    <text x="14" y="88" font-size="11" font-weight="800" fill="currentColor">PH</text>
+    <text x="90" y="20" font-size="11" font-weight="800" fill="#17163a">PV</text>
+  </svg>`;
+
+function resumeCard(
+  target: ResumeTarget | undefined,
+  hasLessons: boolean,
+  seen: ReadonlySet<string>,
+): HTMLElement {
+  const box = document.createElement('section');
+  box.className = 'resume';
+  box.setAttribute('aria-labelledby', 'resume-title');
+  let kicker: string;
+  let title: string;
+  let meta: string;
+  let href: string;
+  let cta: string;
+  if (target) {
+    kicker = target.unfinished
+      ? 'Continúa donde lo dejaste'
+      : target.started
+        ? 'Tu siguiente paso'
+        : 'Empieza por aquí';
+    title = target.title;
+    meta = target.unfinished
+      ? 'Esta lección te quedó a medias.'
+      : `Llevas ${seen.size} ${seen.size === 1 ? 'lección vista' : 'lecciones vistas'}.`;
+    href = `#/leccion/${target.id}`;
+    cta = target.unfinished ? 'Continuar →' : target.started ? 'Seguir →' : 'Empezar →';
+  } else {
+    kicker = hasLessons ? '¡Curso al día!' : 'Empieza por aquí';
+    title = hasLessons ? 'Has visto todas las lecciones' : 'Entrenamiento espacial';
+    meta = hasLessons
+      ? 'Repasa con ejercicios o explora libremente.'
+      : 'Calienta la visión espacial.';
+    href = hasLessons ? '#/libre' : '#/entrenador';
+    cta = hasLessons ? 'Explorar →' : 'Empezar →';
+  }
+  box.innerHTML = `
+    ${RESUME_ART}
+    <div class="resume-body">
+      <p class="resume-kicker">${escapeHtml(kicker)}</p>
+      <h2 id="resume-title" class="resume-title">${escapeHtml(title)}</h2>
+      <p class="resume-meta">${escapeHtml(meta)}</p>
+      <a class="cta" href="${href}">${escapeHtml(cta)}</a>
+    </div>`;
+  return box;
+}
+
 function topicCard(
   topic: Topic,
   lessons: readonly Lesson[],
   seen: ReadonlySet<string>,
+  p: TopicProgress,
+  state: NodeState,
 ): HTMLLIElement {
   const item = document.createElement('li');
-  const available = topic.status === 'disponible' && (lessons.length > 0 || Boolean(topic.route));
+  const available = state !== 'soon';
   item.className = `topic-card${available ? '' : ' is-soon'}`;
   item.dataset.topic = topic.code;
+  item.dataset.state = state;
   const pau = topic.pauExercise ? `PAU ej. ${topic.pauExercise}` : topic.pauNote;
   const titleId = `topic-${topic.code}`;
+  const pct = state === 'done' ? 100 : percent(p);
+  const glyph = state === 'done' ? '✓' : (topic.code.split('-')[1] ?? topic.code);
   let body: string;
-  if (available && topic.route) {
-    body = `<a class="lesson-card-link" href="${topic.route}">
-      <span class="lesson-card-title">Empezar</span>
-      <span class="lesson-card-footer">Entrenamiento adaptativo y test diagnóstico</span>
-    </a>`;
-  } else if (available) {
-    const p = topicProgress(lessons, seen, solvedIn);
+  if (available) {
     body = `
       <p class="topic-progress">
         Lecciones vistas: ${p.lessonsSeen} de ${p.lessons} · ejercicios resueltos:
@@ -139,11 +278,11 @@ function topicCard(
         ${lessons
           .map((l) => {
             const solved = solvedIn(l.id);
-            const done = seen.has(l.id) ? ' · vista ✓' : '';
-            return `<li><a class="lesson-card-link" href="#/leccion/${l.id}">
+            const isSeen = seen.has(l.id);
+            return `<li data-seen="${isSeen}"><a class="lesson-card-link" href="#/leccion/${l.id}">
               <span class="lesson-card-title">${escapeHtml(l.title)}</span>
               <span class="lesson-card-footer">${l.steps.length} pasos · ${l.exercises.length}
-                ejercicios${l.exercises.length > 0 ? ` · resueltos ${solved}` : ''}${done}</span>
+                ejercicios${l.exercises.length > 0 ? ` · resueltos ${solved}` : ''}${isSeen ? ' · vista ✓' : ''}</span>
             </a></li>`;
           })
           .join('')}
@@ -153,54 +292,69 @@ function topicCard(
   }
   item.innerHTML = `
     <article class="topic-card-inner" aria-labelledby="${titleId}">
-      <span class="lesson-card-meta">
-        <span class="badge">${escapeHtml(topic.code)}</span>
-        <span class="badge badge-muted">${escapeHtml(pau)}</span>
-      </span>
-      <h3 id="${titleId}" class="topic-title">${escapeHtml(topic.title)}</h3>
-      ${body}
+      <span class="node-ring" style="--p:${pct}" aria-hidden="true"><span>${escapeHtml(glyph)}</span></span>
+      <div class="node-head">
+        <span class="lesson-card-meta">
+          <span class="badge">${escapeHtml(topic.code)}</span>
+          <span class="badge badge-muted">${escapeHtml(pau)}</span>
+          <span class="state-chip">${STATE_LABEL[state]}</span>
+        </span>
+        <h3 id="${titleId}" class="topic-title">${escapeHtml(topic.title)}</h3>
+      </div>
+      <div class="node-body">${body}</div>
     </article>`;
   return item;
 }
 
-function labCard(): HTMLLIElement {
+function specialCard(icon: string, title: string, text: string, href: string): HTMLLIElement {
   const item = document.createElement('li');
   item.className = 'topic-card lesson-card-free';
   item.innerHTML = `
-    <a class="lesson-card-link" href="#/conicas">
-      <span class="lesson-card-title">Laboratorio de cónicas</span>
-      <span class="lesson-card-text">
-        Corta un cono doble con un plano y mira qué cónica sale, con su ecuación y su excentricidad.
-      </span>
+    <a class="lesson-card-link" href="${href}">
+      <span class="special-icon" aria-hidden="true">${icon}</span>
+      <span class="lesson-card-title">${escapeHtml(title)}</span>
+      <span class="lesson-card-text">${escapeHtml(text)}</span>
     </a>`;
   return item;
 }
 
-function pauCard(): HTMLLIElement {
-  const item = document.createElement('li');
-  item.className = 'topic-card lesson-card-free';
-  item.innerHTML = `
-    <a class="lesson-card-link" href="#/pau">
-      <span class="lesson-card-title">Banco PAU</span>
-      <span class="lesson-card-text">
-        Ejercicios tipo PAU en modo examen: 22 minutos, solo la lámina y autoevaluación.
-      </span>
-    </a>`;
+function trainerCard(topic: Topic): HTMLLIElement {
+  const item = specialCard(
+    '🎯',
+    'Entrenador espacial',
+    'Rotaciones, secciones, desarrollos y vistas, con test diagnóstico.',
+    topic.route ?? '#/entrenador',
+  );
+  item.dataset.topic = topic.code;
+  item
+    .querySelector('.lesson-card-link')
+    ?.insertAdjacentHTML('beforeend', '<span class="lesson-card-footer">Empezar →</span>');
   return item;
 }
 
-function freeCard(): HTMLLIElement {
-  const free = document.createElement('li');
-  free.className = 'topic-card lesson-card-free';
-  free.innerHTML = `
-    <a class="lesson-card-link" href="#/libre">
-      <span class="lesson-card-title">Explorar libremente</span>
-      <span class="lesson-card-text">
-        Mueve un punto, gira el modelo y abate el PH sin seguir una lección.
-      </span>
-    </a>`;
-  return free;
-}
+const labCard = (): HTMLLIElement =>
+  specialCard(
+    '🔬',
+    'Laboratorio de cónicas',
+    'Corta un cono doble con un plano y mira qué cónica sale, con su ecuación y su excentricidad.',
+    '#/conicas',
+  );
+
+const pauCard = (): HTMLLIElement =>
+  specialCard(
+    '📝',
+    'Banco PAU',
+    'Ejercicios tipo PAU en modo examen: 22 minutos, solo la lámina y autoevaluación.',
+    '#/pau',
+  );
+
+const freeCard = (): HTMLLIElement =>
+  specialCard(
+    '🧭',
+    'Explorar libremente',
+    'Mueve un punto, gira el modelo y abate el PH sin seguir una lección.',
+    '#/libre',
+  );
 
 function escapeHtml(text: string): string {
   return text

@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
-    <meta name="theme-color" content="#1f5fbf" />
+    <meta name="theme-color" content="#4f3df0" />
     <meta
       name="description"
       content="Sistema diédrico paso a paso: modelo 3D y lámina a la vez, para Dibujo Técnico de Bachillerato."
@@ -32,6 +32,7 @@
         <span class="app-title">Visión espacial · Dibujo Técnico</span>
       </a>
       <div class="header-actions">
+        <div id="game-hud" class="hud" aria-label="Tu racha y tus puntos"></div>
         <button id="projector-toggle" class="header-button" type="button" aria-pressed="false">
           Modo proyector
         </button>
@@ -45,8 +46,7 @@
       <section id="home" class="home" aria-labelledby="home-title" hidden>
         <h1 id="home-title" class="home-title">Temario</h1>
         <p class="home-intro">
-          Dibujo Técnico I y II de Bachillerato. Cada lección muestra el modelo 3D y la lámina a la
-          vez, paso a paso, y termina con ejercicios. Tu progreso se guarda solo en este navegador.
+          Modelo 3D y lámina a la vez, paso a paso. Tu progreso se guarda solo en este navegador.
         </p>
         <div id="lesson-list" class="home-catalog"></div>
         <div id="lesson-errors" class="lesson-errors" hidden></div>
@@ -169,6 +169,12 @@
           </div>
         </section>
 
+        <div id="split-switch" class="view-buttons split-switch" role="group" aria-label="Qué ver">
+          <button type="button" data-split="3d" aria-pressed="false">3D</button>
+          <button type="button" data-split="both" aria-pressed="true">Ambos</button>
+          <button type="button" data-split="2d" aria-pressed="false">Lámina</button>
+        </div>
+
         <section class="panel panel-3d" aria-labelledby="panel-3d-title">
           <div class="panel-header">
             <h2 id="panel-3d-title" class="panel-title">Modelo 3D</h2>
@@ -271,6 +277,8 @@
         </section>
       </div>
     </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

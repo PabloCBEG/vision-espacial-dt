@@ -2,7 +2,8 @@ import './style.css';
 import { loadLessons } from './content/lessons.ts';
 import { checkEngines, mountEngines } from './engines/runtimes.ts';
 import { FOLDED_ANGLE_DEG } from './geometry/index.ts';
-import { bindPlayer, Player, type PlayerElements } from './player/index.ts';
+import { bindPlayer, Player, saveLastLesson, type PlayerElements } from './player/index.ts';
+import { animateNarration, bindGame, bindSplitSwitch } from './ui/gameUi.ts';
 import { SheetView } from './render2d/index.ts';
 import { SpatialView } from './render3d/index.ts';
 import { createAppStore } from './state/index.ts';
@@ -34,6 +35,9 @@ function required<T extends Element>(selector: string): T {
 const store = createAppStore();
 
 bindThemeToggle(required<HTMLButtonElement>('#theme-toggle'));
+bindGame(required('#game-hud'), required('#toast'));
+animateNarration(required('#lesson-narration'));
+bindSplitSwitch(required('#split-switch'));
 bindProjectorToggle(required<HTMLButtonElement>('#projector-toggle'), store);
 bindPointControls(required<HTMLFormElement>('#point-controls'), store);
 bindPointDescription(required<HTMLElement>('#point-description'), store);
@@ -164,6 +168,7 @@ function route(): void {
 
   if (lesson) {
     show('lesson');
+    saveLastLesson(lesson.id);
     const player = new Player(lesson, store, spatialView);
     stopLesson = bindPlayer(player, store, playerElements(), checkEngines);
     player.start();
