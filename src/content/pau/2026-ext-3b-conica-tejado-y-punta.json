@@ -1,0 +1,282 @@
+{
+  "id": "pau-2026-ext-3b-conica-tejado-y-punta",
+  "convocatoria": "2026 extraordinaria",
+  "ejercicio": 3,
+  "opcion": "B",
+  "temas": ["II-11"],
+  "titulo": "Perspectiva cónica de un bloque con tejado y prisma de punta",
+  "enunciado": "Definido el sistema cónico por la línea de tierra L.T., la línea de horizonte L.H., el punto principal P y el abatimiento sobre el plano del cuadro del punto de vista (V), se pide: dibujar, a escala 1:1, la perspectiva cónica del sólido dado por sus vistas a escala 1:1, según el método de representación del primer diedro de proyección, sabiendo que se encuentra apoyado en el plano geometral en la posición indicada por el abatimiento de su planta sobre el plano del cuadro.",
+  "datos": [
+    "Medidas leídas del vector de la lámina y pasadas a escala real: bloque de 15 × 30 mm de planta y 50 mm de alto; tejado a dos aguas de 15 mm de largo con la cumbrera a 50 mm y los aleros a 25 mm; prisma de punta de 25 mm de largo con la tapa inclinada de 50 mm a 25 mm.",
+    "La L.H. está a 65 mm de la L.T., y el punto de vista abatido (V), a 62 mm sobre la L.H., en la vertical de P.",
+    "La planta se abate bajo la L.T. girada unos 31° (la arista del vértice a la punta es paralela a la L.T.), con su vértice a 37 mm a la izquierda de P apoyado en la L.T. La lámina dibuja el perfil visto desde la derecha, a la izquierda del alzado.",
+    "La perspectiva se construye con la planta tal como está dibujada bajo la L.T.: el alejamiento de cada punto crece hacia abajo, y la cota sale del alzado."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "bloque-con-tejado-y-punta"
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "engines": {
+      "normalizacion": {
+        "vistas": ["alzado", "planta", "perfilDerecho"],
+        "ocultas": true,
+        "ejes": false,
+        "conica": {
+          "observador": {
+            "x": 0,
+            "d": 62,
+            "h": 65
+          },
+          "origen": [-62.72, 15.43],
+          "giro": 30.96,
+          "perspectiva": false
+        }
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "La pieza es un bloque alto con un tejado a dos aguas a su derecha y, al final, un prisma triangular de punta con la tapa inclinada. La planta ya está abatida bajo la LT y girada, con el vértice de la punta sobre ella.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta", "perfilDerecho"],
+          "ocultas": true,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": false
+          }
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "En cónica, la planta abatida da la posición de cada vértice y el alzado, su altura: cada punto sube del suelo hasta su cota. Lo que está en el cuadro, sobre la LT, se dibuja en verdadera magnitud.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["pieza"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta", "perfilDerecho"],
+          "ocultas": true,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": false
+          }
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina la planta girada y apoyada tras el cuadro con su vértice sobre la LT, y el ojo mirando desde V. Cada vértice, al alejarse del cuadro, se acerca al punto principal P.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["pieza"],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": true,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": false
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Traza desde cada vértice de la planta la visual hacia V hasta cortar la LT, y desde ese punto la directriz hasta P. Las aristas verticales parten de las trazas de la planta y llevan su cota.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": false,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": true
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Une los vértices que se ven con trazo grueso: la cara de la punta que da al observador, la tapa inclinada y el tejado. Las aristas que quedan detrás de ellas son las ocultas.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": false,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": true
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Dibuja con discontinua fina las aristas ocultas: la parte trasera del bloque, del tejado y de la punta. Después repasa las partes vistas con el trazo del resultado.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": true,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": true
+          }
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: las aristas verticales que tocan la LT miden lo mismo que en el alzado, y las que se alejan convergen hacia P.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": true,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": true
+          }
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: dibujar la planta sin girar o con su vértice separado de la LT, y medir las alturas sobre aristas alejadas sin escalarlas. Así la perspectiva sale desplazada y deformada.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "ocultas": true,
+          "ejes": false,
+          "conica": {
+            "observador": {
+              "x": 0,
+              "d": 62,
+              "h": 65
+            },
+            "origen": [-62.72, 15.43],
+            "giro": 30.96,
+            "perspectiva": true
+          }
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Planta abatida bien situada y escala 1:1",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Alturas llevadas desde el alzado a las aristas verticales",
+        "puntos": 0.25
+      },
+      {
+        "texto": "Perspectiva del volumen: directrices a P y aristas vistas",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Tejado y tapa inclinada de la punta",
+        "puntos": 0.25
+      },
+      {
+        "texto": "Aristas ocultas con discontinua fina",
+        "puntos": 0.5
+      }
+    ]
+  }
+}

@@ -22,10 +22,10 @@ beforeAll(async () => {
 }, 30_000);
 
 describe('biblioteca de piezas', () => {
-  it('veinticuatro piezas válidas, de dificultad creciente, sin ids repetidos', () => {
+  it('veinticinco piezas válidas, de dificultad creciente, sin ids repetidos', () => {
     expect(errors).toEqual([]);
-    expect(pieces).toHaveLength(24);
-    expect(new Set(pieces.map((p) => p.id)).size).toBe(24);
+    expect(pieces).toHaveLength(25);
+    expect(new Set(pieces.map((p) => p.id)).size).toBe(25);
     expect(pieces.map((p) => p.dificultad)).toEqual([...pieces.map((p) => p.dificultad)].sort());
   });
 
@@ -226,6 +226,92 @@ describe('biblioteca de piezas', () => {
     expect(len(drawView(mesh, 'alzado', { hidden: true }).hidden)).toBeCloseTo(40, 0);
     expect(len(drawView(mesh, 'perfilDerecho', { hidden: true }).hidden)).toBeCloseTo(80, 0);
     expect(drawView(mesh, 'planta', { hidden: true }).hidden).toHaveLength(0);
+  });
+
+  it('bloque con tejado y punta: las vistas de la lámina de la PAU 2026 ext. 3B', () => {
+    type Seg = [number, number, number, number];
+    const piece = pieces.find((p) => p.id === 'bloque-con-tejado-y-punta');
+    if (!piece) throw new Error('falta la pieza');
+    const solid = buildSolid(wasm, piece);
+    expect(solid.status()).toBe('NoError');
+    // Bloque 15·30·50, tejado 15·(30·25 + 30·25/2) y prisma de punta (base 25·30/2, alturas 50, 50 y 25).
+    expect(volume(solid)).toBeCloseTo(
+      15 * 30 * 50 + 15 * (30 * 25 + (30 * 25) / 2) + 375 * ((50 + 50 + 25) / 3),
+      -1,
+    );
+    const mesh = toMesh(solid);
+    const key = (s: Seg): string => {
+      const [a, b, c, d] = s.map((n) => Math.round(n * 2) / 2) as Seg;
+      return a < c || (a === c && b <= d) ? `${a},${b},${c},${d}` : `${c},${d},${a},${b}`;
+    };
+    const unit = (segs: Seg[]): Set<string> => {
+      const out = new Set<string>();
+      for (const [x1, y1, x2, y2] of segs) {
+        const n = Math.max(1, Math.round(Math.hypot(x2 - x1, y2 - y1) / 5));
+        for (let k = 0; k < n; k++) {
+          out.add(
+            key([
+              x1 + ((x2 - x1) * k) / n,
+              y1 + ((y2 - y1) * k) / n,
+              x1 + ((x2 - x1) * (k + 1)) / n,
+              y1 + ((y2 - y1) * (k + 1)) / n,
+            ]),
+          );
+        }
+      }
+      return out;
+    };
+    const alzado: Seg[] = [
+      [0, 0, 55, 0],
+      [0, 0, 0, 50],
+      [0, 50, 30, 50],
+      [15, 50, 15, 25],
+      [15, 25, 30, 25],
+      [30, 0, 30, 50],
+      [30, 50, 55, 25],
+      [55, 25, 55, 0],
+    ];
+    const perfilDerecho: Seg[] = [
+      [0, 0, 30, 0],
+      [0, 0, 0, 50],
+      [30, 0, 30, 50],
+      [0, 50, 30, 50],
+      [0, 50, 15, 25],
+      [15, 25, 30, 50],
+      [15, 25, 15, 0],
+      [0, 25, 15, 50],
+      [15, 50, 30, 25],
+    ];
+    const planta: Seg[] = [
+      [0, 0, 30, 0],
+      [30, 0, 30, 30],
+      [30, 30, 0, 30],
+      [0, 30, 0, 0],
+      [15, 0, 15, 30],
+      [15, 15, 30, 15],
+      [30, 30, 55, 15],
+      [55, 15, 30, 0],
+    ];
+    for (const [view, target] of [
+      ['alzado', alzado],
+      ['perfilDerecho', perfilDerecho],
+      ['planta', planta],
+    ] as const) {
+      const d = drawView(mesh, view, { hidden: true });
+      const all = [...d.visible, ...d.hidden];
+      const u0 = Math.min(...all.flatMap((g) => [g.x1, g.x2]));
+      const v0 = Math.min(...all.flatMap((g) => [g.y1, g.y2]));
+      const got = unit(all.map((g) => [g.x1 - u0, g.y1 - v0, g.x2 - u0, g.y2 - v0] as Seg));
+      const want = unit([...target]);
+      expect(
+        [...got].filter((k) => !want.has(k)),
+        `${view}: sobran`,
+      ).toEqual([]);
+      expect(
+        [...want].filter((k) => !got.has(k)),
+        `${view}: faltan`,
+      ).toEqual([]);
+    }
   });
 
   it('brida: en planta se ven el buje, su taladro y los dos taladros de la base', () => {

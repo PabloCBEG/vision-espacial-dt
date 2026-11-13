@@ -330,6 +330,71 @@ export function drawView(mesh: TriMesh, view: ViewName, options: ViewOptions = {
   };
 }
 
+/**
+ * Perspectiva cónica de una pieza. El cuadro es el plano a = 0 y la pieza está detrás de él: su
+ * planta, girada `giro` grados, se abate bajo la LT, de modo que un punto (x, a) de la planta
+ * queda a X = X₀ + x·cos + a·sen a lo ancho y a una profundidad D = D₀ − x·sen + a·cos detrás del
+ * cuadro (el alejamiento crece hacia abajo, como en la lámina). El observador está en (x, d, h).
+ */
+export interface ConicSetup {
+  readonly observador: { readonly x: number; readonly d: number; readonly h: number };
+  /** X₀ y D₀: dónde cae el origen de la planta (x = 0, a = 0). */
+  readonly origen: readonly [number, number];
+  /** Giro de la planta, en grados (antihorario en la lámina). */
+  readonly giro: number;
+}
+
+/** Posición de un punto de la pieza en el geometral (X a lo ancho, D detrás del cuadro). */
+export function conicGround(setup: ConicSetup, x: number, a: number): { X: number; D: number } {
+  const t = (setup.giro * Math.PI) / 180;
+  return {
+    X: setup.origen[0] + x * Math.cos(t) + a * Math.sin(t),
+    D: setup.origen[1] - x * Math.sin(t) + a * Math.cos(t),
+  };
+}
+
+/** Imagen en el cuadro de un punto de la pieza: (x′, c′) y el recíproco de su distancia al ojo. */
+export function conicImage(setup: ConicSetup, p: readonly number[]): V3 {
+  const [x, , c] = [p[0] as number, p[1] as number, p[2] as number];
+  const { X, D } = conicGround(setup, x, p[1] as number);
+  const o = setup.observador;
+  const k = o.d / (o.d + D);
+  // Tercera coordenada: o.d·k crece hacia el observador, como la profundidad de las demás vistas.
+  return [o.x + k * (X - o.x), o.h + k * (c - o.h), o.d * k];
+}
+
+/**
+ * La malla transformada por la perspectiva: una transformación proyectiva lleva rectas a rectas
+ * y planos a planos, así que la vista «alzado» de esta malla es la perspectiva cónica con sus
+ * partes vistas y ocultas.
+ */
+export function conicMesh(mesh: TriMesh, setup: ConicSetup): TriMesh {
+  const positions = new Float64Array(mesh.positions.length);
+  for (let i = 0; i < mesh.positions.length / 3; i++) {
+    const [u, v, w] = conicImage(setup, vertex(mesh, i));
+    // Disposición de la vista «alzado»: (x, profundidad, cota).
+    positions.set([u, w, v], i * 3);
+  }
+  // La planta se abate «bajo la LT»: el cambio de (x, a) a (X, D) es una simetría y dejaría las
+  // caras con el sentido contrario; se invierte el orden de cada triángulo para corregirlo.
+  const triangles = new Uint32Array(mesh.triangles);
+  for (let t = 0; t < triangles.length; t += 3) {
+    const b = triangles[t + 1] as number;
+    triangles[t + 1] = triangles[t + 2] as number;
+    triangles[t + 2] = b;
+  }
+  return { positions, triangles };
+}
+
+/** Perspectiva cónica de la malla con sus aristas vistas y ocultas. */
+export function drawConic(
+  mesh: TriMesh,
+  setup: ConicSetup,
+  options: ViewOptions = {},
+): ViewDrawing {
+  return drawView(conicMesh(mesh, setup), 'alzado', options);
+}
+
 /** Quita de cada segmento los tramos que tapan otros segmentos alineados. */
 export function subtractCovered(segs: readonly Seg2[], covers: readonly Seg2[]): Seg2[] {
   const out: Seg2[] = [];

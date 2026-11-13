@@ -5,7 +5,7 @@ import type { Manifold, ManifoldToplevel } from 'manifold-3d';
 import type { Cut, NormStep } from './definition.ts';
 import { buildSolid, cutWithBoxes, toMesh, type TriMesh } from './kernel.ts';
 import { axisIndex, boundsOf, revolutions, type Bounds, type Piece } from './piece.ts';
-import { drawView, hatch, project, type Seg2, type ViewName } from './views.ts';
+import { drawConic, drawView, hatch, project, type Seg2, type ViewName } from './views.ts';
 
 export interface ViewResult {
   readonly visible: Seg2[];
@@ -27,6 +27,13 @@ export interface PieceDrawing {
   readonly kept: TriMesh | null;
   readonly removed: TriMesh | null;
   readonly views: Record<ViewName, ViewResult>;
+  /** Desplazamiento de las vistas diédricas en la lámina (con perspectiva cónica van encima). */
+  readonly shift: { readonly x: number; readonly y: number };
+  /** Cónica: planta abatida y perspectiva, ya en coordenadas de la lámina (LT en y = 0). */
+  readonly conica: {
+    readonly plan: { visible: Seg2[]; hidden: Seg2[] };
+    readonly perspective: { visible: Seg2[]; hidden: Seg2[] };
+  } | null;
 }
 
 /** Separación entre vistas en la lámina (mm). */
@@ -289,7 +296,39 @@ export function buildDrawing(wasm: ManifoldToplevel, piece: Piece, step: NormSte
     const v = views[step.seccionAbatida.vista];
     views[step.seccionAbatida.vista] = { ...v, revolved: r.outline, revolvedHatch: r.hatch };
   }
-  return { piece, bounds, mesh, kept, removed, views };
+  return { piece, bounds, mesh, kept, removed, views, ...conicDrawing(mesh, views, step) };
+}
+
+/** Cónica: planta abatida bajo la LT y perspectiva (si se pide), y dónde van las vistas. */
+function conicDrawing(
+  mesh: TriMesh,
+  views: Record<ViewName, ViewResult>,
+  step: NormStep,
+): Pick<PieceDrawing, 'shift' | 'conica'> {
+  const k = step.conica;
+  if (!k) return { shift: { x: 0, y: 0 }, conica: null };
+  const setup = { observador: k.observador, origen: k.origen, giro: k.giro };
+  const t = (k.giro * Math.PI) / 180;
+  // La planta (u = x, v = −a) se gira y se baja bajo la LT.
+  const turn = (s: Seg2): Seg2 => {
+    const p = (u: number, v: number): [number, number] => [
+      k.origen[0] + u * Math.cos(t) - v * Math.sin(t),
+      -k.origen[1] + v * Math.cos(t) + u * Math.sin(t),
+    ];
+    const [x1, y1] = p(s.x1, s.y1);
+    const [x2, y2] = p(s.x2, s.y2);
+    return { x1, y1, x2, y2 };
+  };
+  const plan = {
+    visible: views.planta.visible.map(turn),
+    hidden: views.planta.hidden.map(turn),
+  };
+  const drawn = k.perspectiva ? drawConic(mesh, setup, { hidden: step.ocultas }) : null;
+  return {
+    // Las vistas quedan encima del punto de vista V (a d sobre la línea del horizonte).
+    shift: { x: 0, y: k.observador.h + k.observador.d + 60 },
+    conica: { plan, perspective: drawn ?? { visible: [], hidden: [] } },
+  };
 }
 
 /** Coloca un punto de una vista en la lámina (sistema europeo). */

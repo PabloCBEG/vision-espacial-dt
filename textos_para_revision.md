@@ -2747,6 +2747,35 @@ Fichero: `src/content/pau/2026-ext-3a-caballera-semitubo.json` · 2026 extraordi
 - [ ] Fondos a 45° reducidos a la mitad, bloque, ranura y pendiente — 0,5 p
 - [ ] Aristas ocultas con discontinua fina — 0,5 p
 
+### Ejercicio 3 (opción B) · Perspectiva cónica de un bloque con tejado y prisma de punta
+
+Fichero: `src/content/pau/2026-ext-3b-conica-tejado-y-punta.json` · 2026 extraordinaria
+
+- [ ] **Enunciado:** Definido el sistema cónico por la línea de tierra L.T., la línea de horizonte L.H., el punto principal P y el abatimiento sobre el plano del cuadro del punto de vista (V), se pide: dibujar, a escala 1:1, la perspectiva cónica del sólido dado por sus vistas a escala 1:1, según el método de representación del primer diedro de proyección, sabiendo que se encuentra apoyado en el plano geometral en la posición indicada por el abatimiento de su planta sobre el plano del cuadro.
+- [ ] **Dato:** Medidas leídas del vector de la lámina y pasadas a escala real: bloque de 15 × 30 mm de planta y 50 mm de alto; tejado a dos aguas de 15 mm de largo con la cumbrera a 50 mm y los aleros a 25 mm; prisma de punta de 25 mm de largo con la tapa inclinada de 50 mm a 25 mm.
+- [ ] **Dato:** La L.H. está a 65 mm de la L.T., y el punto de vista abatido (V), a 62 mm sobre la L.H., en la vertical de P.
+- [ ] **Dato:** La planta se abate bajo la L.T. girada unos 31° (la arista del vértice a la punta es paralela a la L.T.), con su vértice a 37 mm a la izquierda de P apoyado en la L.T. La lámina dibuja el perfil visto desde la derecha, a la izquierda del alzado.
+- [ ] **Dato:** La perspectiva se construye con la planta tal como está dibujada bajo la L.T.: el alejamiento de cada punto crece hacia abajo, y la cota sale del alzado.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* La pieza es un bloque alto con un tejado a dos aguas a su derecha y, al final, un prisma triangular de punta con la tapa inclinada. La planta ya está abatida bajo la LT y girada, con el vértice de la punta sobre ella.
+2. [ ] *2. La idea clave:* En cónica, la planta abatida da la posición de cada vértice y el alzado, su altura: cada punto sube del suelo hasta su cota. Lo que está en el cuadro, sobre la LT, se dibuja en verdadera magnitud.
+3. [ ] *3. El movimiento:* Imagina la planta girada y apoyada tras el cuadro con su vértice sobre la LT, y el ojo mirando desde V. Cada vértice, al alejarse del cuadro, se acerca al punto principal P.
+4. [ ] *4. El trazado:* Traza desde cada vértice de la planta la visual hacia V hasta cortar la LT, y desde ese punto la directriz hasta P. Las aristas verticales parten de las trazas de la planta y llevan su cota.
+5. [ ] *4. El trazado:* Une los vértices que se ven con trazo grueso: la cara de la punta que da al observador, la tapa inclinada y el tejado. Las aristas que quedan detrás de ellas son las ocultas.
+6. [ ] *4. El trazado:* Dibuja con discontinua fina las aristas ocultas: la parte trasera del bloque, del tejado y de la punta. Después repasa las partes vistas con el trazo del resultado.
+7. [ ] *5. Comprobación:* Comprobación: las aristas verticales que tocan la LT miden lo mismo que en el alzado, y las que se alejan convergen hacia P.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: dibujar la planta sin girar o con su vértice separado de la LT, y medir las alturas sobre aristas alejadas sin escalarlas. Así la perspectiva sale desplazada y deformada.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Planta abatida bien situada y escala 1:1 — 0,5 p
+- [ ] Alturas llevadas desde el alzado a las aristas verticales — 0,25 p
+- [ ] Perspectiva del volumen: directrices a P y aristas vistas — 0,5 p
+- [ ] Tejado y tapa inclinada de la punta — 0,25 p
+- [ ] Aristas ocultas con discontinua fina — 0,5 p
+
 ### Ejercicio 4 · Alzado, planta y acotación de una pieza con pared inclinada y cuña
 
 Fichero: `src/content/pau/2026-ext-4-vistas-cuna.json` · 2026 extraordinaria
@@ -2995,6 +3024,7 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Cubo con vaciado inclinado en una esquina** (`src/content/piezas/22-cubo-con-vaciado.json`)
 - [ ] **Bloque escalonado con canal inferior y torre inclinada** (`src/content/piezas/23-cuna-escalonada-con-canal.json`)
 - [ ] **Semitubo con bloque ranurado y base en pendiente** (`src/content/piezas/24-semitubo-con-bloque-ranurado.json`)
+- [ ] **Bloque con tejado a dos aguas y prisma de punta** (`src/content/piezas/25-bloque-con-tejado-y-punta.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 

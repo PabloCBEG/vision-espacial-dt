@@ -1,0 +1,33 @@
+{
+  "id": "bloque-con-tejado-y-punta",
+  "nombre": "Bloque con tejado a dos aguas y prisma de punta",
+  "dificultad": 3,
+  "vistasNecesarias": ["alzado", "planta", "perfil"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [0, 0, 0], "hasta": [15, 30, 50] },
+    {
+      "tipo": "perfil",
+      "eje": "x",
+      "puntos": [
+        [0, 0],
+        [30, 0],
+        [30, 25],
+        [15, 50],
+        [0, 25]
+      ],
+      "desde": 15,
+      "hasta": 30
+    },
+    {
+      "tipo": "convexo",
+      "puntos": [
+        [30, 0, 0],
+        [30, 30, 0],
+        [55, 15, 0],
+        [30, 0, 50],
+        [30, 30, 50],
+        [55, 15, 25]
+      ]
+    }
+  ]
+}

@@ -89,6 +89,27 @@ export const NormStepSchema = z.object({
     .optional(),
   cotas: z.array(DimensionSchema).default([]),
   /**
+   * Perspectiva cónica de la pieza (ejercicio 3 de la PAU): el cuadro y su LT, la línea del
+   * horizonte, el punto principal P, el punto de vista V abatido y la planta abatida bajo la LT.
+   * Las vistas diédricas de `vistas` se colocan encima. Distancias en mm, medidas desde P.
+   */
+  conica: z
+    .object({
+      /** Observador: x (a lo ancho, desde P), distancia al cuadro d y altura h del horizonte. */
+      observador: z.object({
+        x: z.number().default(0),
+        d: z.number().positive(),
+        h: z.number().positive(),
+      }),
+      /** Dónde cae el origen de la planta: X₀ a lo ancho y D₀ de profundidad bajo la LT. */
+      origen: z.tuple([z.number(), z.number()]),
+      /** Giro de la planta abatida, en grados (antihorario). */
+      giro: z.number().default(0),
+      /** Dibujar la perspectiva (la solución). Sin ella solo están los datos. */
+      perspectiva: z.boolean().default(false),
+    })
+    .optional(),
+  /**
    * Ejercicios que corrige el motor:
    * - vistaQueFalta: se ven dos vistas; el alumno elige la que falta entre varias piezas.
    * - vistasNecesarias: el alumno marca las vistas imprescindibles.
@@ -129,8 +150,19 @@ export const NORM_DEFINITION: EngineDefinition = {
   layerPrefixes: [],
   /**
    * Capas: pieza (3D), caja de proyección, vistas, ocultas, ejes, corte (plano y rayado),
-   * sección abatida y cotas.
+   * sección abatida, cotas y, en cónica, el cuadro (LT, LH, P, V y planta abatida) y la perspectiva.
    */
-  layerNames: ['pieza', 'caja', 'vistas', 'ocultas', 'ejes', 'corte', 'seccion-abatida', 'cotas'],
+  layerNames: [
+    'pieza',
+    'caja',
+    'vistas',
+    'ocultas',
+    'ejes',
+    'corte',
+    'seccion-abatida',
+    'cotas',
+    'cuadro',
+    'perspectiva',
+  ],
   stepSchema: NormStepSchema,
 };

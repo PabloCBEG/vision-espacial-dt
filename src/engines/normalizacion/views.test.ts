@@ -2,7 +2,7 @@ import type { ManifoldToplevel } from 'manifold-3d';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { buildSolid, cutWithBoxes, loadKernel, toMesh, volume } from './kernel.ts';
 import { PieceSchema, type Piece } from './piece.ts';
-import { drawView, hatch, type Seg2 } from './views.ts';
+import { conicImage, drawConic, drawView, hatch, type Seg2 } from './views.ts';
 
 let wasm: ManifoldToplevel;
 beforeAll(async () => {
@@ -248,5 +248,37 @@ describe('perspectiva caballera de una pieza', () => {
     // En el plano frontal XZ la circunferencia se ve entera, de 10 mm de diámetro.
     const xs = front.visible.flatMap((g) => [g.x1, g.x2]);
     expect(Math.max(...xs) - Math.min(...xs)).toBeGreaterThan(29);
+  });
+});
+
+describe('perspectiva cónica de una pieza', () => {
+  const cube = (): Piece => piece([{ tipo: 'bloque', desde: [0, 0, 0], hasta: [30, 30, 30] }]);
+  const setup = {
+    observador: { x: 0, d: 100, h: 50 },
+    origen: [-15, 20] as [number, number],
+    giro: 0,
+  };
+
+  it('un cubo visto de frente y desde arriba: 7 aristas vistas y 5 ocultas', () => {
+    const d = drawConic(toMesh(buildSolid(wasm, cube())), setup, { hidden: true });
+    expect(d.visible).toHaveLength(7);
+    expect(d.hidden).toHaveLength(5);
+  });
+
+  it('la imagen de un punto coincide con la fórmula de la cónica', () => {
+    const onFrame = { ...setup, origen: [-15, 0] as [number, number] };
+    // En el cuadro (D = 0) no se deforma; a D = d la imagen queda a medio camino del punto principal.
+    const near = conicImage(onFrame, [15, 0, 20]);
+    expect([near[0], near[1]]).toEqual([0, 20]);
+    const far = conicImage(onFrame, [15, 100, 30]);
+    expect(far[0]).toBeCloseTo(0, 9);
+    expect(far[1]).toBeCloseTo(50 + 0.5 * (30 - 50), 9);
+  });
+
+  it('el giro no cambia cuántas aristas se ven en un cubo visto de frente', () => {
+    const d = drawConic(toMesh(buildSolid(wasm, cube())), { ...setup, giro: 30 }, { hidden: true });
+    // Girado 30°: se ven la cara frontal, una lateral y la superior (9 aristas); 3 ocultas.
+    expect(d.visible.length + d.hidden.length).toBe(12);
+    expect(d.visible).toHaveLength(9);
   });
 });

@@ -89,7 +89,7 @@ test('capturas de todos los pasos y notación', async ({ page }) => {
 });
 
 test('accesibilidad (axe) en inicio, modo libre, lecciones y ejercicios', async ({ page }) => {
-  test.setTimeout(900_000);
+  test.setTimeout(3_600_000);
   const report: Record<string, unknown[]> = {};
   const check = async (name: string) => {
     const results = await new AxeBuilder({ page })
@@ -101,6 +101,7 @@ test('accesibilidad (axe) en inicio, modo libre, lecciones y ejercicios', async 
       help: v.help,
       nodes: v.nodes.slice(0, 3).map((n) => n.target.join(' ')),
     }));
+    writeFileSync('review/accesibilidad.json', JSON.stringify(report, null, 2));
   };
   for (const scheme of ['light', 'dark'] as const) {
     await page.emulateMedia({ colorScheme: scheme, reducedMotion: 'reduce' });

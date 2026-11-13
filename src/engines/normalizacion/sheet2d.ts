@@ -7,9 +7,21 @@ import { svgElement } from '../../render2d/svg.ts';
 import type { ViewBox } from '../../render2d/viewport.ts';
 import { formatDecimal } from '../../ui/format.ts';
 import { VIEW_LABELS, type NormController } from './controller.ts';
-import type { Dimension } from './definition.ts';
-import { placeInSheet, type PieceDrawing } from './drawing.ts';
+import type { Dimension, NormStep } from './definition.ts';
+import { placeInSheet as placeRaw, type PieceDrawing } from './drawing.ts';
 import { project, type Seg2, type ViewName } from './views.ts';
+
+/** Como placeInSheet, con el desplazamiento de las vistas (con cónica van sobre el cuadro). */
+function placeInSheet(
+  view: ViewName,
+  bounds: PieceDrawing['bounds'],
+  u: number,
+  v: number,
+  shift: PieceDrawing['shift'] = { x: 0, y: 0 },
+): { x: number; y: number } {
+  const p = placeRaw(view, bounds, u, v);
+  return { x: p.x + shift.x, y: p.y + shift.y };
+}
 
 export class NormSheet implements SheetModule {
   readonly id = 'normalizacion';
@@ -26,9 +38,17 @@ export class NormSheet implements SheetModule {
   isAlwaysVisible(tag: string): boolean {
     return (
       this.controller.data !== null &&
-      ['vistas', 'ocultas', 'ejes', 'corte', 'seccion-abatida', 'cotas', 'pieza-aviso'].includes(
-        tag,
-      )
+      [
+        'vistas',
+        'ocultas',
+        'ejes',
+        'corte',
+        'seccion-abatida',
+        'cotas',
+        'pieza-aviso',
+        'cuadro',
+        'perspectiva',
+      ].includes(tag)
     );
   }
 
@@ -40,9 +60,16 @@ export class NormSheet implements SheetModule {
     for (const view of data.vistas) {
       for (const s of [...d.views[view].visible, ...d.views[view].axes]) {
         pts.push(
-          placeInSheet(view, d.bounds, s.x1, s.y1),
-          placeInSheet(view, d.bounds, s.x2, s.y2),
+          placeInSheet(view, d.bounds, s.x1, s.y1, d.shift),
+          placeInSheet(view, d.bounds, s.x2, s.y2, d.shift),
         );
+      }
+    }
+    if (data.conica && d.conica) {
+      const o = data.conica.observador;
+      pts.push({ x: o.x - 80, y: o.h + o.d + 4 }, { x: o.x + 70, y: -6 });
+      for (const s of [...d.conica.plan.visible, ...d.conica.perspective.visible]) {
+        pts.push({ x: s.x1, y: s.y1 }, { x: s.x2, y: s.y2 });
       }
     }
     if (pts.length === 0) return null;
@@ -52,7 +79,7 @@ export class NormSheet implements SheetModule {
       if (dim.tipo !== 'lineal') continue;
       const [p, q] = dim.de.map((x) => {
         const [pu, pv] = project(dim.vista, x);
-        const s = placeInSheet(dim.vista, d.bounds, pu, pv);
+        const s = placeInSheet(dim.vista, d.bounds, pu, pv, d.shift);
         return { x: s.x, y: -s.y };
       }) as [{ x: number; y: number }, { x: number; y: number }];
       const drawing = linearDimension({
@@ -86,7 +113,7 @@ export class NormSheet implements SheetModule {
     }
     const d = c.drawing;
     const u = ctx.mmPerPx;
-    if (data.vistas.length === 0) {
+    if (data.vistas.length === 0 && !data.conica) {
       const note = svgElement('text', { x: 0, y: 0, 'text-anchor': 'middle' }, 'sheet-empty-note');
       note.textContent = 'Aquí aparecerán las vistas de la pieza.';
       ctx.layer('pieza-aviso').append(note);
@@ -94,6 +121,7 @@ export class NormSheet implements SheetModule {
     // Con cotas, los nombres de las vistas estorbarían: no se rotulan.
     const named = data.cotas.length === 0 && data.ejercicio?.tipo !== 'cotas';
     for (const view of data.vistas) this.drawView(ctx, d, view, named);
+    if (data.conica && d.conica) this.drawConic(ctx, d, data.conica);
 
     // Indicación del plano de corte en una vista vecina (ISO 128-3): trazo y punto fino con
     // los extremos gruesos y la letra A; la vista cortada se titula «A-A».
@@ -103,8 +131,8 @@ export class NormSheet implements SheetModule {
       const host: ViewName = cut.vista === 'planta' ? 'alzado' : 'planta';
       if (data.vistas.includes(host)) {
         const [p, q] = cutTrace(cut.vista, cut.en, d, host);
-        const P = placeInSheet(host, d.bounds, p[0], p[1]);
-        const Q = placeInSheet(host, d.bounds, q[0], q[1]);
+        const P = placeInSheet(host, d.bounds, p[0], p[1], d.shift);
+        const Q = placeInSheet(host, d.bounds, q[0], q[1], d.shift);
         line(g, P, Q, 'norm-axis');
         const ux = (Q.x - P.x) / (Math.hypot(Q.x - P.x, Q.y - P.y) || 1);
         const uy = (Q.y - P.y) / (Math.hypot(Q.x - P.x, Q.y - P.y) || 1);
@@ -142,11 +170,52 @@ export class NormSheet implements SheetModule {
     }
   }
 
+  /** Cónica: LT, línea del horizonte, P, V abatido, planta abatida y perspectiva. */
+  private drawConic(
+    ctx: SheetDrawContext,
+    d: PieceDrawing,
+    k: NonNullable<NormStep['conica']>,
+  ): void {
+    const u = ctx.mmPerPx;
+    const o = k.observador;
+    const cq = ctx.layer('cuadro');
+    const left = o.x - 80;
+    const right = o.x + 70;
+    line(cq, { x: left, y: 0 }, { x: right, y: 0 }, 'norm-visible');
+    line(cq, { x: left, y: o.h }, { x: right, y: o.h }, 'norm-axis');
+    cq.append(
+      ctx.label('LT', left + 2 * u, -0 + 5 * u, 'start'),
+      ctx.label('LH', left + 2 * u, -o.h - 3 * u, 'start'),
+    );
+    const cross = (p: { x: number; y: number }, name: string): void => {
+      line(cq, { x: p.x - 3, y: p.y }, { x: p.x + 3, y: p.y }, 'norm-axis');
+      line(cq, { x: p.x, y: p.y - 3 }, { x: p.x, y: p.y + 3 }, 'norm-axis');
+      cq.append(ctx.label(name, p.x + 4 * u, -p.y - 3 * u, 'start'));
+    };
+    cross({ x: o.x, y: o.h }, 'P');
+    cross({ x: o.x, y: o.h + o.d }, '(V)');
+    // Planta abatida: bajo la LT (vistas continuas y ocultas discontinuas).
+    for (const s of d.conica?.plan.hidden ?? []) {
+      line(ctx.layer('cuadro'), { x: s.x1, y: s.y1 }, { x: s.x2, y: s.y2 }, 'norm-hidden');
+    }
+    for (const s of d.conica?.plan.visible ?? []) {
+      line(ctx.layer('cuadro'), { x: s.x1, y: s.y1 }, { x: s.x2, y: s.y2 }, 'norm-visible');
+    }
+    // Perspectiva: resultado, con las ocultas discontinuas.
+    const g = ctx.layer('perspectiva');
+    for (const s of d.conica?.perspective.hidden ?? []) {
+      line(g, { x: s.x1, y: s.y1 }, { x: s.x2, y: s.y2 }, 'norm-hidden');
+    }
+    for (const s of d.conica?.perspective.visible ?? []) {
+      line(g, { x: s.x1, y: s.y1 }, { x: s.x2, y: s.y2 }, 'norm-visible norm-result');
+    }
+  }
+
   private drawView(ctx: SheetDrawContext, d: PieceDrawing, view: ViewName, named: boolean): void {
     const r = d.views[view];
     const place = (s: Seg2): [{ x: number; y: number }, { x: number; y: number }] => [
-      placeInSheet(view, d.bounds, s.x1, s.y1),
-      placeInSheet(view, d.bounds, s.x2, s.y2),
+      placeInSheet(view, d.bounds, s.x1, s.y1, d.shift),
+      placeInSheet(view, d.bounds, s.x2, s.y2, d.shift),
     ];
     const hidden = ctx.layer('ocultas');
     for (const s of r.hidden) line(hidden, ...place(s), 'norm-hidden');
@@ -187,7 +256,7 @@ export class NormSheet implements SheetModule {
     if (dim.tipo === 'lineal') {
       const [p, q] = dim.de.map((x) => {
         const [pu, pv] = project(dim.vista, x);
-        const s = placeInSheet(dim.vista, d.bounds, pu, pv);
+        const s = placeInSheet(dim.vista, d.bounds, pu, pv, d.shift);
         return { x: s.x, y: -s.y };
       }) as [{ x: number; y: number }, { x: number; y: number }];
       const measured = dim.direccion === 'h' ? Math.abs(q.x - p.x) : Math.abs(q.y - p.y);
@@ -204,7 +273,7 @@ export class NormSheet implements SheetModule {
     }
     // Diámetro o radio: línea por el centro con flecha(s) en la circunferencia y cifra con ⌀ o R.
     const [cu, cv] = project(dim.vista, dim.centro);
-    const center = placeInSheet(dim.vista, d.bounds, cu, cv);
+    const center = placeInSheet(dim.vista, d.bounds, cu, cv, d.shift);
     const t = (dim.angulo * Math.PI) / 180;
     const dx = Math.cos(t);
     const dy = Math.sin(t);
@@ -296,8 +365,8 @@ function viewBounds(
   view: ViewName,
 ): { minX: number; maxX: number; minY: number; maxY: number } {
   const pts = d.views[view].visible.flatMap((s) => [
-    placeInSheet(view, d.bounds, s.x1, s.y1),
-    placeInSheet(view, d.bounds, s.x2, s.y2),
+    placeInSheet(view, d.bounds, s.x1, s.y1, d.shift),
+    placeInSheet(view, d.bounds, s.x2, s.y2, d.shift),
   ]);
   const xs = pts.map((p) => p.x);
   const ys = pts.map((p) => p.y);

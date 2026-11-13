@@ -115,6 +115,7 @@ export class NormController {
       step.ocultas,
       step.ejes,
       step.vistas,
+      step.conica,
     ]);
     let d = this.cache.get(key);
     if (!d) {
