@@ -111,7 +111,7 @@ describe('ejercicios PAU reales (Andalucía 2025 y 2026)', () => {
   it('hay tres del ejercicio 1 y tres del ejercicio 2', () => {
     expect(real.filter((e) => e.ejercicio === 1)).toHaveLength(3);
     expect(real.filter((e) => e.ejercicio === 2)).toHaveLength(3);
-    expect(real.filter((e) => e.ejercicio === 4)).toHaveLength(2);
+    expect(real.filter((e) => e.ejercicio === 4)).toHaveLength(3);
   });
 
   it('normalización 2026 ord. 4: la pieza y las cotas del corte cuadran con lo medido', () => {
@@ -159,6 +159,26 @@ describe('ejercicios PAU reales (Andalucía 2025 y 2026)', () => {
       .filter((c) => c.tipo === 'lineal' && c.direccion === 'h')
       .map((c) => (c.tipo === 'lineal' ? c.de[1][0] - c.de[0][0] : 0));
     expect(widths).toContain(180);
+  });
+
+  it('normalización 2026 ext. 4: la pieza tiene las medidas leídas de la perspectiva (múltiplos de 15 mm)', () => {
+    const piece = findPiece('pared-escalon-y-cuna');
+    if (!piece) throw new Error('Falta la pieza');
+    const wall = piece.operaciones.find((o) => o.tipo === 'perfil' && o.eje === 'a');
+    const block = piece.operaciones.find((o) => o.tipo === 'perfil' && o.eje === 'c');
+    const wedge = piece.operaciones.find((o) => o.tipo === 'convexo');
+    if (wall?.tipo !== 'perfil' || block?.tipo !== 'perfil' || wedge?.tipo !== 'convexo') {
+      throw new Error('Faltan operaciones');
+    }
+    // Pared de 15 mm de grosor y bloque de 30 mm de alto.
+    expect(wall.hasta - wall.desde).toBe(15);
+    expect(block.hasta - block.desde).toBe(30);
+    // Todas las medidas son múltiplos de 15 mm (la rejilla de la isométrica).
+    const all = [...wall.puntos.flat(), ...block.puntos.flat(), ...wedge.puntos.flat()];
+    for (const n of all) expect((n - 10) % 15 === 0 || n % 15 === 0, String(n)).toBe(true);
+    // La cuña es un tetraedro con una arista vertical de 30 mm de altura.
+    expect(wedge.puntos).toHaveLength(4);
+    expect(Math.max(...wedge.puntos.map((p) => p[2]))).toBe(30);
   });
 
   it('la solución sigue las seis partes y la rúbrica está marcada como derivada', () => {

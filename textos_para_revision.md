@@ -2691,6 +2691,33 @@ Fichero: `src/content/pau/2026-ext-2-hexaedro-seccion.json` · 2026 extraordinar
 - [ ] Proyecciones de la sección — 0,2 p
 - [ ] Partes vistas y ocultas tras el corte — 0,2 p
 
+### Ejercicio 4 · Alzado, planta y acotación de una pieza con pared inclinada y cuña
+
+Fichero: `src/content/pau/2026-ext-4-vistas-cuna.json` · 2026 extraordinaria
+
+- [ ] **Enunciado:** Dada la perspectiva isométrica de una pieza a escala 1:1, se pide: 1. Representar alzado y planta a escala 1:1, según el método de representación del primer diedro de proyección. 2. Acotar las vistas según normas.
+- [ ] **Dato:** Perspectiva isométrica con coeficiente de reducción 0,816: las medidas del dibujo se dividen entre 0,816 para obtener las reales.
+- [ ] **Dato:** Medidas obtenidas de la lámina del examen (múltiplos de 15 mm): pieza de 60 mm de largo; pared trasera de 15 mm de grosor y 45 mm de alto en el extremo izquierdo, que sube en pendiente hasta 60 mm en 30 mm de largo; bloque delantero de 30 mm de alto y 30 mm de fondo con un entrante triangular de 15 mm de profundidad; y una cuña de pirámide triangular en la esquina delantera derecha.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* La pieza tiene una pared trasera con la parte de arriba en pendiente, un bloque delantero más bajo con un entrante triangular y una cuña en la esquina de la derecha. El alzado se mira desde el lado de la cuña.
+2. [ ] *2. La idea clave:* Cada vista enseña solo lo que se ve desde su lado y las medidas comunes quedan alineadas. En la perspectiva isométrica las medidas se dividen entre el coeficiente para obtener las reales.
+3. [ ] *3. El movimiento:* Imagina la pieza dentro de la caja de proyección: el alzado se proyecta en la cara de atrás y la planta en la de abajo. Al desplegar la caja, la planta queda debajo del alzado.
+4. [ ] *4. El trazado:* Dibuja el alzado: el contorno con la pendiente de la pared, el bloque bajo y las aristas de la cuña. Después baja las medidas con líneas de referencia y dibuja la planta, con el entrante triangular y la cuña.
+5. [ ] *4. El trazado:* Revisa las aristas ocultas: en el alzado y en la planta ninguna queda tapada, así que todas van con línea continua gruesa. En la isométrica sí se dibujan las de detrás, con discontinua.
+6. [ ] *4. El trazado:* Acota cada medida una sola vez, en la vista donde mejor se ve: alturas y longitud en el alzado, fondos y entrante en la planta.
+7. [ ] *5. Comprobación:* Comprobación: las anchuras del alzado y de la planta coinciden, el fondo de la planta suma lo que dice la perspectiva, y no hay ninguna cota repetida.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: leer en la isométrica las medidas del dibujo como si fueran las reales. Hay que dividirlas entre el coeficiente de reducción, 0,816.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Aplicación del coeficiente a las medidas de la perspectiva — 0,25 p
+- [ ] Alzado correcto, con la pendiente de la pared y el bloque bajo — 0,6 p
+- [ ] Planta correcta, con el entrante y la cuña, y vistas alineadas — 0,6 p
+- [ ] Aristas vistas y ocultas bien distinguidas — 0,15 p
+- [ ] Cotas en las vistas, sin repetir y fuera de la pieza — 0,4 p
+
 ### Ejercicio 1 (opción A) · Circunferencias tangentes a dos dadas, una de ellas en un punto
 
 Fichero: `src/content/pau/2026-ord-1a-tangencias.json` · 2026 ordinaria
@@ -2880,6 +2907,7 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Canal en V con ranura y taladro** (`src/content/piezas/18-canal-en-v.json`)
 - [ ] **Eje escalonado con placa y taladro pasante** (`src/content/piezas/19-eje-escalonado-con-placa.json`)
 - [ ] **Soporte con orejeta redonda y taladro vertical** (`src/content/piezas/20-soporte-con-orejeta.json`)
+- [ ] **Pared con pendiente, bloque con entrante y cuña** (`src/content/piezas/21-pared-escalon-y-cuna.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 

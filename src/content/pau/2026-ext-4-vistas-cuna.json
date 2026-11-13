@@ -1,0 +1,399 @@
+{
+  "id": "pau-2026-ext-4-vistas-cuna",
+  "convocatoria": "2026 extraordinaria",
+  "ejercicio": 4,
+  "opcion": null,
+  "temas": ["II-12", "I-15"],
+  "titulo": "Alzado, planta y acotación de una pieza con pared inclinada y cuña",
+  "enunciado": "Dada la perspectiva isométrica de una pieza a escala 1:1, se pide: 1. Representar alzado y planta a escala 1:1, según el método de representación del primer diedro de proyección. 2. Acotar las vistas según normas.",
+  "datos": [
+    "Perspectiva isométrica con coeficiente de reducción 0,816: las medidas del dibujo se dividen entre 0,816 para obtener las reales.",
+    "Medidas obtenidas de la lámina del examen (múltiplos de 15 mm): pieza de 60 mm de largo; pared trasera de 15 mm de grosor y 45 mm de alto en el extremo izquierdo, que sube en pendiente hasta 60 mm en 30 mm de largo; bloque delantero de 30 mm de alto y 30 mm de fondo con un entrante triangular de 15 mm de profundidad; y una cuña de pirámide triangular en la esquina delantera derecha."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "pared-escalon-y-cuna"
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "engines": {
+      "normalizacion": {
+        "vistas": ["isometrica"],
+        "ejes": false,
+        "ocultas": false
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "La pieza tiene una pared trasera con la parte de arriba en pendiente, un bloque delantero más bajo con un entrante triangular y una cuña en la esquina de la derecha. El alzado se mira desde el lado de la cuña.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": []
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "Cada vista enseña solo lo que se ve desde su lado y las medidas comunes quedan alineadas. En la perspectiva isométrica las medidas se dividen entre el coeficiente para obtener las reales.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "caja": {
+            "proyectar": []
+          }
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina la pieza dentro de la caja de proyección: el alzado se proyecta en la cara de atrás y la planta en la de abajo. Al desplegar la caja, la planta queda debajo del alzado.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "caja": {
+            "proyectar": ["alzado", "planta", "perfil"],
+            "desplegar": 0.6
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Dibuja el alzado: el contorno con la pendiente de la pared, el bloque bajo y las aristas de la cuña. Después baja las medidas con líneas de referencia y dibuja la planta, con el entrante triangular y la cuña.",
+      "show3d": ["pieza", "caja"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta"],
+          "ocultas": false,
+          "ejes": false,
+          "caja": {
+            "proyectar": ["alzado", "planta", "perfil"],
+            "desplegar": 1
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Revisa las aristas ocultas: en el alzado y en la planta ninguna queda tapada, así que todas van con línea continua gruesa. En la isométrica sí se dibujan las de detrás, con discontinua.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["ocultas"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta"],
+          "ocultas": true,
+          "ejes": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Acota cada medida una sola vez, en la vista donde mejor se ve: alturas y longitud en el alzado, fondos y entrante en la planta.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["cotas"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta"],
+          "ocultas": true,
+          "ejes": false,
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 60],
+                [60, 10, 60]
+              ],
+              "direccion": "h",
+              "desplazamiento": 24
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 60],
+                [30, 10, 60]
+              ],
+              "direccion": "h",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 0],
+                [0, 10, 45]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 0],
+                [0, 10, 60]
+              ],
+              "direccion": "v",
+              "desplazamiento": -22
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [60, 55, 0],
+                [60, 55, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [0, 55, 30],
+                [60, 55, 30]
+              ],
+              "direccion": "h",
+              "desplazamiento": -24
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [0, 55, 30],
+                [30, 40, 30]
+              ],
+              "direccion": "h",
+              "desplazamiento": -12
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [0, 10, 30],
+                [0, 55, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [60, 10, 60],
+                [60, 25, 60]
+              ],
+              "direccion": "v",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [60, 40, 30],
+                [60, 55, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": 22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: las anchuras del alzado y de la planta coinciden, el fondo de la planta suma lo que dice la perspectiva, y no hay ninguna cota repetida.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["cotas"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta"],
+          "ocultas": true,
+          "ejes": false,
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 60],
+                [60, 10, 60]
+              ],
+              "direccion": "h",
+              "desplazamiento": 24
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 60],
+                [30, 10, 60]
+              ],
+              "direccion": "h",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 0],
+                [0, 10, 45]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 10, 0],
+                [0, 10, 60]
+              ],
+              "direccion": "v",
+              "desplazamiento": -22
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [60, 55, 0],
+                [60, 55, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [0, 55, 30],
+                [60, 55, 30]
+              ],
+              "direccion": "h",
+              "desplazamiento": -24
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [0, 55, 30],
+                [30, 40, 30]
+              ],
+              "direccion": "h",
+              "desplazamiento": -12
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [0, 10, 30],
+                [0, 55, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [60, 10, 60],
+                [60, 25, 60]
+              ],
+              "direccion": "v",
+              "desplazamiento": 10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [60, 40, 30],
+                [60, 55, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": 22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: leer en la isométrica las medidas del dibujo como si fueran las reales. Hay que dividirlas entre el coeficiente de reducción, 0,816.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado", "planta"],
+          "ocultas": true,
+          "ejes": false
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Aplicación del coeficiente a las medidas de la perspectiva",
+        "puntos": 0.25
+      },
+      {
+        "texto": "Alzado correcto, con la pendiente de la pared y el bloque bajo",
+        "puntos": 0.6
+      },
+      {
+        "texto": "Planta correcta, con el entrante y la cuña, y vistas alineadas",
+        "puntos": 0.6
+      },
+      {
+        "texto": "Aristas vistas y ocultas bien distinguidas",
+        "puntos": 0.15
+      },
+      {
+        "texto": "Cotas en las vistas, sin repetir y fuera de la pieza",
+        "puntos": 0.4
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "pared-escalon-y-cuna",
+  "nombre": "Pared con pendiente, bloque con entrante y cuña",
+  "dificultad": 3,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    {
+      "tipo": "perfil",
+      "eje": "a",
+      "puntos": [
+        [0, 0],
+        [60, 0],
+        [60, 60],
+        [30, 60],
+        [0, 45]
+      ],
+      "desde": 10,
+      "hasta": 25
+    },
+    {
+      "tipo": "perfil",
+      "eje": "c",
+      "puntos": [
+        [0, 25],
+        [60, 25],
+        [60, 55],
+        [30, 40],
+        [0, 55]
+      ],
+      "desde": 0,
+      "hasta": 30
+    },
+    {
+      "tipo": "convexo",
+      "puntos": [
+        [30, 40, 0],
+        [30, 55, 0],
+        [60, 55, 0],
+        [60, 55, 30]
+      ]
+    }
+  ]
+}
