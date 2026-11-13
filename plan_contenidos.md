@@ -296,22 +296,55 @@ Cópialos de uno en uno; cada uno es una tanda de trabajo con su criterio de ter
 > adaptativo que priorice los tipos y temas con más fallos, guardado solo en el navegador. Añade
 > ejercicios encadenados con apartados corregidos por separado.
 
-### Prompt 9 · Herramienta de marcado de aristas en un cubo 3D
+### Prompt 9 · Herramienta de marcado de aristas en una rejilla 3D
 
-> Incorpora a la web una herramienta de marcado de aristas en una rejilla 3D de puntos, a partir del
-> prototipo `examenes/andalucia/academia-granada/_marcar-aristas-2026-ord-3A.html` (HTML sin
-> dependencias). Debe:
-> - mostrar una rejilla de puntos (de 3×3×3 a 5×5×5, configurable) que se gira arrastrando y se
->   puede ver en perspectiva y en isométrica, con ayuda para los puntos que se solapan;
-> - permitir marcar o desmarcar la arista entre **cualquier** pareja de puntos, sin limitarla a las
->   «posibles», y rotular los puntos con (x, a, c);
-> - mostrar a la vez las tres vistas (alzado, planta y perfil izquierdo) de lo marcado sobre las
->   líneas de unas vistas dadas, y avisar de las aristas que no caen en ellas;
-> - exportar e importar la selección como JSON y, con las caras, construir la pieza con la
->   operación `convexo` del motor de piezas;
-> - ser usable con teclado y en móvil, en castellano, y estar enlazada desde las lecciones de
->   normalización y del banco PAU (ejercicio 3) como ejercicio «reconstruye la pieza».
-> Úsala después para el tipo de ejercicio «reconstruir la pieza desde sus vistas» (B2/A3 de la fase 2).
+**Cuándo.** Es un tipo de ejercicio de la fase 2. Se pasa después del Prompt 5 (`selectEdges`),
+para que nazca con su validador y sus marcadores, y antes de los tipos nuevos del Prompt 6.
+
+> Lee CLAUDE.md, plan_contenidos.md (apartado 2, formatos A3 y B2), src/engines/README.md y el
+> motor de src/engines/normalizacion/. Quiero incorporar a la web una herramienta de marcado de
+> aristas en una rejilla 3D de puntos, a partir del prototipo
+> `examenes/andalucia/academia-granada/_marcar-aristas-2026-ord-3A.html` (HTML sin dependencias).
+> Ábrelo y pruébalo antes de nada.
+>
+> Primero dame un plan breve y espera mi visto bueno: qué reutilizas del prototipo y qué
+> reescribes, dónde vive (motor nuevo o parte de normalización), ruta de la herramienta, cambios
+> en el esquema zod y las decisiones que necesitas de mí.
+>
+> **La herramienta debe**
+> - Mostrar una rejilla de puntos de 3×3×3 a 5×5×5, configurable, que se gira arrastrando y se
+>   ve en perspectiva y en isométrica, con ayuda para los puntos que se solapan.
+> - Permitir marcar o desmarcar la arista entre cualquier pareja de puntos, sin limitarla a las
+>   «posibles», y rotular los puntos con (x, a, c).
+> - Mostrar a la vez las tres vistas (alzado, planta y perfil izquierdo, en la disposición del
+>   sistema europeo) de lo marcado sobre las líneas de unas vistas dadas, y avisar de las aristas
+>   que no caen en ellas. El aviso no depende solo del color.
+> - Exportar e importar la selección como JSON, validado con zod, y, con las caras, construir la
+>   pieza con la operación `convexo` del motor de piezas.
+> - Ser usable en móvil (tocar dos puntos, sin gestos de precisión) y con teclado. Con hasta 125
+>   puntos el tabulador no basta: propón un patrón, por ejemplo elegir cada punto por sus
+>   coordenadas, con etiquetas aria y anuncio de cada arista marcada.
+> - Estar en castellano y dibujar solo cuando algo cambia, sin bucles de animación.
+> - Estar enlazada desde las lecciones de normalización y desde el banco PAU (ejercicio 3) como
+>   ejercicio «reconstruye la pieza».
+>
+> **Tipo de ejercicio.** Úsala después para «reconstruir la pieza desde sus vistas» (B2 y A3 de
+> la fase 2), con `difficulty`, 3 `hints`, `solution` en seis partes y marcadores, como el resto.
+> Antes de programarlo, pregúntame:
+> - si es correcto cualquier conjunto de aristas cuyas tres vistas coincidan con las dadas, o
+>   solo la pieza de referencia (tres vistas no siempre determinan una sola pieza);
+> - si las aristas ocultas se marcan aparte.
+>
+> Una arista marcada entera y la misma marcada en tramos alineados cuentan igual. El tipo nuevo
+> entra en el test genérico de coherencia de las soluciones.
+>
+> **Verificación.** Tests de Vitest de la geometría (proyección de aristas a las tres vistas,
+> aristas fuera de las vistas, equivalencia de tramos, ida y vuelta del JSON y construcción con
+> `convexo`). E2e de Playwright con ratón, táctil y solo teclado, y axe sin incidencias.
+> `npm run test`, `lint`, `build` y `e2e`; capturas en 1920x1080, 1366x768 y 390x844 revisadas
+> por ti. Como primer ejemplo, la pieza del ejercicio 3A de la ordinaria de 2026 de Andalucía,
+> citando año y convocatoria. Commits pequeños en castellano; regenera
+> `textos_para_revision.md` y anota el tipo nuevo en `plan_contenidos.md` y en `README.md`.
 
 ---
 
