@@ -22,10 +22,10 @@ beforeAll(async () => {
 }, 30_000);
 
 describe('biblioteca de piezas', () => {
-  it('dieciocho piezas válidas, de dificultad creciente, sin ids repetidos', () => {
+  it('diecinueve piezas válidas, de dificultad creciente, sin ids repetidos', () => {
     expect(errors).toEqual([]);
-    expect(pieces).toHaveLength(18);
-    expect(new Set(pieces.map((p) => p.id)).size).toBe(18);
+    expect(pieces).toHaveLength(19);
+    expect(new Set(pieces.map((p) => p.id)).size).toBe(19);
     expect(pieces.map((p) => p.dificultad)).toEqual([...pieces.map((p) => p.dificultad)].sort());
   });
 

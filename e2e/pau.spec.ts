@@ -13,13 +13,13 @@ test.describe('banco PAU (M8)', () => {
     await page.getByRole('button', { name: 'Dibujo Técnico II' }).click();
     await page.getByRole('link', { name: /Banco PAU/ }).click();
     await expect(page.getByRole('heading', { name: 'Banco PAU' })).toBeVisible();
-    await expect(page.locator('#pau-list > li')).toHaveCount(10);
+    await expect(page.locator('#pau-list > li')).toHaveCount(11);
     await page.locator('#pau-filter-ejercicio').selectOption('2');
     await expect(page.locator('#pau-list > li')).toHaveCount(4);
     await expect(page.locator('#pau-list')).toContainText('pirámide hexagonal');
     await page.locator('#pau-filter-ejercicio').selectOption('');
     await page.locator('#pau-filter-tema').selectOption('II-12');
-    await expect(page.locator('#pau-list > li')).toHaveCount(1);
+    await expect(page.locator('#pau-list > li')).toHaveCount(2);
   });
 
   test('un ejercicio real: enunciado del examen, solución en seis partes y error dibujado', async ({

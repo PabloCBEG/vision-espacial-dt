@@ -46,6 +46,26 @@ export class NormSheet implements SheetModule {
       }
     }
     if (pts.length === 0) return null;
+    // Las cotas lineales también tienen que caber en el encuadre (sus líneas de cota quedan
+    // fuera de la pieza). Se calculan con un tamaño de pantalla de referencia.
+    for (const dim of data.cotas) {
+      if (dim.tipo !== 'lineal') continue;
+      const [p, q] = dim.de.map((x) => {
+        const [pu, pv] = project(dim.vista, x);
+        const s = placeInSheet(dim.vista, d.bounds, pu, pv);
+        return { x: s.x, y: -s.y };
+      }) as [{ x: number; y: number }, { x: number; y: number }];
+      const drawing = linearDimension({
+        from: p,
+        to: q,
+        direction: dim.direccion,
+        offset: dim.desplazamiento,
+        mmPerPx: 0.3,
+        value: dim.valor ?? '',
+      });
+      const { x1, y1, x2, y2 } = drawing.dimensionLine;
+      pts.push({ x: x1, y: -y1 }, { x: x2, y: -y2 });
+    }
     const margin = 18;
     const xs = pts.map((p) => p.x);
     const ys = pts.map((p) => -p.y);

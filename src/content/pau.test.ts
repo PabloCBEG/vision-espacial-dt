@@ -11,6 +11,8 @@ import { buildScene } from '../engines/solidos/construction.ts';
 import { SolidsStepSchema } from '../engines/solidos/definition.ts';
 import { LessonSchema, WideInitialSceneSchema } from './schema.ts';
 import { solutionPartProblems, type SolutionPart } from './solutionParts.ts';
+import { NormStepSchema } from '../engines/normalizacion/definition.ts';
+import { findPiece } from './pieces.ts';
 
 const DIR = join(import.meta.dirname, 'pau');
 const { exercises, errors } = parsePau(
@@ -109,6 +111,28 @@ describe('ejercicios PAU reales (Andalucía 2025 y 2026)', () => {
   it('hay tres del ejercicio 1 y tres del ejercicio 2', () => {
     expect(real.filter((e) => e.ejercicio === 1)).toHaveLength(3);
     expect(real.filter((e) => e.ejercicio === 2)).toHaveLength(3);
+    expect(real.filter((e) => e.ejercicio === 4)).toHaveLength(1);
+  });
+
+  it('normalización 2026 ord. 4: la pieza y las cotas del corte cuadran con lo medido', () => {
+    const e = real.find((x) => x.id === 'pau-2026-ord-4-eje-corte');
+    const piece = findPiece('eje-escalonado-con-placa');
+    if (!e || !piece) throw new Error('Falta el ejercicio o su pieza');
+    const cylinders = piece.operaciones.flatMap((o) => (o.tipo === 'cilindro' ? [o] : []));
+    expect(cylinders.map((c) => 2 * c.radio)).toEqual([60, 100, 60]);
+    expect(cylinders.map((c) => c.largo)).toEqual([60, 60, 40]);
+    const plate = piece.operaciones.find((o) => o.tipo === 'bloque');
+    if (plate?.tipo !== 'bloque') throw new Error('Falta la placa');
+    expect(plate.hasta[0] - plate.desde[0]).toBe(40);
+    // Longitud total: los tres cilindros y la placa, uno detrás de otro.
+    expect(cylinders.reduce((s, c) => s + c.largo, 0) + 40).toBe(200);
+    const cuts = e.solucion.flatMap(
+      (s) => NormStepSchema.parse(s.engines?.normalizacion ?? {}).cotas,
+    );
+    const totals = cuts.filter(
+      (c) => c.tipo === 'lineal' && c.direccion === 'h' && c.de[1][0] - c.de[0][0] === 200,
+    );
+    expect(totals.length).toBeGreaterThan(0);
   });
 
   it('la solución sigue las seis partes y la rúbrica está marcada como derivada', () => {

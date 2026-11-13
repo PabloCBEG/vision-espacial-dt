@@ -1,0 +1,13 @@
+{
+  "id": "eje-escalonado-con-placa",
+  "nombre": "Eje escalonado con placa y taladro pasante",
+  "dificultad": 3,
+  "vistasNecesarias": ["planta", "perfil"],
+  "operaciones": [
+    { "tipo": "cilindro", "centro": [0, 60, 70], "eje": "x", "radio": 30, "largo": 60 },
+    { "tipo": "cilindro", "centro": [60, 60, 70], "eje": "x", "radio": 50, "largo": 60 },
+    { "tipo": "cilindro", "centro": [120, 60, 70], "eje": "x", "radio": 30, "largo": 40 },
+    { "tipo": "bloque", "desde": [160, 20, 0], "hasta": [200, 100, 140] },
+    { "tipo": "taladro", "centro": [0, 60, 70], "eje": "x", "sentido": 1, "diametro": 40 }
+  ]
+}

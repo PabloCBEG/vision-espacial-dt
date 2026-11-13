@@ -1,0 +1,404 @@
+{
+  "id": "pau-2026-ord-4-eje-corte",
+  "convocatoria": "2026 ordinaria",
+  "ejercicio": 4,
+  "opcion": null,
+  "temas": ["II-12", "I-15"],
+  "titulo": "Corte longitudinal y acotación de un eje escalonado con placa",
+  "enunciado": "Dados planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide: 1. Dibujar el corte A-A a escala 1:2. 2. Acotar según normas.",
+  "datos": [
+    "Medidos en la lámina del examen (a escala 1:2, aquí a tamaño real): tramos de 60, 60, 40 y 40 mm de largo, con diámetros de 60, 100, 60 y una placa de 80 × 140 mm; taladro pasante de ⌀40."
+  ],
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "eje-escalonado-con-placa"
+      }
+    }
+  },
+  "examen": {
+    "sheet": [],
+    "engines": {
+      "normalizacion": {
+        "vistas": ["planta", "perfil"],
+        "ejes": true,
+        "ocultas": true
+      }
+    }
+  },
+  "solucion": [
+    {
+      "part": "mira",
+      "narration": "La pieza es un eje escalonado con un taladro pasante y una placa en el extremo derecho. La planta muestra el eje tumbado y el perfil, sus circunferencias.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["planta", "perfil"]
+        }
+      }
+    },
+    {
+      "part": "idea",
+      "narration": "El plano A-A pasa por el eje de la pieza y es paralelo al alzado. Se quita la parte de delante y se dibuja lo que queda, mirando hacia atrás.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "isometric",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["planta"]
+        }
+      }
+    },
+    {
+      "part": "movimiento",
+      "narration": "Imagina que cortas el eje por la mitad con el plano A-A y retiras la mitad de delante. Lo que ves por el corte es el alzado en corte.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": [],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Dibuja el contorno del alzado en corte: los escalones de diámetros 60, 100 y 60, la placa y el taladro, que ahora se ven, sin aristas ocultas.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Raya a 45° solo donde el plano ha cortado el material, es decir, sobre las dos bandas que rodean al taladro, y deja el taladro vacío.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false
+        }
+      }
+    },
+    {
+      "part": "trazado",
+      "narration": "Acota los diámetros a la izquierda, del menor al mayor, y las longitudes de los tramos debajo, con la total más lejos.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["cotas"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false,
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 50],
+                [0, 60, 90]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10,
+              "valor": "⌀40"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 40],
+                [0, 60, 100]
+              ],
+              "direccion": "v",
+              "desplazamiento": -22,
+              "valor": "⌀60"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [60, 60, 20],
+                [60, 60, 120]
+              ],
+              "direccion": "v",
+              "desplazamiento": -94,
+              "valor": "⌀100"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [200, 60, 0],
+                [200, 60, 140]
+              ],
+              "direccion": "v",
+              "desplazamiento": 12
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 40],
+                [60, 60, 40]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [60, 60, 20],
+                [120, 60, 20]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [120, 60, 40],
+                [160, 60, 40]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [160, 60, 0],
+                [200, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 40],
+                [200, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -34
+            }
+          ]
+        }
+      }
+    },
+    {
+      "part": "comprobacion",
+      "narration": "Comprobación: el rayado ocupa todo el material cortado y nada más, el taladro queda vacío y cada medida está acotada una sola vez.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false,
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 50],
+                [0, 60, 90]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10,
+              "valor": "⌀40"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 40],
+                [0, 60, 100]
+              ],
+              "direccion": "v",
+              "desplazamiento": -22,
+              "valor": "⌀60"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [60, 60, 20],
+                [60, 60, 120]
+              ],
+              "direccion": "v",
+              "desplazamiento": -94,
+              "valor": "⌀100"
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [200, 60, 0],
+                [200, 60, 140]
+              ],
+              "direccion": "v",
+              "desplazamiento": 12
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 40],
+                [60, 60, 40]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [60, 60, 20],
+                [120, 60, 20]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [120, 60, 40],
+                [160, 60, 40]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [160, 60, 0],
+                [200, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -18
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [0, 60, 40],
+                [200, 60, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -34
+            }
+          ]
+        }
+      }
+    },
+    {
+      "part": "error",
+      "narration": "Error típico: rayar también el taladro o dibujar sus aristas con trazo discontinuo. En un corte no se dibujan aristas ocultas y el hueco no lleva rayado.",
+      "show3d": ["pieza", "corte"],
+      "sheet": [],
+      "highlight": ["corte"],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "vistas": ["alzado"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 60,
+            "quitar": 1
+          },
+          "ocultas": false
+        }
+      }
+    }
+  ],
+  "rubrica": {
+    "origen": "derivada",
+    "criterios": [
+      {
+        "texto": "Contorno del corte A-A con los escalones, la placa y el taladro",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Rayado a 45° solo en el material cortado, con el taladro vacío",
+        "puntos": 0.3
+      },
+      {
+        "texto": "Sin aristas ocultas y con el eje de simetría",
+        "puntos": 0.2
+      },
+      {
+        "texto": "Cotas de los diámetros de los escalones y del taladro",
+        "puntos": 0.5
+      },
+      {
+        "texto": "Cotas de longitud de cada tramo y total, sin repetir",
+        "puntos": 0.5
+      }
+    ]
+  }
+}

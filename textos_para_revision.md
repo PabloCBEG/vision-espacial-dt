@@ -2115,6 +2115,32 @@ Fichero: `src/content/pau/2026-ord-2-cuadrado-en-plano.json` · 2026 ordinaria
 - [ ] Verdadera magnitud de la diagonal — 0,3 p
 - [ ] Valor de la diagonal en milímetros — 0,1 p
 
+### Ejercicio 4 · Corte longitudinal y acotación de un eje escalonado con placa
+
+Fichero: `src/content/pau/2026-ord-4-eje-corte.json` · 2026 ordinaria
+
+- [ ] **Enunciado:** Dados planta y perfil de una pieza a escala 1:2, según el método de representación del primer diedro de proyección, se pide: 1. Dibujar el corte A-A a escala 1:2. 2. Acotar según normas.
+- [ ] **Dato:** Medidos en la lámina del examen (a escala 1:2, aquí a tamaño real): tramos de 60, 60, 40 y 40 mm de largo, con diámetros de 60, 100, 60 y una placa de 80 × 140 mm; taladro pasante de ⌀40.
+
+**Solución paso a paso**
+
+1. [ ] *1. Mira el espacio:* La pieza es un eje escalonado con un taladro pasante y una placa en el extremo derecho. La planta muestra el eje tumbado y el perfil, sus circunferencias.
+2. [ ] *2. La idea clave:* El plano A-A pasa por el eje de la pieza y es paralelo al alzado. Se quita la parte de delante y se dibuja lo que queda, mirando hacia atrás.
+3. [ ] *3. El movimiento:* Imagina que cortas el eje por la mitad con el plano A-A y retiras la mitad de delante. Lo que ves por el corte es el alzado en corte.
+4. [ ] *4. El trazado:* Dibuja el contorno del alzado en corte: los escalones de diámetros 60, 100 y 60, la placa y el taladro, que ahora se ven, sin aristas ocultas.
+5. [ ] *4. El trazado:* Raya a 45° solo donde el plano ha cortado el material, es decir, sobre las dos bandas que rodean al taladro, y deja el taladro vacío.
+6. [ ] *4. El trazado:* Acota los diámetros a la izquierda, del menor al mayor, y las longitudes de los tramos debajo, con la total más lejos.
+7. [ ] *5. Comprobación:* Comprobación: el rayado ocupa todo el material cortado y nada más, el taladro queda vacío y cada medida está acotada una sola vez.
+8. [ ] *6. Error típico:* **[REVISAR]** Error típico: rayar también el taladro o dibujar sus aristas con trazo discontinuo. En un corte no se dibujan aristas ocultas y el hueco no lleva rayado.
+
+**Rúbrica (2 puntos de solución y método)** · **[REVISAR]** rúbrica derivada de la puntuación por apartados del examen, no oficial
+
+- [ ] Contorno del corte A-A con los escalones, la placa y el taladro — 0,5 p
+- [ ] Rayado a 45° solo en el material cortado, con el taladro vacío — 0,3 p
+- [ ] Sin aristas ocultas y con el eje de simetría — 0,2 p
+- [ ] Cotas de los diámetros de los escalones y del taladro — 0,5 p
+- [ ] Cotas de longitud de cada tramo y total, sin repetir — 0,5 p
+
 ### Ejercicio 1 (opción A) · Circunferencias por dos puntos tangentes a otra
 
 Fichero: `src/content/pau/ejemplo-1a-tangencias.json` · Ejemplo de formato
@@ -2214,6 +2240,15 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Pieza en T con chaflanes** (`src/content/piezas/08-pieza-chaflanes.json`)
 - [ ] **Soporte con nervio inclinado** (`src/content/piezas/09-soporte-inclinado.json`)
 - [ ] **Bloque escalonado con ranura** (`src/content/piezas/10-bloque-escalonado.json`)
+- [ ] **Taco con arista biselada** (`src/content/piezas/11-taco-biselado.json`)
+- [ ] **Placa con dos taladros** (`src/content/piezas/12-placa-taladrada.json`)
+- [ ] **Placa en L** (`src/content/piezas/13-placa-en-ele.json`)
+- [ ] **Taco con agujero ciego** (`src/content/piezas/14-taco-agujero-ciego.json`)
+- [ ] **Bloque con esquina cajeada** (`src/content/piezas/15-esquina-cajeada.json`)
+- [ ] **Soporte con cabeza redondeada** (`src/content/piezas/16-soporte-redondeado.json`)
+- [ ] **Escalera con taladro** (`src/content/piezas/17-escalera-taladrada.json`)
+- [ ] **Canal en V con ranura y taladro** (`src/content/piezas/18-canal-en-v.json`)
+- [ ] **Eje escalonado con placa y taladro pasante** (`src/content/piezas/19-eje-escalonado-con-placa.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 
