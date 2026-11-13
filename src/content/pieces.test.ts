@@ -22,10 +22,10 @@ beforeAll(async () => {
 }, 30_000);
 
 describe('biblioteca de piezas', () => {
-  it('veinte piezas válidas, de dificultad creciente, sin ids repetidos', () => {
+  it('veintiuna piezas válidas, de dificultad creciente, sin ids repetidos', () => {
     expect(errors).toEqual([]);
-    expect(pieces).toHaveLength(20);
-    expect(new Set(pieces.map((p) => p.id)).size).toBe(20);
+    expect(pieces).toHaveLength(21);
+    expect(new Set(pieces.map((p) => p.id)).size).toBe(21);
     expect(pieces.map((p) => p.dificultad)).toEqual([...pieces.map((p) => p.dificultad)].sort());
   });
 
@@ -44,6 +44,52 @@ describe('biblioteca de piezas', () => {
       }
     });
   }
+
+  it('una operación convexa suma o resta un sólido por sus vértices (tetraedro y cuña)', () => {
+    // Tetraedro de aristas perpendiculares en un vértice: volumen = a·b·c / 6.
+    const tetra = buildSolid(wasm, {
+      id: 'tetra',
+      nombre: 'Tetraedro',
+      dificultad: 1,
+      vistasNecesarias: ['alzado'],
+      operaciones: [
+        {
+          tipo: 'convexo',
+          puntos: [
+            [0, 0, 0],
+            [30, 0, 0],
+            [0, 40, 0],
+            [0, 0, 20],
+          ],
+          quitar: false,
+        },
+      ],
+    });
+    expect(volume(tetra)).toBeCloseTo((30 * 40 * 20) / 6, 3);
+    expect(tetra.status()).toBe('NoError');
+    // Bloque de 30³ con una cuña quitada en una esquina: pierde el volumen de esa cuña.
+    const cut = buildSolid(wasm, {
+      id: 'cortado',
+      nombre: 'Cortado',
+      dificultad: 1,
+      vistasNecesarias: ['alzado'],
+      operaciones: [
+        { tipo: 'bloque', desde: [0, 0, 0], hasta: [30, 30, 30] },
+        {
+          tipo: 'convexo',
+          puntos: [
+            [-5, -5, -5],
+            [30, -5, -5],
+            [-5, 30, -5],
+            [-5, -5, 30],
+          ],
+          quitar: true,
+        },
+      ],
+    });
+    expect(volume(cut)).toBeLessThan(30 ** 3);
+    expect(cut.status()).toBe('NoError');
+  });
 
   it('brida: en planta se ven el buje, su taladro y los dos taladros de la base', () => {
     const brida = pieces.find((p) => p.id === 'brida');

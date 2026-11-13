@@ -62,6 +62,15 @@ export const OperationSchema = z.discriminatedUnion('tipo', [
     hasta: z.number(),
     quitar: z.boolean().default(false),
   }),
+  /**
+   * Sólido convexo: la envolvente de unos puntos (x, a, c). Con 4 puntos es un tetraedro; con 5,
+   * una pirámide o una cuña; con 6, un prisma triangular inclinado… `quitar` lo resta.
+   */
+  z.object({
+    tipo: z.literal('convexo'),
+    puntos: z.array(Vec3).min(4),
+    quitar: z.boolean().default(false),
+  }),
 ]);
 
 export type Operation = z.infer<typeof OperationSchema>;
@@ -153,6 +162,8 @@ export function boundsOf(piece: Piece): Bounds {
           grow(p);
         }
       }
+    } else if (op.tipo === 'convexo' && !op.quitar) {
+      for (const p of op.puntos) grow(p);
     } else if (op.tipo === 'perfil' && !op.quitar) {
       const i = axisIndex(op.eje);
       const [j, k] = others(i);

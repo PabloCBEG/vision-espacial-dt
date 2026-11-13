@@ -126,6 +126,10 @@ function operationSolid(wasm: ManifoldToplevel, op: Operation, extent: number): 
     }
     case 'perfil':
       return prism(wasm, op.eje, polygonSection(wasm, op.puntos), op.desde, op.hasta);
+    case 'convexo':
+      return wasm.Manifold.hull(
+        op.puntos.map((p) => [p[0], p[1], p[2]] as [number, number, number]),
+      );
   }
 }
 
@@ -134,7 +138,8 @@ const subtracts = (op: Operation): boolean =>
   op.tipo === 'taladro' ||
   op.tipo === 'chaflan' ||
   op.tipo === 'redondeo' ||
-  (op.tipo === 'perfil' && op.quitar);
+  (op.tipo === 'perfil' && op.quitar) ||
+  (op.tipo === 'convexo' && op.quitar);
 
 /** Sólido de la pieza: las operaciones en orden, sumando o restando. */
 export function buildSolid(wasm: ManifoldToplevel, piece: Piece): Manifold {

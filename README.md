@@ -220,6 +220,9 @@ Los pasos y ejercicios que usan un motor (métodos, sólidos…) llevan sus dato
   sube; la cónica se ve en 3D y en verdadera magnitud, y el desplegable analítico muestra su tipo,
   su excentricidad y su ecuación.
 - **Piezas de normalización**: un fichero JSON por pieza en [`src/content/piezas/`](src/content/piezas/).
+  Las operaciones son `bloque`, `ranura`, `cilindro`, `taladro`, `chaflan`, `redondeo`, `perfil` (un
+  polígono extruido) y `convexo` (la envolvente de unos puntos `[x, a, c]`: con 4 es un tetraedro, con
+  5 una pirámide o una cuña; con `quitar` se resta).
 
 ## Para quien mantenga el código
 
