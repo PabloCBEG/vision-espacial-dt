@@ -129,7 +129,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: null,
     pauNote: 'Base',
     scene: 'Homotecia como proyección desde un foco de luz',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'I-06',

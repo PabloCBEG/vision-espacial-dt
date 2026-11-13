@@ -46,6 +46,7 @@ const COMPLETE_LESSONS: string[] = [
   'cada-direccion-su-fuga',
   'triangulos-y-cuadrilateros',
   'poligonos-regulares',
+  'transformaciones',
 ];
 
 const lessonNamed = (id: string): Lesson => {

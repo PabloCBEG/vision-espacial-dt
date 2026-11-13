@@ -1,0 +1,3733 @@
+{
+  "id": "transformaciones",
+  "order": 4,
+  "title": "Transformaciones: cada punto se mueve con una regla",
+  "topic": "I-05",
+  "stage": "DT I",
+  "saberBasico": "Geometría plana: traslación, giro, simetría y homotecia aplicadas a puntos y figuras. Cada punto se mueve con la misma regla.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "A1",
+            "tipo": "punto",
+            "en": [-50, -20],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B1",
+            "tipo": "punto",
+            "en": [-20, -20],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C1",
+            "tipo": "punto",
+            "en": [-35, 5],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "U1",
+            "tipo": "punto",
+            "en": [-10, 35],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "U2",
+            "tipo": "punto",
+            "en": [25, 45],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "sU1",
+            "tipo": "segmento",
+            "por": ["U1", "U2"],
+            "rol": "dato",
+            "etiqueta": "u"
+          },
+          {
+            "id": "s1a",
+            "tipo": "segmento",
+            "por": ["A1", "B1"],
+            "rol": "dato"
+          },
+          {
+            "id": "s1b",
+            "tipo": "segmento",
+            "por": ["B1", "C1"],
+            "rol": "dato"
+          },
+          {
+            "id": "s1c",
+            "tipo": "segmento",
+            "por": ["C1", "A1"],
+            "rol": "dato"
+          },
+          {
+            "id": "pA1",
+            "tipo": "traslacion",
+            "de": "A1",
+            "vector": ["U1", "U2"],
+            "rol": "resultado",
+            "etiqueta": "A'"
+          },
+          {
+            "id": "pB1",
+            "tipo": "traslacion",
+            "de": "B1",
+            "vector": ["U1", "U2"],
+            "rol": "resultado",
+            "etiqueta": "B'"
+          },
+          {
+            "id": "pC1",
+            "tipo": "traslacion",
+            "de": "C1",
+            "vector": ["U1", "U2"],
+            "rol": "resultado",
+            "etiqueta": "C'"
+          },
+          {
+            "id": "i1a",
+            "tipo": "segmento",
+            "por": ["pA1", "pB1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i1b",
+            "tipo": "segmento",
+            "por": ["pB1", "pC1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i1c",
+            "tipo": "segmento",
+            "por": ["pC1", "pA1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "g10",
+            "tipo": "segmento",
+            "por": ["A1", "pA1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g11",
+            "tipo": "segmento",
+            "por": ["B1", "pB1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g12",
+            "tipo": "segmento",
+            "por": ["C1", "pC1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "A2",
+            "tipo": "punto",
+            "en": [-45, -15],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B2",
+            "tipo": "punto",
+            "en": [-20, -15],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C2",
+            "tipo": "punto",
+            "en": [-30, 10],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "E2a",
+            "tipo": "punto",
+            "en": [10, -40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "E2b",
+            "tipo": "punto",
+            "en": [10, 45],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "e2",
+            "tipo": "recta",
+            "por": ["E2a", "E2b"],
+            "rol": "dato",
+            "etiqueta": "e"
+          },
+          {
+            "id": "s2a",
+            "tipo": "segmento",
+            "por": ["A2", "B2"],
+            "rol": "dato"
+          },
+          {
+            "id": "s2b",
+            "tipo": "segmento",
+            "por": ["B2", "C2"],
+            "rol": "dato"
+          },
+          {
+            "id": "s2c",
+            "tipo": "segmento",
+            "por": ["C2", "A2"],
+            "rol": "dato"
+          },
+          {
+            "id": "pA2",
+            "tipo": "simetria",
+            "de": "A2",
+            "eje": "e2",
+            "rol": "resultado",
+            "etiqueta": "A'"
+          },
+          {
+            "id": "pB2",
+            "tipo": "simetria",
+            "de": "B2",
+            "eje": "e2",
+            "rol": "resultado",
+            "etiqueta": "B'"
+          },
+          {
+            "id": "pC2",
+            "tipo": "simetria",
+            "de": "C2",
+            "eje": "e2",
+            "rol": "resultado",
+            "etiqueta": "C'"
+          },
+          {
+            "id": "i2a",
+            "tipo": "segmento",
+            "por": ["pA2", "pB2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i2b",
+            "tipo": "segmento",
+            "por": ["pB2", "pC2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i2c",
+            "tipo": "segmento",
+            "por": ["pC2", "pA2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "g20",
+            "tipo": "segmento",
+            "por": ["A2", "pA2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g21",
+            "tipo": "segmento",
+            "por": ["B2", "pB2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g22",
+            "tipo": "segmento",
+            "por": ["C2", "pC2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "O3",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "P3",
+            "tipo": "punto",
+            "en": [25, 10],
+            "etiqueta": "P",
+            "fijo": true
+          },
+          {
+            "id": "pP3",
+            "tipo": "giro",
+            "de": "P3",
+            "centro": "O3",
+            "angulo": 90,
+            "rol": "resultado",
+            "etiqueta": "P'"
+          },
+          {
+            "id": "r3a",
+            "tipo": "segmento",
+            "por": ["O3", "P3"],
+            "rol": "proceso"
+          },
+          {
+            "id": "r3b",
+            "tipo": "segmento",
+            "por": ["O3", "pP3"],
+            "rol": "proceso"
+          },
+          {
+            "id": "a3",
+            "tipo": "arco",
+            "centro": "O3",
+            "desde": "P3",
+            "hasta": "pP3",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "O4",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "P4",
+            "tipo": "punto",
+            "en": [30, 5],
+            "etiqueta": "P",
+            "fijo": true
+          },
+          {
+            "id": "pP4",
+            "tipo": "giro",
+            "de": "P4",
+            "centro": "O4",
+            "angulo": 60,
+            "rol": "resultado",
+            "etiqueta": "P'"
+          },
+          {
+            "id": "r4a",
+            "tipo": "segmento",
+            "por": ["O4", "P4"],
+            "rol": "proceso"
+          },
+          {
+            "id": "r4b",
+            "tipo": "segmento",
+            "por": ["O4", "pP4"],
+            "rol": "proceso"
+          },
+          {
+            "id": "a4",
+            "tipo": "arco",
+            "centro": "O4",
+            "desde": "P4",
+            "hasta": "pP4",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "ang4",
+            "tipo": "medidaAngulo",
+            "de": ["P4", "O4", "pP4"],
+            "rol": "proceso"
+          },
+          {
+            "id": "P5",
+            "tipo": "punto",
+            "en": [20, 35],
+            "etiqueta": "P",
+            "fijo": true
+          },
+          {
+            "id": "E5a",
+            "tipo": "punto",
+            "en": [-40, -30],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "E5b",
+            "tipo": "punto",
+            "en": [40, 30],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "e5",
+            "tipo": "recta",
+            "por": ["E5a", "E5b"],
+            "rol": "dato",
+            "etiqueta": "e"
+          },
+          {
+            "id": "pP5",
+            "tipo": "simetria",
+            "de": "P5",
+            "eje": "e5",
+            "rol": "resultado",
+            "etiqueta": "P'"
+          },
+          {
+            "id": "g5",
+            "tipo": "segmento",
+            "por": ["P5", "pP5"],
+            "rol": "proceso"
+          },
+          {
+            "id": "O6",
+            "tipo": "punto",
+            "en": [-50, -30],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A6",
+            "tipo": "punto",
+            "en": [-35, -20],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B6",
+            "tipo": "punto",
+            "en": [-15, -20],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C6",
+            "tipo": "punto",
+            "en": [-25, -5],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "s6a",
+            "tipo": "segmento",
+            "por": ["A6", "B6"],
+            "rol": "dato"
+          },
+          {
+            "id": "s6b",
+            "tipo": "segmento",
+            "por": ["B6", "C6"],
+            "rol": "dato"
+          },
+          {
+            "id": "s6c",
+            "tipo": "segmento",
+            "por": ["C6", "A6"],
+            "rol": "dato"
+          },
+          {
+            "id": "pA6",
+            "tipo": "homotecia",
+            "de": "A6",
+            "centro": "O6",
+            "razon": 2,
+            "rol": "resultado",
+            "etiqueta": "A'"
+          },
+          {
+            "id": "pB6",
+            "tipo": "homotecia",
+            "de": "B6",
+            "centro": "O6",
+            "razon": 2,
+            "rol": "resultado",
+            "etiqueta": "B'"
+          },
+          {
+            "id": "pC6",
+            "tipo": "homotecia",
+            "de": "C6",
+            "centro": "O6",
+            "razon": 2,
+            "rol": "resultado",
+            "etiqueta": "C'"
+          },
+          {
+            "id": "i6a",
+            "tipo": "segmento",
+            "por": ["pA6", "pB6"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i6b",
+            "tipo": "segmento",
+            "por": ["pB6", "pC6"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i6c",
+            "tipo": "segmento",
+            "por": ["pC6", "pA6"],
+            "rol": "resultado"
+          },
+          {
+            "id": "g60",
+            "tipo": "segmento",
+            "por": ["O6", "pA6"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g61",
+            "tipo": "segmento",
+            "por": ["O6", "pB6"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g62",
+            "tipo": "segmento",
+            "por": ["O6", "pC6"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dAB6",
+            "tipo": "medidaDistancia",
+            "de": ["A6", "B6"],
+            "rol": "proceso"
+          },
+          {
+            "id": "dAB6p",
+            "tipo": "medidaDistancia",
+            "de": ["pA6", "pB6"],
+            "rol": "proceso"
+          },
+          {
+            "id": "O7",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A7",
+            "tipo": "punto",
+            "en": [36, 12],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B7",
+            "tipo": "punto",
+            "en": [24, 36],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C7",
+            "tipo": "punto",
+            "en": [48, 30],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "s7a",
+            "tipo": "segmento",
+            "por": ["A7", "B7"],
+            "rol": "dato"
+          },
+          {
+            "id": "s7b",
+            "tipo": "segmento",
+            "por": ["B7", "C7"],
+            "rol": "dato"
+          },
+          {
+            "id": "s7c",
+            "tipo": "segmento",
+            "por": ["C7", "A7"],
+            "rol": "dato"
+          },
+          {
+            "id": "pA7",
+            "tipo": "homotecia",
+            "de": "A7",
+            "centro": "O7",
+            "razon": -0.5,
+            "rol": "resultado",
+            "etiqueta": "A'"
+          },
+          {
+            "id": "pB7",
+            "tipo": "homotecia",
+            "de": "B7",
+            "centro": "O7",
+            "razon": -0.5,
+            "rol": "resultado",
+            "etiqueta": "B'"
+          },
+          {
+            "id": "pC7",
+            "tipo": "homotecia",
+            "de": "C7",
+            "centro": "O7",
+            "razon": -0.5,
+            "rol": "resultado",
+            "etiqueta": "C'"
+          },
+          {
+            "id": "i7a",
+            "tipo": "segmento",
+            "por": ["pA7", "pB7"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i7b",
+            "tipo": "segmento",
+            "por": ["pB7", "pC7"],
+            "rol": "resultado"
+          },
+          {
+            "id": "i7c",
+            "tipo": "segmento",
+            "por": ["pC7", "pA7"],
+            "rol": "resultado"
+          },
+          {
+            "id": "g70",
+            "tipo": "segmento",
+            "por": ["O7", "pA7"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g71",
+            "tipo": "segmento",
+            "por": ["O7", "pB7"],
+            "rol": "proceso"
+          },
+          {
+            "id": "g72",
+            "tipo": "segmento",
+            "por": ["O7", "pC7"],
+            "rol": "proceso"
+          },
+          {
+            "id": "O8",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A8",
+            "tipo": "punto",
+            "en": [-40, -10],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B8",
+            "tipo": "punto",
+            "en": [-20, -10],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C8",
+            "tipo": "punto",
+            "en": [-30, 10],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "E8a",
+            "tipo": "punto",
+            "en": [-60, 0],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "E8b",
+            "tipo": "punto",
+            "en": [60, 0],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "e8",
+            "tipo": "recta",
+            "por": ["E8a", "E8b"],
+            "rol": "dato",
+            "etiqueta": "e"
+          },
+          {
+            "id": "s8a",
+            "tipo": "segmento",
+            "por": ["A8", "B8"],
+            "rol": "dato"
+          },
+          {
+            "id": "s8b",
+            "tipo": "segmento",
+            "por": ["B8", "C8"],
+            "rol": "dato"
+          },
+          {
+            "id": "s8c",
+            "tipo": "segmento",
+            "por": ["C8", "A8"],
+            "rol": "dato"
+          },
+          {
+            "id": "gA8",
+            "tipo": "giro",
+            "de": "A8",
+            "centro": "O8",
+            "angulo": 90,
+            "rol": "proceso",
+            "etiqueta": "A'"
+          },
+          {
+            "id": "gB8",
+            "tipo": "giro",
+            "de": "B8",
+            "centro": "O8",
+            "angulo": 90,
+            "rol": "proceso",
+            "etiqueta": "B'"
+          },
+          {
+            "id": "gC8",
+            "tipo": "giro",
+            "de": "C8",
+            "centro": "O8",
+            "angulo": 90,
+            "rol": "proceso",
+            "etiqueta": "C'"
+          },
+          {
+            "id": "j8a",
+            "tipo": "segmento",
+            "por": ["gA8", "gB8"],
+            "rol": "proceso"
+          },
+          {
+            "id": "j8b",
+            "tipo": "segmento",
+            "por": ["gB8", "gC8"],
+            "rol": "proceso"
+          },
+          {
+            "id": "j8c",
+            "tipo": "segmento",
+            "por": ["gC8", "gA8"],
+            "rol": "proceso"
+          },
+          {
+            "id": "sA8",
+            "tipo": "simetria",
+            "de": "gA8",
+            "eje": "e8",
+            "rol": "resultado",
+            "etiqueta": "A''"
+          },
+          {
+            "id": "sB8",
+            "tipo": "simetria",
+            "de": "gB8",
+            "eje": "e8",
+            "rol": "resultado",
+            "etiqueta": "B''"
+          },
+          {
+            "id": "sC8",
+            "tipo": "simetria",
+            "de": "gC8",
+            "eje": "e8",
+            "rol": "resultado",
+            "etiqueta": "C''"
+          },
+          {
+            "id": "k8a",
+            "tipo": "segmento",
+            "por": ["sA8", "sB8"],
+            "rol": "resultado"
+          },
+          {
+            "id": "k8b",
+            "tipo": "segmento",
+            "por": ["sB8", "sC8"],
+            "rol": "resultado"
+          },
+          {
+            "id": "k8c",
+            "tipo": "segmento",
+            "por": ["sC8", "sA8"],
+            "rol": "resultado"
+          },
+          {
+            "id": "O9",
+            "tipo": "punto",
+            "en": [-40, -35],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A9",
+            "tipo": "punto",
+            "en": [-30, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B9",
+            "tipo": "punto",
+            "en": [-10, -25],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C9",
+            "tipo": "punto",
+            "en": [-20, -10],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "U9a",
+            "tipo": "punto",
+            "en": [20, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "U9b",
+            "tipo": "punto",
+            "en": [-10, 35],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "sU9",
+            "tipo": "segmento",
+            "por": ["U9a", "U9b"],
+            "rol": "dato",
+            "etiqueta": "u"
+          },
+          {
+            "id": "s9a",
+            "tipo": "segmento",
+            "por": ["A9", "B9"],
+            "rol": "dato"
+          },
+          {
+            "id": "s9b",
+            "tipo": "segmento",
+            "por": ["B9", "C9"],
+            "rol": "dato"
+          },
+          {
+            "id": "s9c",
+            "tipo": "segmento",
+            "por": ["C9", "A9"],
+            "rol": "dato"
+          },
+          {
+            "id": "hA9",
+            "tipo": "homotecia",
+            "de": "A9",
+            "centro": "O9",
+            "razon": 2,
+            "rol": "proceso",
+            "etiqueta": "A'"
+          },
+          {
+            "id": "hB9",
+            "tipo": "homotecia",
+            "de": "B9",
+            "centro": "O9",
+            "razon": 2,
+            "rol": "proceso",
+            "etiqueta": "B'"
+          },
+          {
+            "id": "hC9",
+            "tipo": "homotecia",
+            "de": "C9",
+            "centro": "O9",
+            "razon": 2,
+            "rol": "proceso",
+            "etiqueta": "C'"
+          },
+          {
+            "id": "j9a",
+            "tipo": "segmento",
+            "por": ["hA9", "hB9"],
+            "rol": "proceso"
+          },
+          {
+            "id": "j9b",
+            "tipo": "segmento",
+            "por": ["hB9", "hC9"],
+            "rol": "proceso"
+          },
+          {
+            "id": "j9c",
+            "tipo": "segmento",
+            "por": ["hC9", "hA9"],
+            "rol": "proceso"
+          },
+          {
+            "id": "tA9",
+            "tipo": "traslacion",
+            "de": "hA9",
+            "vector": ["U9a", "U9b"],
+            "rol": "resultado",
+            "etiqueta": "A''"
+          },
+          {
+            "id": "tB9",
+            "tipo": "traslacion",
+            "de": "hB9",
+            "vector": ["U9a", "U9b"],
+            "rol": "resultado",
+            "etiqueta": "B''"
+          },
+          {
+            "id": "tC9",
+            "tipo": "traslacion",
+            "de": "hC9",
+            "vector": ["U9a", "U9b"],
+            "rol": "resultado",
+            "etiqueta": "C''"
+          },
+          {
+            "id": "k9a",
+            "tipo": "segmento",
+            "por": ["tA9", "tB9"],
+            "rol": "resultado"
+          },
+          {
+            "id": "k9b",
+            "tipo": "segmento",
+            "por": ["tB9", "tC9"],
+            "rol": "resultado"
+          },
+          {
+            "id": "k9c",
+            "tipo": "segmento",
+            "por": ["tC9", "tA9"],
+            "rol": "resultado"
+          },
+          {
+            "id": "Oc",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "Ac",
+            "tipo": "punto",
+            "en": [20, 10],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "Bc",
+            "tipo": "punto",
+            "en": [40, 10],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "Cc",
+            "tipo": "punto",
+            "en": [30, 35],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "sca",
+            "tipo": "segmento",
+            "por": ["Ac", "Bc"],
+            "rol": "dato"
+          },
+          {
+            "id": "scb",
+            "tipo": "segmento",
+            "por": ["Bc", "Cc"],
+            "rol": "dato"
+          },
+          {
+            "id": "scc",
+            "tipo": "segmento",
+            "por": ["Cc", "Ac"],
+            "rol": "dato"
+          },
+          {
+            "id": "pAc",
+            "tipo": "giro",
+            "de": "Ac",
+            "centro": "Oc",
+            "angulo": 180,
+            "rol": "resultado",
+            "etiqueta": "A'"
+          },
+          {
+            "id": "pBc",
+            "tipo": "giro",
+            "de": "Bc",
+            "centro": "Oc",
+            "angulo": 180,
+            "rol": "resultado",
+            "etiqueta": "B'"
+          },
+          {
+            "id": "pCc",
+            "tipo": "giro",
+            "de": "Cc",
+            "centro": "Oc",
+            "angulo": 180,
+            "rol": "resultado",
+            "etiqueta": "C'"
+          },
+          {
+            "id": "ica",
+            "tipo": "segmento",
+            "por": ["pAc", "pBc"],
+            "rol": "resultado"
+          },
+          {
+            "id": "icb",
+            "tipo": "segmento",
+            "por": ["pBc", "pCc"],
+            "rol": "resultado"
+          },
+          {
+            "id": "icc",
+            "tipo": "segmento",
+            "por": ["pCc", "pAc"],
+            "rol": "resultado"
+          },
+          {
+            "id": "gc0",
+            "tipo": "segmento",
+            "por": ["Oc", "pAc"],
+            "rol": "proceso"
+          },
+          {
+            "id": "gc1",
+            "tipo": "segmento",
+            "por": ["Oc", "pBc"],
+            "rol": "proceso"
+          },
+          {
+            "id": "gc2",
+            "tipo": "segmento",
+            "por": ["Oc", "pCc"],
+            "rol": "proceso"
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [60, -55],
+            "etiqueta": "Z"
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Una transformación mueve cada punto con la misma regla. En la traslación, todos los puntos se desplazan lo que indica el vector u: misma dirección, sentido y longitud.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A1",
+            "B1",
+            "C1",
+            "s1a",
+            "s1b",
+            "s1c",
+            "U1",
+            "U2",
+            "sU1",
+            "pA1",
+            "pB1",
+            "pC1",
+            "g10",
+            "g11",
+            "g12",
+            "i1a",
+            "i1b",
+            "i1c"
+          ],
+          "trazar": ["g10", "g11", "g12", "pA1", "pB1", "pC1", "i1a", "i1b", "i1c"],
+          "destacar": ["g10", "g11", "g12"]
+        }
+      }
+    },
+    {
+      "narration": "En el giro, cada punto describe un arco de centro O y el mismo ángulo. La distancia a O no cambia y el ángulo entre el punto y su imagen es el del giro.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O4", "P4", "r4a", "a4", "pP4", "r4b", "ang4"],
+          "trazar": ["r4a", "a4", "pP4", "r4b", "ang4"],
+          "destacar": ["pP4"]
+        }
+      }
+    },
+    {
+      "narration": "En la simetría axial, cada punto y su imagen equidistan del eje e, y el segmento que los une es perpendicular a él. La figura se ve como en un espejo.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A2",
+            "B2",
+            "C2",
+            "s2a",
+            "s2b",
+            "s2c",
+            "E2a",
+            "E2b",
+            "e2",
+            "pA2",
+            "pB2",
+            "pC2",
+            "g20",
+            "g21",
+            "g22",
+            "i2a",
+            "i2b",
+            "i2c"
+          ],
+          "trazar": ["e2", "g20", "g21", "g22", "pA2", "pB2", "pC2", "i2a", "i2b", "i2c"],
+          "destacar": ["e2"]
+        }
+      }
+    },
+    {
+      "narration": "La simetría central es un giro de 180° alrededor de O: cada punto y su imagen están alineados con O y a la misma distancia. La figura queda del revés.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "Oc",
+            "Ac",
+            "Bc",
+            "Cc",
+            "sca",
+            "scb",
+            "scc",
+            "pAc",
+            "pBc",
+            "pCc",
+            "gc0",
+            "gc1",
+            "gc2",
+            "ica",
+            "icb",
+            "icc"
+          ],
+          "trazar": ["gc0", "gc1", "gc2", "pAc", "pBc", "pCc", "ica", "icb", "icc"],
+          "destacar": ["gc0", "gc1", "gc2"]
+        }
+      }
+    },
+    {
+      "narration": "La homotecia de centro O y razón 2 aleja cada punto de O al doble de distancia, sobre la misma recta. La figura se amplía y sus lados quedan paralelos a los originales.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O6",
+            "A6",
+            "B6",
+            "C6",
+            "s6a",
+            "s6b",
+            "s6c",
+            "pA6",
+            "pB6",
+            "pC6",
+            "g60",
+            "g61",
+            "g62",
+            "i6a",
+            "i6b",
+            "i6c"
+          ],
+          "trazar": ["g60", "g61", "g62", "pA6", "pB6", "pC6", "i6a", "i6b", "i6c"],
+          "destacar": ["pA6", "pB6", "pC6"]
+        }
+      }
+    },
+    {
+      "narration": "Si la razón es negativa, la imagen queda al otro lado de O y la figura aparece girada media vuelta. Con razón menor que uno en valor absoluto, la figura se reduce.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O7",
+            "A7",
+            "B7",
+            "C7",
+            "s7a",
+            "s7b",
+            "s7c",
+            "pA7",
+            "pB7",
+            "pC7",
+            "g70",
+            "g71",
+            "g72",
+            "i7a",
+            "i7b",
+            "i7c"
+          ],
+          "trazar": ["g70", "g71", "g72", "pA7", "pB7", "pC7", "i7a", "i7b", "i7c"],
+          "destacar": ["pA7", "pB7", "pC7"]
+        }
+      }
+    },
+    {
+      "narration": "Las traslaciones, los giros y las simetrías conservan las medidas: son isometrías. La homotecia conserva los ángulos pero multiplica las longitudes por el valor absoluto de la razón.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O6",
+            "A6",
+            "B6",
+            "C6",
+            "s6a",
+            "s6b",
+            "s6c",
+            "pA6",
+            "pB6",
+            "pC6",
+            "i6a",
+            "i6b",
+            "i6c",
+            "dAB6",
+            "dAB6p"
+          ],
+          "trazar": ["dAB6", "dAB6p"],
+          "destacar": ["dAB6", "dAB6p"]
+        }
+      }
+    },
+    {
+      "narration": "Para transformar una figura se aplica la regla a cada vértice y se unen las imágenes en el mismo orden. Si mueves solo un vértice y copias los demás a ojo, la figura se deforma.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O8",
+            "A8",
+            "B8",
+            "C8",
+            "s8a",
+            "s8b",
+            "s8c",
+            "gA8",
+            "gB8",
+            "gC8",
+            "j8a",
+            "j8b",
+            "j8c"
+          ],
+          "trazar": ["gA8", "gB8", "gC8", "j8a", "j8b", "j8c"],
+          "destacar": ["gA8", "gB8", "gC8"]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Traslada el triángulo ABC según el vector u. Arrastra Z hasta la imagen C′ del vértice C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A1", "B1", "C1", "s1a", "s1b", "s1c", "U1", "U2", "sU1", "Z"],
+          "posiciones": {
+            "A1": [-40, -20],
+            "B1": [-10, -20],
+            "C1": [-25, 10],
+            "U1": [-50, 30],
+            "U2": [-10, 50],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "pC1",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C′ es C desplazado lo que indica u.",
+            "pista": "C′ está en la paralela a u por C, a la distancia de u."
+          }
+        }
+      },
+      "hints": [
+        "En una traslación todos los puntos se mueven lo mismo.",
+        "La imagen de C está en la paralela al vector u por C, a una distancia igual a la longitud de u.",
+        "Traza por C la paralela a u y lleva con el compás la longitud de u."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos el triángulo ABC y el vector u. Hay que hallar la imagen de C al trasladar.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "B1", "C1", "s1a", "s1b", "s1c", "U1", "U2", "sU1", "Z"],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "La traslación mueve cada punto en la dirección de u y la distancia de u. La imagen C′ está en la paralela a u por C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "B1", "C1", "s1a", "s1b", "s1c", "U1", "U2", "sU1", "Z"],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que deslizas el triángulo entero sin girarlo, siguiendo la flecha de u. Cada vértice recorre la misma distancia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "B1", "C1", "s1a", "s1b", "s1c", "U1", "U2", "sU1", "Z"],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por C, traza la paralela al vector u.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "C1",
+                "s1a",
+                "s1b",
+                "s1c",
+                "U1",
+                "U2",
+                "sU1",
+                "pC1",
+                "g12",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [60, -55]
+              },
+              "trazar": ["g12"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con el compás, lleva la longitud de u sobre esa paralela desde C: obtienes C′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "C1",
+                "s1a",
+                "s1b",
+                "s1c",
+                "U1",
+                "U2",
+                "sU1",
+                "pC1",
+                "g12",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [60, -55]
+              },
+              "trazar": ["pC1"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Repite con A y B y une las imágenes. Arrastra Z hasta C′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "C1",
+                "s1a",
+                "s1b",
+                "s1c",
+                "U1",
+                "U2",
+                "sU1",
+                "pA1",
+                "pB1",
+                "pC1",
+                "g10",
+                "g11",
+                "g12",
+                "i1a",
+                "i1b",
+                "i1c",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [15, 30]
+              },
+              "trazar": ["pA1", "pB1", "g10", "g11", "i1a", "i1b", "i1c"],
+              "destacar": ["pC1"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: los tres segmentos que unen cada vértice con su imagen son paralelos y miden lo mismo que u.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "C1",
+                "s1a",
+                "s1b",
+                "s1c",
+                "U1",
+                "U2",
+                "sU1",
+                "pA1",
+                "pB1",
+                "pC1",
+                "g10",
+                "g11",
+                "g12",
+                "i1a",
+                "i1b",
+                "i1c",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [15, 30]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: trasladar solo un vértice y copiar los demás a ojo. La figura queda deformada porque la regla no se aplicó a cada punto.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "C1",
+                "s1a",
+                "s1b",
+                "s1c",
+                "U1",
+                "U2",
+                "sU1",
+                "pA1",
+                "pB1",
+                "pC1",
+                "g10",
+                "g11",
+                "g12",
+                "i1a",
+                "i1b",
+                "i1c",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-40, -20],
+                "B1": [-10, -20],
+                "C1": [-25, 10],
+                "U1": [-50, 30],
+                "U2": [-10, 50],
+                "Z": [15, 30]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 0],
+                    [22, 24]
+                  ],
+                  "rotulo": "Error: C a ojo"
+                },
+                {
+                  "puntos": [
+                    [30, 0],
+                    [22, 24]
+                  ]
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Hallar el simétrico del triángulo ABC respecto del eje e. Arrastra Z hasta la imagen C′ del vértice C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A2", "B2", "C2", "s2a", "s2b", "s2c", "E2a", "E2b", "e2", "Z"],
+          "posiciones": {
+            "A2": [-50, -20],
+            "B2": [-25, -20],
+            "C2": [-40, 15],
+            "E2a": [0, -45],
+            "E2b": [0, 45],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "pC2",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C′ está al otro lado del eje, en la perpendicular por C y a la misma distancia.",
+            "pista": "C′ está en la perpendicular al eje por C, a la misma distancia del eje."
+          }
+        }
+      },
+      "hints": [
+        "El eje es como un espejo: la imagen queda al otro lado, a la misma distancia.",
+        "El segmento que une C con C′ es perpendicular al eje, y el eje lo corta por la mitad.",
+        "Por C traza la perpendicular al eje, y con el compás lleva la distancia de C al eje al otro lado."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un triángulo ABC y un eje vertical e. Buscamos el simétrico de C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "C2", "s2a", "s2b", "s2c", "E2a", "E2b", "e2", "Z"],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "C y su imagen C′ equidistan del eje y el segmento CC′ es perpendicular a él. Basta llevar la distancia de C al eje al otro lado.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "C2", "s2a", "s2b", "s2c", "E2a", "E2b", "e2", "Z"],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que doblas la hoja por el eje: C cae justo sobre C′. Por eso el eje pasa por el punto medio de CC′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "C2", "s2a", "s2b", "s2c", "E2a", "E2b", "e2", "Z"],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por C, traza la perpendicular al eje; corta al eje en un punto M.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "C2",
+                "s2a",
+                "s2b",
+                "s2c",
+                "E2a",
+                "E2b",
+                "e2",
+                "pC2",
+                "g22",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [60, -55]
+              },
+              "trazar": ["g22"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en M y radio MC, marca el punto al otro lado del eje: es C′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "C2",
+                "s2a",
+                "s2b",
+                "s2c",
+                "E2a",
+                "E2b",
+                "e2",
+                "pC2",
+                "g22",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [60, -55]
+              },
+              "trazar": ["pC2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Repite con A y B, une las imágenes y arrastra Z hasta C′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "C2",
+                "s2a",
+                "s2b",
+                "s2c",
+                "E2a",
+                "E2b",
+                "e2",
+                "pA2",
+                "pB2",
+                "pC2",
+                "g20",
+                "g21",
+                "g22",
+                "i2a",
+                "i2b",
+                "i2c",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [40, 15]
+              },
+              "trazar": ["pA2", "pB2", "g20", "g21", "i2a", "i2b", "i2c"],
+              "destacar": ["pC2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: cada punto y su imagen equidistan del eje, y el triángulo imagen tiene los mismos lados pero está recorrido en sentido contrario.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "C2",
+                "s2a",
+                "s2b",
+                "s2c",
+                "E2a",
+                "E2b",
+                "e2",
+                "pA2",
+                "pB2",
+                "pC2",
+                "g20",
+                "g21",
+                "g22",
+                "i2a",
+                "i2b",
+                "i2c",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [40, 15]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: llevar la imagen a otra distancia del eje, o no sobre la perpendicular. El simétrico deja de ser exacto y los lados no coinciden.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "C2",
+                "s2a",
+                "s2b",
+                "s2c",
+                "E2a",
+                "E2b",
+                "e2",
+                "pA2",
+                "pB2",
+                "pC2",
+                "g20",
+                "g21",
+                "g22",
+                "i2a",
+                "i2b",
+                "i2c",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-50, -20],
+                "B2": [-25, -20],
+                "C2": [-40, 15],
+                "E2a": [0, -45],
+                "E2b": [0, 45],
+                "Z": [40, 15]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, 15],
+                    [58, 12]
+                  ],
+                  "rotulo": "Error: otra distancia"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Gira el punto P un ángulo de 90° en sentido antihorario alrededor de O. Arrastra Z hasta la imagen P′.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O3", "P3", "Z"],
+          "posiciones": {
+            "O3": [0, 0],
+            "P3": [30, 0],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "pP3",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! P′ está a la misma distancia de O y a 90° de P.",
+            "pista": "OP′ mide lo mismo que OP y forma 90° con OP."
+          }
+        }
+      },
+      "hints": [
+        "En un giro, el punto conserva su distancia a O.",
+        "El ángulo entre OP y OP′ es el del giro, y el sentido antihorario es el contrario a las agujas del reloj.",
+        "Por O traza la perpendicular a OP y lleva sobre ella la distancia OP, hacia arriba."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos el centro O y el punto P. Hay que girar P un ángulo recto en sentido antihorario.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El giro conserva la distancia a O y cambia el ángulo en el valor indicado. Para 90° basta la perpendicular a OP por O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina OP como la aguja de un reloj que gira un cuarto de vuelta hacia la izquierda. La punta recorre un arco de centro O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por O, traza la perpendicular a OP, hacia el lado del giro.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "r3a", "a3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["r3a"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en O y radio OP, traza el arco que corta a esa perpendicular en P′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "r3a", "a3", "pP3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["a3", "pP3"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Une O con P′ y arrastra Z hasta P′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "r3a", "a3", "pP3", "r3b", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [0, 30]
+              },
+              "trazar": ["r3b"],
+              "destacar": ["pP3"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: OP′ mide lo mismo que OP y el ángulo POP′ es recto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "r3a", "a3", "pP3", "r3b", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [0, 30]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: girar en el sentido de las agujas del reloj. El ángulo es correcto pero la imagen queda al otro lado de O.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "P3", "r3a", "a3", "pP3", "r3b", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "P3": [30, 0],
+                "Z": [0, 30]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 0],
+                    [1.83697019872103e-15, -30.0]
+                  ],
+                  "rotulo": "Error: sentido horario"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Gira el punto P un ángulo de 60° en sentido antihorario alrededor de O. Arrastra Z hasta la imagen P′.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O4", "P4", "Z"],
+          "posiciones": {
+            "O4": [0, 0],
+            "P4": [35, -10],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "pP4",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! P′ está a la misma distancia de O y forma 60° con OP.",
+            "pista": "Un ángulo de 60° se construye con un triángulo equilátero."
+          }
+        }
+      },
+      "hints": [
+        "El giro conserva la distancia a O y cambia el ángulo en 60°.",
+        "Un ángulo de 60° es el de un triángulo equilátero, y se traza solo con el compás.",
+        "Con centro en O traza el arco de radio OP, y con centro en P y radio OP, corta al arco: sale P′."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos el centro O y el punto P. Hay que girar P sesenta grados en sentido antihorario.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El giro conserva la distancia a O. Como 60° es el ángulo de un triángulo equilátero, P′ está a la distancia OP de P y de O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que OP gira un sexto de vuelta. La punta describe un arco de centro O y la cuerda PP′ mide lo mismo que el radio.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Con centro en O y radio OP, traza el arco por donde se mueve P.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "r4a", "a4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [60, -55]
+              },
+              "trazar": ["r4a", "a4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en P y radio OP, corta al arco por el lado antihorario: obtienes P′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "r4a", "a4", "pP4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [60, -55]
+              },
+              "trazar": ["pP4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Une O con P′ y comprueba el ángulo. Arrastra Z hasta P′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "r4a", "a4", "pP4", "r4b", "ang4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [26.16, 25.311]
+              },
+              "trazar": ["r4b", "ang4"],
+              "destacar": ["pP4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: el ángulo POP′ vale 60° y OP′ mide lo mismo que OP.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "r4a", "a4", "pP4", "r4b", "ang4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [26.16, 25.311]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: medir el ángulo a ojo o con una abertura distinta del radio. La imagen queda a otro ángulo y el giro no es exacto.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "P4", "r4a", "a4", "pP4", "r4b", "ang4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "P4": [35, -10],
+                "Z": [26.16, 25.311]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 0],
+                    [30.851019477333978, 19.318762828120214]
+                  ],
+                  "rotulo": "Error: ángulo a ojo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Hallar el simétrico del punto P respecto del eje inclinado e. Arrastra Z hasta la imagen P′.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["P5", "E5a", "E5b", "e5", "Z"],
+          "posiciones": {
+            "P5": [-25, 35],
+            "E5a": [-40, -30],
+            "E5b": [40, 30],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "pP5",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! PP′ es perpendicular al eje y el eje lo corta por el punto medio.",
+            "pista": "PP′ es perpendicular al eje, y el eje pasa por el punto medio de PP′."
+          }
+        }
+      },
+      "hints": [
+        "La imagen queda al otro lado del eje, a la misma distancia.",
+        "El segmento PP′ es perpendicular al eje, y el eje lo corta por el punto medio.",
+        "Por P traza la perpendicular al eje y lleva con el compás la distancia de P al eje al otro lado."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos el punto P y un eje e inclinado. Buscamos su simétrico.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "P y P′ equidistan del eje y PP′ es perpendicular a él. Aunque el eje esté inclinado, la regla es la misma.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que doblas la hoja por el eje: P cae sobre P′. El eje es la mediatriz del segmento PP′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por P, traza la perpendicular al eje; corta al eje en M.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "g5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [60, -55]
+              },
+              "trazar": ["g5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en M y radio MP, marca el punto al otro lado del eje: es P′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "g5", "pP5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [60, -55]
+              },
+              "trazar": ["pP5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprueba que el eje es la mediatriz de PP′. Arrastra Z hasta P′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "g5", "pP5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [26.6, -33.8]
+              },
+              "destacar": ["pP5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: P′ está a la misma distancia del eje que P, y PP′ forma un ángulo recto con el eje.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "g5", "pP5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [26.6, -33.8]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: llevar la distancia en la dirección vertical y no en la perpendicular al eje. La imagen no equidista del eje inclinado.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["P5", "E5a", "E5b", "e5", "g5", "pP5", "Z"],
+              "posiciones": {
+                "P5": [-25, 35],
+                "E5a": [-40, -30],
+                "E5b": [40, 30],
+                "Z": [26.6, -33.8]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, 35],
+                    [61.0, 35]
+                  ],
+                  "rotulo": "Error: no es perpendicular al eje"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Aplica al triángulo ABC una homotecia de centro O y razón 2. Arrastra Z hasta la imagen A′ del vértice A.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O6", "A6", "B6", "C6", "s6a", "s6b", "s6c", "Z"],
+          "posiciones": {
+            "O6": [-45, -25],
+            "A6": [-35, -15],
+            "B6": [-15, -15],
+            "C6": [-25, 5],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "pA6",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! A′ está en la recta OA, a doble distancia de O que A.",
+            "pista": "A′ está en la recta OA y OA′ es el doble de OA."
+          }
+        }
+      },
+      "hints": [
+        "La homotecia de razón 2 duplica la distancia de cada punto a O.",
+        "La imagen de A está en la recta OA, al lado de A, y OA′ mide el doble que OA.",
+        "Traza la recta OA y lleva con el compás la distancia OA dos veces a partir de O."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un triángulo ABC y el centro O de la homotecia. Buscamos la imagen de A con razón 2.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O6", "A6", "B6", "C6", "s6a", "s6b", "s6c", "Z"],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "En una homotecia, la imagen está en la recta que une O con el punto. Con razón 2, la distancia a O se duplica.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O6", "A6", "B6", "C6", "s6a", "s6b", "s6c", "Z"],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina un foco de luz en O que proyecta la figura sobre una pared más lejana. Cada vértice se aleja de O sobre su propio rayo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O6", "A6", "B6", "C6", "s6a", "s6b", "s6c", "Z"],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza la recta que pasa por O y A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O6", "A6", "B6", "C6", "s6a", "s6b", "s6c", "g60", "Z"],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [60, -55]
+              },
+              "trazar": ["g60"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con el compás, lleva la distancia OA dos veces desde O sobre esa recta: obtienes A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O6", "A6", "B6", "C6", "s6a", "s6b", "s6c", "g60", "pA6", "Z"],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [60, -55]
+              },
+              "trazar": ["pA6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Repite con B y C y une las imágenes. Arrastra Z hasta A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O6",
+                "A6",
+                "B6",
+                "C6",
+                "s6a",
+                "s6b",
+                "s6c",
+                "g60",
+                "g61",
+                "g62",
+                "pA6",
+                "pB6",
+                "pC6",
+                "i6a",
+                "i6b",
+                "i6c",
+                "Z"
+              ],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [-25, -5]
+              },
+              "trazar": ["g61", "g62", "pB6", "pC6", "i6a", "i6b", "i6c"],
+              "destacar": ["pA6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: los lados del triángulo imagen son paralelos a los originales y miden el doble.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O6",
+                "A6",
+                "B6",
+                "C6",
+                "s6a",
+                "s6b",
+                "s6c",
+                "g60",
+                "g61",
+                "g62",
+                "pA6",
+                "pB6",
+                "pC6",
+                "i6a",
+                "i6b",
+                "i6c",
+                "Z"
+              ],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [-25, -5]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: llevar la razón a partir del punto y no del centro, como si fuera una traslación. La imagen no queda alineada con O y la figura se desplaza.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O6",
+                "A6",
+                "B6",
+                "C6",
+                "s6a",
+                "s6b",
+                "s6c",
+                "g60",
+                "g61",
+                "g62",
+                "pA6",
+                "pB6",
+                "pC6",
+                "i6a",
+                "i6b",
+                "i6c",
+                "Z"
+              ],
+              "posiciones": {
+                "O6": [-45, -25],
+                "A6": [-35, -15],
+                "B6": [-15, -15],
+                "C6": [-25, 5],
+                "Z": [-25, -5]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, -15],
+                    [-25, 7]
+                  ],
+                  "rotulo": "Error: razón desde A"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: halla la figura homotética del triángulo ABC de centro O y razón −1/2. Arrastra Z hasta la imagen A′ del vértice A.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O7", "A7", "B7", "C7", "s7a", "s7b", "s7c", "Z"],
+          "posiciones": {
+            "O7": [0, 0],
+            "A7": [40, 20],
+            "B7": [20, 40],
+            "C7": [50, 40],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "pA7",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Con razón negativa, A′ está al otro lado de O y a la mitad de distancia.",
+            "pista": "A′ está en la recta OA, al otro lado de O, a la mitad de distancia."
+          }
+        }
+      },
+      "hints": [
+        "El signo negativo indica que la imagen queda al otro lado del centro.",
+        "La imagen está en la recta OA, a la mitad de distancia que A, pero al lado opuesto de O.",
+        "Traza la recta OA, halla el punto medio de OA y llévalo al lado opuesto de O con el compás."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un triángulo ABC y una homotecia de centro O y razón negativa. Hay que hallar A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "A7", "B7", "C7", "s7a", "s7b", "s7c", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "La razón −1/2 combina dos cosas: la distancia se reduce a la mitad y la imagen pasa al otro lado de O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "A7", "B7", "C7", "s7a", "s7b", "s7c", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que el foco O proyecta la figura desde el lado contrario y más pequeña. Cada vértice cruza el centro y queda a mitad de distancia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "A7", "B7", "C7", "s7a", "s7b", "s7c", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza la recta OA y halla el punto medio M de OA con una mediatriz.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "A7", "B7", "C7", "s7a", "s7b", "s7c", "g70", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [60, -55]
+              },
+              "trazar": ["g70"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en O y radio OM, marca A′ en la recta OA, al lado opuesto de A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "A7", "B7", "C7", "s7a", "s7b", "s7c", "g70", "pA7", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [60, -55]
+              },
+              "trazar": ["pA7"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Repite con B y C y une las imágenes. Arrastra Z hasta A′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O7",
+                "A7",
+                "B7",
+                "C7",
+                "s7a",
+                "s7b",
+                "s7c",
+                "g70",
+                "g71",
+                "g72",
+                "pA7",
+                "pB7",
+                "pC7",
+                "i7a",
+                "i7b",
+                "i7c",
+                "Z"
+              ],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [-20, -10]
+              },
+              "trazar": ["g71", "g72", "pB7", "pC7", "i7a", "i7b", "i7c"],
+              "destacar": ["pA7"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: A′ está en la recta OA, al lado opuesto de A, y OA′ mide la mitad de OA. La figura queda girada media vuelta.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O7",
+                "A7",
+                "B7",
+                "C7",
+                "s7a",
+                "s7b",
+                "s7c",
+                "g70",
+                "g71",
+                "g72",
+                "pA7",
+                "pB7",
+                "pC7",
+                "i7a",
+                "i7b",
+                "i7c",
+                "Z"
+              ],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [-20, -10]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: olvidar el signo y poner la imagen al mismo lado de O que A. Con razón negativa, la figura imagen queda al otro lado del centro.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O7",
+                "A7",
+                "B7",
+                "C7",
+                "s7a",
+                "s7b",
+                "s7c",
+                "g70",
+                "g71",
+                "g72",
+                "pA7",
+                "pB7",
+                "pC7",
+                "i7a",
+                "i7b",
+                "i7c",
+                "Z"
+              ],
+              "posiciones": {
+                "O7": [0, 0],
+                "A7": [40, 20],
+                "B7": [20, 40],
+                "C7": [50, 40],
+                "Z": [-20, -10]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 0],
+                    [20.0, 10.0]
+                  ],
+                  "rotulo": "Error: sin el signo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: gira el triángulo ABC un ángulo de 90° antihorario alrededor de O y halla el simétrico del resultado respecto de e. Arrastra Z hasta la imagen final C″ del vértice C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O8", "A8", "B8", "C8", "s8a", "s8b", "s8c", "E8a", "E8b", "e8", "Z"],
+          "posiciones": {
+            "A8": [-45, -10],
+            "B8": [-15, -10],
+            "C8": [-30, 15],
+            "O8": [0, 0],
+            "E8a": [-60, -5],
+            "E8b": [60, -5],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "sC8",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Primero se gira cada vértice y después se refleja la imagen del giro.",
+            "pista": "Primero el giro de C, después la simetría de esa imagen."
+          }
+        }
+      },
+      "hints": [
+        "Hay que aplicar las dos transformaciones una detrás de otra.",
+        "La simetría se aplica a la imagen del giro, no al triángulo original.",
+        "Gira C noventa grados alrededor de O y halla el simétrico del resultado respecto de e."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un triángulo, un centro de giro O y un eje e. Hay que encadenar un giro y una simetría.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O8", "A8", "B8", "C8", "s8a", "s8b", "s8c", "E8a", "E8b", "e8", "Z"],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "La segunda transformación se aplica a las imágenes de la primera. Primero se halla C′ por el giro y después C″ por la simetría de C′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O8", "A8", "B8", "C8", "s8a", "s8b", "s8c", "E8a", "E8b", "e8", "Z"],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que giras el triángulo un cuarto de vuelta sobre la hoja y luego lo doblas por el eje, como en un espejo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O8", "A8", "B8", "C8", "s8a", "s8b", "s8c", "E8a", "E8b", "e8", "Z"],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Gira el vértice C noventa grados alrededor de O: la perpendicular a OC y la distancia OC dan C′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O8",
+                "A8",
+                "B8",
+                "C8",
+                "s8a",
+                "s8b",
+                "s8c",
+                "E8a",
+                "E8b",
+                "e8",
+                "gC8",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [60, -55]
+              },
+              "trazar": ["gC8"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Gira A y B de la misma manera y une las imágenes del giro.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O8",
+                "A8",
+                "B8",
+                "C8",
+                "s8a",
+                "s8b",
+                "s8c",
+                "E8a",
+                "E8b",
+                "e8",
+                "gA8",
+                "gB8",
+                "gC8",
+                "j8a",
+                "j8b",
+                "j8c",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [60, -55]
+              },
+              "trazar": ["gA8", "gB8", "j8a", "j8b", "j8c"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Por cada imagen traza la perpendicular al eje y lleva la distancia al otro lado: salen A″, B″ y C″. Arrastra Z hasta C″.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O8",
+                "A8",
+                "B8",
+                "C8",
+                "s8a",
+                "s8b",
+                "s8c",
+                "E8a",
+                "E8b",
+                "e8",
+                "gA8",
+                "gB8",
+                "gC8",
+                "j8a",
+                "j8b",
+                "j8c",
+                "sA8",
+                "sB8",
+                "sC8",
+                "k8a",
+                "k8b",
+                "k8c",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [-15, 20]
+              },
+              "trazar": ["sA8", "sB8", "sC8", "k8a", "k8b", "k8c"],
+              "destacar": ["sC8"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: el triángulo final tiene los mismos lados que el original. Se ha girado y reflejado, pero no deformado.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O8",
+                "A8",
+                "B8",
+                "C8",
+                "s8a",
+                "s8b",
+                "s8c",
+                "E8a",
+                "E8b",
+                "e8",
+                "gA8",
+                "gB8",
+                "gC8",
+                "j8a",
+                "j8b",
+                "j8c",
+                "sA8",
+                "sB8",
+                "sC8",
+                "k8a",
+                "k8b",
+                "k8c",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [-15, 20]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: transformar solo un vértice y copiar los demás a ojo. Con dos transformaciones el error se acumula y la figura final no coincide.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O8",
+                "A8",
+                "B8",
+                "C8",
+                "s8a",
+                "s8b",
+                "s8c",
+                "E8a",
+                "E8b",
+                "e8",
+                "gA8",
+                "gB8",
+                "gC8",
+                "j8a",
+                "j8b",
+                "j8c",
+                "sA8",
+                "sB8",
+                "sC8",
+                "k8a",
+                "k8b",
+                "k8c",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-45, -10],
+                "B8": [-15, -10],
+                "C8": [-30, 15],
+                "O8": [0, 0],
+                "E8a": [-60, -5],
+                "E8b": [60, -5],
+                "Z": [-15, 20]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [10, 35],
+                    [-7, 14]
+                  ],
+                  "rotulo": "Error: C″ a ojo"
+                },
+                {
+                  "puntos": [
+                    [10, 5],
+                    [-7, 14]
+                  ]
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: aplica al triángulo ABC una homotecia de centro O y razón 2 y traslada el resultado según el vector u. Arrastra Z hasta la imagen final B″ del vértice B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O9", "A9", "B9", "C9", "s9a", "s9b", "s9c", "U9a", "U9b", "sU9", "Z"],
+          "posiciones": {
+            "O9": [-40, -35],
+            "A9": [-30, -25],
+            "B9": [-10, -25],
+            "C9": [-20, -10],
+            "U9a": [20, 40],
+            "U9b": [-10, 35],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "tB9",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Primero la homotecia de B y después la traslación de su imagen.",
+            "pista": "Primero B′ por homotecia; después B″ trasladando B′."
+          }
+        }
+      },
+      "hints": [
+        "Hay que encadenar una homotecia y una traslación.",
+        "La traslación se aplica a la imagen de la homotecia, no a B.",
+        "Halla B′ en la recta OB a doble distancia de O, y traslada B′ con el vector u."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un triángulo, el centro O y el vector u. Hay que encadenar una homotecia y una traslación.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "B9", "C9", "s9a", "s9b", "s9c", "U9a", "U9b", "sU9", "Z"],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "La homotecia da B′ en la recta OB al doble de distancia de O. Después la traslación mueve B′ lo que indica u hasta B″.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "B9", "C9", "s9a", "s9b", "s9c", "U9a", "U9b", "sU9", "Z"],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que primero amplías el triángulo con un foco desde O y después lo deslizas siguiendo la flecha u.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "B9", "C9", "s9a", "s9b", "s9c", "U9a", "U9b", "sU9", "Z"],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza la recta OB y lleva dos veces la distancia OB desde O: obtienes B′.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O9",
+                "A9",
+                "B9",
+                "C9",
+                "s9a",
+                "s9b",
+                "s9c",
+                "U9a",
+                "U9b",
+                "sU9",
+                "hB9",
+                "Z"
+              ],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [60, -55]
+              },
+              "trazar": ["hB9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Haz lo mismo con A y C y une las imágenes de la homotecia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O9",
+                "A9",
+                "B9",
+                "C9",
+                "s9a",
+                "s9b",
+                "s9c",
+                "U9a",
+                "U9b",
+                "sU9",
+                "hA9",
+                "hB9",
+                "hC9",
+                "j9a",
+                "j9b",
+                "j9c",
+                "Z"
+              ],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [60, -55]
+              },
+              "trazar": ["hA9", "hC9", "j9a", "j9b", "j9c"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Por cada imagen traza la paralela a u y lleva su longitud: salen A″, B″ y C″. Arrastra Z hasta B″.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O9",
+                "A9",
+                "B9",
+                "C9",
+                "s9a",
+                "s9b",
+                "s9c",
+                "U9a",
+                "U9b",
+                "sU9",
+                "hA9",
+                "hB9",
+                "hC9",
+                "j9a",
+                "j9b",
+                "j9c",
+                "tA9",
+                "tB9",
+                "tC9",
+                "k9a",
+                "k9b",
+                "k9c",
+                "Z"
+              ],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [-10, -20]
+              },
+              "trazar": ["tA9", "tB9", "tC9", "k9a", "k9b", "k9c"],
+              "destacar": ["tB9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: el triángulo final tiene lados paralelos a los del original y miden el doble.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O9",
+                "A9",
+                "B9",
+                "C9",
+                "s9a",
+                "s9b",
+                "s9c",
+                "U9a",
+                "U9b",
+                "sU9",
+                "hA9",
+                "hB9",
+                "hC9",
+                "j9a",
+                "j9b",
+                "j9c",
+                "tA9",
+                "tB9",
+                "tC9",
+                "k9a",
+                "k9b",
+                "k9c",
+                "Z"
+              ],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [-10, -20]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: medir la razón desde el vértice y no desde el centro O. B′ queda mal alineado con O y toda la figura final se desplaza.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O9",
+                "A9",
+                "B9",
+                "C9",
+                "s9a",
+                "s9b",
+                "s9c",
+                "U9a",
+                "U9b",
+                "sU9",
+                "hA9",
+                "hB9",
+                "hC9",
+                "j9a",
+                "j9b",
+                "j9c",
+                "tA9",
+                "tB9",
+                "tC9",
+                "k9a",
+                "k9b",
+                "k9c",
+                "Z"
+              ],
+              "posiciones": {
+                "O9": [-40, -35],
+                "A9": [-30, -25],
+                "B9": [-10, -25],
+                "C9": [-20, -10],
+                "U9a": [20, 40],
+                "U9b": [-10, 35],
+                "Z": [-10, -20]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-10, -25],
+                    [30.0, -15.0]
+                  ],
+                  "rotulo": "Error: razón desde B"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    }
+  ]
+}

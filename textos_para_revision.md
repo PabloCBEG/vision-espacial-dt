@@ -2812,6 +2812,134 @@ Fichero: `src/content/lessons/23-poligonos-regulares.json` · DT I · nivel Inic
    - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el ángulo AOE vale 45°, y AE y EB miden lo mismo.
    - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: dividir el arco AB a ojo en dos partes iguales. Con el compás, la bisectriz lo hace exacto.
 
+### I-05 · Transformaciones: cada punto se mueve con una regla
+
+Fichero: `src/content/lessons/24-transformaciones.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Geometría plana: traslación, giro, simetría y homotecia aplicadas a puntos y figuras. Cada punto se mueve con la misma regla.
+
+**Pasos**
+
+1. [ ] Una transformación mueve cada punto con la misma regla. En la traslación, todos los puntos se desplazan lo que indica el vector u: misma dirección, sentido y longitud.
+2. [ ] En el giro, cada punto describe un arco de centro O y el mismo ángulo. La distancia a O no cambia y el ángulo entre el punto y su imagen es el del giro.
+3. [ ] En la simetría axial, cada punto y su imagen equidistan del eje e, y el segmento que los une es perpendicular a él. La figura se ve como en un espejo.
+4. [ ] La simetría central es un giro de 180° alrededor de O: cada punto y su imagen están alineados con O y a la misma distancia. La figura queda del revés.
+5. [ ] La homotecia de centro O y razón 2 aleja cada punto de O al doble de distancia, sobre la misma recta. La figura se amplía y sus lados quedan paralelos a los originales.
+6. [ ] Si la razón es negativa, la imagen queda al otro lado de O y la figura aparece girada media vuelta. Con razón menor que uno en valor absoluto, la figura se reduce.
+7. [ ] Las traslaciones, los giros y las simetrías conservan las medidas: son isometrías. La homotecia conserva los ángulos pero multiplica las longitudes por el valor absoluto de la razón.
+8. [ ] Para transformar una figura se aplica la regla a cada vértice y se unen las imágenes en el mismo orden. Si mueves solo un vértice y copias los demás a ojo, la figura se deforma.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: Traslada el triángulo ABC según el vector u. Arrastra Z hasta la imagen C′ del vértice C.
+   - [ ] *Pista 1:* En una traslación todos los puntos se mueven lo mismo.
+   - [ ] *Pista 2:* La imagen de C está en la paralela al vector u por C, a una distancia igual a la longitud de u.
+   - [ ] *Pista 3:* Traza por C la paralela a u y lleva con el compás la longitud de u.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos el triángulo ABC y el vector u. Hay que hallar la imagen de C al trasladar.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La traslación mueve cada punto en la dirección de u y la distancia de u. La imagen C′ está en la paralela a u por C.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que deslizas el triángulo entero sin girarlo, siguiendo la flecha de u. Cada vértice recorre la misma distancia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por C, traza la paralela al vector u.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con el compás, lleva la longitud de u sobre esa paralela desde C: obtienes C′.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Repite con A y B y une las imágenes. Arrastra Z hasta C′.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: los tres segmentos que unen cada vértice con su imagen son paralelos y miden lo mismo que u.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trasladar solo un vértice y copiar los demás a ojo. La figura queda deformada porque la regla no se aplicó a cada punto.
+2. [ ] *construcción en la lámina, dificultad 1*: Hallar el simétrico del triángulo ABC respecto del eje e. Arrastra Z hasta la imagen C′ del vértice C.
+   - [ ] *Pista 1:* El eje es como un espejo: la imagen queda al otro lado, a la misma distancia.
+   - [ ] *Pista 2:* El segmento que une C con C′ es perpendicular al eje, y el eje lo corta por la mitad.
+   - [ ] *Pista 3:* Por C traza la perpendicular al eje, y con el compás lleva la distancia de C al eje al otro lado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo ABC y un eje vertical e. Buscamos el simétrico de C.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* C y su imagen C′ equidistan del eje y el segmento CC′ es perpendicular a él. Basta llevar la distancia de C al eje al otro lado.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que doblas la hoja por el eje: C cae justo sobre C′. Por eso el eje pasa por el punto medio de CC′.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por C, traza la perpendicular al eje; corta al eje en un punto M.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en M y radio MC, marca el punto al otro lado del eje: es C′.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Repite con A y B, une las imágenes y arrastra Z hasta C′.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: cada punto y su imagen equidistan del eje, y el triángulo imagen tiene los mismos lados pero está recorrido en sentido contrario.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: llevar la imagen a otra distancia del eje, o no sobre la perpendicular. El simétrico deja de ser exacto y los lados no coinciden.
+3. [ ] *construcción en la lámina, dificultad 1*: Gira el punto P un ángulo de 90° en sentido antihorario alrededor de O. Arrastra Z hasta la imagen P′.
+   - [ ] *Pista 1:* En un giro, el punto conserva su distancia a O.
+   - [ ] *Pista 2:* El ángulo entre OP y OP′ es el del giro, y el sentido antihorario es el contrario a las agujas del reloj.
+   - [ ] *Pista 3:* Por O traza la perpendicular a OP y lleva sobre ella la distancia OP, hacia arriba.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos el centro O y el punto P. Hay que girar P un ángulo recto en sentido antihorario.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El giro conserva la distancia a O y cambia el ángulo en el valor indicado. Para 90° basta la perpendicular a OP por O.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina OP como la aguja de un reloj que gira un cuarto de vuelta hacia la izquierda. La punta recorre un arco de centro O.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por O, traza la perpendicular a OP, hacia el lado del giro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en O y radio OP, traza el arco que corta a esa perpendicular en P′.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Une O con P′ y arrastra Z hasta P′.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: OP′ mide lo mismo que OP y el ángulo POP′ es recto.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: girar en el sentido de las agujas del reloj. El ángulo es correcto pero la imagen queda al otro lado de O.
+4. [ ] *construcción en la lámina, dificultad 2*: Gira el punto P un ángulo de 60° en sentido antihorario alrededor de O. Arrastra Z hasta la imagen P′.
+   - [ ] *Pista 1:* El giro conserva la distancia a O y cambia el ángulo en 60°.
+   - [ ] *Pista 2:* Un ángulo de 60° es el de un triángulo equilátero, y se traza solo con el compás.
+   - [ ] *Pista 3:* Con centro en O traza el arco de radio OP, y con centro en P y radio OP, corta al arco: sale P′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos el centro O y el punto P. Hay que girar P sesenta grados en sentido antihorario.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El giro conserva la distancia a O. Como 60° es el ángulo de un triángulo equilátero, P′ está a la distancia OP de P y de O.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que OP gira un sexto de vuelta. La punta describe un arco de centro O y la cuerda PP′ mide lo mismo que el radio.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con centro en O y radio OP, traza el arco por donde se mueve P.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en P y radio OP, corta al arco por el lado antihorario: obtienes P′.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Une O con P′ y comprueba el ángulo. Arrastra Z hasta P′.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el ángulo POP′ vale 60° y OP′ mide lo mismo que OP.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: medir el ángulo a ojo o con una abertura distinta del radio. La imagen queda a otro ángulo y el giro no es exacto.
+5. [ ] *construcción en la lámina, dificultad 2*: Hallar el simétrico del punto P respecto del eje inclinado e. Arrastra Z hasta la imagen P′.
+   - [ ] *Pista 1:* La imagen queda al otro lado del eje, a la misma distancia.
+   - [ ] *Pista 2:* El segmento PP′ es perpendicular al eje, y el eje lo corta por el punto medio.
+   - [ ] *Pista 3:* Por P traza la perpendicular al eje y lleva con el compás la distancia de P al eje al otro lado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos el punto P y un eje e inclinado. Buscamos su simétrico.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* P y P′ equidistan del eje y PP′ es perpendicular a él. Aunque el eje esté inclinado, la regla es la misma.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que doblas la hoja por el eje: P cae sobre P′. El eje es la mediatriz del segmento PP′.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por P, traza la perpendicular al eje; corta al eje en M.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en M y radio MP, marca el punto al otro lado del eje: es P′.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Comprueba que el eje es la mediatriz de PP′. Arrastra Z hasta P′.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: P′ está a la misma distancia del eje que P, y PP′ forma un ángulo recto con el eje.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: llevar la distancia en la dirección vertical y no en la perpendicular al eje. La imagen no equidista del eje inclinado.
+6. [ ] *construcción en la lámina, dificultad 2*: Aplica al triángulo ABC una homotecia de centro O y razón 2. Arrastra Z hasta la imagen A′ del vértice A.
+   - [ ] *Pista 1:* La homotecia de razón 2 duplica la distancia de cada punto a O.
+   - [ ] *Pista 2:* La imagen de A está en la recta OA, al lado de A, y OA′ mide el doble que OA.
+   - [ ] *Pista 3:* Traza la recta OA y lleva con el compás la distancia OA dos veces a partir de O.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo ABC y el centro O de la homotecia. Buscamos la imagen de A con razón 2.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En una homotecia, la imagen está en la recta que une O con el punto. Con razón 2, la distancia a O se duplica.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un foco de luz en O que proyecta la figura sobre una pared más lejana. Cada vértice se aleja de O sobre su propio rayo.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta que pasa por O y A.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con el compás, lleva la distancia OA dos veces desde O sobre esa recta: obtienes A′.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Repite con B y C y une las imágenes. Arrastra Z hasta A′.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: los lados del triángulo imagen son paralelos a los originales y miden el doble.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: llevar la razón a partir del punto y no del centro, como si fuera una traslación. La imagen no queda alineada con O y la figura se desplaza.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: halla la figura homotética del triángulo ABC de centro O y razón −1/2. Arrastra Z hasta la imagen A′ del vértice A.
+   - [ ] *Pista 1:* El signo negativo indica que la imagen queda al otro lado del centro.
+   - [ ] *Pista 2:* La imagen está en la recta OA, a la mitad de distancia que A, pero al lado opuesto de O.
+   - [ ] *Pista 3:* Traza la recta OA, halla el punto medio de OA y llévalo al lado opuesto de O con el compás.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo ABC y una homotecia de centro O y razón negativa. Hay que hallar A′.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La razón −1/2 combina dos cosas: la distancia se reduce a la mitad y la imagen pasa al otro lado de O.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que el foco O proyecta la figura desde el lado contrario y más pequeña. Cada vértice cruza el centro y queda a mitad de distancia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta OA y halla el punto medio M de OA con una mediatriz.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en O y radio OM, marca A′ en la recta OA, al lado opuesto de A.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Repite con B y C y une las imágenes. Arrastra Z hasta A′.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: A′ está en la recta OA, al lado opuesto de A, y OA′ mide la mitad de OA. La figura queda girada media vuelta.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: olvidar el signo y poner la imagen al mismo lado de O que A. Con razón negativa, la figura imagen queda al otro lado del centro.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: gira el triángulo ABC un ángulo de 90° antihorario alrededor de O y halla el simétrico del resultado respecto de e. Arrastra Z hasta la imagen final C″ del vértice C.
+   - [ ] *Pista 1:* Hay que aplicar las dos transformaciones una detrás de otra.
+   - [ ] *Pista 2:* La simetría se aplica a la imagen del giro, no al triángulo original.
+   - [ ] *Pista 3:* Gira C noventa grados alrededor de O y halla el simétrico del resultado respecto de e.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo, un centro de giro O y un eje e. Hay que encadenar un giro y una simetría.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La segunda transformación se aplica a las imágenes de la primera. Primero se halla C′ por el giro y después C″ por la simetría de C′.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que giras el triángulo un cuarto de vuelta sobre la hoja y luego lo doblas por el eje, como en un espejo.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Gira el vértice C noventa grados alrededor de O: la perpendicular a OC y la distancia OC dan C′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Gira A y B de la misma manera y une las imágenes del giro.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Por cada imagen traza la perpendicular al eje y lleva la distancia al otro lado: salen A″, B″ y C″. Arrastra Z hasta C″.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el triángulo final tiene los mismos lados que el original. Se ha girado y reflejado, pero no deformado.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: transformar solo un vértice y copiar los demás a ojo. Con dos transformaciones el error se acumula y la figura final no coincide.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: aplica al triángulo ABC una homotecia de centro O y razón 2 y traslada el resultado según el vector u. Arrastra Z hasta la imagen final B″ del vértice B.
+   - [ ] *Pista 1:* Hay que encadenar una homotecia y una traslación.
+   - [ ] *Pista 2:* La traslación se aplica a la imagen de la homotecia, no a B.
+   - [ ] *Pista 3:* Halla B′ en la recta OB a doble distancia de O, y traslada B′ con el vector u.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un triángulo, el centro O y el vector u. Hay que encadenar una homotecia y una traslación.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La homotecia da B′ en la recta OB al doble de distancia de O. Después la traslación mueve B′ lo que indica u hasta B″.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que primero amplías el triángulo con un foco desde O y después lo deslizas siguiendo la flecha u.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la recta OB y lleva dos veces la distancia OB desde O: obtienes B′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Haz lo mismo con A y C y une las imágenes de la homotecia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Por cada imagen traza la paralela a u y lleva su longitud: salen A″, B″ y C″. Arrastra Z hasta B″.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el triángulo final tiene lados paralelos a los del original y miden el doble.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: medir la razón desde el vértice y no desde el centro O. B′ queda mal alineado con O y toda la figura final se desplaza.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos

@@ -43,6 +43,15 @@ const ObjectSchema = z.discriminatedUnion('tipo', [
     indice: z.union([z.literal(0), z.literal(1)]).optional(),
   }),
   z.object({ ...common, tipo: z.literal('puntoMedio'), de: z.tuple([Id, Id]) }),
+  // Transformaciones de un punto: cada una mueve el punto `de` con una regla.
+  /** Traslación: el punto se mueve lo que va de A a B (el vector AB). */
+  z.object({ ...common, tipo: z.literal('traslacion'), de: Id, vector: z.tuple([Id, Id]) }),
+  /** Giro alrededor de un centro, en grados (positivo: antihorario). */
+  z.object({ ...common, tipo: z.literal('giro'), de: Id, centro: Id, angulo: z.number() }),
+  /** Simetría respecto de una recta (axial). Con un punto como eje, central: ver `homotecia`. */
+  z.object({ ...common, tipo: z.literal('simetria'), de: Id, eje: Id }),
+  /** Homotecia de centro O y razón k (k < 0: inversa, la imagen queda al otro lado de O). */
+  z.object({ ...common, tipo: z.literal('homotecia'), de: Id, centro: Id, razon: z.number() }),
   z.object({ ...common, tipo: z.literal('perpendicular'), a: Id, por: Id }),
   z.object({ ...common, tipo: z.literal('paralela'), a: Id, por: Id }),
   z.object({ ...common, tipo: z.literal('mediatriz'), de: z.tuple([Id, Id]) }),

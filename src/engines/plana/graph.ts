@@ -7,6 +7,7 @@ import {
   arcPoint,
   capableArc,
   dist,
+  foot,
   intersectCircles,
   intersectLineCircle,
   intersectLines,
@@ -55,6 +56,10 @@ export type ObjectDef = { id: string; rol?: Role; etiqueta?: string; oculto?: bo
   | { tipo: 'arco'; centro: string; desde: string; hasta: string }
   | { tipo: 'interseccion'; de: [string, string]; indice?: 0 | 1 }
   | { tipo: 'puntoMedio'; de: [string, string] }
+  | { tipo: 'traslacion'; de: string; vector: [string, string] }
+  | { tipo: 'giro'; de: string; centro: string; angulo: number }
+  | { tipo: 'simetria'; de: string; eje: string }
+  | { tipo: 'homotecia'; de: string; centro: string; razon: number }
   | { tipo: 'perpendicular' | 'paralela'; a: string; por: string }
   | { tipo: 'mediatriz'; de: [string, string] }
   | {
@@ -207,6 +212,35 @@ function evaluateOne(
           );
         }
         return ok({ kind: 'point', p });
+      }
+      case 'traslacion': {
+        const v = sub(point(def.vector[1]), point(def.vector[0]));
+        const p = point(def.de);
+        return ok({ kind: 'point', p: pt(p.x + v.x, p.y + v.y) });
+      }
+      case 'giro': {
+        const o = point(def.centro);
+        const p = point(def.de);
+        const t = (def.angulo * Math.PI) / 180;
+        const x = p.x - o.x;
+        const y = p.y - o.y;
+        return ok({
+          kind: 'point',
+          p: pt(o.x + x * Math.cos(t) - y * Math.sin(t), o.y + x * Math.sin(t) + y * Math.cos(t)),
+        });
+      }
+      case 'simetria': {
+        const p = point(def.de);
+        const f = foot(line(def.eje), p);
+        return ok({ kind: 'point', p: pt(2 * f.x - p.x, 2 * f.y - p.y) });
+      }
+      case 'homotecia': {
+        const o = point(def.centro);
+        const p = point(def.de);
+        return ok({
+          kind: 'point',
+          p: pt(o.x + def.razon * (p.x - o.x), o.y + def.razon * (p.y - o.y)),
+        });
       }
       case 'puntoMedio':
         return ok({ kind: 'point', p: mid(point(def.de[0]), point(def.de[1])) });

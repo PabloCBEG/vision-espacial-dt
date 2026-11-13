@@ -47,6 +47,10 @@ export function defaultRole(def: ObjectDef): Role {
     case 'puntoSobre':
     case 'interseccion':
     case 'puntoMedio':
+    case 'traslacion':
+    case 'giro':
+    case 'simetria':
+    case 'homotecia':
     case 'puntoTangencia':
     case 'medidaAngulo':
     case 'medidaDistancia':
