@@ -296,6 +296,23 @@ Cópialos de uno en uno; cada uno es una tanda de trabajo con su criterio de ter
 > adaptativo que priorice los tipos y temas con más fallos, guardado solo en el navegador. Añade
 > ejercicios encadenados con apartados corregidos por separado.
 
+### Prompt 9 · Herramienta de marcado de aristas en un cubo 3D
+
+> Incorpora a la web una herramienta de marcado de aristas en una rejilla 3D de puntos, a partir del
+> prototipo `examenes/andalucia/academia-granada/_marcar-aristas-2026-ord-3A.html` (HTML sin
+> dependencias). Debe:
+> - mostrar una rejilla de puntos (de 3×3×3 a 5×5×5, configurable) que se gira arrastrando y se
+>   puede ver en perspectiva y en isométrica, con ayuda para los puntos que se solapan;
+> - permitir marcar o desmarcar la arista entre **cualquier** pareja de puntos, sin limitarla a las
+>   «posibles», y rotular los puntos con (x, a, c);
+> - mostrar a la vez las tres vistas (alzado, planta y perfil izquierdo) de lo marcado sobre las
+>   líneas de unas vistas dadas, y avisar de las aristas que no caen en ellas;
+> - exportar e importar la selección como JSON y, con las caras, construir la pieza con la
+>   operación `convexo` del motor de piezas;
+> - ser usable con teclado y en móvil, en castellano, y estar enlazada desde las lecciones de
+>   normalización y del banco PAU (ejercicio 3) como ejercicio «reconstruye la pieza».
+> Úsala después para el tipo de ejercicio «reconstruir la pieza desde sus vistas» (B2/A3 de la fase 2).
+
 ---
 
 ## 7. Decisiones que necesitan al profesor
@@ -325,6 +342,7 @@ Cada lección se da por terminada según el apartado «Contenido de ejercicios»
 9. I-08.
 10. Piezas 11–18 y 6 ejercicios PAU reales (ejercicios 3 y 4).
 11. Lecciones nuevas I-15, I-11, I-13, I-07 y II-11.
+12. Herramienta de marcado de aristas en un cubo 3D (prototipo en `examenes/andalucia/academia-granada/`), para los ejercicios 3 reales de la PAU y la reconstrucción de piezas desde sus vistas (Prompt 9).
 12. Proyecto final: modelo didáctico de la fragata F110 (ver más abajo).
 
 **Adelantos.** El motor de polígonos y las lecciones I-02 e I-03 se adelantan al inicio de la
