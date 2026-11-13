@@ -14,7 +14,10 @@
 import { ISO_RIGHT, ISO_TOWARD, ISO_UP } from '../axonometria/projection.ts';
 import type { TriMesh } from './kernel.ts';
 
-export type ViewName = 'alzado' | 'planta' | 'perfil' | 'isometrica';
+export type ViewName = 'alzado' | 'planta' | 'perfil' | 'isometrica' | 'caballera';
+
+/** Perspectiva caballera de la PAU: eje Y a 45° y coeficiente de reducción 1/2. */
+export const CABALLERA = { angle: 45, coef: 0.5 } as const;
 
 export interface Seg2 {
   readonly x1: number;
@@ -56,12 +59,25 @@ export function project(view: ViewName, p: readonly number[]): V3 {
         x * ISO_UP.x + a * ISO_UP.a + c * ISO_UP.c,
         x * ISO_TOWARD.x + a * ISO_TOWARD.a + c * ISO_TOWARD.c,
       ];
+    case 'caballera': {
+      // Plano frontal XZ en verdadera magnitud; el alejamiento (hacia el fondo, −a) se dibuja
+      // reducido y a 45°. La profundidad es el alejamiento: mayor = más cerca del observador.
+      const t = (CABALLERA.angle * Math.PI) / 180;
+      return [x - CABALLERA.coef * a * Math.cos(t), c - CABALLERA.coef * a * Math.sin(t), a];
+    }
   }
 }
 
 /** Dirección hacia el observador de cada vista (x, a, c). */
 export function toward(view: ViewName): V3 {
   if (view === 'isometrica') return [ISO_TOWARD.x, ISO_TOWARD.a, ISO_TOWARD.c];
+  if (view === 'caballera') {
+    // Los rayos oblicuos: un desplazamiento (k·cos t, 1, k·sin t) no se mueve en el dibujo.
+    const t = (CABALLERA.angle * Math.PI) / 180;
+    const v: V3 = [CABALLERA.coef * Math.cos(t), 1, CABALLERA.coef * Math.sin(t)];
+    const l = Math.hypot(...v);
+    return [v[0] / l, v[1] / l, v[2] / l];
+  }
   return view === 'alzado' ? [0, 1, 0] : view === 'planta' ? [0, 0, 1] : [-1, 0, 0];
 }
 

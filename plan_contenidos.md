@@ -325,6 +325,33 @@ Cada lección se da por terminada según el apartado «Contenido de ejercicios»
 9. I-08.
 10. Piezas 11–18 y 6 ejercicios PAU reales (ejercicios 3 y 4).
 11. Lecciones nuevas I-15, I-11, I-13, I-07 y II-11.
+12. Proyecto final: modelo didáctico de la fragata F110 (ver más abajo).
 
 **Adelantos.** El motor de polígonos y las lecciones I-02 e I-03 se adelantan al inicio de la
 fase 2.
+
+### Proyecto final: modelo didáctico de la fragata F110
+
+- **Cuándo.** Va después de las lecciones nuevas I-15, I-11, I-13, I-07 y II-11, porque enlaza
+  con ellas. Fecha orientativa: marzo–abril de 2027.
+- **Qué es.** Una lección-colofón con ocho bloques. Cada bloque enlaza con la lección cuyo
+  método reutiliza:
+  1. Datos y escala.
+  2. Plano de formas simplificado.
+  3. Vistas diédricas.
+  4. Superestructura y mástil por coordenadas.
+  5. Isométrica y caballera.
+  6. Cónica de la proa.
+  7. Acotación y cajetín.
+  8. Comprobación y error típico.
+- **Datos.** Aproximados, de fuentes abiertas: eslora 145 m, manga 18 m, calado 5 m. El puntal
+  es un supuesto didáctico. No es un plano oficial y no lleva detalles militares.
+- **Motor.** Pendiente de decidir. Propuesta: casco poliédrico por cuadernas como primitiva
+  nueva del motor de normalización.
+- **Decisiones pendientes del profesor.**
+  - Tipo de casco, puntal y manga.
+  - Nombres de las vistas y orientación de la proa.
+  - Escala y formato de la lámina.
+  - Una lección o varias.
+  - Punto métrico de la cónica.
+  - Cuándo se da y para qué curso.

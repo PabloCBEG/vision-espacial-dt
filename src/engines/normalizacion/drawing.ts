@@ -215,7 +215,20 @@ export function buildDrawing(wasm: ManifoldToplevel, piece: Piece, step: NormSte
     }
     removed = rest ? toMesh(rest) : null;
   }
-  for (const view of ['alzado', 'planta', 'perfil', 'isometrica'] as const) {
+  for (const view of ['alzado', 'planta', 'perfil', 'isometrica', 'caballera'] as const) {
+    // La caballera solo se calcula si el paso la pide (cada vista con ocultas cuesta tiempo).
+    if (view === 'caballera' && !step.vistas.includes('caballera')) {
+      views[view] = {
+        visible: [],
+        hidden: [],
+        hatch: [],
+        axes: [],
+        revolved: [],
+        revolvedHatch: [],
+        sectioned: false,
+      };
+      continue;
+    }
     const axes = step.ejes ? axesIn(view, piece, bounds) : [];
     if (cut && cutInfo && kept && cut.vista === view) {
       const isCut = onPlanes(kept, cutInfo.planes);
@@ -285,6 +298,7 @@ export function placeInSheet(
     case 'perfil':
       return { x: u - amin + xmax + VIEW_GAP, y: v - cmin + half };
     case 'isometrica':
+    case 'caballera':
       return { x: u, y: v };
   }
 }

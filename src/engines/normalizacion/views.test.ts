@@ -220,3 +220,33 @@ describe('dibujo completo de una pieza', () => {
     expect(d.removed).not.toBeNull();
   });
 });
+
+describe('perspectiva caballera de una pieza', () => {
+  const cube = piece([{ tipo: 'bloque', desde: [0, 10, 0], hasta: [20, 30, 20] }]);
+
+  it('la cara de delante está en verdadera magnitud y el fondo se reduce a la mitad', () => {
+    const mesh = toMesh(buildSolid(wasm, cube));
+    const d = drawView(mesh, 'caballera', { hidden: true });
+    // Cuadrado frontal de 20 × 20 (80), 3 aristas del fondo reducidas (3 × 10) y las 2 aristas
+    // vistas de la cara de atrás (2 × 20).
+    expect(total(d.visible)).toBeCloseTo(4 * 20 + 3 * 10 + 2 * 20, 0);
+    // Ocultas: las 2 aristas de atrás que tapa la pieza (2 × 20) y 1 del fondo (10).
+    expect(total(d.hidden)).toBeCloseTo(20 + 20 + 10, 0);
+  });
+
+  it('un taladro de eje paralelo al fondo se ve como un óvalo en caballera, no como círculo', () => {
+    const mesh = toMesh(
+      buildSolid(
+        wasm,
+        piece([
+          { tipo: 'bloque', desde: [0, 10, 0], hasta: [30, 40, 30] },
+          { tipo: 'taladro', centro: [15, 40, 15], eje: 'a', sentido: -1, diametro: 10 },
+        ]),
+      ),
+    );
+    const front = drawView(mesh, 'caballera', { hidden: false });
+    // En el plano frontal XZ la circunferencia se ve entera, de 10 mm de diámetro.
+    const xs = front.visible.flatMap((g) => [g.x1, g.x2]);
+    expect(Math.max(...xs) - Math.min(...xs)).toBeGreaterThan(29);
+  });
+});

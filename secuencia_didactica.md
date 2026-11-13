@@ -34,6 +34,7 @@ cada tema en *Visión espacial DT*. Pendiente de revisión por el profesor.
 | Feb.–mar. (4) | II-12 Normalización: vistas, cortes, secciones y acotación | 4 | Disponible |
 | Mar. (3) | II-10 Axonometría de sólidos, con curvas y octaedro | 3 | Disponible |
 | Abr. (2) | II-11 Perspectiva cónica de sólidos desde vistas | 3 | Pendiente (motor listo) |
+| Mar.–abr. (por decidir) | Proyecto final F110: modelo didáctico de la fragata (colofón que enlaza vistas, isométrica, cónica y acotación) | 2, 3 y 4 | Pendiente (motor por decidir) |
 | Abr.–may. (5) | Simulacros completos de 90 minutos con exámenes reales; test final del entrenador | 1 a 4 | Banco PAU |
 | Si sobra tiempo | II-02 Inversión (no entra en la PAU) | — | Falta el motor |
 | Fuera de la web | II-13 Planos de conjunto y CAD | — | Fuera de la herramienta |
