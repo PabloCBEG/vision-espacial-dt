@@ -1,0 +1,3441 @@
+{
+  "id": "triangulos-y-cuadrilateros",
+  "order": 2,
+  "title": "Triángulos y cuadriláteros: cada dato es un lugar geométrico",
+  "topic": "I-02",
+  "stage": "DT I",
+  "saberBasico": "Geometría plana: triángulos y cuadriláteros por sus datos, y puntos notables del triángulo. Cada dato como lugar geométrico y el vértice que falta como corte de dos.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "A1",
+            "tipo": "punto",
+            "en": [-40, -20],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B1",
+            "tipo": "punto",
+            "en": [20, -20],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "U1",
+            "tipo": "punto",
+            "en": [-60, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "U2",
+            "tipo": "punto",
+            "en": [-15, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "V1",
+            "tipo": "punto",
+            "en": [0, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "V2",
+            "tipo": "punto",
+            "en": [35, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "sAB1",
+            "tipo": "segmento",
+            "por": ["A1", "B1"],
+            "rol": "dato"
+          },
+          {
+            "id": "sU",
+            "tipo": "segmento",
+            "por": ["U1", "U2"],
+            "rol": "dato",
+            "etiqueta": "b"
+          },
+          {
+            "id": "sV",
+            "tipo": "segmento",
+            "por": ["V1", "V2"],
+            "rol": "dato",
+            "etiqueta": "a"
+          },
+          {
+            "id": "ca1",
+            "tipo": "circunferencia",
+            "centro": "A1",
+            "radioDe": ["U1", "U2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "cb1",
+            "tipo": "circunferencia",
+            "centro": "B1",
+            "radioDe": ["V1", "V2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C1",
+            "tipo": "interseccion",
+            "de": ["ca1", "cb1"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "C₁"
+          },
+          {
+            "id": "C2",
+            "tipo": "interseccion",
+            "de": ["ca1", "cb1"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C₂"
+          },
+          {
+            "id": "sAC1",
+            "tipo": "segmento",
+            "por": ["A1", "C1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "sBC1",
+            "tipo": "segmento",
+            "por": ["B1", "C1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A2",
+            "tipo": "punto",
+            "en": [-35, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B2",
+            "tipo": "punto",
+            "en": [25, -25],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "W1",
+            "tipo": "punto",
+            "en": [-30, 35],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "W2",
+            "tipo": "punto",
+            "en": [5, 35],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "sAB2",
+            "tipo": "segmento",
+            "por": ["A2", "B2"],
+            "rol": "dato"
+          },
+          {
+            "id": "sW",
+            "tipo": "segmento",
+            "por": ["W1", "W2"],
+            "rol": "dato",
+            "etiqueta": "l"
+          },
+          {
+            "id": "m2",
+            "tipo": "mediatriz",
+            "de": ["A2", "B2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "c2",
+            "tipo": "circunferencia",
+            "centro": "A2",
+            "radioDe": ["W1", "W2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "D2",
+            "tipo": "interseccion",
+            "de": ["m2", "c2"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "sAD2",
+            "tipo": "segmento",
+            "por": ["A2", "D2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "sBD2",
+            "tipo": "segmento",
+            "por": ["B2", "D2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A3",
+            "tipo": "punto",
+            "en": [-40, -20],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B3",
+            "tipo": "punto",
+            "en": [10, -25],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "D3",
+            "tipo": "punto",
+            "en": [-20, 25],
+            "etiqueta": "D",
+            "fijo": true
+          },
+          {
+            "id": "rAB3",
+            "tipo": "recta",
+            "por": ["A3", "B3"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "rAD3",
+            "tipo": "recta",
+            "por": ["A3", "D3"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pD3",
+            "tipo": "paralela",
+            "a": "rAB3",
+            "por": "D3",
+            "rol": "proceso"
+          },
+          {
+            "id": "pB3",
+            "tipo": "paralela",
+            "a": "rAD3",
+            "por": "B3",
+            "rol": "proceso"
+          },
+          {
+            "id": "C3",
+            "tipo": "interseccion",
+            "de": ["pD3", "pB3"],
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "sAB3",
+            "tipo": "segmento",
+            "por": ["A3", "B3"],
+            "rol": "dato"
+          },
+          {
+            "id": "sAD3",
+            "tipo": "segmento",
+            "por": ["A3", "D3"],
+            "rol": "dato"
+          },
+          {
+            "id": "sBC3",
+            "tipo": "segmento",
+            "por": ["B3", "C3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "sDC3",
+            "tipo": "segmento",
+            "por": ["D3", "C3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A4",
+            "tipo": "punto",
+            "en": [-40, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B4",
+            "tipo": "punto",
+            "en": [35, -20],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C4",
+            "tipo": "punto",
+            "en": [0, 40],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "sAB4",
+            "tipo": "segmento",
+            "por": ["A4", "B4"],
+            "rol": "dato"
+          },
+          {
+            "id": "sBC4",
+            "tipo": "segmento",
+            "por": ["B4", "C4"],
+            "rol": "dato"
+          },
+          {
+            "id": "sCA4",
+            "tipo": "segmento",
+            "por": ["C4", "A4"],
+            "rol": "dato"
+          },
+          {
+            "id": "mAB4",
+            "tipo": "mediatriz",
+            "de": ["A4", "B4"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "mBC4",
+            "tipo": "mediatriz",
+            "de": ["B4", "C4"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "O4",
+            "tipo": "interseccion",
+            "de": ["mAB4", "mBC4"],
+            "rol": "resultado",
+            "etiqueta": "O"
+          },
+          {
+            "id": "kO4",
+            "tipo": "circunferencia",
+            "centro": "O4",
+            "pasaPor": "A4",
+            "rol": "resultado"
+          },
+          {
+            "id": "A5",
+            "tipo": "punto",
+            "en": [-40, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B5",
+            "tipo": "punto",
+            "en": [35, -30],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C5",
+            "tipo": "punto",
+            "en": [10, 35],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "sAB5",
+            "tipo": "segmento",
+            "por": ["A5", "B5"],
+            "rol": "dato"
+          },
+          {
+            "id": "sBC5",
+            "tipo": "segmento",
+            "por": ["B5", "C5"],
+            "rol": "dato"
+          },
+          {
+            "id": "sCA5",
+            "tipo": "segmento",
+            "por": ["C5", "A5"],
+            "rol": "dato"
+          },
+          {
+            "id": "bA5",
+            "tipo": "bisectriz",
+            "angulo": ["B5", "A5", "C5"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "bB5",
+            "tipo": "bisectriz",
+            "angulo": ["A5", "B5", "C5"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "I5",
+            "tipo": "interseccion",
+            "de": ["bA5", "bB5"],
+            "rol": "resultado",
+            "etiqueta": "I"
+          },
+          {
+            "id": "rAB5",
+            "tipo": "recta",
+            "por": ["A5", "B5"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pI5",
+            "tipo": "perpendicular",
+            "a": "rAB5",
+            "por": "I5",
+            "rol": "proceso"
+          },
+          {
+            "id": "T5",
+            "tipo": "interseccion",
+            "de": ["pI5", "rAB5"],
+            "rol": "proceso",
+            "etiqueta": "T"
+          },
+          {
+            "id": "kI5",
+            "tipo": "circunferencia",
+            "centro": "I5",
+            "pasaPor": "T5",
+            "rol": "resultado"
+          },
+          {
+            "id": "A6",
+            "tipo": "punto",
+            "en": [-40, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B6",
+            "tipo": "punto",
+            "en": [40, -15],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "C6",
+            "tipo": "punto",
+            "en": [-10, 40],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "sAB6",
+            "tipo": "segmento",
+            "por": ["A6", "B6"],
+            "rol": "dato"
+          },
+          {
+            "id": "sBC6",
+            "tipo": "segmento",
+            "por": ["B6", "C6"],
+            "rol": "dato"
+          },
+          {
+            "id": "sCA6",
+            "tipo": "segmento",
+            "por": ["C6", "A6"],
+            "rol": "dato"
+          },
+          {
+            "id": "rAB6",
+            "tipo": "recta",
+            "por": ["A6", "B6"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "rBC6",
+            "tipo": "recta",
+            "por": ["B6", "C6"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "hC6",
+            "tipo": "perpendicular",
+            "a": "rAB6",
+            "por": "C6",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "hA6",
+            "tipo": "perpendicular",
+            "a": "rBC6",
+            "por": "A6",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "H6",
+            "tipo": "interseccion",
+            "de": ["hC6", "hA6"],
+            "rol": "resultado",
+            "etiqueta": "H"
+          },
+          {
+            "id": "F6",
+            "tipo": "interseccion",
+            "de": ["hC6", "rAB6"],
+            "rol": "proceso",
+            "etiqueta": "F"
+          },
+          {
+            "id": "sCF6",
+            "tipo": "segmento",
+            "por": ["C6", "F6"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A7",
+            "tipo": "punto",
+            "en": [-35, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B7",
+            "tipo": "punto",
+            "en": [25, -25],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "H7",
+            "tipo": "punto",
+            "en": [0, 15],
+            "etiqueta": "h",
+            "fijo": true
+          },
+          {
+            "id": "sAB7",
+            "tipo": "segmento",
+            "por": ["A7", "B7"],
+            "rol": "dato"
+          },
+          {
+            "id": "rAB7",
+            "tipo": "recta",
+            "por": ["A7", "B7"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "arc7",
+            "tipo": "arcoCapaz",
+            "de": ["A7", "B7"],
+            "angulo": 60,
+            "rol": "auxiliar"
+          },
+          {
+            "id": "par7",
+            "tipo": "paralela",
+            "a": "rAB7",
+            "por": "H7",
+            "rol": "proceso"
+          },
+          {
+            "id": "C7a",
+            "tipo": "interseccion",
+            "de": ["arc7", "par7"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "C₁"
+          },
+          {
+            "id": "C7b",
+            "tipo": "interseccion",
+            "de": ["arc7", "par7"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C₂"
+          },
+          {
+            "id": "sAC7",
+            "tipo": "segmento",
+            "por": ["A7", "C7a"],
+            "rol": "resultado"
+          },
+          {
+            "id": "sBC7",
+            "tipo": "segmento",
+            "por": ["B7", "C7a"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A8",
+            "tipo": "punto",
+            "en": [-40, -20],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B8",
+            "tipo": "punto",
+            "en": [30, -20],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "D8",
+            "tipo": "punto",
+            "en": [-20, 20],
+            "etiqueta": "D",
+            "fijo": true
+          },
+          {
+            "id": "Q1",
+            "tipo": "punto",
+            "en": [-55, 45],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "Q2",
+            "tipo": "punto",
+            "en": [-20, 45],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "sQ",
+            "tipo": "segmento",
+            "por": ["Q1", "Q2"],
+            "rol": "dato",
+            "etiqueta": "d"
+          },
+          {
+            "id": "rAB8",
+            "tipo": "recta",
+            "por": ["A8", "B8"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pD8",
+            "tipo": "paralela",
+            "a": "rAB8",
+            "por": "D8",
+            "rol": "proceso"
+          },
+          {
+            "id": "cD8",
+            "tipo": "circunferencia",
+            "centro": "D8",
+            "radioDe": ["Q1", "Q2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C8a",
+            "tipo": "interseccion",
+            "de": ["pD8", "cD8"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "C8b",
+            "tipo": "interseccion",
+            "de": ["pD8", "cD8"],
+            "indice": 0,
+            "rol": "proceso",
+            "etiqueta": "C′"
+          },
+          {
+            "id": "sAB8",
+            "tipo": "segmento",
+            "por": ["A8", "B8"],
+            "rol": "dato"
+          },
+          {
+            "id": "sAD8",
+            "tipo": "segmento",
+            "por": ["A8", "D8"],
+            "rol": "dato"
+          },
+          {
+            "id": "sBC8",
+            "tipo": "segmento",
+            "por": ["B8", "C8a"],
+            "rol": "resultado"
+          },
+          {
+            "id": "sDC8",
+            "tipo": "segmento",
+            "por": ["D8", "C8a"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A9",
+            "tipo": "punto",
+            "en": [-35, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B9",
+            "tipo": "punto",
+            "en": [35, -25],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "X1",
+            "tipo": "punto",
+            "en": [-60, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "X2",
+            "tipo": "punto",
+            "en": [-5, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "Y1",
+            "tipo": "punto",
+            "en": [10, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "Y2",
+            "tipo": "punto",
+            "en": [55, 40],
+            "etiqueta": "",
+            "fijo": true
+          },
+          {
+            "id": "sAB9",
+            "tipo": "segmento",
+            "por": ["A9", "B9"],
+            "rol": "dato"
+          },
+          {
+            "id": "sX",
+            "tipo": "segmento",
+            "por": ["X1", "X2"],
+            "rol": "dato"
+          },
+          {
+            "id": "sY",
+            "tipo": "segmento",
+            "por": ["Y1", "Y2"],
+            "rol": "dato"
+          },
+          {
+            "id": "ca9",
+            "tipo": "circunferencia",
+            "centro": "A9",
+            "radioDe": ["X1", "X2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "cb9",
+            "tipo": "circunferencia",
+            "centro": "B9",
+            "radioDe": ["Y1", "Y2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C9",
+            "tipo": "interseccion",
+            "de": ["ca9", "cb9"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "sAC9",
+            "tipo": "segmento",
+            "por": ["A9", "C9"],
+            "rol": "resultado"
+          },
+          {
+            "id": "sBC9",
+            "tipo": "segmento",
+            "por": ["B9", "C9"],
+            "rol": "resultado"
+          },
+          {
+            "id": "mAB9",
+            "tipo": "mediatriz",
+            "de": ["A9", "B9"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "mAC9",
+            "tipo": "mediatriz",
+            "de": ["A9", "C9"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "O9",
+            "tipo": "interseccion",
+            "de": ["mAB9", "mAC9"],
+            "rol": "resultado",
+            "etiqueta": "O"
+          },
+          {
+            "id": "kO9",
+            "tipo": "circunferencia",
+            "centro": "O9",
+            "pasaPor": "A9",
+            "rol": "resultado"
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [60, -50],
+            "etiqueta": "Z"
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Un triángulo queda fijado por tres datos, y cada dato es un lugar geométrico. Si conoces AB y el lado AC, el vértice C está en la circunferencia de centro A y ese radio.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A1", "B1", "sAB1", "U1", "U2", "sU", "ca1"],
+          "trazar": ["ca1"],
+          "destacar": ["ca1"]
+        }
+      }
+    },
+    {
+      "narration": "El lado BC da otra circunferencia, de centro B. El vértice C está donde se cortan: hay dos puntos, C₁ y C₂, simétricos respecto de AB.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A1",
+            "B1",
+            "sAB1",
+            "U1",
+            "U2",
+            "sU",
+            "V1",
+            "V2",
+            "sV",
+            "ca1",
+            "cb1",
+            "C1",
+            "C2",
+            "sAC1",
+            "sBC1"
+          ],
+          "trazar": ["cb1", "C1", "C2", "sAC1", "sBC1"],
+          "destacar": ["C1", "C2"]
+        }
+      }
+    },
+    {
+      "narration": "En un triángulo isósceles el vértice está en la mediatriz de la base. Se corta con la circunferencia del lado igual y sale C.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A2", "B2", "sAB2", "W1", "W2", "sW", "m2", "c2", "D2", "sAD2", "sBD2"],
+          "trazar": ["m2", "c2", "D2", "sAD2", "sBD2"],
+          "destacar": ["m2"]
+        }
+      }
+    },
+    {
+      "narration": "En un paralelogramo los lados opuestos son paralelos. El cuarto vértice C es el corte de la paralela a AB por D con la paralela a AD por B.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A3",
+            "B3",
+            "D3",
+            "sAB3",
+            "sAD3",
+            "rAB3",
+            "rAD3",
+            "pD3",
+            "pB3",
+            "C3",
+            "sBC3",
+            "sDC3"
+          ],
+          "trazar": ["pD3", "pB3", "C3", "sBC3", "sDC3"],
+          "destacar": ["pD3", "pB3"]
+        }
+      }
+    },
+    {
+      "narration": "El circuncentro equidista de los tres vértices y está donde se cortan las mediatrices de dos lados. Es el centro de la circunferencia que pasa por A, B y C.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A4", "B4", "C4", "sAB4", "sBC4", "sCA4", "mAB4", "mBC4", "O4", "kO4"],
+          "trazar": ["mAB4", "mBC4", "O4", "kO4"],
+          "destacar": ["O4"]
+        }
+      }
+    },
+    {
+      "narration": "El incentro equidista de los tres lados y está donde se cortan las bisectrices de dos ángulos. Es el centro de la circunferencia inscrita, tangente a los lados.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A5",
+            "B5",
+            "C5",
+            "sAB5",
+            "sBC5",
+            "sCA5",
+            "bA5",
+            "bB5",
+            "I5",
+            "rAB5",
+            "pI5",
+            "T5",
+            "kI5"
+          ],
+          "trazar": ["bA5", "bB5", "I5", "pI5", "T5", "kI5"],
+          "destacar": ["I5"]
+        }
+      }
+    },
+    {
+      "narration": "El ortocentro es el corte de las alturas, que son perpendiculares al lado desde el vértice opuesto. No es el centro de ninguna circunferencia del triángulo.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A6",
+            "B6",
+            "C6",
+            "sAB6",
+            "sBC6",
+            "sCA6",
+            "rAB6",
+            "rBC6",
+            "hC6",
+            "hA6",
+            "H6",
+            "F6",
+            "sCF6"
+          ],
+          "trazar": ["hC6", "hA6", "H6", "F6", "sCF6"],
+          "destacar": ["H6"]
+        }
+      }
+    },
+    {
+      "narration": "El ángulo en C también es un lugar geométrico: el arco capaz sobre AB. Si además se da la altura, C está donde ese arco corta a la paralela a AB a esa distancia.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A7",
+            "B7",
+            "H7",
+            "sAB7",
+            "rAB7",
+            "arc7",
+            "par7",
+            "C7a",
+            "C7b",
+            "sAC7",
+            "sBC7"
+          ],
+          "trazar": ["arc7", "par7", "C7a", "C7b", "sAC7", "sBC7"],
+          "destacar": ["arc7"]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Construye el triángulo ABC con AB = 60 mm, AC = 50 mm y BC = 40 mm. Arrastra Z hasta el vértice C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A1", "B1", "sAB1", "U1", "U2", "sU", "V1", "V2", "sV", "Z"],
+          "posiciones": {
+            "A1": [-30, -15],
+            "B1": [30, -15],
+            "U1": [-60, 40],
+            "U2": [-10, 40],
+            "V1": [5, 40],
+            "V2": [45, 40],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["C1", "C2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C está a la distancia de AC desde A y a la de BC desde B.",
+            "pista": "C está en una circunferencia de centro A y en otra de centro B."
+          }
+        }
+      },
+      "hints": [
+        "Cada lado conocido es una circunferencia donde puede estar el vértice.",
+        "C está a la distancia AC de A y a la distancia BC de B, es decir, en dos circunferencias a la vez.",
+        "Con el compás, traza desde A la circunferencia de radio AC y desde B la de radio BC; se cortan en C."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos la base AB y las medidas de los otros dos lados, AC y BC. Falta el vértice C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "B1", "sAB1", "U1", "U2", "sU", "V1", "V2", "sV", "Z"],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "C está a la distancia AC de A y a la distancia BC de B. Cada condición es una circunferencia y C es donde se cortan.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "B1", "sAB1", "U1", "U2", "sU", "V1", "V2", "sV", "Z"],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que fijas la punta del compás en A y giras: C puede estar en cualquier punto de esa circunferencia. Al fijarla en B, solo dos puntos cumplen las dos condiciones.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "B1", "sAB1", "U1", "U2", "sU", "V1", "V2", "sV", "Z"],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Con centro en A y radio la medida de AC, traza la primera circunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A1", "B1", "sAB1", "U1", "U2", "sU", "V1", "V2", "sV", "ca1", "Z"],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["ca1"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en B y radio la medida de BC, traza la segunda circunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "sAB1",
+                "U1",
+                "U2",
+                "sU",
+                "V1",
+                "V2",
+                "sV",
+                "ca1",
+                "cb1",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["cb1"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Las circunferencias se cortan en C₁ y C₂. Une C con A y con B y arrastra Z hasta C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "sAB1",
+                "U1",
+                "U2",
+                "sU",
+                "V1",
+                "V2",
+                "sV",
+                "ca1",
+                "cb1",
+                "C1",
+                "C2",
+                "sAC1",
+                "sBC1",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [7.5, 18.072]
+              },
+              "trazar": ["C1", "C2", "sAC1", "sBC1"],
+              "destacar": ["C1", "C2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: AC y BC miden lo que pedía el enunciado, y los dos puntos de corte dan triángulos iguales, uno simétrico del otro respecto de AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "sAB1",
+                "U1",
+                "U2",
+                "sU",
+                "V1",
+                "V2",
+                "sV",
+                "ca1",
+                "cb1",
+                "C1",
+                "C2",
+                "sAC1",
+                "sBC1",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [7.5, 18.072]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: elegir tres lados que no cierran. Si un lado es mayor o igual que la suma de los otros dos, las circunferencias no se cortan y no hay triángulo.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A1",
+                "B1",
+                "sAB1",
+                "U1",
+                "U2",
+                "sU",
+                "V1",
+                "V2",
+                "sV",
+                "ca1",
+                "cb1",
+                "C1",
+                "C2",
+                "sAC1",
+                "sBC1",
+                "Z"
+              ],
+              "posiciones": {
+                "A1": [-30, -15],
+                "B1": [30, -15],
+                "U1": [-60, 40],
+                "U2": [-10, 40],
+                "V1": [5, 40],
+                "V2": [45, 40],
+                "Z": [7.5, 18.072]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, -15],
+                    [-10, -15]
+                  ],
+                  "rotulo": "Error: no se cortan"
+                },
+                {
+                  "puntos": [
+                    [10, -15],
+                    [30, -15]
+                  ]
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Construye el triángulo isósceles de base AB = 60 mm y lados iguales de 40 mm. Arrastra Z hasta el vértice C que queda por encima de AB.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A2", "B2", "sAB2", "W1", "W2", "sW", "Z"],
+          "posiciones": {
+            "A2": [-30, -25],
+            "B2": [30, -25],
+            "W1": [-30, 35],
+            "W2": [10, 35],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "D2",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C está en la mediatriz de AB y a la distancia del lado igual de A.",
+            "pista": "El vértice de un isósceles está en la mediatriz de la base."
+          }
+        }
+      },
+      "hints": [
+        "Los dos lados iguales hacen que C equidiste de A y de B.",
+        "Los puntos que equidistan de A y de B forman la mediatriz de AB.",
+        "Traza la mediatriz de AB y corta con la circunferencia de centro A y radio el lado igual."
+      ],
+      "solution": [
+        {
+          "narration": "Conocemos la base AB y la medida de los dos lados iguales. El vértice C tiene que equidistar de A y de B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "sAB2", "W1", "W2", "sW", "Z"],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Si CA = CB, el vértice está en la mediatriz de AB. Además está a la medida del lado igual de A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "sAB2", "W1", "W2", "sW", "Z"],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina C resbalando por la mediatriz: se acerca y se aleja de A. Solo en un punto, por arriba, CA mide justo lo que se pide.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "sAB2", "W1", "W2", "sW", "Z"],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza la mediatriz de AB con el compás: dos arcos de igual radio desde A y desde B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "sAB2", "W1", "W2", "sW", "m2", "Z"],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [58, -48]
+              },
+              "trazar": ["m2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en A y radio el lado igual, traza la circunferencia que corta a la mediatriz.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A2", "B2", "sAB2", "W1", "W2", "sW", "m2", "c2", "Z"],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [58, -48]
+              },
+              "trazar": ["c2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "El corte por encima de AB es C. Une C con A y con B y arrastra Z hasta C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "sAB2",
+                "W1",
+                "W2",
+                "sW",
+                "m2",
+                "c2",
+                "D2",
+                "sAD2",
+                "sBD2",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [0, 1.458]
+              },
+              "trazar": ["D2", "sAD2", "sBD2"],
+              "destacar": ["D2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: CA y CB miden lo mismo, y la altura desde C cae en el punto medio de AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "sAB2",
+                "W1",
+                "W2",
+                "sW",
+                "m2",
+                "c2",
+                "D2",
+                "sAD2",
+                "sBD2",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [0, 1.458]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: marcar el punto medio de AB con la regla y a ojo en lugar de trazar la mediatriz. Un pequeño desvío y el triángulo deja de ser isósceles.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A2",
+                "B2",
+                "sAB2",
+                "W1",
+                "W2",
+                "sW",
+                "m2",
+                "c2",
+                "D2",
+                "sAD2",
+                "sBD2",
+                "Z"
+              ],
+              "posiciones": {
+                "A2": [-30, -25],
+                "B2": [30, -25],
+                "W1": [-30, 35],
+                "W2": [10, 35],
+                "Z": [0, 1.458]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [3.0, -25],
+                    [6.0, 7.458]
+                  ],
+                  "rotulo": "Error: mediatriz a ojo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "ABCD es un paralelogramo y se conocen A, B y D. Arrastra Z hasta el vértice C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A3", "B3", "D3", "sAB3", "sAD3", "Z"],
+          "posiciones": {
+            "A3": [-30, -20],
+            "B3": [20, -20],
+            "D3": [-10, 20],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C3",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C está en la paralela a AB por D y en la paralela a AD por B.",
+            "pista": "Los lados opuestos de un paralelogramo son paralelos."
+          }
+        }
+      },
+      "hints": [
+        "En un paralelogramo, cada lado es paralelo a su opuesto.",
+        "C está en la paralela a AB que pasa por D y en la paralela a AD que pasa por B.",
+        "Traza esas dos paralelas con escuadra y cartabón o con compás; se cortan en C."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos tres vértices de un paralelogramo: A, B y D. El cuarto, C, está enfrente de A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A3", "B3", "D3", "sAB3", "sAD3", "Z"],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Los lados opuestos son paralelos: DC es paralelo a AB y BC es paralelo a AD. C es el corte de esas dos paralelas.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A3", "B3", "D3", "sAB3", "sAD3", "Z"],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que deslizas el lado AB hasta D y el lado AD hasta B, sin girarlos. Se encuentran justo en el vértice que falta.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A3", "B3", "D3", "sAB3", "sAD3", "Z"],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por D, traza la paralela a AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A3", "B3", "D3", "sAB3", "sAD3", "rAB3", "pD3", "Z"],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [58, -48]
+              },
+              "trazar": ["rAB3", "pD3"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Por B, traza la paralela a AD.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A3", "B3", "D3", "sAB3", "sAD3", "rAB3", "rAD3", "pD3", "pB3", "Z"],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [58, -48]
+              },
+              "trazar": ["rAD3", "pB3"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Las dos paralelas se cortan en C. Dibuja los lados BC y DC y arrastra Z hasta C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A3",
+                "B3",
+                "D3",
+                "sAB3",
+                "sAD3",
+                "rAB3",
+                "rAD3",
+                "pD3",
+                "pB3",
+                "C3",
+                "sBC3",
+                "sDC3",
+                "Z"
+              ],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [40, 20]
+              },
+              "trazar": ["C3", "sBC3", "sDC3"],
+              "destacar": ["C3"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: BC es paralelo a AD y DC a AB, y las diagonales se cortan en su punto medio.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A3",
+                "B3",
+                "D3",
+                "sAB3",
+                "sAD3",
+                "rAB3",
+                "rAD3",
+                "pD3",
+                "pB3",
+                "C3",
+                "sBC3",
+                "sDC3",
+                "Z"
+              ],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [40, 20]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: trazar las paralelas a ojo, con una inclinación casi igual. El cuarto vértice sale desplazado y los lados dejan de ser paralelos.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A3",
+                "B3",
+                "D3",
+                "sAB3",
+                "sAD3",
+                "rAB3",
+                "rAD3",
+                "pD3",
+                "pB3",
+                "C3",
+                "sBC3",
+                "sDC3",
+                "Z"
+              ],
+              "posiciones": {
+                "A3": [-30, -20],
+                "B3": [20, -20],
+                "D3": [-10, 20],
+                "Z": [40, 20]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-16, 17],
+                    [50, 25]
+                  ],
+                  "rotulo": "Error: paralela a ojo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Arrastra Z hasta el centro de la circunferencia que pasa por los tres vértices del triángulo ABC.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A4", "B4", "C4", "sAB4", "sBC4", "sCA4", "Z"],
+          "posiciones": {
+            "A4": [-35, -25],
+            "B4": [40, -20],
+            "C4": [5, 40],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "O4",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El circuncentro equidista de A, B y C: está en las mediatrices.",
+            "pista": "El centro equidista de los vértices: está en las mediatrices."
+          }
+        }
+      },
+      "hints": [
+        "Si una circunferencia pasa por dos vértices, su centro equidista de ellos.",
+        "El centro de una circunferencia que pasa por A y B está en la mediatriz de AB; lo mismo con BC.",
+        "Traza las mediatrices de dos lados con el compás; donde se cortan está el centro."
+      ],
+      "solution": [
+        {
+          "narration": "Un triángulo ABC y una circunferencia que pasa por sus tres vértices. Buscamos su centro.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A4", "B4", "C4", "sAB4", "sBC4", "sCA4", "Z"],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El centro equidista de A y de B, y también de B y de C. Por tanto está en dos mediatrices y es donde se cortan.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A4", "B4", "C4", "sAB4", "sBC4", "sCA4", "Z"],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que mueves un punto buscando el que está a la misma distancia de los tres vértices. Solo hay uno, y se ve al cruzar dos mediatrices.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A4", "B4", "C4", "sAB4", "sBC4", "sCA4", "Z"],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza la mediatriz de AB, con dos arcos de igual radio desde A y desde B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A4", "B4", "C4", "sAB4", "sBC4", "sCA4", "mAB4", "Z"],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["mAB4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Traza la mediatriz de BC de la misma manera.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A4", "B4", "C4", "sAB4", "sBC4", "sCA4", "mAB4", "mBC4", "Z"],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["mBC4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Se cortan en O, el circuncentro. Traza la circunferencia de centro O que pasa por A y arrastra Z hasta O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A4",
+                "B4",
+                "C4",
+                "sAB4",
+                "sBC4",
+                "sCA4",
+                "mAB4",
+                "mBC4",
+                "O4",
+                "kO4",
+                "Z"
+              ],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [1.163, -2.447]
+              },
+              "trazar": ["O4", "kO4"],
+              "destacar": ["O4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: la circunferencia pasa también por B y por C. La mediatriz del tercer lado pasa por O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A4",
+                "B4",
+                "C4",
+                "sAB4",
+                "sBC4",
+                "sCA4",
+                "mAB4",
+                "mBC4",
+                "O4",
+                "kO4",
+                "Z"
+              ],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [1.163, -2.447]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: usar las medianas en lugar de las mediatrices. Su corte es el baricentro, que no equidista de los vértices.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A4",
+                "B4",
+                "C4",
+                "sAB4",
+                "sBC4",
+                "sCA4",
+                "mAB4",
+                "mBC4",
+                "O4",
+                "kO4",
+                "Z"
+              ],
+              "posiciones": {
+                "A4": [-35, -25],
+                "B4": [40, -20],
+                "C4": [5, 40],
+                "Z": [1.163, -2.447]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, -25],
+                    [22.5, 10.0]
+                  ],
+                  "rotulo": "Error: medianas (baricentro)"
+                },
+                {
+                  "puntos": [
+                    [40, -20],
+                    [-15.0, 7.5]
+                  ]
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Arrastra Z hasta el centro de la circunferencia inscrita en el triángulo ABC, tangente a sus tres lados.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A5", "B5", "C5", "sAB5", "sBC5", "sCA5", "Z"],
+          "posiciones": {
+            "A5": [-40, -25],
+            "B5": [35, -30],
+            "C5": [10, 35],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "I5",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El incentro equidista de los lados: está en las bisectrices.",
+            "pista": "El centro de la inscrita equidista de los lados: está en las bisectrices."
+          }
+        }
+      },
+      "hints": [
+        "El centro de una circunferencia tangente a dos lados equidista de ellos.",
+        "Los puntos que equidistan de los dos lados de un ángulo forman su bisectriz.",
+        "Traza la bisectriz de dos ángulos; donde se cortan está el centro."
+      ],
+      "solution": [
+        {
+          "narration": "Un triángulo ABC y una circunferencia dentro de él que toca a los tres lados. Buscamos su centro.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "C5", "sAB5", "sBC5", "sCA5", "Z"],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El centro equidista de los lados AB y AC, así que está en la bisectriz del ángulo A. Lo mismo ocurre con B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "C5", "sAB5", "sBC5", "sCA5", "Z"],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que hinchas una circunferencia dentro del triángulo hasta tocar los tres lados. Su centro queda en el corte de las bisectrices.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "C5", "sAB5", "sBC5", "sCA5", "Z"],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza la bisectriz del ángulo A: un arco corta a los lados y desde esos puntos, dos arcos iguales.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "C5", "sAB5", "sBC5", "sCA5", "bA5", "Z"],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [58, -48]
+              },
+              "trazar": ["bA5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Traza la bisectriz del ángulo B de la misma manera.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "C5", "sAB5", "sBC5", "sCA5", "bA5", "bB5", "Z"],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [58, -48]
+              },
+              "trazar": ["bB5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Se cortan en I, el incentro. Arrastra Z hasta I y comprueba con la circunferencia inscrita.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A5",
+                "B5",
+                "C5",
+                "sAB5",
+                "sBC5",
+                "sCA5",
+                "bA5",
+                "bB5",
+                "I5",
+                "rAB5",
+                "pI5",
+                "T5",
+                "kI5",
+                "Z"
+              ],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [3.138, -6.52]
+              },
+              "trazar": ["I5", "pI5", "T5", "kI5"],
+              "destacar": ["I5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: la circunferencia de centro I toca a los tres lados. La bisectriz del tercer ángulo también pasa por I.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A5",
+                "B5",
+                "C5",
+                "sAB5",
+                "sBC5",
+                "sCA5",
+                "bA5",
+                "bB5",
+                "I5",
+                "rAB5",
+                "pI5",
+                "T5",
+                "kI5",
+                "Z"
+              ],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [3.138, -6.52]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: usar las mediatrices en lugar de las bisectrices. Su corte equidista de los vértices, no de los lados.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A5",
+                "B5",
+                "C5",
+                "sAB5",
+                "sBC5",
+                "sCA5",
+                "bA5",
+                "bB5",
+                "I5",
+                "rAB5",
+                "pI5",
+                "T5",
+                "kI5",
+                "Z"
+              ],
+              "posiciones": {
+                "A5": [-40, -25],
+                "B5": [35, -30],
+                "C5": [10, 35],
+                "Z": [3.138, -6.52]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-2.8325950526188697, -32.488925789283044],
+                    [1.158545578807566, 27.378183682113495]
+                  ],
+                  "rotulo": "Error: mediatriz"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Arrastra Z hasta el ortocentro del triángulo ABC, el punto donde se cortan sus alturas.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A6", "B6", "C6", "sAB6", "sBC6", "sCA6", "rAB6", "rBC6", "Z"],
+          "posiciones": {
+            "A6": [-40, -25],
+            "B6": [40, -15],
+            "C6": [-10, 40],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "H6",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El ortocentro es el corte de las alturas.",
+            "pista": "La altura desde un vértice es perpendicular al lado opuesto."
+          }
+        }
+      },
+      "hints": [
+        "Una altura es la recta desde un vértice perpendicular al lado opuesto.",
+        "Las tres alturas se cortan en un punto, así que bastan dos.",
+        "Por C traza la perpendicular a AB y por A la perpendicular a BC; donde se cortan está el ortocentro."
+      ],
+      "solution": [
+        {
+          "narration": "Un triángulo acutángulo ABC. Buscamos el punto donde se cortan sus alturas.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "C6", "sAB6", "sBC6", "sCA6", "rAB6", "rBC6", "Z"],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Cada altura es perpendicular al lado opuesto y pasa por el vértice. Las tres se cortan en un punto, el ortocentro.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "C6", "sAB6", "sBC6", "sCA6", "rAB6", "rBC6", "Z"],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que dejas caer una plomada desde cada vértice hasta el lado opuesto. Las tres rectas se cruzan en un mismo punto dentro del triángulo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "C6", "sAB6", "sBC6", "sCA6", "rAB6", "rBC6", "Z"],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por C, traza la perpendicular al lado AB: es la altura desde C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "C6", "sAB6", "sBC6", "sCA6", "rAB6", "rBC6", "hC6", "Z"],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["hC6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Por A, traza la perpendicular al lado BC: es la altura desde A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A6",
+                "B6",
+                "C6",
+                "sAB6",
+                "sBC6",
+                "sCA6",
+                "rAB6",
+                "rBC6",
+                "hC6",
+                "hA6",
+                "Z"
+              ],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["hA6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Se cortan en H. Marca el pie F de la altura desde C y arrastra Z hasta H.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A6",
+                "B6",
+                "C6",
+                "sAB6",
+                "sBC6",
+                "sCA6",
+                "rAB6",
+                "rBC6",
+                "hC6",
+                "hA6",
+                "H6",
+                "F6",
+                "sCF6",
+                "Z"
+              ],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [-5.765, 6.122]
+              },
+              "trazar": ["H6", "F6", "sCF6"],
+              "destacar": ["H6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: la altura desde B también pasa por H. Los pies de las alturas están en los lados.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A6",
+                "B6",
+                "C6",
+                "sAB6",
+                "sBC6",
+                "sCA6",
+                "rAB6",
+                "rBC6",
+                "hC6",
+                "hA6",
+                "H6",
+                "F6",
+                "sCF6",
+                "Z"
+              ],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [-5.765, 6.122]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: trazar la mediana en vez de la altura, uniendo el vértice con el punto medio del lado. La altura tiene que ser perpendicular al lado.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A6",
+                "B6",
+                "C6",
+                "sAB6",
+                "sBC6",
+                "sCA6",
+                "rAB6",
+                "rBC6",
+                "hC6",
+                "hA6",
+                "H6",
+                "F6",
+                "sCF6",
+                "Z"
+              ],
+              "posiciones": {
+                "A6": [-40, -25],
+                "B6": [40, -15],
+                "C6": [-10, 40],
+                "Z": [-5.765, 6.122]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-10, 40],
+                    [0.0, -20.0]
+                  ],
+                  "rotulo": "Error: mediana, no altura"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: construye el triángulo ABC con AB = 70 mm, el ángulo en C de 60° y la altura desde C de 45 mm. Arrastra Z hasta uno de los vértices C posibles.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A7", "B7", "sAB7", "H7", "Z"],
+          "posiciones": {
+            "A7": [-35, -25],
+            "B7": [35, -25],
+            "H7": [0, 20],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["C7a", "C7b"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C está en el arco capaz y a la altura pedida: hay dos soluciones simétricas.",
+            "pista": "C está en un arco capaz y en una paralela a AB."
+          }
+        }
+      },
+      "hints": [
+        "El ángulo en C es un lugar geométrico y la altura es otro.",
+        "El ángulo fijo bajo el que se ve AB define el arco capaz, y la altura define una paralela a AB.",
+        "Traza el arco capaz sobre AB y la paralela a la distancia de la altura; se cortan en C."
+      ],
+      "solution": [
+        {
+          "narration": "Conocemos el lado AB, el ángulo en C y la altura desde C. Hay que encontrar C con dos lugares geométricos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A7", "B7", "sAB7", "H7", "Z"],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Desde C se ve AB bajo un ángulo fijo: C está en el arco capaz. Como la altura es fija, también está en la paralela a AB a esa distancia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A7", "B7", "sAB7", "H7", "Z"],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina C recorriendo el arco capaz: el ángulo no cambia pero la altura sí. Solo en dos posiciones coincide con la pedida.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A7", "B7", "sAB7", "H7", "Z"],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza el arco capaz del ángulo dado sobre AB, con el centro en la mediatriz.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A7", "B7", "sAB7", "H7", "rAB7", "arc7", "Z"],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [58, -48]
+              },
+              "trazar": ["rAB7", "arc7"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "A la distancia de la altura traza la paralela a AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A7", "B7", "sAB7", "H7", "rAB7", "arc7", "par7", "Z"],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [58, -48]
+              },
+              "trazar": ["par7"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "El arco y la paralela se cortan en C₁ y C₂. Une C con A y con B y arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A7",
+                "B7",
+                "sAB7",
+                "H7",
+                "rAB7",
+                "arc7",
+                "par7",
+                "C7a",
+                "C7b",
+                "sAC7",
+                "sBC7",
+                "Z"
+              ],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [-31.916, 20]
+              },
+              "trazar": ["C7a", "C7b", "sAC7", "sBC7"],
+              "destacar": ["C7a", "C7b"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: el ángulo ACB mide el pedido y la distancia de C a AB es la altura. El otro corte da el triángulo simétrico.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A7",
+                "B7",
+                "sAB7",
+                "H7",
+                "rAB7",
+                "arc7",
+                "par7",
+                "C7a",
+                "C7b",
+                "sAC7",
+                "sBC7",
+                "Z"
+              ],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [-31.916, 20]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: tomar una altura mayor que la del punto más alto del arco capaz. La paralela no corta al arco y los datos no cierran.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A7",
+                "B7",
+                "sAB7",
+                "H7",
+                "rAB7",
+                "arc7",
+                "par7",
+                "C7a",
+                "C7b",
+                "sAC7",
+                "sBC7",
+                "Z"
+              ],
+              "posiciones": {
+                "A7": [-35, -25],
+                "B7": [35, -25],
+                "H7": [0, 20],
+                "Z": [-31.916, 20]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, 43.621778264910716],
+                    [40, 43.621778264910716]
+                  ],
+                  "rotulo": "Error: no corta al arco"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: ABCD es un trapecio con AB paralelo a CD, AB = 70 mm y CD = 35 mm, y se conocen A, B y D. Arrastra Z hasta el vértice C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A8", "B8", "D8", "sAB8", "sAD8", "Q1", "Q2", "sQ", "Z"],
+          "posiciones": {
+            "A8": [-40, -20],
+            "B8": [30, -20],
+            "D8": [-20, 20],
+            "Q1": [-55, 45],
+            "Q2": [-20, 45],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C8a",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C está en la paralela a AB por D, a la distancia CD de D, hacia el lado de B.",
+            "pista": "CD es paralelo a AB y mide lo que se pide."
+          }
+        }
+      },
+      "hints": [
+        "Un trapecio tiene dos lados paralelos: aquí AB y CD.",
+        "C está en la paralela a AB que pasa por D y a la distancia CD de D.",
+        "Traza la paralela a AB por D y corta con la circunferencia de centro D y radio CD; elige el corte del lado de B."
+      ],
+      "solution": [
+        {
+          "narration": "Un trapecio con los lados AB y CD paralelos. Tenemos A, B y D, y la medida de CD.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A8", "B8", "D8", "sAB8", "sAD8", "Q1", "Q2", "sQ", "Z"],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "C está en la paralela a AB por D, y a la distancia CD de D. Es el corte de esa paralela con una circunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A8", "B8", "D8", "sAB8", "sAD8", "Q1", "Q2", "sQ", "Z"],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina C deslizándose sobre la paralela por D: solo en dos puntos está a la distancia CD de D, uno hacia cada lado.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A8", "B8", "D8", "sAB8", "sAD8", "Q1", "Q2", "sQ", "Z"],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por D, traza la paralela a AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A8", "B8", "D8", "sAB8", "sAD8", "Q1", "Q2", "sQ", "rAB8", "pD8", "Z"],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [58, -48]
+              },
+              "trazar": ["rAB8", "pD8"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en D y radio la medida de CD, traza la circunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A8",
+                "B8",
+                "D8",
+                "sAB8",
+                "sAD8",
+                "Q1",
+                "Q2",
+                "sQ",
+                "rAB8",
+                "pD8",
+                "cD8",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [58, -48]
+              },
+              "trazar": ["cD8"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Corta en dos puntos: C es el del lado de B, para que ABCD no se cruce. Dibuja BC y DC y arrastra Z hasta C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A8",
+                "B8",
+                "D8",
+                "sAB8",
+                "sAD8",
+                "Q1",
+                "Q2",
+                "sQ",
+                "rAB8",
+                "pD8",
+                "cD8",
+                "C8a",
+                "C8b",
+                "sBC8",
+                "sDC8",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [15, 20]
+              },
+              "trazar": ["C8a", "sBC8", "sDC8"],
+              "destacar": ["C8a"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: CD es paralelo a AB y mide lo pedido, y el cuadrilátero ABCD no tiene lados que se crucen.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A8",
+                "B8",
+                "D8",
+                "sAB8",
+                "sAD8",
+                "Q1",
+                "Q2",
+                "sQ",
+                "rAB8",
+                "pD8",
+                "cD8",
+                "C8a",
+                "C8b",
+                "sBC8",
+                "sDC8",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [15, 20]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: llevar la longitud de CD con la regla sobre una paralela hecha a ojo. El compás traslada la medida exacta desde D.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A8",
+                "B8",
+                "D8",
+                "sAB8",
+                "sAD8",
+                "Q1",
+                "Q2",
+                "sQ",
+                "rAB8",
+                "pD8",
+                "cD8",
+                "C8a",
+                "C8b",
+                "sBC8",
+                "sDC8",
+                "Z"
+              ],
+              "posiciones": {
+                "A8": [-40, -20],
+                "B8": [30, -20],
+                "D8": [-20, 20],
+                "Q1": [-55, 45],
+                "Q2": [-20, 45],
+                "Z": [15, 20]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, 20],
+                    [15, 24]
+                  ],
+                  "rotulo": "Error: medida a ojo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: construye el triángulo ABC con AB = 70 mm, AC = 55 mm y BC = 45 mm, con C por encima de AB. Arrastra Z hasta el centro de su circunferencia circunscrita.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A9", "B9", "sAB9", "X1", "X2", "sX", "Y1", "Y2", "sY", "Z"],
+          "posiciones": {
+            "A9": [-35, -25],
+            "B9": [35, -25],
+            "X1": [-60, 40],
+            "X2": [-5, 40],
+            "Y1": [10, 40],
+            "Y2": [55, 40],
+            "Z": [58, -48]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "O9",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Primero se halla C con dos circunferencias y después el circuncentro con dos mediatrices.",
+            "pista": "Primero el vértice C; después, dos mediatrices."
+          }
+        }
+      },
+      "hints": [
+        "Hay que encadenar dos construcciones: el triángulo y su circuncentro.",
+        "C se halla con dos circunferencias de radios AC y BC; el centro, con dos mediatrices de lados.",
+        "Traza las circunferencias desde A y desde B, une C y traza las mediatrices de AB y AC."
+      ],
+      "solution": [
+        {
+          "narration": "Primero hay que construir el triángulo con sus tres lados y después hallar su circunferencia circunscrita.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A9", "B9", "sAB9", "X1", "X2", "sX", "Y1", "Y2", "sY", "Z"],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "C es el corte de las circunferencias de radios AC y BC. Una vez construido el triángulo, el centro está en dos mediatrices de lados.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A9", "B9", "sAB9", "X1", "X2", "sX", "Y1", "Y2", "sY", "Z"],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina cerrar el triángulo girando dos varillas, AC desde A y BC desde B, hasta que se toquen. Después buscas el punto equidistante de los tres vértices.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A9", "B9", "sAB9", "X1", "X2", "sX", "Y1", "Y2", "sY", "Z"],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [58, -48]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Con el compás traza la circunferencia de centro A y radio AC y la de centro B y radio BC. Su corte por encima de AB es C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A9",
+                "B9",
+                "sAB9",
+                "X1",
+                "X2",
+                "sX",
+                "Y1",
+                "Y2",
+                "sY",
+                "ca9",
+                "cb9",
+                "C9",
+                "sAC9",
+                "sBC9",
+                "Z"
+              ],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["ca9", "cb9", "C9", "sAC9", "sBC9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Traza la mediatriz de AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A9",
+                "B9",
+                "sAB9",
+                "X1",
+                "X2",
+                "sX",
+                "Y1",
+                "Y2",
+                "sY",
+                "ca9",
+                "cb9",
+                "C9",
+                "sAC9",
+                "sBC9",
+                "mAB9",
+                "Z"
+              ],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [58, -48]
+              },
+              "trazar": ["mAB9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Traza la mediatriz de AC. Su corte es O: arrastra Z hasta O y traza la circunferencia circunscrita.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A9",
+                "B9",
+                "sAB9",
+                "X1",
+                "X2",
+                "sX",
+                "Y1",
+                "Y2",
+                "sY",
+                "ca9",
+                "cb9",
+                "C9",
+                "sAC9",
+                "sBC9",
+                "mAB9",
+                "mAC9",
+                "O9",
+                "kO9",
+                "Z"
+              ],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [0, -23.939]
+              },
+              "trazar": ["mAC9", "O9", "kO9"],
+              "destacar": ["O9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: la circunferencia de centro O pasa por A, B y C, y OA, OB y OC miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A9",
+                "B9",
+                "sAB9",
+                "X1",
+                "X2",
+                "sX",
+                "Y1",
+                "Y2",
+                "sY",
+                "ca9",
+                "cb9",
+                "C9",
+                "sAC9",
+                "sBC9",
+                "mAB9",
+                "mAC9",
+                "O9",
+                "kO9",
+                "Z"
+              ],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [0, -23.939]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: tomar el corte de las bisectrices como centro de la circunferencia circunscrita. Ese es el incentro y la circunferencia no pasa por los vértices.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A9",
+                "B9",
+                "sAB9",
+                "X1",
+                "X2",
+                "sX",
+                "Y1",
+                "Y2",
+                "sY",
+                "ca9",
+                "cb9",
+                "C9",
+                "sAC9",
+                "sBC9",
+                "mAB9",
+                "mAC9",
+                "O9",
+                "kO9",
+                "Z"
+              ],
+              "posiciones": {
+                "A9": [-35, -25],
+                "B9": [35, -25],
+                "X1": [-60, 40],
+                "X2": [-5, 40],
+                "Y1": [10, 40],
+                "Y2": [55, 40],
+                "Z": [0, -23.939]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, -25],
+                    [5.0000921917885135, -10.447836896973184]
+                  ],
+                  "rotulo": "Error: incentro"
+                },
+                {
+                  "puntos": [
+                    [35, -25],
+                    [5.0000921917885135, -10.447836896973184]
+                  ]
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    }
+  ]
+}

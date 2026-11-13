@@ -2556,6 +2556,134 @@ Fichero: `src/content/lessons/21-cada-direccion-su-fuga.json` · DT II · nivel 
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: M y el ojo abatido están a la misma distancia de la fuga, 85,6 mm, y M está en el horizonte, hacia P.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar solo las aristas vistas del sólido. En cónica las aristas ocultas son obligatorias y se dibujan con línea discontinua fina.
 
+### I-02 · Triángulos y cuadriláteros: cada dato es un lugar geométrico
+
+Fichero: `src/content/lessons/22-triangulos-y-cuadrilateros.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Geometría plana: triángulos y cuadriláteros por sus datos, y puntos notables del triángulo. Cada dato como lugar geométrico y el vértice que falta como corte de dos.
+
+**Pasos**
+
+1. [ ] Un triángulo queda fijado por tres datos, y cada dato es un lugar geométrico. Si conoces AB y el lado AC, el vértice C está en la circunferencia de centro A y ese radio.
+2. [ ] El lado BC da otra circunferencia, de centro B. El vértice C está donde se cortan: hay dos puntos, C₁ y C₂, simétricos respecto de AB.
+3. [ ] En un triángulo isósceles el vértice está en la mediatriz de la base. Se corta con la circunferencia del lado igual y sale C.
+4. [ ] En un paralelogramo los lados opuestos son paralelos. El cuarto vértice C es el corte de la paralela a AB por D con la paralela a AD por B.
+5. [ ] El circuncentro equidista de los tres vértices y está donde se cortan las mediatrices de dos lados. Es el centro de la circunferencia que pasa por A, B y C.
+6. [ ] El incentro equidista de los tres lados y está donde se cortan las bisectrices de dos ángulos. Es el centro de la circunferencia inscrita, tangente a los lados.
+7. [ ] El ortocentro es el corte de las alturas, que son perpendiculares al lado desde el vértice opuesto. No es el centro de ninguna circunferencia del triángulo.
+8. [ ] El ángulo en C también es un lugar geométrico: el arco capaz sobre AB. Si además se da la altura, C está donde ese arco corta a la paralela a AB a esa distancia.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: Construye el triángulo ABC con AB = 60 mm, AC = 50 mm y BC = 40 mm. Arrastra Z hasta el vértice C.
+   - [ ] *Pista 1:* Cada lado conocido es una circunferencia donde puede estar el vértice.
+   - [ ] *Pista 2:* C está a la distancia AC de A y a la distancia BC de B, es decir, en dos circunferencias a la vez.
+   - [ ] *Pista 3:* Con el compás, traza desde A la circunferencia de radio AC y desde B la de radio BC; se cortan en C.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos la base AB y las medidas de los otros dos lados, AC y BC. Falta el vértice C.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* C está a la distancia AC de A y a la distancia BC de B. Cada condición es una circunferencia y C es donde se cortan.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que fijas la punta del compás en A y giras: C puede estar en cualquier punto de esa circunferencia. Al fijarla en B, solo dos puntos cumplen las dos condiciones.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con centro en A y radio la medida de AC, traza la primera circunferencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en B y radio la medida de BC, traza la segunda circunferencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Las circunferencias se cortan en C₁ y C₂. Une C con A y con B y arrastra Z hasta C.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: AC y BC miden lo que pedía el enunciado, y los dos puntos de corte dan triángulos iguales, uno simétrico del otro respecto de AB.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: elegir tres lados que no cierran. Si un lado es mayor o igual que la suma de los otros dos, las circunferencias no se cortan y no hay triángulo.
+2. [ ] *construcción en la lámina, dificultad 1*: Construye el triángulo isósceles de base AB = 60 mm y lados iguales de 40 mm. Arrastra Z hasta el vértice C que queda por encima de AB.
+   - [ ] *Pista 1:* Los dos lados iguales hacen que C equidiste de A y de B.
+   - [ ] *Pista 2:* Los puntos que equidistan de A y de B forman la mediatriz de AB.
+   - [ ] *Pista 3:* Traza la mediatriz de AB y corta con la circunferencia de centro A y radio el lado igual.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Conocemos la base AB y la medida de los dos lados iguales. El vértice C tiene que equidistar de A y de B.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Si CA = CB, el vértice está en la mediatriz de AB. Además está a la medida del lado igual de A.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina C resbalando por la mediatriz: se acerca y se aleja de A. Solo en un punto, por arriba, CA mide justo lo que se pide.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la mediatriz de AB con el compás: dos arcos de igual radio desde A y desde B.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en A y radio el lado igual, traza la circunferencia que corta a la mediatriz.
+   - [ ] *Solución, paso 6 · 4. El trazado:* El corte por encima de AB es C. Une C con A y con B y arrastra Z hasta C.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: CA y CB miden lo mismo, y la altura desde C cae en el punto medio de AB.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: marcar el punto medio de AB con la regla y a ojo en lugar de trazar la mediatriz. Un pequeño desvío y el triángulo deja de ser isósceles.
+3. [ ] *construcción en la lámina, dificultad 1*: ABCD es un paralelogramo y se conocen A, B y D. Arrastra Z hasta el vértice C.
+   - [ ] *Pista 1:* En un paralelogramo, cada lado es paralelo a su opuesto.
+   - [ ] *Pista 2:* C está en la paralela a AB que pasa por D y en la paralela a AD que pasa por B.
+   - [ ] *Pista 3:* Traza esas dos paralelas con escuadra y cartabón o con compás; se cortan en C.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos tres vértices de un paralelogramo: A, B y D. El cuarto, C, está enfrente de A.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los lados opuestos son paralelos: DC es paralelo a AB y BC es paralelo a AD. C es el corte de esas dos paralelas.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que deslizas el lado AB hasta D y el lado AD hasta B, sin girarlos. Se encuentran justo en el vértice que falta.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por D, traza la paralela a AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Por B, traza la paralela a AD.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Las dos paralelas se cortan en C. Dibuja los lados BC y DC y arrastra Z hasta C.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: BC es paralelo a AD y DC a AB, y las diagonales se cortan en su punto medio.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar las paralelas a ojo, con una inclinación casi igual. El cuarto vértice sale desplazado y los lados dejan de ser paralelos.
+4. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el centro de la circunferencia que pasa por los tres vértices del triángulo ABC.
+   - [ ] *Pista 1:* Si una circunferencia pasa por dos vértices, su centro equidista de ellos.
+   - [ ] *Pista 2:* El centro de una circunferencia que pasa por A y B está en la mediatriz de AB; lo mismo con BC.
+   - [ ] *Pista 3:* Traza las mediatrices de dos lados con el compás; donde se cortan está el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un triángulo ABC y una circunferencia que pasa por sus tres vértices. Buscamos su centro.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro equidista de A y de B, y también de B y de C. Por tanto está en dos mediatrices y es donde se cortan.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que mueves un punto buscando el que está a la misma distancia de los tres vértices. Solo hay uno, y se ve al cruzar dos mediatrices.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la mediatriz de AB, con dos arcos de igual radio desde A y desde B.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la mediatriz de BC de la misma manera.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Se cortan en O, el circuncentro. Traza la circunferencia de centro O que pasa por A y arrastra Z hasta O.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la circunferencia pasa también por B y por C. La mediatriz del tercer lado pasa por O.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: usar las medianas en lugar de las mediatrices. Su corte es el baricentro, que no equidista de los vértices.
+5. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el centro de la circunferencia inscrita en el triángulo ABC, tangente a sus tres lados.
+   - [ ] *Pista 1:* El centro de una circunferencia tangente a dos lados equidista de ellos.
+   - [ ] *Pista 2:* Los puntos que equidistan de los dos lados de un ángulo forman su bisectriz.
+   - [ ] *Pista 3:* Traza la bisectriz de dos ángulos; donde se cortan está el centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un triángulo ABC y una circunferencia dentro de él que toca a los tres lados. Buscamos su centro.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro equidista de los lados AB y AC, así que está en la bisectriz del ángulo A. Lo mismo ocurre con B.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que hinchas una circunferencia dentro del triángulo hasta tocar los tres lados. Su centro queda en el corte de las bisectrices.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza la bisectriz del ángulo A: un arco corta a los lados y desde esos puntos, dos arcos iguales.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la bisectriz del ángulo B de la misma manera.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Se cortan en I, el incentro. Arrastra Z hasta I y comprueba con la circunferencia inscrita.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la circunferencia de centro I toca a los tres lados. La bisectriz del tercer ángulo también pasa por I.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: usar las mediatrices en lugar de las bisectrices. Su corte equidista de los vértices, no de los lados.
+6. [ ] *construcción en la lámina, dificultad 2*: Arrastra Z hasta el ortocentro del triángulo ABC, el punto donde se cortan sus alturas.
+   - [ ] *Pista 1:* Una altura es la recta desde un vértice perpendicular al lado opuesto.
+   - [ ] *Pista 2:* Las tres alturas se cortan en un punto, así que bastan dos.
+   - [ ] *Pista 3:* Por C traza la perpendicular a AB y por A la perpendicular a BC; donde se cortan está el ortocentro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un triángulo acutángulo ABC. Buscamos el punto donde se cortan sus alturas.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Cada altura es perpendicular al lado opuesto y pasa por el vértice. Las tres se cortan en un punto, el ortocentro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que dejas caer una plomada desde cada vértice hasta el lado opuesto. Las tres rectas se cruzan en un mismo punto dentro del triángulo.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por C, traza la perpendicular al lado AB: es la altura desde C.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Por A, traza la perpendicular al lado BC: es la altura desde A.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Se cortan en H. Marca el pie F de la altura desde C y arrastra Z hasta H.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la altura desde B también pasa por H. Los pies de las alturas están en los lados.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: trazar la mediana en vez de la altura, uniendo el vértice con el punto medio del lado. La altura tiene que ser perpendicular al lado.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: construye el triángulo ABC con AB = 70 mm, el ángulo en C de 60° y la altura desde C de 45 mm. Arrastra Z hasta uno de los vértices C posibles.
+   - [ ] *Pista 1:* El ángulo en C es un lugar geométrico y la altura es otro.
+   - [ ] *Pista 2:* El ángulo fijo bajo el que se ve AB define el arco capaz, y la altura define una paralela a AB.
+   - [ ] *Pista 3:* Traza el arco capaz sobre AB y la paralela a la distancia de la altura; se cortan en C.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Conocemos el lado AB, el ángulo en C y la altura desde C. Hay que encontrar C con dos lugares geométricos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Desde C se ve AB bajo un ángulo fijo: C está en el arco capaz. Como la altura es fija, también está en la paralela a AB a esa distancia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina C recorriendo el arco capaz: el ángulo no cambia pero la altura sí. Solo en dos posiciones coincide con la pedida.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el arco capaz del ángulo dado sobre AB, con el centro en la mediatriz.
+   - [ ] *Solución, paso 5 · 4. El trazado:* A la distancia de la altura traza la paralela a AB.
+   - [ ] *Solución, paso 6 · 4. El trazado:* El arco y la paralela se cortan en C₁ y C₂. Une C con A y con B y arrastra Z hasta uno.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el ángulo ACB mide el pedido y la distancia de C a AB es la altura. El otro corte da el triángulo simétrico.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar una altura mayor que la del punto más alto del arco capaz. La paralela no corta al arco y los datos no cierran.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: ABCD es un trapecio con AB paralelo a CD, AB = 70 mm y CD = 35 mm, y se conocen A, B y D. Arrastra Z hasta el vértice C.
+   - [ ] *Pista 1:* Un trapecio tiene dos lados paralelos: aquí AB y CD.
+   - [ ] *Pista 2:* C está en la paralela a AB que pasa por D y a la distancia CD de D.
+   - [ ] *Pista 3:* Traza la paralela a AB por D y corta con la circunferencia de centro D y radio CD; elige el corte del lado de B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un trapecio con los lados AB y CD paralelos. Tenemos A, B y D, y la medida de CD.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* C está en la paralela a AB por D, y a la distancia CD de D. Es el corte de esa paralela con una circunferencia.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina C deslizándose sobre la paralela por D: solo en dos puntos está a la distancia CD de D, uno hacia cada lado.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por D, traza la paralela a AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en D y radio la medida de CD, traza la circunferencia.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Corta en dos puntos: C es el del lado de B, para que ABCD no se cruce. Dibuja BC y DC y arrastra Z hasta C.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: CD es paralelo a AB y mide lo pedido, y el cuadrilátero ABCD no tiene lados que se crucen.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: llevar la longitud de CD con la regla sobre una paralela hecha a ojo. El compás traslada la medida exacta desde D.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: construye el triángulo ABC con AB = 70 mm, AC = 55 mm y BC = 45 mm, con C por encima de AB. Arrastra Z hasta el centro de su circunferencia circunscrita.
+   - [ ] *Pista 1:* Hay que encadenar dos construcciones: el triángulo y su circuncentro.
+   - [ ] *Pista 2:* C se halla con dos circunferencias de radios AC y BC; el centro, con dos mediatrices de lados.
+   - [ ] *Pista 3:* Traza las circunferencias desde A y desde B, une C y traza las mediatrices de AB y AC.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Primero hay que construir el triángulo con sus tres lados y después hallar su circunferencia circunscrita.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* C es el corte de las circunferencias de radios AC y BC. Una vez construido el triángulo, el centro está en dos mediatrices de lados.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina cerrar el triángulo girando dos varillas, AC desde A y BC desde B, hasta que se toquen. Después buscas el punto equidistante de los tres vértices.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con el compás traza la circunferencia de centro A y radio AC y la de centro B y radio BC. Su corte por encima de AB es C.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la mediatriz de AB.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Traza la mediatriz de AC. Su corte es O: arrastra Z hasta O y traza la circunferencia circunscrita.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la circunferencia de centro O pasa por A, B y C, y OA, OB y OC miden lo mismo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar el corte de las bisectrices como centro de la circunferencia circunscrita. Ese es el incentro y la circunferencia no pasa por los vértices.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos

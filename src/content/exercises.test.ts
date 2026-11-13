@@ -44,6 +44,7 @@ const COMPLETE_LESSONS: string[] = [
   'cada-eje-se-reduce',
   'curvas-de-arcos',
   'cada-direccion-su-fuga',
+  'triangulos-y-cuadrilateros',
 ];
 
 const lessonNamed = (id: string): Lesson => {
