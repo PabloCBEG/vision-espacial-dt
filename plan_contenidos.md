@@ -376,7 +376,7 @@ Cada lección se da por terminada según el apartado «Contenido de ejercicios»
 10. Piezas 11–18 y 6 ejercicios PAU reales (ejercicios 3 y 4).
 11. Lecciones nuevas I-15, I-11, I-13, I-07 y II-11.
 12. Herramienta de marcado de aristas en un cubo 3D (prototipo en `examenes/andalucia/academia-granada/`), para los ejercicios 3 reales de la PAU y la reconstrucción de piezas desde sus vistas (Prompt 9).
-12. Proyecto final: modelo didáctico de la fragata F110 (ver más abajo).
+13. Proyecto final: modelo didáctico de la fragata F110 (ver más abajo).
 
 **Adelantos.** El motor de polígonos y las lecciones I-02 e I-03 se adelantan al inicio de la
 fase 2.
@@ -397,12 +397,18 @@ fase 2.
   8. Comprobación y error típico.
 - **Datos.** Aproximados, de fuentes abiertas: eslora 145 m, manga 18 m, calado 5 m. El puntal
   es un supuesto didáctico. No es un plano oficial y no lleva detalles militares.
-- **Motor.** Pendiente de decidir. Propuesta: casco poliédrico por cuadernas como primitiva
-  nueva del motor de normalización.
-- **Decisiones pendientes del profesor.**
-  - Tipo de casco, puntal y manga.
-  - Nombres de las vistas y orientación de la proa.
-  - Escala y formato de la lámina.
-  - Una lección o varias.
-  - Punto métrico de la cónica.
-  - Cuándo se da y para qué curso.
+- **Motor.** Casco poliédrico por cuadernas sobre la operación `poliedro` del motor de normalización
+  (ver las decisiones de abajo).
+- **Decisiones (13 de noviembre de 2026).** El profesor adopta las recomendaciones del plan:
+  - **Casco:** opción B, casco poliédrico por cuadernas (secciones poligonales unidas por caras
+    planas). La operación `poliedro` del motor de normalización ya permite construirlo; solo
+    falta generar los vértices y las caras a partir de las cuadernas.
+  - **Manga:** 18 m, la cifra más repetida. **Eslora:** 145 m. **Calado:** 5 m.
+  - **Puntal:** valor supuesto, rotulado «supuesto didáctico».
+  - **Vistas:** se usa el vocabulario del sistema europeo (alzado, planta y perfil). La vista
+    longitudinal del buque es el alzado, con la proa a la derecha; el perfil izquierdo es la
+    vista de proa o popa. Se explica en la lección.
+  - **Escala y formato:** 1:1000 en A4 en la web (145 mm de casco); se menciona 1:500 en A3.
+  - **Forma:** una sola lección larga con ocho bloques.
+  - **Punto métrico:** entra, porque II-11 ya lo enseña.
+  - **Curso y momento:** 2.º, tras II-11 (abril), con código propio en el catálogo.
