@@ -5,6 +5,31 @@
    6 modo proyector · 7 juego (XP, rachas, avisos) · 8 móvil · 9 movimiento reducido
    ========================================================================== */
 
+/* Fuentes empaquetadas (licencia SIL OFL 1.1), para que funcionen sin conexión. */
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/nunito-latin-wght.woff2') format('woff2');
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/atkinson-latin-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/atkinson-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ---------- 1. Tokens: tema claro (por defecto) ---------- */
 :root {
   /* Superficies y marca (la marca solo se usa en la interfaz, nunca dentro de la escena) */
