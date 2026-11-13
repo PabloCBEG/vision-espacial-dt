@@ -45,6 +45,7 @@ const COMPLETE_LESSONS: string[] = [
   'curvas-de-arcos',
   'cada-direccion-su-fuga',
   'triangulos-y-cuadrilateros',
+  'poligonos-regulares',
 ];
 
 const lessonNamed = (id: string): Lesson => {

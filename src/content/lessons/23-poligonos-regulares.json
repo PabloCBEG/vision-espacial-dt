@@ -1,0 +1,2983 @@
+{
+  "id": "poligonos-regulares",
+  "order": 3,
+  "title": "Polígonos regulares: dividir la circunferencia en arcos iguales",
+  "topic": "I-03",
+  "stage": "DT I",
+  "saberBasico": "Geometría plana: polígonos regulares inscritos en una circunferencia y construidos dado el lado. Dividir la circunferencia en arcos iguales.",
+  "level": "Inicial",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "plana": {
+        "objetos": [
+          {
+            "id": "O1",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A1",
+            "tipo": "punto",
+            "en": [32.9, 12],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "k1",
+            "tipo": "circunferencia",
+            "centro": "O1",
+            "pasaPor": "A1",
+            "rol": "dato"
+          },
+          {
+            "id": "cA1",
+            "tipo": "circunferencia",
+            "centro": "A1",
+            "pasaPor": "O1",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "H1",
+            "tipo": "interseccion",
+            "de": ["cA1", "k1"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "B"
+          },
+          {
+            "id": "H2",
+            "tipo": "interseccion",
+            "de": ["cA1", "k1"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "F"
+          },
+          {
+            "id": "cH1",
+            "tipo": "circunferencia",
+            "centro": "H1",
+            "pasaPor": "O1",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "H3",
+            "tipo": "interseccion",
+            "de": ["cH1", "k1"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "cH2",
+            "tipo": "circunferencia",
+            "centro": "H2",
+            "pasaPor": "O1",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "H4",
+            "tipo": "interseccion",
+            "de": ["cH2", "k1"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "E"
+          },
+          {
+            "id": "rOA1",
+            "tipo": "recta",
+            "por": ["O1", "A1"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "D1",
+            "tipo": "interseccion",
+            "de": ["rOA1", "k1"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "D"
+          },
+          {
+            "id": "h1s0",
+            "tipo": "segmento",
+            "por": ["A1", "H1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "h1s1",
+            "tipo": "segmento",
+            "por": ["H1", "H3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "h1s2",
+            "tipo": "segmento",
+            "por": ["H3", "D1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "h1s3",
+            "tipo": "segmento",
+            "por": ["D1", "H4"],
+            "rol": "resultado"
+          },
+          {
+            "id": "h1s4",
+            "tipo": "segmento",
+            "por": ["H4", "H2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "h1s5",
+            "tipo": "segmento",
+            "por": ["H2", "A1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "h1r0",
+            "tipo": "segmento",
+            "por": ["O1", "A1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "h1r1",
+            "tipo": "segmento",
+            "por": ["O1", "H1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "h1r2",
+            "tipo": "segmento",
+            "por": ["O1", "H2"],
+            "rol": "proceso"
+          },
+          {
+            "id": "ang1",
+            "tipo": "medidaAngulo",
+            "de": ["A1", "O1", "H1"],
+            "rol": "proceso"
+          },
+          {
+            "id": "O2",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A2",
+            "tipo": "punto",
+            "en": [0, 35],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "k2",
+            "tipo": "circunferencia",
+            "centro": "O2",
+            "pasaPor": "A2",
+            "rol": "dato"
+          },
+          {
+            "id": "rOA2",
+            "tipo": "recta",
+            "por": ["O2", "A2"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "D2",
+            "tipo": "interseccion",
+            "de": ["rOA2", "k2"],
+            "indice": 0,
+            "rol": "proceso",
+            "etiqueta": "D"
+          },
+          {
+            "id": "cD2",
+            "tipo": "circunferencia",
+            "centro": "D2",
+            "pasaPor": "O2",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "T1",
+            "tipo": "interseccion",
+            "de": ["cD2", "k2"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "B"
+          },
+          {
+            "id": "T2",
+            "tipo": "interseccion",
+            "de": ["cD2", "k2"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "t2a",
+            "tipo": "segmento",
+            "por": ["A2", "T1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "t2b",
+            "tipo": "segmento",
+            "por": ["T1", "T2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "t2c",
+            "tipo": "segmento",
+            "por": ["T2", "A2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "O3",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A3",
+            "tipo": "punto",
+            "en": [24.7, 24.7],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "k3",
+            "tipo": "circunferencia",
+            "centro": "O3",
+            "pasaPor": "A3",
+            "rol": "dato"
+          },
+          {
+            "id": "rOA3",
+            "tipo": "recta",
+            "por": ["O3", "A3"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C3",
+            "tipo": "interseccion",
+            "de": ["rOA3", "k3"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "pO3",
+            "tipo": "perpendicular",
+            "a": "rOA3",
+            "por": "O3",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "S1",
+            "tipo": "interseccion",
+            "de": ["pO3", "k3"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "B"
+          },
+          {
+            "id": "S2",
+            "tipo": "interseccion",
+            "de": ["pO3", "k3"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "D"
+          },
+          {
+            "id": "q3s0",
+            "tipo": "segmento",
+            "por": ["A3", "S1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "q3s1",
+            "tipo": "segmento",
+            "por": ["S1", "C3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "q3s2",
+            "tipo": "segmento",
+            "por": ["C3", "S2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "q3s3",
+            "tipo": "segmento",
+            "por": ["S2", "A3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "O4",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A4",
+            "tipo": "punto",
+            "en": [35, 0],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B4",
+            "tipo": "punto",
+            "en": [0, 35],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "k4",
+            "tipo": "circunferencia",
+            "centro": "O4",
+            "pasaPor": "A4",
+            "rol": "dato"
+          },
+          {
+            "id": "bis4",
+            "tipo": "bisectriz",
+            "angulo": ["A4", "O4", "B4"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "E4",
+            "tipo": "interseccion",
+            "de": ["bis4", "k4"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "E"
+          },
+          {
+            "id": "o4a",
+            "tipo": "segmento",
+            "por": ["A4", "E4"],
+            "rol": "resultado"
+          },
+          {
+            "id": "o4b",
+            "tipo": "segmento",
+            "por": ["E4", "B4"],
+            "rol": "resultado"
+          },
+          {
+            "id": "o4r",
+            "tipo": "segmento",
+            "por": ["O4", "E4"],
+            "rol": "proceso"
+          },
+          {
+            "id": "o4x",
+            "tipo": "segmento",
+            "por": ["O4", "A4"],
+            "rol": "proceso"
+          },
+          {
+            "id": "o4y",
+            "tipo": "segmento",
+            "por": ["O4", "B4"],
+            "rol": "proceso"
+          },
+          {
+            "id": "A5",
+            "tipo": "punto",
+            "en": [-17.5, -20],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B5",
+            "tipo": "punto",
+            "en": [17.5, -20],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "sAB5",
+            "tipo": "segmento",
+            "por": ["A5", "B5"],
+            "rol": "dato"
+          },
+          {
+            "id": "cA5",
+            "tipo": "circunferencia",
+            "centro": "A5",
+            "pasaPor": "B5",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "cB5",
+            "tipo": "circunferencia",
+            "centro": "B5",
+            "pasaPor": "A5",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "O5",
+            "tipo": "interseccion",
+            "de": ["cA5", "cB5"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "O"
+          },
+          {
+            "id": "kO5",
+            "tipo": "circunferencia",
+            "centro": "O5",
+            "pasaPor": "A5",
+            "rol": "resultado"
+          },
+          {
+            "id": "C5",
+            "tipo": "interseccion",
+            "de": ["cB5", "kO5"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "r5a",
+            "tipo": "segmento",
+            "por": ["O5", "A5"],
+            "rol": "proceso"
+          },
+          {
+            "id": "r5b",
+            "tipo": "segmento",
+            "por": ["O5", "B5"],
+            "rol": "proceso"
+          },
+          {
+            "id": "h5c",
+            "tipo": "segmento",
+            "por": ["B5", "C5"],
+            "rol": "resultado"
+          },
+          {
+            "id": "A6",
+            "tipo": "punto",
+            "en": [-20, -25],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "B6",
+            "tipo": "punto",
+            "en": [20, -25],
+            "etiqueta": "B",
+            "fijo": true
+          },
+          {
+            "id": "sAB6",
+            "tipo": "segmento",
+            "por": ["A6", "B6"],
+            "rol": "dato"
+          },
+          {
+            "id": "rAB6",
+            "tipo": "recta",
+            "por": ["A6", "B6"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pB6",
+            "tipo": "perpendicular",
+            "a": "rAB6",
+            "por": "B6",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "cB6",
+            "tipo": "circunferencia",
+            "centro": "B6",
+            "pasaPor": "A6",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "C6",
+            "tipo": "interseccion",
+            "de": ["pB6", "cB6"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "C"
+          },
+          {
+            "id": "pA6",
+            "tipo": "perpendicular",
+            "a": "rAB6",
+            "por": "A6",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "cA6",
+            "tipo": "circunferencia",
+            "centro": "A6",
+            "pasaPor": "B6",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "D6",
+            "tipo": "interseccion",
+            "de": ["pA6", "cA6"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "D"
+          },
+          {
+            "id": "s6a",
+            "tipo": "segmento",
+            "por": ["B6", "C6"],
+            "rol": "resultado"
+          },
+          {
+            "id": "s6b",
+            "tipo": "segmento",
+            "por": ["C6", "D6"],
+            "rol": "resultado"
+          },
+          {
+            "id": "s6c",
+            "tipo": "segmento",
+            "por": ["D6", "A6"],
+            "rol": "resultado"
+          },
+          {
+            "id": "O7",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "C7",
+            "tipo": "punto",
+            "en": [0, 35],
+            "etiqueta": "C",
+            "fijo": true
+          },
+          {
+            "id": "k7",
+            "tipo": "circunferencia",
+            "centro": "O7",
+            "pasaPor": "C7",
+            "rol": "dato"
+          },
+          {
+            "id": "rOC7",
+            "tipo": "recta",
+            "por": ["O7", "C7"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pO7",
+            "tipo": "perpendicular",
+            "a": "rOC7",
+            "por": "O7",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "R7",
+            "tipo": "interseccion",
+            "de": ["pO7", "k7"],
+            "indice": 0,
+            "rol": "proceso",
+            "etiqueta": "B"
+          },
+          {
+            "id": "L7",
+            "tipo": "interseccion",
+            "de": ["pO7", "k7"],
+            "indice": 1,
+            "rol": "proceso",
+            "etiqueta": "A"
+          },
+          {
+            "id": "M7",
+            "tipo": "puntoMedio",
+            "de": ["O7", "R7"],
+            "rol": "proceso",
+            "etiqueta": "M"
+          },
+          {
+            "id": "cM7",
+            "tipo": "circunferencia",
+            "centro": "M7",
+            "pasaPor": "C7",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "N7",
+            "tipo": "interseccion",
+            "de": ["cM7", "pO7"],
+            "indice": 1,
+            "rol": "proceso",
+            "etiqueta": "N"
+          },
+          {
+            "id": "cC7",
+            "tipo": "circunferencia",
+            "centro": "C7",
+            "pasaPor": "N7",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "P1",
+            "tipo": "interseccion",
+            "de": ["cC7", "k7"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "P₁"
+          },
+          {
+            "id": "P2",
+            "tipo": "interseccion",
+            "de": ["cC7", "k7"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "P₂"
+          },
+          {
+            "id": "cP1",
+            "tipo": "circunferencia",
+            "centro": "P1",
+            "radioDe": ["C7", "N7"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "P3",
+            "tipo": "interseccion",
+            "de": ["cP1", "k7"],
+            "indice": 1,
+            "rol": "resultado",
+            "etiqueta": "P₃"
+          },
+          {
+            "id": "cP2",
+            "tipo": "circunferencia",
+            "centro": "P2",
+            "radioDe": ["C7", "N7"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "P4",
+            "tipo": "interseccion",
+            "de": ["cP2", "k7"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "P₄"
+          },
+          {
+            "id": "p7s0",
+            "tipo": "segmento",
+            "por": ["C7", "P1"],
+            "rol": "resultado"
+          },
+          {
+            "id": "p7s1",
+            "tipo": "segmento",
+            "por": ["P1", "P3"],
+            "rol": "resultado"
+          },
+          {
+            "id": "p7s2",
+            "tipo": "segmento",
+            "por": ["P3", "P4"],
+            "rol": "resultado"
+          },
+          {
+            "id": "p7s3",
+            "tipo": "segmento",
+            "por": ["P4", "P2"],
+            "rol": "resultado"
+          },
+          {
+            "id": "p7s4",
+            "tipo": "segmento",
+            "por": ["P2", "C7"],
+            "rol": "resultado"
+          },
+          {
+            "id": "O9",
+            "tipo": "punto",
+            "en": [0, 0],
+            "etiqueta": "O",
+            "fijo": true
+          },
+          {
+            "id": "A9",
+            "tipo": "punto",
+            "en": [-30, 0],
+            "etiqueta": "A",
+            "fijo": true
+          },
+          {
+            "id": "k9",
+            "tipo": "circunferencia",
+            "centro": "O9",
+            "pasaPor": "A9",
+            "rol": "dato"
+          },
+          {
+            "id": "rOA9",
+            "tipo": "recta",
+            "por": ["O9", "A9"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "pO9",
+            "tipo": "perpendicular",
+            "a": "rOA9",
+            "por": "O9",
+            "rol": "auxiliar"
+          },
+          {
+            "id": "B9",
+            "tipo": "interseccion",
+            "de": ["pO9", "k9"],
+            "indice": 0,
+            "rol": "proceso",
+            "etiqueta": "B"
+          },
+          {
+            "id": "bis9",
+            "tipo": "bisectriz",
+            "angulo": ["A9", "O9", "B9"],
+            "rol": "auxiliar"
+          },
+          {
+            "id": "E9",
+            "tipo": "interseccion",
+            "de": ["bis9", "k9"],
+            "indice": 0,
+            "rol": "resultado",
+            "etiqueta": "E"
+          },
+          {
+            "id": "o9a",
+            "tipo": "segmento",
+            "por": ["A9", "E9"],
+            "rol": "resultado"
+          },
+          {
+            "id": "o9b",
+            "tipo": "segmento",
+            "por": ["E9", "B9"],
+            "rol": "resultado"
+          },
+          {
+            "id": "Z",
+            "tipo": "punto",
+            "en": [60, -55],
+            "etiqueta": "Z"
+          }
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Un polígono regular de n lados divide la circunferencia en n arcos iguales. Con el compás, el radio medido desde un vértice corta a la circunferencia en dos puntos a 60° de él.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "A1", "k1", "cA1", "H1", "H2"],
+          "trazar": ["cA1", "H1", "H2"],
+          "destacar": ["H1", "H2"]
+        }
+      }
+    },
+    {
+      "narration": "Repitiendo el radio desde cada nuevo vértice se completa el hexágono: su lado es igual al radio. El ángulo central de cada lado es 360° entre el número de lados.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O1",
+            "A1",
+            "k1",
+            "cA1",
+            "H1",
+            "H2",
+            "cH1",
+            "H3",
+            "cH2",
+            "H4",
+            "rOA1",
+            "D1",
+            "h1s0",
+            "h1s1",
+            "h1s2",
+            "h1s3",
+            "h1s4",
+            "h1s5",
+            "h1r0",
+            "h1r1",
+            "ang1"
+          ],
+          "trazar": [
+            "cH1",
+            "H3",
+            "cH2",
+            "H4",
+            "D1",
+            "h1s0",
+            "h1s1",
+            "h1s2",
+            "h1s3",
+            "h1s4",
+            "h1s5",
+            "ang1"
+          ],
+          "destacar": ["h1s0", "h1s1", "h1s2", "h1s3", "h1s4", "h1s5"]
+        }
+      }
+    },
+    {
+      "narration": "El triángulo equilátero se obtiene tomando un vértice sí y otro no del hexágono. Se parte del extremo D del diámetro opuesto a A y se corta con el radio.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O2", "A2", "k2", "rOA2", "D2", "cD2", "T1", "T2", "t2a", "t2b", "t2c"],
+          "trazar": ["rOA2", "D2", "cD2", "T1", "T2", "t2a", "t2b", "t2c"],
+          "destacar": ["T1", "T2"]
+        }
+      }
+    },
+    {
+      "narration": "El cuadrado divide la circunferencia en cuatro arcos de 90°. Sus vértices son los extremos de dos diámetros perpendiculares.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O3",
+            "A3",
+            "k3",
+            "rOA3",
+            "C3",
+            "pO3",
+            "S1",
+            "S2",
+            "q3s0",
+            "q3s1",
+            "q3s2",
+            "q3s3"
+          ],
+          "trazar": ["rOA3", "C3", "pO3", "S1", "S2", "q3s0", "q3s1", "q3s2", "q3s3"],
+          "destacar": ["S1", "S2"]
+        }
+      }
+    },
+    {
+      "narration": "El octógono sale del cuadrado: la bisectriz de cada ángulo central parte en dos el arco de 90°. Los puntos de corte con la circunferencia son los vértices que faltan.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["O4", "A4", "B4", "k4", "bis4", "E4", "o4a", "o4b", "o4r", "o4x", "o4y"],
+          "trazar": ["bis4", "E4", "o4a", "o4b", "o4r"],
+          "destacar": ["E4"]
+        }
+      }
+    },
+    {
+      "narration": "El pentágono no sale del radio: se parte de dos diámetros perpendiculares y del punto medio M de un radio. La circunferencia de centro M que pasa por C corta al diámetro en N, y CN es el lado.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "O7",
+            "C7",
+            "k7",
+            "rOC7",
+            "pO7",
+            "R7",
+            "L7",
+            "M7",
+            "cM7",
+            "N7",
+            "cC7",
+            "P1",
+            "P2",
+            "cP1",
+            "P3",
+            "cP2",
+            "P4",
+            "p7s0",
+            "p7s1",
+            "p7s2",
+            "p7s3",
+            "p7s4"
+          ],
+          "trazar": [
+            "pO7",
+            "M7",
+            "cM7",
+            "N7",
+            "cC7",
+            "P1",
+            "P2",
+            "cP1",
+            "P3",
+            "cP2",
+            "P4",
+            "p7s0",
+            "p7s1",
+            "p7s2",
+            "p7s3",
+            "p7s4"
+          ],
+          "destacar": ["N7", "cC7"]
+        }
+      }
+    },
+    {
+      "narration": "Si te dan el lado AB de un hexágono, el centro O está a esa distancia de A y de B. Se halla con dos circunferencias de radio AB y desde O se completa el hexágono.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": ["A5", "B5", "sAB5", "cA5", "cB5", "O5", "kO5", "C5", "r5a", "r5b", "h5c"],
+          "trazar": ["cA5", "cB5", "O5", "kO5", "C5", "r5a", "r5b", "h5c"],
+          "destacar": ["O5"]
+        }
+      }
+    },
+    {
+      "narration": "Para un cuadrado de lado AB se levanta una perpendicular por cada extremo y se lleva sobre ellas la medida AB con el compás. El cuarto lado cierra el cuadrado.",
+      "show3d": [],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "plana": {
+          "visibles": [
+            "A6",
+            "B6",
+            "sAB6",
+            "rAB6",
+            "pB6",
+            "cB6",
+            "C6",
+            "pA6",
+            "cA6",
+            "D6",
+            "s6a",
+            "s6b",
+            "s6c"
+          ],
+          "trazar": ["pB6", "cB6", "C6", "pA6", "cA6", "D6", "s6a", "s6b", "s6c"],
+          "destacar": ["C6", "D6"]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Esta circunferencia tiene un hexágono regular inscrito con un vértice en A. Arrastra Z hasta el vértice contiguo a A.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O1", "A1", "k1", "Z"],
+          "posiciones": {
+            "O1": [0, 0],
+            "A1": [0, 30],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["H1", "H2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! En el hexágono, el lado es igual al radio.",
+            "pista": "El radio con centro en A corta a la circunferencia en los vértices contiguos."
+          }
+        }
+      },
+      "hints": [
+        "En un hexágono regular, el lado es igual al radio.",
+        "El vértice contiguo está a una distancia de A igual al radio, y sobre la circunferencia.",
+        "Con el compás, pincha en A, abre hasta O y marca sobre la circunferencia."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos una circunferencia de centro O y un vértice A. Buscamos los vértices contiguos del hexágono regular inscrito.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "En el hexágono el lado es igual al radio, porque el ángulo central de 60° forma un triángulo equilátero. El vértice contiguo está a la distancia del radio de A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que apoyas el compás en A con la abertura del radio y haces girar la punta. Corta a la circunferencia en dos puntos, uno a cada lado de A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Con centro en A y radio OA, traza un arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "cA1", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [60, -55]
+              },
+              "trazar": ["cA1"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "El arco corta a la circunferencia en dos puntos: son los vértices contiguos a A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "cA1", "H1", "H2", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [60, -55]
+              },
+              "trazar": ["H1", "H2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Arrastra Z hasta uno de ellos y une el vértice con A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "cA1", "H1", "H2", "h1s0", "h1s5", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [-25.981, 15]
+              },
+              "trazar": ["h1s0", "h1s5"],
+              "destacar": ["H1", "H2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: AH₁ mide lo mismo que el radio, y el ángulo AOH₁ vale 60°.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "cA1", "H1", "H2", "h1s0", "h1s5", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [-25.981, 15]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dividir a ojo, con el transportador o sin él. Un pequeño error en el primer vértice se acumula y el último lado no cierra.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O1", "A1", "k1", "cA1", "H1", "H2", "h1s0", "h1s5", "Z"],
+              "posiciones": {
+                "O1": [0, 0],
+                "A1": [0, 30],
+                "Z": [-25.981, 15]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 0],
+                    [-28.19077862357725, 10.260604299770065]
+                  ],
+                  "rotulo": "Error: a ojo"
+                },
+                {
+                  "puntos": [
+                    [0, 30],
+                    [-28.19077862357725, 10.260604299770065]
+                  ]
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Inscribe un triángulo equilátero en esta circunferencia con un vértice en A. Arrastra Z hasta uno de los otros dos vértices.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O2", "A2", "k2", "Z"],
+          "posiciones": {
+            "O2": [0, 0],
+            "A2": [30, 0],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["T1", "T2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Los vértices del triángulo son uno sí y otro no del hexágono.",
+            "pista": "El triángulo equilátero son los vértices alternos de un hexágono."
+          }
+        }
+      },
+      "hints": [
+        "Un triángulo equilátero tiene sus vértices a 120° uno de otro.",
+        "Son vértices alternos del hexágono inscrito, así que se parte del punto opuesto a A.",
+        "Traza el diámetro por A, y con centro en su otro extremo y radio OA corta a la circunferencia."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos una circunferencia y un vértice A. Buscamos los otros dos vértices del triángulo equilátero inscrito.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O2", "A2", "k2", "Z"],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Los vértices del triángulo equilátero están a 120° entre sí, es decir, alternos en el hexágono. Los dos que faltan se hallan desde el punto D opuesto a A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O2", "A2", "k2", "Z"],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que giras A alrededor de O dos veces seguidas con el mismo ángulo. El ángulo es un tercio de la vuelta completa y las dos posiciones son los vértices que faltan.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O2", "A2", "k2", "Z"],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza el diámetro por A: su otro extremo D está en el lado opuesto de la circunferencia.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O2", "A2", "k2", "rOA2", "D2", "Z"],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["rOA2", "D2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en D y radio OD traza un arco que corta a la circunferencia en dos puntos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O2", "A2", "k2", "rOA2", "D2", "cD2", "T1", "T2", "Z"],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["cD2", "T1", "T2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Esos puntos son los vértices B y C. Une los tres vértices y arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O2",
+                "A2",
+                "k2",
+                "rOA2",
+                "D2",
+                "cD2",
+                "T1",
+                "T2",
+                "t2a",
+                "t2b",
+                "t2c",
+                "Z"
+              ],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [-15, 25.981]
+              },
+              "trazar": ["t2a", "t2b", "t2c"],
+              "destacar": ["T1", "T2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: los tres lados miden lo mismo. El lado del triángulo es mayor que el radio.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O2",
+                "A2",
+                "k2",
+                "rOA2",
+                "D2",
+                "cD2",
+                "T1",
+                "T2",
+                "t2a",
+                "t2b",
+                "t2c",
+                "Z"
+              ],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [-15, 25.981]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: tomar el radio como lado del triángulo, como en el hexágono. Eso da un vértice a 60° y el triángulo no se cierra.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O2",
+                "A2",
+                "k2",
+                "rOA2",
+                "D2",
+                "cD2",
+                "T1",
+                "T2",
+                "t2a",
+                "t2b",
+                "t2c",
+                "Z"
+              ],
+              "posiciones": {
+                "O2": [0, 0],
+                "A2": [30, 0],
+                "Z": [-15, 25.981]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [30, 0],
+                    [15.000000000000004, 25.980762113533157]
+                  ],
+                  "rotulo": "Error: lado = radio"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "Inscribe un cuadrado en esta circunferencia con un vértice en A. Arrastra Z hasta uno de los vértices contiguos a A.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O3", "A3", "k3", "Z"],
+          "posiciones": {
+            "O3": [0, 0],
+            "A3": [30, 0],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["S1", "S2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Los vértices del cuadrado son los extremos de dos diámetros perpendiculares.",
+            "pista": "Los vértices contiguos están en el diámetro perpendicular al que pasa por A."
+          }
+        }
+      },
+      "hints": [
+        "El cuadrado divide la circunferencia en cuatro arcos iguales.",
+        "Sus diagonales son dos diámetros perpendiculares.",
+        "Traza el diámetro por A y su perpendicular por O: sus extremos son los vértices."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos una circunferencia y un vértice A. Buscamos los vértices contiguos del cuadrado inscrito.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "A3", "k3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Las diagonales de un cuadrado son diámetros, iguales y perpendiculares. Los vértices que faltan están en el diámetro perpendicular al que pasa por A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "A3", "k3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que giras A un cuarto de vuelta alrededor de O. Cae sobre la perpendicular al diámetro de partida.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "A3", "k3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza el diámetro por A; su otro extremo C es el vértice opuesto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "A3", "k3", "rOA3", "C3", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["rOA3", "C3"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Por O, traza la perpendicular a ese diámetro. Corta a la circunferencia en B y D.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O3", "A3", "k3", "rOA3", "C3", "pO3", "S1", "S2", "Z"],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["pO3", "S1", "S2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Une los cuatro vértices y arrastra Z hasta uno de los contiguos a A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O3",
+                "A3",
+                "k3",
+                "rOA3",
+                "C3",
+                "pO3",
+                "S1",
+                "S2",
+                "q3s0",
+                "q3s1",
+                "q3s2",
+                "q3s3",
+                "Z"
+              ],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [0, 30]
+              },
+              "trazar": ["q3s0", "q3s1", "q3s2", "q3s3"],
+              "destacar": ["S1", "S2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: los cuatro lados miden lo mismo y las diagonales son perpendiculares. El lado es mayor que el radio.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O3",
+                "A3",
+                "k3",
+                "rOA3",
+                "C3",
+                "pO3",
+                "S1",
+                "S2",
+                "q3s0",
+                "q3s1",
+                "q3s2",
+                "q3s3",
+                "Z"
+              ],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [0, 30]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: tomar el radio como lado y marcarlo sobre la circunferencia. Eso da un vértice a 60° de A, que es del hexágono, no del cuadrado.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O3",
+                "A3",
+                "k3",
+                "rOA3",
+                "C3",
+                "pO3",
+                "S1",
+                "S2",
+                "q3s0",
+                "q3s1",
+                "q3s2",
+                "q3s3",
+                "Z"
+              ],
+              "posiciones": {
+                "O3": [0, 0],
+                "A3": [30, 0],
+                "Z": [0, 30]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [30, 0],
+                    [15.000000000000004, 25.980762113533157]
+                  ],
+                  "rotulo": "Error: lado = radio"
+                },
+                {
+                  "puntos": [
+                    [0, 0],
+                    [15.000000000000004, 25.980762113533157]
+                  ]
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "A y B son vértices consecutivos de un cuadrado inscrito en la circunferencia. Arrastra Z hasta el vértice del octógono regular inscrito que queda entre A y B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O4", "A4", "B4", "k4", "Z"],
+          "posiciones": {
+            "O4": [0, 0],
+            "A4": [40, 0],
+            "B4": [0, 40],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "E4",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! La bisectriz del ángulo AOB corta al arco en su punto medio.",
+            "pista": "El vértice del octógono está en la bisectriz del ángulo AOB."
+          }
+        }
+      },
+      "hints": [
+        "El octógono tiene el doble de lados que el cuadrado.",
+        "Cada arco del cuadrado se divide en dos arcos iguales, y el ángulo central se divide por su bisectriz.",
+        "Traza la bisectriz del ángulo AOB; donde corta a la circunferencia está el vértice."
+      ],
+      "solution": [
+        {
+          "narration": "Un cuadrado inscrito tiene vértices consecutivos A y B. Hay que hallar el vértice del octógono entre ellos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El octógono divide en dos cada arco de 90° del cuadrado. El vértice está en la bisectriz del ángulo central AOB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que cierras un compás hasta partir en dos el ángulo AOB. La recta del medio llega justo al punto medio del arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Con centro en O, traza un arco que corta a OA y a OB. Desde esos dos puntos, dos arcos iguales.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "bis4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [60, -55]
+              },
+              "trazar": ["bis4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "La bisectriz corta a la circunferencia en E: es el vértice del octógono.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "bis4", "E4", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [60, -55]
+              },
+              "trazar": ["E4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Une E con A y con B y arrastra Z hasta E.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "bis4", "E4", "o4a", "o4b", "o4r", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [28.284, 28.284]
+              },
+              "trazar": ["o4a", "o4b", "o4r"],
+              "destacar": ["E4"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: AE y EB miden lo mismo, y el ángulo AOE vale 45°.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "bis4", "E4", "o4a", "o4b", "o4r", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [28.284, 28.284]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: marcar el punto medio del arco a ojo. Un desvío pequeño y el octógono deja de ser regular.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O4", "A4", "B4", "k4", "bis4", "E4", "o4a", "o4b", "o4r", "Z"],
+              "posiciones": {
+                "O4": [0, 0],
+                "A4": [40, 0],
+                "B4": [0, 40],
+                "Z": [28.284, 28.284]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 0],
+                    [22.943057454041842, 32.76608177155967]
+                  ],
+                  "rotulo": "Error: a ojo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "AB es un lado de un hexágono regular. Arrastra Z hasta el centro O del hexágono, que queda por encima de AB.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A5", "B5", "sAB5", "Z"],
+          "posiciones": {
+            "A5": [-20, -15],
+            "B5": [20, -15],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "O5",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El centro del hexágono está a la distancia AB de A y de B.",
+            "pista": "En el hexágono, el radio es igual al lado: O está a la distancia AB de A y de B."
+          }
+        }
+      },
+      "hints": [
+        "En el hexágono regular, el lado es igual al radio.",
+        "El centro está a la distancia AB de A y de B.",
+        "Con el compás, traza desde A y desde B arcos de radio AB; se cortan en O."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un lado AB de un hexágono regular. El centro está por encima de AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "En el hexágono el radio es igual al lado, así que el centro O está a la distancia AB de A y de B. El triángulo AOB es equilátero.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que fijas dos compases de abertura AB, uno en A y otro en B. Sus puntas se juntan en un solo punto por encima de AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Con centro en A y radio AB, traza un arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "cA5", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [60, -55]
+              },
+              "trazar": ["cA5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en B y radio AB, traza otro arco.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "cA5", "cB5", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [60, -55]
+              },
+              "trazar": ["cB5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Se cortan en O, por encima de AB. Arrastra Z hasta O y traza la circunferencia circunscrita.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "cA5", "cB5", "O5", "kO5", "r5a", "r5b", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [0, 19.641]
+              },
+              "trazar": ["O5", "kO5", "r5a", "r5b"],
+              "destacar": ["O5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: OA y OB miden lo mismo que AB, y la circunferencia de centro O que pasa por A pasa por B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "cA5", "cB5", "O5", "kO5", "r5a", "r5b", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [0, 19.641]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: construir sobre el lado AB como si fuera el radio, con el centro en el punto medio o a ojo. El hexágono sale demasiado pequeño y no se cierra.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "cA5", "cB5", "O5", "kO5", "r5a", "r5b", "Z"],
+              "posiciones": {
+                "A5": [-20, -15],
+                "B5": [20, -15],
+                "Z": [0, 19.641]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0.0, -15.0],
+                    [0.0, 5.0]
+                  ],
+                  "rotulo": "Error: centro a ojo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "AB es un lado de un cuadrado. Arrastra Z hasta el vértice C que queda por encima de AB, junto a B.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A6", "B6", "sAB6", "Z"],
+          "posiciones": {
+            "A6": [-15, -25],
+            "B6": [15, -25],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C6",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! C está en la perpendicular por B a la distancia AB.",
+            "pista": "C está en la perpendicular a AB por B, a la distancia AB."
+          }
+        }
+      },
+      "hints": [
+        "Los lados de un cuadrado son perpendiculares entre sí e iguales.",
+        "C está en la perpendicular a AB por B, y a la distancia AB de B.",
+        "Traza la perpendicular por B y corta con la circunferencia de centro B y radio AB."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un lado AB de un cuadrado. Buscamos el vértice C, junto a B, por encima de AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El lado BC es perpendicular a AB y mide lo mismo que AB. Por eso C es el corte de la perpendicular por B con la circunferencia de centro B y radio AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que giras el lado AB un cuarto de vuelta alrededor de B. El extremo A cae justo sobre el vértice C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Por B, traza la perpendicular a AB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "rAB6", "pB6", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [60, -55]
+              },
+              "trazar": ["rAB6", "pB6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en B y radio AB, traza un arco que corta a la perpendicular.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "rAB6", "pB6", "cB6", "C6", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [60, -55]
+              },
+              "trazar": ["cB6", "C6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "El corte por encima de AB es C. Dibuja BC y arrastra Z hasta C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "rAB6", "pB6", "cB6", "C6", "s6a", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [15, 5]
+              },
+              "trazar": ["C6", "s6a"],
+              "destacar": ["C6"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: BC es perpendicular a AB y mide lo mismo. El lado opuesto se obtiene de la misma manera desde A.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "rAB6", "pB6", "cB6", "C6", "s6a", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [15, 5]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: marcar la medida AB sobre la recta AB prolongada y no sobre la perpendicular. El punto queda alineado con A y B y no forma ángulo recto.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A6", "B6", "sAB6", "rAB6", "pB6", "cB6", "C6", "s6a", "Z"],
+              "posiciones": {
+                "A6": [-15, -25],
+                "B6": [15, -25],
+                "Z": [15, 5]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [15, -25],
+                    [45.0, -25]
+                  ],
+                  "rotulo": "Error: no es perpendicular"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: inscribe un pentágono regular en la circunferencia con un vértice en C. Arrastra Z hasta uno de los dos vértices contiguos a C.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O7", "C7", "k7", "Z"],
+          "posiciones": {
+            "O7": [0, 0],
+            "C7": [0, 40],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": ["P1", "P2"],
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! El lado del pentágono es CN, con N hallado desde el punto medio de un radio.",
+            "pista": "El lado del pentágono es CN: primero hay que hallar N."
+          }
+        }
+      },
+      "hints": [
+        "El lado del pentágono no coincide con el radio ni con una fracción sencilla de él.",
+        "Se halla con dos diámetros perpendiculares y el punto medio M de uno de los radios.",
+        "La circunferencia de centro M que pasa por C corta al diámetro en N; CN es el lado."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos una circunferencia y un vértice C. Buscamos los vértices contiguos del pentágono regular inscrito.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "C7", "k7", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El lado del pentágono es la distancia CN, donde N sale de cortar el diámetro con la circunferencia de centro M, punto medio de un radio, que pasa por C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "C7", "k7", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina medir el lado con una cuerda que parte de C. Abierta justo CN, pincha la circunferencia en los dos puntos más próximos a C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "C7", "k7", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza el diámetro perpendicular a OC y marca el punto medio M de uno de los radios.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "C7", "k7", "rOC7", "pO7", "R7", "L7", "M7", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [60, -55]
+              },
+              "trazar": ["pO7", "R7", "L7", "M7"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en M y radio MC, traza un arco que corta al diámetro en N.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O7", "C7", "k7", "rOC7", "pO7", "R7", "L7", "M7", "cM7", "N7", "Z"],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [60, -55]
+              },
+              "trazar": ["cM7", "N7"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Con centro en C y radio CN, corta a la circunferencia en dos puntos P₁ y P₂. Arrastra Z hasta uno.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O7",
+                "C7",
+                "k7",
+                "rOC7",
+                "pO7",
+                "R7",
+                "L7",
+                "M7",
+                "cM7",
+                "N7",
+                "cC7",
+                "P1",
+                "P2",
+                "p7s0",
+                "p7s4",
+                "Z"
+              ],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [-38.042, 12.361]
+              },
+              "trazar": ["cC7", "P1", "P2", "p7s0", "p7s4"],
+              "destacar": ["P1", "P2"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: CP₁ y CP₂ miden CN, y llevando esa medida desde cada vértice se cierra el pentágono sin desvío.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O7",
+                "C7",
+                "k7",
+                "rOC7",
+                "pO7",
+                "R7",
+                "L7",
+                "M7",
+                "cM7",
+                "N7",
+                "cC7",
+                "P1",
+                "P2",
+                "p7s0",
+                "p7s4",
+                "Z"
+              ],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [-38.042, 12.361]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: tomar CM como lado en vez de CN. Es una medida mayor, y los vértices salen más separados de lo debido.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "O7",
+                "C7",
+                "k7",
+                "rOC7",
+                "pO7",
+                "R7",
+                "L7",
+                "M7",
+                "cM7",
+                "N7",
+                "cC7",
+                "P1",
+                "P2",
+                "p7s0",
+                "p7s4",
+                "Z"
+              ],
+              "posiciones": {
+                "O7": [0, 0],
+                "C7": [0, 40],
+                "Z": [-38.042, 12.361]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 40],
+                    [37.080992435478315, 14.999999999999996]
+                  ],
+                  "rotulo": "Error: CM, no CN"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: AB es un lado de un hexágono regular. Arrastra Z hasta el vértice C contiguo a B, el que queda por encima de AB.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["A5", "B5", "sAB5", "Z"],
+          "posiciones": {
+            "A5": [-25, -20],
+            "B5": [15, -20],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "C5",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Primero se halla el centro O y después C, a la distancia AB de B sobre la circunferencia.",
+            "pista": "Primero el centro O, después la circunferencia y el vértice C."
+          }
+        }
+      },
+      "hints": [
+        "Hay que hallar primero el centro del hexágono, a la distancia AB de A y de B.",
+        "La circunferencia de centro O y radio OA pasa por todos los vértices.",
+        "El vértice C está en esa circunferencia y a la distancia AB de B."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos un lado AB de un hexágono regular y buscamos el vértice contiguo C. Hay que encadenar dos pasos.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "Z"],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "El centro O está a la distancia AB de A y de B. Después, C es el vértice de la circunferencia de centro O que está a la distancia AB de B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "Z"],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que sitúas el centro con dos arcos y trazas la circunferencia que contiene al hexágono. Desde B, el siguiente vértice está a una distancia igual al lado.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "Z"],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Con centros en A y en B y radio AB, traza dos arcos. Se cortan en O, el centro.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "cA5", "cB5", "O5", "r5a", "r5b", "Z"],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [60, -55]
+              },
+              "trazar": ["cA5", "cB5", "O5", "r5a", "r5b"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Traza la circunferencia de centro O que pasa por A y por B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["A5", "B5", "sAB5", "cA5", "cB5", "O5", "r5a", "r5b", "kO5", "Z"],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [60, -55]
+              },
+              "trazar": ["kO5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "El arco de centro B y radio AB corta a esa circunferencia en A y en C. Arrastra Z hasta C.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A5",
+                "B5",
+                "sAB5",
+                "cA5",
+                "cB5",
+                "O5",
+                "r5a",
+                "r5b",
+                "kO5",
+                "C5",
+                "h5c",
+                "Z"
+              ],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [35, 14.641]
+              },
+              "trazar": ["C5", "h5c"],
+              "destacar": ["C5"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: BC mide lo mismo que AB, y los tres puntos A, B y C están en la circunferencia de centro O.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A5",
+                "B5",
+                "sAB5",
+                "cA5",
+                "cB5",
+                "O5",
+                "r5a",
+                "r5b",
+                "kO5",
+                "C5",
+                "h5c",
+                "Z"
+              ],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [35, 14.641]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: tomar el lado como radio con el centro en B. Entonces el hexágono queda girado y A no es un vértice de la circunferencia.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": [
+                "A5",
+                "B5",
+                "sAB5",
+                "cA5",
+                "cB5",
+                "O5",
+                "r5a",
+                "r5b",
+                "kO5",
+                "C5",
+                "h5c",
+                "Z"
+              ],
+              "posiciones": {
+                "A5": [-25, -20],
+                "B5": [15, -20],
+                "Z": [35, 14.641]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [15, -20],
+                    [15, 20.0]
+                  ],
+                  "rotulo": "Error: centro en B"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: A es un vértice de un octógono regular inscrito en la circunferencia. Arrastra Z hasta el vértice contiguo que queda entre A y el extremo superior del diámetro perpendicular.",
+      "sheet": ["cuadricula"],
+      "engines": {
+        "plana": {
+          "visibles": ["O9", "A9", "k9", "Z"],
+          "posiciones": {
+            "O9": [0, 0],
+            "A9": [-30, 0],
+            "Z": [60, -55]
+          },
+          "respuesta": {
+            "mover": "Z",
+            "objetivo": "E9",
+            "tolerancia": 2.5,
+            "acierto": "¡Correcto! Primero el cuadrado con el diámetro perpendicular y después la bisectriz.",
+            "pista": "Primero el diámetro perpendicular; después la bisectriz."
+          }
+        }
+      },
+      "hints": [
+        "El octógono se obtiene del cuadrado dividiendo en dos cada arco.",
+        "Primero se halla el vértice B del cuadrado con el diámetro perpendicular, y luego la bisectriz del ángulo AOB.",
+        "La bisectriz corta a la circunferencia en el vértice que se busca."
+      ],
+      "solution": [
+        {
+          "narration": "Solo conocemos el vértice A del octógono. Hay que encadenar el cuadrado y la bisectriz.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Con el diámetro perpendicular se obtiene un vértice del cuadrado, B, a 90° de A. La bisectriz del ángulo AOB da el vértice del octógono.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que primero giras A un cuarto de vuelta y luego partes en dos ese ángulo. El resultado es un giro de la mitad de un cuarto.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [60, -55]
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza el diámetro por A y su perpendicular por O; el extremo superior es B.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "rOA9", "pO9", "B9", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["rOA9", "pO9", "B9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Traza la bisectriz del ángulo AOB.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "rOA9", "pO9", "B9", "bis9", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [60, -55]
+              },
+              "trazar": ["bis9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "La bisectriz corta a la circunferencia en E. Arrastra Z hasta E.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "rOA9", "pO9", "B9", "bis9", "E9", "o9a", "o9b", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [-21.213, 21.213]
+              },
+              "trazar": ["E9", "o9a", "o9b"],
+              "destacar": ["E9"]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: el ángulo AOE vale 45°, y AE y EB miden lo mismo.",
+          "show3d": [],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "rOA9", "pO9", "B9", "bis9", "E9", "o9a", "o9b", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [-21.213, 21.213]
+              }
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dividir el arco AB a ojo en dos partes iguales. Con el compás, la bisectriz lo hace exacto.",
+          "show3d": [],
+          "sheet": ["error"],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "plana": {
+              "visibles": ["O9", "A9", "k9", "rOA9", "pO9", "B9", "bis9", "E9", "o9a", "o9b", "Z"],
+              "posiciones": {
+                "O9": [0, 0],
+                "A9": [-30, 0],
+                "Z": [-21.213, 21.213]
+              }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 0],
+                    [-18.469844259769747, 23.64032260820166]
+                  ],
+                  "rotulo": "Error: a ojo"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    }
+  ]
+}

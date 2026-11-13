@@ -107,7 +107,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: null,
     pauNote: 'Base',
     scene: 'Polígono inscrito que gira y escala',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'I-04',

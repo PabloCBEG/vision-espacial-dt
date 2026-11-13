@@ -2684,6 +2684,134 @@ Fichero: `src/content/lessons/22-triangulos-y-cuadrilateros.json` · DT I · niv
    - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: la circunferencia de centro O pasa por A, B y C, y OA, OB y OC miden lo mismo.
    - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar el corte de las bisectrices como centro de la circunferencia circunscrita. Ese es el incentro y la circunferencia no pasa por los vértices.
 
+### I-03 · Polígonos regulares: dividir la circunferencia en arcos iguales
+
+Fichero: `src/content/lessons/23-poligonos-regulares.json` · DT I · nivel Inicial
+
+- [ ] **Saber básico:** Geometría plana: polígonos regulares inscritos en una circunferencia y construidos dado el lado. Dividir la circunferencia en arcos iguales.
+
+**Pasos**
+
+1. [ ] Un polígono regular de n lados divide la circunferencia en n arcos iguales. Con el compás, el radio medido desde un vértice corta a la circunferencia en dos puntos a 60° de él.
+2. [ ] Repitiendo el radio desde cada nuevo vértice se completa el hexágono: su lado es igual al radio. El ángulo central de cada lado es 360° entre el número de lados.
+3. [ ] El triángulo equilátero se obtiene tomando un vértice sí y otro no del hexágono. Se parte del extremo D del diámetro opuesto a A y se corta con el radio.
+4. [ ] El cuadrado divide la circunferencia en cuatro arcos de 90°. Sus vértices son los extremos de dos diámetros perpendiculares.
+5. [ ] El octógono sale del cuadrado: la bisectriz de cada ángulo central parte en dos el arco de 90°. Los puntos de corte con la circunferencia son los vértices que faltan.
+6. [ ] El pentágono no sale del radio: se parte de dos diámetros perpendiculares y del punto medio M de un radio. La circunferencia de centro M que pasa por C corta al diámetro en N, y CN es el lado.
+7. [ ] Si te dan el lado AB de un hexágono, el centro O está a esa distancia de A y de B. Se halla con dos circunferencias de radio AB y desde O se completa el hexágono.
+8. [ ] Para un cuadrado de lado AB se levanta una perpendicular por cada extremo y se lleva sobre ellas la medida AB con el compás. El cuarto lado cierra el cuadrado.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: Esta circunferencia tiene un hexágono regular inscrito con un vértice en A. Arrastra Z hasta el vértice contiguo a A.
+   - [ ] *Pista 1:* En un hexágono regular, el lado es igual al radio.
+   - [ ] *Pista 2:* El vértice contiguo está a una distancia de A igual al radio, y sobre la circunferencia.
+   - [ ] *Pista 3:* Con el compás, pincha en A, abre hasta O y marca sobre la circunferencia.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una circunferencia de centro O y un vértice A. Buscamos los vértices contiguos del hexágono regular inscrito.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En el hexágono el lado es igual al radio, porque el ángulo central de 60° forma un triángulo equilátero. El vértice contiguo está a la distancia del radio de A.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que apoyas el compás en A con la abertura del radio y haces girar la punta. Corta a la circunferencia en dos puntos, uno a cada lado de A.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con centro en A y radio OA, traza un arco.
+   - [ ] *Solución, paso 5 · 4. El trazado:* El arco corta a la circunferencia en dos puntos: son los vértices contiguos a A.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Arrastra Z hasta uno de ellos y une el vértice con A.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: AH₁ mide lo mismo que el radio, y el ángulo AOH₁ vale 60°.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: dividir a ojo, con el transportador o sin él. Un pequeño error en el primer vértice se acumula y el último lado no cierra.
+2. [ ] *construcción en la lámina, dificultad 1*: Inscribe un triángulo equilátero en esta circunferencia con un vértice en A. Arrastra Z hasta uno de los otros dos vértices.
+   - [ ] *Pista 1:* Un triángulo equilátero tiene sus vértices a 120° uno de otro.
+   - [ ] *Pista 2:* Son vértices alternos del hexágono inscrito, así que se parte del punto opuesto a A.
+   - [ ] *Pista 3:* Traza el diámetro por A, y con centro en su otro extremo y radio OA corta a la circunferencia.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una circunferencia y un vértice A. Buscamos los otros dos vértices del triángulo equilátero inscrito.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Los vértices del triángulo equilátero están a 120° entre sí, es decir, alternos en el hexágono. Los dos que faltan se hallan desde el punto D opuesto a A.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que giras A alrededor de O dos veces seguidas con el mismo ángulo. El ángulo es un tercio de la vuelta completa y las dos posiciones son los vértices que faltan.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el diámetro por A: su otro extremo D está en el lado opuesto de la circunferencia.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en D y radio OD traza un arco que corta a la circunferencia en dos puntos.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Esos puntos son los vértices B y C. Une los tres vértices y arrastra Z hasta uno.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: los tres lados miden lo mismo. El lado del triángulo es mayor que el radio.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar el radio como lado del triángulo, como en el hexágono. Eso da un vértice a 60° y el triángulo no se cierra.
+3. [ ] *construcción en la lámina, dificultad 1*: Inscribe un cuadrado en esta circunferencia con un vértice en A. Arrastra Z hasta uno de los vértices contiguos a A.
+   - [ ] *Pista 1:* El cuadrado divide la circunferencia en cuatro arcos iguales.
+   - [ ] *Pista 2:* Sus diagonales son dos diámetros perpendiculares.
+   - [ ] *Pista 3:* Traza el diámetro por A y su perpendicular por O: sus extremos son los vértices.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una circunferencia y un vértice A. Buscamos los vértices contiguos del cuadrado inscrito.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Las diagonales de un cuadrado son diámetros, iguales y perpendiculares. Los vértices que faltan están en el diámetro perpendicular al que pasa por A.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que giras A un cuarto de vuelta alrededor de O. Cae sobre la perpendicular al diámetro de partida.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el diámetro por A; su otro extremo C es el vértice opuesto.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Por O, traza la perpendicular a ese diámetro. Corta a la circunferencia en B y D.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Une los cuatro vértices y arrastra Z hasta uno de los contiguos a A.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: los cuatro lados miden lo mismo y las diagonales son perpendiculares. El lado es mayor que el radio.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar el radio como lado y marcarlo sobre la circunferencia. Eso da un vértice a 60° de A, que es del hexágono, no del cuadrado.
+4. [ ] *construcción en la lámina, dificultad 2*: A y B son vértices consecutivos de un cuadrado inscrito en la circunferencia. Arrastra Z hasta el vértice del octógono regular inscrito que queda entre A y B.
+   - [ ] *Pista 1:* El octógono tiene el doble de lados que el cuadrado.
+   - [ ] *Pista 2:* Cada arco del cuadrado se divide en dos arcos iguales, y el ángulo central se divide por su bisectriz.
+   - [ ] *Pista 3:* Traza la bisectriz del ángulo AOB; donde corta a la circunferencia está el vértice.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un cuadrado inscrito tiene vértices consecutivos A y B. Hay que hallar el vértice del octógono entre ellos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El octógono divide en dos cada arco de 90° del cuadrado. El vértice está en la bisectriz del ángulo central AOB.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que cierras un compás hasta partir en dos el ángulo AOB. La recta del medio llega justo al punto medio del arco.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con centro en O, traza un arco que corta a OA y a OB. Desde esos dos puntos, dos arcos iguales.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La bisectriz corta a la circunferencia en E: es el vértice del octógono.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Une E con A y con B y arrastra Z hasta E.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: AE y EB miden lo mismo, y el ángulo AOE vale 45°.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: marcar el punto medio del arco a ojo. Un desvío pequeño y el octógono deja de ser regular.
+5. [ ] *construcción en la lámina, dificultad 2*: AB es un lado de un hexágono regular. Arrastra Z hasta el centro O del hexágono, que queda por encima de AB.
+   - [ ] *Pista 1:* En el hexágono regular, el lado es igual al radio.
+   - [ ] *Pista 2:* El centro está a la distancia AB de A y de B.
+   - [ ] *Pista 3:* Con el compás, traza desde A y desde B arcos de radio AB; se cortan en O.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un lado AB de un hexágono regular. El centro está por encima de AB.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En el hexágono el radio es igual al lado, así que el centro O está a la distancia AB de A y de B. El triángulo AOB es equilátero.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que fijas dos compases de abertura AB, uno en A y otro en B. Sus puntas se juntan en un solo punto por encima de AB.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con centro en A y radio AB, traza un arco.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en B y radio AB, traza otro arco.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Se cortan en O, por encima de AB. Arrastra Z hasta O y traza la circunferencia circunscrita.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: OA y OB miden lo mismo que AB, y la circunferencia de centro O que pasa por A pasa por B.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: construir sobre el lado AB como si fuera el radio, con el centro en el punto medio o a ojo. El hexágono sale demasiado pequeño y no se cierra.
+6. [ ] *construcción en la lámina, dificultad 2*: AB es un lado de un cuadrado. Arrastra Z hasta el vértice C que queda por encima de AB, junto a B.
+   - [ ] *Pista 1:* Los lados de un cuadrado son perpendiculares entre sí e iguales.
+   - [ ] *Pista 2:* C está en la perpendicular a AB por B, y a la distancia AB de B.
+   - [ ] *Pista 3:* Traza la perpendicular por B y corta con la circunferencia de centro B y radio AB.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un lado AB de un cuadrado. Buscamos el vértice C, junto a B, por encima de AB.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El lado BC es perpendicular a AB y mide lo mismo que AB. Por eso C es el corte de la perpendicular por B con la circunferencia de centro B y radio AB.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que giras el lado AB un cuarto de vuelta alrededor de B. El extremo A cae justo sobre el vértice C.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Por B, traza la perpendicular a AB.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en B y radio AB, traza un arco que corta a la perpendicular.
+   - [ ] *Solución, paso 6 · 4. El trazado:* El corte por encima de AB es C. Dibuja BC y arrastra Z hasta C.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: BC es perpendicular a AB y mide lo mismo. El lado opuesto se obtiene de la misma manera desde A.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: marcar la medida AB sobre la recta AB prolongada y no sobre la perpendicular. El punto queda alineado con A y B y no forma ángulo recto.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: inscribe un pentágono regular en la circunferencia con un vértice en C. Arrastra Z hasta uno de los dos vértices contiguos a C.
+   - [ ] *Pista 1:* El lado del pentágono no coincide con el radio ni con una fracción sencilla de él.
+   - [ ] *Pista 2:* Se halla con dos diámetros perpendiculares y el punto medio M de uno de los radios.
+   - [ ] *Pista 3:* La circunferencia de centro M que pasa por C corta al diámetro en N; CN es el lado.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos una circunferencia y un vértice C. Buscamos los vértices contiguos del pentágono regular inscrito.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El lado del pentágono es la distancia CN, donde N sale de cortar el diámetro con la circunferencia de centro M, punto medio de un radio, que pasa por C.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina medir el lado con una cuerda que parte de C. Abierta justo CN, pincha la circunferencia en los dos puntos más próximos a C.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el diámetro perpendicular a OC y marca el punto medio M de uno de los radios.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Con centro en M y radio MC, traza un arco que corta al diámetro en N.
+   - [ ] *Solución, paso 6 · 4. El trazado:* Con centro en C y radio CN, corta a la circunferencia en dos puntos P₁ y P₂. Arrastra Z hasta uno.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: CP₁ y CP₂ miden CN, y llevando esa medida desde cada vértice se cierra el pentágono sin desvío.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar CM como lado en vez de CN. Es una medida mayor, y los vértices salen más separados de lo debido.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: AB es un lado de un hexágono regular. Arrastra Z hasta el vértice C contiguo a B, el que queda por encima de AB.
+   - [ ] *Pista 1:* Hay que hallar primero el centro del hexágono, a la distancia AB de A y de B.
+   - [ ] *Pista 2:* La circunferencia de centro O y radio OA pasa por todos los vértices.
+   - [ ] *Pista 3:* El vértice C está en esa circunferencia y a la distancia AB de B.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos un lado AB de un hexágono regular y buscamos el vértice contiguo C. Hay que encadenar dos pasos.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El centro O está a la distancia AB de A y de B. Después, C es el vértice de la circunferencia de centro O que está a la distancia AB de B.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que sitúas el centro con dos arcos y trazas la circunferencia que contiene al hexágono. Desde B, el siguiente vértice está a una distancia igual al lado.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Con centros en A y en B y radio AB, traza dos arcos. Se cortan en O, el centro.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la circunferencia de centro O que pasa por A y por B.
+   - [ ] *Solución, paso 6 · 4. El trazado:* El arco de centro B y radio AB corta a esa circunferencia en A y en C. Arrastra Z hasta C.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: BC mide lo mismo que AB, y los tres puntos A, B y C están en la circunferencia de centro O.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: tomar el lado como radio con el centro en B. Entonces el hexágono queda girado y A no es un vértice de la circunferencia.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: A es un vértice de un octógono regular inscrito en la circunferencia. Arrastra Z hasta el vértice contiguo que queda entre A y el extremo superior del diámetro perpendicular.
+   - [ ] *Pista 1:* El octógono se obtiene del cuadrado dividiendo en dos cada arco.
+   - [ ] *Pista 2:* Primero se halla el vértice B del cuadrado con el diámetro perpendicular, y luego la bisectriz del ángulo AOB.
+   - [ ] *Pista 3:* La bisectriz corta a la circunferencia en el vértice que se busca.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Solo conocemos el vértice A del octógono. Hay que encadenar el cuadrado y la bisectriz.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Con el diámetro perpendicular se obtiene un vértice del cuadrado, B, a 90° de A. La bisectriz del ángulo AOB da el vértice del octógono.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que primero giras A un cuarto de vuelta y luego partes en dos ese ángulo. El resultado es un giro de la mitad de un cuarto.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza el diámetro por A y su perpendicular por O; el extremo superior es B.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza la bisectriz del ángulo AOB.
+   - [ ] *Solución, paso 6 · 4. El trazado:* La bisectriz corta a la circunferencia en E. Arrastra Z hasta E.
+   - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el ángulo AOE vale 45°, y AE y EB miden lo mismo.
+   - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: dividir el arco AB a ojo en dos partes iguales. Con el compás, la bisectriz lo hace exacto.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos
