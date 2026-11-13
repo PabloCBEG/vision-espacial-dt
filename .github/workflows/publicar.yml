@@ -1,5 +1,11 @@
-# Comprueba y publica la web en GitHub Pages en cada push a la rama main.
-# Si los tests o la compilación fallan, no se publica nada y la versión anterior sigue en línea.
+# Comprueba y publica la web en GitHub Pages. Se publican DOS versiones en el mismo sitio:
+#   - la sobria (rama main) en la raíz:   https://pablocbeg.github.io/vision-espacial-dt/
+#   - la viva (rama rediseno/vivo) en:    https://pablocbeg.github.io/vision-espacial-dt/vivo/
+# Cada versión pasa sus propios tests. Si falla la sobria, no se publica nada y la versión anterior
+# sigue en línea. Si solo falla la viva, se publica la sobria y la viva se queda como estaba.
+#
+# GitHub solo deja desplegar desde main (entorno github-pages), así que este fichero vive aquí.
+# Un push a rediseno/vivo lo lanza a mano mediante .github/workflows/avisar-publicar.yml (rama viva).
 name: Comprobar y publicar
 
 on:
@@ -19,10 +25,20 @@ concurrency:
 
 jobs:
   comprobar:
-    name: Tests y compilación
+    name: Tests y compilación (${{ matrix.nombre }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - nombre: sobria
+            rama: main
+          - nombre: viva
+            rama: rediseno/vivo
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.rama }}
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -31,21 +47,46 @@ jobs:
       - run: npm run test
       - run: npm run lint
       - run: npm run build
-      # Los e2e son obligatorios: si fallan en cualquier navegador, no se publica nada.
+      # Los e2e son obligatorios: si fallan en cualquier navegador, esta versión no se publica.
       - name: Instalar navegadores de Playwright
         run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run e2e
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
+          name: dist-${{ matrix.nombre }}
           path: dist
+          if-no-files-found: error
 
   publicar:
     name: Publicar en GitHub Pages
     needs: comprobar
+    # Se ejecuta aunque la viva falle; la sobria es la que decide (se comprueba abajo).
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: dist-*
+          path: artefactos
+      - name: Montar el sitio
+        run: |
+          if [ ! -d artefactos/dist-sobria ]; then
+            echo "La versión sobria no ha pasado los tests: no se publica nada."
+            exit 1
+          fi
+          mkdir site
+          cp -r artefactos/dist-sobria/. site/
+          if [ -d artefactos/dist-viva ]; then
+            mkdir site/vivo
+            cp -r artefactos/dist-viva/. site/vivo/
+          else
+            echo "La versión viva no ha pasado los tests: se publica solo la sobria."
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
       - id: deployment
         uses: actions/deploy-pages@v4

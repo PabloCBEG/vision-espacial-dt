@@ -5,11 +5,15 @@
 /* global __FILES__ */
 const CACHE = 'vision-espacial-__VERSION__';
 const FILES = __FILES__;
+// Cada copia de la web (por ejemplo la principal y una de prueba en una subcarpeta del mismo
+// sitio) guarda su caché con su propia ruta, para que no se borren entre sí al actualizarse.
+const SCOPE = new URL(self.registration.scope).pathname;
+const CACHE_NAME = `${SCOPE}|${CACHE}`;
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
-      .open(CACHE)
+      .open(CACHE_NAME)
       // Uno a uno: si falta algún fichero, la versión nueva se instala igualmente.
       .then((cache) => Promise.allSettled(FILES.map((file) => cache.add(file))))
       .then(() => self.skipWaiting()),
@@ -21,7 +25,13 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) =>
+        Promise.all(
+          keys
+            .filter((k) => k.startsWith(`${SCOPE}|`) && k !== CACHE_NAME)
+            .map((k) => caches.delete(k)),
+        ),
+      )
       .then(() => self.clients.claim()),
   );
 });
@@ -37,7 +47,7 @@ self.addEventListener('fetch', (event) => {
         .then((response) => {
           if (response.ok) {
             const copy = response.clone();
-            caches.open(CACHE).then((cache) => cache.put(request, copy));
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
           }
           return response;
         })
@@ -56,7 +66,7 @@ self.addEventListener('fetch', (event) => {
         fetch(request).then((response) => {
           if (response.ok) {
             const copy = response.clone();
-            caches.open(CACHE).then((cache) => cache.put(request, copy));
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
           }
           return response;
         }),
