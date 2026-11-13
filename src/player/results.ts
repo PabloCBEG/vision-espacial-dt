@@ -1,6 +1,8 @@
 // Resultados de los ejercicios, guardados SOLO en el navegador del alumno (localStorage).
 // No se envían a ningún sitio y no identifican a nadie.
 
+import { addXp, XP_EXERCISE } from './game.ts';
+
 export interface ExerciseResult {
   solved: boolean;
   attempts: number;
@@ -31,5 +33,6 @@ export function saveAttempt(lessonId: string, index: number, solved: boolean): E
   } catch {
     // Sin acceso a localStorage: el resultado vale solo para esta visita.
   }
+  if (solved && !previous.solved) addXp(XP_EXERCISE, 'exercise');
   return next;
 }

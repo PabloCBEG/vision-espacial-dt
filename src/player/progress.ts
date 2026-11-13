@@ -1,7 +1,27 @@
 // Progreso del alumno, guardado SOLO en su navegador (localStorage): lecciones vistas
 // hasta el final. Los ejercicios acertados están en results.ts. No identifica a nadie.
 
+import { addXp, XP_LESSON } from './game.ts';
+
 const SEEN_KEY = 'progreso:lecciones-vistas';
+const LAST_KEY = 'progreso:ultima-leccion';
+
+/** Recuerda la última lección abierta para el botón «Continúa donde lo dejaste». */
+export function saveLastLesson(lessonId: string): void {
+  try {
+    localStorage.setItem(LAST_KEY, lessonId);
+  } catch {
+    // Sin acceso a localStorage: vale solo para esta visita.
+  }
+}
+
+export function loadLastLesson(): string | null {
+  try {
+    return localStorage.getItem(LAST_KEY);
+  } catch {
+    return null;
+  }
+}
 
 export function loadSeenLessons(): Set<string> {
   try {
@@ -23,6 +43,7 @@ export function markLessonSeen(lessonId: string): void {
   } catch {
     // Sin acceso a localStorage: vale solo para esta visita.
   }
+  addXp(XP_LESSON, 'lesson');
 }
 
 export interface TopicProgress {
