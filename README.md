@@ -222,9 +222,11 @@ Los pasos y ejercicios que usan un motor (métodos, sólidos…) llevan sus dato
 - **Piezas de normalización**: un fichero JSON por pieza en [`src/content/piezas/`](src/content/piezas/).
   Las operaciones son `bloque`, `ranura`, `cilindro`, `taladro`, `chaflan`, `redondeo`, `perfil` (un
   polígono extruido) y `convexo` (la envolvente de unos puntos `[x, a, c]`: con 4 es un tetraedro, con
-  5 una pirámide o una cuña; con `quitar` se resta).
+  5 una pirámide o una cuña; con `quitar` se resta) y `poliedro` (vértices y caras planas convexas
+  de un sólido cerrado; las caras se orientan solas).
   En la lámina, una pieza se dibuja en `alzado`, `planta`, `perfil`, `isometrica` (coeficiente 0,816) y
-  `caballera` (eje Y a 45° reducido a la mitad), siempre con sus aristas ocultas.
+  `caballera` (eje Y a 45° reducido a la mitad) y `plantaInversa` (planta con lo de delante arriba,
+  como la dibujan algunas láminas), siempre con sus aristas ocultas.
 
 ## Para quien mantenga el código
 

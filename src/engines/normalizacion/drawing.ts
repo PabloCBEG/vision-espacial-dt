@@ -110,7 +110,7 @@ function onPlanes(mesh: TriMesh, planes: readonly [0 | 1 | 2, number][]): (t: nu
 function axesIn(view: ViewName, piece: Piece, bounds: Bounds): Seg2[] {
   const out: Seg2[] = [];
   const over = 3;
-  const viewDepth = view === 'alzado' ? 1 : view === 'planta' ? 2 : 0;
+  const viewDepth = view === 'alzado' ? 1 : view === 'planta' || view === 'plantaInversa' ? 2 : 0;
   for (const r of revolutions(piece, bounds)) {
     const i = axisIndex(r.axis);
     const [u, v] = project(view, r.base);
@@ -215,9 +215,17 @@ export function buildDrawing(wasm: ManifoldToplevel, piece: Piece, step: NormSte
     }
     removed = rest ? toMesh(rest) : null;
   }
-  for (const view of ['alzado', 'planta', 'perfil', 'isometrica', 'caballera'] as const) {
-    // La caballera solo se calcula si el paso la pide (cada vista con ocultas cuesta tiempo).
-    if (view === 'caballera' && !step.vistas.includes('caballera')) {
+  for (const view of [
+    'alzado',
+    'planta',
+    'plantaInversa',
+    'perfil',
+    'isometrica',
+    'caballera',
+  ] as const) {
+    // La caballera y la planta invertida solo se calculan si el paso las pide (cada vista con
+    // ocultas cuesta tiempo).
+    if ((view === 'caballera' || view === 'plantaInversa') && !step.vistas.includes(view)) {
       views[view] = {
         visible: [],
         hidden: [],
@@ -295,6 +303,8 @@ export function placeInSheet(
       return { x: u, y: v - cmin + half };
     case 'planta':
       return { x: u, y: v + amin - half };
+    case 'plantaInversa':
+      return { x: u, y: v - bounds.max[1] - half };
     case 'perfil':
       return { x: u - amin + xmax + VIEW_GAP, y: v - cmin + half };
     case 'isometrica':

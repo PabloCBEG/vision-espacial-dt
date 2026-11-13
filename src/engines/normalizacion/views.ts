@@ -14,7 +14,8 @@
 import { ISO_RIGHT, ISO_TOWARD, ISO_UP } from '../axonometria/projection.ts';
 import type { TriMesh } from './kernel.ts';
 
-export type ViewName = 'alzado' | 'planta' | 'perfil' | 'isometrica' | 'caballera';
+export type ViewName =
+  'alzado' | 'planta' | 'plantaInversa' | 'perfil' | 'isometrica' | 'caballera';
 
 /** Perspectiva caballera de la PAU: eje Y a 45° y coeficiente de reducción 1/2. */
 export const CABALLERA = { angle: 45, coef: 0.5 } as const;
@@ -50,6 +51,9 @@ export function project(view: ViewName, p: readonly number[]): V3 {
       return [x, c, a];
     case 'planta':
       return [x, -a, c];
+    case 'plantaInversa':
+      // Planta con el alejamiento hacia arriba (lo de delante queda arriba), como en algunas láminas.
+      return [x, a, c];
     case 'perfil':
       return [a, c, -x];
     case 'isometrica':
@@ -78,7 +82,11 @@ export function toward(view: ViewName): V3 {
     const l = Math.hypot(...v);
     return [v[0] / l, v[1] / l, v[2] / l];
   }
-  return view === 'alzado' ? [0, 1, 0] : view === 'planta' ? [0, 0, 1] : [-1, 0, 0];
+  return view === 'alzado'
+    ? [0, 1, 0]
+    : view === 'planta' || view === 'plantaInversa'
+      ? [0, 0, 1]
+      : [-1, 0, 0];
 }
 
 const SHARP_DEG = 20;

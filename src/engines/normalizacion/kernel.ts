@@ -57,6 +57,85 @@ function polygonSection(
   return new wasm.CrossSection([ordered.map((p) => [p[0], p[1]] as [number, number])]);
 }
 
+/**
+ * Poliedro cerrado a partir de caras planas y convexas. Cada cara se triangula en abanico desde un
+ * vértice que no deje triángulos degenerados, y el sentido de las caras se ordena para que cada
+ * arista se recorra una vez en cada sentido (así sale una malla cerrada y orientada).
+ */
+function polyhedron(
+  wasm: ManifoldToplevel,
+  points: readonly (readonly [number, number, number])[],
+  faces: readonly (readonly number[])[],
+): Manifold {
+  const at = (i: number): readonly [number, number, number] => points[i] ?? [0, 0, 0];
+  const area = (a: number, b: number, c: number): number => {
+    const [px, py, pz] = at(a);
+    const [qx, qy, qz] = at(b);
+    const [rx, ry, rz] = at(c);
+    const [ux, uy, uz] = [qx - px, qy - py, qz - pz];
+    const [vx, vy, vz] = [rx - px, ry - py, rz - pz];
+    return Math.hypot(uy * vz - uz * vy, uz * vx - ux * vz, ux * vy - uy * vx);
+  };
+  // Triangulación: abanico desde un vértice sin triángulos de área nula.
+  const tris: [number, number, number][][] = faces.map((f) => {
+    for (let k = 0; k < f.length; k++) {
+      const apex = f[k] as number;
+      const ring = [...f.slice(k + 1), ...f.slice(0, k)];
+      const out: [number, number, number][] = [];
+      ring.forEach((v, i) => {
+        const next = ring[i + 1];
+        if (next !== undefined) out.push([apex, v, next]);
+      });
+      if (out.every(([a, b, c]) => area(a, b, c) > 1e-6)) return out;
+    }
+    throw new Error('Una cara del poliedro es degenerada.');
+  });
+  // Orientación coherente: se recorre la adyacencia y se da la vuelta a las caras al revés.
+  const flipped = new Array<boolean>(faces.length).fill(false);
+  const seen = new Array<boolean>(faces.length).fill(false);
+  const directed = (fi: number): [number, number][] => {
+    const f = faces[fi] as readonly number[];
+    const pairs = f.map((v, i) => [v, f[(i + 1) % f.length] as number] as [number, number]);
+    return flipped[fi] ? pairs.map(([a, b]) => [b, a]) : pairs;
+  };
+  const queue = [0];
+  seen[0] = true;
+  while (queue.length > 0) {
+    const fi = queue.shift() as number;
+    const mine = directed(fi);
+    for (let gj = 0; gj < faces.length; gj++) {
+      if (seen[gj]) continue;
+      const theirs = directed(gj);
+      const shared = theirs.some(([a, b]) =>
+        mine.some(([c, d]) => (a === c && b === d) || (a === d && b === c)),
+      );
+      if (!shared) continue;
+      // Si recorren una arista común en el mismo sentido, una de las dos está al revés.
+      const same = theirs.some(([a, b]) => mine.some(([c, d]) => a === c && b === d));
+      flipped[gj] = same ? !flipped[gj] : (flipped[gj] ?? false);
+      seen[gj] = true;
+      queue.push(gj);
+    }
+  }
+  const verts = new Float32Array(points.length * 3);
+  points.forEach((p, i) => verts.set(p, i * 3));
+  const build = (invert: boolean): number[] =>
+    tris.flatMap((list, fi) =>
+      list.flatMap(([a, b, c]) => (flipped[fi] !== invert ? [a, c, b] : [a, b, c])),
+    );
+  const tryBuild = (invert: boolean): Manifold => {
+    const mesh = new wasm.Mesh({
+      numProp: 3,
+      vertProperties: verts,
+      triVerts: new Uint32Array(build(invert)),
+    });
+    return new wasm.Manifold(mesh);
+  };
+  const solid = tryBuild(false);
+  // Si salió «del revés» (volumen negativo), se invierte todo.
+  return solid.volume() < 0 ? tryBuild(true) : solid;
+}
+
 function operationSolid(wasm: ManifoldToplevel, op: Operation, extent: number): Manifold | null {
   switch (op.tipo) {
     case 'bloque':
@@ -126,6 +205,8 @@ function operationSolid(wasm: ManifoldToplevel, op: Operation, extent: number): 
     }
     case 'perfil':
       return prism(wasm, op.eje, polygonSection(wasm, op.puntos), op.desde, op.hasta);
+    case 'poliedro':
+      return polyhedron(wasm, op.puntos, op.caras);
     case 'convexo':
       return wasm.Manifold.hull(
         op.puntos.map((p) => [p[0], p[1], p[2]] as [number, number, number]),
@@ -139,7 +220,8 @@ const subtracts = (op: Operation): boolean =>
   op.tipo === 'chaflan' ||
   op.tipo === 'redondeo' ||
   (op.tipo === 'perfil' && op.quitar) ||
-  (op.tipo === 'convexo' && op.quitar);
+  (op.tipo === 'convexo' && op.quitar) ||
+  (op.tipo === 'poliedro' && op.quitar);
 
 /** Sólido de la pieza: las operaciones en orden, sumando o restando. */
 export function buildSolid(wasm: ManifoldToplevel, piece: Piece): Manifold {

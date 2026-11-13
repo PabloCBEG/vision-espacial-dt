@@ -22,10 +22,10 @@ beforeAll(async () => {
 }, 30_000);
 
 describe('biblioteca de piezas', () => {
-  it('veintiuna piezas válidas, de dificultad creciente, sin ids repetidos', () => {
+  it('veintidós piezas válidas, de dificultad creciente, sin ids repetidos', () => {
     expect(errors).toEqual([]);
-    expect(pieces).toHaveLength(21);
-    expect(new Set(pieces.map((p) => p.id)).size).toBe(21);
+    expect(pieces).toHaveLength(22);
+    expect(new Set(pieces.map((p) => p.id)).size).toBe(22);
     expect(pieces.map((p) => p.dificultad)).toEqual([...pieces.map((p) => p.dificultad)].sort());
   });
 
@@ -89,6 +89,31 @@ describe('biblioteca de piezas', () => {
     });
     expect(volume(cut)).toBeLessThan(30 ** 3);
     expect(cut.status()).toBe('NoError');
+  });
+
+  it('cubo con vaciado: poliedro cerrado cuyas vistas son las de la lámina de la PAU 2026 ord. 3A', () => {
+    const piece = pieces.find((p) => p.id === 'cubo-con-vaciado');
+    if (!piece) throw new Error('falta la pieza');
+    const solid = buildSolid(wasm, piece);
+    expect(solid.status()).toBe('NoError');
+    // Cubo de 60 mm menos el vaciado de la esquina.
+    expect(volume(solid)).toBeCloseTo(153000, -1);
+    const mesh = toMesh(solid);
+    const len = (segs: { x1: number; y1: number; x2: number; y2: number }[]) =>
+      segs.reduce((n, g) => n + Math.hypot(g.x2 - g.x1, g.y2 - g.y1), 0);
+    // Todas las líneas de la lámina son vistas (ninguna oculta) en las tres vistas.
+    for (const view of ['alzado', 'planta', 'plantaInversa', 'perfil'] as const) {
+      const d = drawView(mesh, view, { hidden: true });
+      expect(d.hidden, view).toHaveLength(0);
+    }
+    // Alzado y perfil: contorno de 240 mm, una diagonal de 60·√2 y el cuadrado de 30 mm (60 mm de línea).
+    for (const view of ['alzado', 'perfil'] as const) {
+      const d = drawView(mesh, view, { hidden: false });
+      expect(len(d.visible), view).toBeCloseTo(240 + 60 * Math.SQRT2 + 60, 0);
+    }
+    // Planta: contorno, cruz central (120) y dos diagonales de 30·√2.
+    const planta = drawView(mesh, 'plantaInversa', { hidden: false });
+    expect(len(planta.visible)).toBeCloseTo(240 + 120 + 2 * 30 * Math.SQRT2, 0);
   });
 
   it('brida: en planta se ven el buje, su taladro y los dos taladros de la base', () => {
