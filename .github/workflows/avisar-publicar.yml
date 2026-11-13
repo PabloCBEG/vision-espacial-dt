@@ -1,0 +1,20 @@
+# Al subir cambios a la rama viva, pide que se vuelva a publicar el sitio.
+# GitHub solo deja desplegar Pages desde main, así que aquí no se construye nada: se lanza a mano
+# el flujo «Comprobar y publicar» de main, que construye y sube las dos versiones.
+name: Avisar a la publicación
+
+on:
+  push:
+    branches: [rediseno/vivo]
+
+permissions:
+  actions: write
+
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lanzar «Comprobar y publicar» desde main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run publicar.yml --repo "$GITHUB_REPOSITORY" --ref main
