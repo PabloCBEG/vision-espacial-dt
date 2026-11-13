@@ -1,0 +1,70 @@
+{
+  "id": "semitubo-con-bloque-ranurado",
+  "nombre": "Semitubo con bloque ranurado y base en pendiente",
+  "dificultad": 3,
+  "vistasNecesarias": ["alzado", "planta", "perfil"],
+  "operaciones": [
+    {
+      "tipo": "cilindro",
+      "centro": [40, 50, 40],
+      "eje": "a",
+      "radio": 40,
+      "largo": 40
+    },
+    {
+      "tipo": "taladro",
+      "centro": [40, 90, 40],
+      "eje": "a",
+      "sentido": -1,
+      "diametro": 40,
+      "profundidad": 41
+    },
+    {
+      "tipo": "ranura",
+      "desde": [-5, 50, 40],
+      "hasta": [85, 95, 85]
+    },
+    {
+      "tipo": "bloque",
+      "desde": [0, 10, 0],
+      "hasta": [80, 50, 80]
+    },
+    {
+      "tipo": "perfil",
+      "eje": "x",
+      "puntos": [
+        [10, 0],
+        [50, 0],
+        [10, 40]
+      ],
+      "desde": -1,
+      "hasta": 81,
+      "quitar": true
+    },
+    {
+      "tipo": "perfil",
+      "eje": "a",
+      "puntos": [
+        [20, 60],
+        [40.0, 60.0],
+        [42.611, 60.171],
+        [45.176, 60.681],
+        [47.654, 61.522],
+        [50.0, 62.679],
+        [52.175, 64.133],
+        [54.142, 65.858],
+        [55.867, 67.825],
+        [57.321, 70.0],
+        [58.478, 72.346],
+        [59.319, 74.824],
+        [59.829, 77.389],
+        [60.0, 80.0],
+        [60, 85],
+        [20, 85]
+      ],
+      "desde": 9,
+      "hasta": 51,
+      "quitar": true
+    }
+  ]
+}

@@ -108,7 +108,14 @@ export class NormController {
   }
 
   private cached(wasm: ManifoldToplevel, id: string, step: NormStep): PieceDrawing {
-    const key = JSON.stringify([id, step.corte, step.seccionAbatida, step.ocultas, step.ejes]);
+    const key = JSON.stringify([
+      id,
+      step.corte,
+      step.seccionAbatida,
+      step.ocultas,
+      step.ejes,
+      step.vistas,
+    ]);
     let d = this.cache.get(key);
     if (!d) {
       const piece = findPiece(id);

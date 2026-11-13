@@ -22,10 +22,10 @@ beforeAll(async () => {
 }, 30_000);
 
 describe('biblioteca de piezas', () => {
-  it('veintitrés piezas válidas, de dificultad creciente, sin ids repetidos', () => {
+  it('veinticuatro piezas válidas, de dificultad creciente, sin ids repetidos', () => {
     expect(errors).toEqual([]);
-    expect(pieces).toHaveLength(23);
-    expect(new Set(pieces.map((p) => p.id)).size).toBe(23);
+    expect(pieces).toHaveLength(24);
+    expect(new Set(pieces.map((p) => p.id)).size).toBe(24);
     expect(pieces.map((p) => p.dificultad)).toEqual([...pieces.map((p) => p.dificultad)].sort());
   });
 
@@ -207,6 +207,25 @@ describe('biblioteca de piezas', () => {
         `${view}: faltan`,
       ).toEqual([]);
     }
+  });
+
+  it('semitubo con bloque ranurado: sólido válido con las aristas ocultas de la lámina de la PAU 2026 ext. 3A', () => {
+    const piece = pieces.find((p) => p.id === 'semitubo-con-bloque-ranurado');
+    if (!piece) throw new Error('falta la pieza');
+    const solid = buildSolid(wasm, piece);
+    expect(solid.status()).toBe('NoError');
+    // Semitubo: π·(40² − 20²)/2 · 40; bloque 80·40·80 menos la base en pendiente y la ranura.
+    const tube = (Math.PI * (40 ** 2 - 20 ** 2) * 40) / 2;
+    const wedge = (40 * 40 * 80) / 2;
+    const slot = (20 * 20 + (Math.PI * 20 ** 2) / 4) * 40;
+    expect(volume(solid)).toBeCloseTo(tube + 80 * 40 * 80 - wedge - slot, -3);
+    const mesh = toMesh(solid);
+    const len = (segs: { x1: number; y1: number; x2: number; y2: number }[]) =>
+      segs.reduce((n, g) => n + Math.hypot(g.x2 - g.x1, g.y2 - g.y1), 0);
+    // Ocultas de la lámina: en el alzado, el diámetro del hueco (40); en el perfil, dos de 40; en la planta, ninguna.
+    expect(len(drawView(mesh, 'alzado', { hidden: true }).hidden)).toBeCloseTo(40, 0);
+    expect(len(drawView(mesh, 'perfilDerecho', { hidden: true }).hidden)).toBeCloseTo(80, 0);
+    expect(drawView(mesh, 'planta', { hidden: true }).hidden).toHaveLength(0);
   });
 
   it('brida: en planta se ven el buje, su taladro y los dos taladros de la base', () => {
