@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync } from 'node:fs';
+import { join, relative, sep } from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 
 /**
@@ -17,7 +18,11 @@ function serviceWorker(): Plugin {
         .filter(([, file]) => file.type === 'asset' || file.code.trim().length > 0)
         .map(([name]) => name)
         .filter((name) => !name.endsWith('.map') && !/KaTeX_.*\.(woff|ttf)$/.test(name));
-      const publicFiles = readdirSync('public');
+      const publicFiles = readdirSync('public', { recursive: true, withFileTypes: true })
+        .filter((entry) => entry.isFile())
+        .map((entry) =>
+          relative('public', join(entry.parentPath, entry.name)).split(sep).join('/'),
+        );
       const all = [...new Set(['./', 'index.html', ...built, ...publicFiles])];
       const version = createHash('sha256').update(all.join('|')).digest('hex').slice(0, 12);
       const template = readFileSync('src/sw-template.js', 'utf8');
