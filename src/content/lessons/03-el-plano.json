@@ -857,11 +857,33 @@
             "referencia:A",
             "referencia:B",
             "referencia:C",
-            "perfil"
+            "perfil",
+            "error"
           ],
-          "highlight": ["perfil"],
+          "highlight": ["error"],
           "camera": "front",
-          "foldAngle": 90
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-50, 10],
+                    [50, 10]
+                  ],
+                  "rotulo": "Error: paralelas a la LT, no sobre ella",
+                  "rotuloEn": [-30, 28]
+                },
+                {
+                  "puntos": [
+                    [-50, -10],
+                    [50, -10]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -1608,11 +1630,33 @@
             "referencia:A",
             "referencia:B",
             "referencia:C",
-            "perfil"
+            "perfil",
+            "error"
           ],
-          "highlight": ["perfil"],
+          "highlight": ["error"],
           "camera": "front",
-          "foldAngle": 90
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-50, 10],
+                    [50, 10]
+                  ],
+                  "rotulo": "Error: paralelas a la LT, no sobre ella",
+                  "rotuloEn": [-30, 28]
+                },
+                {
+                  "puntos": [
+                    [-50, -10],
+                    [50, -10]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -2382,11 +2426,33 @@
             "referencia:A",
             "referencia:B",
             "referencia:C",
-            "perfil"
+            "perfil",
+            "error"
           ],
-          "highlight": ["perfil"],
+          "highlight": ["error"],
           "camera": "front",
-          "foldAngle": 90
+          "foldAngle": 90,
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-50, 10],
+                    [50, 10]
+                  ],
+                  "rotulo": "Error: paralelas a la LT, no sobre ella",
+                  "rotuloEn": [-30, 28]
+                },
+                {
+                  "puntos": [
+                    [-50, -10],
+                    [50, -10]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
+            }
+          }
         }
       ]
     }

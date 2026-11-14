@@ -263,14 +263,54 @@
           "part": "error",
           "narration": "Error típico: elegir el perfil con el bisel arriba a la izquierda. El perfil izquierdo se mira desde la izquierda y la parte de delante queda a su derecha.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [69, 7],
+                    [69, 23]
+                  ],
+                  "rotulo": "Error: perfil invertido",
+                  "rotuloEn": [54, 33]
+                },
+                {
+                  "puntos": [
+                    [69, 7],
+                    [39, 7]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [69, 23],
+                    [47, 23]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [39, 7],
+                    [39, 15]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [39, 15],
+                    [47, 23]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -405,14 +445,33 @@
           "part": "error",
           "narration": "Error típico: elegir una planta lisa porque en las otras vistas solo hay discontinuas. Esas líneas son los taladros, y desde arriba se ven como circunferencias continuas.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, -37],
+                    [25, -7]
+                  ],
+                  "rotulo": "Error: planta sin taladros",
+                  "rotuloEn": [67, -22.0]
+                },
+                {
+                  "puntos": [
+                    [-25, -7],
+                    [25, -37]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -547,14 +606,33 @@
           "part": "error",
           "narration": "Error típico: elegir un alzado liso. La planta tiene un escalón, y desde delante se ve su arista como una línea vertical continua.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, 7],
+                    [25, 21]
+                  ],
+                  "rotulo": "Error: falta la arista del escalón",
+                  "rotuloEn": [0, 31]
+                },
+                {
+                  "puntos": [
+                    [-25, 21],
+                    [25, 7]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -682,14 +760,47 @@
           "part": "error",
           "narration": "Error típico: marcar las tres vistas por seguridad. El perfil solo repite el espesor que ya se ve en el alzado y se omite.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["alzado", "planta"],
+              "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0, 1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [35, 3],
+                    [73, 3]
+                  ],
+                  "rotulo": "Error: perfil que sobra",
+                  "rotuloEn": [54, 27]
+                },
+                {
+                  "puntos": [
+                    [73, 3],
+                    [73, 21]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [73, 21],
+                    [35, 21]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [35, 21],
+                    [35, 3]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -817,14 +928,47 @@
           "part": "error",
           "narration": "Error típico: elegir alzado y planta. Ninguna de las dos enseña la forma del bisel; hace falta el perfil.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["alzado", "perfil"],
+              "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0, 2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-29, -41],
+                    [29, -41]
+                  ],
+                  "rotulo": "Error: la planta no enseña el bisel",
+                  "rotuloEn": [71, -22.0]
+                },
+                {
+                  "puntos": [
+                    [29, -41],
+                    [29, -3]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [29, -3],
+                    [-29, -3]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-29, -3],
+                    [-29, -41]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -952,14 +1096,47 @@
           "part": "error",
           "narration": "Error típico: marcar siempre el alzado. Aquí repite las medidas que ya dan la planta y el perfil, y el taladro se ve mejor en la planta.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["planta", "perfil"],
+              "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [1, 2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-29, 3],
+                    [29, 3]
+                  ],
+                  "rotulo": "Error: alzado que sobra",
+                  "rotuloEn": [0, 47]
+                },
+                {
+                  "puntos": [
+                    [29, 3],
+                    [29, 41]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [29, 41],
+                    [-29, 41]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-29, 41],
+                    [-29, 3]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1094,14 +1271,47 @@
           "part": "error",
           "narration": "Error típico: dibujar con línea continua el taladro de las orejas en la planta, donde no se ve. Desde arriba queda tapado y va con discontinua fina.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, -18.5],
+                    [-15, -18.5]
+                  ],
+                  "rotulo": "Error: continua en vez de discontinua",
+                  "rotuloEn": [67, -22.0]
+                },
+                {
+                  "puntos": [
+                    [-15, -25.5],
+                    [-25, -25.5]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [15, -18.5],
+                    [25, -18.5]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [25, -25.5],
+                    [15, -25.5]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1236,14 +1446,33 @@
           "part": "error",
           "narration": "Error típico: dibujar el taladro del alzado con línea continua. Está tapado por la pared de la pieza y va con discontinua fina, con su eje de trazo y punto.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-10, 31],
+                    [10, 31]
+                  ],
+                  "rotulo": "Error: continua en vez de discontinua",
+                  "rotuloEn": [0, 47]
+                },
+                {
+                  "puntos": [
+                    [-10, 23],
+                    [10, 23]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1371,14 +1600,33 @@
           "part": "error",
           "narration": "Error típico: quitar la planta pensando que repite el alzado. Solo la planta sitúa el taladro, y sin ella la pieza no queda definida.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0, 1, 2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, -37],
+                    [25, -7]
+                  ],
+                  "rotulo": "Error: sin planta no se sitúa el taladro",
+                  "rotuloEn": [67, -22.0]
+                },
+                {
+                  "puntos": [
+                    [-25, -7],
+                    [25, -37]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
