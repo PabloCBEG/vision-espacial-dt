@@ -302,8 +302,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la medida real, {real}, en una perspectiva isométrica. Esa es la medida del dibujo isométrico; aquí hay que reducirla con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -315,6 +315,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, -12.2],
+                    [26, -27.2]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: medida real sin reducir",
+                  "rotuloEn": [32, -22.2]
+                }
+              ]
             }
           }
         }
@@ -481,8 +494,8 @@
           "part": "error",
           "narration": "Error típico: aplicar el coeficiente de la perspectiva isométrica en un dibujo isométrico. Aquí no se reduce nada, y la medida dibujada es la real.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -496,6 +509,19 @@
               },
               "sistema": "dibujo-isometrico",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [50.5, -15],
+                    [50.5, 25.8]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: en dibujo isométrico no se reduce",
+                  "rotuloEn": [56.5, 30.8]
+                }
+              ]
             }
           }
         }
@@ -675,8 +701,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la arista del eje Y con su medida real, {real}. En caballera la profundidad se reduce con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -692,6 +718,19 @@
                 "coeficiente": 0.5
               },
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-0.9, -15.9],
+                    [20.3, 5.3]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: Y con su medida real",
+                  "rotuloEn": [26.3, 10.3]
+                }
+              ]
             }
           }
         }
@@ -859,8 +898,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la medida real, {real}, en una perspectiva isométrica. Esa es la medida del dibujo isométrico; aquí hay que reducirla con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -874,6 +913,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [41.2, -12.2],
+                    [41.2, 32.8]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: medida real sin reducir",
+                  "rotuloEn": [47.2, 37.8]
+                }
+              ]
             }
           }
         }
@@ -1067,8 +1119,8 @@
           "part": "error",
           "narration": "Error típico: reducir con el coeficiente de caballera una medida del eje Z. Solo se reducen las medidas del eje Y.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1086,6 +1138,19 @@
                 "coeficiente": 0.5
               },
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-1.5, -15.6],
+                    [-1.5, 4.4]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: solo el eje Y se reduce",
+                  "rotuloEn": [4.5, 9.4]
+                }
+              ]
             }
           }
         }
@@ -1265,8 +1330,8 @@
           "part": "error",
           "narration": "Error típico: aplicar un coeficiente de la isométrica en caballera. Allí los ejes X y Z no se reducen y solo cambia el Y.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1282,6 +1347,19 @@
                 "coeficiente": 0.5
               },
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40.4, -18.4],
+                    [-18.4, -18.4]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: solo el eje Y se reduce",
+                  "rotuloEn": [-12.4, -13.4]
+                }
+              ]
             }
           }
         }
@@ -1461,8 +1539,8 @@
           "part": "error",
           "narration": "Error típico: multiplicar la diagonal real, {real}, por el coeficiente de caballera. Esa cara no está en el eje Y y no se reduce.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1478,6 +1556,19 @@
                 "coeficiente": 0.5
               },
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-37.7, -17.7],
+                    [2.3, 22.3]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: diagonal real por el coeficiente",
+                  "rotuloEn": [8.3, 27.3]
+                }
+              ]
             }
           }
         }
@@ -1631,8 +1722,8 @@
           "part": "error",
           "narration": "Error típico: multiplicar la diagonal real, {real}, por el coeficiente del eje. La diagonal no es paralela a un eje y se mide en el dibujo.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -1644,6 +1735,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [21.2, 4.1],
+                    [-18.8, 27.2]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: diagonal real por el coeficiente",
+                  "rotuloEn": [-12.8, 32.2]
+                }
+              ]
             }
           }
         }
@@ -1796,8 +1900,8 @@
           "part": "error",
           "narration": "Error típico: multiplicar la diagonal real, {real}, por el coeficiente del eje. La diagonal no es paralela a un eje y se mide en el dibujo.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -1809,6 +1913,19 @@
               },
               "sistema": "dibujo-isometrico",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [26, 3],
+                    [-18.1, 28.5]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: diagonal real por el coeficiente",
+                  "rotuloEn": [-12.1, 33.5]
+                }
+              ]
             }
           }
         }

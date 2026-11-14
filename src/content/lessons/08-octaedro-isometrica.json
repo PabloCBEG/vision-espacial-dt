@@ -328,8 +328,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la medida real, {real}, en una perspectiva isométrica. Esa es la medida del dibujo isométrico, sin reducir; en la perspectiva se reduce con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -341,6 +341,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [49.5, -12.2],
+                    [14.9, -32.2]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: medida real sin reducir",
+                  "rotuloEn": [20.9, -27.2]
+                }
+              ]
             }
           }
         }
@@ -492,8 +505,8 @@
           "part": "error",
           "narration": "Error típico: aplicar el coeficiente de reducción en un dibujo isométrico. Ese coeficiente es solo de la perspectiva isométrica; el dibujo no se reduce.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -505,6 +518,19 @@
               },
               "sistema": "dibujo-isometrico",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [4.3, -15],
+                    [22, -25.2]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: en dibujo isométrico no se reduce",
+                  "rotuloEn": [28, -20.2]
+                }
+              ]
             }
           }
         }
@@ -684,8 +710,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la arista del eje Y con su medida real, {real}. En caballera la profundidad se reduce con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -701,6 +727,19 @@
                 "coeficiente": 0.5
               },
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [2.3, -17.7],
+                    [30.6, 10.6]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: Y con su medida real",
+                  "rotuloEn": [36.6, 15.6]
+                }
+              ]
             }
           }
         }
@@ -854,8 +893,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la medida real, {real}, en una perspectiva isométrica. Esa es la medida del dibujo isométrico, sin reducir; en la perspectiva se reduce con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -867,6 +906,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [53, -12.2],
+                    [53, 32.8]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: medida real sin reducir",
+                  "rotuloEn": [59, 37.8]
+                }
+              ]
             }
           }
         }
@@ -1046,8 +1098,8 @@
           "part": "error",
           "narration": "Error típico: reducir la arista del eje X con el coeficiente de la profundidad. Solo se reducen las medidas del eje Y.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1063,6 +1115,19 @@
                 "coeficiente": 0.5
               },
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-35, -17],
+                    [-17, -17]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: solo el eje Y se reduce",
+                  "rotuloEn": [-11, -12]
+                }
+              ]
             }
           }
         }
@@ -1223,8 +1288,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -1237,6 +1302,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [21.2, -12.2],
+                    [21.2, 20.4]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: diagonal dibujada como arista",
+                  "rotuloEn": [27.2, 25.4]
+                }
+              ]
             }
           }
         }
@@ -1397,8 +1475,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -1411,6 +1489,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [21.2, -12.2],
+                    [21.2, 17.1]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: diagonal dibujada como arista",
+                  "rotuloEn": [27.2, 22.1]
+                }
+              ]
             }
           }
         }
@@ -1597,8 +1688,8 @@
           "part": "error",
           "narration": "Error típico: reducir la diagonal con el coeficiente de caballera. Ese coeficiente es solo del eje Y; la diagonal vertical se dibuja sin reducir.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1615,6 +1706,19 @@
                 "coeficiente": 0.5
               },
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-10.6, -10.6],
+                    [-10.6, 9.2]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: la diagonal no se reduce",
+                  "rotuloEn": [-4.6, 14.2]
+                }
+              ]
             }
           }
         }
@@ -1775,8 +1879,8 @@
           "part": "error",
           "narration": "Error típico: dibujar la diagonal con la medida de la arista. La diagonal vertical mide la arista por raíz de dos, y después se reduce con el coeficiente.",
           "show3d": ["triedro", "axonometria"],
-          "sheet": ["triedro", "axonometria", "cuadricula"],
-          "highlight": ["axonometria"],
+          "sheet": ["triedro", "axonometria", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "isometric",
           "foldAngle": 0,
           "engines": {
@@ -1789,6 +1893,19 @@
               },
               "sistema": "isometrica",
               "rotulos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [21.2, -12.2],
+                    [21.2, 7.3]
+                  ],
+                  "desplaza": [5, -5],
+                  "rotulo": "Error: diagonal dibujada como arista",
+                  "rotuloEn": [27.2, 12.3]
+                }
+              ]
             }
           }
         }

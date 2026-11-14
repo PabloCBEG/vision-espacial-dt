@@ -389,8 +389,8 @@
           "part": "error",
           "narration": "Error típico: llevar la altura real, {alturaReal}, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -405,6 +405,19 @@
                 "d": 60,
                 "h": 45
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-12, 9],
+                    [-12, 39]
+                  ],
+                  "desplaza": [4, 0],
+                  "rotulo": "Error: altura real sin reducir",
+                  "rotuloEn": [43, 24.0]
+                }
+              ]
             }
           }
         }
@@ -596,8 +609,8 @@
           "part": "error",
           "narration": "Error típico: poner el punto métrico al otro lado de la fuga. Se toma del lado del punto principal; al otro lado, las medidas reales se llevarían al revés.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -615,6 +628,25 @@
               },
               "fugas": true,
               "metricos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [141.9, 43],
+                    [147.9, 47]
+                  ],
+                  "rotulo": "Error: métrico al otro lado de la fuga",
+                  "rotuloEn": [0, 67]
+                },
+                {
+                  "puntos": [
+                    [141.9, 47],
+                    [147.9, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -807,8 +839,8 @@
           "part": "error",
           "narration": "Error típico: llevar la altura real, {alturaReal}, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -825,6 +857,19 @@
                 "d": 70,
                 "h": 45
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-7.9, 11.6],
+                    [-7.9, 51.6]
+                  ],
+                  "desplaza": [4, 0],
+                  "rotulo": "Error: altura real sin reducir",
+                  "rotuloEn": [47.1, 31.6]
+                }
+              ]
             }
           }
         }
@@ -1016,8 +1061,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de las aristas con el cuadro y no con la perpendicular al cuadro. Entonces la fuga cercana y la lejana se confunden y el punto métrico sale en otro sitio.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1035,6 +1080,25 @@
               },
               "fugas": true,
               "metricos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [15.8, 43],
+                    [21.8, 47]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 67]
+                },
+                {
+                  "puntos": [
+                    [15.8, 47],
+                    [21.8, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1220,8 +1284,8 @@
           "part": "error",
           "narration": "Error típico: llevar la altura real, {alturaReal}, al dibujo sin reducirla. Solo en el cuadro las verticales se ven en verdadera magnitud.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1237,6 +1301,19 @@
                 "d": 80,
                 "h": 50
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [12.5, 9.8],
+                    [12.5, 39.8]
+                  ],
+                  "desplaza": [4, 0],
+                  "rotulo": "Error: altura real sin reducir",
+                  "rotuloEn": [67.5, 24.8]
+                }
+              ]
             }
           }
         }
@@ -1428,8 +1505,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de las aristas con el cuadro y no con la perpendicular al cuadro. Entonces la fuga cercana y la lejana se confunden y el punto métrico sale en otro sitio.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1447,6 +1524,25 @@
               },
               "fugas": true,
               "metricos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-44.4, 43],
+                    [-38.4, 47]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 67]
+                },
+                {
+                  "puntos": [
+                    [-44.4, 47],
+                    [-38.4, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1638,8 +1734,8 @@
           "part": "error",
           "narration": "Error típico: poner el punto métrico al otro lado de la fuga. Se toma del lado del punto principal; al otro lado, las medidas reales se llevarían al revés.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1657,6 +1753,25 @@
               },
               "fugas": true,
               "metricos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [169.9, 43],
+                    [175.9, 47]
+                  ],
+                  "rotulo": "Error: métrico al otro lado de la fuga",
+                  "rotuloEn": [0, 67]
+                },
+                {
+                  "puntos": [
+                    [169.9, 47],
+                    [175.9, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1856,8 +1971,8 @@
           "part": "error",
           "narration": "Error típico: dibujar solo las aristas vistas del sólido. En cónica las aristas ocultas son obligatorias y se dibujan con línea discontinua fina.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1875,6 +1990,32 @@
                 "d": 85,
                 "h": 65
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-9.7, 26.5],
+                    [-16.2, 20.3]
+                  ],
+                  "rotulo": "Error: faltan las aristas ocultas",
+                  "rotuloEn": [-9.7, 14.5]
+                },
+                {
+                  "puntos": [
+                    [2.2, 24.5],
+                    [-9.7, 26.5]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-9.7, 26.5],
+                    [-9.7, 56.1]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -2066,8 +2207,8 @@
           "part": "error",
           "narration": "Error típico: dibujar solo las aristas vistas del sólido. En cónica las aristas ocultas son obligatorias y se dibujan con línea discontinua fina.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos"],
-          "highlight": [],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "fugas", "metricos", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -2085,6 +2226,32 @@
               },
               "fugas": true,
               "metricos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-0.9, 21.1],
+                    [-12.5, 16.4]
+                  ],
+                  "rotulo": "Error: faltan las aristas ocultas",
+                  "rotuloEn": [0, 62]
+                },
+                {
+                  "puntos": [
+                    [12, 17.3],
+                    [-0.9, 21.1]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-0.9, 21.1],
+                    [-0.9, 35.3]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
