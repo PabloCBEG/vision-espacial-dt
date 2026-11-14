@@ -388,14 +388,14 @@
         {
           "narration": "Error típico: dibujar aristas ocultas en el corte. Lo que no se ve se ha quitado, y en los cortes no se dibujan.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "pieza": "placa-taladrada",
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "total",
                 "vista": "alzado",
@@ -403,6 +403,18 @@
                 "quitar": 1
               },
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-8, 12],
+                    [8, 12]
+                  ],
+                  "rotulo": "Error: línea oculta",
+                  "rotuloEn": [0, 27]
+                }
+              ]
             }
           },
           "part": "error"
@@ -576,14 +588,14 @@
         {
           "narration": "Error típico: rayar también el hueco del taladro. El rayado cubre solo el material que ha cortado el plano; el hueco queda en blanco.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "pieza": "escuadra-taladrada",
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "total",
                 "vista": "alzado",
@@ -591,6 +603,25 @@
                 "quitar": 1
               },
               "eleccion": [1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [2.5, 8],
+                    [9.5, 15]
+                  ],
+                  "rotulo": "Error: rayado en el hueco",
+                  "rotuloEn": [0, 52]
+                },
+                {
+                  "puntos": [
+                    [6.5, 8],
+                    [13.5, 15]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           },
           "part": "error"
@@ -764,14 +795,14 @@
         {
           "narration": "Error típico: quitar la parte equivocada, la de debajo del plano. El observador mira desde arriba y lo que se retira es lo que queda entre él y el plano.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "pieza": "taco-agujero-ciego",
-              "vistas": ["alzado"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "total",
                 "vista": "planta",
@@ -779,6 +810,32 @@
                 "quitar": 1
               },
               "eleccion": [2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 21],
+                    [0, 9]
+                  ],
+                  "rotulo": "Error: se quita lo de debajo",
+                  "rotuloEn": [0, 45]
+                },
+                {
+                  "puntos": [
+                    [0, 9],
+                    [-1.9, 12.5]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [0, 9],
+                    [1.9, 12.5]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           },
           "part": "error"
@@ -952,14 +1009,14 @@
         {
           "narration": "Error típico: quitar la mitad en vez de un cuarto, como en un corte total. El corte al medio conserva media vista exterior.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "pieza": "brida",
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "medio",
                 "vista": "alzado",
@@ -967,6 +1024,21 @@
                 "quitar": 1
               },
               "eleccion": [2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 7],
+                    [28, 7],
+                    [28, 33],
+                    [0, 33],
+                    [0, 7]
+                  ],
+                  "rotulo": "Error: se quita media pieza",
+                  "rotuloEn": [0, 45]
+                }
+              ]
             }
           },
           "part": "error"
@@ -1187,8 +1259,8 @@
         {
           "narration": "Error típico: repetir una cota en dos vistas, o acotar una medida que ya se deduce de otras. Cada medida, una sola vez.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
@@ -1197,6 +1269,25 @@
               "vistas": ["alzado", "planta"],
               "ejes": false,
               "eleccion": [0, 1, 2, 3, 4, 5, 6]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-6, -48],
+                    [6, -42]
+                  ],
+                  "rotulo": "Error: cota repetida",
+                  "rotuloEn": [58, -45]
+                },
+                {
+                  "puntos": [
+                    [-6, -42],
+                    [6, -48]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           },
           "part": "error"
@@ -1370,14 +1461,14 @@
         {
           "narration": "Error típico: dibujar aristas ocultas dentro del corte. Aunque el taladro quede detrás, en el corte no se dibujan líneas discontinuas.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "pieza": "canal-en-v",
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta", "perfil"],
               "corte": {
                 "tipo": "total",
                 "vista": "perfil",
@@ -1385,6 +1476,25 @@
                 "quitar": 1
               },
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [40, 8],
+                    [40, 36]
+                  ],
+                  "rotulo": "Error: taladro oculto",
+                  "rotuloEn": [58, 46]
+                },
+                {
+                  "puntos": [
+                    [44, 8],
+                    [44, 36]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           },
           "part": "error"
@@ -1570,14 +1680,14 @@
         {
           "narration": "Error típico: rayar cada tramo con distinta inclinación o separación, o marcar el cambio de plano con una línea. Se rayan igual y el cambio no se dibuja.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "pieza": "placa-con-taladros-desfasados",
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "quebrado",
                 "vista": "alzado",
@@ -1587,6 +1697,25 @@
                 "cambio": 0
               },
               "eleccion": [1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [5, 26],
+                    [20, 11]
+                  ],
+                  "rotulo": "Error: otra inclinación",
+                  "rotuloEn": [0, 38]
+                },
+                {
+                  "puntos": [
+                    [15, 26],
+                    [28, 13]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           },
           "part": "error"
@@ -1800,8 +1929,8 @@
         {
           "narration": "Error típico: acotar dos veces el ancho total, en la planta y en el alzado, o poner una cota que se deduce de otras. Cada medida, una sola vez.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
@@ -1810,6 +1939,25 @@
               "vistas": ["planta", "alzado"],
               "ejes": false,
               "eleccion": [0, 1, 2, 3, 4]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-6, 26],
+                    [6, 32]
+                  ],
+                  "rotulo": "Error: cota repetida",
+                  "rotuloEn": [0, 44]
+                },
+                {
+                  "puntos": [
+                    [-6, 32],
+                    [6, 26]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           },
           "part": "error"
@@ -1983,14 +2131,14 @@
         {
           "narration": "Error típico: quitar la parte equivocada, la de la derecha. El observador mira desde la izquierda y lo que se retira es lo que queda entre él y el plano.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "pieza": "escalera-taladrada",
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta", "perfil"],
               "corte": {
                 "tipo": "total",
                 "vista": "perfil",
@@ -1998,6 +2146,32 @@
                 "quitar": 1
               },
               "eleccion": [2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, -27],
+                    [22, -27]
+                  ],
+                  "rotulo": "Error: se quita la derecha",
+                  "rotuloEn": [0, -62]
+                },
+                {
+                  "puntos": [
+                    [22, -27],
+                    [18.5, -28.9]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [22, -27],
+                    [18.5, -25.1]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           },
           "part": "error"

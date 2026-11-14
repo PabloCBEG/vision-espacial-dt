@@ -31,6 +31,8 @@ export const ErrorStepSchema = z.object({
         desplaza: Pair.default([0, 0]),
         /** Dónde va el rótulo (si no, sobre el punto medio del primer segmento). */
         rotuloEn: Pair.optional(),
+        /** Sin rótulo: para los trazos que completan a otro (la punta de una flecha, la segunda diagonal de una aspa). */
+        sinRotulo: z.boolean().default(false),
       }),
     )
     .min(1),

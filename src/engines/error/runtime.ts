@@ -46,7 +46,10 @@ class ErrorSheet implements SheetModule {
   fitBox(state: AppState): ViewBox | null {
     const data = readData(state);
     if (!data) return null;
-    const pts = data.trazos.flatMap((t) => placed(state, t.puntos, t.desplaza));
+    const pts = data.trazos.flatMap((t) => [
+      ...placed(state, t.puntos, t.desplaza),
+      ...(t.rotuloEn ? [t.rotuloEn] : []),
+    ]);
     if (pts.length === 0) return null;
     const xs = pts.map(([x]) => x);
     const ys = pts.map(([, y]) => -y);
@@ -69,6 +72,7 @@ class ErrorSheet implements SheetModule {
         'data',
         { className: 'stroke-error' },
       );
+      if (trazo.sinRotulo) continue;
       const [p, q] = puntos;
       // El rótulo, sobre el punto medio del primer segmento (unos 12 px por encima).
       const lift = 12 * ctx.mmPerPx;

@@ -9,6 +9,27 @@ describe('motor «error»', () => {
     expect(data.trazos[0]?.rotulo).toBe('Error');
   });
 
+  it('un trazo puede ir sin rótulo (la punta de una flecha) y por defecto lo lleva', () => {
+    const data = ErrorStepSchema.parse({
+      trazos: [
+        {
+          puntos: [
+            [0, 0],
+            [5, 5],
+          ],
+        },
+        {
+          puntos: [
+            [5, 5],
+            [3, 6],
+          ],
+          sinRotulo: true,
+        },
+      ],
+    });
+    expect(data.trazos.map((t) => t.sinRotulo)).toEqual([false, true]);
+  });
+
   it('rechaza trazos sin dos puntos o referencias mal escritas', () => {
     expect(ErrorStepSchema.safeParse({ trazos: [{ puntos: [[0, 0]] }] }).success).toBe(false);
     expect(ErrorStepSchema.safeParse({ trazos: [{ puntos: ['A', 'B″'] }] }).success).toBe(false);
