@@ -431,8 +431,8 @@
           "part": "error",
           "narration": "Error típico: poner M′ sobre la línea de referencia pero fuera de la generatriz, por ejemplo en la circunferencia de la base. Solo la generatriz da el punto, y M no está en la base.",
           "show3d": ["planos", "solido", "superficie"],
-          "sheet": ["lt", "cuadricula", "solido", "vertices", "superficie"],
-          "highlight": ["superficie"],
+          "sheet": ["lt", "cuadricula", "solido", "vertices", "superficie", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -450,6 +450,25 @@
                 "metodo": "generatriz",
                 "progreso": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-4, -53],
+                    [4, -47]
+                  ],
+                  "rotulo": "Error: M′ en la base",
+                  "rotuloEn": [0, -61]
+                },
+                {
+                  "puntos": [
+                    [-4, -47],
+                    [4, -53]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -647,8 +666,8 @@
           "part": "error",
           "narration": "Error típico: tomar el punto de la circunferencia que queda detrás del eje. Si M se ve en el alzado, está en la mitad delantera y su alejamiento es mayor que el del eje.",
           "show3d": ["planos", "solido", "superficie"],
-          "sheet": ["lt", "cuadricula", "solido", "vertices", "superficie"],
-          "highlight": ["superficie"],
+          "sheet": ["lt", "cuadricula", "solido", "vertices", "superficie", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -666,6 +685,25 @@
                 "metodo": "generatriz",
                 "progreso": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [8, -17],
+                    [16, -11]
+                  ],
+                  "rotulo": "Error: M′ detrás del eje",
+                  "rotuloEn": [12, -6]
+                },
+                {
+                  "puntos": [
+                    [8, -11],
+                    [16, -17]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -878,8 +916,8 @@
           "part": "error",
           "narration": "Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que {respuesta}.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -899,6 +937,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-18.5, -22.3],
+                    [18.5, -37.7]
+                  ],
+                  "rotulo": "Error: eje mayor en la planta",
+                  "rotuloEn": [0, -49.7]
+                }
+              ]
             }
           }
         }
@@ -1128,8 +1178,8 @@
           "part": "error",
           "narration": "Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que {respuesta}.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1149,6 +1199,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [9.6, -30.1],
+                    [-17.4, -33.7]
+                  ],
+                  "rotulo": "Error: eje mayor en la planta",
+                  "rotuloEn": [-3.9, -45.7]
+                }
+              ]
             }
           }
         }
@@ -1346,8 +1408,8 @@
           "part": "error",
           "narration": "Error típico: tomar como cota de M su distancia a V′ en la planta. La cota se lee en el alzado, sobre la generatriz.",
           "show3d": ["planos", "solido", "superficie"],
-          "sheet": ["lt", "cuadricula", "solido", "vertices", "superficie"],
-          "highlight": ["superficie"],
+          "sheet": ["lt", "cuadricula", "solido", "vertices", "superficie", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1365,6 +1427,18 @@
                 "metodo": "generatriz",
                 "progreso": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, -32],
+                    [9, -44]
+                  ],
+                  "rotulo": "Error: V′M′ no es la cota",
+                  "rotuloEn": [37, -44]
+                }
+              ]
             }
           }
         }
@@ -1556,8 +1630,8 @@
           "part": "error",
           "narration": "Error típico: medir E′S′ en la planta. Es la proyección horizontal de ES y sale más corta que la verdadera magnitud, {respuesta}.",
           "show3d": ["planos", "solido", "recta-solido"],
-          "sheet": ["lt", "cuadricula", "solido", "recta-solido"],
-          "highlight": ["recta-solido"],
+          "sheet": ["lt", "cuadricula", "solido", "recta-solido", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1574,6 +1648,18 @@
                   [40, 32, 40]
                 ]
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, -32],
+                    [20, -32]
+                  ],
+                  "rotulo": "Error: E′S′ es más corta que ES",
+                  "rotuloEn": [0, -44]
+                }
+              ]
             }
           }
         }
@@ -1786,8 +1872,8 @@
           "part": "error",
           "narration": "Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que {respuesta}.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1807,6 +1893,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-16.4, -32],
+                    [10.7, -32]
+                  ],
+                  "rotulo": "Error: eje mayor en la planta",
+                  "rotuloEn": [-2.8, -44]
+                }
+              ]
             }
           }
         }
@@ -2036,8 +2134,8 @@
           "part": "error",
           "narration": "Error típico: medir el eje mayor en la planta. Allí se acorta con la inclinación de α y sale menos que {respuesta}.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -2057,6 +2155,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-15.6, -14.4],
+                    [15.6, -45.6]
+                  ],
+                  "rotulo": "Error: eje mayor en la planta",
+                  "rotuloEn": [0, -57.6]
+                }
+              ]
             }
           }
         }
@@ -2248,8 +2358,8 @@
           "part": "error",
           "narration": "Error típico: medir E′S′ o E″S″ como longitud de la cuerda. Son proyecciones de ES y salen más cortas que la verdadera magnitud, {respuesta}.",
           "show3d": ["planos", "solido", "recta-solido"],
-          "sheet": ["lt", "cuadricula", "solido", "recta-solido"],
-          "highlight": ["recta-solido"],
+          "sheet": ["lt", "cuadricula", "solido", "recta-solido", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -2266,6 +2376,25 @@
                   [45, 10, 44]
                 ]
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-18.6, -41.8],
+                    [20.6, -22.2]
+                  ],
+                  "rotulo": "Error: E′S′ y E″S″ son más cortas",
+                  "rotuloEn": [1, -53.8]
+                },
+                {
+                  "puntos": [
+                    [-18.6, 18.6],
+                    [20.6, 34.2]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }

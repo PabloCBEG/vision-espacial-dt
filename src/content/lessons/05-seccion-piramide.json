@@ -455,8 +455,8 @@
           "part": "error",
           "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -477,6 +477,39 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-10.9, -40.9],
+                    [-10.9, -19.1]
+                  ],
+                  "rotulo": "Error: en la planta sale más corto",
+                  "rotuloEn": [-2.8, -52.9]
+                },
+                {
+                  "puntos": [
+                    [-10.9, -19.1],
+                    [5.2, -24.8]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [5.2, -24.8],
+                    [5.2, -35.2]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [5.2, -35.2],
+                    [-10.9, -40.9]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -675,8 +708,8 @@
           "part": "error",
           "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -694,6 +727,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-14.1, -40],
+                    [14.1, -40]
+                  ],
+                  "rotulo": "Error: en la planta es solo una línea",
+                  "rotuloEn": [0, -52]
+                }
+              ]
             }
           }
         }
@@ -892,8 +937,8 @@
           "part": "error",
           "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -911,6 +956,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-17.3, -24],
+                    [17.3, -24]
+                  ],
+                  "rotulo": "Error: en la planta es solo una línea",
+                  "rotuloEn": [0, -36]
+                }
+              ]
             }
           }
         }
@@ -1155,8 +1212,8 @@
           "part": "error",
           "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1178,6 +1235,39 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-8.1, -34.7],
+                    [-5, -21.3]
+                  ],
+                  "rotulo": "Error: en la planta sale más corto",
+                  "rotuloEn": [1.7, -52.6]
+                },
+                {
+                  "puntos": [
+                    [-5, -21.3],
+                    [11.5, -23.3]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [11.5, -23.3],
+                    [6.1, -40.6]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [6.1, -40.6],
+                    [-8.1, -34.7]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1415,8 +1505,8 @@
           "part": "error",
           "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1437,6 +1527,32 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-12, -23.1],
+                    [7.5, -25.7]
+                  ],
+                  "rotulo": "Error: en la planta sale más corto",
+                  "rotuloEn": [-2.2, -52.7]
+                },
+                {
+                  "puntos": [
+                    [7.5, -25.7],
+                    [0, -40.7]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [0, -40.7],
+                    [-12, -23.1]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1656,8 +1772,8 @@
           "part": "error",
           "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1678,6 +1794,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-17, -24.3],
+                    [17, -35.7]
+                  ],
+                  "rotulo": "Error: en la planta es solo una línea",
+                  "rotuloEn": [0, -47.7]
+                }
+              ]
             }
           }
         }
@@ -1896,8 +2024,8 @@
           "part": "error",
           "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1918,6 +2046,53 @@
                 "abatir": 1,
                 "quitar": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-16, -32],
+                    [-7.2, -19.5]
+                  ],
+                  "rotulo": "Error: en la planta sale más corto",
+                  "rotuloEn": [-2.4, -56.5]
+                },
+                {
+                  "puntos": [
+                    [-7.2, -19.5],
+                    [6, -21.6]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [6, -21.6],
+                    [11.1, -32]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [11.1, -32],
+                    [6, -42.4]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [6, -42.4],
+                    [-7.2, -44.5]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-7.2, -44.5],
+                    [-16, -32]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -2162,8 +2337,8 @@
           "part": "error",
           "narration": "Error típico: medir los lados de la sección en la planta o en el alzado. Allí la sección está inclinada o de canto y sale más corta que en verdadera magnitud.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -2185,6 +2360,32 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-9.6, -18.6],
+                    [10.7, -28.1]
+                  ],
+                  "rotulo": "Error: en la planta sale más corto",
+                  "rotuloEn": [0.5, -55.1]
+                },
+                {
+                  "puntos": [
+                    [10.7, -28.1],
+                    [-4.8, -43.1]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-4.8, -43.1],
+                    [-9.6, -18.6]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -2404,8 +2605,8 @@
           "part": "error",
           "narration": "Error típico: tomar como lados de la sección los trozos de α₁ que se ven en la planta. Allí α está de canto y la sección es una línea, no un polígono.",
           "show3d": ["planos", "solido", "corte", "seccion", "seccion-vm"],
-          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm"],
-          "highlight": ["seccion-vm"],
+          "sheet": ["lt", "cuadricula", "solido", "corte", "seccion", "seccion-vm", "error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -2426,6 +2627,18 @@
                 "quitar": 1,
                 "abatir": 1
               }
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-15.5, -22.2],
+                    [19.6, -39.8]
+                  ],
+                  "rotulo": "Error: en la planta es solo una línea",
+                  "rotuloEn": [2.1, -51.8]
+                }
+              ]
             }
           }
         }
