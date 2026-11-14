@@ -377,8 +377,8 @@
           "part": "error",
           "narration": "Error típico: confundir la altura del ojo con su distancia al cuadro. La altura da el horizonte sobre la LT; la distancia da, por ejemplo, los puntos de distancia.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": ["cuadro"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -392,7 +392,20 @@
                 "x": 0,
                 "d": 70,
                 "h": 35
-              }
+              },
+              "fugas": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-70, 70],
+                    [70, 70]
+                  ],
+                  "rotulo": "Error: horizonte a la distancia del ojo",
+                  "rotuloEn": [0, 79]
+                }
+              ]
             }
           }
         }
@@ -576,8 +589,8 @@
           "part": "error",
           "narration": "Error típico: tomar la altura del ojo como distancia de los puntos de distancia. La medida que cuenta es la distancia del ojo al cuadro, {distanciaOjo}, no su altura.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
-          "highlight": ["metricos"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -594,6 +607,25 @@
               },
               "fugas": true,
               "metricos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [37, 38],
+                    [43, 42]
+                  ],
+                  "rotulo": "Error: distancia = altura del ojo",
+                  "rotuloEn": [0, 62]
+                },
+                {
+                  "puntos": [
+                    [37, 42],
+                    [43, 38]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -784,8 +816,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": ["perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -802,6 +834,25 @@
                 "h": 40
               },
               "fugas": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [57.0, 38],
+                    [63.0, 42]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 62]
+                },
+                {
+                  "puntos": [
+                    [57.0, 42],
+                    [63.0, 38]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -985,8 +1036,8 @@
           "part": "error",
           "narration": "Error típico: tomar la altura del ojo como distancia de los puntos de distancia. La medida que cuenta es la distancia del ojo al cuadro, {distanciaOjo}, no su altura.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos"],
-          "highlight": ["metricos"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "metricos", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1003,6 +1054,25 @@
               },
               "fugas": true,
               "metricos": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [47, 48],
+                    [53, 52]
+                  ],
+                  "rotulo": "Error: distancia = altura del ojo",
+                  "rotuloEn": [0, 72]
+                },
+                {
+                  "puntos": [
+                    [47, 52],
+                    [53, 48]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1193,8 +1263,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": ["perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1211,6 +1281,25 @@
                 "h": 45
               },
               "fugas": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-222.8, 43],
+                    [-216.8, 47]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 67]
+                },
+                {
+                  "puntos": [
+                    [-222.8, 47],
+                    [-216.8, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1401,8 +1490,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": ["perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1419,6 +1508,25 @@
                 "h": 45
               },
               "fugas": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [39.0, 43],
+                    [45.0, 47]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 67]
+                },
+                {
+                  "puntos": [
+                    [39.0, 47],
+                    [45.0, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1609,8 +1717,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": ["perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1627,6 +1735,25 @@
                 "h": 45
               },
               "fugas": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-196.0, 43],
+                    [-190.0, 47]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 67]
+                },
+                {
+                  "puntos": [
+                    [-196.0, 47],
+                    [-190.0, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1817,8 +1944,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": ["perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -1835,6 +1962,25 @@
                 "h": 40
               },
               "fugas": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [39.0, 38],
+                    [45.0, 42]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 62]
+                },
+                {
+                  "puntos": [
+                    [39.0, 42],
+                    [45.0, 38]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -2025,8 +2171,8 @@
           "part": "error",
           "narration": "Error típico: medir el ángulo de la arista desde el cuadro y no desde la perpendicular al cuadro. Con el ángulo equivocado se confunden el punto de fuga cercano y el lejano.",
           "show3d": ["geometral", "cuadro", "observador", "perspectiva"],
-          "sheet": ["cuadro", "perspectiva", "cuadricula"],
-          "highlight": ["perspectiva"],
+          "sheet": ["cuadro", "perspectiva", "cuadricula", "error", "fugas"],
+          "highlight": ["error"],
           "camera": "perspective",
           "foldAngle": 0,
           "engines": {
@@ -2043,6 +2189,25 @@
                 "h": 50
               },
               "fugas": true
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-376.2, 48],
+                    [-370.2, 52]
+                  ],
+                  "rotulo": "Error: fuga cercana y lejana cambiadas",
+                  "rotuloEn": [0, 72]
+                },
+                {
+                  "puntos": [
+                    [-376.2, 52],
+                    [-370.2, 48]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
