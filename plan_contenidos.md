@@ -296,10 +296,12 @@ Cópialos de uno en uno; cada uno es una tanda de trabajo con su criterio de ter
 > adaptativo que priorice los tipos y temas con más fallos, guardado solo en el navegador. Añade
 > ejercicios encadenados con apartados corregidos por separado.
 
-### Prompt 9 · Herramienta de marcado de aristas en una rejilla 3D
+### Prompt 9 · Herramienta de marcado de aristas en una rejilla 3D  ▶ SIGUIENTE
 
-**Cuándo.** Es un tipo de ejercicio de la fase 2. Se pasa después del Prompt 5 (`selectEdges`),
-para que nazca con su validador y sus marcadores, y antes de los tipos nuevos del Prompt 6.
+**Cuándo.** **Es el siguiente prompt** (punto 12 del orden de ejecución). Es un tipo de ejercicio de la
+fase 2. Su primera respuesta es solo un plan: si ese plan concluye que necesita antes el tipo
+`selectEdges` del Prompt 5, se pasa primero el 5 y después este. En cualquier caso va antes de
+los tipos nuevos del Prompt 6.
 
 > Lee CLAUDE.md, plan_contenidos.md (apartado 2, formatos A3 y B2), src/engines/README.md y el
 > motor de src/engines/normalizacion/. Quiero incorporar a la web una herramienta de marcado de
@@ -361,6 +363,25 @@ Respuestas del profesor (9 de noviembre de 2026):
 ---
 
 ## 8. Orden de ejecución revisado (11 de noviembre de 2026)
+
+> ### ▶ SIGUIENTE PROMPT: Prompt 9 (herramienta de marcado de aristas en una rejilla 3D)
+>
+> **Estado a 14 de noviembre de 2026.** La Fase 1 está completa (puntos 1 a 11 de esta lista, más
+> las lecciones I-02, I-03, I-05, I-09, I-10 y la segunda de II-12, y el error típico dibujado en
+> las 27 lecciones). El siguiente paso es el **punto 12: Prompt 9**, que está en el apartado 6 de
+> este fichero. Se pega desde «Lee CLAUDE.md…» hasta «…en `README.md`.».
+>
+> **Antes de pegarlo**, contesta las dos preguntas que el propio prompt te hace:
+> 1. ¿Es correcto cualquier conjunto de aristas cuyas tres vistas coincidan con las dadas, o solo
+>    la pieza de referencia?
+> 2. ¿Las aristas ocultas se marcan aparte?
+>
+> **Orden después del Prompt 9:** reescribir los prompts 5 a 8 (los validadores y el formato de
+> soluciones han cambiado) → Prompt 6 (tercera vista B2, correspondencia A3, D1 y D2) → Prompt 5
+> (`selectEdges`: aristas ocultas B3 y completar la vista B4) → resto del Prompt 7 (tangentes a
+> cónicas y esferas de Dandelin) → Prompt 8 (Fase 3) → Prompt M (fragata F110, marzo–abril).
+> El Prompt 9 pide primero un plan breve y espera tu visto bueno: ahí debe decir si necesita
+> `selectEdges` antes de empezar.
 
 Cada lección se da por terminada según el apartado «Contenido de ejercicios» de `CLAUDE.md`.
 
