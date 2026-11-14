@@ -342,14 +342,61 @@
           "part": "error",
           "narration": "Error típico: elegir el perfil con la misma silueta pero invertida. El perfil izquierdo se mira desde la izquierda, y la parte de delante queda a su derecha.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [69, 7],
+                    [69, 39]
+                  ],
+                  "rotulo": "Error: perfil invertido",
+                  "rotuloEn": [54, 49]
+                },
+                {
+                  "puntos": [
+                    [57, 19],
+                    [39, 19]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [69, 7],
+                    [39, 7]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [39, 19],
+                    [39, 7]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [69, 39],
+                    [57, 39]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [57, 19],
+                    [57, 39]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -484,14 +531,61 @@
           "part": "error",
           "narration": "Error típico: colocar la planta encima del alzado. En el sistema europeo la planta va debajo del alzado.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [25, 73],
+                    [-25, 73]
+                  ],
+                  "rotulo": "Error: planta sobre el alzado",
+                  "rotuloEn": [0, 83]
+                },
+                {
+                  "puntos": [
+                    [-25, 73],
+                    [-25, 43]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-8, 73],
+                    [-8, 43]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-25, 43],
+                    [25, 43]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [25, 73],
+                    [25, 43]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [8, 73],
+                    [8, 43]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -626,14 +720,68 @@
           "part": "error",
           "narration": "Error típico: dibujar el alzado con las alturas del perfil al revés. La altura de una arista se mide desde la base y es la misma en el alzado y en el perfil.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, 17],
+                    [-25, 37]
+                  ],
+                  "rotulo": "Error: alturas al revés",
+                  "rotuloEn": [0, 47]
+                },
+                {
+                  "puntos": [
+                    [-25, 37],
+                    [25, 37]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-25, 27],
+                    [25, 27]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-25, 17],
+                    [-10, 17]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [25, 7],
+                    [-10, 7]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [25, 37],
+                    [25, 7]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-10, 17],
+                    [-10, 7]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -761,14 +909,47 @@
           "part": "error",
           "narration": "Error típico: marcar las tres vistas por seguridad. El perfil de una pieza de revolución como esta repite el alzado y se omite.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["alzado", "planta"],
+              "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0, 1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [38, 3],
+                    [76, 3]
+                  ],
+                  "rotulo": "Error: perfil que sobra",
+                  "rotuloEn": [57, 43]
+                },
+                {
+                  "puntos": [
+                    [76, 3],
+                    [76, 37]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [76, 37],
+                    [38, 37]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [38, 37],
+                    [38, 3]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -896,14 +1077,47 @@
           "part": "error",
           "narration": "Error típico: añadir el perfil porque el taladro es lateral. Su diámetro y su posición ya quedan definidos con el alzado y la planta.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["alzado", "planta"],
+              "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0, 1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [35, 3],
+                    [73, 3]
+                  ],
+                  "rotulo": "Error: perfil que sobra",
+                  "rotuloEn": [54, 47]
+                },
+                {
+                  "puntos": [
+                    [73, 3],
+                    [73, 41]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [73, 41],
+                    [35, 41]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [35, 41],
+                    [35, 3]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1031,14 +1245,33 @@
           "part": "error",
           "narration": "Error típico: omitir el perfil porque se parece al alzado. Es la única vista que muestra la inclinación de la cuña.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
               "vistas": ["alzado", "planta", "perfil"],
               "eleccion": [0, 1, 2]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [39, 7],
+                    [69, 37]
+                  ],
+                  "rotulo": "Error: sin el perfil no se ve la cuña",
+                  "rotuloEn": [54, 47]
+                },
+                {
+                  "puntos": [
+                    [39, 37],
+                    [69, 7]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1203,13 +1436,13 @@
           "part": "error",
           "narration": "Error típico: dibujar aristas ocultas en un dibujo en corte. En los cortes no se dibujan: lo que no se ve se ha quitado o se ve en otra vista.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "total",
                 "vista": "alzado",
@@ -1217,6 +1450,53 @@
                 "quitar": 1
               },
               "eleccion": [1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-6, 7],
+                    [-6, 33]
+                  ],
+                  "rotulo": "Error: aristas ocultas en el corte",
+                  "rotuloEn": [0, 43]
+                },
+                {
+                  "puntos": [
+                    [6, 7],
+                    [6, 33]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-23, 7],
+                    [-23, 15]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [-17, 15],
+                    [-17, 7]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [17, 7],
+                    [17, 15]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [23, 15],
+                    [23, 7]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1381,13 +1661,13 @@
           "part": "error",
           "narration": "Error típico: dibujar aristas ocultas en un dibujo en corte. En los cortes no se dibujan: lo que no se ve se ha quitado o se ve en otra vista.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "total",
                 "vista": "alzado",
@@ -1395,6 +1675,39 @@
                 "quitar": 1
               },
               "eleccion": [1]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-25, 23],
+                    [-12, 23]
+                  ],
+                  "rotulo": "Error: aristas ocultas en el corte",
+                  "rotuloEn": [0, 47]
+                },
+                {
+                  "puntos": [
+                    [-25, 31],
+                    [-12, 31]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [25, 23],
+                    [12, 23]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [25, 31],
+                    [12, 31]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -1559,13 +1872,13 @@
           "part": "error",
           "narration": "Error típico: dibujar aristas ocultas en un dibujo en corte. En los cortes no se dibujan: lo que no se ve se ha quitado o se ve en otra vista.",
           "show3d": ["pieza"],
-          "sheet": [],
-          "highlight": [],
+          "sheet": ["error"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 0,
           "engines": {
             "normalizacion": {
-              "vistas": ["planta"],
+              "vistas": ["alzado", "planta"],
               "corte": {
                 "tipo": "total",
                 "vista": "alzado",
@@ -1573,6 +1886,32 @@
                 "quitar": 1
               },
               "eleccion": [0]
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-4, 23],
+                    [4, 23]
+                  ],
+                  "rotulo": "Error: aristas ocultas en el corte",
+                  "rotuloEn": [0, 47]
+                },
+                {
+                  "puntos": [
+                    [-4, 37],
+                    [-4, 23]
+                  ],
+                  "sinRotulo": true
+                },
+                {
+                  "puntos": [
+                    [4, 37],
+                    [4, 23]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
