@@ -1150,9 +1150,10 @@
             "eje",
             "movimiento",
             "resultado",
-            "medida"
+            "medida",
+            "error"
           ],
-          "highlight": ["resultado"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1164,6 +1165,18 @@
               },
               "progreso": 1,
               "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, -40],
+                    [0, -20.8]
+                  ],
+                  "rotulo": "Error: P′F′ no es la verdadera magnitud",
+                  "rotuloEn": [0, -50]
+                }
+              ]
             }
           }
         }
@@ -1487,9 +1500,10 @@
             "eje",
             "movimiento",
             "resultado",
-            "medida"
+            "medida",
+            "error"
           ],
-          "highlight": ["resultado"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -1501,6 +1515,18 @@
               },
               "selector": false,
               "progreso": 1
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, -45],
+                    [15.6, -18.4]
+                  ],
+                  "rotulo": "Error: P′F′ no es la verdadera magnitud",
+                  "rotuloEn": [7.8, -55]
+                }
+              ]
             }
           }
         }
@@ -2074,9 +2100,10 @@
             "charnela",
             "movimiento",
             "resultado",
-            "medida"
+            "medida",
+            "error"
           ],
-          "highlight": ["resultado"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -2088,6 +2115,18 @@
               },
               "progreso": 1,
               "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-10, -55],
+                    [37.4, -82.9]
+                  ],
+                  "rotulo": "Error: alejamiento en vez de cota",
+                  "rotuloEn": [37.4, -91.9]
+                }
+              ]
             }
           }
         }
@@ -2422,9 +2461,10 @@
             "charnela",
             "movimiento",
             "resultado",
-            "medida"
+            "medida",
+            "error"
           ],
-          "highlight": ["resultado"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -2437,6 +2477,25 @@
               },
               "progreso": 1,
               "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-97.8, 31],
+                    [-11.6, -19.7]
+                  ],
+                  "rotulo": "Error: ángulo con la traza",
+                  "rotuloEn": [-75, 24]
+                },
+                {
+                  "puntos": [
+                    [30, -5],
+                    [-40, -15]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -2771,9 +2830,10 @@
             "charnela",
             "movimiento",
             "resultado",
-            "medida"
+            "medida",
+            "error"
           ],
-          "highlight": ["resultado"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -2786,6 +2846,25 @@
               },
               "progreso": 1,
               "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-97.8, 31],
+                    [-11.6, -19.7]
+                  ],
+                  "rotulo": "Error: ángulo con la traza",
+                  "rotuloEn": [-75, 24]
+                },
+                {
+                  "puntos": [
+                    [-35, -10],
+                    [30, -40]
+                  ],
+                  "sinRotulo": true
+                }
+              ]
             }
           }
         }
@@ -3104,9 +3183,10 @@
             "nueva-lt",
             "movimiento",
             "resultado",
-            "medida"
+            "medida",
+            "error"
           ],
-          "highlight": ["resultado"],
+          "highlight": ["error"],
           "camera": "front",
           "foldAngle": 90,
           "engines": {
@@ -3118,6 +3198,18 @@
               },
               "progreso": 1,
               "selector": false
+            },
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [42.1, -57.1],
+                    [85.2, -82.4]
+                  ],
+                  "rotulo": "Error: alejamiento en vez de cota",
+                  "rotuloEn": [85.2, -91.4]
+                }
+              ]
             }
           }
         }
