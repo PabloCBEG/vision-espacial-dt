@@ -1,0 +1,1982 @@
+{
+  "id": "intersecciones",
+  "order": 4,
+  "title": "Intersecciones: lo común a los dos objetos",
+  "topic": "I-09",
+  "stage": "DT I",
+  "saberBasico": "Sistema diédrico: intersección de dos planos y de una recta con un plano. Lo común a los dos objetos, con los planos proyectantes como método.",
+  "level": "Intermedio",
+  "initialScene": {
+    "points": {
+      "A": [-35, 0, 0],
+      "B": [15, 45, 0],
+      "C": [25, 0, 35],
+      "D": [5, 0, 0],
+      "E": [-30, 40, 0],
+      "F": [-25, 0, 40],
+      "R1": [-20, 10, 45],
+      "R2": [30, 40, 5],
+      "R3": [-20, 10, 5],
+      "Q": [10, 15, 7]
+    },
+    "objects": [
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      },
+      {
+        "kind": "point",
+        "id": "C"
+      },
+      {
+        "kind": "point",
+        "id": "D"
+      },
+      {
+        "kind": "point",
+        "id": "E"
+      },
+      {
+        "kind": "point",
+        "id": "F"
+      },
+      {
+        "kind": "point",
+        "id": "R1"
+      },
+      {
+        "kind": "point",
+        "id": "R2"
+      },
+      {
+        "kind": "point",
+        "id": "R3"
+      },
+      {
+        "kind": "point",
+        "id": "Q"
+      },
+      {
+        "kind": "plane",
+        "id": "α",
+        "through": ["A", "B", "C"]
+      },
+      {
+        "kind": "plane",
+        "id": "β",
+        "through": ["D", "E", "F"]
+      },
+      {
+        "kind": "line",
+        "id": "r",
+        "through": ["R1", "R2"]
+      },
+      {
+        "kind": "plane",
+        "id": "δ",
+        "through": ["R1", "R2", "R3"]
+      },
+      {
+        "kind": "meet",
+        "id": "ms",
+        "of": ["α", "β"],
+        "points": ["H", "V"]
+      },
+      {
+        "kind": "line",
+        "id": "s",
+        "through": ["H", "V"]
+      },
+      {
+        "kind": "meet",
+        "id": "mi",
+        "of": ["r", "α"],
+        "points": ["I"]
+      },
+      {
+        "kind": "meet",
+        "id": "mu",
+        "of": ["α", "δ"],
+        "points": ["U1", "U2"]
+      },
+      {
+        "kind": "line",
+        "id": "u",
+        "through": ["U1", "U2"]
+      },
+      {
+        "kind": "point",
+        "id": "H"
+      },
+      {
+        "kind": "point",
+        "id": "V"
+      },
+      {
+        "kind": "point",
+        "id": "I"
+      }
+    ],
+    "activePoint": "Q"
+  },
+  "steps": [
+    {
+      "narration": "Dos planos que no son paralelos se cortan. Su intersección es una recta.",
+      "show3d": ["planos", "plano:α", "plano:β"],
+      "sheet": [],
+      "highlight": ["plano:α", "plano:β"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "La recta de intersección s es lo común a los dos planos: sus puntos están en α y en β a la vez.",
+      "show3d": ["planos", "plano:α", "plano:β", "recta:s"],
+      "sheet": [],
+      "highlight": ["recta:s"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "En la lámina, las trazas del mismo nombre se cortan: α₁ con β₁ en H, y α₂ con β₂ en V. H y V están en los dos planos.",
+      "show3d": ["planos", "plano:α", "trazas:α", "plano:β", "trazas:β", "punto:H", "punto:V"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "trazas:β",
+        "proyecciones:H",
+        "proyecciones:V",
+        "referencia:H",
+        "referencia:V"
+      ],
+      "highlight": ["trazas:α", "trazas:β"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "H y V son las trazas de la recta s. Uniendo H′ con V′ y H″ con V″ salen sus dos proyecciones.",
+      "show3d": ["planos", "plano:α", "trazas:α", "plano:β", "trazas:β", "recta:s", "trazas:s"],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "trazas:β",
+        "recta:s",
+        "trazas:s",
+        "proyecciones:H",
+        "proyecciones:V",
+        "referencia:H",
+        "referencia:V"
+      ],
+      "highlight": ["recta:s"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Una recta que no es paralela a un plano lo atraviesa en un solo punto, I: el único punto común a la recta y al plano.",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:I", "proyecciones:I"],
+      "sheet": [],
+      "highlight": ["punto:I"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "Para hallar I se mete la recta r en un plano auxiliar proyectante δ, perpendicular al PH. La traza horizontal de δ coincide con r′.",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "plano:δ", "trazas:δ"],
+      "sheet": ["lt", "trazas:α", "trazas:δ", "recta:r"],
+      "highlight": ["plano:δ"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "El plano δ corta a α en la recta u, y u se halla como cualquier intersección de dos planos. Como r y u están en δ, se cortan: ese punto es I.",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "recta:r",
+        "plano:δ",
+        "recta:u",
+        "punto:I",
+        "proyecciones:I"
+      ],
+      "sheet": [
+        "lt",
+        "trazas:α",
+        "trazas:δ",
+        "recta:r",
+        "recta:u",
+        "proyecciones:I",
+        "referencia:I"
+      ],
+      "highlight": ["recta:u", "punto:I"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Si los dos planos son paralelos no hay intersección: no existe una recta común. Sus trazas del mismo nombre también son paralelas.",
+      "show3d": ["planos", "plano:α", "trazas:α", "plano:β", "trazas:β"],
+      "sheet": ["lt", "trazas:α", "trazas:β"],
+      "highlight": ["trazas:α", "trazas:β"],
+      "camera": "front",
+      "foldAngle": 90,
+      "points": {
+        "D": [-35, 0, 15],
+        "E": [15, 45, 15],
+        "F": [25, 0, 50]
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "El plano α es horizontal y la recta r lo atraviesa. Mueve Q hasta el punto donde r corta a α.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "r", "α"],
+      "points": {
+        "A": [-40, 10, 30],
+        "B": [40, 10, 30],
+        "C": [0, 50, 30],
+        "R1": [-30, 10, 10],
+        "R2": [30, 40, 50],
+        "Q": [20, 30, 5]
+      },
+      "activePoint": "Q",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "recta:r", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "La intersección es lo común a la recta y al plano: un punto que está en los dos a la vez.",
+        "Un plano horizontal tiene todos sus puntos a la misma cota, así que I tiene esa cota y está en r.",
+        "En la lámina, busca donde r″ corta a la traza α₂ y baja por la referencia hasta r′."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es horizontal y la recta r lo atraviesa. Buscamos el punto I donde se cortan.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "La intersección es lo común a los dos: I está en r y en α. Como α es horizontal, todos sus puntos están a la misma cota.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que r avanza hasta tocar el plano α: lo toca en un solo punto, I.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "En el alzado, r″ corta a la traza α₂ en I″. Esa es la cota de I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 30]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Baja por la línea de referencia hasta r′: ahí está I′. Mueve Q hasta que coincida con I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 30]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: I′ está en r′, I″ está en r″ y I″ está en la traza α₂.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 30]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: marcar I″ sobre α₂ y poner I′ fuera de r′. Un punto de r tiene que estar en r en las dos proyecciones.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 30]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, -25],
+                    [9, -17]
+                  ],
+                  "rotulo": "Error: I′ fuera de r′"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "El plano α es frontal y la recta r lo atraviesa. Mueve Q hasta el punto donde r corta a α.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "r", "α"],
+      "points": {
+        "A": [-40, 20, 0],
+        "B": [40, 20, 0],
+        "C": [0, 20, 50],
+        "R1": [-30, 0, 10],
+        "R2": [30, 40, 40],
+        "Q": [20, 5, 40]
+      },
+      "activePoint": "Q",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "recta:r", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "Un punto de la intersección está en la recta y en el plano a la vez.",
+        "Un plano frontal tiene todos sus puntos al mismo alejamiento: I tiene ese alejamiento y está en r.",
+        "En la lámina, busca donde r′ corta a la traza α₁ y sube por la referencia hasta r″."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es frontal y la recta r lo atraviesa. Buscamos el punto I donde se cortan.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "I está en r y en α. Como α es frontal, todos sus puntos tienen el mismo alejamiento.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que r se acerca al plano α hasta atravesarlo: lo hace en un solo punto, I.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "En la planta, r′ corta a la traza α₁ en I′. Ese es el alejamiento de I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 20, 25]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Sube por la línea de referencia hasta r″: ahí está I″. Mueve Q hasta que coincida con I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 20, 25]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: I′ está en r′ y en α₁, e I″ está en r″.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 20, 25]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dar solo I′ sobre α₁ y poner I″ a ojo. Las dos proyecciones de I tienen que estar sobre las de r.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 20, 25]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [0, 25],
+                    [0, 35]
+                  ],
+                  "rotulo": "Error: I″ fuera de r″"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "El plano α es horizontal y el plano β es frontal. Mueve Q hasta un punto de la recta en que se cortan.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "α", "β"],
+      "points": {
+        "A": [-40, 10, 30],
+        "B": [40, 10, 30],
+        "C": [0, 50, 30],
+        "D": [-40, 20, 0],
+        "E": [40, 20, 0],
+        "F": [0, 20, 50],
+        "Q": [10, 40, 5]
+      },
+      "activePoint": "Q",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "plano:β",
+        "trazas:β",
+        "punto:Q",
+        "proyecciones:Q"
+      ],
+      "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "Un punto de la intersección está en los dos planos a la vez.",
+        "El plano horizontal fija la cota y el frontal fija el alejamiento: Q debe tener las dos.",
+        "La cota se lee en α₂ y el alejamiento en β₁; la x puede ser cualquiera."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es horizontal y el plano β es frontal. Buscamos un punto de su recta común.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Un punto de la intersección está en los dos planos. En α tiene una cota fija y en β un alejamiento fijo.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina los dos planos cortándose: la recta común queda paralela a la LT, porque no tiene ninguna dirección que se aleje o suba.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "La cota de α está en su traza α₂ y el alejamiento de β en su traza β₁. No se cortan: ambas son paralelas a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "part": "trazado"
+        },
+        {
+          "narration": "Por eso la recta común es paralela a la LT y no tiene trazas. Mueve Q a un punto con esa cota y ese alejamiento.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q", "recta:s"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [10, 20, 30]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: Q está en α y en β, y su posición a lo largo de la LT no importa.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q", "recta:s"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [10, 20, 30]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dar por imposible la intersección porque las trazas no se cortan. Al ser paralelas a la LT, la recta común es paralela a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "recta:s"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [10, 20, 30]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-45, 30],
+                    [-45, -20]
+                  ],
+                  "rotulo": "Error: no se cortan"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "El plano α es perpendicular al PH. Mueve Q hasta el punto donde la recta r lo atraviesa.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "r", "α"],
+      "points": {
+        "A": [-30, 10, 0],
+        "B": [30, 40, 0],
+        "C": [-30, 10, 40],
+        "R1": [-10, 35, 10],
+        "R2": [20, 5, 40],
+        "Q": [10, 15, 5]
+      },
+      "activePoint": "Q",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "recta:r", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "Un plano perpendicular al PH se ve de canto en la planta: todos sus puntos caen sobre su traza α₁.",
+        "Entonces I′ está en α₁ y en r′, y se lee sin más construcción.",
+        "Corta r′ con α₁ para hallar I′ y sube por la referencia hasta r″ para hallar I″."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es perpendicular al PH y la recta r lo atraviesa. Buscamos el punto I donde se cortan.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Un plano proyectante se ve de canto: su traza α₁ contiene la proyección horizontal de todos sus puntos. Así I′ está en α₁ y en r′.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que miras desde arriba: el plano es una línea y la recta la cruza en un punto, que es I′.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "En la planta, r′ corta a α₁ en I′. No hace falta ninguna construcción más.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 20]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Sube por la línea de referencia hasta r″ y marca I″. Mueve Q hasta que coincida con I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 20]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: I′ está en α₁ y en r′, e I″ está en r″.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 20]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: tomar como plano proyectante uno que no contiene a r, con la traza desplazada. Con ese plano auxiliar, la recta u no pasa por I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [0, 25, 20]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": ["R1′", "R2′"],
+                  "desplaza": [10, -8],
+                  "rotulo": "Error: traza fuera de r′"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "El plano α es oblicuo y la recta r lo atraviesa. Mueve Q hasta el punto de intersección, usando un plano proyectante que contenga a r.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "r", "α"],
+      "points": {
+        "A": [-15, 0, 0],
+        "B": [0, 36, 0],
+        "C": [6, 0, 36],
+        "R1": [-7, 2, 38],
+        "R2": [17, 38, 2],
+        "R3": [-7, 2, 8],
+        "Q": [20, 10, 10]
+      },
+      "activePoint": "Q",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "recta:r", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "Una recta oblicua con un plano oblicuo no da la intersección a simple vista.",
+        "Se mete r en un plano proyectante δ, que se ve de canto, y se halla su intersección u con α.",
+        "La traza δ₁ coincide con r′; halla u y corta u con r."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es oblicuo y la recta r lo atraviesa. Hay que hallar el punto I donde se cortan.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "La intersección de una recta con un plano se reduce a la de dos planos: se mete r en un plano proyectante δ y se corta δ con α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina un plano vertical que contiene a r y que corta a α a lo largo de una recta u. La recta r y la recta u están en el mismo plano δ.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "plano:δ",
+            "trazas:δ"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "El plano δ es proyectante: su traza horizontal δ₁ coincide con r′. Se halla la recta u de intersección de δ con α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "plano:δ",
+            "trazas:δ"
+          ],
+          "sheet": ["lt", "trazas:α", "recta:r", "proyecciones:Q", "referencia:Q", "trazas:δ"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "part": "trazado"
+        },
+        {
+          "narration": "La recta u y la recta r están en δ y se cortan en I. Mueve Q hasta ese punto.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I",
+            "plano:δ",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [5, 20, 20]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: I está en r y en u, y u está en α, luego I está en r y en α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I",
+            "plano:δ",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [5, 20, 20]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: elegir un plano auxiliar que no contiene a r, o que no es proyectante. Su intersección con α no pasa por I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [5, 20, 20]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-37, -2],
+                    [23, -2]
+                  ],
+                  "rotulo": "Error: traza fuera de r′"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "Los planos α y β se cortan en una recta. Mueve Q hasta un punto de esa recta.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "α", "β"],
+      "points": {
+        "A": [-20, 30, 25],
+        "B": [30, 40, 5],
+        "C": [50, 0, 5],
+        "D": [-15, 15, 30],
+        "E": [30, 35, 25],
+        "F": [40, 35, -25],
+        "Q": [-20, 10, 5]
+      },
+      "activePoint": "Q",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "plano:β",
+        "trazas:β",
+        "punto:Q",
+        "proyecciones:Q"
+      ],
+      "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "La recta común tiene sus trazas en las trazas de los dos planos.",
+        "Corta las trazas del mismo nombre: α₁ con β₁ para H, y α₂ con β₂ para V.",
+        "Une H y V: la recta s es la intersección. Mueve Q hasta que esté sobre s en las dos proyecciones."
+      ],
+      "solution": [
+        {
+          "narration": "Dos planos α y β, no paralelos. Buscamos puntos de la recta en que se cortan.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Lo común a los dos planos es su recta de intersección. Sus trazas son los cortes de las trazas del mismo nombre.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina los dos planos como hojas que se cruzan: la recta de corte atraviesa el PH en H y el PV en V.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "Corta α₁ con β₁ para hallar H, y α₂ con β₂ para hallar V.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s",
+            "punto:H",
+            "punto:V"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "recta:s",
+            "proyecciones:H",
+            "proyecciones:V"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [10, 25, 15]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Une H′ con V′ y H″ con V″: salen las proyecciones de s. Mueve Q hasta que esté sobre s en las dos.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s",
+            "punto:H",
+            "punto:V"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "recta:s",
+            "proyecciones:H",
+            "proyecciones:V"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [10, 25, 15]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: Q está en α y en β, y Q′ y Q″ están en s′ y s″.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s",
+            "punto:H",
+            "punto:V"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "recta:s",
+            "proyecciones:H",
+            "proyecciones:V"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [10, 25, 15]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: cortar trazas de distinto nombre, como α₁ con β₂. Esos dos puntos no están en los dos planos y no son trazas de s.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "recta:s"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [10, 25, 15]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [10, 0],
+                    [-11.79, -151.07]
+                  ],
+                  "rotulo": "Error: α₁ con β₂"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: la recta r atraviesa el plano α por el segundo cuadrante. Mueve Q hasta el punto de intersección.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "r", "α"],
+      "points": {
+        "A": [-40, -10, 15],
+        "B": [15, 0, 45],
+        "C": [25, -60, 25],
+        "R1": [-25, -30, 15],
+        "R2": [11, -6, 39],
+        "R3": [-25, -30, 45],
+        "Q": [0, -20, 10]
+      },
+      "activePoint": "Q",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+      "sheet": ["lt", "trazas:α", "recta:r", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "En el segundo cuadrante, la proyección horizontal queda por encima de la LT, como la vertical.",
+        "I está en r y en α: se halla con un plano proyectante que contenga a r.",
+        "Mete r en δ, halla u = δ ∩ α y corta u con r; comprueba las dos proyecciones."
+      ],
+      "solution": [
+        {
+          "narration": "La recta r atraviesa el plano α en el segundo cuadrante. Buscamos el punto I donde se cortan.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "El punto I está en r y en α. Se halla con un plano proyectante δ que contenga a r, sin importar el cuadrante.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:r", "punto:Q", "proyecciones:Q"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina el plano vertical δ que pasa por r: corta a α en una recta u, y r y u se cruzan en I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "plano:δ",
+            "trazas:δ"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "El plano δ tiene su traza δ₁ sobre r′. Halla la recta u de intersección de δ con α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "plano:δ",
+            "trazas:δ"
+          ],
+          "sheet": ["lt", "trazas:α", "recta:r", "proyecciones:Q", "referencia:Q", "trazas:δ"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "part": "trazado"
+        },
+        {
+          "narration": "Corta r con u para hallar I; en el segundo cuadrante, I′ queda por encima de la LT. Mueve Q hasta I.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I",
+            "plano:δ",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [-10, -20, 25]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: I′ está en r′ y en u′, e I″ está en r″ y en u″.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I",
+            "plano:δ",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "proyecciones:I",
+            "referencia:I",
+            "trazas:δ",
+            "recta:u"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [-10, -20, 25]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dar I′ en r′ pero colocar I″ a ojo. Aunque I′ quede por encima de la LT, I″ también debe estar sobre r″.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "recta:r",
+            "punto:Q",
+            "proyecciones:Q",
+            "punto:I",
+            "proyecciones:I"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "recta:r",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "proyecciones:I",
+            "referencia:I"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [-10, -20, 25]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-10, 25],
+                    [-10, 35]
+                  ],
+                  "rotulo": "Error: I″ fuera de r″"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: los planos α y β están dados por sus trazas. Mueve Q hasta un punto de su recta de intersección.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "α", "β"],
+      "points": {
+        "A": [-15, 0, 0],
+        "B": [33, 48, 0],
+        "C": [33, 0, 32],
+        "D": [34, 0, 0],
+        "E": [22, 22, 0],
+        "F": [34, 0, 50],
+        "Q": [0, 10, 5]
+      },
+      "activePoint": "Q",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "plano:β",
+        "trazas:β",
+        "punto:Q",
+        "proyecciones:Q"
+      ],
+      "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "Cada plano está definido por sus trazas, que se cortan en la LT.",
+        "La recta común tiene sus trazas H y V en los cortes de las trazas del mismo nombre.",
+        "Halla H = α₁ ∩ β₁ y V = α₂ ∩ β₂, únelos y coloca Q sobre s en las dos proyecciones."
+      ],
+      "solution": [
+        {
+          "narration": "Los planos α y β se dan por sus trazas. Buscamos puntos de la recta s en que se cortan.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "La recta común está formada por los puntos que están en α y en β. Sus trazas son los cortes de las trazas del mismo nombre.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que α₁ y β₁ se cortan en el PH y α₂ y β₂ en el PV: esos dos puntos están en los dos planos.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "Halla H cortando α₁ con β₁ en la planta, y V cortando α₂ con β₂ en el alzado.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s",
+            "punto:H",
+            "punto:V"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "recta:s",
+            "proyecciones:H",
+            "proyecciones:V"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [22, 22, 10]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Une H′ con V′ y H″ con V″ para dibujar s. Mueve Q hasta un punto de s.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s",
+            "punto:H",
+            "punto:V"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "recta:s",
+            "proyecciones:H",
+            "proyecciones:V"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [22, 22, 10]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: Q está en α y en β, y Q′ y Q″ caen sobre s′ y s″ en la misma línea de referencia.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s",
+            "punto:H",
+            "punto:V"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "recta:s",
+            "proyecciones:H",
+            "proyecciones:V"
+          ],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [22, 22, 10]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: cortar trazas de distinto nombre, como α₁ con β₂. El punto que sale no es traza de la recta común.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "recta:s"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [22, 22, 10]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [22, 0],
+                    [34.0, -49.0]
+                  ],
+                  "rotulo": "Error: α₁ con β₂"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: las trazas verticales de α y β se cortan fuera de la hoja. Mueve Q hasta un punto de la recta común.",
+      "condition": "pointOnIntersection",
+      "objects": ["Q", "α", "β"],
+      "points": {
+        "A": [-24, 0, 0],
+        "B": [-1, 27, 0],
+        "C": [-22, 0, 42],
+        "D": [37, 0, 0],
+        "E": [22, 27, 0],
+        "F": [17, 0, 40],
+        "Q": [0, 10, 5]
+      },
+      "activePoint": "Q",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "plano:β",
+        "trazas:β",
+        "punto:Q",
+        "proyecciones:Q"
+      ],
+      "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q"],
+      "hints": [
+        "Si una traza queda fuera de la hoja, no hace falta: hay otras rectas de los planos.",
+        "Las rectas horizontales de los planos son paralelas a sus trazas α₁ y β₁.",
+        "Corta dos horizontales de la misma cota, una de cada plano: da un punto de la recta común, sin salir de la hoja."
+      ],
+      "solution": [
+        {
+          "narration": "Los planos α y β se cortan, pero sus trazas verticales lo hacen fuera de la hoja. Buscamos un punto de la recta común.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "La recta común sale de cualquier punto que esté en los dos planos. Si falta una traza, basta otra recta de cada plano.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina una horizontal de cada plano a la misma cota: son paralelas a las trazas α₁ y β₁ y se cortan en un punto de la recta común.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "La traza H se halla cortando α₁ con β₁ dentro de la hoja. Para el segundo punto, usa dos horizontales de la misma cota.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q", "recta:s"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [1, 27, 42]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Une los dos puntos para obtener s. Mueve Q hasta un punto de s, aunque V quede fuera de la hoja.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q", "recta:s"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [1, 27, 42]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: Q está en α y en β, y las proyecciones Q′ y Q″ caen sobre las de la recta s.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:Q", "referencia:Q", "recta:s"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [1, 27, 42]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dejar la construcción porque V no cabe en la hoja. Con una horizontal de cada plano se halla otro punto de s sin salir del papel.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:Q",
+            "proyecciones:Q",
+            "recta:s"
+          ],
+          "sheet": [
+            "lt",
+            "trazas:α",
+            "trazas:β",
+            "proyecciones:Q",
+            "referencia:Q",
+            "error",
+            "recta:s"
+          ],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "Q": [1, 27, 42]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [1, 42],
+                    [-6.9, 70]
+                  ],
+                  "rotulo": "Error: no seguir hasta V"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    }
+  ]
+}

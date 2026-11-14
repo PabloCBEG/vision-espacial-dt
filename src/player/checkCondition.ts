@@ -1,6 +1,13 @@
 // Corrige los ejercicios de "mover los puntos hasta que se cumpla una condición"
 // (rectas y planos). Cada condición tiene su mensaje de acierto y su pista si no se cumple.
-import { createPlane, createPoint, distancePointToPlane, type Point } from '../geometry/index.ts';
+import {
+  createLine,
+  createPlane,
+  createPoint,
+  distancePointToLine,
+  distancePointToPlane,
+  type Point,
+} from '../geometry/index.ts';
 import { getPoint, type AppState } from '../state/index.ts';
 
 export type Condition =
@@ -11,7 +18,8 @@ export type Condition =
   | 'lineCrossesLT'
   | 'pointOnPlane'
   | 'planeContainsLT'
-  | 'planeParallelToLT';
+  | 'planeParallelToLT'
+  | 'pointOnIntersection';
 
 export interface ConditionResult {
   correct: boolean;
@@ -50,6 +58,10 @@ const MESSAGES: Record<Condition, { ok: string; hint: string }> = {
     ok: '¡Correcto! El plano contiene a la LT: sus dos trazas coinciden con ella.',
     hint: 'El plano todavía no pasa por la LT: sus trazas α₁ y α₂ deben coincidir con la LT.',
   },
+  pointOnIntersection: {
+    ok: '¡Correcto! El punto está a la vez en los dos objetos: es de su intersección.',
+    hint: 'El punto aún no está en los dos objetos. Tiene que estar en la recta y en el plano (o en los dos planos) a la vez.',
+  },
   planeParallelToLT: {
     ok: '¡Correcto! El plano es paralelo a la LT: sus trazas α₁ y α₂ son paralelas a la LT.',
     hint: 'Las trazas del plano todavía no son paralelas a la LT.',
@@ -61,6 +73,7 @@ function pointsOf(state: AppState, id: string): Point[] {
   const object = state.objects.find((o) => o.id === id);
   if (!object) return [];
   if (object.kind === 'point') return [getPoint(state, id)];
+  if (object.kind === 'meet') return [];
   return object.through.map((p) => getPoint(state, p));
 }
 
@@ -95,6 +108,24 @@ function evaluate(condition: Condition, objects: readonly string[], state: AppSt
       } catch {
         return false;
       }
+    }
+    case 'pointOnIntersection': {
+      // El punto (primer objeto) está en cada uno de los otros dos, sean rectas o planos.
+      if (!A || objects.length < 3) return false;
+      return objects.slice(1).every((id) => {
+        const part = pointsOf(state, id);
+        try {
+          if (part.length === 2 && part[0] && part[1]) {
+            return distancePointToLine(A, createLine(part[0], part[1])) <= TOLERANCE_MM;
+          }
+          if (part.length === 3 && part[0] && part[1] && part[2]) {
+            return distancePointToPlane(A, createPlane(part[0], part[1], part[2])) <= TOLERANCE_MM;
+          }
+        } catch {
+          return false;
+        }
+        return false;
+      });
     }
     case 'planeContainsLT':
     case 'planeParallelToLT': {

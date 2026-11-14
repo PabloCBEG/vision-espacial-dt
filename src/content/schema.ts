@@ -28,6 +28,13 @@ const SceneObjectSchema = z.discriminatedUnion('kind', [
     id: z.string().min(1),
     through: z.tuple([PointName, PointName, PointName]),
   }),
+  /** Intersección de dos planos o de una recta y un plano: define puntos derivados. */
+  z.object({
+    kind: z.literal('meet'),
+    id: z.string().min(1),
+    of: z.tuple([z.string().min(1), z.string().min(1)]),
+    points: z.array(PointName).min(1).max(2),
+  }),
 ]);
 
 /**
@@ -175,6 +182,7 @@ const ConditionExercise = z.object({
     'pointOnPlane',
     'planeContainsLT',
     'planeParallelToLT',
+    'pointOnIntersection',
   ]),
   /** Objetos que intervienen: la recta, o el punto y el plano. */
   objects: z.array(z.string()).min(1),

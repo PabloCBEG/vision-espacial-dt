@@ -2940,6 +2940,125 @@ Fichero: `src/content/lessons/24-transformaciones.json` · DT I · nivel Inicial
    - [ ] *Solución, paso 7 · 5. Comprobación:* Comprobación: el triángulo final tiene lados paralelos a los del original y miden el doble.
    - [ ] *Solución, paso 8 · 6. Error típico:* **[REVISAR]** Error típico: medir la razón desde el vértice y no desde el centro O. B′ queda mal alineado con O y toda la figura final se desplaza.
 
+### I-09 · Intersecciones: lo común a los dos objetos
+
+Fichero: `src/content/lessons/25-intersecciones.json` · DT I · nivel Intermedio
+
+- [ ] **Saber básico:** Sistema diédrico: intersección de dos planos y de una recta con un plano. Lo común a los dos objetos, con los planos proyectantes como método.
+
+**Pasos**
+
+1. [ ] Dos planos que no son paralelos se cortan. Su intersección es una recta.
+2. [ ] La recta de intersección s es lo común a los dos planos: sus puntos están en α y en β a la vez.
+3. [ ] En la lámina, las trazas del mismo nombre se cortan: α₁ con β₁ en H, y α₂ con β₂ en V. H y V están en los dos planos.
+4. [ ] H y V son las trazas de la recta s. Uniendo H′ con V′ y H″ con V″ salen sus dos proyecciones.
+5. [ ] Una recta que no es paralela a un plano lo atraviesa en un solo punto, I: el único punto común a la recta y al plano.
+6. [ ] Para hallar I se mete la recta r en un plano auxiliar proyectante δ, perpendicular al PH. La traza horizontal de δ coincide con r′.
+7. [ ] El plano δ corta a α en la recta u, y u se halla como cualquier intersección de dos planos. Como r y u están en δ, se cortan: ese punto es I.
+8. [ ] Si los dos planos son paralelos no hay intersección: no existe una recta común. Sus trazas del mismo nombre también son paralelas.
+
+**Ejercicios**
+
+1. [ ] *cumplir una condición, dificultad 1*: El plano α es horizontal y la recta r lo atraviesa. Mueve Q hasta el punto donde r corta a α.
+   - [ ] *Pista 1:* La intersección es lo común a la recta y al plano: un punto que está en los dos a la vez.
+   - [ ] *Pista 2:* Un plano horizontal tiene todos sus puntos a la misma cota, así que I tiene esa cota y está en r.
+   - [ ] *Pista 3:* En la lámina, busca donde r″ corta a la traza α₂ y baja por la referencia hasta r′.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es horizontal y la recta r lo atraviesa. Buscamos el punto I donde se cortan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La intersección es lo común a los dos: I está en r y en α. Como α es horizontal, todos sus puntos están a la misma cota.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que r avanza hasta tocar el plano α: lo toca en un solo punto, I.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, r″ corta a la traza α₂ en I″. Esa es la cota de I.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Baja por la línea de referencia hasta r′: ahí está I′. Mueve Q hasta que coincida con I.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: I′ está en r′, I″ está en r″ y I″ está en la traza α₂.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: marcar I″ sobre α₂ y poner I′ fuera de r′. Un punto de r tiene que estar en r en las dos proyecciones.
+2. [ ] *cumplir una condición, dificultad 1*: El plano α es frontal y la recta r lo atraviesa. Mueve Q hasta el punto donde r corta a α.
+   - [ ] *Pista 1:* Un punto de la intersección está en la recta y en el plano a la vez.
+   - [ ] *Pista 2:* Un plano frontal tiene todos sus puntos al mismo alejamiento: I tiene ese alejamiento y está en r.
+   - [ ] *Pista 3:* En la lámina, busca donde r′ corta a la traza α₁ y sube por la referencia hasta r″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es frontal y la recta r lo atraviesa. Buscamos el punto I donde se cortan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* I está en r y en α. Como α es frontal, todos sus puntos tienen el mismo alejamiento.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que r se acerca al plano α hasta atravesarlo: lo hace en un solo punto, I.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, r′ corta a la traza α₁ en I′. Ese es el alejamiento de I.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Sube por la línea de referencia hasta r″: ahí está I″. Mueve Q hasta que coincida con I.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: I′ está en r′ y en α₁, e I″ está en r″.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dar solo I′ sobre α₁ y poner I″ a ojo. Las dos proyecciones de I tienen que estar sobre las de r.
+3. [ ] *cumplir una condición, dificultad 1*: El plano α es horizontal y el plano β es frontal. Mueve Q hasta un punto de la recta en que se cortan.
+   - [ ] *Pista 1:* Un punto de la intersección está en los dos planos a la vez.
+   - [ ] *Pista 2:* El plano horizontal fija la cota y el frontal fija el alejamiento: Q debe tener las dos.
+   - [ ] *Pista 3:* La cota se lee en α₂ y el alejamiento en β₁; la x puede ser cualquiera.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es horizontal y el plano β es frontal. Buscamos un punto de su recta común.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un punto de la intersección está en los dos planos. En α tiene una cota fija y en β un alejamiento fijo.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina los dos planos cortándose: la recta común queda paralela a la LT, porque no tiene ninguna dirección que se aleje o suba.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La cota de α está en su traza α₂ y el alejamiento de β en su traza β₁. No se cortan: ambas son paralelas a la LT.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Por eso la recta común es paralela a la LT y no tiene trazas. Mueve Q a un punto con esa cota y ese alejamiento.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q está en α y en β, y su posición a lo largo de la LT no importa.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dar por imposible la intersección porque las trazas no se cortan. Al ser paralelas a la LT, la recta común es paralela a la LT.
+4. [ ] *cumplir una condición, dificultad 2*: El plano α es perpendicular al PH. Mueve Q hasta el punto donde la recta r lo atraviesa.
+   - [ ] *Pista 1:* Un plano perpendicular al PH se ve de canto en la planta: todos sus puntos caen sobre su traza α₁.
+   - [ ] *Pista 2:* Entonces I′ está en α₁ y en r′, y se lee sin más construcción.
+   - [ ] *Pista 3:* Corta r′ con α₁ para hallar I′ y sube por la referencia hasta r″ para hallar I″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es perpendicular al PH y la recta r lo atraviesa. Buscamos el punto I donde se cortan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano proyectante se ve de canto: su traza α₁ contiene la proyección horizontal de todos sus puntos. Así I′ está en α₁ y en r′.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que miras desde arriba: el plano es una línea y la recta la cruza en un punto, que es I′.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, r′ corta a α₁ en I′. No hace falta ninguna construcción más.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Sube por la línea de referencia hasta r″ y marca I″. Mueve Q hasta que coincida con I.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: I′ está en α₁ y en r′, e I″ está en r″.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: tomar como plano proyectante uno que no contiene a r, con la traza desplazada. Con ese plano auxiliar, la recta u no pasa por I.
+5. [ ] *cumplir una condición, dificultad 2*: El plano α es oblicuo y la recta r lo atraviesa. Mueve Q hasta el punto de intersección, usando un plano proyectante que contenga a r.
+   - [ ] *Pista 1:* Una recta oblicua con un plano oblicuo no da la intersección a simple vista.
+   - [ ] *Pista 2:* Se mete r en un plano proyectante δ, que se ve de canto, y se halla su intersección u con α.
+   - [ ] *Pista 3:* La traza δ₁ coincide con r′; halla u y corta u con r.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es oblicuo y la recta r lo atraviesa. Hay que hallar el punto I donde se cortan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La intersección de una recta con un plano se reduce a la de dos planos: se mete r en un plano proyectante δ y se corta δ con α.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un plano vertical que contiene a r y que corta a α a lo largo de una recta u. La recta r y la recta u están en el mismo plano δ.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El plano δ es proyectante: su traza horizontal δ₁ coincide con r′. Se halla la recta u de intersección de δ con α.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta u y la recta r están en δ y se cortan en I. Mueve Q hasta ese punto.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: I está en r y en u, y u está en α, luego I está en r y en α.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: elegir un plano auxiliar que no contiene a r, o que no es proyectante. Su intersección con α no pasa por I.
+6. [ ] *cumplir una condición, dificultad 2*: Los planos α y β se cortan en una recta. Mueve Q hasta un punto de esa recta.
+   - [ ] *Pista 1:* La recta común tiene sus trazas en las trazas de los dos planos.
+   - [ ] *Pista 2:* Corta las trazas del mismo nombre: α₁ con β₁ para H, y α₂ con β₂ para V.
+   - [ ] *Pista 3:* Une H y V: la recta s es la intersección. Mueve Q hasta que esté sobre s en las dos proyecciones.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Dos planos α y β, no paralelos. Buscamos puntos de la recta en que se cortan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Lo común a los dos planos es su recta de intersección. Sus trazas son los cortes de las trazas del mismo nombre.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina los dos planos como hojas que se cruzan: la recta de corte atraviesa el PH en H y el PV en V.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Corta α₁ con β₁ para hallar H, y α₂ con β₂ para hallar V.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Une H′ con V′ y H″ con V″: salen las proyecciones de s. Mueve Q hasta que esté sobre s en las dos.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q está en α y en β, y Q′ y Q″ están en s′ y s″.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: cortar trazas de distinto nombre, como α₁ con β₂. Esos dos puntos no están en los dos planos y no son trazas de s.
+7. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: la recta r atraviesa el plano α por el segundo cuadrante. Mueve Q hasta el punto de intersección.
+   - [ ] *Pista 1:* En el segundo cuadrante, la proyección horizontal queda por encima de la LT, como la vertical.
+   - [ ] *Pista 2:* I está en r y en α: se halla con un plano proyectante que contenga a r.
+   - [ ] *Pista 3:* Mete r en δ, halla u = δ ∩ α y corta u con r; comprueba las dos proyecciones.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r atraviesa el plano α en el segundo cuadrante. Buscamos el punto I donde se cortan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* El punto I está en r y en α. Se halla con un plano proyectante δ que contenga a r, sin importar el cuadrante.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina el plano vertical δ que pasa por r: corta a α en una recta u, y r y u se cruzan en I.
+   - [ ] *Solución, paso 4 · 4. El trazado:* El plano δ tiene su traza δ₁ sobre r′. Halla la recta u de intersección de δ con α.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Corta r con u para hallar I; en el segundo cuadrante, I′ queda por encima de la LT. Mueve Q hasta I.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: I′ está en r′ y en u′, e I″ está en r″ y en u″.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dar I′ en r′ pero colocar I″ a ojo. Aunque I′ quede por encima de la LT, I″ también debe estar sobre r″.
+8. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: los planos α y β están dados por sus trazas. Mueve Q hasta un punto de su recta de intersección.
+   - [ ] *Pista 1:* Cada plano está definido por sus trazas, que se cortan en la LT.
+   - [ ] *Pista 2:* La recta común tiene sus trazas H y V en los cortes de las trazas del mismo nombre.
+   - [ ] *Pista 3:* Halla H = α₁ ∩ β₁ y V = α₂ ∩ β₂, únelos y coloca Q sobre s en las dos proyecciones.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Los planos α y β se dan por sus trazas. Buscamos puntos de la recta s en que se cortan.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta común está formada por los puntos que están en α y en β. Sus trazas son los cortes de las trazas del mismo nombre.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que α₁ y β₁ se cortan en el PH y α₂ y β₂ en el PV: esos dos puntos están en los dos planos.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Halla H cortando α₁ con β₁ en la planta, y V cortando α₂ con β₂ en el alzado.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Une H′ con V′ y H″ con V″ para dibujar s. Mueve Q hasta un punto de s.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q está en α y en β, y Q′ y Q″ caen sobre s′ y s″ en la misma línea de referencia.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: cortar trazas de distinto nombre, como α₁ con β₂. El punto que sale no es traza de la recta común.
+9. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: las trazas verticales de α y β se cortan fuera de la hoja. Mueve Q hasta un punto de la recta común.
+   - [ ] *Pista 1:* Si una traza queda fuera de la hoja, no hace falta: hay otras rectas de los planos.
+   - [ ] *Pista 2:* Las rectas horizontales de los planos son paralelas a sus trazas α₁ y β₁.
+   - [ ] *Pista 3:* Corta dos horizontales de la misma cota, una de cada plano: da un punto de la recta común, sin salir de la hoja.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Los planos α y β se cortan, pero sus trazas verticales lo hacen fuera de la hoja. Buscamos un punto de la recta común.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La recta común sale de cualquier punto que esté en los dos planos. Si falta una traza, basta otra recta de cada plano.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una horizontal de cada plano a la misma cota: son paralelas a las trazas α₁ y β₁ y se cortan en un punto de la recta común.
+   - [ ] *Solución, paso 4 · 4. El trazado:* La traza H se halla cortando α₁ con β₁ dentro de la hoja. Para el segundo punto, usa dos horizontales de la misma cota.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Une los dos puntos para obtener s. Mueve Q hasta un punto de s, aunque V quede fuera de la hoja.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q está en α y en β, y las proyecciones Q′ y Q″ caen sobre las de la recta s.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dejar la construcción porque V no cabe en la hoja. Con una horizontal de cada plano se halla otro punto de s sin salir del papel.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos
@@ -3460,6 +3579,8 @@ Fichero: `src/player/checkCondition.ts`
 - [ ] El punto aún está fuera del plano. Un punto está en un plano si está en una recta del plano.
 - [ ] ¡Correcto! El plano contiene a la LT: sus dos trazas coinciden con ella.
 - [ ] El plano todavía no pasa por la LT: sus trazas α₁ y α₂ deben coincidir con la LT.
+- [ ] ¡Correcto! El punto está a la vez en los dos objetos: es de su intersección.
+- [ ] El punto aún no está en los dos objetos. Tiene que estar en la recta y en el plano (o en los dos planos) a la vez.
 - [ ] ¡Correcto! El plano es paralelo a la LT: sus trazas α₁ y α₂ son paralelas a la LT.
 - [ ] Las trazas del plano todavía no son paralelas a la LT.
 

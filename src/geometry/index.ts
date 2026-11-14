@@ -7,3 +7,4 @@ export * from './rotation.ts';
 export * from './lineAnalysis.ts';
 export * from './planeAnalysis.ts';
 export * from './profile.ts';
+export * from './intersection.ts';

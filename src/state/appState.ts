@@ -1,5 +1,6 @@
 // Estado único de la aplicación. El 3D, la lámina y los controles leen y escriben solo aquí.
 import { createPoint, type Point } from '../geometry/index.ts';
+import { deriveMeets } from './derive.ts';
 import { Store } from './store.ts';
 
 /** Nombre de un punto movible: P, A, B, Q... */
@@ -13,6 +14,17 @@ export type SceneObject =
       readonly kind: 'plane';
       readonly id: string;
       readonly through: readonly [PointId, PointId, PointId];
+    }
+  /**
+   * Intersección de dos planos, o de una recta y un plano: define los puntos derivados `points`
+   * (dos de la recta común, o el punto en que la recta atraviesa el plano). Se recalculan solos
+   * cuando se mueve cualquier punto del que dependen.
+   */
+  | {
+      readonly kind: 'meet';
+      readonly id: string;
+      readonly of: readonly [string, string];
+      readonly points: readonly PointId[];
     };
 
 export interface AppState {
@@ -92,8 +104,15 @@ export function setFoldAngle(store: AppStore, angleDeg: number): void {
 
 export type AppStore = Store<AppState>;
 
+/** Almacén que, tras cada cambio, recalcula los puntos derivados de las intersecciones. */
+class SceneStore extends Store<AppState> {
+  override set(next: AppState): void {
+    super.set(deriveMeets(next));
+  }
+}
+
 export function createAppStore(initial: Partial<AppState> = {}): AppStore {
-  return new Store<AppState>({ ...INITIAL_STATE, ...initial });
+  return new SceneStore(deriveMeets({ ...INITIAL_STATE, ...initial }));
 }
 
 /** Redondea a 1 mm y limita a ±60 mm. */

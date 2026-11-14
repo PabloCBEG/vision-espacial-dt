@@ -47,6 +47,7 @@ const COMPLETE_LESSONS: string[] = [
   'triangulos-y-cuadrilateros',
   'poligonos-regulares',
   'transformaciones',
+  'intersecciones',
 ];
 
 const lessonNamed = (id: string): Lesson => {

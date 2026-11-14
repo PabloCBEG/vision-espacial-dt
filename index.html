@@ -217,7 +217,15 @@
               <button type="button" data-scene="recta" aria-pressed="false">Recta</button>
               <button type="button" data-scene="plano" aria-pressed="false">Plano</button>
             </div>
-            <div id="scene-notices" class="scene-notices" aria-live="polite" hidden></div>
+            <div
+              id="scene-notices"
+              class="scene-notices"
+              role="region"
+              aria-label="Avisos de la escena"
+              tabindex="0"
+              aria-live="polite"
+              hidden
+            ></div>
           </div>
           <div id="engine-controls" class="engine-controls"></div>
           <p id="point-description" class="visually-hidden" aria-live="polite"></p>

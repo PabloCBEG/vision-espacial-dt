@@ -42,7 +42,7 @@ export function bindFreeAnalytic(store: AppStore, isActive: () => boolean): () =
             },
           ],
         });
-      } else {
+      } else if (o.kind === 'plane') {
         const alpha = planeOf(state, o.through);
         if (!alpha) continue;
         const { normal: v } = alpha;

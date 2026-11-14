@@ -1249,6 +1249,9 @@ body:not([data-screen='free']) .free-scenes {
   gap: var(--space-xs);
   min-width: min(100%, 18rem);
   margin: var(--space-s) var(--space-m) 0;
+  /* Con varios planos y rectas salen muchos avisos: desplazables, para no aplastar el 3D y la lámina. */
+  max-height: 9.5rem;
+  overflow-y: auto;
 }
 
 .notice {

@@ -173,7 +173,7 @@ export const CATALOG: readonly Topic[] = [
     pauExercise: 2,
     pauNote: 'Ejercicio 2',
     scene: 'Dos planos que se cortan y la recta común que aparece',
-    status: 'proximamente',
+    status: 'disponible',
   }),
   topic({
     code: 'I-10',
