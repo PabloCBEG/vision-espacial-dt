@@ -15,7 +15,7 @@ export function bindSceneNotices(box: HTMLElement, store: AppStore): void {
   const sync = (): void => {
     const state = store.get();
     // En los ejercicios de colocar un punto no se dan pistas.
-    const notices = state.exercise ? [] : sceneNotices(state);
+    const notices = state.exercise || state.quiet ? [] : sceneNotices(state);
     const key = notices.map((n) => `${n.kind}${n.text}`).join('|');
     if (key === last) return;
     last = key;

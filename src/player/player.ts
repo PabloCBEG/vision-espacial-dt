@@ -102,6 +102,7 @@ export class Player {
       exercise: null,
       engines: {},
       locked: false,
+      quiet: false,
     });
     this.goTo(0);
   }
@@ -190,6 +191,7 @@ export class Player {
       step,
       solutionPoints(this.lesson, exercise, this.solutionIndex),
       solutionEngines(this.lesson, exercise, this.solutionIndex),
+      exercise.kind === 'condition' && !exercise.avisos,
     );
     this.onChange(page);
   }
@@ -230,6 +232,7 @@ export class Player {
     step: Step,
     points: Record<string, Point>,
     engines: Record<string, unknown>,
+    quiet = false,
   ): void {
     const state = this.store.get();
     this.store.set({
@@ -242,6 +245,7 @@ export class Player {
       exercise: null,
       engines,
       locked: false,
+      quiet,
     });
     this.camera?.setView(step.camera);
     this.animateTo(points, step.foldAngle);
@@ -260,6 +264,7 @@ export class Player {
       engines: mergeEngines(this.lesson.initialScene.engines, exercise.engines),
       // En los ejercicios de medida, los puntos no se mueven: la respuesta depende de ellos.
       locked: exercise.kind === 'value',
+      quiet: exercise.kind === 'condition' && !exercise.avisos,
     };
     // Puntos de partida: los de la escena inicial con los cambios del propio ejercicio.
     const points = this.pointsAtStep(-1);

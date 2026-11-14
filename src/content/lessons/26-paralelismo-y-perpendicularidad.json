@@ -218,6 +218,7 @@
         "T": [10, 30, 20]
       },
       "activePoint": "T",
+      "avisos": false,
       "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
       "sheet": ["lt", "recta:r", "recta:t", "proyecciones:T", "referencia:T"],
       "hints": [
@@ -331,6 +332,7 @@
         "F": [0, 0, 40]
       },
       "activePoint": "F",
+      "avisos": false,
       "show3d": [
         "planos",
         "plano:α",
@@ -507,6 +509,7 @@
         "T": [20, 40, 50]
       },
       "activePoint": "T",
+      "avisos": false,
       "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
       "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
       "hints": [
@@ -620,6 +623,7 @@
         "F": [0, 40, 40]
       },
       "activePoint": "F",
+      "avisos": false,
       "show3d": [
         "planos",
         "plano:α",
@@ -796,6 +800,7 @@
         "T": [10, 40, 10]
       },
       "activePoint": "T",
+      "avisos": false,
       "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
       "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
       "hints": [
@@ -908,6 +913,7 @@
         "T": [0, 30, 30]
       },
       "activePoint": "T",
+      "avisos": false,
       "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
       "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
       "hints": [
@@ -1020,6 +1026,7 @@
         "T": [30, 10, 40]
       },
       "activePoint": "T",
+      "avisos": false,
       "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
       "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
       "hints": [
@@ -1132,6 +1139,7 @@
         "F": [30, 10, 40]
       },
       "activePoint": "F",
+      "avisos": false,
       "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
       "sheet": ["lt", "trazas:β", "recta:r", "proyecciones:F", "referencia:F"],
       "hints": [
@@ -1245,6 +1253,7 @@
         "F": [20, 10, 45]
       },
       "activePoint": "F",
+      "avisos": false,
       "show3d": [
         "planos",
         "plano:α",

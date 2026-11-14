@@ -59,6 +59,8 @@ export interface AppState {
   readonly engines: Readonly<Record<string, unknown>>;
   /** Puntos fijos: en los ejercicios de medida no se pueden mover (cambiaría la respuesta). */
   readonly locked: boolean;
+  /** Sin avisos de pertenencia: en algunos ejercicios no vienen a cuento (o delatarían la respuesta). */
+  readonly quiet: boolean;
 }
 
 export type HelpLevel = 'with3d' | 'hint' | 'only2d';
@@ -95,6 +97,7 @@ export const INITIAL_STATE: AppState = {
   exercise: null,
   engines: {},
   locked: false,
+  quiet: false,
 };
 
 /** Limita el ángulo de abatimiento a [0°, 90°]. */
