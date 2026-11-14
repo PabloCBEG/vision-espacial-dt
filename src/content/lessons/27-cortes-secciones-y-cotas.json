@@ -1,0 +1,2008 @@
+{
+  "id": "cortes-secciones-y-cotas",
+  "order": 16,
+  "title": "Cortes, secciones y cotas: cortar y quitar lo de delante",
+  "topic": "II-12",
+  "stage": "DT II",
+  "saberBasico": "Normalización: cortes (total, al medio y quebrado), secciones abatidas y acotación de piezas. Cortar con un plano, quitar lo que queda hacia el observador y dibujar lo que queda.",
+  "level": "Avanzado",
+  "initialScene": {
+    "points": {
+      "P": [0, 0, 0]
+    },
+    "objects": [],
+    "activePoint": "P",
+    "engines": {
+      "normalizacion": {
+        "pieza": "pieza-chaflanes"
+      }
+    }
+  },
+  "steps": [
+    {
+      "narration": "Para ver el interior de una pieza se la corta con un plano imaginario y se quita lo que queda entre el plano y el observador. El plano de corte pasa, por ejemplo, por el eje de un agujero.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "pieza-chaflanes",
+          "vistas": ["planta"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 25,
+            "quitar": 0
+          }
+        }
+      }
+    },
+    {
+      "narration": "Al quitar la parte de delante queda a la vista el interior. En la planta, un trazo grueso en los extremos marca dónde pasa el plano y la letra A indica hacia dónde se mira.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "pieza-chaflanes",
+          "vistas": ["planta"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 25,
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "El alzado se dibuja en corte total, A-A. Las caras que ha tocado el plano se rayan con líneas finas a 45°.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "pieza-chaflanes",
+          "vistas": ["alzado", "planta"],
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 25,
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "En un corte no se dibujan aristas ocultas: lo que quedaba detrás de la parte quitada ya se ve, y lo demás no hace falta. En la planta, que no está cortada, sí se dibujan.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "pieza-chaflanes",
+          "vistas": ["alzado", "planta"],
+          "ocultas": true,
+          "corte": {
+            "tipo": "total",
+            "vista": "alzado",
+            "en": 25,
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "En un corte al medio solo se quita un cuarto de la pieza. Así una mitad del dibujo enseña el exterior y la otra, el interior, separadas por un eje.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "pieza-chaflanes",
+          "vistas": ["alzado", "planta"],
+          "corte": {
+            "tipo": "medio",
+            "vista": "alzado",
+            "en": 25,
+            "quitar": 1
+          }
+        }
+      }
+    },
+    {
+      "narration": "En un corte quebrado el plano se desplaza para pasar por detalles que están a distinta profundidad. El cambio de plano se dibuja como si no existiera: no lleva ninguna línea.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "perspective",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "placa-con-taladros-desfasados",
+          "vistas": ["planta"],
+          "corte": {
+            "tipo": "quebrado",
+            "vista": "alzado",
+            "en": 20,
+            "quitar": 1,
+            "en2": 40,
+            "cambio": 0
+          }
+        }
+      }
+    },
+    {
+      "narration": "La sección abatida gira 90° el corte de un plano perpendicular a la pieza y lo dibuja sobre la propia vista. Se rodea con trazo fino continuo y se raya.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "cuna",
+          "vistas": ["alzado"],
+          "ejes": false,
+          "seccionAbatida": {
+            "vista": "alzado",
+            "eje": "x",
+            "en": 0
+          }
+        }
+      }
+    },
+    {
+      "narration": "Para fabricar la pieza hacen falta sus medidas. Cada cota se pone una sola vez, en la vista donde mejor se ve, y fuera del dibujo.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "highlight": [],
+      "camera": "front",
+      "foldAngle": 0,
+      "engines": {
+        "normalizacion": {
+          "pieza": "pieza-chaflanes",
+          "vistas": ["alzado", "planta"],
+          "ejes": false,
+          "cotas": [
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-25, 40, 0],
+                [25, 40, 0]
+              ],
+              "direccion": "h",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [-25, 40, 0],
+                [-25, 40, 30]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            },
+            {
+              "tipo": "lineal",
+              "vista": "alzado",
+              "de": [
+                [25, 40, 0],
+                [25, 40, 10]
+              ],
+              "direccion": "v",
+              "desplazamiento": 8
+            },
+            {
+              "tipo": "lineal",
+              "vista": "planta",
+              "de": [
+                [-25, 10, 10],
+                [-25, 40, 10]
+              ],
+              "direccion": "v",
+              "desplazamiento": -10
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "El plano A-A pasa por los ejes de los dos taladros de la placa. ¿Cuál de estos dibujos es el alzado en corte total?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "placa-taladrada",
+          "vistas": ["planta"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 33,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 14,
+                "quitar": 1
+              }
+            ],
+            "correcta": 0
+          }
+        }
+      },
+      "hints": [
+        "El plano de corte tiene que pasar por el eje de los taladros para que se vean cortados.",
+        "En el corte total se quita toda la parte de delante del plano y se rayan las caras cortadas.",
+        "Elige el dibujo con los dos taladros abiertos por la mitad y sin aristas ocultas."
+      ],
+      "solution": [
+        {
+          "narration": "Una placa con dos taladros y un plano A-A que pasa por sus ejes. Hay que elegir el alzado en corte total.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-taladrada",
+              "vistas": ["planta"]
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Se quita la parte de delante del plano de corte. Como el plano pasa por los ejes, los taladros quedan abiertos por la mitad.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 0
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que el plano atraviesa la placa y retiras lo de delante: se ve la pared interior de cada taladro.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Dibuja el contorno de lo que queda: las aristas visibles detrás del plano y el contorno de las caras cortadas.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Raya las caras cortadas a 45° y elige el dibujo que coincide: con los dos taladros cortados por su eje.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [0]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: los taladros aparecen cortados por la mitad y el rayado está solo en el material que ha tocado el plano.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [0]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dibujar aristas ocultas en el corte. Lo que no se ve se ha quitado, y en los cortes no se dibujan.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [0]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "El plano A-A pasa por el eje del taladro de la escuadra. ¿Cuál de estos dibujos es el alzado en corte total?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "escuadra-taladrada",
+          "vistas": ["planta"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 15,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 35,
+                "quitar": 1
+              }
+            ],
+            "correcta": 1
+          }
+        }
+      },
+      "hints": [
+        "El plano de corte debe pasar por el eje del taladro para abrirlo por la mitad.",
+        "En un corte total se quita toda la parte de delante y se rayan las caras que toca el plano.",
+        "El hueco del taladro no se raya: elige el dibujo con el rayado solo en el material."
+      ],
+      "solution": [
+        {
+          "narration": "Una escuadra con un taladro y un plano A-A por su eje. Hay que elegir el alzado en corte total.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["planta"]
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Se quita lo que queda delante del plano y se dibuja el interior. El taladro, cortado por su eje, deja ver su pared.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 0
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que serras la escuadra por el eje del taladro: la mitad de delante se retira y la de detrás se ve por dentro.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Dibuja el contorno de la pieza detrás del plano y el del taladro cortado.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Raya solo el material cortado, a 45°. El hueco del taladro queda en blanco.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [1]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: el taladro se ve abierto por la mitad, con su hueco sin rayar y con el rayado en las dos partes de la base.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [1]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: rayar también el hueco del taladro. El rayado cubre solo el material que ha cortado el plano; el hueco queda en blanco.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [1]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 1,
+      "prompt": "El plano A-A es horizontal y pasa por el eje del agujero ciego del taco. ¿Cuál de estos dibujos es la planta en corte total?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "taco-agujero-ciego",
+          "vistas": ["alzado"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 22,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 6,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 14,
+                "quitar": 1
+              }
+            ],
+            "correcta": 2
+          }
+        }
+      },
+      "hints": [
+        "Un plano horizontal pasa por el eje del agujero cuando está a su misma cota.",
+        "En el corte se quita la parte que queda por encima del plano, entre él y el observador.",
+        "Elige el dibujo donde se ve el agujero ciego cortado por la mitad."
+      ],
+      "solution": [
+        {
+          "narration": "Un taco con un agujero ciego horizontal y un plano A-A también horizontal por su eje. Hay que elegir la planta en corte total.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "taco-agujero-ciego",
+              "vistas": ["alzado"]
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "En un corte horizontal se quita la parte de arriba, la que queda entre el plano y el observador. El agujero ciego queda abierto.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "taco-agujero-ciego",
+              "vistas": ["alzado"],
+              "corte": {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 14,
+                "quitar": 0
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que levantas la tapa del taco por el plano horizontal: queda a la vista el fondo del agujero ciego.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "taco-agujero-ciego",
+              "vistas": ["alzado"],
+              "corte": {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 14,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Dibuja el contorno de lo que queda debajo del plano y el contorno del agujero cortado.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "taco-agujero-ciego",
+              "vistas": ["alzado"],
+              "corte": {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 14,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Raya el material cortado a 45°. El agujero ciego, que no es material, queda sin rayar.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "taco-agujero-ciego",
+              "vistas": ["alzado"],
+              "corte": {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 14,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: el agujero ciego se ve entero, con su fondo, y el rayado queda a ambos lados.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "taco-agujero-ciego",
+              "vistas": ["alzado"],
+              "corte": {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 14,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: quitar la parte equivocada, la de debajo del plano. El observador mira desde arriba y lo que se retira es lo que queda entre él y el plano.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "taco-agujero-ciego",
+              "vistas": ["alzado"],
+              "corte": {
+                "tipo": "total",
+                "vista": "planta",
+                "en": 14,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Dibuja el alzado de la brida en corte al medio por el plano A-A, que pasa por los ejes de sus taladros. ¿Cuál de estos dibujos es el correcto?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "brida",
+          "vistas": ["planta"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 18,
+                "quitar": 1
+              },
+              {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            ],
+            "correcta": 2
+          }
+        }
+      },
+      "hints": [
+        "En un corte al medio solo se quita un cuarto de la pieza, y el dibujo mezcla exterior e interior.",
+        "El plano debe pasar por el eje de los taladros, no por una zona maciza.",
+        "Elige el dibujo con media vista exterior y media en corte, separadas por un eje."
+      ],
+      "solution": [
+        {
+          "narration": "Una brida con un buje y tres taladros, y un plano A-A por sus ejes. Hay que elegir el alzado en corte al medio.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "brida",
+              "vistas": ["planta"]
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "En un corte al medio solo se retira un cuarto. En el dibujo, una mitad se ve por fuera y la otra por dentro, y las separa un eje.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "brida",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 0
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina quitar solo un cuarto de la brida: queda a la vista el interior de un lado y el exterior del otro.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "brida",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Dibuja la mitad exterior con su contorno y la mitad cortada con el interior de los taladros.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "brida",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Raya solo la mitad cortada, a 45°, y pon un eje de simetría donde se separan las dos mitades.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "brida",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: media vista es exterior y media es corte, con el rayado solo en la parte cortada.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "brida",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: quitar la mitad en vez de un cuarto, como en un corte total. El corte al medio conserva media vista exterior.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "brida",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "medio",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "Marca las cotas necesarias para fabricar esta escuadra con un taladro: ni una más ni una menos.",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "escuadra-taladrada",
+          "vistas": ["alzado", "planta"],
+          "ejes": false,
+          "ejercicio": {
+            "tipo": "cotas",
+            "candidatas": [
+              {
+                "tipo": "lineal",
+                "vista": "alzado",
+                "de": [
+                  [-25, 40, 0],
+                  [25, 40, 0]
+                ],
+                "direccion": "h",
+                "desplazamiento": -10
+              },
+              {
+                "tipo": "lineal",
+                "vista": "alzado",
+                "de": [
+                  [-25, 40, 0],
+                  [-25, 40, 34]
+                ],
+                "direccion": "v",
+                "desplazamiento": -10
+              },
+              {
+                "tipo": "lineal",
+                "vista": "alzado",
+                "de": [
+                  [25, 40, 0],
+                  [25, 40, 10]
+                ],
+                "direccion": "v",
+                "desplazamiento": 8
+              },
+              {
+                "tipo": "lineal",
+                "vista": "alzado",
+                "de": [
+                  [-25, 40, 34],
+                  [-13, 40, 34]
+                ],
+                "direccion": "h",
+                "desplazamiento": 6
+              },
+              {
+                "tipo": "diametro",
+                "vista": "planta",
+                "centro": [8, 25, 10],
+                "radio": 6,
+                "angulo": 45
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-25, 25, 10],
+                  [8, 25, 10]
+                ],
+                "direccion": "h",
+                "desplazamiento": 8
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-25, 10, 10],
+                  [-25, 40, 10]
+                ],
+                "direccion": "v",
+                "desplazamiento": -10
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-25, 40, 10],
+                  [25, 40, 10]
+                ],
+                "direccion": "h",
+                "desplazamiento": -8
+              },
+              {
+                "tipo": "lineal",
+                "vista": "alzado",
+                "de": [
+                  [-25, 40, 10],
+                  [-25, 40, 34]
+                ],
+                "direccion": "v",
+                "desplazamiento": -20
+              }
+            ],
+            "necesarias": [0, 1, 2, 3, 4, 5, 6]
+          }
+        }
+      },
+      "hints": [
+        "Cada medida se acota una sola vez, en la vista donde mejor se ve.",
+        "Una cota que se puede calcular con otras dos sobra, y una medida que nadie da falta.",
+        "Cuenta las medidas de la base, del montante y del taladro, y descarta las que se repiten."
+      ],
+      "solution": [
+        {
+          "narration": "Una escuadra con un taladro y varias cotas posibles. Hay que elegir solo las necesarias.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["alzado", "planta"],
+              "ejes": false
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Una cota es necesaria si da una medida que ninguna otra permite deducir. Se pone una sola vez.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["alzado", "planta"],
+              "ejes": false
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que fabricas la escuadra solo con las cotas que marques: no puede faltar ninguna medida ni sobrar ninguna.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["alzado", "planta"],
+              "ejes": false
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Elige las medidas de la base: ancho, fondo y espesor, cada una en la vista donde se ve completa.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["alzado", "planta"],
+              "ejes": false,
+              "eleccion": [0, 1, 2]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Añade las del montante, el diámetro del taladro y su posición. Deja fuera las que repiten otra medida o se deducen de ellas.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["alzado", "planta"],
+              "ejes": false,
+              "eleccion": [0, 1, 2, 3, 4, 5, 6]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: cada medida aparece una sola vez y ninguna se puede calcular con las demás.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["alzado", "planta"],
+              "ejes": false,
+              "eleccion": [0, 1, 2, 3, 4, 5, 6]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: repetir una cota en dos vistas, o acotar una medida que ya se deduce de otras. Cada medida, una sola vez.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escuadra-taladrada",
+              "vistas": ["alzado", "planta"],
+              "ejes": false,
+              "eleccion": [0, 1, 2, 3, 4, 5, 6]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 2,
+      "prompt": "El plano A-A es de perfil y pasa por el centro de la ranura del canal en V. ¿Cuál de estos dibujos es el perfil en corte total?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "canal-en-v",
+          "vistas": ["planta"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 15,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 25,
+                "quitar": 1
+              }
+            ],
+            "correcta": 0
+          }
+        }
+      },
+      "hints": [
+        "El plano de perfil es perpendicular a la LT, y el corte se mira desde la izquierda.",
+        "En un corte de perfil se quita la parte que queda a la izquierda del plano, entre él y el observador.",
+        "Elige el dibujo donde se ve la ranura cortada por su centro."
+      ],
+      "solution": [
+        {
+          "narration": "Un canal en V con una ranura central y un plano de perfil A-A por su centro. Hay que elegir el perfil en corte total.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "canal-en-v",
+              "vistas": ["planta"]
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "En un corte de perfil se quita la parte de la izquierda. El plano pasa por la ranura y deja ver su forma completa.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "canal-en-v",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 0
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que cortas el canal con un plano perpendicular a su longitud y retiras la mitad de la izquierda.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "canal-en-v",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Dibuja el contorno de la sección: el canal en V y, en su centro, la ranura cortada.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "canal-en-v",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Raya todo el material cortado, a 45°. La ranura y el canal, huecos, quedan en blanco.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "canal-en-v",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              },
+              "eleccion": [0]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: la sección muestra el canal y la ranura, con el rayado solo en el material.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "canal-en-v",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              },
+              "eleccion": [0]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dibujar aristas ocultas dentro del corte. Aunque el taladro quede detrás, en el corte no se dibujan líneas discontinuas.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "canal-en-v",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              },
+              "eleccion": [0]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: los dos taladros de la placa están a distinta profundidad. ¿Cuál de estos dibujos es el alzado en corte quebrado que pasa por los dos ejes?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "placa-con-taladros-desfasados",
+          "vistas": ["planta"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 30,
+                "quitar": 1
+              },
+              {
+                "tipo": "quebrado",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 1,
+                "en2": 40,
+                "cambio": 0
+              },
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 1
+              }
+            ],
+            "correcta": 1
+          }
+        }
+      },
+      "hints": [
+        "Un solo plano no puede pasar por dos ejes que están a distinta profundidad.",
+        "El corte quebrado cambia de plano en un punto para tocar cada eje.",
+        "Elige el dibujo con los dos taladros cortados por la mitad y sin línea en el cambio de plano."
+      ],
+      "solution": [
+        {
+          "narration": "Una placa con dos taladros que no están alineados en profundidad. Hay que elegir el alzado en corte quebrado por los dos ejes.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-con-taladros-desfasados",
+              "vistas": ["planta"]
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "Un corte quebrado usa dos planos paralelos unidos por un tramo perpendicular. Cada plano pasa por el eje de un taladro.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-con-taladros-desfasados",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "quebrado",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 0,
+                "en2": 40,
+                "cambio": 0
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina un plano que pasa por el primer eje, da un paso hacia atrás y sigue por el segundo: abre los dos taladros.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-con-taladros-desfasados",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "quebrado",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 1,
+                "en2": 40,
+                "cambio": 0
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Dibuja la sección como si fuera un solo plano: el contorno, con los dos taladros cortados por su eje.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-con-taladros-desfasados",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "quebrado",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 1,
+                "en2": 40,
+                "cambio": 0
+              }
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Raya el material cortado, a 45° y con la misma inclinación y separación en las dos mitades.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-con-taladros-desfasados",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "quebrado",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 1,
+                "en2": 40,
+                "cambio": 0
+              },
+              "eleccion": [1]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: los dos taladros se ven abiertos por la mitad, y en el cambio de plano no hay ninguna línea.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-con-taladros-desfasados",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "quebrado",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 1,
+                "en2": 40,
+                "cambio": 0
+              },
+              "eleccion": [1]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: rayar cada tramo con distinta inclinación o separación, o marcar el cambio de plano con una línea. Se rayan igual y el cambio no se dibuja.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-con-taladros-desfasados",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "quebrado",
+                "vista": "alzado",
+                "en": 20,
+                "quitar": 1,
+                "en2": 40,
+                "cambio": 0
+              },
+              "eleccion": [1]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: marca las cotas necesarias de esta placa en L. ¿Cuáles faltan o sobran?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "placa-en-ele",
+          "vistas": ["planta", "alzado"],
+          "ejes": false,
+          "ejercicio": {
+            "tipo": "cotas",
+            "candidatas": [
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-25, 10, 14],
+                  [25, 10, 14]
+                ],
+                "direccion": "h",
+                "desplazamiento": -10
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-25, 10, 14],
+                  [-25, 40, 14]
+                ],
+                "direccion": "v",
+                "desplazamiento": -10
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-25, 40, 14],
+                  [-5, 40, 14]
+                ],
+                "direccion": "h",
+                "desplazamiento": 8
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [25, 10, 14],
+                  [25, 22, 14]
+                ],
+                "direccion": "v",
+                "desplazamiento": 8
+              },
+              {
+                "tipo": "lineal",
+                "vista": "alzado",
+                "de": [
+                  [25, 10, 0],
+                  [25, 10, 14]
+                ],
+                "direccion": "v",
+                "desplazamiento": 8
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-5, 22, 14],
+                  [25, 22, 14]
+                ],
+                "direccion": "h",
+                "desplazamiento": -18
+              },
+              {
+                "tipo": "lineal",
+                "vista": "planta",
+                "de": [
+                  [-5, 22, 14],
+                  [-5, 40, 14]
+                ],
+                "direccion": "v",
+                "desplazamiento": 8
+              },
+              {
+                "tipo": "lineal",
+                "vista": "alzado",
+                "de": [
+                  [-25, 10, 14],
+                  [25, 10, 14]
+                ],
+                "direccion": "h",
+                "desplazamiento": 8
+              }
+            ],
+            "necesarias": [0, 1, 2, 3, 4]
+          }
+        }
+      },
+      "hints": [
+        "La placa en L se define por su contorno en planta y por su espesor.",
+        "Si dos medidas dan una tercera, esa tercera no hay que acotarla.",
+        "Acota el ancho y el fondo totales, el ancho de un brazo, el grosor del otro y el espesor de la placa."
+      ],
+      "solution": [
+        {
+          "narration": "Una placa en L con varias cotas posibles. Hay que elegir las necesarias y dejar las repetidas.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-en-ele",
+              "vistas": ["planta", "alzado"],
+              "ejes": false
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "La placa se define por su contorno en planta, que se acota con pocas medidas, y por su espesor, que se ve en el alzado.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-en-ele",
+              "vistas": ["planta", "alzado"],
+              "ejes": false
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que reproduces la placa solo con las cotas que marques: el contorno en L y su espesor.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-en-ele",
+              "vistas": ["planta", "alzado"],
+              "ejes": false
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Primero las medidas totales: ancho y fondo en la planta.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-en-ele",
+              "vistas": ["planta", "alzado"],
+              "ejes": false,
+              "eleccion": [0, 1, 2]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Después, el ancho de un brazo, el grosor del otro y el espesor en el alzado. Las demás se deducen de estas.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-en-ele",
+              "vistas": ["planta", "alzado"],
+              "ejes": false,
+              "eleccion": [0, 1, 2, 3, 4]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: ninguna medida se repite y con las cinco se puede dibujar toda la placa.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-en-ele",
+              "vistas": ["planta", "alzado"],
+              "ejes": false,
+              "eleccion": [0, 1, 2, 3, 4]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: acotar dos veces el ancho total, en la planta y en el alzado, o poner una cota que se deduce de otras. Cada medida, una sola vez.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "placa-en-ele",
+              "vistas": ["planta", "alzado"],
+              "ejes": false,
+              "eleccion": [0, 1, 2, 3, 4]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "engine",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: el plano A-A es de perfil y pasa por el eje del taladro de la escalera. ¿Cuál de estos dibujos es el perfil en corte total?",
+      "show3d": ["pieza"],
+      "sheet": [],
+      "engines": {
+        "normalizacion": {
+          "pieza": "escalera-taladrada",
+          "vistas": ["planta"],
+          "ejercicio": {
+            "tipo": "corte",
+            "opciones": [
+              {
+                "tipo": "total",
+                "vista": "alzado",
+                "en": 35,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 15,
+                "quitar": 1
+              },
+              {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              }
+            ],
+            "correcta": 2
+          }
+        }
+      },
+      "hints": [
+        "Un plano de perfil por el eje del taladro lo abre por la mitad, además de mostrar los escalones.",
+        "En el corte de perfil se quita la parte de la izquierda del plano, entre él y el observador.",
+        "Elige el dibujo con los escalones y el taladro cortado, y sin aristas ocultas."
+      ],
+      "solution": [
+        {
+          "narration": "Una escalera con un taladro y un plano de perfil A-A por su eje. Hay que elegir el perfil en corte total.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escalera-taladrada",
+              "vistas": ["planta"]
+            }
+          },
+          "part": "mira"
+        },
+        {
+          "narration": "En un corte de perfil se quita la parte de la izquierda. El plano pasa por el taladro y muestra los escalones por su sección.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escalera-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 0
+              }
+            }
+          },
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que serras la escalera con un plano perpendicular a sus peldaños, por el taladro, y retiras la mitad izquierda.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escalera-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "movimiento"
+        },
+        {
+          "narration": "Dibuja el perfil de los escalones y, en el peldaño con taladro, el hueco cortado.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escalera-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              }
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Raya el material cortado a 45°; el taladro, que es hueco, queda en blanco.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escalera-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: se ven los escalones y el taladro abierto por su eje, con el rayado solo en el material.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escalera-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: quitar la parte equivocada, la de la derecha. El observador mira desde la izquierda y lo que se retira es lo que queda entre él y el plano.",
+          "show3d": ["pieza"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 0,
+          "engines": {
+            "normalizacion": {
+              "pieza": "escalera-taladrada",
+              "vistas": ["planta"],
+              "corte": {
+                "tipo": "total",
+                "vista": "perfil",
+                "en": 0,
+                "quitar": 1
+              },
+              "eleccion": [2]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    }
+  ]
+}

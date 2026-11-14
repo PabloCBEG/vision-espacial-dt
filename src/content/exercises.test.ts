@@ -49,6 +49,7 @@ const COMPLETE_LESSONS: string[] = [
   'transformaciones',
   'intersecciones',
   'paralelismo-y-perpendicularidad',
+  'cortes-secciones-y-cotas',
 ];
 
 const lessonNamed = (id: string): Lesson => {

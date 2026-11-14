@@ -3179,6 +3179,125 @@ Fichero: `src/content/lessons/26-paralelismo-y-perpendicularidad.json` · DT I �
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: DF es perpendicular a α, y β contiene a DF y a DE.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: creer que dos planos son perpendiculares porque sus trazas lo son. Esa pareja de trazas perpendiculares no basta.
 
+### II-12 · Cortes, secciones y cotas: cortar y quitar lo de delante
+
+Fichero: `src/content/lessons/27-cortes-secciones-y-cotas.json` · DT II · nivel Avanzado
+
+- [ ] **Saber básico:** Normalización: cortes (total, al medio y quebrado), secciones abatidas y acotación de piezas. Cortar con un plano, quitar lo que queda hacia el observador y dibujar lo que queda.
+
+**Pasos**
+
+1. [ ] Para ver el interior de una pieza se la corta con un plano imaginario y se quita lo que queda entre el plano y el observador. El plano de corte pasa, por ejemplo, por el eje de un agujero.
+2. [ ] Al quitar la parte de delante queda a la vista el interior. En la planta, un trazo grueso en los extremos marca dónde pasa el plano y la letra A indica hacia dónde se mira.
+3. [ ] El alzado se dibuja en corte total, A-A. Las caras que ha tocado el plano se rayan con líneas finas a 45°.
+4. [ ] En un corte no se dibujan aristas ocultas: lo que quedaba detrás de la parte quitada ya se ve, y lo demás no hace falta. En la planta, que no está cortada, sí se dibujan.
+5. [ ] En un corte al medio solo se quita un cuarto de la pieza. Así una mitad del dibujo enseña el exterior y la otra, el interior, separadas por un eje.
+6. [ ] En un corte quebrado el plano se desplaza para pasar por detalles que están a distinta profundidad. El cambio de plano se dibuja como si no existiera: no lleva ninguna línea.
+7. [ ] La sección abatida gira 90° el corte de un plano perpendicular a la pieza y lo dibuja sobre la propia vista. Se rodea con trazo fino continuo y se raya.
+8. [ ] Para fabricar la pieza hacen falta sus medidas. Cada cota se pone una sola vez, en la vista donde mejor se ve, y fuera del dibujo.
+
+**Ejercicios**
+
+1. [ ] *construcción en la lámina, dificultad 1*: El plano A-A pasa por los ejes de los dos taladros de la placa. ¿Cuál de estos dibujos es el alzado en corte total?
+   - [ ] *Pista 1:* El plano de corte tiene que pasar por el eje de los taladros para que se vean cortados.
+   - [ ] *Pista 2:* En el corte total se quita toda la parte de delante del plano y se rayan las caras cortadas.
+   - [ ] *Pista 3:* Elige el dibujo con los dos taladros abiertos por la mitad y sin aristas ocultas.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una placa con dos taladros y un plano A-A que pasa por sus ejes. Hay que elegir el alzado en corte total.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Se quita la parte de delante del plano de corte. Como el plano pasa por los ejes, los taladros quedan abiertos por la mitad.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que el plano atraviesa la placa y retiras lo de delante: se ve la pared interior de cada taladro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el contorno de lo que queda: las aristas visibles detrás del plano y el contorno de las caras cortadas.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya las caras cortadas a 45° y elige el dibujo que coincide: con los dos taladros cortados por su eje.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los taladros aparecen cortados por la mitad y el rayado está solo en el material que ha tocado el plano.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar aristas ocultas en el corte. Lo que no se ve se ha quitado, y en los cortes no se dibujan.
+2. [ ] *construcción en la lámina, dificultad 1*: El plano A-A pasa por el eje del taladro de la escuadra. ¿Cuál de estos dibujos es el alzado en corte total?
+   - [ ] *Pista 1:* El plano de corte debe pasar por el eje del taladro para abrirlo por la mitad.
+   - [ ] *Pista 2:* En un corte total se quita toda la parte de delante y se rayan las caras que toca el plano.
+   - [ ] *Pista 3:* El hueco del taladro no se raya: elige el dibujo con el rayado solo en el material.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una escuadra con un taladro y un plano A-A por su eje. Hay que elegir el alzado en corte total.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Se quita lo que queda delante del plano y se dibuja el interior. El taladro, cortado por su eje, deja ver su pared.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que serras la escuadra por el eje del taladro: la mitad de delante se retira y la de detrás se ve por dentro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el contorno de la pieza detrás del plano y el del taladro cortado.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya solo el material cortado, a 45°. El hueco del taladro queda en blanco.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el taladro se ve abierto por la mitad, con su hueco sin rayar y con el rayado en las dos partes de la base.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: rayar también el hueco del taladro. El rayado cubre solo el material que ha cortado el plano; el hueco queda en blanco.
+3. [ ] *construcción en la lámina, dificultad 1*: El plano A-A es horizontal y pasa por el eje del agujero ciego del taco. ¿Cuál de estos dibujos es la planta en corte total?
+   - [ ] *Pista 1:* Un plano horizontal pasa por el eje del agujero cuando está a su misma cota.
+   - [ ] *Pista 2:* En el corte se quita la parte que queda por encima del plano, entre él y el observador.
+   - [ ] *Pista 3:* Elige el dibujo donde se ve el agujero ciego cortado por la mitad.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un taco con un agujero ciego horizontal y un plano A-A también horizontal por su eje. Hay que elegir la planta en corte total.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En un corte horizontal se quita la parte de arriba, la que queda entre el plano y el observador. El agujero ciego queda abierto.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que levantas la tapa del taco por el plano horizontal: queda a la vista el fondo del agujero ciego.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el contorno de lo que queda debajo del plano y el contorno del agujero cortado.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya el material cortado a 45°. El agujero ciego, que no es material, queda sin rayar.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: el agujero ciego se ve entero, con su fondo, y el rayado queda a ambos lados.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: quitar la parte equivocada, la de debajo del plano. El observador mira desde arriba y lo que se retira es lo que queda entre él y el plano.
+4. [ ] *construcción en la lámina, dificultad 2*: Dibuja el alzado de la brida en corte al medio por el plano A-A, que pasa por los ejes de sus taladros. ¿Cuál de estos dibujos es el correcto?
+   - [ ] *Pista 1:* En un corte al medio solo se quita un cuarto de la pieza, y el dibujo mezcla exterior e interior.
+   - [ ] *Pista 2:* El plano debe pasar por el eje de los taladros, no por una zona maciza.
+   - [ ] *Pista 3:* Elige el dibujo con media vista exterior y media en corte, separadas por un eje.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una brida con un buje y tres taladros, y un plano A-A por sus ejes. Hay que elegir el alzado en corte al medio.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En un corte al medio solo se retira un cuarto. En el dibujo, una mitad se ve por fuera y la otra por dentro, y las separa un eje.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina quitar solo un cuarto de la brida: queda a la vista el interior de un lado y el exterior del otro.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja la mitad exterior con su contorno y la mitad cortada con el interior de los taladros.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya solo la mitad cortada, a 45°, y pon un eje de simetría donde se separan las dos mitades.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: media vista es exterior y media es corte, con el rayado solo en la parte cortada.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: quitar la mitad en vez de un cuarto, como en un corte total. El corte al medio conserva media vista exterior.
+5. [ ] *construcción en la lámina, dificultad 2*: Marca las cotas necesarias para fabricar esta escuadra con un taladro: ni una más ni una menos.
+   - [ ] *Pista 1:* Cada medida se acota una sola vez, en la vista donde mejor se ve.
+   - [ ] *Pista 2:* Una cota que se puede calcular con otras dos sobra, y una medida que nadie da falta.
+   - [ ] *Pista 3:* Cuenta las medidas de la base, del montante y del taladro, y descarta las que se repiten.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una escuadra con un taladro y varias cotas posibles. Hay que elegir solo las necesarias.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una cota es necesaria si da una medida que ninguna otra permite deducir. Se pone una sola vez.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que fabricas la escuadra solo con las cotas que marques: no puede faltar ninguna medida ni sobrar ninguna.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Elige las medidas de la base: ancho, fondo y espesor, cada una en la vista donde se ve completa.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Añade las del montante, el diámetro del taladro y su posición. Deja fuera las que repiten otra medida o se deducen de ellas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: cada medida aparece una sola vez y ninguna se puede calcular con las demás.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: repetir una cota en dos vistas, o acotar una medida que ya se deduce de otras. Cada medida, una sola vez.
+6. [ ] *construcción en la lámina, dificultad 2*: El plano A-A es de perfil y pasa por el centro de la ranura del canal en V. ¿Cuál de estos dibujos es el perfil en corte total?
+   - [ ] *Pista 1:* El plano de perfil es perpendicular a la LT, y el corte se mira desde la izquierda.
+   - [ ] *Pista 2:* En un corte de perfil se quita la parte que queda a la izquierda del plano, entre él y el observador.
+   - [ ] *Pista 3:* Elige el dibujo donde se ve la ranura cortada por su centro.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Un canal en V con una ranura central y un plano de perfil A-A por su centro. Hay que elegir el perfil en corte total.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En un corte de perfil se quita la parte de la izquierda. El plano pasa por la ranura y deja ver su forma completa.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que cortas el canal con un plano perpendicular a su longitud y retiras la mitad de la izquierda.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el contorno de la sección: el canal en V y, en su centro, la ranura cortada.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya todo el material cortado, a 45°. La ranura y el canal, huecos, quedan en blanco.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: la sección muestra el canal y la ranura, con el rayado solo en el material.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar aristas ocultas dentro del corte. Aunque el taladro quede detrás, en el corte no se dibujan líneas discontinuas.
+7. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: los dos taladros de la placa están a distinta profundidad. ¿Cuál de estos dibujos es el alzado en corte quebrado que pasa por los dos ejes?
+   - [ ] *Pista 1:* Un solo plano no puede pasar por dos ejes que están a distinta profundidad.
+   - [ ] *Pista 2:* El corte quebrado cambia de plano en un punto para tocar cada eje.
+   - [ ] *Pista 3:* Elige el dibujo con los dos taladros cortados por la mitad y sin línea en el cambio de plano.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una placa con dos taladros que no están alineados en profundidad. Hay que elegir el alzado en corte quebrado por los dos ejes.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un corte quebrado usa dos planos paralelos unidos por un tramo perpendicular. Cada plano pasa por el eje de un taladro.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina un plano que pasa por el primer eje, da un paso hacia atrás y sigue por el segundo: abre los dos taladros.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja la sección como si fuera un solo plano: el contorno, con los dos taladros cortados por su eje.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya el material cortado, a 45° y con la misma inclinación y separación en las dos mitades.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: los dos taladros se ven abiertos por la mitad, y en el cambio de plano no hay ninguna línea.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: rayar cada tramo con distinta inclinación o separación, o marcar el cambio de plano con una línea. Se rayan igual y el cambio no se dibuja.
+8. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: marca las cotas necesarias de esta placa en L. ¿Cuáles faltan o sobran?
+   - [ ] *Pista 1:* La placa en L se define por su contorno en planta y por su espesor.
+   - [ ] *Pista 2:* Si dos medidas dan una tercera, esa tercera no hay que acotarla.
+   - [ ] *Pista 3:* Acota el ancho y el fondo totales, el ancho de un brazo, el grosor del otro y el espesor de la placa.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una placa en L con varias cotas posibles. Hay que elegir las necesarias y dejar las repetidas.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La placa se define por su contorno en planta, que se acota con pocas medidas, y por su espesor, que se ve en el alzado.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que reproduces la placa solo con las cotas que marques: el contorno en L y su espesor.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Primero las medidas totales: ancho y fondo en la planta.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Después, el ancho de un brazo, el grosor del otro y el espesor en el alzado. Las demás se deducen de estas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: ninguna medida se repite y con las cinco se puede dibujar toda la placa.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: acotar dos veces el ancho total, en la planta y en el alzado, o poner una cota que se deduce de otras. Cada medida, una sola vez.
+9. [ ] *construcción en la lámina, dificultad 3*: Como en la PAU: el plano A-A es de perfil y pasa por el eje del taladro de la escalera. ¿Cuál de estos dibujos es el perfil en corte total?
+   - [ ] *Pista 1:* Un plano de perfil por el eje del taladro lo abre por la mitad, además de mostrar los escalones.
+   - [ ] *Pista 2:* En el corte de perfil se quita la parte de la izquierda del plano, entre él y el observador.
+   - [ ] *Pista 3:* Elige el dibujo con los escalones y el taladro cortado, y sin aristas ocultas.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Una escalera con un taladro y un plano de perfil A-A por su eje. Hay que elegir el perfil en corte total.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* En un corte de perfil se quita la parte de la izquierda. El plano pasa por el taladro y muestra los escalones por su sección.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que serras la escalera con un plano perpendicular a sus peldaños, por el taladro, y retiras la mitad izquierda.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Dibuja el perfil de los escalones y, en el peldaño con taladro, el hueco cortado.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Raya el material cortado a 45°; el taladro, que es hueco, queda en blanco.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: se ven los escalones y el taladro abierto por su eje, con el rayado solo en el material.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: quitar la parte equivocada, la de la derecha. El observador mira desde la izquierda y lo que se retira es lo que queda entre él y el plano.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos
@@ -3648,6 +3767,7 @@ Fichero: `src/content/pau/ejemplo-4-vistas.json` · Ejemplo de formato
 - [ ] **Bloque escalonado con canal inferior y torre inclinada** (`src/content/piezas/23-cuna-escalonada-con-canal.json`)
 - [ ] **Semitubo con bloque ranurado y base en pendiente** (`src/content/piezas/24-semitubo-con-bloque-ranurado.json`)
 - [ ] **Bloque con tejado a dos aguas y prisma de punta** (`src/content/piezas/25-bloque-con-tejado-y-punta.json`)
+- [ ] **Placa con dos taladros a distinta profundidad** (`src/content/piezas/26-placa-con-taladros-desfasados.json`)
 
 ## 4. Avisos, pistas y textos de los motores
 

@@ -1,0 +1,11 @@
+{
+  "id": "placa-con-taladros-desfasados",
+  "nombre": "Placa con dos taladros a distinta profundidad",
+  "dificultad": 3,
+  "vistasNecesarias": ["alzado", "planta"],
+  "operaciones": [
+    { "tipo": "bloque", "desde": [-30, 10, 0], "hasta": [30, 50, 20] },
+    { "tipo": "taladro", "centro": [-15, 20, 20], "eje": "c", "sentido": -1, "diametro": 10 },
+    { "tipo": "taladro", "centro": [15, 40, 20], "eje": "c", "sentido": -1, "diametro": 10 }
+  ]
+}
