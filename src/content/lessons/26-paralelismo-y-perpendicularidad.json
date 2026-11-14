@@ -1,0 +1,1411 @@
+{
+  "id": "paralelismo-y-perpendicularidad",
+  "order": 5,
+  "title": "Paralelismo y perpendicularidad: la dirección se ve en las dos vistas",
+  "topic": "I-10",
+  "stage": "DT I",
+  "saberBasico": "Sistema diédrico: paralelismo de rectas, planos y recta con plano, y perpendicularidad de recta y plano. Las direcciones se leen en las dos proyecciones y en las trazas.",
+  "level": "Intermedio",
+  "initialScene": {
+    "points": {
+      "A": [-30, 0, 0],
+      "B": [30, 30, 0],
+      "C": [30, 0, 30],
+      "D": [-30, 15, 0],
+      "E": [30, 45, 0],
+      "F": [30, 15, 30],
+      "G": [-40, 35, 10],
+      "H": [20, 5, 40],
+      "S": [-20, 50, 5],
+      "T": [20, 30, 25],
+      "U": [-20, 25, 25],
+      "V": [-10, 5, 5],
+      "K": [-10, 0, 10],
+      "L": [10, 10, 10]
+    },
+    "objects": [
+      {
+        "kind": "point",
+        "id": "A"
+      },
+      {
+        "kind": "point",
+        "id": "B"
+      },
+      {
+        "kind": "point",
+        "id": "C"
+      },
+      {
+        "kind": "point",
+        "id": "D"
+      },
+      {
+        "kind": "point",
+        "id": "E"
+      },
+      {
+        "kind": "point",
+        "id": "F"
+      },
+      {
+        "kind": "point",
+        "id": "G"
+      },
+      {
+        "kind": "point",
+        "id": "H"
+      },
+      {
+        "kind": "point",
+        "id": "S"
+      },
+      {
+        "kind": "point",
+        "id": "T"
+      },
+      {
+        "kind": "point",
+        "id": "U"
+      },
+      {
+        "kind": "point",
+        "id": "V"
+      },
+      {
+        "kind": "point",
+        "id": "K"
+      },
+      {
+        "kind": "point",
+        "id": "L"
+      },
+      {
+        "kind": "plane",
+        "id": "α",
+        "through": ["A", "B", "C"]
+      },
+      {
+        "kind": "plane",
+        "id": "β",
+        "through": ["D", "E", "F"]
+      },
+      {
+        "kind": "line",
+        "id": "r",
+        "through": ["G", "H"]
+      },
+      {
+        "kind": "line",
+        "id": "t",
+        "through": ["S", "T"]
+      },
+      {
+        "kind": "line",
+        "id": "n",
+        "through": ["U", "V"]
+      },
+      {
+        "kind": "line",
+        "id": "h",
+        "through": ["K", "L"]
+      }
+    ],
+    "activePoint": "T"
+  },
+  "steps": [
+    {
+      "narration": "Dos rectas paralelas tienen la misma dirección. Por eso también son paralelas sus proyecciones.",
+      "show3d": ["planos", "recta:r", "recta:t"],
+      "sheet": [],
+      "highlight": ["recta:r", "recta:t"],
+      "camera": "perspective",
+      "foldAngle": 0
+    },
+    {
+      "narration": "En la lámina, t′ es paralela a r′ y t″ es paralela a r″. Las dos cosas a la vez son la señal de que las rectas son paralelas.",
+      "show3d": ["planos", "recta:r", "recta:t"],
+      "sheet": ["lt", "recta:r", "recta:t"],
+      "highlight": ["recta:r", "recta:t"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Aquí t′ sigue paralela a r′, pero t″ no lo es a r″. Con una sola proyección paralela las rectas no son paralelas.",
+      "show3d": ["planos", "recta:r", "recta:t"],
+      "sheet": ["lt", "recta:r", "recta:t"],
+      "highlight": ["recta:t"],
+      "camera": "front",
+      "foldAngle": 90,
+      "points": {
+        "T": [20, 30, 5]
+      }
+    },
+    {
+      "narration": "Dos planos son paralelos si lo son sus trazas del mismo nombre: α₁ con β₁ y α₂ con β₂. Con una sola pareja paralela no basta.",
+      "show3d": ["planos", "plano:α", "trazas:α", "plano:β", "trazas:β"],
+      "sheet": ["lt", "trazas:α", "trazas:β"],
+      "highlight": ["trazas:α", "trazas:β"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Una recta es paralela a un plano si es paralela a alguna recta del plano. Esta t es paralela a la traza α₁, que está en α.",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:t"],
+      "sheet": ["lt", "trazas:α", "recta:t"],
+      "highlight": ["recta:t"],
+      "camera": "front",
+      "foldAngle": 90,
+      "points": {
+        "S": [-20, 40, 40],
+        "T": [20, 60, 40]
+      }
+    },
+    {
+      "narration": "Una recta perpendicular a un plano se proyecta perpendicular a sus trazas: n′ es perpendicular a α₁ y n″ a α₂.",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:n"],
+      "sheet": ["lt", "trazas:α", "recta:n"],
+      "highlight": ["recta:n"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Un ángulo recto se ve recto en una proyección si uno de sus lados es paralelo a ese plano. Por eso n′ es perpendicular a h′, la horizontal de α, que es paralela a α₁.",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:n", "recta:h"],
+      "sheet": ["lt", "trazas:α", "recta:n", "recta:h"],
+      "highlight": ["recta:h"],
+      "camera": "front",
+      "foldAngle": 90
+    },
+    {
+      "narration": "Un plano perpendicular a una recta tiene sus trazas perpendiculares a las proyecciones de la recta: β₁ es perpendicular a n′ y β₂ a n″.",
+      "show3d": ["planos", "plano:β", "trazas:β", "recta:n"],
+      "sheet": ["lt", "trazas:β", "recta:n"],
+      "highlight": ["plano:β"],
+      "camera": "front",
+      "foldAngle": 90,
+      "points": {
+        "D": [-40, 20, 20],
+        "E": [20, 50, 20],
+        "F": [20, 20, 50]
+      }
+    },
+    {
+      "narration": "Un plano es perpendicular a otro si contiene una recta perpendicular a él. Este plano β contiene a la recta n, perpendicular a α.",
+      "show3d": ["planos", "plano:α", "trazas:α", "plano:β", "trazas:β", "recta:n"],
+      "sheet": ["lt", "trazas:α", "trazas:β", "recta:n"],
+      "highlight": ["plano:β"],
+      "camera": "front",
+      "foldAngle": 90,
+      "points": {
+        "D": [-20, 25, 25],
+        "E": [0, 35, 25],
+        "F": [-10, 5, 5]
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "La recta r es horizontal: sus dos puntos tienen la misma cota. Mueve T hasta que la recta t sea paralela a r.",
+      "condition": "linesParallel",
+      "objects": ["t", "r"],
+      "points": {
+        "G": [-30, 40, 10],
+        "H": [30, 10, 10],
+        "S": [-20, 15, 35],
+        "T": [10, 30, 20]
+      },
+      "activePoint": "T",
+      "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+      "sheet": ["lt", "recta:r", "recta:t", "proyecciones:T", "referencia:T"],
+      "hints": [
+        "Dos rectas son paralelas si tienen la misma dirección.",
+        "Como r es horizontal, t también tiene que serlo: sus dos puntos con la misma cota.",
+        "Mueve T hasta que t′ sea paralela a r′ y t″ sea paralela a r″."
+      ],
+      "solution": [
+        {
+          "narration": "Tenemos la recta r, horizontal, y la recta t, que pasa por S y T. Queremos que t sea paralela a r.",
+          "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Dos rectas paralelas tienen la misma dirección y por eso sus proyecciones son paralelas. Como r es horizontal, t también lo será.",
+          "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": ["recta:r", "recta:t"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina que giras t alrededor de S hasta que deja de cruzarse con r y queda siempre a la misma distancia.",
+          "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "Primero la cota: T tiene que estar a la misma cota que S, para que t″ sea paralela a la LT como r″.",
+          "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "recta:r", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 5, 35]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Después la planta: t′ debe ser paralela a r′. Con las dos proyecciones paralelas, las rectas lo son.",
+          "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "recta:r", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 5, 35]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: t′ es paralela a r′ y t″ es paralela a r″, las dos a la vez.",
+          "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "recta:r", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 5, 35]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: hacer paralela solo una proyección. Aquí t′ es paralela a r′ pero t″ no lo es a r″, y entonces las rectas no son paralelas.",
+          "show3d": ["planos", "recta:r", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "recta:r", "recta:t", "proyecciones:T", "referencia:T", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 5, 35]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, 35],
+                    [0, 45]
+                  ],
+                  "rotulo": "Error: t″ no es paralela a r″"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "El plano α es horizontal. Mueve F hasta que el plano β, que pasa por D, E y F, sea paralelo a α.",
+      "condition": "planesParallel",
+      "objects": ["β", "α"],
+      "points": {
+        "A": [-40, 10, 30],
+        "B": [40, 10, 30],
+        "C": [0, 50, 30],
+        "D": [-40, 30, 10],
+        "E": [40, 30, 10],
+        "F": [0, 0, 40]
+      },
+      "activePoint": "F",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "plano:β",
+        "trazas:β",
+        "punto:F",
+        "proyecciones:F"
+      ],
+      "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+      "hints": [
+        "Dos planos son paralelos si sus trazas del mismo nombre son paralelas.",
+        "Un plano paralelo a otro horizontal también es horizontal: todos sus puntos tienen la misma cota.",
+        "Mueve F hasta tener la cota de D y de E."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es horizontal y β pasa por D, E y F. Buscamos que β sea paralelo a α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Dos planos son paralelos si sus trazas son paralelas. Como α es horizontal, β tiene que serlo también.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α", "plano:β"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina β como una hoja que se inclina más o menos: solo en una posición queda plana, paralela a α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "Un plano horizontal tiene todos sus puntos a la misma cota: D y E ya la tienen, así que F debe tener la misma.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 10, 10]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Al colocar F, la traza β₂ queda paralela a α₂, y β es paralelo a α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 10, 10]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: D, E y F tienen la misma cota, y β₂ es paralela a α₂ y a la LT.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 10, 10]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: dibujar una sola traza paralela y la otra inclinada. Aquí β₂ no es paralela a α₂ y los planos no son paralelos.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 10, 10]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-40, 10],
+                    [40, 25]
+                  ],
+                  "rotulo": "Error: β₂ no es paralela a α₂"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 1,
+      "prompt": "El plano α es horizontal. Mueve T hasta que la recta t, que pasa por S, sea paralela a α.",
+      "condition": "lineParallelToPlane",
+      "objects": ["t", "α"],
+      "points": {
+        "A": [-40, 10, 30],
+        "B": [40, 10, 30],
+        "C": [0, 50, 30],
+        "S": [-30, 20, 15],
+        "T": [20, 40, 50]
+      },
+      "activePoint": "T",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+      "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+      "hints": [
+        "Una recta es paralela a un plano si es paralela a alguna recta del plano.",
+        "Las rectas de un plano horizontal son horizontales, así que t tiene que serlo.",
+        "Mueve T hasta tener la misma cota que S."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es horizontal y la recta t pasa por S y T. Queremos que t sea paralela a α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Una recta es paralela a un plano si lo es a una recta de él. Las rectas de un plano horizontal son horizontales.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": ["plano:α", "recta:t"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina t subiendo o bajando por el extremo T: solo deja de cortar al plano cuando queda a una cota constante.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "En el alzado, t″ tiene que ser paralela a la LT y a α₂: mueve T hasta que tenga la cota de S.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 45, 15]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "La planta no importa: en cualquier dirección horizontal, t es paralela a α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 45, 15]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: S y T tienen la misma cota y t″ es paralela a α₂.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 45, 15]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: pensar que basta con t′, o con una proyección. Aquí t″ no es paralela a α₂ y la recta sube hasta cortar al plano.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 45, 15]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 15],
+                    [10, 30]
+                  ],
+                  "rotulo": "Error: t″ no es paralela a α₂"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "El plano α es oblicuo. Mueve F hasta que el plano β, que pasa por D, E y F, sea paralelo a α.",
+      "condition": "planesParallel",
+      "objects": ["β", "α"],
+      "points": {
+        "A": [-30, 0, 0],
+        "B": [30, 30, 0],
+        "C": [30, 0, 30],
+        "D": [-10, 20, 10],
+        "E": [20, 35, 10],
+        "F": [0, 40, 40]
+      },
+      "activePoint": "F",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "plano:β",
+        "trazas:β",
+        "punto:F",
+        "proyecciones:F"
+      ],
+      "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+      "hints": [
+        "Dos planos son paralelos si sus dos trazas del mismo nombre son paralelas.",
+        "El segmento DE ya es paralelo a la traza α₁, así que falta hacer paralela la otra traza.",
+        "Mueve F hasta que β₂ sea paralela a α₂: F−D debe ser paralelo a una recta frontal de α."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es oblicuo y β pasa por D, E y F. Queremos que β sea paralelo a α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Dos planos son paralelos si contienen rectas paralelas de dos direcciones distintas. DE ya es paralela a la traza α₁.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α", "plano:β"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina β girando alrededor de la recta DE: solo en una posición su otra traza queda paralela a la de α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "En el alzado, la traza β₂ tiene que ser paralela a α₂. Mueve F hasta que DF sea paralela a la recta frontal de α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [10, 20, 20]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprueba la planta: β₁ debe seguir paralela a α₁. Con las dos parejas paralelas, los planos son paralelos.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [10, 20, 20]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: β₁ es paralela a α₁ y β₂ es paralela a α₂.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [10, 20, 20]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: hacer paralela solo una traza. Aquí β₁ es paralela a α₁, pero β₂ no es paralela a α₂ y los planos se cortan.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [10, 20, 20]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-80, 0],
+                    [-40, 40]
+                  ],
+                  "rotulo": "Error: β₂ no es paralela a α₂"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "El plano α es oblicuo. Mueve T hasta que la recta t, que pasa por S, sea paralela a α.",
+      "condition": "lineParallelToPlane",
+      "objects": ["t", "α"],
+      "points": {
+        "A": [-30, 0, 0],
+        "B": [30, 30, 0],
+        "C": [30, 0, 30],
+        "S": [-20, 10, 30],
+        "T": [10, 40, 10]
+      },
+      "activePoint": "T",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+      "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+      "hints": [
+        "Una recta es paralela a un plano si es paralela a alguna recta contenida en él.",
+        "Basta elegir una recta de α, por ejemplo la traza α₂, y hacer t paralela a ella.",
+        "Mueve T hasta que t″ sea paralela a α₂ y t′ a la proyección horizontal de esa recta."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es oblicuo y la recta t pasa por S y T. Queremos que t sea paralela a α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Una recta es paralela a un plano si es paralela a alguna recta del plano. Elegimos una recta de α y hacemos t paralela a ella.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": ["plano:α", "recta:t"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina t como una barra que se desplaza sin cortar al plano: tiene que seguir la dirección de alguna recta de α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "Tomamos la traza α₂, una recta frontal de α. Mueve T hasta que t″ sea paralela a α₂.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 10, 40]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "La recta frontal de α es paralela al PV, así que t′ debe ser paralela a la LT.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 10, 40]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: t″ es paralela a α₂ y t′ es paralela a la LT: t es paralela a una recta de α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 10, 40]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: hacer paralela solo una proyección. Aquí t″ es paralela a α₂, pero t′ no es paralela a la LT y t atraviesa el plano.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [0, 10, 40]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, -10],
+                    [0, -25]
+                  ],
+                  "rotulo": "Error: t′ no es paralela a la LT"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 2,
+      "prompt": "El plano α es oblicuo. Mueve T hasta que la recta t, que pasa por S, sea perpendicular a α.",
+      "condition": "linePerpendicularToPlane",
+      "objects": ["t", "α"],
+      "points": {
+        "A": [-30, 0, 0],
+        "B": [30, 30, 0],
+        "C": [30, 0, 30],
+        "S": [-20, 25, 25],
+        "T": [0, 30, 30]
+      },
+      "activePoint": "T",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+      "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+      "hints": [
+        "Una recta perpendicular a un plano se proyecta perpendicular a sus trazas.",
+        "Su proyección horizontal es perpendicular a α₁ y su proyección vertical, a α₂.",
+        "Mueve T hasta que t′ sea perpendicular a α₁ y t″ perpendicular a α₂."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α es oblicuo y la recta t pasa por S y T. Queremos que t sea perpendicular a α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "La perpendicular a un plano se proyecta perpendicular a las trazas del mismo nombre: t′ con α₁ y t″ con α₂.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": ["plano:α", "recta:t"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina una escuadra apoyada en el plano: su lado vertical es perpendicular a α y su dirección es la de la perpendicular.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "En la planta, traza t′ perpendicular a la traza horizontal α₁ desde S′.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [-10, 5, 5]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "En el alzado, traza t″ perpendicular a la traza vertical α₂ desde S″. Las dos tienen que encajar en las mismas líneas de referencia.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [-10, 5, 5]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: t′ es perpendicular a α₁ y t″ es perpendicular a α₂, y T está en las dos.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [-10, 5, 5]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: trazar la proyección horizontal perpendicular a la traza equivocada, α₂ en vez de α₁. Cada proyección va con la traza de su mismo nombre.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [-10, 5, 5]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-20, -25],
+                    [-35, 5]
+                  ],
+                  "rotulo": "Error: t′ perpendicular a α₂"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: desde el punto S, traza la recta t perpendicular al plano α. Mueve T hasta lograrlo.",
+      "condition": "linePerpendicularToPlane",
+      "objects": ["t", "α"],
+      "points": {
+        "A": [-30, 20, 0],
+        "B": [0, 0, 0],
+        "C": [-30, 0, 60],
+        "S": [20, 30, 20],
+        "T": [30, 10, 40]
+      },
+      "activePoint": "T",
+      "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+      "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+      "hints": [
+        "La recta perpendicular a un plano tiene la dirección de su normal.",
+        "Sus proyecciones son perpendiculares a las trazas del mismo nombre, en las dos vistas a la vez.",
+        "Traza t′ perpendicular a α₁ y t″ perpendicular a α₂ desde S, y ajusta T con las referencias."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α pasa por el origen, y la recta t sale del punto S. Hay que hacerla perpendicular a α.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Una recta perpendicular a un plano forma ángulo recto con todas sus rectas. Se lee en las trazas: t′ con α₁ y t″ con α₂.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": ["plano:α", "recta:t"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina una varilla clavada en el plano desde S: apunta en la dirección que ve el plano como suya, la perpendicular.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza t′ desde S′ perpendicular a la traza horizontal α₁.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 15, 15]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Traza t″ desde S″ perpendicular a la traza vertical α₂ y lleva T por las referencias hasta que coincida en las dos vistas.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 15, 15]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: t′ es perpendicular a α₁, t″ es perpendicular a α₂ y T está en las dos.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 15, 15]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: trazar la perpendicular a una recta cualquiera del plano en las dos vistas. El ángulo recto solo se ve así con una horizontal o una frontal.",
+          "show3d": ["planos", "plano:α", "trazas:α", "recta:t", "punto:T", "proyecciones:T"],
+          "sheet": ["lt", "trazas:α", "recta:t", "proyecciones:T", "referencia:T", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "T": [10, 15, 15]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [20, 20],
+                    [35, 35]
+                  ],
+                  "rotulo": "Error: no es perpendicular a α₂"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: el plano β pasa por D, E y F y debe ser perpendicular a la recta r. Mueve F hasta lograrlo.",
+      "condition": "linePerpendicularToPlane",
+      "objects": ["r", "β"],
+      "points": {
+        "G": [-40, 40, 40],
+        "H": [20, 10, 10],
+        "D": [0, 30, 30],
+        "E": [10, 50, 30],
+        "F": [30, 10, 40]
+      },
+      "activePoint": "F",
+      "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+      "sheet": ["lt", "trazas:β", "recta:r", "proyecciones:F", "referencia:F"],
+      "hints": [
+        "Un plano perpendicular a una recta tiene sus trazas perpendiculares a las proyecciones de la recta.",
+        "β₁ es perpendicular a r′ y β₂ es perpendicular a r″.",
+        "DE ya es perpendicular a r: mueve F hasta que DF también lo sea."
+      ],
+      "solution": [
+        {
+          "narration": "La recta r y el plano β, que pasa por D, E y F. Hay que hacer β perpendicular a r.",
+          "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Un plano es perpendicular a una recta si sus trazas lo son a las proyecciones de la recta: β₁ a r′ y β₂ a r″.",
+          "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+          "sheet": [],
+          "highlight": ["plano:β", "recta:r"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina r como un poste clavado en el plano β: el plano es el que ve el poste de frente, perpendicular.",
+          "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "DE es una horizontal de β y ya es perpendicular a r. Falta una frontal de β, DF, perpendicular a r.",
+          "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+          "sheet": ["lt", "trazas:β", "recta:r", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 40, 20]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Mueve F hasta que la frontal DF sea perpendicular a r″ en el alzado.",
+          "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+          "sheet": ["lt", "trazas:β", "recta:r", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 40, 20]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: β₁ es perpendicular a r′ y β₂ es perpendicular a r″.",
+          "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+          "sheet": ["lt", "trazas:β", "recta:r", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 40, 20]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: trazar β₁ perpendicular a la proyección vertical de la recta, r″, en vez de a r′. Cada traza va con la proyección de su mismo nombre.",
+          "show3d": ["planos", "plano:β", "trazas:β", "recta:r", "punto:F", "proyecciones:F"],
+          "sheet": ["lt", "trazas:β", "recta:r", "proyecciones:F", "referencia:F", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 40, 20]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 0],
+                    [-20, 20]
+                  ],
+                  "rotulo": "Error: β₁ perpendicular a r″"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    },
+    {
+      "kind": "condition",
+      "difficulty": 3,
+      "prompt": "Como en la PAU: el plano β pasa por D, E y F y debe ser perpendicular a α. Mueve F hasta lograrlo.",
+      "condition": "planesPerpendicular",
+      "objects": ["β", "α"],
+      "points": {
+        "A": [-30, 0, 0],
+        "B": [30, 30, 0],
+        "C": [30, 0, 30],
+        "D": [-10, 25, 25],
+        "E": [10, 35, 25],
+        "F": [20, 10, 45]
+      },
+      "activePoint": "F",
+      "show3d": [
+        "planos",
+        "plano:α",
+        "trazas:α",
+        "plano:β",
+        "trazas:β",
+        "punto:F",
+        "proyecciones:F"
+      ],
+      "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+      "hints": [
+        "Un plano es perpendicular a otro si contiene una recta perpendicular a él.",
+        "La perpendicular a α tiene sus proyecciones perpendiculares a α₁ y a α₂.",
+        "Haz que DF sea esa perpendicular a α, o que β contenga una paralela a ella."
+      ],
+      "solution": [
+        {
+          "narration": "El plano α y el plano β, que pasa por D, E y F. Hay que hacer β perpendicular a α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "mira"
+        },
+        {
+          "narration": "Dos planos son perpendiculares si uno contiene una recta perpendicular al otro. Basta que β contenga la perpendicular a α por D.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": ["plano:α", "plano:β"],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "idea"
+        },
+        {
+          "narration": "Imagina una varilla clavada en α por D: el plano que la contiene y que pasa también por E es perpendicular a α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": [],
+          "highlight": [],
+          "camera": "perspective",
+          "foldAngle": 0,
+          "part": "movimiento"
+        },
+        {
+          "narration": "Traza por D′ la perpendicular a α₁ y por D″ la perpendicular a α₂: es la recta perpendicular a α.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 5, 5]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Mueve F sobre esa recta. Así β contiene una perpendicular a α y es perpendicular a ella.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 5, 5]
+          },
+          "part": "trazado"
+        },
+        {
+          "narration": "Comprobación: DF es perpendicular a α, y β contiene a DF y a DE.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F"],
+          "highlight": [],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 5, 5]
+          },
+          "part": "comprobacion"
+        },
+        {
+          "narration": "Error típico: creer que dos planos son perpendiculares porque sus trazas lo son. Esa pareja de trazas perpendiculares no basta.",
+          "show3d": [
+            "planos",
+            "plano:α",
+            "trazas:α",
+            "plano:β",
+            "trazas:β",
+            "punto:F",
+            "proyecciones:F"
+          ],
+          "sheet": ["lt", "trazas:α", "trazas:β", "proyecciones:F", "referencia:F", "error"],
+          "highlight": ["error"],
+          "camera": "front",
+          "foldAngle": 90,
+          "points": {
+            "F": [0, 5, 5]
+          },
+          "engines": {
+            "error": {
+              "trazos": [
+                {
+                  "puntos": [
+                    [-30, 0],
+                    [-20, 20]
+                  ],
+                  "rotulo": "Error: trazas perpendiculares no bastan"
+                }
+              ]
+            }
+          },
+          "part": "error"
+        }
+      ]
+    }
+  ]
+}

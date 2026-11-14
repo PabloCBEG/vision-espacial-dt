@@ -6,6 +6,11 @@ import {
   createPoint,
   distancePointToLine,
   distancePointToPlane,
+  lineParallelToPlane,
+  linePerpendicularToPlane,
+  linesParallel,
+  planesParallel,
+  planesPerpendicular,
   type Point,
 } from '../geometry/index.ts';
 import { getPoint, type AppState } from '../state/index.ts';
@@ -19,7 +24,12 @@ export type Condition =
   | 'pointOnPlane'
   | 'planeContainsLT'
   | 'planeParallelToLT'
-  | 'pointOnIntersection';
+  | 'pointOnIntersection'
+  | 'linesParallel'
+  | 'planesParallel'
+  | 'lineParallelToPlane'
+  | 'linePerpendicularToPlane'
+  | 'planesPerpendicular';
 
 export interface ConditionResult {
   correct: boolean;
@@ -61,6 +71,26 @@ const MESSAGES: Record<Condition, { ok: string; hint: string }> = {
   pointOnIntersection: {
     ok: '¡Correcto! El punto está a la vez en los dos objetos: es de su intersección.',
     hint: 'El punto aún no está en los dos objetos. Tiene que estar en la recta y en el plano (o en los dos planos) a la vez.',
+  },
+  linesParallel: {
+    ok: '¡Correcto! Las rectas son paralelas: lo son sus proyecciones horizontales y sus proyecciones verticales.',
+    hint: 'Las rectas aún no son paralelas. Tienen que serlo en las dos proyecciones, no solo en una.',
+  },
+  planesParallel: {
+    ok: '¡Correcto! Los planos son paralelos: sus trazas del mismo nombre son paralelas.',
+    hint: 'Los planos aún no son paralelos. Las dos trazas de uno deben ser paralelas a las del otro.',
+  },
+  lineParallelToPlane: {
+    ok: '¡Correcto! La recta es paralela al plano: es paralela a una recta del plano.',
+    hint: 'La recta aún no es paralela al plano. Tiene que ser paralela a alguna recta contenida en él.',
+  },
+  linePerpendicularToPlane: {
+    ok: '¡Correcto! La recta es perpendicular al plano: sus proyecciones son perpendiculares a las trazas del mismo nombre.',
+    hint: 'La recta aún no es perpendicular al plano: su proyección horizontal debe ser perpendicular a α₁ y la vertical a α₂.',
+  },
+  planesPerpendicular: {
+    ok: '¡Correcto! Los planos son perpendiculares: uno contiene una recta perpendicular al otro.',
+    hint: 'Los planos aún no son perpendiculares. Uno debe contener una recta perpendicular al otro.',
   },
   planeParallelToLT: {
     ok: '¡Correcto! El plano es paralelo a la LT: sus trazas α₁ y α₂ son paralelas a la LT.',
@@ -126,6 +156,42 @@ function evaluate(condition: Condition, objects: readonly string[], state: AppSt
         }
         return false;
       });
+    }
+    case 'linesParallel':
+    case 'planesParallel':
+    case 'lineParallelToPlane':
+    case 'linePerpendicularToPlane':
+    case 'planesPerpendicular': {
+      const other = second ? pointsOf(state, second) : [];
+      try {
+        if (condition === 'linesParallel') {
+          return (
+            !!A &&
+            !!B &&
+            !!other[0] &&
+            !!other[1] &&
+            linesParallel(createLine(A, B), createLine(other[0], other[1]))
+          );
+        }
+        if (condition === 'planesParallel' || condition === 'planesPerpendicular') {
+          const [P1, P2, P3] = pts;
+          const [Q1, Q2, Q3] = other;
+          if (!P1 || !P2 || !P3 || !Q1 || !Q2 || !Q3) return false;
+          const a = createPlane(P1, P2, P3);
+          const b = createPlane(Q1, Q2, Q3);
+          return condition === 'planesParallel' ? planesParallel(a, b) : planesPerpendicular(a, b);
+        }
+        // Recta (primer objeto) y plano (segundo).
+        const [Q1, Q2, Q3] = other;
+        if (!A || !B || !Q1 || !Q2 || !Q3) return false;
+        const r = createLine(A, B);
+        const plane = createPlane(Q1, Q2, Q3);
+        return condition === 'lineParallelToPlane'
+          ? lineParallelToPlane(r, plane)
+          : linePerpendicularToPlane(r, plane);
+      } catch {
+        return false;
+      }
     }
     case 'planeContainsLT':
     case 'planeParallelToLT': {

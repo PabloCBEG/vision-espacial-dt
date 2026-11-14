@@ -48,6 +48,7 @@ const COMPLETE_LESSONS: string[] = [
   'poligonos-regulares',
   'transformaciones',
   'intersecciones',
+  'paralelismo-y-perpendicularidad',
 ];
 
 const lessonNamed = (id: string): Lesson => {

@@ -3059,6 +3059,126 @@ Fichero: `src/content/lessons/25-intersecciones.json` · DT I · nivel Intermedi
    - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: Q está en α y en β, y las proyecciones Q′ y Q″ caen sobre las de la recta s.
    - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dejar la construcción porque V no cabe en la hoja. Con una horizontal de cada plano se halla otro punto de s sin salir del papel.
 
+### I-10 · Paralelismo y perpendicularidad: la dirección se ve en las dos vistas
+
+Fichero: `src/content/lessons/26-paralelismo-y-perpendicularidad.json` · DT I · nivel Intermedio
+
+- [ ] **Saber básico:** Sistema diédrico: paralelismo de rectas, planos y recta con plano, y perpendicularidad de recta y plano. Las direcciones se leen en las dos proyecciones y en las trazas.
+
+**Pasos**
+
+1. [ ] Dos rectas paralelas tienen la misma dirección. Por eso también son paralelas sus proyecciones.
+2. [ ] En la lámina, t′ es paralela a r′ y t″ es paralela a r″. Las dos cosas a la vez son la señal de que las rectas son paralelas.
+3. [ ] Aquí t′ sigue paralela a r′, pero t″ no lo es a r″. Con una sola proyección paralela las rectas no son paralelas.
+4. [ ] Dos planos son paralelos si lo son sus trazas del mismo nombre: α₁ con β₁ y α₂ con β₂. Con una sola pareja paralela no basta.
+5. [ ] Una recta es paralela a un plano si es paralela a alguna recta del plano. Esta t es paralela a la traza α₁, que está en α.
+6. [ ] Una recta perpendicular a un plano se proyecta perpendicular a sus trazas: n′ es perpendicular a α₁ y n″ a α₂.
+7. [ ] Un ángulo recto se ve recto en una proyección si uno de sus lados es paralelo a ese plano. Por eso n′ es perpendicular a h′, la horizontal de α, que es paralela a α₁.
+8. [ ] Un plano perpendicular a una recta tiene sus trazas perpendiculares a las proyecciones de la recta: β₁ es perpendicular a n′ y β₂ a n″.
+9. [ ] Un plano es perpendicular a otro si contiene una recta perpendicular a él. Este plano β contiene a la recta n, perpendicular a α.
+
+**Ejercicios**
+
+1. [ ] *cumplir una condición, dificultad 1*: La recta r es horizontal: sus dos puntos tienen la misma cota. Mueve T hasta que la recta t sea paralela a r.
+   - [ ] *Pista 1:* Dos rectas son paralelas si tienen la misma dirección.
+   - [ ] *Pista 2:* Como r es horizontal, t también tiene que serlo: sus dos puntos con la misma cota.
+   - [ ] *Pista 3:* Mueve T hasta que t′ sea paralela a r′ y t″ sea paralela a r″.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* Tenemos la recta r, horizontal, y la recta t, que pasa por S y T. Queremos que t sea paralela a r.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos rectas paralelas tienen la misma dirección y por eso sus proyecciones son paralelas. Como r es horizontal, t también lo será.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina que giras t alrededor de S hasta que deja de cruzarse con r y queda siempre a la misma distancia.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Primero la cota: T tiene que estar a la misma cota que S, para que t″ sea paralela a la LT como r″.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Después la planta: t′ debe ser paralela a r′. Con las dos proyecciones paralelas, las rectas lo son.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: t′ es paralela a r′ y t″ es paralela a r″, las dos a la vez.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: hacer paralela solo una proyección. Aquí t′ es paralela a r′ pero t″ no lo es a r″, y entonces las rectas no son paralelas.
+2. [ ] *cumplir una condición, dificultad 1*: El plano α es horizontal. Mueve F hasta que el plano β, que pasa por D, E y F, sea paralelo a α.
+   - [ ] *Pista 1:* Dos planos son paralelos si sus trazas del mismo nombre son paralelas.
+   - [ ] *Pista 2:* Un plano paralelo a otro horizontal también es horizontal: todos sus puntos tienen la misma cota.
+   - [ ] *Pista 3:* Mueve F hasta tener la cota de D y de E.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es horizontal y β pasa por D, E y F. Buscamos que β sea paralelo a α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos planos son paralelos si sus trazas son paralelas. Como α es horizontal, β tiene que serlo también.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina β como una hoja que se inclina más o menos: solo en una posición queda plana, paralela a α.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Un plano horizontal tiene todos sus puntos a la misma cota: D y E ya la tienen, así que F debe tener la misma.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Al colocar F, la traza β₂ queda paralela a α₂, y β es paralelo a α.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: D, E y F tienen la misma cota, y β₂ es paralela a α₂ y a la LT.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: dibujar una sola traza paralela y la otra inclinada. Aquí β₂ no es paralela a α₂ y los planos no son paralelos.
+3. [ ] *cumplir una condición, dificultad 1*: El plano α es horizontal. Mueve T hasta que la recta t, que pasa por S, sea paralela a α.
+   - [ ] *Pista 1:* Una recta es paralela a un plano si es paralela a alguna recta del plano.
+   - [ ] *Pista 2:* Las rectas de un plano horizontal son horizontales, así que t tiene que serlo.
+   - [ ] *Pista 3:* Mueve T hasta tener la misma cota que S.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es horizontal y la recta t pasa por S y T. Queremos que t sea paralela a α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta es paralela a un plano si lo es a una recta de él. Las rectas de un plano horizontal son horizontales.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina t subiendo o bajando por el extremo T: solo deja de cortar al plano cuando queda a una cota constante.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, t″ tiene que ser paralela a la LT y a α₂: mueve T hasta que tenga la cota de S.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La planta no importa: en cualquier dirección horizontal, t es paralela a α.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: S y T tienen la misma cota y t″ es paralela a α₂.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: pensar que basta con t′, o con una proyección. Aquí t″ no es paralela a α₂ y la recta sube hasta cortar al plano.
+4. [ ] *cumplir una condición, dificultad 2*: El plano α es oblicuo. Mueve F hasta que el plano β, que pasa por D, E y F, sea paralelo a α.
+   - [ ] *Pista 1:* Dos planos son paralelos si sus dos trazas del mismo nombre son paralelas.
+   - [ ] *Pista 2:* El segmento DE ya es paralelo a la traza α₁, así que falta hacer paralela la otra traza.
+   - [ ] *Pista 3:* Mueve F hasta que β₂ sea paralela a α₂: F−D debe ser paralelo a una recta frontal de α.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es oblicuo y β pasa por D, E y F. Queremos que β sea paralelo a α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos planos son paralelos si contienen rectas paralelas de dos direcciones distintas. DE ya es paralela a la traza α₁.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina β girando alrededor de la recta DE: solo en una posición su otra traza queda paralela a la de α.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En el alzado, la traza β₂ tiene que ser paralela a α₂. Mueve F hasta que DF sea paralela a la recta frontal de α.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Comprueba la planta: β₁ debe seguir paralela a α₁. Con las dos parejas paralelas, los planos son paralelos.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: β₁ es paralela a α₁ y β₂ es paralela a α₂.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: hacer paralela solo una traza. Aquí β₁ es paralela a α₁, pero β₂ no es paralela a α₂ y los planos se cortan.
+5. [ ] *cumplir una condición, dificultad 2*: El plano α es oblicuo. Mueve T hasta que la recta t, que pasa por S, sea paralela a α.
+   - [ ] *Pista 1:* Una recta es paralela a un plano si es paralela a alguna recta contenida en él.
+   - [ ] *Pista 2:* Basta elegir una recta de α, por ejemplo la traza α₂, y hacer t paralela a ella.
+   - [ ] *Pista 3:* Mueve T hasta que t″ sea paralela a α₂ y t′ a la proyección horizontal de esa recta.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es oblicuo y la recta t pasa por S y T. Queremos que t sea paralela a α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta es paralela a un plano si es paralela a alguna recta del plano. Elegimos una recta de α y hacemos t paralela a ella.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina t como una barra que se desplaza sin cortar al plano: tiene que seguir la dirección de alguna recta de α.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Tomamos la traza α₂, una recta frontal de α. Mueve T hasta que t″ sea paralela a α₂.
+   - [ ] *Solución, paso 5 · 4. El trazado:* La recta frontal de α es paralela al PV, así que t′ debe ser paralela a la LT.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: t″ es paralela a α₂ y t′ es paralela a la LT: t es paralela a una recta de α.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: hacer paralela solo una proyección. Aquí t″ es paralela a α₂, pero t′ no es paralela a la LT y t atraviesa el plano.
+6. [ ] *cumplir una condición, dificultad 2*: El plano α es oblicuo. Mueve T hasta que la recta t, que pasa por S, sea perpendicular a α.
+   - [ ] *Pista 1:* Una recta perpendicular a un plano se proyecta perpendicular a sus trazas.
+   - [ ] *Pista 2:* Su proyección horizontal es perpendicular a α₁ y su proyección vertical, a α₂.
+   - [ ] *Pista 3:* Mueve T hasta que t′ sea perpendicular a α₁ y t″ perpendicular a α₂.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α es oblicuo y la recta t pasa por S y T. Queremos que t sea perpendicular a α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* La perpendicular a un plano se proyecta perpendicular a las trazas del mismo nombre: t′ con α₁ y t″ con α₂.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una escuadra apoyada en el plano: su lado vertical es perpendicular a α y su dirección es la de la perpendicular.
+   - [ ] *Solución, paso 4 · 4. El trazado:* En la planta, traza t′ perpendicular a la traza horizontal α₁ desde S′.
+   - [ ] *Solución, paso 5 · 4. El trazado:* En el alzado, traza t″ perpendicular a la traza vertical α₂ desde S″. Las dos tienen que encajar en las mismas líneas de referencia.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: t′ es perpendicular a α₁ y t″ es perpendicular a α₂, y T está en las dos.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar la proyección horizontal perpendicular a la traza equivocada, α₂ en vez de α₁. Cada proyección va con la traza de su mismo nombre.
+7. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: desde el punto S, traza la recta t perpendicular al plano α. Mueve T hasta lograrlo.
+   - [ ] *Pista 1:* La recta perpendicular a un plano tiene la dirección de su normal.
+   - [ ] *Pista 2:* Sus proyecciones son perpendiculares a las trazas del mismo nombre, en las dos vistas a la vez.
+   - [ ] *Pista 3:* Traza t′ perpendicular a α₁ y t″ perpendicular a α₂ desde S, y ajusta T con las referencias.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α pasa por el origen, y la recta t sale del punto S. Hay que hacerla perpendicular a α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Una recta perpendicular a un plano forma ángulo recto con todas sus rectas. Se lee en las trazas: t′ con α₁ y t″ con α₂.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una varilla clavada en el plano desde S: apunta en la dirección que ve el plano como suya, la perpendicular.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza t′ desde S′ perpendicular a la traza horizontal α₁.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Traza t″ desde S″ perpendicular a la traza vertical α₂ y lleva T por las referencias hasta que coincida en las dos vistas.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: t′ es perpendicular a α₁, t″ es perpendicular a α₂ y T está en las dos.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar la perpendicular a una recta cualquiera del plano en las dos vistas. El ángulo recto solo se ve así con una horizontal o una frontal.
+8. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: el plano β pasa por D, E y F y debe ser perpendicular a la recta r. Mueve F hasta lograrlo.
+   - [ ] *Pista 1:* Un plano perpendicular a una recta tiene sus trazas perpendiculares a las proyecciones de la recta.
+   - [ ] *Pista 2:* β₁ es perpendicular a r′ y β₂ es perpendicular a r″.
+   - [ ] *Pista 3:* DE ya es perpendicular a r: mueve F hasta que DF también lo sea.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* La recta r y el plano β, que pasa por D, E y F. Hay que hacer β perpendicular a r.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Un plano es perpendicular a una recta si sus trazas lo son a las proyecciones de la recta: β₁ a r′ y β₂ a r″.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina r como un poste clavado en el plano β: el plano es el que ve el poste de frente, perpendicular.
+   - [ ] *Solución, paso 4 · 4. El trazado:* DE es una horizontal de β y ya es perpendicular a r. Falta una frontal de β, DF, perpendicular a r.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Mueve F hasta que la frontal DF sea perpendicular a r″ en el alzado.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: β₁ es perpendicular a r′ y β₂ es perpendicular a r″.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: trazar β₁ perpendicular a la proyección vertical de la recta, r″, en vez de a r′. Cada traza va con la proyección de su mismo nombre.
+9. [ ] *cumplir una condición, dificultad 3*: Como en la PAU: el plano β pasa por D, E y F y debe ser perpendicular a α. Mueve F hasta lograrlo.
+   - [ ] *Pista 1:* Un plano es perpendicular a otro si contiene una recta perpendicular a él.
+   - [ ] *Pista 2:* La perpendicular a α tiene sus proyecciones perpendiculares a α₁ y a α₂.
+   - [ ] *Pista 3:* Haz que DF sea esa perpendicular a α, o que β contenga una paralela a ella.
+   - [ ] *Solución, paso 1 · 1. Mira el espacio:* El plano α y el plano β, que pasa por D, E y F. Hay que hacer β perpendicular a α.
+   - [ ] *Solución, paso 2 · 2. La idea clave:* Dos planos son perpendiculares si uno contiene una recta perpendicular al otro. Basta que β contenga la perpendicular a α por D.
+   - [ ] *Solución, paso 3 · 3. El movimiento:* Imagina una varilla clavada en α por D: el plano que la contiene y que pasa también por E es perpendicular a α.
+   - [ ] *Solución, paso 4 · 4. El trazado:* Traza por D′ la perpendicular a α₁ y por D″ la perpendicular a α₂: es la recta perpendicular a α.
+   - [ ] *Solución, paso 5 · 4. El trazado:* Mueve F sobre esa recta. Así β contiene una perpendicular a α y es perpendicular a ella.
+   - [ ] *Solución, paso 6 · 5. Comprobación:* Comprobación: DF es perpendicular a α, y β contiene a DF y a DE.
+   - [ ] *Solución, paso 7 · 6. Error típico:* **[REVISAR]** Error típico: creer que dos planos son perpendiculares porque sus trazas lo son. Esa pareja de trazas perpendiculares no basta.
+
 ## 2. Ejercicios PAU (ejemplos de formato)
 
 ### Ejercicio 1 · Afinidad ortogonal de dos triángulos
@@ -3581,6 +3701,16 @@ Fichero: `src/player/checkCondition.ts`
 - [ ] El plano todavía no pasa por la LT: sus trazas α₁ y α₂ deben coincidir con la LT.
 - [ ] ¡Correcto! El punto está a la vez en los dos objetos: es de su intersección.
 - [ ] El punto aún no está en los dos objetos. Tiene que estar en la recta y en el plano (o en los dos planos) a la vez.
+- [ ] ¡Correcto! Las rectas son paralelas: lo son sus proyecciones horizontales y sus proyecciones verticales.
+- [ ] Las rectas aún no son paralelas. Tienen que serlo en las dos proyecciones, no solo en una.
+- [ ] ¡Correcto! Los planos son paralelos: sus trazas del mismo nombre son paralelas.
+- [ ] Los planos aún no son paralelos. Las dos trazas de uno deben ser paralelas a las del otro.
+- [ ] ¡Correcto! La recta es paralela al plano: es paralela a una recta del plano.
+- [ ] La recta aún no es paralela al plano. Tiene que ser paralela a alguna recta contenida en él.
+- [ ] ¡Correcto! La recta es perpendicular al plano: sus proyecciones son perpendiculares a las trazas del mismo nombre.
+- [ ] La recta aún no es perpendicular al plano: su proyección horizontal debe ser perpendicular a α₁ y la vertical a α₂.
+- [ ] ¡Correcto! Los planos son perpendiculares: uno contiene una recta perpendicular al otro.
+- [ ] Los planos aún no son perpendiculares. Uno debe contener una recta perpendicular al otro.
 - [ ] ¡Correcto! El plano es paralelo a la LT: sus trazas α₁ y α₂ son paralelas a la LT.
 - [ ] Las trazas del plano todavía no son paralelas a la LT.
 

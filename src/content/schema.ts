@@ -183,6 +183,11 @@ const ConditionExercise = z.object({
     'planeContainsLT',
     'planeParallelToLT',
     'pointOnIntersection',
+    'linesParallel',
+    'planesParallel',
+    'lineParallelToPlane',
+    'linePerpendicularToPlane',
+    'planesPerpendicular',
   ]),
   /** Objetos que intervienen: la recta, o el punto y el plano. */
   objects: z.array(z.string()).min(1),
